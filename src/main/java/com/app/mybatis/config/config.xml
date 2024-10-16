@@ -8,6 +8,28 @@
    
    <typeAliases>
    	<typeAlias type="com.app.vo.ProductVO" alias="ProductVO"/>
+   	<typeAlias type="com.app.vo.ProductCategoryVO" alias="ProductCategoryVO"/>
+   	<typeAlias type="com.app.vo.ProductReviewVO" alias="ProductReviewVO"/>
+   	<typeAlias type="com.app.vo.TogetherVO" alias="TogetherVO"/>
+   	<typeAlias type="com.app.vo.LikeVO" alias="LikeVO"/>
+   	<typeAlias type="com.app.vo.OrderVO" alias="OrderVO"/>
+   	<typeAlias type="com.app.vo.OrderDetailVO" alias="OrderDetailVO"/>
+   	<typeAlias type="com.app.vo.DeliveryVO" alias="DeliveryVO"/>
+   	<typeAlias type="com.app.vo.BusinessVO" alias="BusinessVO"/>
+   	<typeAlias type="com.app.vo.SellerVO" alias="SellerVO"/>
+   	<typeAlias type="com.app.vo.AdjustmentVO" alias="AdjustmentVO"/>
+   	<typeAlias type="com.app.vo.AdminVO" alias="AdminVO"/>
+   	<typeAlias type="com.app.vo.AdminCouponVO" alias="AdminCouponVO"/>
+   	<typeAlias type="com.app.vo.AdminBannerVO" alias="AdminBannerVO"/>
+   	<typeAlias type="com.app.vo.AdminNoticeVO" alias="AdminNoticeVO"/>
+   	<typeAlias type="com.app.vo.PetVO" alias="PetVO"/>
+   	<typeAlias type="com.app.vo.MemberVO" alias="MemberVO"/>
+   	<typeAlias type="com.app.vo.CartVO" alias="CartVO"/>
+   	<typeAlias type="com.app.vo.PayVO" alias="PayVO"/>
+   	<typeAlias type="com.app.vo.CommunityCommentVO" alias="CommunityCommentVO"/>
+   	<typeAlias type="com.app.vo.CommunityPostVO" alias="CommunityPostVO"/>
+   	<typeAlias type="com.app.vo.HealthplusCommunityPostVO" alias="HealthplusCommunityPostVO"/>
+   	<typeAlias type="com.app.vo.HealthplusCommunityEventVO" alias="HealthplusCommunityEventVO"/>
    </typeAliases>
    
    <environments default="oracle">
@@ -23,6 +45,18 @@
     </environments>
  	<mappers>
  	   <mapper resource="com/app/mybatis/mapper/productMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/likeMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/deliveryMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/cartMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/payMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/adminMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/orderMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/memberMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/businessMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/sellerMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/petMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/healthplusCommunityMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/communityMapper.xml"/>
  	</mappers>
  </configuration>
  
