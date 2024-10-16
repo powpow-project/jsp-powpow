@@ -4,10 +4,10 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.app.mybatis.config.MyBatisConfig;
 
-public class CommunityCommentDAO {
+public class CommunityDAO {
 	public SqlSession sqlSession;
 	
-	public CommunityCommentDAO() {
+	public CommunityDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 }
