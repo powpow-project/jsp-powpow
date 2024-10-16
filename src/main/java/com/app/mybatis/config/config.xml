@@ -45,28 +45,18 @@
     </environments>
  	<mappers>
  	   <mapper resource="com/app/mybatis/mapper/productMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/productReviewMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/productCategoryMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/likeMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/deliveryMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/cartMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/payMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/adminMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/adminCouponMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/adminBannerMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/adminNoticeMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/orderMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/orderDetailMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/memberMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/businessMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/togetherMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/adjustmentMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/sellerMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/petMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/healthplusCommunityPostMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/healthplusCommunityEventMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/communityPostMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/communityCommentMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/healthplusCommunityMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/communityMapper.xml"/>
  	</mappers>
  </configuration>
  
