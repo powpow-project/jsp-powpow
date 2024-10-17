@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/index.css"/>
+<link rel="shortcut icon" href="assets/images/favicon.ico"/>
 </head>
 <body>
 
