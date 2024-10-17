@@ -79,5 +79,15 @@
   	<url-pattern>*.seller</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>MyhomeFrontController</servlet-name>
+  	<servlet-class>com.app.myhome.MyhomeFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>MyhomeFrontController</servlet-name>
+  	<url-pattern>*.myhome</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>
