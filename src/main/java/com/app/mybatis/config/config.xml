@@ -55,6 +55,7 @@
  	   <mapper resource="com/app/mybatis/mapper/businessMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/sellerMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/petMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/myhomeMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/healthplusCommunityMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/communityMapper.xml"/>
  	</mappers>
