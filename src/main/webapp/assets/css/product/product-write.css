@@ -288,3 +288,83 @@ margin-top: 4px;
   border-radius: 20px; 
   background-color: #FFC303;
 }
+
+.menu-icon{
+  cursor: pointer;
+}
+
+#menu-frame {
+  display: none;
+  flex-direction: column;
+  width: 1440px;
+  align-items: start;
+  margin: 20px 0;
+  animation: lift-detail 0.1s;
+}
+
+.menu-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0; 
+  margin: 0;
+  max-width: 220px;
+}
+
+.welcome {
+  font-size: 14px;
+  position: relative;
+  bottom: 6px;
+}
+
+.logout {
+  font-size: 10px;
+  color: #ffc303;
+  background-color: white;
+  border: none;
+  margin-left: auto;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  bottom: 6px;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 200px;
+  position: absolute;
+  z-index: 1000;
+}
+
+ul > li {
+  width: 200px;
+}
+
+ul > li > p {
+  width: 200px;
+  height: 40px;
+  background: #828282;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  cursor: pointer;
+  padding-left: 15px;
+  margin: 16px 0;
+}
+
+ul > li > div {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  padding-left: 15px; 
+}
+
+ul > li > div > p {
+  margin: 10px 0;
+  text-align: left;
+  padding-left: 10px; 
+  cursor: pointer;
+}

@@ -20,8 +20,9 @@ img {
   flex-direction: column;
   width: 1440px;
   align-items: start;
-  margin: 20px 0;
   animation: lift-detail 0.1s;
+  position: absolute;
+  top: 100px;
 }
 
 .menu-header{
@@ -109,6 +110,7 @@ ul > li > div > p {
   margin: 28px 0;
   gap: 72px;
   padding-left: 28px;
+  position : relative;
 }
 
 #frame > .menu-wrap > span {

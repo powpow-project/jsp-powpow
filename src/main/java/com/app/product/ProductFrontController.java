@@ -20,12 +20,12 @@ public class ProductFrontController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=utf-8");
-		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
+		String target = req.getRequestURI().replace(req.getContextPath() + "/product/", "").split("\\.")[0];
 		Result result = null;
 		
 		if(target.equals("product-write")) {
 			result = new Result();
-			result.setPath("product-write.jsp");
+			result.setPath("../product/product-write.jsp");
 		}else if(target.equals("product-write-ok")) {
 			result = new ProductWriteOkController().execute(req, resp);
 		}else if(target.equals("product-list")) {

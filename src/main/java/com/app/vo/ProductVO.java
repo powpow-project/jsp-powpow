@@ -9,8 +9,7 @@ public class ProductVO {
 	private String productName;
 	private int productPrice;
 	private String productImage;
-	private int productCode;
-	private String productBrand;
+	private String productCode;
 	private String productDate;
 	private int productStock;
 	private String productType;
@@ -19,7 +18,7 @@ public class ProductVO {
 	private String productSubImage1;
 	private String productSubImage2;
 	private String productSubImage3;
-
+	
 	public ProductVO() {;}
 
 	public Long getId() {
@@ -70,20 +69,12 @@ public class ProductVO {
 		this.productImage = productImage;
 	}
 
-	public int getProductCode() {
+	public String getProductCode() {
 		return productCode;
 	}
 
-	public void setProductCode(int productCode) {
+	public void setProductCode(String productCode) {
 		this.productCode = productCode;
-	}
-
-	public String getProductBrand() {
-		return productBrand;
-	}
-
-	public void setProductBrand(String productBrand) {
-		this.productBrand = productBrand;
 	}
 
 	public String getProductDate() {
@@ -154,10 +145,10 @@ public class ProductVO {
 	public String toString() {
 		return "ProductVO [id=" + id + ", productCategoryId=" + productCategoryId + ", sellerId=" + sellerId
 				+ ", productName=" + productName + ", productPrice=" + productPrice + ", productImage=" + productImage
-				+ ", productCode=" + productCode + ", productBrand=" + productBrand + ", productDate=" + productDate
-				+ ", productStock=" + productStock + ", productType=" + productType + ", productEditDate="
-				+ productEditDate + ", productDetail=" + productDetail + ", productSubImage1=" + productSubImage1
-				+ ", productSubImage2=" + productSubImage2 + ", productSubImage3=" + productSubImage3 + "]";
+				+ ", productCode=" + productCode + ", productDate=" + productDate + ", productStock=" + productStock
+				+ ", productType=" + productType + ", productEditDate=" + productEditDate + ", productDetail="
+				+ productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
+				+ ", productSubImage3=" + productSubImage3 + "]";
 	}
 
 	@Override
@@ -177,5 +168,6 @@ public class ProductVO {
 		return Objects.equals(id, other.id);
 	}
 	
-
+	
+	
 }
