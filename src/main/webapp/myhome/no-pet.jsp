@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>myhome no-pet</title>
-  <link rel="stylesheet" href="./index.css">
-  <link rel="shortcut icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
   @keyframes fade_up {
@@ -228,7 +228,7 @@
     /* 배경색 */
     font-family: Arial, sans-serif;
     /* 폰트 스타일 */
-    margin-top: 200px;
+    margin-top: 220px;
   }
 
   .footer-black {
@@ -240,8 +240,6 @@
     justify-content: space-between;
     width: 1200px;
     margin: 0 auto;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
     padding: 20px 0;
   }
 
@@ -310,6 +308,7 @@
   .custom-list {
     list-style-type: none;
     /* 기본 리스트 스타일 제거 */
+    width:211px;
   }
 
   .custom-list li::before {
@@ -392,13 +391,13 @@
       <div id="border">
         <div id="nav">
           <div class="left">
-            <img src="./images/main-logo.png" alt="로고">
+            <img src="../assets/images/myhome/logo.png" alt="로고">
           </div>
           <div class="right">
             <div class="icons">
-              <a href="#"><img src="./images/search_icon 2.jpg" alt="검색"></a>
-              <a href="#"><img src="./images/truck_transport_icon 2.jpg" alt="배송"></a>
-              <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
+              <a href="#"><img src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a>
+              <a href="#"><img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
+              <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
             </div>
             <div class="sector"></div>
             <div class="login"><a href="#">로그인</a></div>
@@ -425,9 +424,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="#">나의 정보</a></li>
-              <li class="sub-menu"><a href="#">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="#">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./pet.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -450,7 +449,7 @@
   <div id="no-pet-wrapper">
     <p class="no-pet h4">반려동물이 없습니다.</p>
     <p class="no-pet h4">프로필을 등록해주세요.</p>
-    <a rel="stylesheet" href="/myhome/pet-kind.html"><button class="h5">등록하기</button>
+    <a rel="stylesheet" href="./pet-kind.jsp"><button class="h5">등록하기</button>
   </div>
 
   <footer>
@@ -463,8 +462,6 @@
           <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
           <li>일요일: 휴무</li>
         </ul>
-        <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-        <button class="email-button">이메일 문의</button>
       </div>
 
       <div class="footer-section">
@@ -492,7 +489,7 @@
       <div class="footer">
         <div class="footer-section legal">
           <p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로 146, 3층 4층</p>
-          <p>contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span></p>
+          <p>contact@powpow.com | 사업자등록번호: 0000000</p>
           <p>통신판매업신고번호 제2024-서울강남-0000호</p>
         </div>
 

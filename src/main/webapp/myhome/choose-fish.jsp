@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myhome no-pet</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
     @keyframes fade_up {
@@ -487,13 +487,13 @@
             <div id="border">
                 <div id="nav">
                     <div class="left">
-                        <img src="./images/main-logo.png" alt="로고">
+                        <img src="../assets/images/myhome/logo.png" alt="로고">
                     </div>
                     <div class="right">
                         <div class="icons">
-                            <a href="#"><img src="./images/search_icon 2.jpg" alt="검색"></a>
-                            <a href="#"><img src="./images/truck_transport_icon 2.jpg" alt="배송"></a>
-                            <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
+                            <a href="#"><img src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a>
+                            <a href="#"><img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
+                            <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
                         </div>
                         <div class="sector"></div>
                         <div class="login"><a href="#">로그인</a></div>
@@ -520,9 +520,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="/myhome/profile.html">나의 정보</a></li>
-                            <li class="sub-menu"><a href="/myhome/no-pet.html">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="/myhome/shipping-status.html">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 

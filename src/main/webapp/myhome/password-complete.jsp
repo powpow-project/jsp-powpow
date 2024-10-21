@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입 완료</title>
   <link rel="stylesheet" href="./css/leave-complete.css">
-  <link rel="stylesheet" href="./index.css">
-  <link rel="shortcut icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
     

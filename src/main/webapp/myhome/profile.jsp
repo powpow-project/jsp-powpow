@@ -6,10 +6,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>마이홈 프로필</title>
-  <link rel="stylesheet" href="/index.jsp">
-  <link rel="shortcut icon" href="./images/favicon.ico">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
   <style>
-    /* 헤더 부분 */
+  @keyframes fade_up {
+    0% {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  body {
+    font-family: 'SpoqaHanSansNeo-Regular';
+  }
 
     .header-container {
       display: flex;
@@ -523,7 +537,7 @@
     }
     .coupon p:nth-child(2){
       color: #ffffff;
-      padding-right: 290px;
+      padding-right: 100px;
       min-width: 278px;
       font-size: 20px;
       line-height: 30px;
@@ -690,8 +704,6 @@
       /* 패딩 추가 */
       background-color: #f9f9f9;
       /* 배경색 */
-      font-family: Arial, sans-serif;
-      /* 폰트 스타일 */
     }
 
     .footer-section.legal p {
@@ -717,13 +729,13 @@
       <div id="border">
         <div id="nav">
           <div class="left">
-            <img src="./images/main-logo.png" alt="로고">
+            <img src="../assets/images/myhome/logo.png" alt="로고">
           </div>
           <div class="right">
             <div class="icons">
-              <a href="#"><img src="./images/search_icon 2.jpg" alt="검색"></a>
-              <a href="#"><img src="./images/truck_transport_icon 2.jpg" alt="배송"></a>
-              <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
+              <a href="#"><img src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a>
+              <a href="#"><img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
+              <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
             </div>
             <div class="sector"></div>
             <div class="login"><a href="#">로그인</a></div>
@@ -750,9 +762,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="/myhome/profile.html">나의 정보</a></li>
-              <li class="sub-menu"><a href="/myhome/no-pet.html">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="/myhome/shipping-status.html">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -771,7 +783,7 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="/myhome/profile.html" class="current-category h4">프로필</a>
+      <a href="./profile.jsp" class="current-category h4">프로필</a>
       <p>|</p>
       <a href="/myhome/likes.html" class="h4">좋아요</a>
       <p>|</p>
@@ -783,7 +795,7 @@
     <button onClick="alert('수정이 완료되었습니다.')" class="complete">완료</button>
     <div id="profile-edit">
       <div class="profile-box">
-        <img class="default-profile-image" src="./images/default-profile.png" alt="기본 프로필 사진">
+        <img class="default-profile-image" src="../assets/images/myhome/default-profile.png" alt="기본 프로필 사진">
         <span class="id">찹쌀징어</span>
         <div class="imageupload-button">
           <button id="uploadButton">이미지 편집</button>
@@ -792,8 +804,8 @@
         <br>
         <hr>
         <br>
-        <!-- <a class="couponicon" href="#"><img  src="/myhome/images/coupon.svg" alt="쿠폰"></a> -->
-        <img class="popup-button" id="openModalButton" src="/myhome/images/coupon.svg" alt="coupon">
+        <!-- <a class="couponicon" href="#"><img  src="../assets/images/myhome/coupon.svg" alt="쿠폰"></a> -->
+        <img class="popup-button" id="openModalButton" src="../assets/images/myhome/coupon.svg" alt="coupon">
         <!-- The Modal -->
         <div class="modal" id="myModal">
           <!-- Modal content -->

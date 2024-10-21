@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myhome no-pet</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
     @keyframes fade_up {
@@ -453,13 +453,13 @@
             <div id="border">
                 <div id="nav">
                     <div class="left">
-                        <img src="./images/main-logo.png" alt="로고">
+                        <img src="../assets/images/myhome/logo.png" alt="로고">
                     </div>
                     <div class="right">
                         <div class="icons">
-                            <a href="#"><img src="./images/search_icon 2.jpg" alt="검색"></a>
-                            <a href="#"><img src="./images/truck_transport_icon 2.jpg" alt="배송"></a>
-                            <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
+                            <a href="#"><img src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a>
+                            <a href="#"><img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
+                            <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
                         </div>
                         <div class="sector"></div>
                         <div class="login"><a href="#">로그인</a></div>
@@ -486,9 +486,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="/myhome/profile.html">나의 정보</a></li>
-                            <li class="sub-menu"><a href="/myhome/no-pet.html">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="/myhome/shipping-status.html">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -508,35 +508,35 @@
     <div id="animals">
         <div id="mydog">
             <div class="card">
-                <img class="star" src="/myhome/images/star.svg" data-filled-src="/myhome/images/star-select.svg" alt="선택된 동물">
+                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
                 <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="/myhome/images/default-dog.svg" alt="Profile Picture">
+                    <img id="profileImage" src="../assets/images/myhome/default-dog.svg" alt="Profile Picture">
                 </div>
                 <div class="name">포포</div>
                 <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="/myhome/choose-dog.html"><button class="edit-button">편집</button></a>
+                <a rel="stylesheet" href="../myhome/choose-dog.jsp"><button class="edit-button">편집</button></a>
             </div>
         </div>
         <div id="mydog">
             <div class="card">
-                <img class="star" src="/myhome/images/star.svg" data-filled-src="/myhome/images/star-select.svg" alt="선택된 동물">
+                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
                 <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="/myhome/images/default-cat.svg" alt="Profile Picture">
+                    <img id="profileImage" src="../assets/images/myhome/default-cat.svg" alt="Profile Picture">
                 </div>
                 <div class="name">미미</div>
                 <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="/myhome/choose-cat.html"><button class="edit-button">편집</button></a>
+                <a rel="stylesheet" href="../myhome/choose-cat.jsp"><button class="edit-button">편집</button></a>
             </div>
         </div>
         <div id="mydog">
             <div class="card">
-                <img class="star" src="/myhome/images/star.svg" data-filled-src="/myhome/images/star-select.svg" alt="선택된 동물">
+                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
                 <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="/myhome/images/default-bird.svg" alt="Profile Picture">
+                    <img id="profileImage" src="../assets/images/myhome/default-bird.svg" alt="Profile Picture">
                 </div>
                 <div class="name">도도</div>
                 <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="/myhome/choose-bird.html"><button class="edit-button">편집</button></a>
+                <a rel="stylesheet" href="../myhome/choose-bird.jsp"><button class="edit-button">편집</button></a>
             </div>
         </div>
     </div>
@@ -613,7 +613,7 @@
     star.addEventListener('click', () => {
         // Deselect all stars
         stars.forEach(s => {
-            s.setAttribute('src', '/myhome/images/star.svg'); // Change to gray
+            s.setAttribute('src', '../assets/images/myhome/star.svg'); // Change to gray
         });
 
         // Select the clicked star

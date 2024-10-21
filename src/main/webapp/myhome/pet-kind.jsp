@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myhome no-pet</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
     @keyframes fade_up {
@@ -380,12 +380,12 @@
             <div id="border">
                 <div id="nav">
                     <div class="left">
-                        <img src="./images/main-logo.png" alt="로고">
+                        <img src="../assets/images/myhome/logo.png" alt="로고">
                     </div>
                     <div class="right">
                         <div class="icons">
-                            <a href="#"><img src="./images/search_icon 2.jpg" alt="검색"></a>
-                            <a href="#"><img src="./images/truck_transport_icon 2.jpg" alt="배송"></a>
+                            <a href="#"><img src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a>
+                            <a href="#"><img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
                             <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
                         </div>
                         <div class="sector"></div>
@@ -413,9 +413,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="#">나의 정보</a></li>
-                            <li class="sub-menu"><a href="#">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="#">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./pet.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -433,12 +433,12 @@
     </div>
 
     <div id="pet-kind">
-        <p class="h4"><img src="./images/check.svg" alt="체크아이콘" />프로필에 추가할 동물을 선택해주세요.</p>
+        <p class="h4"><img src="../assets/images/myhome/check.svg" alt="체크아이콘" />프로필에 추가할 동물을 선택해주세요.</p>
         <div class="choose-pet-kind">
-            <a rel="stylesheet" href="/myhome/choose-dog.html"><img src="./images/mypage-dog.svg" alt=""></a>
-            <a rel="stylesheet" href="/myhome/choose-cat.html"><img src="./images/mypage-cat.svg" alt=""></a>
-            <a rel="stylesheet" href="/myhome/choose-bird.html"><img src="./images/mypage-bird.svg" alt=""></a>
-            <a rel="stylesheet" href="/myhome/choose-fish.html"><img src="./images/mypage-fish.svg" alt=""></a>
+            <a rel="stylesheet" href="../myhome/choose-dog.jsp"><img src="../assets/images/myhome/mypage-dog.svg" alt=""></a>
+            <a rel="stylesheet" href="../myhome/choose-cat.jsp"><img src="../assets/images/myhome/mypage-cat.svg" alt=""></a>
+            <a rel="stylesheet" href="../myhome/choose-bird.jsp"><img src="../assets/images/myhome/mypage-bird.svg" alt=""></a>
+            <a rel="stylesheet" href="../myhome/choose-fish.jsp"><img src="../assets/images/myhome/mypage-fish.svg" alt=""></a>
         </div>
     </div>
 
