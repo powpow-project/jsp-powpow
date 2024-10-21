@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myhome setpassword</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="shortcut icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
     @keyframes fade_up {
@@ -245,63 +245,87 @@
     }
 
     /* 쿠폰 팝업*/
-    .popup-button img {
-        border: none;
-        cursor: pointer;
+      .popup-button img {
+      border: none;
+      cursor: pointer;
     }
 
 
     /* The Modal (background) */
     .modal {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Black with opacity */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black with opacity */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Modal Content */
     .modal-content {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        width: 700px;
-        height: 700px;
-        text-align: center;
-        position: relative;
-        animation: fadeIn 0.3s ease-in-out;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 700px;
+      height: 700px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-content input {
+      width: 360px;
+      height: 50px;
+      border-radius: 20px;
+      padding: 0 26px;
+    }
+
+    .modal-content button::after {
+      border-radius: 20px;
+      background-color: #113f8a;
+      color: white;
+      border: none;
+    }
+
+    .add-coupon {
+      border-radius: 20px;
+      border: none;
+      background-color: #113f8a;
+      color: #ffffff;
+      width: 101px;
+      height: 50px;
+      margin-left: 10px;
     }
 
     /* Add animation for opening modal */
     @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: scale(0.9);
-        }
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
 
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     /* Close Button */
     .close-button {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        background-color: transparent;
-        border: none;
-        font-size: 18px;
-        cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background-color: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
     }
 
     /* 주문현황 */
@@ -352,168 +376,262 @@
 
     /* footer */
 
-    footer {
-        width: 100%;
-        /* 부모 요소의 너비를 100%로 설정 */
-        padding: 20px;
-        /* 패딩 추가 */
-        background-color: #f9f9f9;
-        /* 배경색 */
-        margin-top: 150px;
-    }
 
-    .footer-black {
-        color: #000;
-    }
+  footer {
+    width: 100%;
+    /* 부모 요소의 너비를 100%로 설정 */
+    padding: 20px;
+    /* 패딩 추가 */
+    background-color: #f9f9f9;
+    /* 배경색 */
+    font-family: Arial, sans-serif;
+    /* 폰트 스타일 */
+    margin-top: 150px;
+  }
 
-    .footer-container {
-        display: flex;
-        justify-content: space-between;
-        width: 1200px;
-        margin: 0 auto;
-        border-top: 1px solid #E5E5E5;
-        border-bottom: 1px solid #E5E5E5;
-        padding: 20px 0;
-    }
+  .footer-black {
+    color: #000;
+  }
 
-    .footer-section {
-        margin-bottom: 2px;
-        /* 각 섹션 간의 간격 */
-    }
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
 
-    .footer-section h3 {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
+  .footer-section {
+    margin-bottom: 2px;
+    /* 각 섹션 간의 간격 */
+  }
 
-    .footer-section p {
-        margin: 10px 0;
-        /* 기본 여백 제거 */
-        line-height: 1.2;
-        /* 줄 간격 조정 */
-        margin: 1px 0;
-        white-space: normal;
-        /* 줄바꿈 허용 */
-        font-size: 11px;
-    }
+  .footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
 
-    .footer-section ul {
-        list-style: none;
-        /* 리스트 점 제거 */
-        padding: 0;
-        /* 기본 패딩 제거 */
-        margin: 0;
-        /* 기본 마진 제거 */
-        line-height: 1.8;
-        /* 줄 간격 설정 (1.8은 글자 크기의 180% 간격) */
-    }
+  .footer-section p {
+    margin: 10px 0;
+    /* 기본 여백 제거 */
+    line-height: 1.2;
+    /* 줄 간격 조정 */
+    margin: 1px 0;
+    white-space: normal;
+    /* 줄바꿈 허용 */
+    font-size: 11px;
+  }
 
-    .footer-section ul li {
-        margin-bottom: 10px;
-        /* 리스트 항목 간격 */
-        font-size: 12px;
-    }
+  .footer-section ul {
+    list-style: none;
+    /* 리스트 점 제거 */
+    padding: 0;
+    /* 기본 패딩 제거 */
+    margin: 0;
+    /* 기본 마진 제거 */
+    line-height: 1.8;
+    /* 줄 간격 설정 (1.8은 글자 크기의 180% 간격) */
+  }
 
-    .footer-section ul li a {
-        text-decoration: none;
-        /* 링크 밑줄 제거 */
-        color: #000000;
-        /* 텍스트 색상 */
-        font-size: 12px;
-    }
+  .footer-section ul li {
+    margin-bottom: 10px;
+    /* 리스트 항목 간격 */
+    font-size: 12px;
+  }
 
-    .contact-info {
-        display: flex;
-        /* Flexbox로 가로 정렬 */
-        align-items: center;
-        /* 수직 중앙 정렬 */
-    }
+  .footer-section ul li a {
+    text-decoration: none;
+    /* 링크 밑줄 제거 */
+    color: #000000;
+    /* 텍스트 색상 */
+    font-size: 12px;
+  }
 
-    .highlight {
-        color: #000000;
-        /* 강조 색상 */
-        font-weight: bold;
-        /* 글자 두껍게 */
-        font-size: 12px;
-        /* 글자 크기 */
-    }
+  .contact-info {
+    display: flex;
+    /* Flexbox로 가로 정렬 */
+    align-items: center;
+    /* 수직 중앙 정렬 */
+  }
 
-    .custom-list {
-        list-style-type: none;
-        /* 기본 리스트 스타일 제거 */
-    }
+  .highlight {
+    color: #000000;
+    /* 강조 색상 */
+    font-weight: bold;
+    /* 글자 두껍게 */
+    font-size: 12px;
+    /* 글자 크기 */
+  }
 
-    .custom-list li::before {
-        content: '•';
-        /* 리스트 앞에 점 추가 */
-        color: #000;
-        /* 점의 색상 */
-        font-weight: bold;
-        /* 점 굵게 */
-        display: inline-block;
-        /* 점을 인라인으로 표시 */
-        width: 13px;
-        /* 점과 텍스트 사이의 간격 조정 */
-    }
+  .custom-list {
+    list-style-type: none;
+    /* 기본 리스트 스타일 제거 */
+    width:211px;
+  }
 
-    .button-container {
-        display: flex;
-        /* 버튼을 가로로 정렬 */
-        gap: 10px;
-        /* 버튼 사이 간격 */
-        align-items: center;
-        /* 버튼을 텍스트와 수직으로 정렬 *
+  .custom-list li::before {
+    content: '•';
+    /* 리스트 앞에 점 추가 */
+    color: #000;
+    /* 점의 색상 */
+    font-weight: bold;
+    /* 점 굵게 */
+    display: inline-block;
+    /* 점을 인라인으로 표시 */
+    width: 13px;
+    /* 점과 텍스트 사이의 간격 조정 */
+  }
+
+  .button-container {
+    display: flex;
+    /* 버튼을 가로로 정렬 */
+    gap: 10px;
+    /* 버튼 사이 간격 */
+    align-items: center;
+    /* 버튼을 텍스트와 수직으로 정렬 *
     margin-top: 10px; /* 버튼 위쪽 마진 */
+  }
+
+  .kakao-button,
+  .email-button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: solid #E6E6E6;
+    margin: 3px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 15px;
+    /* 버튼 내부 여백 */
+    font-size: 11px;
+  }
+
+  .kakao-button {
+    width: 211px;
+    height: 29px;
+  }
+
+  .email-button {
+    width: 93px;
+    height: 29px;
+  }
+
+  .footer-section {
+    width: 100%;
+    /* 부모 요소의 너비를 100%로 설정 */
+    padding: 10px;
+    /* 패딩 추가 */
+    background-color: #f9f9f9;
+    /* 배경색 */
+    font-family: Arial, sans-serif;
+    /* 폰트 스타일 */
+  }
+
+  .footer-section.legal p {
+    margin: 0;
+    /* 기본 여백 제거 */
+    white-space: nowrap;
+    /* 줄바꿈을 방지합니다. */
+    overflow: visible;
+    /* 텍스트가 부모 요소의 경계를 넘어가도 보이게 합니다. */
+  }
+
+  .legal p {
+    font-size: 12px;
+    color: #767676;
+    line-height: 1.5;
+  }
+        /* coupon */
+    .switchto1 {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      margin-right: 10px;
+      border-radius: 20px;
+      border: none;
+      background-color: #113f8a;
+      color: #ffffff;
+      width: 200px;
+      height: 44px;
     }
 
-    .kakao-button,
-    .email-button {
-        background-color: #FFFFFF;
-        color: #000000;
-        border: solid #E6E6E6;
-        margin: 3px;
-        margin-bottom: 10px;
-        border-radius: 20px;
-        cursor: pointer;
-        padding: 5px 15px;
-        /* 버튼 내부 여백 */
-        font-size: 11px;
+    .coupon-container {
+      height: 500px;
+      overflow: scroll;
+      margin-top: 20px;
     }
 
-    .kakao-button {
-        width: 211px;
-        height: 29px;
+    .coupon:nth-child(1){
+      background-color: #ff8331;
+      margin-top: 20px;
+      border-radius: 20px;
+      width: 461px;
+      height: 251px;
+      margin: 0 auto;
+      margin-top: 30px;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: bold;
     }
 
-    .email-button {
-        width: 93px;
-        height: 29px;
+    .coupon p:nth-child(1){
+      color: #ffffff;
+      padding-right: 250px;
+      padding-top: 20px;
+    }
+    .coupon p:nth-child(2){
+      color: #ffffff;
+      padding-right: 100px;
+      min-width: 278px;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    
+    .coupon:nth-child(2){
+      background-color: #ff8331;
+      margin-top: 20px;
+      border-radius: 20px;
+      width: 461px;
+      height: 251px;
+      margin: 0 auto;
+      margin-top: 30px;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: bold;
     }
 
-    .footer-section {
-        width: 100%;
-        /* 부모 요소의 너비를 100%로 설정 */
-        padding: 10px;
-        /* 패딩 추가 */
-        background-color: #f9f9f9;
-        /* 배경색 */
-        font-family: Arial, sans-serif;
-        /* 폰트 스타일 */
+    .coupon:nth-child(3){
+      background-color: #ff8331;
+      margin-top: 20px;
+      border-radius: 20px;
+      width: 461px;
+      height: 251px;
+      margin: 0 auto;
+      margin-top: 30px;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: bold;
     }
 
-    .footer-section.legal p {
-        margin: 0;
-        /* 기본 여백 제거 */
-        white-space: nowrap;
-        /* 줄바꿈을 방지합니다. */
-        overflow: visible;
-        /* 텍스트가 부모 요소의 경계를 넘어가도 보이게 합니다. */
+    .coupon:nth-child(4){
+      background-color: #ff8331;
+      margin-top: 20px;
+      border-radius: 20px;
+      width: 461px;
+      height: 251px;
+      margin: 0 auto;
+      margin-top: 30px;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: bold;
     }
 
-    .legal p {
-        font-size: 12px;
-        color: #767676;
-        line-height: 1.5;
+    .switchto2 {
+      border-radius: 20px;
+      border: none;
+      color: #131313;
+      border: solid 1px #828282;
+      width: 200px;
+      height: 44px;
     }
 </style>
 
@@ -523,13 +641,13 @@
             <div id="border">
                 <div id="nav">
                     <div class="left">
-                        <img src="./images/main-logo.png" alt="로고">
+                        <img src="../assets/images/myhome/logo.png" alt="로고">
                     </div>
                     <div class="right">
                         <div class="icons">
-                            <a href="#"><img src="./images/search_icon 2.jpg" alt="검색"></a>
-                            <a href="#"><img src="./images/truck_transport_icon 2.jpg" alt="배송"></a>
-                            <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
+                            <a href="#"><img src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a>
+                            <a href="#"><img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
+                            <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
                         </div>
                         <div class="sector"></div>
                         <div class="login"><a href="#">로그인</a></div>
@@ -556,9 +674,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="/myhome/profile.html">나의 정보</a></li>
-                            <li class="sub-menu"><a href="/myhome/no-pet.html">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="/myhome/shipping-status.html">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -580,22 +698,42 @@
 
     <div id="delivery-status">
         <div class="profile-box">
-            <img class="face" src="/myhome/images/default-profile.png" alt="사람 프로필사진"></img>
+            <img class="face" src="../assets/images/myhome/default-profile.png" alt="사람 프로필사진"></img>
             <p>찹쌀징어</p>
             <br>
             <hr>
             <br>
-            <img class="popup-button" id="openModalButton" src="/myhome/images/coupon.svg" alt="coupon">
+            <img class="popup-button" id="openModalButton" src="../assets/images/myhome/coupon.svg" alt="coupon">
             <!-- The Modal -->
             <div class="modal" id="myModal">
                 <!-- Modal content -->
-                <div class="modal-content">
-                    <button class="close-button" id="closeModalButton">&times;</button>
-                    <h2>쿠폰함</h2>
-                    <div>
-                        <input type="text" placeholder="쿠폰 코드를 입력해주세요">
-                    </div>
+                      <div class="modal-content">
+            <button class="close-button" id="closeModalButton">&times;</button>
+            <button class="switchto1">쿠폰함(4)</button>
+            <button class="switchto2">사용내역</button>
+            <div>
+              <input type="text" placeholder="쿠폰 코드를 입력해주세요">
+              <button class="add-coupon h4">추가하기</button>
+              <div class="coupon-container">
+                <div class="coupon">
+                  <p>추가된 쿠폰명</p>
+                  <p type="text">유효기간 : 2024-10-04 ~ 10-30 까지</p>
                 </div>
+                <div class="coupon">
+                  <p>추가된 쿠폰명</p>
+                  <p type="text">C유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                </div>
+                <div class="coupon">
+                  <p>추가된 쿠폰명</p>
+                  <p type="text">유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                </div>
+                <div class="coupon">
+                  <p>추가된 쿠폰명</p>
+                  <p type="text">유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                </div>
+              </div>
+            </div>
+          </div>
             </div>
             <p>쿠폰</p>
             <p>5</p>
@@ -626,60 +764,58 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-container">
-            y <div class="footer-section">
-                <h3>고객센터 &gt;</h3>
-                <p><span class="highlight">0000-0000</span> <span>09:00~18:00</span></p>
-                <ul class="custom-list">
-                    <li>평일: 전체 문의 상담</li>
-                    <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
-                    <li>일요일: 휴무</li>
-                </ul>
-                <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-                <button class="email-button">이메일 문의</button>
-            </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>고객센터 &gt;</h3>
+        <p><span class="highlight">0000-0000</span> <span>09:00~18:00</span></p>
+        <ul class="custom-list">
+          <li>평일: 전체 문의 상담</li>
+          <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
+          <li>일요일: 휴무</li>
+        </ul>
+      </div>
 
-            <div class="footer-section">
-                <ul>
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">채용정보</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">개인정보 처리방침</a></li>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">안전거래센터</a></li>
-                </ul>
-            </div>
+      <div class="footer-section">
+        <ul>
+          <li><a href="#">회사소개</a></li>
+          <li><a href="#">채용정보</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보 처리방침</a></li>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">안전거래센터</a></li>
+        </ul>
+      </div>
 
-            <div class="footer-section">
-                <ul>
-                    <li><a href="#">입점신청</a></li>
-                    <li><a href="#">제휴/광고 문의</a></li>
-                    <li><a href="#">POWPOW 신고센터</a></li>
-                    <li><a href="#">파트너 개인정보 처리방침</a></li>
-                    <li><a href="#">상품권 소개</a></li>
-                    <li><a href="#">고객의 소리</a></li>
-                </ul>
-            </div>
+      <div class="footer-section">
+        <ul>
+          <li><a href="#">입점신청</a></li>
+          <li><a href="#">제휴/광고 문의</a></li>
+          <li><a href="#">POWPOW 신고센터</a></li>
+          <li><a href="#">파트너 개인정보 처리방침</a></li>
+          <li><a href="#">상품권 소개</a></li>
+          <li><a href="#">고객의 소리</a></li>
+        </ul>
+      </div>
 
-            <div class="footer">
-                <div class="footer-section legal">
-                    <p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로 146, 3층 4층</p>
-                    <p>contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span></p>
-                    <p>통신판매업신고번호 제2024-서울강남-0000호</p>
-                </div>
-
-                <div class="footer-section legal2">
-                    <p>(주)포포는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.</p>
-                    <p>단, (주) 포포가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.</p>
-                </div>
-
-                <div class="footer-section legal3">
-                    <p>Copyright 2024. powpow, Co., Ltd. All rights reserved.</p>
-                </div>
-            </div>
+      <div class="footer">
+        <div class="footer-section legal">
+          <p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로 146, 3층 4층</p>
+          <p>contact@powpow.com | 사업자등록번호: 0000000</p>
+          <p>통신판매업신고번호 제2024-서울강남-0000호</p>
         </div>
-    </footer>
+
+        <div class="footer-section legal2">
+          <p>(주)포포는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.</p>
+          <p>단, (주) 포포가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.</p>
+        </div>
+
+        <div class="footer-section legal3">
+          <p>Copyright 2024. powpow, Co., Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 <script>
     // 쿠폰팝업
