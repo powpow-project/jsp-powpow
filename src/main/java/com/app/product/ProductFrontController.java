@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.product.controller.ProductDeleteOkController;
+import com.app.product.controller.ProductListController;
+import com.app.product.controller.ProductUpdateController;
+import com.app.product.controller.ProductUpdateOkController;
+import com.app.product.controller.ProductWriteOkController;
 
 public class ProductFrontController extends HttpServlet{
 
@@ -18,16 +23,22 @@ public class ProductFrontController extends HttpServlet{
 		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
 		Result result = null;
 		
-		if(target.equals("write")) {
-			
-		}else if(target.equals("write-ok")) {
-			
-		}else if(target.equals("list")) {
-			
+		if(target.equals("product-write")) {
+			result = new Result();
+			result.setPath("product-write.jsp");
+		}else if(target.equals("product-write-ok")) {
+			result = new ProductWriteOkController().execute(req, resp);
+		}else if(target.equals("product-list")) {
+			result = new ProductListController().execute(req, resp);
+		}else if(target.equals("product-update")) {
+			result = new ProductUpdateController().execute(req, resp);
+		}else if(target.equals("product-update-ok")) {
+			result = new ProductUpdateOkController().execute(req, resp);
 		}else if(target.equals("delete-ok")) {
-			
+			result = new ProductDeleteOkController().execute(req, resp);
 		}else {
-//			전부 notFound 404
+			 result = new Result();
+	    	 result.setPath("notFound.jsp");
 		}
 		
 		if(result != null) {
