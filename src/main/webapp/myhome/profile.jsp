@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/index.jsp">
   <link rel="shortcut icon" href="./images/favicon.ico">
   <style>
-    /* 헤더 부분 */
+
 
     .header-container {
       display: flex;
