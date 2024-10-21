@@ -29,7 +29,6 @@
    	<typeAlias type="com.app.vo.CommunityCommentVO" alias="CommunityCommentVO"/>
    	<typeAlias type="com.app.vo.CommunityPostVO" alias="CommunityPostVO"/>
    	<typeAlias type="com.app.vo.HealthplusCommunityPostVO" alias="HealthplusCommunityPostVO"/>
-   	<typeAlias type="com.app.vo.HealthplusCommunityEventVO" alias="HealthplusCommunityEventVO"/>
    </typeAliases>
    
    <environments default="oracle">
