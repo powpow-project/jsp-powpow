@@ -3,6 +3,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cart">
+	<insert id="insertCart" parameterType="com.app.vo.CartVO">
+		INSERT INTO TBL_CART (ID, MEMBER_ID, PRODUCT_ID, ORDER_ID)
+        VALUES(CART_SEQ.NEXTVAL #{id}, #{memberId}, #{productId}, #{orderId})
+</insert>
+
 	
 	
 </mapper>
