@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myhome no-pet</title>
+    <title>마이홈 반려종류</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -228,8 +228,6 @@
         justify-content: space-between;
         width: 1200px;
         margin: 0 auto;
-        border-top: 1px solid #E5E5E5;
-        border-bottom: 1px solid #E5E5E5;
         padding: 20px 0;
     }
 
@@ -386,7 +384,7 @@
                         <div class="icons">
                             <a href="#"><img src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a>
                             <a href="#"><img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
-                            <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
+                            <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
                         </div>
                         <div class="sector"></div>
                         <div class="login"><a href="#">로그인</a></div>
@@ -452,8 +450,6 @@
                     <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
                     <li>일요일: 휴무</li>
                 </ul>
-                <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-                <button class="email-button">이메일 문의</button>
             </div>
 
             <div class="footer-section">
