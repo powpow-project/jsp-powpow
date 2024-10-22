@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myhome setpassword</title>
+    <title>마이홈 배송상태</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -556,7 +556,7 @@
 
     .coupon-container {
       height: 500px;
-      overflow: scroll;
+      overflow-y: scroll;
       margin-top: 20px;
     }
 
@@ -721,7 +721,7 @@
                 </div>
                 <div class="coupon">
                   <p>추가된 쿠폰명</p>
-                  <p type="text">C유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                  <p type="text">유효기간 : 2024-10-04 ~ 10-30 까지</p>
                 </div>
                 <div class="coupon">
                   <p>추가된 쿠폰명</p>
@@ -824,6 +824,10 @@
     const openButton = document.getElementById('openModalButton');
     const closeButton = document.getElementById('closeModalButton');
 
+    
+    // 초기 상태를 숨김으로 설정
+	modal.style.display = "none"; // Hide the modal initially
+	
     // When the user clicks the button, open the modal
     openButton.onclick = function () {
         modal.style.display = "flex"; // Show the modal

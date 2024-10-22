@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myhome no-pet</title>
+    <title>마이홈 반려동물</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -301,8 +301,6 @@
         justify-content: space-between;
         width: 1200px;
         margin: 0 auto;
-        border-top: 1px solid #E5E5E5;
-        border-bottom: 1px solid #E5E5E5;
         padding: 20px 0;
     }
 
@@ -504,7 +502,7 @@
             </div>
         </div>
     </div>
-    <a href="/myhome/pet-kind.html"><button id="submit-button">+추가 등록하기</button></a>
+    <a href="./pet-kind.jsp"><button id="submit-button">+추가 등록하기</button></a>
     <div id="animals">
         <div id="mydog">
             <div class="card">
@@ -550,8 +548,6 @@
                     <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
                     <li>일요일: 휴무</li>
                 </ul>
-                <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-                <button class="email-button">이메일 문의</button>
             </div>
 
             <div class="footer-section">
