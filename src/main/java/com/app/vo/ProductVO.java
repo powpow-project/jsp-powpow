@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ProductVO {
 	private Long id;
-	private Long productCategoryId;
+	private String productCategoryName;
 	private Long sellerId;
 	private String productName;
 	private int productPrice;
@@ -29,12 +29,12 @@ public class ProductVO {
 		this.id = id;
 	}
 
-	public Long getProductCategoryId() {
-		return productCategoryId;
+	public String getProductCategoryName() {
+		return productCategoryName;
 	}
 
-	public void setProductCategoryId(Long productCategoryId) {
-		this.productCategoryId = productCategoryId;
+	public void setProductCategoryName(String productCategoryName) {
+		this.productCategoryName = productCategoryName;
 	}
 
 	public Long getSellerId() {
@@ -143,7 +143,7 @@ public class ProductVO {
 
 	@Override
 	public String toString() {
-		return "ProductVO [id=" + id + ", productCategoryId=" + productCategoryId + ", sellerId=" + sellerId
+		return "ProductVO [id=" + id + ", productCategoryName=" + productCategoryName + ", sellerId=" + sellerId
 				+ ", productName=" + productName + ", productPrice=" + productPrice + ", productImage=" + productImage
 				+ ", productCode=" + productCode + ", productDate=" + productDate + ", productStock=" + productStock
 				+ ", productType=" + productType + ", productEditDate=" + productEditDate + ", productDetail="
@@ -167,6 +167,8 @@ public class ProductVO {
 		ProductVO other = (ProductVO) obj;
 		return Objects.equals(id, other.id);
 	}
+	
+	
 	
 	
 	

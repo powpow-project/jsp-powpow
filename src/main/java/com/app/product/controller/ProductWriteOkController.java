@@ -13,7 +13,6 @@ import com.app.Result;
 import com.app.dao.ProductDAO;
 import com.app.dao.SellerDAO;
 import com.app.vo.ProductVO;
-import com.app.vo.SellerVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -25,18 +24,28 @@ public class ProductWriteOkController implements Action {
 		ProductVO productVO = new ProductVO();
 		ProductDAO productDAO = new ProductDAO();
 		SellerDAO sellerDAO = new SellerDAO();
-		String directory =req.getServletContext().getRealPath("/assets/images");
-		
-		System.out.println(directory);
+		String directory =req.getServletContext().getRealPath("/assets/images/product");
 		int sizeLimit = 20*500*500; // 100mb
+		String productCode = String.valueOf(productVO.getId()) + (int) (Math.random() * 9000) + 1000;
+		
+		
 		HttpSession session = req.getSession();
 		
 //		String sellerEmail = (String)session.getAttribute("sellerEmail");
 		String sellerEmail = "abc123";
 		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
+
+		
+		productVO.setSellerId(sellerId);
+		productVO.setProductName(req.getParameter("productName"));
+		productVO.setProductPrice(20000);
+		productVO.setProductStock(20000);
+		productVO.setProductType(req.getParameter("productType"));
+		productVO.setProductDetail(req.getParameter("productDetail"));
+		productVO.setProductCategoryName(req.getParameter("productCategoryName"));
+		productVO.setProductCode(productCode);
 		
 		
-		String productCode = String.valueOf(productVO.getId()) + (int) (Math.random() * 9000) + 1000;
 		// 디렉토리가 존재하지 않으면 생성
 		File dir = new File(directory);
 		if (!dir.exists()) {
@@ -56,25 +65,23 @@ public class ProductWriteOkController implements Action {
 			
 			// 파일이 성공적으로 업로드되었는지 확인
 			if (mainImage != null) {
-				System.out.println("파일 제목: " + title);
-				System.out.println("파일이 저장된 경로: " + mainImage);
 				productVO.setProductImage(mainImage);
-				productVO.setProductImage(fileName2);
-				productVO.setProductImage(fileName3);
-				productVO.setProductImage(fileName4);
+				productVO.setProductSubImage1(fileName2);
+				productVO.setProductSubImage2(fileName3);
+				productVO.setProductSubImage3(fileName4);
+				System.out.println(mainImage);
+				System.out.println(fileName2);
+				System.out.println(fileName3);
+				System.out.println(fileName4);
+				
 			} else {
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
 		}
-		productVO.setSellerId(sellerId);
-		productVO.setProductCategoryId(Long.parseLong(req.getParameter("productCategoryId")));
-		productVO.setProductName(req.getParameter("productName"));
-		productVO.setProductPrice(Integer.parseInt(req.getParameter("productPrice")));
-		productVO.setProductStock(Integer.parseInt(req.getParameter("productStock")));
-		productVO.setProductType(req.getParameter("productType"));
-		productVO.setProductDate(req.getParameter("productDate"));
-		productVO.setProductCode(productCode);
+		
+		System.out.println(productVO);
 		
 		productDAO.insert(productVO);
 		

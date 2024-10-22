@@ -10,7 +10,7 @@
 <title>상품관리</title>
 </head>
 <body>
-    <form action="product-write-ok.product" method="post" id="frame">
+    <form action="product-write-ok.product" method="post" id="frame" enctype="multipart/form-data">
       <div class="menu-wrap">
         <img src="../assets/images/product/menu.png" alt="메뉴">
         <span class="h4">상품관리</span>
@@ -40,11 +40,11 @@
               </div>
                <div class="list-wrap">
                	<p class="h6">대분류</p>
-                <select name="productCategory">
+                <select name="productCategoryName">
                     <option value="강아지">강아지</option>
                     <option value="고양이">고양이</option>
                     <option value="새">새</option>
-                    <option value="물고기 ">물고기 </option>
+                    <option value="물고기">물고기 </option>
                   </select>
                  </div>
                <div class="list-wrap">
