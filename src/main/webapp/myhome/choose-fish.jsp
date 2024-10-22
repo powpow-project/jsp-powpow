@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myhome no-pet</title>
+    <title>마이홈 반려어추가</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -266,8 +266,8 @@
         padding-top: 30px;
     }
 
-    .input-wrap {
-        margin-top: 25px;
+     .input-wrap {
+        margin-top: 30px;
         margin-left: 58px;
     }
 
@@ -335,8 +335,6 @@
         justify-content: space-between;
         width: 1200px;
         margin: 0 auto;
-        border-top: 1px solid #E5E5E5;
-        border-bottom: 1px solid #E5E5E5;
         padding: 20px 0;
     }
 
@@ -525,24 +523,22 @@
                             <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
-
                         <ul>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                         </ul>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <button id="submit-button">완료</button>
+     <a href="./pet.jsp"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
     <div id="mydog">
         <div class="card">
             <div class="profile-pic" id="profilePic">
-                <img id="profileImage" src="/myhome/images/default-fish.svg" alt="Profile Picture">
+                <img id="profileImage" src="../assets/images/myhome/default-fish.svg" alt="Profile Picture">
             </div>
             <div class="name">도리</div>
             <input type="file" id="imageUpload" accept="image/*">
@@ -573,8 +569,6 @@
                     <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
                     <li>일요일: 휴무</li>
                 </ul>
-                <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-                <button class="email-button">이메일 문의</button>
             </div>
 
             <div class="footer-section">

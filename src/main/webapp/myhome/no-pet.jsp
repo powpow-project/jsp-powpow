@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>myhome no-pet</title>
+  <title>마이홈 추가된 반려동물 없음</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -65,7 +65,6 @@
     position: absolute;
     line-height: 20px;
     margin-left: 10px;
-    /* border: 1px solid #818181; */
     background-color: #818181;
     height: 55px;
     width: 0.1px;

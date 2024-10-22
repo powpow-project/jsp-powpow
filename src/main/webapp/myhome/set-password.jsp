@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>myhome setpassword</title>
+  <title>마이홈 비밀번호 변경</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -196,6 +196,12 @@
     color: #FFC303;
     font-size: bold;
   }
+  
+  .current-category {
+      color: #ffc303;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
 
   /* contents */
@@ -221,11 +227,16 @@
     padding: 0 26px 0 26px;
   }
 
-  #password-wrap button {
+  #password-wrap a > button{
     background-color: #FFC303;
     border-radius: 20px;
     border: none;
     height: 55px;
+    width:464px;
+  }
+  
+  .current-password input{
+  	width:464px;
   }
 
   .password {
@@ -272,8 +283,6 @@
     justify-content: space-between;
     width: 1200px;
     margin: 0 auto;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
     padding: 20px 0;
   }
 
@@ -478,13 +487,13 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./profile.html" class="profile-category">프로필</a>
+      <a href="./profile.jsp" class="h4">프로필</a>
       <p>|</p>
-      <a href="./likes.html">좋아요</a>
+      <a href="./likes.jsp" class="h4">좋아요</a>
       <p>|</p>
-      <a href="./notification.html">알림설정</a>
+      <a href="./notification.jsp" class="h4">알림설정</a>
       <p>|</p>
-      <a href="./set-password.html">비밀번호 변경</a>
+      <a href="./set-password.jsp" class="current-category h4">비밀번호 변경</a>
     </span>
   </div>
 
@@ -502,7 +511,7 @@
       <p class="password-edit h6">새로운 비밀번호 확인<span class="sub-red">*</span></p>
       <input placeholder="다시 새로운 비밀번호를 입력해주세요" />
     </div>
-    <button class="h6">완료</button>
+    <a href="./password-complete.jsp"><button class="h6">완료</button></a>
   </div>
 
   <footer>
@@ -515,8 +524,6 @@
           <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
           <li>일요일: 휴무</li>
         </ul>
-        <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-        <button class="email-button">이메일 문의</button>
       </div>
 
       <div class="footer-section">
