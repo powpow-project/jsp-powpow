@@ -14,6 +14,7 @@
       <div class="menu-wrap">
         <img src="../assets/images/product/menu.png" alt="메뉴">
         <span class="h4">상품관리</span>
+        
       </div>
       <div class="division-line"></div>
 
@@ -37,6 +38,15 @@
                 <p class="h6">상품재고</p>
                 <input type="text" name="productStock" placeholder="개" />
               </div>
+               <div class="list-wrap">
+               	<p class="h6">대분류</p>
+                <select name="productCategory">
+                    <option value="강아지">강아지</option>
+                    <option value="고양이">고양이</option>
+                    <option value="새">새</option>
+                    <option value="물고기 ">물고기 </option>
+                  </select>
+                 </div>
                <div class="list-wrap">
                	<p class="h6">분류</p>
                 <select name="productType">
@@ -193,6 +203,6 @@
       </div>
     </form>
 </body>
-<script>
+<script src="../assets/js/product/product-list.js">
 </script>
 </html>

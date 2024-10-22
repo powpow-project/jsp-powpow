@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="assets/css/product-write.css">
-<link rel="stylesheet" href="assets/css/index.css">
-<link rel="icon" href="assets/images/favicon.ico">
+<link rel="stylesheet" href="../assets/css/product/product-write.css">
+<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="icon" href="../assets/images/favicon.ico">
 <title>상품관리</title>
 </head>
 <body>
 	<form action="product-update-ok.product" method="post" id="frame">
 		<div class="menu-wrap">
-			<img src="assets/images/menu.png" alt="메뉴"> <span class="h4">상품관리</span>
+			<img src="../assets/images/product/menu.png" alt="메뉴"> <span class="h4">상품관리</span>
 		</div>
 		<div class="division-line"></div>
 
@@ -48,8 +48,13 @@
 				</div>
 				<div class="list-wrap">
 					<p class="h6">상품간략설명</p>
-					<textarea type="text" name="productExplain" class="description"
-						placeholder="내용을 설명해주세요."></textarea>
+					<textarea 
+					type="text" 
+					name="productExplain" 
+					class="description"
+					placeholder="내용을 설명해주세요."
+					value="${param.productDetail}"
+					 ></textarea>
 				</div>
 			</div>
 			<div class="line">
@@ -134,7 +139,7 @@
 						<p class="h6">메인 이미지</p>
 						<label for="main">
 							<div class="main-image">
-								<img src="assets/images/plus.png" alt="#" />
+								<img src="../assets/images/product/plus.png" alt="#" />
 							</div>
 						</label> <input type="file" id="main" style="display: none" name="main" />
 						<h6 class="h7">*등록 이미지 5M 이하/ jpg, png, git</h6>
@@ -144,7 +149,7 @@
 							<p class="h6">서브이미지1</p>
 							<label for="sub1">
 								<div class="sub-image">
-									<img src="assets/images/plus.png" alt="#" />
+									<img src="../assets/images/product/plus.png" alt="#" />
 								</div>
 							</label> <input type="file" id="sub1" style="display: none" name="sub" />
 						</div>
@@ -152,7 +157,7 @@
 							<p class="h6">서브이미지2</p>
 							<label for="sub2">
 								<div class="sub-image">
-									<img src="assets/images/plus.png" alt="#" />
+									<img src="../assets/images/product/plus.png" alt="#" />
 								</div>
 							</label> <input type="file" id="sub2" style="display: none" name="sub" />
 						</div>
@@ -160,7 +165,7 @@
 							<p class="h6">서브이미지3</p>
 							<label for="sub3">
 								<div class="sub-image">
-									<img src="assets/images/plus.png" alt="#" />
+									<img src="../assets/images/product/plus.png" alt="#" />
 								</div>
 							</label> <input type="file" id="sub3" style="display: none" name="sub" />
 						</div>

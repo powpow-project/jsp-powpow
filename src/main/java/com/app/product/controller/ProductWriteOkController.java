@@ -6,11 +6,14 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.ProductDAO;
+import com.app.dao.SellerDAO;
 import com.app.vo.ProductVO;
+import com.app.vo.SellerVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -21,9 +24,18 @@ public class ProductWriteOkController implements Action {
 		Result result = new Result();
 		ProductVO productVO = new ProductVO();
 		ProductDAO productDAO = new ProductDAO();
-		String directory = getServletContext().getRealPath("/assets/images");
+		SellerDAO sellerDAO = new SellerDAO();
+		String directory =req.getServletContext().getRealPath("/assets/images");
+		
+		System.out.println(directory);
 		int sizeLimit = 20*500*500; // 100mb
-
+		HttpSession session = req.getSession();
+		
+//		String sellerEmail = (String)session.getAttribute("sellerEmail");
+		String sellerEmail = "abc123";
+		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
+		
+		
 		String productCode = String.valueOf(productVO.getId()) + (int) (Math.random() * 9000) + 1000;
 		// 디렉토리가 존재하지 않으면 생성
 		File dir = new File(directory);
@@ -46,23 +58,26 @@ public class ProductWriteOkController implements Action {
 			if (mainImage != null) {
 				System.out.println("파일 제목: " + title);
 				System.out.println("파일이 저장된 경로: " + mainImage);
+				productVO.setProductImage(mainImage);
+				productVO.setProductImage(fileName2);
+				productVO.setProductImage(fileName3);
+				productVO.setProductImage(fileName4);
 			} else {
-				
 			}
 		} catch (Exception e) {
 			e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
 		}
-		
-		
+		productVO.setSellerId(sellerId);
+		productVO.setProductCategoryId(Long.parseLong(req.getParameter("productCategoryId")));
 		productVO.setProductName(req.getParameter("productName"));
 		productVO.setProductPrice(Integer.parseInt(req.getParameter("productPrice")));
 		productVO.setProductStock(Integer.parseInt(req.getParameter("productStock")));
-		productVO.setProductImage(mainImage);
 		productVO.setProductType(req.getParameter("productType"));
 		productVO.setProductDate(req.getParameter("productDate"));
 		productVO.setProductCode(productCode);
-
+		
 		productDAO.insert(productVO);
+		
 		
 		result.setRedirect(true);
 		result.setPath(req.getContextPath() + "/product-list.product");

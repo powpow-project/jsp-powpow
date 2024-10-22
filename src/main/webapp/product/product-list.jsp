@@ -97,11 +97,12 @@
         <tr>
           <td>${status.index + 1}</td>  <!-- 행 번호 출력 -->
           <td>
-              <div class="image"><img src="${product.productImage}" alt="이미지"></div>
+              <div class="image"><img src="../assets/images/product${product.productImage}" alt="이미지"></div>
           </td>
           <td><c:out value="${product.productName}" /></td>
           <td><c:out value="${product.productPrice}원" /></td>
           <td><c:out value="${product.productType}" /></td>
+          <td><c:out value="판매중 or 상태" /></td>
           <td><c:out value="${product.productStock}" /></td>
           <td><c:out value="${product.productDate}" /></td>
           <td>

@@ -23,6 +23,8 @@ public class ProductUpdateOkController implements Action {
 		productVO.setProductName(req.getParameter("productName"));
 		productVO.setProductPrice(Integer.parseInt(req.getParameter("productPrice")));
 		productVO.setProductStock(Integer.parseInt(req.getParameter("productStock")));
+		productVO.setProductDetail(req.getParameter("productDetail"));
+		productVO.setProductEditDate("productEditDate");
 		
 		productDAO.update(productVO);
 		

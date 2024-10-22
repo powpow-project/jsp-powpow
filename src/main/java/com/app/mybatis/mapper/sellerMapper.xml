@@ -4,5 +4,11 @@
 
 <mapper namespace="seller">
 	
+	<select id="selectBySellerEmail" resultType="SellerVO">
+		SELECT ID, BUSINESS_ID, ADMIN_ID, SELLER_EMAIL, SELLER_PASSWORD,
+		 SELLER_NAME, SELLER_PHONE, SELLER_SMS, SELLER_EMAILCHECK
+		FROM TBL_SELLER
+		WHERE SELLER_EMAIL = #{sellerEmail}
+	</select>
 	
 </mapper>
