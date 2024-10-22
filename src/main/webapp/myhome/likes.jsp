@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>myhome likes</title>
+  <title>마이홈 좋아요</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -210,7 +210,7 @@
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 #likes img{
@@ -253,8 +253,6 @@
     justify-content: space-between;
     width: 1200px;
     margin: 0 auto;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
     padding: 20px 0;
   }
 
@@ -459,32 +457,32 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="#" class="h4">프로필</a>
+      <a href="./profile.jsp" class="h4">프로필</a>
       <p>|</p>
-      <a href="#" class="current-category h4">좋아요</a>
+      <a href="./likes.jsp" class="current-category h4">좋아요</a>
       <p>|</p>
-      <a href="#" class="h4">알림설정</a>
+      <a href="./notification.jsp" class="h4">알림설정</a>
       <p>|</p>
-      <a href="#" class="h4">비밀번호 변경</a>
-      </ul>
+      <a href="./set-password.jsp" class="h4">비밀번호 변경</a>
+      </span>
   </div>
   <div id="likes">
     <div class="likes-shopping h4">
         <span>쇼핑</span>
         <div class="likesimage">
-            <a href="#"><img src="/myhome/images/shoppinglike1.png" alt="쇼핑좋아요"></a>
-            <a href="#"><img src="/myhome/images/shoppinglike2.png" alt="쇼핑좋아요"></a>
-            <a href="#"><img src="/myhome/images/shoppinglike3.png" alt="쇼핑좋아요"></a>
-            <a href="#"><img src="/myhome/images/shoppinglike4.png" alt="쇼핑좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/shoppinglike1.png" alt="쇼핑좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/shoppinglike2.png" alt="쇼핑좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/shoppinglike3.png" alt="쇼핑좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/shoppinglike4.png" alt="쇼핑좋아요"></a>
         </div>
     </div>
     <div class="likes-community h4">
         <span>커뮤니티</span>
         <div class="likesimage">
-            <a href="#"><img src="/myhome/images/communitylike1.png" alt="커뮤좋아요"></a>
-            <a href="#"><img src="/myhome/images/communitylike2.png" alt="커뮤좋아요"></a>
-            <a href="#"><img src="/myhome/images/communitylike3.png" alt="커뮤좋아요"></a>
-            <a href="#"><img src="/myhome/images/communitylike4.png" alt="커뮤좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/communitylike1.png" alt="커뮤좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/communitylike2.png" alt="커뮤좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/communitylike3.png" alt="커뮤좋아요"></a>
+            <a href="#"><img src="../assets/images/myhome/communitylike4.png" alt="커뮤좋아요"></a>
         </div>
     </div>
   </div>
@@ -499,8 +497,6 @@
           <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
           <li>일요일: 휴무</li>
         </ul>
-        <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-        <button class="email-button">이메일 문의</button>
       </div>
 
       <div class="footer-section">

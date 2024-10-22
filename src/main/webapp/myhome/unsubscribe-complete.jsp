@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입 완료</title>
+  <title>탈퇴 완료</title>
   <link rel="stylesheet" href="./css/leave-complete.css">
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
@@ -87,17 +87,17 @@
 
   <div class="completion-main">
     <div class="logo-box">
-      <a href="http://127.0.0.1:5500/powpow-login/main.html">
-        <img id="logo" src="./images/logo.png" alt="로고" />
+      <a href="../login/main.jsp">
+        <img id="logo" src="../assets/images/myhome/logo.png" alt="로고" />
       </a>
     </div>
 
       <div class="box">
-        <img  id="check" src="./images/check-complete.svg" alt="체크">
+        <img  id="check" src="../assets/images/myhome/check-complete.svg" alt="체크">
       
         <p class="text">회원 탈퇴가 정상적으로 처리 되었습니다</p>
         <p  class="text1">웹사이트 회원탈퇴 신청이 완료되었습니다</p>
-        <button class="next-button">홈 바로가기</button>
+        <a href="../main.jsp"><button class="next-button">홈 바로가기</button></a>
       </div>
 
   </div>

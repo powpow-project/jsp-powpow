@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>myhome notification</title>
+  <title>마이홈 알림설정</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -367,8 +367,6 @@
     justify-content: space-between;
     width: 1200px;
     margin: 0 auto;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
     padding: 20px 0;
   }
 
@@ -575,11 +573,12 @@
     <span class="sub-sub">
       <a href="./profile.jsp" class="h4">프로필</a>
       <p>|</p>
-      <a href="/myhome/likes.html" class="h4">좋아요</a>
+      <a href="./likes.jsp" class="h4">좋아요</a>
       <p>|</p>
-      <a href="/myhome/notification.html" class="current-category h4">알림설정</a>
+      <a href="./notification.jsp" class="current-category h4">알림설정</a>
       <p>|</p>
-      <a href="/myhome/set-password.html" class="h4">비밀번호 변경</a>
+      <a href="./set-password.jsp" class="h4">비밀번호 변경</a>
+      </span>
   </div>
   <div id="notification">
     <span class="not1">이벤트 및 혜택 알림</span>
@@ -603,7 +602,6 @@
     <script src="script.js"></script>
     <span class="agree-marketing">*알림 수신 동의와 함께 개인정보 마케팅 활용에 동의하시게 됩니다.</span>
   </div>
-  </div>
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -614,8 +612,6 @@
           <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
           <li>일요일: 휴무</li>
         </ul>
-        <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-        <button class="email-button">이메일 문의</button>
       </div>
 
       <div class="footer-section">
