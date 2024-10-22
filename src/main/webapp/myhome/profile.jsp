@@ -391,6 +391,20 @@
       margin: 0 auto;
       padding-top: 5px;
     }
+    
+    .switchto1, .switchto2 {
+    background-color: #ffffff; /* Default background color */
+    color: black; /* Default text color */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.switchto1.active, .switchto2.active {
+    background-color: #113f8a; /* Active background color */
+    color: white; /* Active text color */
+    border: none;
+}
 
     .edit-info {
       display: flex;
@@ -504,9 +518,9 @@
       margin-bottom: 30px;
       margin-right: 10px;
       border-radius: 20px;
-      border: none;
-      background-color: #113f8a;
-      color: #ffffff;
+      border: solid 1px #828282;
+      background-color: #ffffff;
+      color: #131313;
       width: 200px;
       height: 44px;
     }
@@ -515,6 +529,12 @@
       height: 500px;
       overflow-y: scroll;
       margin-top: 20px;
+    }
+
+    .coupon-container2 {
+      height: 500px;
+      overflow-y: scroll;
+      margin-top: 70px;
     }
 
     .coupon:nth-child(1){
@@ -790,6 +810,7 @@
       <a href="./notification.jsp" class="h4">알림설정</a>
       <p>|</p>
       <a href="./set-password.jsp" class="h4">비밀번호 변경</a>
+      </span>
   </div>
   <div id="page-content">
     <button onClick="alert('수정이 완료되었습니다.')" class="complete">완료</button>
@@ -837,7 +858,7 @@
               </div>
               </div>
               <div class="main-content">
-              	 <div class="coupon-container">
+              	 <div class="coupon-container2">
                 <div class="coupon">
                   <p>사용된 쿠폰명</p>
                   <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
@@ -847,11 +868,11 @@
                   <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
                 </div>
                 <div class="coupon">
-                  <p> 쿠폰명</p>
+                  <p>사용된 쿠폰명</p>
                   <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
                 </div>
                 <div class="coupon">
-                  <p> 쿠폰명</p>
+                  <p>사용된 쿠폰명</p>
                   <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
                 </div>
               </div>
@@ -1022,24 +1043,25 @@ window.onclick = function (event) {
 const switch1 = document.querySelector(".switchto1");
 const switch2 = document.querySelector(".switchto2");
 const mainSections = document.querySelectorAll(".main-content > div"); // 모든 main-content div 선택
-const buttons = dicument.querySelectorAll(".switchto")
 
-//초기 상태 설정
+// 초기 상태 설정
 mainSections[0].style.display = "block"; // 쿠폰함 보이기
 mainSections[1].style.display = "none"; // 사용내역 숨기기
+switch1.classList.add('active'); // 초기 상태에서 switch1 활성화
 
 switch1.addEventListener("click", () => {
    mainSections[0].style.display = "block"; // 쿠폰함 보이기
    mainSections[1].style.display = "none"; // 사용내역 숨기기
+   switch1.classList.add('active'); // switch1 활성화
+   switch2.classList.remove('active'); // switch2 비활성화
 })
 
 switch2.addEventListener("click", () => {
    mainSections[0].style.display = "none"; // 쿠폰함 숨기기
    mainSections[1].style.display = "block"; // 사용내역 보이기
+   switch2.classList.add('active'); // switch2 활성화
+   switch1.classList.remove('active'); // switch1 비활성화
 })
-
-buttons.setAttribute('class', )
-  
   addbutton.onclick = function () {
     modal.style.display = "File";
   }
