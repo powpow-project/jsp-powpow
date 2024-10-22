@@ -4,18 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-  <link rel="stylesheet" href="assets/css/product-write.css">
+  <link rel="stylesheet" href="../assets/css/product/product-write.css">
   <link rel="stylesheet" href="assets/css/index.css">
-  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="icon" href="../assets/images/favicon.ico">
 <title>상품관리</title>
 </head>
 <body>
     <form action="product-write-ok.product" method="post" id="frame">
       <div class="menu-wrap">
-        <img src="assets/images/menu.png" alt="메뉴">
+        <img src="../assets/images/product/menu.png" alt="메뉴">
         <span class="h4">상품관리</span>
+        
       </div>
       <div class="division-line"></div>
+
   
       <div class="title">
         <h1 class="h1">신규 상품 등록</h1>
@@ -37,6 +39,15 @@
                 <input type="text" name="productStock" placeholder="개" />
               </div>
                <div class="list-wrap">
+               	<p class="h6">대분류</p>
+                <select name="productCategory">
+                    <option value="강아지">강아지</option>
+                    <option value="고양이">고양이</option>
+                    <option value="새">새</option>
+                    <option value="물고기 ">물고기 </option>
+                  </select>
+                 </div>
+               <div class="list-wrap">
                	<p class="h6">분류</p>
                 <select name="productType">
                     <option value="사료/간식">사료/간식</option>
@@ -49,7 +60,7 @@
                 <p class="h6">상품간략설명</p>
                 <textarea
                   type="text"
-                  name="productExplain"
+                  name="productDetail"
                   class="description"
                   placeholder="내용을 설명해주세요."
                 ></textarea>
@@ -132,7 +143,7 @@
                   <h6 class="explain h7">
                     * 판매자가 직접 발송하는 일반택배 택배사를 선택하시면 됩니다.<br />
                     *’자체배송’ 선택시, 구매자에게는 배송비 ‘무료’로 안내됩니다.<br />
-                      ‘자체배송’ 설정 후 구매자에게 별도로 배송비를 요구하는 행위는 자제 부탁드립니다.
+                     ‘자체배송’ 설정 후 구매자에게 별도로 배송비를 요구하는 행위는 자제 부탁드립니다.
                   </h6>
                 </div>
               </div>
@@ -147,10 +158,10 @@
                   <p class="h6">메인 이미지</p>
                   <label for="main">
                     <div class="main-image">
-                      <img src="assets/images/plus.png" alt="#" />
+                      <img src="../assets/images/product/plus.png" alt="#" />
                     </div>
                   </label>
-                  <input type="file" id="main" style="display: none" name="main" />
+                  <input type="file" id="main" style="display: none" name="productImage" />
                   <h6 class="h7">*등록 이미지 5M 이하/ jpg, png, git</h6>
                 </div>
                 <div class="sub-wrap">
@@ -158,43 +169,40 @@
                     <p class="h6">서브이미지1</p>
                     <label for="sub1">
                       <div  class="sub-image">
-                        <img src="assets/images/plus.png" alt="#" />
+                        <img src="../assets/images/product/plus.png" alt="#" />
                       </div>
                     </label>
-                    <input type="file" id="sub1" style="display: none" name="sub" />
+                    <input type="file" id="sub1" style="display: none" name="productSubImage1" />
                   </div>
                   <div class="sub">
                     <p class="h6">서브이미지2</p>
                     <label for="sub2">
                       <div class="sub-image">
-                        <img src="assets/images/plus.png" alt="#" />
+                        <img src="../assets/images/product/plus.png" alt="#" />
                       </div>
                     </label>
-                    <input type="file" id="sub2" style="display: none" name="sub" />
+                    <input type="file" id="sub2" style="display: none" name="productSubImage2" />
                   </div>
                   <div class="sub">
                     <p class="h6">서브이미지3</p>
                     <label for="sub3">
                       <div class="sub-image">
-                        <img src="assets/images/plus.png" alt="#" />
+                        <img src="../assets/images/product/plus.png" alt="#" />
                       </div>
                     </label>
-                    <input type="file" id="sub3" style="display: none" name="sub" />
+                    <input type="file" id="sub3" style="display: none" name="productSubImage3" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="button-wrap">
               <button class="register-btn h6" >상품 등록</button>
-              <button type="button" class="cancel-btn h6" onclick="goToList();">취소</button>
+              <button type="button" class="cancel-btn h6" onclick="location.href='product-list.jsp';">취소</button>
             </div>
         </div>
       </div>
     </form>
 </body>
-<script>
-	function goToList(){
-		window.location.href = "product-list.jsp"
-	}
+<script src="../assets/js/product/product-list.js">
 </script>
 </html>

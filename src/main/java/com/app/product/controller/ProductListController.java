@@ -1,7 +1,7 @@
 package com.app.product.controller;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -19,16 +19,14 @@ public class ProductListController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		ProductDAO productDAO = new ProductDAO();
-		
+
+        
+	
 	    List<ProductVO> products = productDAO.selectAll();
 	    
-	    if (products != null) {
-	        req.setAttribute("products", products);
-	    } else {
-	        req.setAttribute("products", new ArrayList<ProductVO>());
-	    }
+	    req.setAttribute("products", products);
 
-	    result.setPath("product-list.jsp");
+	    result.setPath("../product/product-list.jsp");
 		
 		return result;
 	}

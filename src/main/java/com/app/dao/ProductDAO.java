@@ -16,13 +16,9 @@ public class ProductDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-//	상품추가
+//	상품조회 리스트에 뿌릴 상품추가
 	public void insert(ProductVO productVO) {
 		sqlSession.insert("product.insert", productVO);
-	}
-//	상품조회 리스트에 뿌릴 상품추가
-	public void insertToList(ProductVO productVO) {
-		sqlSession.insert("product.insertToList", productVO);
 	}
 	
 //	전체상품조회

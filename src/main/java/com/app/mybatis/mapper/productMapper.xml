@@ -4,34 +4,22 @@
 <mapper namespace="product">
 	<insert id="insert" parameterType="ProductVO">
 		INSERT INTO TBL_PRODUCT(ID, PRODUCT_CATEGORY_ID, SELLER_ID, PRODUCT_NAME,
-		 PRODUCT_PRICE, PRODUCT_IMAGE, PRODUCT_CODE, PORDUCT_BRAND, PRODUCT_DATE, PRODUCT_STOCK, PRODUCT_TYPE,
+		 PRODUCT_PRICE, PRODUCT_IMAGE, PRODUCT_CODE, PRODUCT_DATE, PRODUCT_STOCK, PRODUCT_TYPE,
 		 PRODUCT_EDIT_DATE, PRODUCT_DETAIL, PRODUCT_SUB_IMAGE1, PRODUCT_SUB_IMAGE2, PRODUCT_SUB_IMAGE3)
 		VALUES(PRODUCT_SEQ.NEXTVAL, #{productCategoryId}, #{sellerId}, #{productName}, #{productPrice},
-		 #{productImage}, #{productCode}, #{productBrand}, #{productDate}, #{productStock}, #{productEditDate},
+		 #{productImage}, #{productCode}, #{productDate}, #{productStock}, #{productEditDate},
 		 #{productDetail}, #{productSubImage1}, #{productSubImage2}, #{productSubImage3})
 	</insert>
-	
-	<insert id="insertToList">
-		INSERT INTO TBL_PRODUCT(ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STOCK ,PRODUCT_CODE)
-		VALUES(PRODUCT_SEQ.NEXTVAL, #{productName}, #{productPrice}, #{productStock}, #{productCode})
-	</insert>
+
 	
 	<select id="selectAll" resultType="ProductVO">
 		SELECT ID, PRODUCT_CATEGORY_ID, SELLER_ID, PRODUCT_NAME,
-		 PRODUCT_PRICE, PRODUCT_IMAGE, PRODUCT_CODE, PORDUCT_BRAND, PRODUCT_DATE, PRODUCT_STOCK, PRODUCT_TYPE,
+		 PRODUCT_PRICE, PRODUCT_IMAGE, PRODUCT_CODE, PRODUCT_DATE, PRODUCT_STOCK, PRODUCT_TYPE,
 		 PRODUCT_EDIT_DATE, PRODUCT_DETAIL, PRODUCT_SUB_IMAGE1, PRODUCT_SUB_IMAGE2, PRODUCT_SUB_IMAGE3
 		FROM TBL_PRODUCT
 		ORDER BY ID ASC
 	</select>
-	
-	<select id="select" parameterType="Long" resultType="ProductVO">
-		SELECT ID, PRODUCT_CATEGORY_ID, SELLER_ID, PRODUCT_NAME,
-		 PRODUCT_PRICE, PRODUCT_IMAGE, PRODUCT_CODE, PORDUCT_BRAND, PRODUCT_DATE, PRODUCT_STOCK, PRODUCT_TYPE,
-		 PRODUCT_EDIT_DATE, PRODUCT_DETAIL, PRODUCT_SUB_IMAGE1, PRODUCT_SUB_IMAGE2, PRODUCT_SUB_IMAGE3
-		FROM TBL_PRODUCT
-		WHERE ID = #{id}
-	</select>
-	
+
 	<update id="update" parameterType="ProductVO">
 		UPDATE TBL_PRODUCT
 		SET PRODUCT_NAME = #{productName}, PRODUCT_PRICE = #{productPrice},PRODUCT_IMAGE = #{productImage},

@@ -20,35 +20,37 @@ img {
   flex-direction: column;
   width: 1440px;
   align-items: start;
-  margin: 20px 0;
   animation: lift-detail 0.1s;
+  position: absolute;
+  top: 85px;
+  left: 35px;
 }
 
-.menu-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0; 
-  margin: 0;
-  max-width: 220px;
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
 }
 
 .welcome {
-  font-size: 14px;
-  position: relative;
-  bottom: 6px;
+   font-size: 14px;
+   text-align: left;
+    vertical-align: bottom;
 }
 
 .logout {
-  font-size: 10px;
-  color: #ffc303;
-  background-color: white;
-  border: none;
-  margin-left: auto;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  bottom: 6px;
+   font-size: 10px;
+   color: #ffc303;
+   background-color: white;
+   border: none;
+   margin-left: auto;
+   font-weight: bold;
+   cursor: pointer;
+   margin-right: 24px;
+   vertical-align: bottom;
 }
 
 
@@ -109,6 +111,7 @@ ul > li > div > p {
   margin: 28px 0;
   gap: 72px;
   padding-left: 28px;
+  position : relative;
 }
 
 #frame > .menu-wrap > span {
