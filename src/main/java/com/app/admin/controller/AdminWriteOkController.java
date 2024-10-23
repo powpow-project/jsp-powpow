@@ -39,11 +39,11 @@ public class AdminWriteOkController {
 
         // 문자열을 long 타입으로 변환할 때 예외 처리 추가
         Long adminId = null;
-        Long adminNoticeNumber = null;
+        int adminNoticeNumber = 0;
 
         try {
             adminId = Long.parseLong(adminIdParam);
-            adminNoticeNumber = Long.parseLong(adminNoticeNumberParam);
+            adminNoticeNumber = Integer.parseInt(adminNoticeNumberParam);
         } catch (NumberFormatException e) {
             // 변환 실패 시 공지사항 목록으로 리다이렉트
             result.setRedirect(true);

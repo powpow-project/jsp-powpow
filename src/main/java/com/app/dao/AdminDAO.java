@@ -6,6 +6,7 @@ import com.app.vo.AdminVO;
 import com.app.vo.AdminNoticeVO;
 
 import java.util.List;
+import java.util.Optional;
 
 public class AdminDAO {
     private SqlSession sqlSession;
@@ -15,12 +16,12 @@ public class AdminDAO {
     }
 
 	//	로그인
-	public String select(AdminVO adminVO) {
+	public Optional<String> select(AdminVO adminVO) {
 		return sqlSession.selectOne("admin.loginAdmin", adminVO);
 	}
 
     // 공지사항 전체 조회
-    public List<AdminNoticeVO> selectAllAdminNotices() {
+    public List<AdminVO> selectAll() {
         return sqlSession.selectList("admin.selectAllAdminNotices");
     }
 

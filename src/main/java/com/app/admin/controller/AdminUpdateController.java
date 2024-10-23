@@ -18,9 +18,11 @@ public class AdminUpdateController implements Action {
 
         Result result = new Result();
         AdminDAO adminDAO = new AdminDAO();
+        AdminVO adminVO = new AdminVO();
         Long id = Long.parseLong(req.getParameter("adminId"));
         
-        AdminVO admin = adminDAO.select(id).orElseThrow(() -> {
+        
+        String admin = adminDAO.select(adminVO).orElseThrow(() -> {
             throw new RuntimeException();
         });
         
