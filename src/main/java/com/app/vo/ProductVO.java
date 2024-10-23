@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class ProductVO {
 	private Long id;
-	private String productCategoryName;
 	private Long sellerId;
 	private String productName;
 	private int productPrice;
@@ -13,6 +12,7 @@ public class ProductVO {
 	private String productDate;
 	private int productStock;
 	private String productType;
+	private String productCategoryName;
 	private String productEditDate;
 	private String productDetail;
 	private String productSubImage1;
@@ -27,14 +27,6 @@ public class ProductVO {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getProductCategoryName() {
-		return productCategoryName;
-	}
-
-	public void setProductCategoryName(String productCategoryName) {
-		this.productCategoryName = productCategoryName;
 	}
 
 	public Long getSellerId() {
@@ -101,6 +93,14 @@ public class ProductVO {
 		this.productType = productType;
 	}
 
+	public String getProductCategoryName() {
+		return productCategoryName;
+	}
+
+	public void setProductCategoryName(String productCategoryName) {
+		this.productCategoryName = productCategoryName;
+	}
+
 	public String getProductEditDate() {
 		return productEditDate;
 	}
@@ -143,12 +143,12 @@ public class ProductVO {
 
 	@Override
 	public String toString() {
-		return "ProductVO [id=" + id + ", productCategoryName=" + productCategoryName + ", sellerId=" + sellerId
-				+ ", productName=" + productName + ", productPrice=" + productPrice + ", productImage=" + productImage
-				+ ", productCode=" + productCode + ", productDate=" + productDate + ", productStock=" + productStock
-				+ ", productType=" + productType + ", productEditDate=" + productEditDate + ", productDetail="
-				+ productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
-				+ ", productSubImage3=" + productSubImage3 + "]";
+		return "ProductVO [id=" + id + ", sellerId=" + sellerId + ", productName=" + productName + ", productPrice="
+				+ productPrice + ", productImage=" + productImage + ", productCode=" + productCode + ", productDate="
+				+ productDate + ", productStock=" + productStock + ", productType=" + productType
+				+ ", productCategoryName=" + productCategoryName + ", productEditDate=" + productEditDate
+				+ ", productDetail=" + productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2="
+				+ productSubImage2 + ", productSubImage3=" + productSubImage3 + "]";
 	}
 
 	@Override

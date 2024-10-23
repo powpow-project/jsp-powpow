@@ -26,7 +26,7 @@ public class ProductWriteOkController implements Action {
 		SellerDAO sellerDAO = new SellerDAO();
 		String directory =req.getServletContext().getRealPath("/assets/images/product");
 		int sizeLimit = 20*500*500; // 100mb
-		String productCode = String.valueOf(productVO.getId()) + (int) (Math.random() * 9000) + 1000;
+		String productCode = String.valueOf((int)(Math.random() * 900000) + 100000);
 		
 		
 		HttpSession session = req.getSession();
@@ -36,14 +36,6 @@ public class ProductWriteOkController implements Action {
 		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
 
 		
-		productVO.setSellerId(sellerId);
-		productVO.setProductName(req.getParameter("productName"));
-		productVO.setProductPrice(20000);
-		productVO.setProductStock(20000);
-		productVO.setProductType(req.getParameter("productType"));
-		productVO.setProductDetail(req.getParameter("productDetail"));
-		productVO.setProductCategoryName(req.getParameter("productCategoryName"));
-		productVO.setProductCode(productCode);
 		
 		
 		// 디렉토리가 존재하지 않으면 생성
@@ -62,6 +54,14 @@ public class ProductWriteOkController implements Action {
 			String fileName2 = multi.getFilesystemName("productSubImage1");
 			String fileName3 = multi.getFilesystemName("productSubImage2");
 			String fileName4 = multi.getFilesystemName("productSubImage3");
+			productVO.setSellerId(sellerId);
+			productVO.setProductName(multi.getParameter("productName"));
+			productVO.setProductPrice(Integer.parseInt(multi.getParameter("productPrice")));
+			productVO.setProductStock(Integer.parseInt(multi.getParameter("productStock")));
+			productVO.setProductType(multi.getParameter("productType"));
+			productVO.setProductDetail(multi.getParameter("productDetail"));
+			productVO.setProductCategoryName(multi.getParameter("productCategoryName"));
+			productVO.setProductCode(productCode);
 			
 			// 파일이 성공적으로 업로드되었는지 확인
 			if (mainImage != null) {
@@ -69,10 +69,6 @@ public class ProductWriteOkController implements Action {
 				productVO.setProductSubImage1(fileName2);
 				productVO.setProductSubImage2(fileName3);
 				productVO.setProductSubImage3(fileName4);
-				System.out.println(mainImage);
-				System.out.println(fileName2);
-				System.out.println(fileName3);
-				System.out.println(fileName4);
 				
 			} else {
 				
@@ -81,13 +77,11 @@ public class ProductWriteOkController implements Action {
 			e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
 		}
 		
-		System.out.println(productVO);
-		
 		productDAO.insert(productVO);
 		
 		
 		result.setRedirect(true);
-		result.setPath(req.getContextPath() + "/product-list.product");
+		result.setPath("../product/product-list.product");
 		
 		return result;
 	}

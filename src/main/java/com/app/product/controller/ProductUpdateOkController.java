@@ -29,7 +29,7 @@ public class ProductUpdateOkController implements Action {
 		productDAO.update(productVO);
 		
 		result.setRedirect(true);
-		result.setPath("product-list.jsp");
+		result.setPath("../product/product-list.jsp");
 		return result;
 	}
 

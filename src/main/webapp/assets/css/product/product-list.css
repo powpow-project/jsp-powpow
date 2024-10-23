@@ -360,6 +360,11 @@ table tbody tr td .image {
   display: inline-flex;
 }
 
+table tbody tr td .image img{
+	width: 100%;
+	height: 100%;	
+}
+
 .change-buttons {
   display: flex;
   flex-direction: column;

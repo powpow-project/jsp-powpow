@@ -158,10 +158,16 @@
                   <p class="h6">메인 이미지</p>
                   <label for="main">
                     <div class="main-image">
-                      <img src="../assets/images/product/plus.png" alt="#" />
+                      <img id="main-preview" src="../assets/images/product/default-image.svg" alt="#" />
                     </div>
                   </label>
-                  <input type="file" id="main" style="display: none" name="productImage" />
+                  <input 
+	                  type="file" 
+	                  id="main" 
+	                  style="display: none" 
+	                  name="productImage" 
+	                  accept="image/*" 
+	                  />
                   <h6 class="h7">*등록 이미지 5M 이하/ jpg, png, git</h6>
                 </div>
                 <div class="sub-wrap">
@@ -169,28 +175,47 @@
                     <p class="h6">서브이미지1</p>
                     <label for="sub1">
                       <div  class="sub-image">
-                        <img src="../assets/images/product/plus.png" alt="#" />
+                        <img id="sub1-preview" src="../assets/images/product/default-image.svg" alt="#" />
                       </div>
                     </label>
-                    <input type="file" id="sub1" style="display: none" name="productSubImage1" />
+                    <input 
+	                    type="file"
+	                    id="sub1" 
+	                    style="display: none" 
+	                    name="productSubImage1" 
+	                    accept="image/*" 
+	                    />
                   </div>
                   <div class="sub">
                     <p class="h6">서브이미지2</p>
                     <label for="sub2">
                       <div class="sub-image">
-                        <img src="../assets/images/product/plus.png" alt="#" />
+                        <img id="sub2-preview" src="../assets/images/product/default-image.svg" alt="#" />
                       </div>
                     </label>
-                    <input type="file" id="sub2" style="display: none" name="productSubImage2" />
+                    <input 
+	                    type="file" 
+	                    id="sub2" 
+	                    style="display: none" 
+	                    name="productSubImage2" 
+	                    accept="image/*"
+	                    />                   
                   </div>
                   <div class="sub">
                     <p class="h6">서브이미지3</p>
                     <label for="sub3">
                       <div class="sub-image">
-                        <img src="../assets/images/product/plus.png" alt="#" />
+                        <img id="sub3-preview" src="../assets/images/product/default-image.svg" alt="#" />
                       </div>
                     </label>
-                    <input type="file" id="sub3" style="display: none" name="productSubImage3" />
+                    <input 
+	                    type="file" 
+	                    id="sub3" 
+	                    style="display: none" 
+	                    name="productSubImage3" 
+	                    accept="image/*" 
+	                    onclick="document.getElementById('sub3').click();"
+	                    />
                   </div>
                 </div>
               </div>
@@ -203,6 +228,48 @@
       </div>
     </form>
 </body>
-<script src="../assets/js/product/product-list.js">
+<script>
+	document.getElementById('main').addEventListener('change', function (event) {
+	    const file = event.target.files[0];
+	    if (file) {
+	        const reader = new FileReader();
+	        reader.onload = function (e) {
+	            document.getElementById('main-preview').src = e.target.result;
+	        };
+	        reader.readAsDataURL(file);
+	    }
+	});
+	document.getElementById('sub1').addEventListener('change', function (event) {
+	    const file = event.target.files[0];
+	    if (file) {
+	        const reader = new FileReader();
+	        reader.onload = function (e) {
+	            document.getElementById('sub1-preview').src = e.target.result;
+	        };
+	        reader.readAsDataURL(file);
+	    }
+	});
+	document.getElementById('sub2').addEventListener('change', function (event) {
+	    const file = event.target.files[0];
+	    if (file) {
+	        const reader = new FileReader();
+	        reader.onload = function (e) {
+	            document.getElementById('sub2-preview').src = e.target.result;
+	        };
+	        reader.readAsDataURL(file);
+	    }
+	});
+	document.getElementById('sub3').addEventListener('change', function (event) {
+	    const file = event.target.files[0];
+	    if (file) {
+	        const reader = new FileReader();
+	        reader.onload = function (e) {
+	            document.getElementById('sub3-preview').src = e.target.result;
+	        };
+	        reader.readAsDataURL(file);
+	    }
+	});
+	
+
 </script>
 </html>
