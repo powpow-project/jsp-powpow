@@ -26,6 +26,7 @@ public class ProductDAO {
 		return sqlSession.selectList("product.selectAll");
 	}
 	
+
 //	상품 조회
 	public Optional<ProductVO> select(Long id) {
 		return Optional.ofNullable(sqlSession.selectOne("product.select", id));
@@ -40,6 +41,7 @@ public class ProductDAO {
 	public void delete(Long id) {
 		sqlSession.delete("product.delete", id);
 	}
+	
 	
 //	재고변경
 	public void updateStock(OrderVO orderVO) {

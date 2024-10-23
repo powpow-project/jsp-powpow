@@ -15,43 +15,44 @@ import com.app.seller.controller.SellerUpdateOkController;
 import com.app.seller.controller.SellerWriteOkController;
 
 public class SellerFrontController extends HttpServlet{
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html; charset=utf-8");
-		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
-		Result result = null;
-		
-		if(target.equals("write")) {
-		     result = new Result();
-	         result.setPath("../seller/seller-write.jsp");
-		}else if(target.equals("write-ok")) {
-	         result = new SellerWriteOkController().execute(req, resp);
-		}else if(target.equals("list")) {
-			 result = new SellerListController().execute(req, resp);
-		}else if(target.equals("update")) {
-			result = new SellerUpdateController().execute(req, resp);
-		}else if(target.equals("update-ok")) {
-			result = new SellerUpdateOkController().execute(req, resp);
-		}else if(target.equals("delete-ok")) {
-			result = new SellerDeleteOkController().execute(req, resp);
-		}else {
-			result = new Result();
-			result.setPath("../not-found.jsp");
-		}
-		
-		if(result != null) {
-			if(result.isRedirect()){
-//				redirect
-				resp.sendRedirect(result.getPath());
-			}else {
-//				forward
-				req.getRequestDispatcher(result.getPath()).forward(req, resp);
-			}
-		}
-	}
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doGet(req, resp);
-	}
+   @Override
+   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      req.setCharacterEncoding("UTF-8");
+      resp.setContentType("text/html; charset=utf-8");
+      String target = req.getRequestURI().replace(req.getContextPath() +"/seller/", "").split("\\.")[0];
+      Result result = null;
+      
+      
+      if(target.equals("write")) {
+           result = new Result();
+            result.setPath("../seller/write.jsp");
+      }else if(target.equals("write-ok")) {
+            result = new SellerWriteOkController().execute(req, resp);
+      }else if(target.equals("list")) {
+          result = new SellerListController().execute(req, resp);
+      }else if(target.equals("update")) {
+         result = new SellerUpdateController().execute(req, resp);
+      }else if(target.equals("update-ok")) {
+         result = new SellerUpdateOkController().execute(req, resp);
+      }else if(target.equals("delete-ok")) {
+         result = new SellerDeleteOkController().execute(req, resp);
+      }else {
+         result = new Result();
+         result.setPath("../not-found.jsp");
+      }
+      
+      if(result != null) {
+         if(result.isRedirect()){
+//            redirect
+            resp.sendRedirect(result.getPath());
+         }else {
+//            forward
+            req.getRequestDispatcher(result.getPath()).forward(req, resp);
+         }
+      }
+   }
+   @Override
+   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      doGet(req, resp);
+   }
 }

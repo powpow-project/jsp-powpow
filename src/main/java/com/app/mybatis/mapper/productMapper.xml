@@ -11,7 +11,13 @@
 		#{productSubImage1}, #{productSubImage2}, #{productSubImage3})
 	</insert>
 
-
+	<select id="select" parameterType="Long" resultType="ProductVO">
+		SELECT ID, SELLER_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_IMAGE,
+		 PRODUCT_CODE, PRODUCT_DATE, PRODUCT_STOCK, PRODUCT_TYPE, PRODUCT_CATEGORY_NAME, 
+		 PRODUCT_EDIT_DATE, PRODUCT_DETAIL, PRODUCT_SUB_IMAGE1, PRODUCT_SUB_IMAGE2, PRODUCT_SUB_IMAGE3
+		FROM TBL_PRODUCT
+		WHERE ID = #{id}
+	</select>
 	
 	<select id="selectAll" resultType="ProductVO">
 		SELECT ID, SELLER_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_IMAGE,
