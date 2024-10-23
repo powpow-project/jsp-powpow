@@ -81,7 +81,7 @@ public class SellerWriteOkController implements Action {
       
       
       result.setRedirect(true);
-      result.setPath("../seller/seller-list.seller");
+      result.setPath("../seller/list.seller");
       
       return result;
    }
