@@ -19,37 +19,42 @@
     <div class="input">
       
 
-      <div>
-        <div class="text-box">
-          <p id="text">아이디</p>
-          <p id="text" class="red">*</p>
-        </div>
-        <div class="input-container">
-          <input class="inputbutton" type="email" name="email" placeholder="아이디(이메일)">
-          <button class="auth-button">확인</button>
-        </div>
-      </div>
+	<div>
+	    <div class="text-box">
+	        <p id="text">아이디</p>
+	        <p id="text" class="red">*</p>
+	    </div>
+	    <div class="input-container">
+	        <input class="inputbutton" type="email" id="email" name="email" placeholder="아이디(이메일)">
+	        <button class="auth-button" id="email-check">확인</button>
+	        <p class="result" id="email-result"></p>
+	    </div>
+	</div>
 
-      <div>
-        <div class="text-box">
-          <p id="text">비밀번호</p>
-          <p id="text" class="red">*</p>
-        </div>
-        <div class="input-container">
-          <input class="inputbutton" type="password" name="password" placeholder="비밀번호">
-          <div class="mark"></div>
-        </div>
-      </div>
-
-      <div>
-        <div class="text-box">
-          <p id="text">비밀번호 확인</p>
-          <p id="text" class="red">*</p>
-        </div>
-        <div class="input-container">
-          <input class="inputbutton" type="password" name="passwordConfirm" placeholder="비밀번호 확인">
-        </div>
-      </div>
+	<div>
+	    <div class="text-box">
+	        <p id="text">비밀번호</p>
+	        <p id="text" class="red">*</p>
+	    </div>
+	    <div class="input-container">
+	        <input class="inputbutton" type="password" name="password" id="password" placeholder="비밀번호">      
+	        <div class="mark"></div>
+	        <p class="result" id="password-result"></p>
+	    </div>
+	    
+	</div>
+	
+	<div>
+	    <div class="text-box">
+	        <p id="text">비밀번호 확인</p>
+	        <p id="text" class="red">*</p>
+	    </div>
+	    <div class="input-container">
+	        <input class="inputbutton" type="password" name="passwordConfirm" id="passwordConfirm" placeholder="비밀번호 확인">
+	    	<p class="result" id="passwordConfirm-result"></p>
+	    </div>
+	    
+	</div>
 
       <div>
         <div class="text-box">
@@ -57,8 +62,9 @@
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-          <input class="inputbutton" type="email" name="email" placeholder="별명">
-          <button class="auth-button">확인</button>
+          <input class="inputbutton" type="name" id="name" name="name" placeholder="별명">
+          <button class="auth-button" id="name-check">확인</button>
+          <p class="result" id="name-result"></p>
         </div>
       </div>
 
@@ -67,29 +73,30 @@
           <p id="text">휴대전화 번호</p>
           <p id="text" class="red">*</p>
         </div>
-        <div class="input-container">
-          <input class="inputbutton" type="number" name="phone" placeholder="휴대폰 번호 입력 ('-'제외 11자리 입력)">
-          <button class="auth-button">인증</button>
-        </div>
+            <input class="inputbutton" type="string" name="phone" placeholder="">
       </div>
 
 
+      <div>
       <div>
         <div class="text-box">
           <p id="text">주소</p>
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-          <input class="inputbutton" type="number" name="number" placeholder="우편번호">
-          <input class="inputbutton1" type="text" name="name" placeholder="기본주소">
-          <input class="inputbutton1" type="text" name="name" placeholder="상세주소">
-          <button class="auth-button">우편번호</button>
+          <input class="inputbutton" type="text" id="sample6_postcode" placeholder="우편번호">
+          <p id="adress-result"></p>
+          <input class="inputbutton1" type="text" id="sample6_address" placeholder="기본주소">
+          <input class="inputbutton1" type="text" id="sample6_detailAddress" placeholder="상세주소">
+          <p id="detail-adress-result"></p>
+          <button class="auth-button" type="button" onclick="sample6_execDaumPostcode()">우편번호</button>
         </div>
       </div>
 
       <div class="line"></div>
       </div>
-
+      
+      <div>
       <div class="text-box1">
         <p id="text1">약관 및 개인정보수집 동의</p>
         <p id="text1" class="red">*</p>
@@ -153,46 +160,19 @@
             <p class="text4">자세히보기</p>
           </div>
         </div>
-
-
+               
       </div>
-      <a href="http://localhost:9000/powpow/buyer-join-complete.jsp">
+       <p id="agree-result" style="color:red;"></p>
+    </div>
+     </div>
+
+
+      
+      
         <button class="login-button">회원가입</button>
-      </a>
   </div>
+  <script src="../jQuery.js"></script>
+  <script src="../assets/js/login/buyer-join.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
-<script src="../jQuery.js"></script>
-<script>
-	const mark = document.querySelector(".mark");
-	mark.addEventListener("click", () => {
-		const input = document.querySelector("input[name='password']");
-		const inputConfirm = document.querySelector("input[name='passwordConfirm']");
-		
-		if(input.type === "password"){
-			input.setAttribute("type", "text");
-			inputConfirm.setAttribute("type", "text");
-			mark.style.backgroundImage = "url('../assets/images/login/eye-on.svg')";
-		}else{
-			input.setAttribute("type", "password");
-			inputConfirm.setAttribute("type", "password");
-			mark.style.backgroundImage = "url('../assets/images/login/eye-off.svg')";
-		}
-	})
-
-    // 전체동의 로직 만들기
-    NodeList.prototype.map = Array.prototype.map;
-
-    const allagree = document.querySelector(".allagree")
-    const agree1s = document.querySelectorAll(".agree1")
-
-
-    $(".allagree").on("click", (e) => {
-      $(".agree1").prop("checked", e.target.checked);
-    })
-
-    $(".agree1").on("click", (e) => {
-      $(".allagree").prop("checked", $(".agree1").filter(":checked").length === 4);
-    })
-
-</script>
 </html>

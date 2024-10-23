@@ -56,7 +56,10 @@
   display: flex;
   flex-direction: row;
 }
-
+.active {
+    background-color: gray; /* 활성화된 버튼의 배경색 */
+    color: white;           /* 텍스트 색상 */
+}
 
 /* 구매자/판매자 박스 */
 .inputbutton1 {
@@ -70,8 +73,12 @@
   box-sizing: border-box;
   padding: 19px 26px;
   outline:none;
+}
+
+.input-box {
   margin-bottom: 15px;
 }
+
 .inputbutton1:focus {
   border: 0.5px solid transparent; /* 기존 테두리는 투명하게 */
   outline: 2px solid #828282; /* 포커스 시 outline 추가 */
