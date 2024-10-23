@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.cart.controller.CartWriteOkController;
 import com.app.product.controller.ProductDeleteOkController;
 import com.app.product.controller.ProductListController;
 import com.app.product.controller.ProductUpdateController;
@@ -36,6 +37,8 @@ public class ProductFrontController extends HttpServlet{
 			result = new ProductUpdateOkController().execute(req, resp);
 		}else if(target.equals("delete-ok")) {
 			result = new ProductDeleteOkController().execute(req, resp);
+		}else if(target.equals("cart-write-ok")) {
+			result = new CartWriteOkController().execute(req, resp);
 		}else {
 			 result = new Result();
 	    	 result.setPath("notFound.jsp");

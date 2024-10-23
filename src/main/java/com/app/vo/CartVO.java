@@ -3,12 +3,13 @@ package com.app.vo;
 import java.util.Objects;
 
 public class CartVO {
-	private Long id;
-	private Long MemberId;
-	private Long ProductId;
-	private Long OrderId;
-	
-	public CartVO() {;}
+	Long id;
+	Long memberId;
+	Long productId;
+
+	public CartVO() {
+		;
+	}
 
 	public Long getId() {
 		return id;
@@ -19,33 +20,24 @@ public class CartVO {
 	}
 
 	public Long getMemberId() {
-		return MemberId;
+		return memberId;
 	}
 
 	public void setMemberId(Long memberId) {
-		MemberId = memberId;
+		this.memberId = memberId;
 	}
 
 	public Long getProductId() {
-		return ProductId;
+		return productId;
 	}
 
 	public void setProductId(Long productId) {
-		ProductId = productId;
-	}
-
-	public Long getOrderId() {
-		return OrderId;
-	}
-
-	public void setOrderId(Long orderId) {
-		OrderId = orderId;
+		this.productId = productId;
 	}
 
 	@Override
 	public String toString() {
-		return "CartVO [id=" + id + ", MemberId=" + MemberId + ", ProductId=" + ProductId + ", OrderId=" + OrderId
-				+ "]";
+		return "CartVO [id=" + id + ", memberId=" + memberId + ", productId=" + productId + "]";
 	}
 
 	@Override
@@ -64,7 +56,5 @@ public class CartVO {
 		CartVO other = (CartVO) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
 
 }
