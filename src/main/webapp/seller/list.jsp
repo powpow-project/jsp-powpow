@@ -17,49 +17,49 @@
     <img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴">
     <span class="h4">상품관리</span>
     
-    	<div id="menu-frame">
-	    <div class="menu-header">
-	      <div class="welcome">seller님 환영합니다!</div>
-	      <button class="logout">로그아웃</button>
-	    </div>
-	    <div class="menu-form">
-	      <ul>
-	        <li>
-	          <p>상품 관리</p>
-	          <div>
-	            <p>상품 조회</p>
-	            <p>상품 등록</p>
-	            <p>상품 수정</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>주문 관리</p>
-	          <div>
-	            <p>주문조회</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>정산 관리</p>
-	          <div>
-	            <p>정산내역조회</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>판매자 관리</p>
-	          <div>
-	            <p>판매자정보 관리</p>
-	            <p>사업자정보 관리</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>매출 관리</p>
-	          <div>
-	            <p>매출 조회</p>
-	          </div>
-	        </li>
-	      </ul>
-	    </div>
-	</div>
+       <div id="menu-frame">
+       <div class="menu-header">
+         <div class="welcome">seller님 환영합니다!</div>
+         <button class="logout">로그아웃</button>
+       </div>
+       <div class="menu-form">
+         <ul>
+           <li>
+             <p>상품 관리</p>
+             <div>
+               <p>상품 조회</p>
+               <p>상품 등록</p>
+               <p>상품 수정</p>
+             </div>
+           </li>
+           <li>
+             <p>주문 관리</p>
+             <div>
+               <p>주문조회</p>
+             </div>
+           </li>
+           <li>
+             <p>정산 관리</p>
+             <div>
+               <p>정산내역조회</p>
+             </div>
+           </li>
+           <li>
+             <p>판매자 관리</p>
+             <div>
+               <p>판매자정보 관리</p>
+               <p>사업자정보 관리</p>
+             </div>
+           </li>
+           <li>
+             <p>매출 관리</p>
+             <div>
+               <p>매출 조회</p>
+             </div>
+           </li>
+         </ul>
+       </div>
+   </div>
     
   </div>
   <div class="division-line"></div>
@@ -93,7 +93,7 @@
           <th>관리</th>
       </tr>
      </thead>
-		<tbody>
+      <tbody>
         <c:forEach var="product" items="${products}" varStatus="status">
         <tr>
           <td>${status.index + 1}</td>  <!-- 행 번호 출력 -->
@@ -103,13 +103,13 @@
           <td><c:out value="${product.productName}" /></td>
           <td><c:out value="${product.productPrice}원" /></td>
           <td><c:out value="${product.productType}" /></td>
-          <td><c:out value="판매중 or 상태" /></td>
+           <td class="product-status" data-stock="${product.productStock}"></td>
           <td><c:out value="${product.productStock}" /></td>
           <td><c:out value="${product.productDate}" /></td>
           <td>
             <div class="change-buttons">
-                <button class="edit-btn" onclick="location.href='update.seller?id=${product.id}'">수정</button>
-                <button class="delete-btn" >삭제</button>
+                <button type="button" class="edit-btn" onclick="location.href='update.seller?id=${product.id}'">수정</button>
+                <button class="delete-btn">삭제</button>
             </div>
           </td>
          </tr>
@@ -117,7 +117,7 @@
      </tbody>
      </table>
     </section>
-	
+   
     <div class="pop-up">
       <p>삭제하시겠습니까?</p>
       <div class="check-buttons">
@@ -128,6 +128,25 @@
     <div class="popup-bg"></div>
   </div>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 모든 .product-status 요소를 찾음
+    const statusCells = document.querySelectorAll('.product-status');
+
+    // 각 요소에 대해 반복
+    statusCells.forEach(function(cell) {
+        // data-stock 속성에서 재고 값을 가져옴
+        const stock = cell.getAttribute('data-stock');
+
+        // 재고 값이 있으면 "판매중", 없으면 "품절"로 표시
+        if (stock && parseInt(stock) > 0) {
+            cell.textContent = '판매중';
+        } else {
+            cell.textContent = '품절';
+        }
+    });
+});
+</script>
 <script src="../assets/js/product/product-list.js">
 </script>
 </html>

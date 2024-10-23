@@ -12,11 +12,18 @@ import com.app.dao.ProductDAO;
 
 public class SellerDeleteOkController implements Action {
 
-	@Override
-	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
-		
-		return result;
-	}
+   @Override
+   public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+      Result result = new Result();
+      ProductDAO productDAO = new ProductDAO();
+      
+      productDAO.delete(Long.parseLong(req.getParameter("id")));
+      
+      
+      result.setRedirect(true);
+      result.setPath("../list.seller");
+      
+      return result;
+   }
 
 }

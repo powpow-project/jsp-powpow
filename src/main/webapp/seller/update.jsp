@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-  <link rel="stylesheet" href="../assets/css/product/product-write.css">
-  <link rel="stylesheet" href="assets/css/index.css">
-  <link rel="icon" href="../assets/images/favicon.ico">
+<link rel="stylesheet" href="../assets/css/product/product-write.css">
+<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="icon" href="../assets/images/favicon.ico">
 <title>상품관리</title>
 </head>
 <body>
-    <form action="product-write-ok.product" method="post" id="frame" enctype="multipart/form-data">
+   <form action="update-ok.seller" method="post" id="frame" enctype="multipart/form-data">
       <div class="menu-wrap">
         <img src="../assets/images/product/menu.png" alt="메뉴">
         <span class="h4">상품관리</span>
@@ -18,28 +19,28 @@
       </div>
       <div class="division-line"></div>
 
-  
       <div class="title">
-        <h1 class="h1">신규 상품 등록</h1>
+        <h1 class="h1">상품 수정</h1>
       </div>
 
       <div id="product-insert">
         <h3 class="title h3">상품 정보 입력</h3>
         <div class="info-wrap">
+        <input type="hidden" name="id" value="${product.id}"/>
           <div class="list-wrap">
             <p class="h6">상품명</p>
-            <input type="text" name="productName"/>
+            <input type="text" name="productName" value="${product.productName}" />
               </div>
               <div class="list-wrap">
                 <p class="h6">상품가격</p>
-                <input type="text" name="productPrice" placeholder="원(원)" />
+                <input type="text" name="productPrice" placeholder="원(원)" value="${product.productPrice}"/>
               </div>
               <div class="list-wrap">
                 <p class="h6">상품재고</p>
-                <input type="text" name="productStock" placeholder="개" />
+                <input type="text" name="productStock" placeholder="개" value="${product.productStock}"/>
               </div>
                <div class="list-wrap">
-               	<p class="h6">대분류</p>
+                  <p class="h6">대분류</p>
                 <select name="productCategoryName">
                     <option value="강아지">강아지</option>
                     <option value="고양이">고양이</option>
@@ -48,7 +49,7 @@
                   </select>
                  </div>
                <div class="list-wrap">
-               	<p class="h6">분류</p>
+                  <p class="h6">분류</p>
                 <select name="productType">
                     <option value="사료/간식">사료/간식</option>
                     <option value="배변용품">배변용품</option>
@@ -63,6 +64,7 @@
                   name="productDetail"
                   class="description"
                   placeholder="내용을 설명해주세요."
+                  value="${product.productDetail}"
                 ></textarea>
               </div>
             </div>
@@ -158,16 +160,16 @@
                   <p class="h6">메인 이미지</p>
                   <label for="main">
                     <div class="main-image">
-                      <img id="main-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                      <img id="main-preview" src="../assets/images/product/${product.productImage}" alt="#" />
                     </div>
                   </label>
                   <input 
-	                  type="file" 
-	                  id="main" 
-	                  style="display: none" 
-	                  name="productImage" 
-	                  accept="image/*" 
-	                  />
+                     type="file" 
+                     id="main" 
+                     style="display: none" 
+                     name="productImage" 
+                     accept="image/*" 
+                     />
                   <h6 class="h7">*등록 이미지 5M 이하/ jpg, png, git</h6>
                 </div>
                 <div class="sub-wrap">
@@ -175,101 +177,100 @@
                     <p class="h6">서브이미지1</p>
                     <label for="sub1">
                       <div  class="sub-image">
-                        <img id="sub1-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                        <img id="sub1-preview" src="../assets/images/product/${product.productSubImage1}" alt="#" />
                       </div>
                     </label>
                     <input 
-	                    type="file"
-	                    id="sub1" 
-	                    style="display: none" 
-	                    name="productSubImage1" 
-	                    accept="image/*" 
-	                    />
+                       type="file"
+                       id="sub1" 
+                       style="display: none" 
+                       name="productSubImage1" 
+                       accept="image/*" 
+                       />
                   </div>
                   <div class="sub">
                     <p class="h6">서브이미지2</p>
                     <label for="sub2">
                       <div class="sub-image">
-                        <img id="sub2-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                        <img id="sub2-preview" src="../assets/images/product/${product.productSubImage2}" alt="#" />
                       </div>
                     </label>
                     <input 
-	                    type="file" 
-	                    id="sub2" 
-	                    style="display: none" 
-	                    name="productSubImage2" 
-	                    accept="image/*"
-	                    />                   
+                       type="file" 
+                       id="sub2" 
+                       style="display: none" 
+                       name="productSubImage2" 
+                       accept="image/*"
+                       />                   
                   </div>
                   <div class="sub">
                     <p class="h6">서브이미지3</p>
                     <label for="sub3">
                       <div class="sub-image">
-                        <img id="sub3-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                        <img id="sub3-preview" src="../assets/images/product/${product.productSubImage3}" alt="#" />
                       </div>
                     </label>
                     <input 
-	                    type="file" 
-	                    id="sub3" 
-	                    style="display: none" 
-	                    name="productSubImage3" 
-	                    accept="image/*" 
-	                    onclick="document.getElementById('sub3').click();"
-	                    />
+                       type="file" 
+                       id="sub3" 
+                       style="display: none" 
+                       name="productSubImage3" 
+                       accept="image/*" 
+                       onclick="document.getElementById('sub3').click();"
+                       />
                   </div>
                 </div>
               </div>
             </div>
             <div class="button-wrap">
               <button class="register-btn h6" >상품 등록</button>
-              <button type="button" class="cancel-btn h6" onclick="location.href='product-list.jsp';">취소</button>
+              <button type="button" class="cancel-btn h6" onclick="location.href='list.seller';">취소</button>
             </div>
         </div>
       </div>
     </form>
 </body>
 <script>
-	document.getElementById('main').addEventListener('change', function (event) {
-	    const file = event.target.files[0];
-	    if (file) {
-	        const reader = new FileReader();
-	        reader.onload = function (e) {
-	            document.getElementById('main-preview').src = e.target.result;
-	        };
-	        reader.readAsDataURL(file);
-	    }
-	});
-	document.getElementById('sub1').addEventListener('change', function (event) {
-	    const file = event.target.files[0];
-	    if (file) {
-	        const reader = new FileReader();
-	        reader.onload = function (e) {
-	            document.getElementById('sub1-preview').src = e.target.result;
-	        };
-	        reader.readAsDataURL(file);
-	    }
-	});
-	document.getElementById('sub2').addEventListener('change', function (event) {
-	    const file = event.target.files[0];
-	    if (file) {
-	        const reader = new FileReader();
-	        reader.onload = function (e) {
-	            document.getElementById('sub2-preview').src = e.target.result;
-	        };
-	        reader.readAsDataURL(file);
-	    }
-	});
-	document.getElementById('sub3').addEventListener('change', function (event) {
-	    const file = event.target.files[0];
-	    if (file) {
-	        const reader = new FileReader();
-	        reader.onload = function (e) {
-	            document.getElementById('sub3-preview').src = e.target.result;
-	        };
-	        reader.readAsDataURL(file);
-	    }
-	});
-	
-
+   document.getElementById('main').addEventListener('change', function (event) {
+       const file = event.target.files[0];
+       if (file) {
+           const reader = new FileReader();
+           reader.onload = function (e) {
+               document.getElementById('main-preview').src = e.target.result;
+           };
+           reader.readAsDataURL(file);
+       }
+   });
+   document.getElementById('sub1').addEventListener('change', function (event) {
+       const file = event.target.files[0];
+       if (file) {
+           const reader = new FileReader();
+           reader.onload = function (e) {
+               document.getElementById('sub1-preview').src = e.target.result;
+           };
+           reader.readAsDataURL(file);
+       }
+   });
+   document.getElementById('sub2').addEventListener('change', function (event) {
+       const file = event.target.files[0];
+       if (file) {
+           const reader = new FileReader();
+           reader.onload = function (e) {
+               document.getElementById('sub2-preview').src = e.target.result;
+           };
+           reader.readAsDataURL(file);
+       }
+   });
+   document.getElementById('sub3').addEventListener('change', function (event) {
+       const file = event.target.files[0];
+       if (file) {
+           const reader = new FileReader();
+           reader.onload = function (e) {
+               document.getElementById('sub3-preview').src = e.target.result;
+           };
+           reader.readAsDataURL(file);
+       }
+   });
+   
 </script>
 </html>
