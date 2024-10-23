@@ -108,7 +108,7 @@
           <td><c:out value="${product.productDate}" /></td>
           <td>
             <div class="change-buttons">
-                <button class="edit-btn" onclick="location.href='update.seller?id=" ${product.id}>수정</button>
+                <button class="edit-btn" onclick="location.href='update.seller?id=${product.id}'" >수정</button>
                 <button class="delete-btn" >삭제</button>
             </div>
           </td>
