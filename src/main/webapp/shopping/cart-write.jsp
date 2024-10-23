@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품있는장바구니</title>
-<link rel="stylesheet" href="../assets/css/shopping/cart.css">
+<link rel="stylesheet" href="../assets/css/shopping/cart-write.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 
@@ -27,10 +27,9 @@
 							</div>
 							<div class="right">
 								<div class="icons">
-									<a href="#"><img src="../assets/images/shopping/search.png"
-										alt="검색"></a> <a href="#"><img
-										src="../cart/img/icon 2.png" alt="배송"></a> <a href="#"><img
-										src="../assets/images/shopping/cart.png" alt="카트"></a>
+									<a href="#"><img src="../assets/images/shopping/search.png"alt="검색"></a> 
+									<a href="#"><img src="../assets/images/shopping/icon 2.png" alt="배송"></a> 
+									<a href="#"><img src="../assets/images/shopping/cart.png" alt="카트"></a>
 								</div>
 								<div class="sector"></div>
 								<div class="login">
@@ -78,78 +77,73 @@
 				</div>
 			</div>
 			<main>
-				<p class="cart h2">장바구니</p>
-				<section class="cart-section">
-					<div class="all">
-						<label><input type="checkbox" id="select-all"
-							class="item-checkbox" checked> 전체선택</label>
-						<button id="delete-button" class="check-delete">선택 삭제</button>
-					</div>
-					<div class="cart-item">
-						<label><input type="checkbox" class="item-checkbox"
-							checked></label> <a href="#"><img
-							src="../assets/images/shopping/product-not-found.png"
-							alt="상품 이미지" class="product-img"></a>
-						<div class="product-info">
-							<h3>오쥬 바이 로우즈 독 치킨가슴살&호박 파우치 강아지 간식 69g (유통기한 2025-02225까지)</h3>
-							<div class="price">
-								<span>가격: 4,050원</span> <span><del>4,500원</del></span>
-							</div>
-						</div>
-						<div class="quantity-control">
-							<span><button class="btn-minus">-</button></span> <input
-								id="result1" value="1" class="quantity-input"> <span><button
-									class="btn-plus">+</button></span>
-						</div>
-					</div>
-					<div class="cart-item">
-						<label><input type="checkbox" class="item-checkbox"
-							checked></label> <a href="#"><img
-							src="../assets/images/shopping/product-not-found.png"
-							alt="상품 이미지" class="product-img"></a>
-						<div class="product-info">
-							<h3>오쥬 바이 로우즈 독 치킨가슴살&호박 파우치 강아지 간식 69g (유통기한 2025-02225까지)</h3>
-							<div class="price">
-								<span>가격: 4,050원</span> <span><del>4,500원</del></span>
-							</div>
-						</div>
-						<div class="quantity-control">
-							<span><button class="btn-minus">-</button></span> <input
-								id="result2" value="1" class="quantity-input"> <span><button
-									class="btn-plus">+</button></span>
-						</div>
-					</div>
-				</section>
-				<section class="payment-info">
-					<p class="cart-pay h2">결제정보</p>
-					<div class="coupon-section">
-						<select class="coupon-check">
-							<option value="">적용할 쿠폰</option>
-							<option value="1">할인 쿠폰</option>
-						</select>
-					</div>
+				<h2 class="h2">장바구니</h2>
+            <section class="cart-section">
+                <!-- 전체 선택 및 삭제 버튼 -->
+                <div class="all">
+                    <label><input type="checkbox" id="select-all" class="item-checkbox" checked> 전체선택</label>
+                    <button id="delete-button" class="check-delete">선택 삭제</button>
+                </div>
+                
+                <!-- 장바구니에 담긴 상품 목록 -->
+                <c:forEach var="cartItem" items="${cartItems}">
+                    <div class="cart-item">
+                        <!-- 상품 선택 체크박스 -->
+                        <label><input type="checkbox" class="item-checkbox" checked></label>
 
-					<div class="summary">
-						<span>총 상품금액</span> <span>총 배송비</span> <span>총 결제금액</span> <span>예상
-							기부액</span>
-					</div>
+                        <!-- 상품 이미지 및 정보 -->
+                        <a href="#"><img src="../assets/images/shopping/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
+                        <div class="product-info">
+                            <h3>${cartItem.productName}이름</h3>
+                            <div class="price">
+                                <span>가격: ${cartItem.productPrice}원</span>
+                            </div>
+                        </div>
 
-					<div class="pay-summary">
-						<span>8,100원</span> <span>+</span> <span>무료</span> <span>=</span>
-						<span>8,100원</span> <span class="coin">520원</span>
-					</div>
-					<div class="button-container">
-						<button class="check-button">선택상품주문</button>
-						<button class="payment-button">전체상품주문</button>
-					</div>
-				</section>
-			</main>
-	</div>
+                        <!-- 수량 조절 버튼 -->
+                        <div class="quantity-control">
+                            <span><button class="btn-minus">-</button></span>
+                            <input type="text" value="${cartItem.quantity}" class="quantity-input">
+                            <span><button class="btn-plus">+</button></span>
+                        </div>
+                    </div>
+                </c:forEach>
+            </section>
+
+            <!-- 결제 정보 -->
+            <section class="payment-info">
+                <h2 class="h2">결제 정보</h2>
+
+                <!-- 쿠폰 선택 -->
+                <div class="coupon-section">
+                    <select class="coupon-check">
+                        <option value="">적용할 쿠폰</option>
+                        <option value="1">할인 쿠폰</option>
+                    </select>
+                </div>
+
+                <!-- 요약 정보 -->
+                <div class="summary">
+                    <span>총 상품 금액: </span> <span>${totalPrice}원</span><br>
+                    <span>총 배송비: </span> <span>무료</span><br>
+                    <span>총 결제 금액: </span> <span>${totalPrice}원</span><br>
+                    <span>예상 기부액: </span> <span>${donationAmount}원</span><br>
+                </div>
+
+                <!-- 주문 버튼 -->
+                <div class="button-container">
+                    <button class="check-button">선택 상품 주문</button>
+                    <button class="payment-button">전체 상품 주문</button>
+                </div>
+            </section>
+        </main>
+    </div>
+				
 
 	<footer>
 		<div class="footer-container">
 			<div class="footer-section">
-				<h3>고객센터 &gt;</h3>
+				<h3 calss="h3">고객센터 &gt;</h3>
 				<p>
 					<span class="highlight">0000-0000</span> <span>09:00~18:00</span>
 				</p>
@@ -206,7 +200,7 @@
 	</footer>
 </body>
 
-<script src="../assets/js/shopping/cart.js"></script>
+<script src="../assets/js/shopping/cart-write.js"></script>
 <script>
     </script>
 

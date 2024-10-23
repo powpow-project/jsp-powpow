@@ -88,8 +88,8 @@
 						<span>성장기별 추천 아이템이에요!</span>
 					</div>
 					<div class="category-buttons">
-						<button>퍼피</button>
-						<button>어덜트</button>
+						<button onclick="showProducts('puppy')">퍼피</button>
+						<button onclick="showProducts('adult')">어덜트</button>
 						<button>시니어</button>
 					</div>
 				</div>
@@ -104,18 +104,18 @@
 							<img src="../assets/images/shopping/product-not-found.png">
 							<div class="hover-box">
 								<div class=hover-box-new>
-									<a class="hover-new" href="#"> <img
-										src="../assets/images/shopping/share.png">
+									<a class="hover-new" href="#"> 
+									<img src="../assets/images/shopping/share.png">
 									</a>
 								</div>
 								<div class=hover-box-cart>
-									<a class="hover-cart" href="#"> <img
-										src="../assets/images/shopping/carthovar.png">
+									<a class="hover-cart" href="cart-write.jsp" onclick="cart-write.cart"> 
+									<img src="../assets/images/shopping/carthovar.png">
 									</a>
 								</div>
 								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> <img
-										src="../assets/images/shopping/like.png">
+									<a class="hover-heart" href="#"> 
+									<img src="../assets/images/shopping/like.png">
 									</a>
 								</div>
 							</div>
@@ -126,18 +126,18 @@
 							<img src="../assets/images/shopping/product-not-found.png">
 							<div class="hover-box">
 								<div class=hover-box-new>
-									<a class="hover-new" href="#"> <img
-										src="../assets/images/shopping/share.png">
+									<a class="hover-new" href="#"> 
+									<img src="../assets/images/shopping/share.png">
 									</a>
 								</div>
 								<div class=hover-box-cart>
-									<a class="hover-cart" href="#"> <img
-										src="../assets/images/shopping/carthovar.png">
+									<a class="hover-cart" href="#"> 
+									<img src="../assets/images/shopping/carthovar.png">
 									</a>
 								</div>
 								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> <img
-										src="../assets/images/shopping/like.png">
+									<a class="hover-heart" href="#"> 
+									<img src="../assets/images/shopping/like.png">
 									</a>
 								</div>
 							</div>

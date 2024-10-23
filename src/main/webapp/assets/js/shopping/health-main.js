@@ -204,3 +204,4 @@ document.addEventListener('DOMContentLoaded', function() {
 	fishNextBtn.addEventListener('click', handleFishNext);
 	fishPrevBtn.addEventListener('click', handleFishPrev);
 });
+
