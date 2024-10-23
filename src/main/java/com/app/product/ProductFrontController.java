@@ -16,11 +16,6 @@ import com.app.product.controller.ProductHealthController;
 import com.app.product.controller.ProductListController;
 import com.app.product.controller.ProductSearchController;
 import com.app.product.controller.ProductSellerController;
-import com.app.seller.controller.SellerDeleteOkController;
-import com.app.seller.controller.SellerListController;
-import com.app.seller.controller.SellerUpdateController;
-import com.app.seller.controller.SellerUpdateOkController;
-import com.app.seller.controller.SellerWriteOkController;
 
 public class ProductFrontController extends HttpServlet{
 
@@ -31,9 +26,11 @@ public class ProductFrontController extends HttpServlet{
       String target = req.getRequestURI().replace(req.getContextPath() + "/product/", "").split("\\.")[0];
       Result result = null;
       
+      System.out.println(target);
+      
       if(target.equals("list")) {
     	  result = new ProductListController().execute(req, resp);
-      }else if(target.equals("seller")) {
+      }else if(target.equals("product-seller")) {
     	  result = new ProductSellerController().execute(req, resp);
       }else if(target.equals("search")) {
     	  result = new ProductSearchController().execute(req, resp);
@@ -66,4 +63,5 @@ public class ProductFrontController extends HttpServlet{
    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       doGet(req, resp);
    }
+
 }
