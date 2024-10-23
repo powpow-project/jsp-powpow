@@ -1,6 +1,5 @@
 package com.app.product.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class ProductListController implements Action {
         
 	
 	    List<ProductVO> products = productDAO.selectAll();
-	    
+	    System.out.println(products);
 	    req.setAttribute("products", products);
 
 	    result.setPath("../product/product-list.jsp");
