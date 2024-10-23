@@ -3,63 +3,55 @@
 
 <mapper namespace="admin">
 
-    <!-- 관리자 로그인 -->
-    <select id="loginAdmin" resultType="String">
-        SELECT ADMIN_EMAIL FROM TBL_ADMIN
-        WHERE ADMIN_EMAIL = #{adminEmail} AND ADMIN_PASSWORD = #{adminPassword}
-    </select>
-   
-    <!-- 공지사항 전체 조회(list 기존) -->
-    <select id="selectAll" resultType="AdminNoticeVO">
-        SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE, 
-               ADMIN_NOTICE_CONTENT, ADMIN_NOTICE_VIEW, ADMIN_NOTICE_WRITER, 
-               ADMIN_NOTICE_DATE
-        FROM TBL_ADMIN_NOTICE
-        ORDER BY ADMIN_NOTICE_DATE DESC
-    </select>
-    
-    <!-- 공지사항 전체 조회 (새로운 selectAllAdminNotices) -->
-    <select id="selectAllAdminNotices" resultType="AdminNoticeVO">
-        SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE, 
-               ADMIN_NOTICE_CONTENT, ADMIN_NOTICE_VIEW, ADMIN_NOTICE_WRITER, 
-               ADMIN_NOTICE_DATE
-        FROM TBL_ADMIN_NOTICE
-        ORDER BY ADMIN_NOTICE_DATE DESC
-    </select>
+	<!-- 관리자 로그인 -->
+	<select id="loginAdmin" resultType="String">
+		SELECT ADMIN_EMAIL FROM TBL_ADMIN
+		WHERE ADMIN_EMAIL = #{adminEmail} AND ADMIN_PASSWORD = #{adminPassword}
+	</select>
 
-    <!-- 공지사항 추가 -->
+
+	<select id="selectByAdminEmail" resultType="AdminVO">
+      SELECT ID, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME, ADMIN_AUTH,
+      FROM TBL_ADMIN
+      WHERE ADMIN_EMAIL = #{adminEmail}
+   </select>
+
+
+
+	<!-- 공지사항 추가 -->
 	<insert id="insertAdminNotice" parameterType="AdminNoticeVO">
-	    INSERT INTO TBL_ADMIN_NOTICE (
-	        ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE, ADMIN_NOTICE_CONTENT, 
-	        ADMIN_NOTICE_VIEW, ADMIN_NOTICE_WRITER, ADMIN_NOTICE_DATE
-	    ) VALUES (
-	        ADMIN_NOTICE_SEQ.NEXTVAL, 
-	        #{adminId}, 
-	        #{adminNoticeNumber}, 
-	        #{adminNoticeTitle}, 
-	        #{adminNoticeContent}, 
-	        #{adminNoticeView}, 
-	        #{adminNoticeWriter}, 
-	        DEFAULT
-	    )
+		SELECT TANO.ID, ADMIN_ID, ADMIN_NAME, ADMIN_NOTICE_TITLE, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_CONTENT
+		FROM TBL_ADMIN_NOTICE TANO
+		JOIN TBL_ADMIN TD 
+		ON TANO.ID = TD.ID
+		)
 	</insert>
+	
+	
+	
+	<!-- 공지사항 전체 조회 -->
+	<select id="selectAll" resultType="AdminNoticeDTO">
+		SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE,
+		ADMIN_NOTICE_CONTENT
+		FROM TBL_ADMIN_NOTICE
+		ORDER BY ADMIN_NOTICE_DATE DESC
+	</select>
 
-    <!-- 공지사항 수정 -->
-    <update id="updateAdminNotice" parameterType="AdminNoticeVO">
-        UPDATE TBL_ADMIN_NOTICE
-        SET ADMIN_NOTICE_TITLE = #{adminNoticeTitle},
-            ADMIN_NOTICE_CONTENT = #{adminNoticeContent},
-            ADMIN_NOTICE_VIEW = #{adminNoticeView},
-             ADMIN_NOTICE_WRITER = #{adminNoticeWriter},
-            ADMIN_NOTICE_DATE = SYSDATE
-        WHERE ID = #{id}
-    </update>
 
-    <!-- 공지사항 삭제 -->
-    <delete id="deleteAdminNotice" parameterType="Long">
-        DELETE FROM TBL_ADMIN_NOTICE
-        WHERE ID = #{id}
-    </delete>
+
+	<!-- 공지사항 수정 -->
+	<update id="updateAdminNotice" parameterType="AdminNoticeVO">
+		UPDATE TBL_ADMIN_NOTICE
+		SET ADMIN_NOTICE_TITLE = #{adminNoticeTitle},
+		ADMIN_NOTICE_CONTENT = #{adminNoticeContent}
+		WHERE ID = #{id}
+	</update>
+
+	<!-- 공지사항 삭제 -->
+	<delete id="deleteAdminNotice" parameterType="Long">
+		DELETE FROM TBL_ADMIN_NOTICE
+		WHERE ID = #{id}
+	</delete>
 
 </mapper>
 

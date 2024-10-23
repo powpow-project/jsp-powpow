@@ -94,20 +94,6 @@
                                 <button type="button" class="delete-btn">삭제</button>
                             </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>9월 21일 공지사항</td>
-                        <td>110</td>
-                        <td>2024-09-21</td>
-                        <td>운영자</td>
-                        <td>
-                            <div class="change-buttons">
-                                <button type="button" class="edit-btn"  onclick="location.href='announcementPost.admin'">수정</button>
-                                <button type="button" class="delete-btn">삭제</button>
-                            </div>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </section>

@@ -3,7 +3,7 @@ package com.app.vo;
 import java.util.Objects;
 
 public class AdminVO {
-    private int id;
+    private Long id;
     private String adminEmail;
     private String adminPassword;
     private String adminName;
@@ -11,11 +11,11 @@ public class AdminVO {
     
 	public AdminVO() {;}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -59,7 +59,7 @@ public class AdminVO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(adminAuth, adminEmail, adminName, adminPassword, id);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -71,8 +71,8 @@ public class AdminVO {
 		if (getClass() != obj.getClass())
 			return false;
 		AdminVO other = (AdminVO) obj;
-		return adminAuth == other.adminAuth && Objects.equals(adminEmail, other.adminEmail)
-				&& Objects.equals(adminName, other.adminName) && Objects.equals(adminPassword, other.adminPassword)
-				&& id == other.id;
+		return Objects.equals(id, other.id);
 	}
+
+	
 }

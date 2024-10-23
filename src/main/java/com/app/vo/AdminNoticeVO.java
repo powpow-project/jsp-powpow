@@ -10,10 +10,7 @@ public class AdminNoticeVO {
     private int adminNoticeNumber;
     private String adminNoticeTitle;
     private String adminNoticeContent;
-    private String adminNoticeView;
-    private String adminNoticeWriter;
-    private Date adminNoticeDate;
-    
+
     public AdminNoticeVO() {;}
 
 	public Long getId() {
@@ -56,41 +53,15 @@ public class AdminNoticeVO {
 		this.adminNoticeContent = adminNoticeContent;
 	}
 
-	public String getAdminNoticeView() {
-		return adminNoticeView;
-	}
-
-	public void setAdminNoticeView(String adminNoticeView) {
-		this.adminNoticeView = adminNoticeView;
-	}
-
-	public String getAdminNoticeWriter() {
-		return adminNoticeWriter;
-	}
-
-	public void setAdminNoticeWriter(String adminNoticeWriter) {
-		this.adminNoticeWriter = adminNoticeWriter;
-	}
-
-	public Date getAdminNoticeDate() {
-		return adminNoticeDate;
-	}
-
-	public void setAdminNoticeDate(Date adminNoticeDate) {
-		this.adminNoticeDate = adminNoticeDate;
-	}
-
 	@Override
 	public String toString() {
 		return "AdminNoticeVO [id=" + id + ", adminId=" + adminId + ", adminNoticeNumber=" + adminNoticeNumber
-				+ ", adminNoticeTitle=" + adminNoticeTitle + ", adminNoticeContent=" + adminNoticeContent
-				+ ", adminNoticeView=" + adminNoticeView + ", adminNoticeWriter=" + adminNoticeWriter
-				+ ", adminNoticeDate=" + adminNoticeDate + "]";
+				+ ", adminNoticeTitle=" + adminNoticeTitle + ", adminNoticeContent=" + adminNoticeContent + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(adminId);
 	}
 
 	@Override
@@ -102,6 +73,9 @@ public class AdminNoticeVO {
 		if (getClass() != obj.getClass())
 			return false;
 		AdminNoticeVO other = (AdminNoticeVO) obj;
-		return Objects.equals(id, other.id);
+		return Objects.equals(adminId, other.adminId);
 	}
+    
+    
+ 
 }
