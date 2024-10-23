@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/shopping/brand-main.css">
+<link rel="stylesheet" href="../assets/css/product/product-seller.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 <title>판매자쇼핑메인</title>
@@ -159,79 +159,51 @@
 			</div>
 			<h2>전체 상품</h2>
 			<div class="product-grid">
-				<c:forEach var="product" items="${products}">
+            <!-- 상품 리스트를 반복적으로 출력 -->
+            <c:forEach var="product" items="${products}">
+                <div class="product">
+                    <img src="../assets/images/shopping/${product.productImage}" alt="${product.productName}">
+                    <h3 class="h3">${product.productName}</h3>
+                    <p>가격: ${product.productPrice}원</p>
+                    <p class="product-rating">★★★★★ (201)</p>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+
+    <!-- 전체 상품 섹션 -->
+    <div class="all-products">
+        <div class="all-sup-title">
+            <div class="all-category-dropdown">
+                <ul>
+                    <li class="all-category-item">
+                        <p class="all-category-title">
+                            인기상품순 <img class="all-toggle-icon" src="../assets/images/shopping/arrow.png"
+                                alt="Toggle Icon" />
+                        </p>
+                        <div class="all-sub-category" style="display: none;">
+                            <p>판매 인기순</p>
+                            <p>상품평 많은순</p>
+                            <p>낮은 가격순</p>
+                            <p>신규 등록순</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h2>전체 상품</h2>
+        <div class="product-grid">
+            <!-- 상품 리스트를 반복적으로 출력 -->
+            <c:forEach var="product" items="${products}">
                 <div class="product2">
                     <img src="../assets/images/shopping/${product.productImage}" alt="${product.productName}">
                     <h3 class="h3">${product.productName}</h3>
                     <p>가격: ${product.productPrice}원</p>
                     <p class="product-rating">★★★★★ (201)</p>
                 </div>
-				<div class="product2">
-                    <img src="../assets/images/shopping/${product.productImage}" alt="${product.productName}">
-                    <h3 class="h3">${product.productName}</h3>
-                    <p>가격: ${product.productPrice}원</p>
-                    <p class="product-rating">★★★★★ (201)</p>
-				</div>
             </c:forEach>
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★(201)</p>
-				</div>
-				<!-- ... 더 많은 상품 -->
-			</div>
-			<div class="product-grid">
-				<!-- 상품 반복 -->
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
-				</div>
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
-				</div>
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
-				</div>
-				<!-- ... 더 많은 상품 -->
-			</div>
-			<div class="product-grid">
-				<!-- 상품 반복 -->
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
-				</div>
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
-				</div>
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
-				</div>
-			</div>
-		</div>
+        </div>
+    </div>
 
 		<!-- 페이지네이션 -->
 		<div class="pagination">
@@ -308,7 +280,8 @@
 	</section>
 
 </body>
-<script src="../assets/js/shopping/brand-main.js">
+<script src="../assets/js/shopping/brand-main.js"></script>
+<script type="text/javascript">
+	console.log(`${products}`)
 </script>
-
 </html>
