@@ -13,7 +13,7 @@ import com.app.product.controller.ProductDeleteOkController;
 import com.app.product.controller.ProductListController;
 import com.app.product.controller.ProductUpdateController;
 import com.app.product.controller.ProductUpdateOkController;
-//import com.app.product.controller.ProductWriteOkController;
+import com.app.product.controller.ProductWriteOkController;
 
 public class ProductFrontController extends HttpServlet{
 
@@ -23,12 +23,12 @@ public class ProductFrontController extends HttpServlet{
 		resp.setContentType("text/html; charset=utf-8");
 		String target = req.getRequestURI().replace(req.getContextPath() + "/product/", "").split("\\.")[0];
 		Result result = null;
-		
+		System.out.println(target);
 		if(target.equals("product-write")) {
 			result = new Result();
 			result.setPath("../product/product-write.jsp");
 		}else if(target.equals("product-write-ok")) {
-//			result = new ProductWriteOkController().execute(req, resp);
+			result = new ProductWriteOkController().execute(req, resp);
 		}else if(target.equals("product-list")) {
 			result = new ProductListController().execute(req, resp);
 		}else if(target.equals("product-update")) {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,21 +159,20 @@
 			</div>
 			<h2>전체 상품</h2>
 			<div class="product-grid">
-				<!-- 상품 반복 -->
+				<c:forEach var="product" items="${products}">
+                <div class="product2">
+                    <img src="../assets/images/shopping/${product.productImage}" alt="${product.productName}">
+                    <h3 class="h3">${product.productName}</h3>
+                    <p>가격: ${product.productPrice}원</p>
+                    <p class="product-rating">★★★★★ (201)</p>
+                </div>
 				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
+                    <img src="../assets/images/shopping/${product.productImage}" alt="${product.productName}">
+                    <h3 class="h3">${product.productName}</h3>
+                    <p>가격: ${product.productPrice}원</p>
+                    <p class="product-rating">★★★★★ (201)</p>
 				</div>
-				<div class="product2">
-					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
-					<p class="product-name">+캐롯 85g,5개</p>
-					<p class="product-price">9,900원</p>
-					<p class="product-rating">★★★★★ (201)</p>
-				</div>
+            </c:forEach>
 				<div class="product2">
 					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
 					<p class="product-name">피시포독 그레인프리 참치+스피니치</p>
