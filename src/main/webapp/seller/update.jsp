@@ -19,7 +19,6 @@
       </div>
       <div class="division-line"></div>
 
-  
       <div class="title">
         <h1 class="h1">상품 수정</h1>
       </div>
@@ -27,18 +26,18 @@
       <div id="product-insert">
         <h3 class="title h3">상품 정보 입력</h3>
         <div class="info-wrap">
-        <input type="hidden" name="id" value="${param.id}"/>
+        <input type="hidden" name="id" value="${product.id}"/>
           <div class="list-wrap">
             <p class="h6">상품명</p>
-            <input type="text" name="productName" value="${param.productName}" />
+            <input type="text" name="productName" value="${product.productName}" />
               </div>
               <div class="list-wrap">
                 <p class="h6">상품가격</p>
-                <input type="text" name="productPrice" placeholder="원(원)" value="${param.productPrice}"/>
+                <input type="text" name="productPrice" placeholder="원(원)" value="${product.productPrice}"/>
               </div>
               <div class="list-wrap">
                 <p class="h6">상품재고</p>
-                <input type="text" name="productStock" placeholder="개" value="${param.productStock}"/>
+                <input type="text" name="productStock" placeholder="개" value="${product.productStock}"/>
               </div>
                <div class="list-wrap">
                   <p class="h6">대분류</p>
@@ -65,7 +64,7 @@
                   name="productDetail"
                   class="description"
                   placeholder="내용을 설명해주세요."
-                  value="${param.productDetail}"
+                  value="${product.productDetail}"
                 ></textarea>
               </div>
             </div>
@@ -161,7 +160,7 @@
                   <p class="h6">메인 이미지</p>
                   <label for="main">
                     <div class="main-image">
-                      <img id="main-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                      <img id="main-preview" src="../assets/images/product/${product.productImage}" alt="#" />
                     </div>
                   </label>
                   <input 
@@ -178,7 +177,7 @@
                     <p class="h6">서브이미지1</p>
                     <label for="sub1">
                       <div  class="sub-image">
-                        <img id="sub1-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                        <img id="sub1-preview" src="../assets/images/product/${product.productSubImage1}" alt="#" />
                       </div>
                     </label>
                     <input 
@@ -193,7 +192,7 @@
                     <p class="h6">서브이미지2</p>
                     <label for="sub2">
                       <div class="sub-image">
-                        <img id="sub2-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                        <img id="sub2-preview" src="../assets/images/product/${product.productSubImage2}" alt="#" />
                       </div>
                     </label>
                     <input 
@@ -208,7 +207,7 @@
                     <p class="h6">서브이미지3</p>
                     <label for="sub3">
                       <div class="sub-image">
-                        <img id="sub3-preview" src="../assets/images/product/default-image.svg" alt="#" />
+                        <img id="sub3-preview" src="../assets/images/product/${product.productSubImage3}" alt="#" />
                       </div>
                     </label>
                     <input 
@@ -273,6 +272,5 @@
        }
    });
    
-
 </script>
 </html>
