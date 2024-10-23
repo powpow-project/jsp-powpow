@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.order.controller.OrderDeleteOkController;
+import com.app.order.controller.OrderListController;
+import com.app.order.controller.OrderUpdateController;
+import com.app.order.controller.OrderWriteOkController;
 
 public class OrderFrontController extends HttpServlet{
    
@@ -22,20 +26,16 @@ public class OrderFrontController extends HttpServlet{
       Result result = null;
       
       if(target.equals("write-ok")) {
-
+    	  result = new OrderWriteOkController().execute(req, resp);
       }else if(target.equals("list")) {
-
-      }else if(target.equals("cancel")) {
-
-      }else if(target.equals("login-ok")) {
-    	  
-      }else if(target.equals("update-ok")) {
-    	  
+    	  result = new OrderListController().execute(req, resp);
+      }else if(target.equals("update")) {
+    	  result = new OrderUpdateController().execute(req, resp);
       }else if(target.equals("delete-ok")) {
-    	  
+    	  result = new OrderDeleteOkController().execute(req, resp);
       }else {
-			result = new Result();
-			result.setPath("notFound.jsp");
+	  		result = new Result();
+	  		result.setPath("../not-found.jsp");
       }
       if(result !=null) {
          if(result.isRedirect()) {

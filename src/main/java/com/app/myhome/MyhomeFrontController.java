@@ -8,6 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.myhome.controller.MyhomeDeleteController;
+import com.app.myhome.controller.MyhomeListController;
+import com.app.myhome.controller.MyhomePetDeleteController;
+import com.app.myhome.controller.MyhomePetUpdateController;
+import com.app.myhome.controller.MyhomePetUpdateOkController;
+import com.app.myhome.controller.MyhomePetWriteController;
+import com.app.myhome.controller.MyhomePetWriteOkController;
+import com.app.myhome.controller.MyhomeUpdateController;
+import com.app.myhome.controller.MyhomeUpdateOkController;
 
 public class MyhomeFrontController extends HttpServlet {
 	@Override
@@ -17,16 +26,27 @@ public class MyhomeFrontController extends HttpServlet {
 		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
 		Result result = null;
 		
-		if(target.equals("image")) {
-			
-		}else if(target.equals("image-ok")) {
-			
-		}else if(target.equals("edit")) {
-			
-		}else if(target.equals("edit-ok")) {
-		
+		if(target.equals("list")) {
+			result = new MyhomeListController().execute(req, resp);
+		}else if(target.equals("update")) {
+			result = new MyhomeUpdateController().execute(req, resp);
+		}else if(target.equals("update-ok")) {
+			result = new MyhomeUpdateOkController().execute(req, resp);
+		}else if(target.equals("delete")) {
+			result = new MyhomeDeleteController().execute(req, resp);
+		}else if(target.equals("pet-write")) {
+			result = new MyhomePetWriteController().execute(req, resp);
+		}else if(target.equals("pet-write-ok")) {
+			result = new MyhomePetWriteOkController().execute(req, resp);
+		}else if(target.equals("pet-update")) {
+			result = new MyhomePetUpdateController().execute(req, resp);
+		}else if(target.equals("pet-update-ok")) {
+			result = new MyhomePetUpdateOkController().execute(req, resp);
+		}else if(target.equals("pet-delete")) {
+			result = new MyhomePetDeleteController().execute(req, resp);
 		}else {
-//			전부 notFound 404
+			result = new Result();
+			result.setPath("../not-found.jsp");
 		}
 		if(result != null) {
 			if(result.isRedirect()){
