@@ -38,7 +38,7 @@ public class AdminLoginOkController implements Action {
 		}
 		
 		session.setAttribute("adminEmail", adminEmail);
-		result.setPath("announcementList.admin");
+		result.setPath("list.admin");
 		return result;
 	}
 }

@@ -33,7 +33,7 @@ public class AdminWriteOkController {
             
             // 에러 처리: 모든 필드가 필요한 경우 처리하지 않고 공지사항 목록으로 이동
             result.setRedirect(true);
-            result.setPath("../admin/announcementList.admin");  
+            result.setPath("../admin/list.admin");  
             return result;
         }
 
@@ -47,7 +47,7 @@ public class AdminWriteOkController {
         } catch (NumberFormatException e) {
             // 변환 실패 시 공지사항 목록으로 리다이렉트
             result.setRedirect(true);
-            result.setPath("../admin/announcementList.admin");
+            result.setPath("../admin/list.admin");
             return result;
         }
         
@@ -67,7 +67,7 @@ public class AdminWriteOkController {
         
         // 공지사항 목록 페이지로 리다이렉트
         result.setRedirect(true);
-        result.setPath("../admin/announcementList.admin");
+        result.setPath("../admin/list.admin");
         
         return result;
     }

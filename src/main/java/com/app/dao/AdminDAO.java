@@ -16,9 +16,10 @@ public class AdminDAO {
     }
 
 	//	로그인
-	public Optional<String> select(AdminVO adminVO) {
-		return sqlSession.selectOne("admin.loginAdmin", adminVO);
-	}
+    public Optional<String> select(AdminVO adminVO) {
+        String result = sqlSession.selectOne("admin.loginAdmin", adminVO);
+        return Optional.ofNullable(result);
+    }
 
     // 전체 조회
     public List<AdminVO> selectAll() {

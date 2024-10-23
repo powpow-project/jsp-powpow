@@ -24,7 +24,8 @@ public class AdminListController implements Action {
 		
 		req.setAttribute("adminList", adminList);
 		
-		result.setPath("../admin/announcementList.jsp");
+		result.setPath("../admin/list.jsp");
 		return result;
 	}
 }
+

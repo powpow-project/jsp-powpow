@@ -4,13 +4,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/admin/updatePost.css">
+    <link rel="stylesheet" href="../assets/css/admin/post.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
     <title>공지사항 신규등록</title>
 </head>
 <body>
-    <div id="frame">
+    <form action="write-ok.admin" method="post" id="frame">
         <div class="menu-wrap">
             <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
             <span>공지사항 관리</span>
@@ -56,7 +56,7 @@
         </div>
         <div class="division-line"></div>
         <div class="title">
-            <h1 class="h1">게시글 수정</h1>
+            <h1 class="h1">게시글 신규등록</h1>
         </div>
         <div class="form-wrap">
             <div class="sub-wrap">
@@ -72,10 +72,10 @@
             </div>
             <div class="button-group">
                 <button type="submit" class="button-submit">완료</button>
-                <button type="button" class="button-edit" onclick="cancelPost()">취소</button>
+                <button type="submit" class="button-edit" onclick="cancelPost()">취소</button>
             </div>
         </div>
-    </div>
-    <script src="../assets/js/admin/updatePost.js"></script>
+    </form>
+    <script src="../assets/js/admin/post.js"></script>
 </body>
 </html>

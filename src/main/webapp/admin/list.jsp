@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/admin/announcementList.css">
+    <link rel="stylesheet" href="../assets/css/admin/list.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
     <title>공지사항 관리</title>
@@ -113,6 +113,6 @@
         </section>
     </form>
 
-    <script src="../assets/js/admin/announcementList.js"></script>
+    <script src="../assets/js/admin/list.js"></script>
 </body>
 </html>

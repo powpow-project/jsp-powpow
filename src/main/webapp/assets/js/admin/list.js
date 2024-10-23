@@ -50,13 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 새 게시글 등록
     newAdd.addEventListener("click", function () {
-       	window.location.href = "../admin/announcementPost.admin"; // URL 확인 필요!!!
+       	window.location.href = "../admin/post.admin"; // URL 확인 필요!!!
     });
 
     // 수정 버튼 클릭
     editButtons.forEach(function (button) {
         button.addEventListener("click", function () {
-            window.location.href = "../admin/updatePost.admin?id="; // URL 확인 필요!!!
+            window.location.href = "../admin/update.admin?id="; // URL 확인 필요!!!
         });
     });
 
