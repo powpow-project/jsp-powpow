@@ -1,6 +1,7 @@
-package com.app.product.controller;
+package com.app.seller.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -11,19 +12,19 @@ import com.app.Result;
 import com.app.dao.ProductDAO;
 import com.app.vo.ProductVO;
 
-public class ProductUpdateController implements Action {
+public class SellerListController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		ProductDAO productDAO = new ProductDAO();
-		
-		ProductVO product = productDAO.select(Long.parseLong(req.getParameter("id"))).orElseThrow(()->{
-			throw new RuntimeException();
-		});
-		
-		req.setAttribute("product", product);
-		result.setPath("product-update.jsp");
+
+        
+	
+	    List<ProductVO> products = productDAO.selectAll();
+	    req.setAttribute("products", products);
+
+	    result.setPath("../seller/seller-list.jsp");
 		
 		return result;
 	}
