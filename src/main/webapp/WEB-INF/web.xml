@@ -31,16 +31,6 @@
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>BusinessFrontController</servlet-name>
-  	<servlet-class>com.app.business.BusinessFrontController</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>BusinessFrontController</servlet-name>
-  	<url-pattern>*.business</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
   	<servlet-name>CommunityPostFrontController</servlet-name>
   	<servlet-class>com.app.community.CommunityPostFrontController</servlet-class>
   </servlet>
@@ -50,15 +40,6 @@
   	<url-pattern>*.community</url-pattern>
   </servlet-mapping>
   
-  <servlet>
-  	<servlet-name>PetFrontController</servlet-name>
-  	<servlet-class>com.app.pet.PetFrontController</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>PetFrontController</servlet-name>
-  	<url-pattern>*.pet</url-pattern>
-  </servlet-mapping>
   <servlet>
   	<servlet-name>AdminFrontController</servlet-name>
   	<servlet-class>com.app.admin.AdminFrontController</servlet-class>
