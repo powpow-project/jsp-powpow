@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -97,7 +98,7 @@
         <tr>
           <td>${status.index + 1}</td>  <!-- 행 번호 출력 -->
           <td>
-              <div class="image"><img src="../assets/images/product${product.productImage}" alt="이미지"></div>
+              <div class="image"><img src="../assets/images/product/${product.productImage}" alt="이미지"></div>
           </td>
           <td><c:out value="${product.productName}" /></td>
           <td><c:out value="${product.productPrice}원" /></td>
@@ -116,7 +117,7 @@
      </tbody>
      </table>
     </section>
-
+	
     <div class="pop-up">
       <p>삭제하시겠습니까?</p>
       <div class="check-buttons">

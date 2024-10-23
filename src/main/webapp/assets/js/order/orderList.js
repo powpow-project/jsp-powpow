@@ -1,10 +1,9 @@
 /**
  * 
  */
-const deleteButtons = document.querySelectorAll(".change-buttons .delete-btn")
-const popup = document.querySelector(".pop-up")
-const closePopupButton = document.querySelector(".cancel-btn")
-const deletePopupButton = document.querySelector(".check-buttons .delete-btn")
+const detailButtons = document.querySelectorAll(".details-button")
+const popup = document.querySelector(".form-frame")
+const closePopupButton = document.querySelector(".close-btn")
 const popupBg = document.querySelector(".popup-bg");
 const list = document.querySelectorAll("li");
 const div = document.querySelectorAll("ul > li > div");
@@ -12,7 +11,7 @@ const ps = document.querySelectorAll("ul > li > p");
 const menu = document.querySelector(".menu-icon");
 const menubars = document.querySelectorAll("#menu-frame");
 
-deleteButtons.forEach(button => {
+detailButtons.forEach(button => {
   button.addEventListener("click", () => {
     popup.style.display = "flex";
     popupBg.style.display = "block";
@@ -24,19 +23,18 @@ closePopupButton.addEventListener("click", () => {
   popupBg.style.display = "none";
 });
 
-deletePopupButton.addEventListener("click", () => {
-  popup.style.display = "none";
-  popupBg.style.display = "none";
-});
-
 document.addEventListener("DOMContentLoaded", function(){
   const reset = document.querySelector(".reset-btn");
-  const searchInput = document.querySelector(".search");
+  const searches = document.querySelectorAll(".search");
   
+
+searches.forEach(search => {
   reset.addEventListener("click", ()=>{
-    searchInput.value = "";
+    search.value = "";
+    })
   })
 });
+
 
 list.forEach((li, i) => {
   li.addEventListener("mouseover", () => {
@@ -47,21 +45,18 @@ list.forEach((li, i) => {
   });
 });
 
-menubars.forEach(menubar => {
-  menu.addEventListener("click", function() {
+menubars.forEach((menubar) => {
+  menu.addEventListener("click", function () {
     menubar.style.display = "flex";
-  })
-})
-menubars.forEach(menubar => {
-  menubar.addEventListener("mouseenter", function() {
+  });
+});
+menubars.forEach((menubar) => {
+  menubar.addEventListener("mouseenter", function () {
     menubar.style.display = "flex";
-  })
-})
-menubars.forEach(menubar => {
-  menubar.addEventListener("mouseleave", function() {
+  });
+});
+menubars.forEach((menubar) => {
+  menubar.addEventListener("mouseleave", function () {
     menubar.style.display = "none";
-  })
-})
-
-
-
+  });
+});
