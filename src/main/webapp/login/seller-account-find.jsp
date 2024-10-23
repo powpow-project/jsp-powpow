@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>POWPOW</title>
 <link rel="stylesheet" href="../assets/css/index.css"/>
-<link rel="stylesheet" href="../assets/css/login/seller-id-find.css"/>
+<link rel="stylesheet" href="../assets/css/login/seller-account-find.css"/>
 <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
 </head>
 <body>
@@ -28,13 +28,20 @@
               <p>이름</p>
               <input class="inputbutton" type="text" name="id" placeholder="이름">
             </div>
-            <div>
-              <p>휴대폰 번호</p>
-              <div class="input-container">
-                <input class="inputbutton" type="number" name="phone" placeholder="휴대폰 번호 입력 ('-'제외 11자리 입력)">
-                <button class="auth-button">인증</button>
-              </div>
-            </div>
+			<div>
+			    <p>휴대폰 번호</p>
+			    <div class="input-container">
+			        <input class="inputbutton" type="number" name="phone" placeholder="휴대폰 번호 입력 ('-'제외 11자리 입력)">
+			        <button class="auth-button" id="request-auth">인증요청</button>
+			    </div>
+			    <div class="auth-number-container" id="authNumberContainer" style="display: none;">
+			        <div class="input-container">
+			            <input class="inputbutton" type="number" name="authNumber" placeholder="인증번호 6자리 입력">
+			            <button class="auth-button confirm-button">확인</button>
+			            <p id="phone-result"></p>
+			        </div>
+			    </div>
+			</div>
           </div>
           <a href="http://localhost:9000/powpow/seller-id-find-complete.jsp">
             <button class="next-button">다음</button>
@@ -43,16 +50,14 @@
 
 
         <div class="main-content password" style="display: none;" class="password">
-          <div class="box1">
-            <img id="check" src="assets/images//smallcheck.svg" alt="">
-            <p class="text">본인 확인을 통해 비밀번호를 재설정 하실 수 있습니다.</p>
-          </div>
-          <div>
-            <p>아이디</p>
-            <input class="inputbutton" type="text" name="id" placeholder="아이디(이메일)">
+           <div class="input">
+          	<div>
+             <p>아이디</p>
+             <input class="inputbutton" type="text" name="id" placeholder="아이디(이메일)">
+           </div>
           </div>
 
-          <p class="text2">비밀번호 찾기 방법을 선택해주세요.</p>
+          <p class="text2">비밀번호를 찾을 방법을 선택해 주세요!</p>
 
           <div class="raido-box">
             <label for="user_a">
@@ -65,31 +70,11 @@
                 <p class="text1">등록된 휴대폰</p>
             </label>
           </div>
-          <a href="http://localhost:9000/powpow/seller-password-change.jsp">
             <button class="next-button1">다음</button>
-          </a>
         </div>
 
       </div>
   </div>
-
-
-
-  
+   <script src="../assets/js/login/seller-account-find.js"></script>
 </body>
-<script>
-    const idBtn = document.querySelector(".id-btn");
-    const passwordBtn = document.querySelector(".password-btn");
-    const main = document.querySelectorAll(".main-content");
-
-    idBtn.addEventListener("click", () => {
-      main[0].style.display = "block";
-      main[1].style.display = "none";
-    })
-
-    passwordBtn.addEventListener("click", () => {
-      main[0].style.display = "none";
-      main[1].style.display = "block";
-    })
-</script>
 </html>

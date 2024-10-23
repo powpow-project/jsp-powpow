@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>POWPOW</title>
 <link rel="stylesheet" href="../assets/css/index.css"/>
-<link rel="stylesheet" href="../assets/css/login/buyer-id-find.css"/>
+<link rel="stylesheet" href="../assets/css/login/buyer-account-find.css"/>
 <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
 </head>
 <body>
@@ -43,13 +43,11 @@
 
 
         <div class="main-content password" style="display: none;" class="password">
-          <div class="box1">
-            <img id="check" src="../assets/images/login/smallcheck.svg" alt="">
-            <p class="text">본인 확인을 통해 비밀번호를 재설정 하실 수 있습니다.</p>
-          </div>
+        <div class="input">
           <div>
             <p>아이디</p>
             <input class="inputbutton" type="text" name="id" placeholder="아이디(이메일)">
+          </div>
           </div>
 
           <p class="text2">비밀번호 찾기 방법을 선택해주세요.</p>
@@ -65,31 +63,11 @@
                 <p class="text1">등록된 휴대폰</p>
             </label>
           </div>
-          <a href="http://localhost:9000/powpow/buyer-password-change.jsp">
             <button class="next-button1">다음</button>
-          </a>
         </div>
 
       </div>
   </div>
-
-
-
-  
+  <script src="../assets/js/login/buyer-account-find.js"></script>
 </body>
-<script>
-    const idBtn = document.querySelector(".id-btn");
-    const passwordBtn = document.querySelector(".password-btn");
-    const main = document.querySelectorAll(".main-content");
-
-    idBtn.addEventListener("click", () => {
-      main[0].style.display = "block";
-      main[1].style.display = "none";
-    })
-
-    passwordBtn.addEventListener("click", () => {
-      main[0].style.display = "none";
-      main[1].style.display = "block";
-    })
-</script>
 </html>
