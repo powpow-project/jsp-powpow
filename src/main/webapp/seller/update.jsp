@@ -23,13 +23,15 @@
         <h1 class="h1">상품 수정</h1>
       </div>
 
+
+      
       <div id="product-insert">
         <h3 class="title h3">상품 정보 입력</h3>
         <div class="info-wrap">
         <input type="hidden" name="id" value="${product.id}"/>
           <div class="list-wrap">
             <p class="h6">상품명</p>
-            <input type="text" name="productName" value="${product.productName}" />
+            <input type="text" name="productName" value="캣타워" />
               </div>
               <div class="list-wrap">
                 <p class="h6">상품가격</p>
@@ -227,6 +229,8 @@
               <button type="button" class="cancel-btn h6" onclick="location.href='list.seller';">취소</button>
             </div>
         </div>
+        
+        
       </div>
     </form>
 </body>
