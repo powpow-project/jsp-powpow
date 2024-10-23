@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 수정 버튼 클릭
     editButtons.forEach(function (button) {
         button.addEventListener("click", function () {
-            window.location.href = "../admin/updatePost.admin"; // URL 확인 필요!!!
+            window.location.href = "../admin/updatePost.admin?id="; // URL 확인 필요!!!
         });
     });
 

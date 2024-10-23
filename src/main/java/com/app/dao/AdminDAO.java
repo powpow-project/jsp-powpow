@@ -20,7 +20,7 @@ public class AdminDAO {
 		return sqlSession.selectOne("admin.loginAdmin", adminVO);
 	}
 
-    // 공지사항 전체 조회
+    // 전체 조회
     public List<AdminVO> selectAll() {
         return sqlSession.selectList("admin.selectAllAdminNotices");
     }
