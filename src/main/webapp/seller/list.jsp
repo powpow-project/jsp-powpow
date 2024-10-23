@@ -17,49 +17,49 @@
     <img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴">
     <span class="h4">상품관리</span>
     
-    	<div id="menu-frame">
-	    <div class="menu-header">
-	      <div class="welcome">seller님 환영합니다!</div>
-	      <button class="logout">로그아웃</button>
-	    </div>
-	    <div class="menu-form">
-	      <ul>
-	        <li>
-	          <p>상품 관리</p>
-	          <div>
-	            <p>상품 조회</p>
-	            <p>상품 등록</p>
-	            <p>상품 수정</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>주문 관리</p>
-	          <div>
-	            <p>주문조회</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>정산 관리</p>
-	          <div>
-	            <p>정산내역조회</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>판매자 관리</p>
-	          <div>
-	            <p>판매자정보 관리</p>
-	            <p>사업자정보 관리</p>
-	          </div>
-	        </li>
-	        <li>
-	          <p>매출 관리</p>
-	          <div>
-	            <p>매출 조회</p>
-	          </div>
-	        </li>
-	      </ul>
-	    </div>
-	</div>
+       <div id="menu-frame">
+       <div class="menu-header">
+         <div class="welcome">seller님 환영합니다!</div>
+         <button class="logout">로그아웃</button>
+       </div>
+       <div class="menu-form">
+         <ul>
+           <li>
+             <p>상품 관리</p>
+             <div>
+               <p>상품 조회</p>
+               <p>상품 등록</p>
+               <p>상품 수정</p>
+             </div>
+           </li>
+           <li>
+             <p>주문 관리</p>
+             <div>
+               <p>주문조회</p>
+             </div>
+           </li>
+           <li>
+             <p>정산 관리</p>
+             <div>
+               <p>정산내역조회</p>
+             </div>
+           </li>
+           <li>
+             <p>판매자 관리</p>
+             <div>
+               <p>판매자정보 관리</p>
+               <p>사업자정보 관리</p>
+             </div>
+           </li>
+           <li>
+             <p>매출 관리</p>
+             <div>
+               <p>매출 조회</p>
+             </div>
+           </li>
+         </ul>
+       </div>
+   </div>
     
   </div>
   <div class="division-line"></div>
@@ -93,7 +93,7 @@
           <th>관리</th>
       </tr>
      </thead>
-		<tbody>
+      <tbody>
         <c:forEach var="product" items="${products}" varStatus="status">
         <tr>
           <td>${status.index + 1}</td>  <!-- 행 번호 출력 -->
@@ -108,7 +108,7 @@
           <td><c:out value="${product.productDate}" /></td>
           <td>
             <div class="change-buttons">
-                <button class="edit-btn" onclick="location.href='update.seller?id=${product.id}'">수정</button>
+                <button class="edit-btn" onclick="location.href='update.seller?id=" ${product.id}>수정</button>
                 <button class="delete-btn" >삭제</button>
             </div>
           </td>
@@ -117,7 +117,7 @@
      </tbody>
      </table>
     </section>
-	
+   
     <div class="pop-up">
       <p>삭제하시겠습니까?</p>
       <div class="check-buttons">

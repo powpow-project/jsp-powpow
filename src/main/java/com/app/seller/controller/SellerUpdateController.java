@@ -13,19 +13,19 @@ import com.app.vo.ProductVO;
 
 public class SellerUpdateController implements Action {
 
-	@Override
-	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
-		ProductDAO productDAO = new ProductDAO();
-		
-		ProductVO product = productDAO.select(Long.parseLong(req.getParameter("id"))).orElseThrow(()->{
-			throw new RuntimeException();
-		});
-		
-		req.setAttribute("product", product);
-		result.setPath("seller-update.seller");
-		
-		return result;
-	}
+   @Override
+   public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+      Result result = new Result();
+      ProductDAO productDAO = new ProductDAO();
+      
+      ProductVO product = productDAO.select(Long.parseLong(req.getParameter("id"))).orElseThrow(()->{
+         throw new RuntimeException();
+      });
+      
+      req.setAttribute("product", product);
+      result.setPath("../update.seller");
+      
+      return result;
+   }
 
 }

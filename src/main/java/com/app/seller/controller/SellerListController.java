@@ -14,19 +14,19 @@ import com.app.vo.ProductVO;
 
 public class SellerListController implements Action {
 
-	@Override
-	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
-		ProductDAO productDAO = new ProductDAO();
+   @Override
+   public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+      Result result = new Result();
+      ProductDAO productDAO = new ProductDAO();
 
         
-	
-	    List<ProductVO> products = productDAO.selectAll();
-	    req.setAttribute("products", products);
+   
+       List<ProductVO> products = productDAO.selectAll();
+       req.setAttribute("products", products);
 
-	    result.setPath("../seller/seller-list.jsp");
-		
-		return result;
-	}
+       result.setPath("../seller/list.jsp");
+      
+      return result;
+   }
 
 }
