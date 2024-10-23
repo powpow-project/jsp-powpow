@@ -9,8 +9,17 @@
         WHERE ADMIN_EMAIL = #{adminEmail} AND ADMIN_PASSWORD = #{adminPassword}
     </select>
    
-    <!-- 전체 조회 -->
+    <!-- 공지사항 전체 조회(list 기존) -->
     <select id="selectAll" resultType="AdminNoticeVO">
+        SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE, 
+               ADMIN_NOTICE_CONTENT, ADMIN_NOTICE_VIEW, ADMIN_NOTICE_WRITER, 
+               ADMIN_NOTICE_DATE
+        FROM TBL_ADMIN_NOTICE
+        ORDER BY ADMIN_NOTICE_DATE DESC
+    </select>
+    
+    <!-- 공지사항 전체 조회 (새로운 selectAllAdminNotices) -->
+    <select id="selectAllAdminNotices" resultType="AdminNoticeVO">
         SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE, 
                ADMIN_NOTICE_CONTENT, ADMIN_NOTICE_VIEW, ADMIN_NOTICE_WRITER, 
                ADMIN_NOTICE_DATE

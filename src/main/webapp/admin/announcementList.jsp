@@ -90,8 +90,8 @@
                         <td>운영자</td>
                         <td>
                             <div class="change-buttons">
-                                <button class="edit-btn">수정</button>
-                                <button class="delete-btn">삭제</button>
+                                <button type="button" class="edit-btn">수정</button>
+                                <button type="button" class="delete-btn">삭제</button>
                             </div>
                         </td>
                     </tr>
@@ -103,8 +103,8 @@
                         <td>운영자</td>
                         <td>
                             <div class="change-buttons">
-                                <button class="edit-btn"  onclick="location.href='announcementPost.admin'">수정</button>
-                                <button class="delete-btn">삭제</button>
+                                <button type="button" class="edit-btn"  onclick="location.href='announcementPost.admin'">수정</button>
+                                <button type="button" class="delete-btn">삭제</button>
                             </div>
                         </td>
                     </tr>

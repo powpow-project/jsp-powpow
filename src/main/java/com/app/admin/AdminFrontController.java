@@ -11,6 +11,7 @@ import com.app.Result;
 import com.app.admin.controller.AdminListController;
 import com.app.admin.controller.AdminLoginOkController;
 import com.app.admin.controller.AdminUpdateController;
+import com.app.admin.controller.AdminUpdateOkController;
 import com.app.admin.controller.AdminWriteOkController;
 
 public class AdminFrontController extends HttpServlet{
@@ -38,17 +39,17 @@ public class AdminFrontController extends HttpServlet{
 	        result = new Result();
 	        result.setPath("../admin/announcementPost.jsp"); // JSP로 포워딩
 	    
-	    } else if (target.equals("post-ok")) { // 공지사항 등록 페이지 완료
+	    } else if (target.equals("write-ok")) { // 공지사항 등록 페이지 완료
 	        result = new AdminWriteOkController().execute(req, resp);
 	        
 	    } else if (target.equals("update")) { // 공지사항 수정
 	        result = new AdminUpdateController().execute(req, resp);
 
 	    } else if (target.equals("update-ok")) { // 공지사항 수정 완료
-	        // result = new AdminUpdateOkController().execute(req, resp);
+	        result = new AdminUpdateOkController().execute(req, resp);
 
 	    } else if (target.equals("delete-ok")) { // 공지사항 삭제
-	        // result = new AdminDeleteOkController().execute(req, resp);
+//	        result = new AdminDeleteOkController().execute(req, resp);
 
 	    } else {
 	        result = new Result();
