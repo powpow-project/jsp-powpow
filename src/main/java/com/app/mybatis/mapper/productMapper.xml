@@ -24,9 +24,9 @@
 	<update id="update" parameterType="ProductVO">
 		UPDATE TBL_PRODUCT
 		SET PRODUCT_NAME = #{productName}, PRODUCT_PRICE = #{productPrice},PRODUCT_IMAGE = #{productImage},
-		 PRODUCT_STOCK = #{productStock}, PRODUCT_STOCK = #{productStock}, PRODUCT_TYPE = #{productType},
-		 PRODUCT_DETAIL = #{productDetail}, PRODUCT_SUB_IMAGE1 = #{productSubImage1}, PRODUCT_SUB_IMAGE2 = #{productSubImage2},
-		 PRODUCT_SUB_IMAGE3 = #{productSubImage3}
+		 PRODUCT_STOCK = #{productStock}, PRODUCT_TYPE = #{productType}, PRODUCT_CATEGORY_NAME = #{productCategoryName},
+		 PRODUCT_DETAIL = #{productDetail}, PRODUCT_SUB_IMAGE1 = #{productSubImage1},
+		 PRODUCT_SUB_IMAGE2 = #{productSubImage2}, PRODUCT_SUB_IMAGE3 = #{productSubImage3}
 		WHERE ID = #{id}
 	</update>
 	
