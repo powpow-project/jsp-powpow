@@ -1,4 +1,4 @@
-package com.app.product.controller;
+package com.app.seller.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import com.app.vo.ProductVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class ProductWriteOkController implements Action {
+public class SellerWriteOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -81,7 +81,7 @@ public class ProductWriteOkController implements Action {
 		
 		
 		result.setRedirect(true);
-		result.setPath("../product/product-list.product");
+		result.setPath("../seller/seller-list.seller");
 		
 		return result;
 	}

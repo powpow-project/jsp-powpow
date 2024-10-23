@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.seller.controller.SellerDeleteOkController;
+import com.app.seller.controller.SellerListController;
+import com.app.seller.controller.SellerUpdateController;
+import com.app.seller.controller.SellerUpdateOkController;
+import com.app.seller.controller.SellerWriteOkController;
 
 public class SellerFrontController extends HttpServlet{
 	@Override
@@ -17,16 +22,22 @@ public class SellerFrontController extends HttpServlet{
 		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
 		Result result = null;
 		
-		if(target.equals("write")) {
-			
-		}else if(target.equals("write-ok")) {
-			
-		}else if(target.equals("list")) {
-			
-		}else if(target.equals("delete-ok")) {
-			
+		if(target.equals("seller-write")) {
+		     result = new Result();
+	         result.setPath("../seller/seller-write.jsp");
+		}else if(target.equals("seller-write-ok")) {
+	         result = new SellerWriteOkController().execute(req, resp);
+		}else if(target.equals("seller-list")) {
+			 result = new SellerListController().execute(req, resp);
+		}else if(target.equals("seller-update")) {
+			result = new SellerUpdateController().execute(req, resp);
+		}else if(target.equals("seller-update-ok")) {
+			result = new SellerUpdateOkController().execute(req, resp);
+		}else if(target.equals("seller-delete-ok")) {
+			result = new SellerDeleteOkController().execute(req, resp);
 		}else {
-//			전부 notFound 404
+			result = new Result();
+			result.setPath("../notFound.jsp");
 		}
 		
 		if(result != null) {
