@@ -11,19 +11,12 @@ import com.app.Result;
 import com.app.dao.MemberDAO;
 import com.app.vo.MemberVO;
 
-public class MyhomeImageController implements Action {
+public class MyhomePetUpdateOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-//		Result result = new Result();
-//		MemberDAO memberDAO = new MemberDAO();
-//		MemberVO memberVO = new MemberVO();
-//		
-////		memberDAO.insert(memberVO);
-//		
-//		result.setRedirect(true);
-//		result.setPath(req.getContextPath() + "/login.member");
-//		
+		Result result = new Result();
+
 		return null;
 	}
 

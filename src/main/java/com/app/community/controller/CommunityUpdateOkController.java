@@ -1,4 +1,4 @@
-package com.app.product.controller;
+package com.app.community.controller;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import com.app.dao.OrderDAO;
 import com.app.dao.ProductDAO;
 import com.app.vo.OrderVO;
 
-public class ProductListController implements Action {
+public class CommunityUpdateOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
