@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/shopping/health-main.css">
+<link rel="stylesheet" href="../assets/css/product/health-main.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 <title>헬스+쇼핑</title>
@@ -84,153 +85,48 @@
 			<div class="all-and-header">
 				<div class="section-header-container">
 					<div class="section-header">
-						<img src="../assets/images/shopping/dogicon.png" alt="강아지 헬스+">
-						<span>성장기별 추천 아이템이에요!</span>
+						<img src="../cart/img/dogicon.png" alt="강아지 헬스+"> <span>성장기별
+							추천 아이템이에요!</span>
 					</div>
 					<div class="category-buttons">
-						<button onclick="showProducts('puppy')">퍼피</button>
-						<button onclick="showProducts('adult')">어덜트</button>
+						<button>퍼피</button>
+						<button>어덜트</button>
 						<button>시니어</button>
 					</div>
 				</div>
 				<a href="#" class="view-all">전체보기</a>
 			</div>
-
 			<div class="slider-container-dog">
 				<button class="slider-btn prev">&#10094;</button>
 				<div class="slider">
-					<div class="product">
-						<div class="product-image-wrap">
-							<img src="../assets/images/shopping/product-not-found.png">
-							<div class="hover-box">
-								<div class=hover-box-new>
-									<a class="hover-new" href="#"> 
-									<img src="../assets/images/shopping/share.png">
-									</a>
-								</div>
-								<div class=hover-box-cart>
-									<a class="hover-cart" href="cart-write.jsp" onclick="cart-write.cart"> 
-									<img src="../assets/images/shopping/carthovar.png">
-									</a>
-								</div>
-								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> 
-									<img src="../assets/images/shopping/like.png">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product">
-						<div class="product-image-wrap">
-							<img src="../assets/images/shopping/product-not-found.png">
-							<div class="hover-box">
-								<div class=hover-box-new>
-									<a class="hover-new" href="#"> 
-									<img src="../assets/images/shopping/share.png">
-									</a>
-								</div>
-								<div class=hover-box-cart>
-									<a class="hover-cart" href="#"> 
-									<img src="../assets/images/shopping/carthovar.png">
-									</a>
-								</div>
-								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> 
-									<img src="../assets/images/shopping/like.png">
-									</a>
+					<c:forEach var="product" items="${products}">
+						<div class="product">
+							<div class="product-image-wrap">
+								<img src="../assets/images/product/${product.productImage}"
+									alt="${product.productName}">
+								<div class="hover-box">
+									<div class="hover-box-new">
+										<a class="hover-new" href="#"> <img
+											src="../cart/img/share.png">
+										</a>
+									</div>
+									<div class="hover-box-cart">
+										<a class="hover-cart" href="#"> <img
+											src="../cart/img/carthovar.png">
+										</a>
+									</div>
+									<div class="hover-box-heart">
+										<a class="hover-heart" href="#"> <img
+											src="../cart/img/like.png">
+										</a>
+									</div>
 								</div>
 							</div>
+							<h6 class="h6">${product.productName}</h6>
+							<p>가격: ${product.productPrice}원</p>
+							<p class="product-rating">★★★★★ (201)</p>
 						</div>
-					</div>
-					<div class="product">
-						<div class="product-image-wrap">
-							<img src="../assets/images/shopping/product-not-found.png">
-							<div class="hover-box">
-								<div class=hover-box-new>
-									<a class="hover-new" href="#"> <img
-										src="../assets/images/shopping/share.png">
-									</a>
-								</div>
-								<div class=hover-box-cart>
-									<a class="hover-cart" href="#"> <img
-										src="../assets/images/shopping/carthovar.png">
-									</a>
-								</div>
-								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> <img
-										src="../assets/images/shopping/like.png">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product">
-						<div class="product-image-wrap">
-							<img src="../assets/images/shopping/product-not-found.png">
-							<div class="hover-box">
-								<div class=hover-box-new>
-									<a class="hover-new" href="#"> <img
-										src="../assets/images/shopping/share.png">
-									</a>
-								</div>
-								<div class=hover-box-cart>
-									<a class="hover-cart" href="#"> <img
-										src="../assets/images/shopping/carthovar.png">
-									</a>
-								</div>
-								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> <img
-										src="../assets/images/shopping/like.png">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product">
-						<div class="product-image-wrap">
-							<img src="../assets/images/shopping/product-not-found.png">
-							<div class="hover-box">
-								<div class=hover-box-new>
-									<a class="hover-new" href="#"> <img
-										src="../assets/images/shopping/share.png">
-									</a>
-								</div>
-								<div class=hover-box-cart>
-									<a class="hover-cart" href="#"> <img
-										src="../assets/images/shopping/carthovar.png">
-									</a>
-								</div>
-								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> <img
-										src="../assets/images/shopping/like.png">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="product">
-						<div class="product-image-wrap">
-							<img src="../assets/images/shopping/product-not-found.png">
-							<div class="hover-box">
-								<div class=hover-box-new>
-									<a class="hover-new" href="#"> <img
-										src="../assets/images/shopping/share.png">
-									</a>
-								</div>
-								<div class=hover-box-cart>
-									<a class="hover-cart" href="#"> <img
-										src="../assets/images/shopping/carthovar.png">
-									</a>
-								</div>
-								<div class=hover-box-heart>
-									<a class="hover-heart" href="#"> <img
-										src="../assets/images/shopping/like.png">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 				<button class="slider-btn next">&#10095;</button>
 			</div>
@@ -768,7 +664,7 @@
 					</div>
 				</footer>
 </body>
-<script src="../assets/js/shopping/health-main.js">
+<script src="../assets/js/product/health-main.js">
 
 </script>
 
