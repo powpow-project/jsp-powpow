@@ -44,30 +44,9 @@
           <button class="login-button">확인</button>
         </a>
       </div>
-        <img alt="" src="../assets/images/login/eye-on.svg">
- 		<img alt="" src="../assets/images/login/eye-off.svg">
-  
+  <script src="../jQuery.js"></script>
+  <script src="../assets/js/login/seller-password-change.js"></script>
 </body>
-
-<script>
-
-	const mark = document.querySelector(".mark");
-	mark.addEventListener("click", () => {
-		const input = document.querySelector("input[name='password']");
-		const inputConfirm = document.querySelector("input[name='passwordConfirm']");
-		
-		if(input.type === "password"){
-			input.setAttribute("type", "text");
-			inputConfirm.setAttribute("type", "text");
-			mark.style.backgroundImage = "url('../assets/images/login/eye-on.svg')";
-		}else{
-			input.setAttribute("type", "password");
-			inputConfirm.setAttribute("type", "password");
-			mark.style.backgroundImage = "url('../assets/images/login/eye-off.svg')";
-		}
-	})
-
-</script>
 </html>
 
 

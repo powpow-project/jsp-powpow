@@ -14,6 +14,7 @@ import com.app.member.controller.MemberDeleteOkController;
 import com.app.member.controller.MemberListController;
 import com.app.member.controller.MemberSellerWriteController;
 import com.app.member.controller.MemberSellerWriteOkController;
+import com.app.member.controller.MemberSnsController;
 import com.app.member.controller.MemberUpdateController;
 import com.app.member.controller.MemberUpdateOkController;
 
@@ -27,6 +28,8 @@ public class MemberFrontController extends HttpServlet{
 		
 		if(target.equals("buyer-write")) {
 			result = new MemberBuyerWriteController().execute(req, resp);
+		}else if(target.equals("sns")) {
+			result = new MemberSnsController().execute(req, resp);
 		}else if(target.equals("buyer-write-ok")) {
 			result = new MemberBuyerWriteOkController().execute(req, resp);
 		}else if(target.equals("seller-write")) {

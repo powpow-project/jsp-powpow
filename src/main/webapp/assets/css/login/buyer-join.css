@@ -112,6 +112,7 @@
 }
 
 
+
 /* 동의 안내 */
 .text-box1 {
   display: flex;
@@ -139,6 +140,9 @@
   border-radius: 20px;
   border: solid 1px #CECECE;
   flex-shrink: 0;
+}
+#agree-result {
+    text-align: left;
 }
 
 .line2 {

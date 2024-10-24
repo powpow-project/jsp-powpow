@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/* 로고 css */
+#logo{
+  width: 236px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+  justify-content: center;
+  width: 464px;
+  padding-bottom: 40px;
+}
