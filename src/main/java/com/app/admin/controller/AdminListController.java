@@ -20,9 +20,9 @@ public class AdminListController implements Action {
 
 		Result result = new Result();
 		AdminDAO adminDAO = new AdminDAO();
-		List<AdminVO> adminList = adminDAO.selectAll();
+//		List<AdminVO> adminList = adminDAO.selectAll();
 		
-		req.setAttribute("adminList", adminList);
+//		req.setAttribute("adminList", adminList);
 		
 		result.setPath("../admin/list.jsp");
 		return result;

@@ -21,12 +21,10 @@ public class AdminUpdateController implements Action {
         AdminVO adminVO = new AdminVO();
         Long id = Long.parseLong(req.getParameter("adminId"));
         
+      
+       
         
-        String admin = adminDAO.select(adminVO).orElseThrow(() -> {
-            throw new RuntimeException();
-        });
-        
-        req.setAttribute("admin", admin);
+//        req.setAttribute("adminNotice", adminNotice);
         result.setPath("update.admin");
                 
         return result;
