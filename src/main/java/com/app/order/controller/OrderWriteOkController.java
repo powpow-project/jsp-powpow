@@ -19,7 +19,11 @@ public class OrderWriteOkController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
+		OrderDAO orderDAO = new OrderDAO();
+		MemberDAO memberDAO = new MemberDAO();
+		HttpSession session = req.getSession();		
 		
+		result.setPath("write-ok.jsp");
 		return result;
 	}
 

@@ -16,11 +16,6 @@ import com.app.product.controller.ProductHealthController;
 import com.app.product.controller.ProductListController;
 import com.app.product.controller.ProductSearchController;
 import com.app.product.controller.ProductSellerController;
-import com.app.seller.controller.SellerDeleteOkController;
-import com.app.seller.controller.SellerListController;
-import com.app.seller.controller.SellerUpdateController;
-import com.app.seller.controller.SellerUpdateOkController;
-import com.app.seller.controller.SellerWriteOkController;
 
 public class ProductFrontController extends HttpServlet{
 
