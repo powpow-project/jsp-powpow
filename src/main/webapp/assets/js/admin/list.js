@@ -50,23 +50,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 새 게시글 등록
     newAdd.addEventListener("click", function () {
-       	window.location.href = "../admin/post.admin"; // URL 확인 필요!!!
+        window.location.href = "../admin/write.admin"; // 게시글 작성 URL
     });
 
-    // 수정 버튼 클릭
-    editButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            window.location.href = "../admin/update.admin?id="; // URL 확인 필요!!!
-        });
-    });
 
-    // 삭제 버튼 클릭
-    deleteButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            if (confirm("정말 삭제하시겠습니까?")) {
-                button.closest("tr").remove();
-                alert("공지사항이 삭제되었습니다.");
-            }
-        });
-    });
+
+	// 삭제 버튼 클릭 이벤트 설정
+	deleteButtons.forEach(function (button) {
+	    button.addEventListener("click", function (event) {
+	        const noticeId = button.getAttribute('data-id');
+	        
+	        if (confirm("정말 삭제하시겠습니까?")) {
+	            // 삭제 요청을 보냅니다.
+	            location.href = 'delete-ok.admin?id=' + noticeId; 
+	        } else {
+	            event.preventDefault();
+	        }
+	    });
+	});
 });
