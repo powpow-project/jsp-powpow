@@ -241,15 +241,17 @@
 
     .default-profile-image {
       border-radius: 50%;
-      padding: 0px 75px;
+      width: 120px;
+	  height: 120px;
+	  margin-left: 75px;
     }
 
     .id {
       font-size: 20px;
       font-weight: bold;
       columns: #131313;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
       width: 270px;
       height: 24px;
       text-align: center;
@@ -268,7 +270,7 @@
       font-weight: normal;
       margin-left: 87px;
       cursor: pointer;
-      margin-top: 20px;
+      margin-top: 10px;
     }
     
     
