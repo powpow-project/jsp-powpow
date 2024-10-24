@@ -10,7 +10,6 @@ import com.app.Action;
 import com.app.Result;
 import com.app.dao.ProductDAO;
 import com.app.vo.ProductVO;
-import com.oreilly.servlet.MultipartRequest;
 
 public class SellerUpdateController implements Action {
 
@@ -18,7 +17,6 @@ public class SellerUpdateController implements Action {
    public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
       Result result = new Result();
       ProductDAO productDAO = new ProductDAO();
-      String directory =req.getServletContext().getRealPath("/assets/images/product");
       
       System.out.println(req.getParameter("id"));
       ProductVO product = productDAO.select(Long.parseLong(req.getParameter("id"))).orElseThrow(()->{

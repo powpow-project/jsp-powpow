@@ -34,6 +34,7 @@ public class SellerUpdateOkController implements Action {
          MultipartRequest multi = new MultipartRequest(req, directory, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
          
          String title = multi.getParameter("title");
+         productVO.setId(Long.parseLong(multi.getParameter("id"))); // ID 추가
          String mainImage = multi.getFilesystemName("productImage");
          String fileName2 = multi.getFilesystemName("productSubImage1");
          String fileName3 = multi.getFilesystemName("productSubImage2");
@@ -41,9 +42,7 @@ public class SellerUpdateOkController implements Action {
          productVO.setProductName(multi.getParameter("productName"));
          productVO.setProductPrice(Integer.parseInt(multi.getParameter("productPrice")));
          productVO.setProductStock(Integer.parseInt(multi.getParameter("productStock")));
-         productVO.setProductType(multi.getParameter("productType"));
          productVO.setProductDetail(multi.getParameter("productDetail"));
-         productVO.setProductCategoryName(multi.getParameter("productCategoryName"));
          
          // 파일이 성공적으로 업로드되었는지 확인
          if (mainImage != null) {
@@ -57,6 +56,8 @@ public class SellerUpdateOkController implements Action {
          }
       } catch (Exception e) {
          e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
+         req.setAttribute("errorMessage", "상품 수정 중 오류가 발생했습니다."); // 에러 메시지 설정
+         return result; // 에러 페이지로 리턴할 수 있음
       }
       
       productDAO.update(productVO);
