@@ -2,6 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="myhome">
+	<update id="update" parameterType="MemberDTO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_NICKNAME = #{memberNickname},
+        	MEMBER_PHONE = #{memberPhone},
+        	MEMBER_ADDRESS = #{memberAddress},
+        	MEMBER_IMAGE = #{memberImage}
+    	WHERE MEMBER_ID = #{memberId}
+	</update>
 	
+	<select id="select" resultType="OrderDTO">
+		SELECT ID, MEMBER_ID, PRODUCT_ID, ORDER_ID, ORDER_NUMBER, ORDER_DATE
+		FROM TBL_ORDER
+		ORDER BY ID ASC
+	</select>
+	
+	<insert id="insert" parameterType="PetVO">
+		INSERT INTO TBL_PET(ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER)
+		VALUES(PET_SEQ.NEXTVAL, #{memberId}, #{petKind}, #{petImage}, #{petName}, #{petGender}, #{petBreed}, #{petBrith}. #{petVet}, #{petWeight}, #{petNeuter})
+	</insert>
 	
 </mapper>
