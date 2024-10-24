@@ -18,24 +18,28 @@ public class AdminDAO {
     }
 
 	//	로그인
-    public Optional<String> select(AdminVO adminVO) {
-        String result = sqlSession.selectOne("admin.loginAdmin", adminVO);
-        return Optional.ofNullable(result);
+    public String select(AdminVO adminVO) {
+        return sqlSession.selectOne("admin.loginAdmin", adminVO);
     }
+    
 //    어드민 아이디 조회
     public AdminVO selectByAdminEmail(String adminEmail) {
         return sqlSession.selectOne("admin.selectByAdminEmail", adminEmail);
      }
+    
+    
+    
+    
     
     // 공지사항 추가
     public void insertAdminNotice(AdminNoticeDTO adminNoticeDTO) {
     	sqlSession.insert("admin.insertAdminNotice", adminNoticeDTO);
     }
 
-    // 전체 조회
-    public List<AdminVO> selectAll() {
-        return sqlSession.selectList("admin.selectAllAdminNotices");
-    }
+//    // 전체 조회
+//    public List<AdminVO> selectAll() {
+//        return sqlSession.selectList("admin.selectAllAdminNotices");
+//    }
 
 //    // 공지사항 단건 조회
 //    public AdminNoticeVO selectOneAdminNotice(Long id) {
@@ -44,8 +48,8 @@ public class AdminDAO {
 
 
     // 공지사항 수정
-    public void updateAdminNotice(AdminNoticeVO noticeVO) {
-        sqlSession.update("admin.updateAdminNotice", noticeVO);
+    public void updateAdminNotice(AdminNoticeDTO adminNoticeDTO) {
+        sqlSession.update("admin.updateAdminNotice", adminNoticeDTO);
     }
 
     // 공지사항 삭제

@@ -10,7 +10,7 @@ public class AdminNoticeDTO {
     private int adminNoticeNumber;
     private String adminNoticeTitle;
     private String adminNoticeContent;
-
+    
     public AdminNoticeDTO() {;}
 
 	public Long getId() {
@@ -55,13 +55,13 @@ public class AdminNoticeDTO {
 
 	@Override
 	public String toString() {
-		return "AdminNoticeVO [id=" + id + ", adminId=" + adminId + ", adminNoticeNumber=" + adminNoticeNumber
+		return "AdminNoticeDTO [id=" + id + ", adminId=" + adminId + ", adminNoticeNumber=" + adminNoticeNumber
 				+ ", adminNoticeTitle=" + adminNoticeTitle + ", adminNoticeContent=" + adminNoticeContent + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(adminId);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -73,9 +73,6 @@ public class AdminNoticeDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		AdminNoticeDTO other = (AdminNoticeDTO) obj;
-		return Objects.equals(adminId, other.adminId);
+		return Objects.equals(id, other.id);
 	}
-    
-    
- 
 }
