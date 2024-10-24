@@ -2,6 +2,56 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="admin">
+
+	<!-- 관리자 로그인 -->
+	<select id="loginAdmin" resultType="String">
+		SELECT ADMIN_EMAIL FROM TBL_ADMIN
+		WHERE ADMIN_EMAIL = #{adminEmail} AND ADMIN_PASSWORD = #{adminPassword}
+	</select>
+
+
+	<select id="selectByAdminEmail" resultType="AdminVO">
+      SELECT ID, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME, ADMIN_AUTH,
+      FROM TBL_ADMIN
+      WHERE ADMIN_EMAIL = #{adminEmail}
+   </select>
+
+
+
+	<!-- 공지사항 추가 -->
+	<insert id="insertAdminNotice" parameterType="AdminNoticeVO">
+		SELECT TANO.ID, ADMIN_ID, ADMIN_NAME, ADMIN_NOTICE_TITLE, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_CONTENT
+		FROM TBL_ADMIN_NOTICE TANO
+		JOIN TBL_ADMIN TD 
+		ON TANO.ID = TD.ID
+		)
+	</insert>
 	
 	
+	
+	<!-- 공지사항 전체 조회 -->
+	<select id="selectAll" resultType="AdminNoticeDTO">
+		SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE,
+		ADMIN_NOTICE_CONTENT
+		FROM TBL_ADMIN_NOTICE
+		ORDER BY ADMIN_NOTICE_DATE DESC
+	</select>
+
+
+
+	<!-- 공지사항 수정 -->
+	<update id="updateAdminNotice" parameterType="AdminNoticeVO">
+		UPDATE TBL_ADMIN_NOTICE
+		SET ADMIN_NOTICE_TITLE = #{adminNoticeTitle},
+		ADMIN_NOTICE_CONTENT = #{adminNoticeContent}
+		WHERE ID = #{id}
+	</update>
+
+	<!-- 공지사항 삭제 -->
+	<delete id="deleteAdminNotice" parameterType="Long">
+		DELETE FROM TBL_ADMIN_NOTICE
+		WHERE ID = #{id}
+	</delete>
+
 </mapper>
+
