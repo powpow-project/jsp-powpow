@@ -19,7 +19,7 @@
 
 
 	<!-- 공지사항 추가 -->
-	<insert id="insertAdminNotice" parameterType="AdminNoticeVO">
+	<insert id="insertAdminNotice" parameterType="AdminNoticeDTO">
 		SELECT TANO.ID, ADMIN_ID, ADMIN_NAME, ADMIN_NOTICE_TITLE, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_CONTENT
 		FROM TBL_ADMIN_NOTICE TANO
 		JOIN TBL_ADMIN TD 
@@ -40,7 +40,7 @@
 
 
 	<!-- 공지사항 수정 -->
-	<update id="updateAdminNotice" parameterType="AdminNoticeVO">
+	<update id="updateAdminNotice" parameterType="AdminNoticeDTO">
 		UPDATE TBL_ADMIN_NOTICE
 		SET ADMIN_NOTICE_TITLE = #{adminNoticeTitle},
 		ADMIN_NOTICE_CONTENT = #{adminNoticeContent}

@@ -27,9 +27,7 @@ public class AdminLoginOkController implements Action {
 		adminVO.setAdminPassword(req.getParameter("adminPassword"));
 		
 		
-		adminEmail = adminDAO.select(adminVO).orElseThrow(() -> {
-			throw new RuntimeException();
-		});;
+		adminEmail = adminDAO.select(adminVO);
 
 		result.setRedirect(true);
 		if(adminEmail == null) {

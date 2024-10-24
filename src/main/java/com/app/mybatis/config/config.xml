@@ -22,7 +22,7 @@
    	<typeAlias type="com.app.vo.AdminCouponVO" alias="AdminCouponVO"/>
    	<typeAlias type="com.app.vo.AdminBannerVO" alias="AdminBannerVO"/>
    	<typeAlias type="com.app.vo.AdminNoticeVO" alias="AdminNoticeVO"/>
-   	<typeAlias type="com.app.vo.AdminNoticeDTO" alias="AdminNoticeDTO"/>
+   	<typeAlias type="com.app.dto.AdminNoticeDTO" alias="AdminNoticeDTO"/>
    	<typeAlias type="com.app.vo.PetVO" alias="PetVO"/>
    	<typeAlias type="com.app.vo.MemberVO" alias="MemberVO"/>
    	<typeAlias type="com.app.vo.CartVO" alias="CartVO"/>
