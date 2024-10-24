@@ -22,7 +22,7 @@ public class SellerFrontController extends HttpServlet{
       String target = req.getRequestURI().replace(req.getContextPath() +"/seller/", "").split("\\.")[0];
       Result result = null;
 
-      System.out.println(target);
+//      System.out.println(target);
       
       if(target.equals("write")) {
            result = new Result();
@@ -41,8 +41,6 @@ public class SellerFrontController extends HttpServlet{
          result = new Result();
          result.setPath("../not-found.jsp");
       }
-      System.out.println(result.getPath());
-      System.out.println(result.isRedirect());
       
       if(result != null) {
          if(result.isRedirect()){

@@ -18,7 +18,6 @@ public class SellerUpdateController implements Action {
       Result result = new Result();
       ProductDAO productDAO = new ProductDAO();
       
-      System.out.println(req.getParameter("id"));
       ProductVO product = productDAO.select(Long.parseLong(req.getParameter("id"))).orElseThrow(()->{
          throw new RuntimeException();
       });

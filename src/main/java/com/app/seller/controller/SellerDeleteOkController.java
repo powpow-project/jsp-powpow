@@ -18,7 +18,6 @@ public class SellerDeleteOkController implements Action {
       ProductDAO productDAO = new ProductDAO();
       
       productDAO.delete(Long.parseLong(req.getParameter("id")));
-      System.out.println(req.getParameter("id"));
       
       result.setRedirect(true);
       result.setPath("list.seller");

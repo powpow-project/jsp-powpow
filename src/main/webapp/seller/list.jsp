@@ -109,7 +109,7 @@
           <td>
             <div class="change-buttons">
                 <button type="button" class="edit-btn" onclick="location.href='update.seller?id=${product.id}'">수정</button>
-                <button type="button" class="delete-btn" onclick="location.href='delete-ok.seller?id=${product.id}'">삭제</button>
+                <button type="button" class="delete-btn" data-productid="${product.id}">삭제</button>
             </div>
           </td>
          </tr>
@@ -127,31 +127,9 @@
       </div>
     </div>
     
-    
     <div class="popup-bg"></div>
   </div>
 </body>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 모든 .product-status 요소를 찾음
-    const statusCells = document.querySelectorAll('.product-status');
-
-    // 각 요소에 대해 반복
-    statusCells.forEach(function(cell) {
-        // data-stock 속성에서 재고 값을 가져옴
-        const stock = cell.getAttribute('data-stock');
-
-        // 재고 값이 있으면 "판매중", 없으면 "품절"로 표시
-        if (stock && parseInt(stock) > 0) {
-            cell.textContent = '판매중';
-        } else {
-            cell.textContent = '품절';
-        }
-    });
-});
-
-
-</script>
 <script src="../assets/js/product/product-list.js">
 </script>
 </html>
