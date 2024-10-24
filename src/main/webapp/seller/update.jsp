@@ -53,6 +53,7 @@
                <div class="list-wrap">
                   <p class="h6">분류</p>
                 <select name="productType">
+                    <option value="헬스+">헬스+</option>
                     <option value="사료/간식">사료/간식</option>
                     <option value="배변용품">배변용품</option>
                     <option value="장난감">장난감</option>

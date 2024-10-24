@@ -22,6 +22,7 @@ public class SellerFrontController extends HttpServlet{
       String target = req.getRequestURI().replace(req.getContextPath() +"/seller/", "").split("\\.")[0];
       Result result = null;
       
+      System.out.println(target);
       
       if(target.equals("write")) {
            result = new Result();
