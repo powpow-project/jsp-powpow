@@ -10,8 +10,8 @@ public class MemberDTO {
 	private String memberPassword;
 	private String memberPhone;
 	private String memberAddress;
-	private boolean memberSms;      
-    private boolean memberEmailCheck;
+	private char memberSms;      
+    private char memberEmailCheck;
     
     public MemberDTO() {;}
 
@@ -71,19 +71,19 @@ public class MemberDTO {
 		this.memberAddress = memberAddress;
 	}
 
-	public boolean isMemberSms() {
+	public char isMemberSms() {
 		return memberSms;
 	}
 
-	public void setMemberSms(boolean memberSms) {
+	public void setMemberSms(char memberSms) {
 		this.memberSms = memberSms;
 	}
 
-	public boolean isMemberEmailCheck() {
+	public char isMemberEmailCheck() {
 		return memberEmailCheck;
 	}
 
-	public void setMemberEmailCheck(boolean memberEmailCheck) {
+	public void setMemberEmailCheck(char memberEmailCheck) {
 		this.memberEmailCheck = memberEmailCheck;
 	}
 

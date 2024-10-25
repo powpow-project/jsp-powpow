@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.member.controller.MemberBuyerJoinCompleteController;
 import com.app.member.controller.MemberBuyerJoinController;
 import com.app.member.controller.MemberBuyerJoinOkController;
-import com.app.member.controller.MemberBuyerListController;
 import com.app.member.controller.MemberBuyerLoginOkController;
 import com.app.member.controller.MemberBuyerUpdateController;
 import com.app.member.controller.MemberBuyerUpdateOkController;
 import com.app.member.controller.MemberDeleteOkController;
+import com.app.member.controller.MemberJoinChoiceController;
 import com.app.member.controller.MemberLoginController;
 import com.app.member.controller.MemberLogoutController;
 import com.app.member.controller.MemberSellerJoinController;
 import com.app.member.controller.MemberSellerJoinOkController;
-import com.app.member.controller.MemberSellerListController;
 import com.app.member.controller.MemberSellerLoginOkController;
 import com.app.member.controller.MemberSellerUpdateController;
 import com.app.member.controller.MemberSellerUpdateOkController;
@@ -38,8 +38,13 @@ public class MemberFrontController extends HttpServlet{
 //		첫 시작 로그인페이지!!
 		if(target.equals("login")) {
 	        result = new Result();
-	        result.setPath("../member/member-login.jsp");	
-		
+	        result.setPath("../member/member-login.jsp");
+	        
+//		회원가입 버튼 누르면 이동 페이지(구매자,판매자 선택)
+		}else if(target.equals("join-choice")) {
+			result = new MemberJoinChoiceController().execute(req, resp);	
+	        
+	        
 //		구매자 로그인 완료 페이지
 		}else if(target.equals("buyer-login-ok")) {
 			result = new MemberBuyerLoginOkController().execute(req, resp);	
@@ -65,6 +70,9 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberBuyerJoinOkController().execute(req, resp);
 			
 //		판매자 회원가입 페이지	
+		}else if(target.equals("buyer-join-complelete")) {
+			result = new MemberBuyerJoinCompleteController().execute(req, resp);
+			
 		}else if(target.equals("seller-join")) {
 			result = new MemberSellerJoinController().execute(req, resp);
 			

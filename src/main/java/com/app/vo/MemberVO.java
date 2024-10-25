@@ -11,8 +11,9 @@ public class MemberVO {
 	private String memberPassword;
 	private String memberPhone;
 	private String memberAddress;
-	private boolean memberSms;      // SMS 수신 여부
-    private boolean memberEmailCheck; // 이메일 확인 여부
+	private char memberSms;      // SMS 수신 여부
+    private char memberEmailCheck; // 이메일 확인 여부
+    
     
     public MemberVO() {;}
 
@@ -72,19 +73,19 @@ public class MemberVO {
 		this.memberAddress = memberAddress;
 	}
 
-	public boolean isMemberSms() {
+	public char isMemberSms() {
 		return memberSms;
 	}
 
-	public void setMemberSms(boolean memberSms) {
+	public void setMemberSms(char memberSms) {
 		this.memberSms = memberSms;
 	}
 
-	public boolean isMemberEmailCheck() {
+	public char isMemberEmailCheck() {
 		return memberEmailCheck;
 	}
 
-	public void setMemberEmailCheck(boolean memberEmailCheck) {
+	public void setMemberEmailCheck(char memberEmailCheck) {
 		this.memberEmailCheck = memberEmailCheck;
 	}
 

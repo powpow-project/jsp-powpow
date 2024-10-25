@@ -202,6 +202,7 @@ const mark = document.querySelector(".mark");
 		           validateName();
 		       });
 
+			   const loginForm = document.querySelector("form");
 		       // 회원가입 버튼 클릭 시 모든 검증 수행
 		       submitButton.addEventListener("click", (event) => {
 		           event.preventDefault(); // 기본 폼 제출 방지
@@ -212,10 +213,12 @@ const mark = document.querySelector(".mark");
 		           const isAddressValid = validateAddress();
 		           const isAgreementsValid = validateAgreements();
 
-		           if (isEmailValid && isPasswordValid && isNameValid && isAddressValid && isAgreementsValid) {
+		       /*    if (isEmailValid && isPasswordValid && isNameValid && isAddressValid && isAgreementsValid) {
 		               alert("회원가입이 완료되었습니다!");
 		               // 여기에 실제 회원가입 로직을 추가할 수 있습니다.
-		           }
+		           }*/
+				   
+				   loginForm.submit();
 		       });
 
 
@@ -256,11 +259,7 @@ const mark = document.querySelector(".mark");
 		           });
 		       });
 			   
-			   
-			   
-			   const loginButton = document.querySelector('button[type="button"]');
-			   // 회원가입 버튼 눌렀을 때 이동시키는 페이지
-			   	loginButton.addEventListener('click', buyerjoincomplete);
+		
 		   });
 
 		   

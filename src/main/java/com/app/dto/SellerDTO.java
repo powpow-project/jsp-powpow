@@ -11,8 +11,8 @@ public class SellerDTO {
     private String sellerPassword;
     private String sellerName;
     private String sellerPhone;
-    private boolean sellerSms;
-    private boolean sellerEmailCheck;
+    private char sellerSms;
+    private char sellerEmailCheck;
     
     public SellerDTO() {;}
 
@@ -64,19 +64,19 @@ public class SellerDTO {
 		this.sellerPhone = sellerPhone;
 	}
 
-	public boolean isSellerSms() {
+	public char isSellerSms() {
 		return sellerSms;
 	}
 
-	public void setSellerSms(boolean sellerSms) {
+	public void setSellerSms(char sellerSms) {
 		this.sellerSms = sellerSms;
 	}
 
-	public boolean isSellerEmailCheck() {
+	public char isSellerEmailCheck() {
 		return sellerEmailCheck;
 	}
 
-	public void setSellerEmailCheck(boolean sellerEmailCheck) {
+	public void setSellerEmailCheck(char sellerEmailCheck) {
 		this.sellerEmailCheck = sellerEmailCheck;
 	}
 

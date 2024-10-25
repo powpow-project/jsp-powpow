@@ -87,8 +87,8 @@
         <div class="input-container">
           <input class="inputbutton" type="text" id="sample6_postcode" placeholder="우편번호">
           <p id="adress-result"></p>
-          <input class="inputbutton1" type="text" id="sample6_address" placeholder="기본주소">
-          <input class="inputbutton1" type="text" id="sample6_detailAddress" placeholder="상세주소">
+          <input class="inputbutton1" type="text" name="address" id="sample6_address" placeholder="기본주소">
+          <input class="inputbutton1" type="text" name="address" id="sample6_detailAddress" placeholder="상세주소">
           <p id="detail-adress-result"></p>
           <button class="auth-button" type="button" onclick="sample6_execDaumPostcode()">우편번호</button>
         </div>
@@ -104,7 +104,8 @@
       </div>
 
       <div class="agree-box">
-
+            <input type="hidden" name="sms" value="1" />
+            <input type="hidden" name="emailcheck" value="1" />
         <div class="agreeAll">
           <label>
             <input type="checkbox" name="allagree" class="allagree" />
@@ -167,8 +168,6 @@
     </div>
      </div>
 
-
-      
       
         <button type="button" class="login-button">회원가입</button>
   </div>

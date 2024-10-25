@@ -8,16 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
 
-public class MemberBuyerJoinController implements Action {
+public class MemberJoinChoiceController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-		result.setPath("../member/member-buyer-join.jsp");
 		
+		result.setPath("../member/member-join.jsp");
 		return result;
 	}
 

@@ -18,15 +18,29 @@ public class MemberBuyerJoinOkController implements Action {
 		Result result = new Result();
 		MemberDAO memberDAO = new MemberDAO();
 		MemberVO memberVO = new MemberVO();
-		
+		String[] arrAddress = null;
+		String address = "";
+		String defaultImagePath = "none_profile.png";
 
-		memberVO.setMemberEmail(req.getParameter("memberEmail"));
-		System.out.println(req.getParameter("memberEmail"));
+//		 #{memberImage}, #{memberNickname}, #{memberEmail}, #{memberPassword}, #{memberPhone}, #{memberAddress}, #{memberSms}, #{memberEmailCheck}
+		memberVO.setMemberImage(defaultImagePath);
+		memberVO.setMemberEmail(req.getParameter("email"));
+		memberVO.setMemberPassword(req.getParameter("password"));
+		memberVO.setMemberNickname(req.getParameter("name"));
+		memberVO.setMemberPhone(req.getParameter("phone"));
+		memberVO.setMemberSms(req.getParameter("sms").charAt(0));
+		memberVO.setMemberEmailCheck(req.getParameter("emailcheck").charAt(0));
 		
-//		memberDAO.insert(memberVO);
+		arrAddress = req.getParameterValues("address");
+		for(int i = 0; i < arrAddress.length; i++) {
+			address += i == arrAddress.length - 1 ? arrAddress[i] : arrAddress[i] + " ";
+		}
+		memberVO.setMemberAddress(address);
+		
+		memberDAO.insertBuyer(memberVO);
 		
 		result.setRedirect(true);
-		result.setPath(req.getContextPath() + "/buyer-join-complete.jsp");
+		result.setPath("../member/member-buyer-join-complete.member");
 		
 		return result;
 	}

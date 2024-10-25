@@ -16,8 +16,8 @@ public class MemberDAO {
 	}
 	
 //	구매자 회원가입
-	public void insert(MemberVO memberVO) {
-		sqlSession.insert("member.insert", memberVO);
+	public void insertBuyer(MemberVO memberVO) {
+		sqlSession.insert("member.insertBuyer", memberVO);
 	}
 		
 //	구매자 로그인
@@ -27,12 +27,12 @@ public class MemberDAO {
 	
 //	구매자 계정 삭제
 	public void deleteBuyer(Long id) {
-		sqlSession.delete("member.delete", id);
+		sqlSession.delete("member.deleteBuyer", id);
 	}
 	
 // 구매자 정보 수정
 	public void updateBuyer(MemberVO memberVO) {
-		sqlSession.update("member.update", memberVO);
+		sqlSession.update("member.updateBuyer", memberVO);
 	}	
 	
 // 로그아웃
@@ -43,8 +43,8 @@ public class MemberDAO {
 	}
 	
 //	판매자 회원가입
-	public void insert(SellerVO sellerVO) {
-		sqlSession.insert("member.insert", sellerVO);
+	public void insertSeller(SellerVO sellerVO) {
+		sqlSession.insert("member.insertSeller", sellerVO);
 	}
 	
 //	판매자 로그인
@@ -55,13 +55,13 @@ public class MemberDAO {
 	
 // 판매자 정보 수정
 	public void updateSeller(SellerVO sellerVO) {
-		sqlSession.update("member.update", sellerVO);
+		sqlSession.update("member.updateSeller", sellerVO);
 	}	
 	
 	
 //	판매자 계정 삭제
 	public void deleteSeller(Long id) {
-		sqlSession.delete("member.delete", id);
+		sqlSession.delete("member.deleteSeller", id);
 	}
 
 	
