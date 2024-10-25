@@ -15,6 +15,7 @@ import com.app.myhome.controller.MyhomeListController;
 import com.app.myhome.controller.MyhomeNoPetController;
 import com.app.myhome.controller.MyhomeNotificationController;
 import com.app.myhome.controller.MyhomePasswordUpdateController;
+import com.app.myhome.controller.MyhomePasswordUpdateOkController;
 import com.app.myhome.controller.MyhomePetDeleteOkController;
 import com.app.myhome.controller.MyhomePetKindController;
 import com.app.myhome.controller.MyhomePetListController;
@@ -76,6 +77,8 @@ public class MyhomeFrontController extends HttpServlet {
 			result = new MyhomeLikesListController().execute(req, resp);
 		}else if(target.equals("password-update")) {
 			result = new MyhomePasswordUpdateController().execute(req, resp);
+		}else if(target.equals("password-update-ok")) {
+			result = new MyhomePasswordUpdateOkController().execute(req, resp);
 		}else if(target.equals("notification")) {
 			result = new MyhomeNotificationController().execute(req, resp);
 			

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이홈 반려동물</title>
     <link rel="stylesheet" href="../assets/css/index.css">
-    <link rel="stylesheet" href="../assets/css/myhome/pet.css">
+      <link rel="stylesheet" href="../assets/css/myhome/myhome-pet-list.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
@@ -50,9 +50,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -77,20 +77,18 @@
     </c:when>
     <c:otherwise> --%>
     <div id="animals">
-        <c:forEach var="pet" items="${pet}">
         <div id="mydog">
             <div class="card">
                 <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
                 <div class="profile-pic" id="profilePic">
                     <img id="profileImage" src="../assets/images/myhome/${pet.petImage}" alt="Profile Picture">
                 </div>
-                <div class="name"><c:out value="${pet.petName}"/></div>
+                <div class="name"><c:out value="${pet.petName}"/>name</div>
                 <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="../myhome/choose-${pet.petKind}.jsp"><button class="edit-button">편집</button></a>
+                <a rel="stylesheet" href="./pet-update.myhome"><button class="edit-button">편집</button></a>
                 <button class="edit-button">삭제</button>
             </div>
         </div>
-        </c:forEach>
         <div id="mydog">
         <c:forEach var="pet" items="${pet}">
             <div class="card">

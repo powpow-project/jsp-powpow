@@ -1,0 +1,476 @@
+@charset "UTF-8";
+
+ @keyframes fade_up {
+        0% {
+            opacity: 0;
+            transform: translateY(10%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* 헤더 부분 */
+
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #header-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1440px;
+        height: 151px;
+        margin: 0 auto;
+    }
+
+    #header-wrap #border {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    #header-wrap #nav {
+        position: relative;
+        display: flex;
+        width: 1440px;
+        margin: 0 auto;
+        /* 헤더 윗공간 조절 */
+        margin-top: 20px;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 15px;
+    }
+
+    #header-wrap #nav .sector {
+        position: absolute;
+        line-height: 20px;
+        margin-left: 10px;
+        /* border: 1px solid #818181; */
+        background-color: #818181;
+        height: 55px;
+        width: 0.1px;
+        top: 34px;
+        right: 96px;
+    }
+
+    #header-wrap #nav .left {
+        width: 236px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #header-wrap #nav .left img {
+        width: 236px;
+        height: 60px;
+    }
+
+    #header-wrap #nav .right {
+        display: flex;
+        gap: 26px;
+        align-items: end;
+        padding-top: 44px;
+    }
+
+    #header-wrap #nav .right .icons {
+        display: flex;
+        gap: 26px;
+    }
+
+    #header-wrap #nav .right .icons img {
+        display: flex;
+        width: 30px;
+        height: 30px;
+    }
+
+    #header-wrap #nav .right .login {
+        display: flex;
+        font-size: 16px;
+        margin-left: 26px;
+    }
+
+    #header-wrap #nav .right .login a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-content: center;
+        text-decoration-line: none;
+        color: black;
+        padding-right: 31px;
+    }
+
+    /* 메뉴부분 */
+
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        z-index: 10;
+    }
+
+    #sector {
+        display: flex;
+        width: 100%;
+        height: 0.1px;
+        background-color: #818181;
+        z-index: 50;
+    }
+
+    .menu-wrap {
+        display: flex;
+        height: 50px;
+        font-weight: bold;
+        border-top: solid #818181 0.1px;
+        border-bottom: solid #818181 0.1px;
+    }
+
+    .menu-wrap .menu {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        height: 50px;
+    }
+
+    .menu-wrap .menu a:hover {
+        color: #FFC303;
+    }
+
+    .sub-menu-wrap {
+        display: flex;
+    }
+
+    .sub-menu-wrap ul {
+        overflow: hidden;
+        height: 0;
+    }
+
+    .sub-menu-wrap .sub-menu {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sub-menu-wrap .sub-menu a:hover {
+        color: #FFC303;
+    }
+
+    /* contents */
+    #submit-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 67px;
+        width: 89px;
+        height: 42px;
+        background-color: #1c4da0;
+        border-radius: 20px;
+        color: white;
+        margin-left: 910px;
+    }
+
+    #mydog {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .card {
+        width: 270px;
+        height: 430px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .profile-pic {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+    .name {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .edit-button {
+        background-color: #1c4da0;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 96px;
+        height: 32px;
+    }
+
+    .pre-title {
+        font-weight: bold;
+    }
+
+    .title {
+        flex-direction: row;
+        margin-left: 60px;
+        font-weight: bold;
+    }
+
+    .title p {
+        padding-top: 30px;
+    }
+
+     .input-wrap {
+        margin-top: 30px;
+        margin-left: 58px;
+    }
+
+    .input-wrap input {
+        border-radius: 20px;
+        height: 30px;
+        padding-left: 26px;
+        margin-top: 20px;
+    }
+
+    .birthday {
+        width: 285px;
+        padding-right: 26px;
+    }
+
+    .input {
+        display: flex;
+        width: 285px;
+    }
+
+    .weight input {
+        width: 285px;
+        flex-direction: row;
+    }
+
+
+    .option {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .option p {
+        margin-top: 25px;
+    }
+
+    #mydog button {
+        padding: 10px 15px;
+        background-color: #1c4da0;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 400px;
+    }
+
+    /* footer */
+
+    footer {
+        width: 100%;
+        /* 부모 요소의 너비를 100%로 설정 */
+        padding: 20px;
+        /* 패딩 추가 */
+        background-color: #f9f9f9;
+        /* 배경색 */
+        font-family: Arial, sans-serif;
+        /* 폰트 스타일 */
+        margin-top: 214px;
+    }
+
+    .footer-black {
+        color: #000;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .footer-section {
+        margin-bottom: 2px;
+        /* 각 섹션 간의 간격 */
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .footer-section p {
+        margin: 10px 0;
+        /* 기본 여백 제거 */
+        line-height: 1.2;
+        /* 줄 간격 조정 */
+        margin: 1px 0;
+        white-space: normal;
+        /* 줄바꿈 허용 */
+        font-size: 11px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        /* 리스트 점 제거 */
+        padding: 0;
+        /* 기본 패딩 제거 */
+        margin: 0;
+        /* 기본 마진 제거 */
+        line-height: 1.8;
+        /* 줄 간격 설정 (1.8은 글자 크기의 180% 간격) */
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+        /* 리스트 항목 간격 */
+        font-size: 12px;
+    }
+
+    .footer-section ul li a {
+        text-decoration: none;
+        /* 링크 밑줄 제거 */
+        color: #000000;
+        /* 텍스트 색상 */
+        font-size: 12px;
+    }
+
+    .contact-info {
+        display: flex;
+        /* Flexbox로 가로 정렬 */
+        align-items: center;
+        /* 수직 중앙 정렬 */
+    }
+
+    .highlight {
+        color: #000000;
+        /* 강조 색상 */
+        font-weight: bold;
+        /* 글자 두껍게 */
+        font-size: 12px;
+        /* 글자 크기 */
+    }
+
+    .custom-list {
+        list-style-type: none;
+        /* 기본 리스트 스타일 제거 */
+    }
+
+    .custom-list li::before {
+        content: '•';
+        /* 리스트 앞에 점 추가 */
+        color: #000;
+        /* 점의 색상 */
+        font-weight: bold;
+        /* 점 굵게 */
+        display: inline-block;
+        /* 점을 인라인으로 표시 */
+        width: 13px;
+        /* 점과 텍스트 사이의 간격 조정 */
+    }
+
+    .button-container {
+        display: flex;
+        /* 버튼을 가로로 정렬 */
+        gap: 10px;
+        /* 버튼 사이 간격 */
+        align-items: center;
+        /* 버튼을 텍스트와 수직으로 정렬 *
+    margin-top: 10px; /* 버튼 위쪽 마진 */
+    }
+
+    .kakao-button,
+    .email-button {
+        background-color: #FFFFFF;
+        color: #000000;
+        border: solid #E6E6E6;
+        margin: 3px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 5px 15px;
+        /* 버튼 내부 여백 */
+        font-size: 11px;
+    }
+
+    .kakao-button {
+        width: 211px;
+        height: 29px;
+    }
+
+    .email-button {
+        width: 93px;
+        height: 29px;
+    }
+
+    .footer-section {
+        width: 100%;
+        /* 부모 요소의 너비를 100%로 설정 */
+        padding: 10px;
+        /* 패딩 추가 */
+        background-color: #f9f9f9;
+        /* 배경색 */
+        font-family: Arial, sans-serif;
+        /* 폰트 스타일 */
+    }
+
+    .footer-section.legal p {
+        margin: 0;
+        /* 기본 여백 제거 */
+        white-space: nowrap;
+        /* 줄바꿈을 방지합니다. */
+        overflow: visible;
+        /* 텍스트가 부모 요소의 경계를 넘어가도 보이게 합니다. */
+    }
+
+    .legal p {
+        font-size: 12px;
+        color: #767676;
+        line-height: 1.5;
+    }

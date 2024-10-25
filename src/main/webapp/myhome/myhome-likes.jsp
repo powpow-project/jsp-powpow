@@ -6,393 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이홈 좋아요</title>
+<link rel="stylesheet" href="../assets/css/myhome/myhome-likes.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
-<style>
-@
-keyframes fade_up { 0% {
-	opacity: 0;
-	transform: translateY(10%);
-}
-
-to {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-}
-.header-container {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-}
-
-#header-wrap {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 1440px;
-	height: 151px;
-	margin: 0 auto;
-}
-
-#header-wrap #border {
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;
-}
-
-#header-wrap #nav {
-	position: relative;
-	display: flex;
-	width: 1440px;
-	margin: 0 auto;
-	margin-top: 20px;
-	justify-content: space-between;
-	align-items: end;
-	margin-bottom: 15px;
-}
-
-#header-wrap #nav .sector {
-	position: absolute;
-	line-height: 20px;
-	margin-left: 10px;
-	/* border: 1px solid #818181; */
-	background-color: #818181;
-	height: 55px;
-	width: 0.1px;
-	top: 34px;
-	right: 96px;
-}
-
-#header-wrap #nav .left {
-	width: 236px;
-	height: 60px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#header-wrap #nav .left img {
-	width: 236px;
-	height: 60px;
-}
-
-#header-wrap #nav .right {
-	display: flex;
-	gap: 26px;
-	align-items: end;
-	padding-top: 44px;
-}
-
-#header-wrap #nav .right .icons {
-	display: flex;
-	gap: 26px;
-}
-
-#header-wrap #nav .right .icons img {
-	display: flex;
-	width: 30px;
-	height: 30px;
-}
-
-#header-wrap #nav .right .login {
-	display: flex;
-	font-size: 16px;
-	margin-left: 26px;
-}
-
-#header-wrap #nav .right .login a {
-	display: flex;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	justify-content: center;
-	text-decoration-line: none;
-	color: black;
-	padding-right: 31px;
-}
-
-/* ë©”ë‰´ë¶€ë¶„ */
-.menu-container {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-	z-index: 10;
-}
-
-#sector {
-	display: flex;
-	width: 100%;
-	height: 0.1px;
-	background-color: #818181;
-	z-index: 50;
-}
-
-.menu-wrap {
-	display: flex;
-	height: 50px;
-	font-weight: bold;
-	border-top: solid #818181 0.1px;
-	border-bottom: solid #818181 0.1px;
-}
-
-.menu-wrap .menu {
-	display: flex;
-	align-items: center;
-	width: 150px;
-	height: 50px;
-}
-
-.menu-wrap .menu a:hover {
-	color: #FFC303;
-}
-
-.sub-menu-wrap {
-	display: flex;
-}
-
-.sub-menu-wrap ul {
-	overflow: hidden;
-	height: 0;
-}
-
-.sub-menu-wrap .sub-menu {
-	width: 150px;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	text-align: center;
-}
-
-.sub-menu-wrap .sub-menu a:hover {
-	color: #FFC303;
-}
-
-/* sub */
-#sub {
-	display: flex;
-	flex-direction: column;
-	padding-top: 20px;
-	width: 1440px;
-	height: 96px;
-	margin: 0 auto;
-}
-
-#sub .main-sub {
-	font-weight: bold;
-}
-
-.sub-sub {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 10px;
-}
-
-.sub-sub a:hover {
-	color: #FFC303;
-	font-size: bold;
-}
-
-.current-category {
-	color: #ffc303;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-/* contents */
-#likes {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 60px;
-	margin-top: 80px;
-}
-
-#likes img {
-	width: 192px;
-	height: 192px;
-	box-sizing: border-box;
-	border-radius: 20px;
-	justify-content: space-between;
-	margin: 15px 21px 0 0;
-}
-
-.likes-shopping span {
-	font-weight: bold;
-}
-
-.likes-community span {
-	font-weight: bold;
-}
-
-/* footer */
-footer {
-	width: 100%;
-	/* 부모 요소의 너비를 100%로 설정 */
-	padding: 20px;
-	/* 패딩 추가 */
-	background-color: #f9f9f9;
-	/* 배경색 */
-	font-family: Arial, sans-serif;
-	/* 폰트 스타일 */
-	margin-top: 150px;
-}
-
-.footer-black {
-	color: #000;
-}
-
-.footer-container {
-	display: flex;
-	justify-content: space-between;
-	width: 1200px;
-	margin: 0 auto;
-	padding: 20px 0;
-}
-
-.footer-section {
-	margin-bottom: 2px;
-	/* 각 섹션 간의 간격 */
-}
-
-.footer-section h3 {
-	font-size: 18px;
-	margin-bottom: 15px;
-}
-
-.footer-section p {
-	margin: 10px 0;
-	/* 기본 여백 제거 */
-	line-height: 1.2;
-	/* 줄 간격 조정 */
-	margin: 1px 0;
-	white-space: normal;
-	/* 줄바꿈 허용 */
-	font-size: 11px;
-}
-
-.footer-section ul {
-	list-style: none;
-	/* 리스트 점 제거 */
-	padding: 0;
-	/* 기본 패딩 제거 */
-	margin: 0;
-	/* 기본 마진 제거 */
-	line-height: 1.8;
-	/* 줄 간격 설정 (1.8은 글자 크기의 180% 간격) */
-}
-
-.footer-section ul li {
-	margin-bottom: 10px;
-	/* 리스트 항목 간격 */
-	font-size: 12px;
-}
-
-.footer-section ul li a {
-	text-decoration: none;
-	/* 링크 밑줄 제거 */
-	color: #000000;
-	/* 텍스트 색상 */
-	font-size: 12px;
-}
-
-.contact-info {
-	display: flex;
-	/* Flexbox로 가로 정렬 */
-	align-items: center;
-	/* 수직 중앙 정렬 */
-}
-
-.highlight {
-	color: #000000;
-	/* 강조 색상 */
-	font-weight: bold;
-	/* 글자 두껍게 */
-	font-size: 12px;
-	/* 글자 크기 */
-}
-
-.custom-list {
-	list-style-type: none;
-	/* 기본 리스트 스타일 제거 */
-}
-
-.custom-list li::before {
-	content: '•';
-	/* 리스트 앞에 점 추가 */
-	color: #000;
-	/* 점의 색상 */
-	font-weight: bold;
-	/* 점 굵게 */
-	display: inline-block;
-	/* 점을 인라인으로 표시 */
-	width: 13px;
-	/* 점과 텍스트 사이의 간격 조정 */
-}
-
-.button-container {
-	display: flex;
-	/* 버튼을 가로로 정렬 */
-	gap: 10px;
-	/* 버튼 사이 간격 */
-	align-items: center;
-	/* 버튼을 텍스트와 수직으로 정렬 *
-    margin-top: 10px; /* 버튼 위쪽 마진 */
-}
-
-.kakao-button, .email-button {
-	background-color: #FFFFFF;
-	color: #000000;
-	border: solid #E6E6E6;
-	margin: 3px;
-	margin-bottom: 10px;
-	border-radius: 20px;
-	cursor: pointer;
-	padding: 5px 15px;
-	/* 버튼 내부 여백 */
-	font-size: 11px;
-}
-
-.kakao-button {
-	width: 211px;
-	height: 29px;
-}
-
-.email-button {
-	width: 93px;
-	height: 29px;
-}
-
-.footer-section {
-	width: 100%;
-	/* 부모 요소의 너비를 100%로 설정 */
-	padding: 10px;
-	/* 패딩 추가 */
-	background-color: #f9f9f9;
-	/* 배경색 */
-	font-family: Arial, sans-serif;
-	/* 폰트 스타일 */
-}
-
-.footer-section.legal p {
-	margin: 0;
-	/* 기본 여백 제거 */
-	white-space: nowrap;
-	/* 줄바꿈을 방지합니다. */
-	overflow: visible;
-	/* 텍스트가 부모 요소의 경계를 넘어가도 보이게 합니다. */
-}
-
-.legal p {
-	font-size: 12px;
-	color: #767676;
-	line-height: 1.5;
-}
-</style>
-
 <body>
 	<div class="header-container">
 		<div id="header-wrap">
@@ -437,9 +54,9 @@ footer {
 							<li class="sub-menu"><a href="#">헬스+</a></li>
 						</ul>
 						<ul>
-							<li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
-							<li class="sub-menu"><a href="./myhome-no-pet.jsp">반려동물 정보</a></li>
-							<li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
+							<li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
+							<li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
+							<li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
 							<li class="sub-menu"><a href="#">내 게시글</a></li>
 						</ul>
 
@@ -457,35 +74,29 @@ footer {
 	</div>
 	<div id="sub">
 		<div class="main-sub h1">나의 정보</div>
-		<span class="sub-sub"> <a href="./list.jsp" class="h4">프로필</a>
-			<p>|</p> <a href="./myhome-likes-list.jsp" class="current-category h4">좋아요</a>
-			<p>|</p> <a href="./myhome-notification.jsp" class="h4">알림설정</a>
-			<p>|</p> <a href="./password-update.jsp" class="h4">비밀번호 변경</a>
+		<span class="sub-sub"> <a href="./list.myhome" class="h4">프로필</a>
+			<p>|</p> <a href="./likes-list.myhome" class="current-category h4">좋아요</a>
+			<p>|</p> <a href="./notification.myhome" class="h4">알림설정</a>
+			<p>|</p> <a href="./password-update.myhome" class="h4">비밀번호 변경</a>
 		</span>
 	</div>
 	<div id="likes">
 		<div class="likes-shopping h4">
 			<span>쇼핑</span>
 			<div class="likesimage">
-				<a href="#"><img src="../assets/images/myhome/shoppinglike1.png"
-					alt="쇼핑좋아요"></a> <a href="#"><img
-					src="../assets/images/myhome/shoppinglike2.png" alt="쇼핑좋아요"></a>
-				<a href="#"><img src="../assets/images/myhome/shoppinglike3.png"
-					alt="쇼핑좋아요"></a> <a href="#"><img
-					src="../assets/images/myhome/shoppinglike4.png" alt="쇼핑좋아요"></a>
+				<a href="#"><img src="../assets/images/myhome/shoppinglike1.png" alt="쇼핑좋아요"></a> 
+				<a href="#"><img src="../assets/images/myhome/shoppinglike2.png" alt="쇼핑좋아요"></a>
+				<a href="#"><img src="../assets/images/myhome/shoppinglike3.png" alt="쇼핑좋아요"></a> 
+				<a href="#"><img src="../assets/images/myhome/shoppinglike4.png" alt="쇼핑좋아요"></a>
 			</div>
 		</div>
 		<div class="likes-community h4">
 			<span>커뮤니티</span>
 			<div class="likesimage">
-				<a href="#"><img
-					src="../assets/images/myhome/communitylike1.png" alt="커뮤좋아요"></a>
-				<a href="#"><img
-					src="../assets/images/myhome/communitylike2.png" alt="커뮤좋아요"></a>
-				<a href="#"><img
-					src="../assets/images/myhome/communitylike3.png" alt="커뮤좋아요"></a>
-				<a href="#"><img
-					src="../assets/images/myhome/communitylike4.png" alt="커뮤좋아요"></a>
+				<a href="#"><img src="../assets/images/myhome/communitylike1.png" alt="커뮤좋아요"></a>
+				<a href="#"><img src="../assets/images/myhome/communitylike2.png" alt="커뮤좋아요"></a>
+				<a href="#"><img src="../assets/images/myhome/communitylike3.png" alt="커뮤좋아요"></a>
+				<a href="#"><img src="../assets/images/myhome/communitylike4.png" alt="커뮤좋아요"></a>
 			</div>
 		</div>
 	</div>
@@ -549,50 +160,6 @@ footer {
 		</div>
 	</footer>
 </body>
-<script>
-  const mainMenus = document.querySelectorAll(".menu-wrap .menu");
-  const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
-  const subMenuAll = document.querySelector(".sub-menu-wrap");
-  const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
-
-  let count = 0;
-  let hoverTimeout; // 타임아웃을 저장할 변수
-
-  mainMenus.forEach((menu) => {
-    menu.addEventListener("mouseover", () => {
-      clearTimeout(hoverTimeout); // 기존에 설정된 타임아웃이 있으면 제거
-      subMenuUl.forEach((ul) => {
-        ul.style.height = "250px";
-        ul.style.backgroundColor = "white";
-      });
-    });
-
-    menu.addEventListener("mouseleave", () => {
-      hoverTimeout = setTimeout(() => {
-        subMenuUl.forEach((ul) => {
-          ul.style.height = "0";
-          ul.style.backgroundColor = "none";
-        });
-      }, 100); // 100ms 지연 후 메뉴를 닫음
-    });
-  });
-
-  subMenus.forEach((sub, i) => {
-    sub.addEventListener("mouseover", () => {
-      clearTimeout(hoverTimeout); // 서브메뉴에서도 마우스 오버 시 타임아웃 제거
-      subMenuUl.forEach((ul) => {
-        ul.style.height = "250px";
-      });
-    });
-
-    sub.addEventListener("mouseleave", () => {
-      hoverTimeout = setTimeout(() => {
-        subMenuUl.forEach((ul) => {
-          ul.style.height = "0";
-        });
-      }, 100); // 100ms 지연 후 서브메뉴를 닫음
-    });
-  });
+<script src="../assets/js/myhome/myhome-likes.js">
 </script>
-
 </html>

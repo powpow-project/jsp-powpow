@@ -33,8 +33,10 @@ public class MyhomePetUpdateOkController implements Action {
 		petVO.setPetImage(req.getParameter("petImage"));
 		petVO.setPetKind(req.getParameter("petKind"));
 		petVO.setPetNeuter(Boolean.parseBoolean(req.getParameter("petNeuter")));
-		petVO.setPetVet(req.getParameter("petKind"));
-		petVO.setPetWeight(Integer.parseInt(req.getParameter("petKind")));
+		petVO.setPetVet(req.getParameter("petVet"));
+		petVO.setPetWeight(Integer.parseInt(req.getParameter("petWeight")));
+		
+		result.setPath("../myhome/myhome-pet-list.jsp");
 		
 		return result;
 	}

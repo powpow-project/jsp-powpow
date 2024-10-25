@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.PetDAO;
-import com.app.dto.PetDTO;
-import com.app.vo.PetVO;
 
 public class MyhomePetWriteOkController implements Action {
 
