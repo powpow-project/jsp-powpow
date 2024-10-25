@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/order/order-write.css">
+<link rel="stylesheet" href="../assets/css/order/order-buyerlist.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 
 
@@ -69,7 +69,7 @@
     </div>
   </div>
   <div class="body-container">
-    <p class="h2 highlight">배송지</p>
+    <p class="h2 highlight1">배송지</p>
     <div class="session1">
       <div class="shopping-info">
         <p class="h5 name">${member.memberNickname}</p>
@@ -104,13 +104,13 @@
     </div>
   
     <div class="order-item">
-      <p class="highlight h2">주문 상품</p>
+      <p class="highlight1 h2">주문 상품</p>
         <div class="product">
           <div class="date-wrap">
             <p class="date1 h5">&lt;오늘 출발&gt;</p> <p class="date2">마감(15:00) 10. 01(화) 발송예정</p><p class="h7 gray500">배송비 3,000원</p>
           </div>
             <div class="item-body">
-              <img src="../assets/images/not-found-image.png" alt="오곡 베이 올모두 즉석미감&숙취곤약 파우치 젤리 간식">
+              <img src="../assets/images/product/${product.productImage}" alt="상품이미지">
               <div class="product-info">
                   <p class="h5">${product.productName}</p>
                   <p class="h5">${product.productDate}</p>

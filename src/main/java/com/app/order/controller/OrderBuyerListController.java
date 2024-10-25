@@ -28,10 +28,10 @@ public class OrderBuyerListController implements Action {
 //		ProductDAO productDAO = new ProductDAO();
 		HttpSession session = req.getSession();
 		
-		session.setAttribute("id", 1L);
+		session.setAttribute("id", 2L);
 		Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
 		
-		Long productId = 2L;
+		Long productId = 21L;
 		
 		
         // ProductVO 리스트를 가져와서 JSP로 전달
