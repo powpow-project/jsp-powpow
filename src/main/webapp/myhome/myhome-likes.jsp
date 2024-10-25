@@ -437,9 +437,9 @@ footer {
 							<li class="sub-menu"><a href="#">헬스+</a></li>
 						</ul>
 						<ul>
-							<li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-							<li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-							<li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+							<li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+							<li class="sub-menu"><a href="./myhome-no-pet.jsp">반려동물 정보</a></li>
+							<li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
 							<li class="sub-menu"><a href="#">내 게시글</a></li>
 						</ul>
 
@@ -458,8 +458,8 @@ footer {
 	<div id="sub">
 		<div class="main-sub h1">나의 정보</div>
 		<span class="sub-sub"> <a href="./list.jsp" class="h4">프로필</a>
-			<p>|</p> <a href="./likes.jsp" class="current-category h4">좋아요</a>
-			<p>|</p> <a href="./notification.jsp" class="h4">알림설정</a>
+			<p>|</p> <a href="./myhome-likes-list.jsp" class="current-category h4">좋아요</a>
+			<p>|</p> <a href="./myhome-notification.jsp" class="h4">알림설정</a>
 			<p>|</p> <a href="./password-update.jsp" class="h4">비밀번호 변경</a>
 		</span>
 	</div>

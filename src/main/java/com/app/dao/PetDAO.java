@@ -37,7 +37,7 @@ public class PetDAO {
     
     
     // pet info select by ID
-    public Optional<PetVO> selectPet(Long id) {
-        return Optional.ofNullable(sqlSession.selectOne("pet.selectPetById", id));
+    public Optional<PetVO> selectPetId(Long id) {
+        return Optional.ofNullable(sqlSession.selectOne("pet.selectPetId", id));
     }
 }

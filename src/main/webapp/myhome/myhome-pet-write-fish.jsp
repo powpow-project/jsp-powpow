@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이홈 반려견추가</title>
+    <title>마이홈 반려어추가</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -278,24 +278,12 @@
         margin-top: 20px;
     }
 
-    .birthday {
-        width: 285px;
-        padding-right: 26px;
-    }
-
     .input {
-        display: flex;
         width: 285px;
     }
-
-    .weight input {
-        width: 285px;
-        flex-direction: row;
-    }
-
 
     .option {
-        display: flex;
+        display: block;
         margin: 0 auto;
     }
 
@@ -317,6 +305,11 @@
         justify-content: center;
         align-items: center;
         margin-left: 400px;
+    }
+
+    .birthday {
+        width: 285px;
+        padding-right: 26px;
     }
 
     /* footer */
@@ -525,62 +518,44 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-no-pet.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
-
                         <ul>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                         </ul>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-     <a href="./pet-list.jsp"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
+     <a href="./pet-write-ok.myhome?petKind=fish"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
     <div id="mydog">
         <div class="card">
             <div class="profile-pic" id="profilePic">
-                <img id="profileImage" src="../assets/images/myhome/default-dog.svg" alt="Profile Picture">
+                <img id="profileImage" src="../assets/images/myhome/default-fish.svg" alt="Profile Picture">
             </div>
-            <div class="name">포포</div>
+            <div class="name">도리</div>
             <input type="file" id="imageUpload" accept="image/*">
             <button class="edit-button" onclick="document.getElementById('imageUpload').click();">이미지 편집</button>
         </div>
         <div class="title h5">
-            <span class="pre-title h5">기본사항*</span>
+            <span class="pre-title">기본사항*</span>
             <p>이름</p>
-            <p>성별</p>
             <p>품종</p>
             <p>생일</p>
             <p>몸무게(kg)</p>
-            <p>중성화</p>
-            <p>동물병원</p>
         </div>
         <div class="input-wrap">
-            <input class="input" type="text" placeholder="포포">
-            <label class="option">
-                <input type="radio" name="gender" value="female">
-                <p>여아</p>
-                <input type="radio" name="gender" value="male">
-                <p>남아</p>
-            </label>
-            <input class="input" type="text" placeholder="예) 말티즈">
-            <div><input class="birthday" type="month"></div>
-            <label class="weight"><input type="number"></label>
-            <label class="option">
-                <input type="radio" name="treatment" value="yes"> <!-- 동일한 name 속성 지정 -->
-        <p>했어요</p>
-        <input type="radio" name="treatment" value="no"> <!-- 동일한 name 속성 지정 -->
-        <p>안했어요</p>
-            </label>
-            <input class="input" type="text" placeholder="병원명">
+            <input class="input" type="text" placeholder="도리">
+            <p><input class="input" type="text" placeholder="예) 금붕어"></p>
+            <p><input class="birthday" type="month"></p>
+            <input class="input" type="number">
         </div>
     </div>
     <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>

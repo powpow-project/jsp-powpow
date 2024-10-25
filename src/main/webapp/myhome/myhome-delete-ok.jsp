@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이홈 반려묘추가</title>
+    <title>마이홈 탈퇴</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -185,139 +185,151 @@
     }
 
     /* contents */
-    #submit-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 67px;
-        width: 89px;
-        height: 42px;
-        background-color: #1c4da0;
-        border-radius: 20px;
-        color: white;
-        margin-left: 910px;
+
+    #unsubscribe-container {
+        display: block;
+        margin-top: 100px;
     }
 
-    #mydog {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
+    .unsubscribe-text {
+        font-weight: bold;
     }
 
-    .card {
-        width: 270px;
-        height: 430px;
-        background-color: white;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    #unsubscribe-box {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    input[type="file"] {
-        display: none;
-    }
-
-    .profile-pic {
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .profile-pic img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-    }
-
-    .name {
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    .edit-button {
-        background-color: #1c4da0;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        width: 96px;
-        height: 32px;
-    }
-
-    .pre-title {
-        font-weight: bold;
-    }
-
-    .title {
-        flex-direction: row;
-        margin-left: 60px;
-        font-weight: bold;
-    }
-
-    .title p {
-        padding-top: 30px;
-    }
-
- .input-wrap {
-        margin-top: 30px;
-        margin-left: 58px;
-    }
-
-    .input-wrap input {
+        border: solid 1px #828282;
         border-radius: 20px;
-        height: 30px;
-        padding-left: 26px;
-        margin-top: 20px;
-    }
-
-
-    .birthday {
-        width: 285px;
-        padding-right: 26px;
-    }
-
-    .input {
-        display: flex;
-        width: 285px;
-    }
-
-    .weight input {
-        width: 285px;
-        flex-direction: row;
-    }
-
-    .option {
-        display: flex;
         margin: 0 auto;
-    }
-
-    .option p {
-        margin-top: 25px;
-    }
-
-    #mydog button {
-        padding: 10px 15px;
-        background-color: #1c4da0;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
-
-    .message {
-        display: flex;
+        width: 954px;
+        height: 212px;
         justify-content: center;
-        align-items: center;
-        margin-left: 400px;
+        padding-left: 30px;
+        margin-top: 10px;
     }
+
+    .back {
+        background-color: #113f8a;
+        color: #FFFFFF;
+        border-radius: 20px;
+        width: 90px;
+        height: 36px;
+        margin: 30px 0 0 380px;
+    }
+
+    .confirm {
+        border: solid 1px #828282;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        width: 90px;
+        height: 36px;
+    }
+
+ /* 쿠폰 팝업*/
+    .popup-button img {
+      border: none;
+      cursor: pointer;
+    }
+
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black with opacity */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      justify-content: center;
+      flex-direction:column;
+      background-color: #fff;
+      border-radius: 10px;
+      width: 416px;
+      height: 656px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    .modal-content img{
+    	padding: 60px 110px;
+    }
+    
+    .modal-content span:nth-child(1){
+    	align-items:center;
+    	padding: 10px 80px;
+    }
+    .modal-content span:nth-child(2){
+    	align-items:center;
+    	padding: 10px 80px;
+    }
+    
+/* 	.last-confirm button{
+		boder: none;
+		background-color: #ffc303;
+	} */
+	
+	.last-confirm1{
+		margin-top:20px;
+		border: none;
+		background-color: #ffc303;
+		border-radius: 20px;
+		width: 245px;
+		height: 58px;
+	}
+	.last-confirm2{
+		margin-top:10px;
+		border: solid 1px #828282;
+		background-color: #ffffff;
+		border-radius: 20px;
+		width: 245px;
+		height: 58px;
+	}
+	
+
+    .modal-content button::after {
+      border-radius: 20px;
+      background-color: #113f8a;
+      color: white;
+      border: none;
+    }
+
+    /* Add animation for opening modal */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Close Button */
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background-color: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
 
     /* footer */
 
@@ -328,9 +340,7 @@
         /* 패딩 추가 */
         background-color: #f9f9f9;
         /* 배경색 */
-        font-family: Arial, sans-serif;
-        /* 폰트 스타일 */
-        margin-top: 214px;
+        margin-top: 150px;
     }
 
     .footer-black {
@@ -525,9 +535,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -543,47 +553,44 @@
             </div>
         </div>
     </div>
-     <a href="./pet-list.jsp"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
-    <div id="mydog">
-        <div class="card">
-            <div class="profile-pic" id="profilePic">
-                <img id="profileImage" src="../assets/images/myhome/default-cat.svg" alt="Profile Picture">
-            </div>
-            <div class="name">미미</div>
-            <input type="file" id="imageUpload" accept="image/*">
-            <button class="edit-button" onclick="document.getElementById('imageUpload').click();">이미지 편집</button>
+    <div id="unsubscribe-container">
+        <p class="unsubscribe-text h2">회원탈퇴 안내</p>
+        <p class="h5">회원탈퇴를 신청 하기 전에 안내 사항을 꼭 확인해주세요. </p>
+        <div id="unsubscribe-box">
+            <p class="h6 gray400">
+                포포 반려동물 용품점 탈퇴안내
+                <br>
+                회원님께서 회원 탈퇴를 원하신다니 저희 쇼핑몰의 서비스가 많이 부족하고 미흡했나 봅니다.
+                <br>불편하셨던 점이나 불만사항을 알려주시면 적극 반영해서 고객님의 불편함을 해결해 드리도록 노력하겠습니다.
+            </p>
+            <br>
+            <ol>
+                <p>■ 아울러 회원 탈퇴시의 아래 사항을 숙지하시기 바랍니다.</p>
+                <br>
+                <li class="gray400">
+                    회원 탈퇴 시 회원님의 정보는 상품 반품 및 A/S를 위해 <br>전자상거래 등에서의 소비자 보호에 관한 법률에 의거한
+                    고객정보 보호 정책에 따라 관리 됩니다.
+                </li>
+                <li class="gray400">
+                    탈퇴 시 회원님께서 보유하셨던 마일리지는 삭제 됩니다.
+                </li>
+            </ol>
         </div>
-        <div class="title h5">
-            <span class="pre-title">기본사항*</span>
-            <p>이름</p>
-            <p>성별</p>
-            <p>품종</p>
-            <p>생일</p>
-            <p>몸무게(kg)</p>
-            <p>중성화</p>
-            <p>동물병원</p>
+        <a href="./myhome-list.jsp"><button class="back">이전으로</button></a>
+        <button class="confirm" id="openModalButton">탈퇴</button>
+        <div class="modal" id="myModal">
+        <div class="modal-content">
+        	<button class="close-button" id="closeModalButton">&times;</button>
+        	<div>
+        		<img src="../assets/images/myhome/bin.svg">
+        		<span class="h2">정말 탈퇴하시겠어요?</span>
+        		<span class="h4">탈퇴 버튼 선택 시, 계정은<br>삭제되며 복구되지 않습니다.</span>
+        	</div>
+        		<a href="./myhome-delete-complete.jsp"><button class="last-confirm1 h5">탈퇴</button></a>
+        		<a href="./myhome-delete-ok.jsp"><button class="last-confirm2 h5">취소</button></a>
         </div>
-        <div class="input-wrap">
-            <input class="input" type="text" placeholder="미미">
-            <label class="option">
-                <input type="radio" name="gender" value="female">
-                <p>여아</p>
-                <input type="radio" name="gender" value="male">
-                <p>남아</p>
-            </label>
-            <input class="input" type="text" placeholder="예) 먼치킨">
-            <p><input class="birthday" type="month"></p>
-            <label class="weight"><input type="number"></label>
-            <label class="option">
-                <input type="radio" name="treatment" value="yes"> <!-- 동일한 name 속성 지정 -->
-        		<p>했어요</p>
-       			<input type="radio" name="treatment" value="no"> <!-- 동일한 name 속성 지정 -->
-        		<p>안했어요</p>
-            </label>
-            <input class="input" type="text" placeholder="병원명">
         </div>
     </div>
-    <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -635,7 +642,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </footer>
 </body>
 <script>
@@ -682,17 +688,32 @@
             }, 100); // 100ms 지연 후 서브메뉴를 닫음
         });
     });
-    // When the user selects a file, this function will update the profile picture
-    document.getElementById('imageUpload').addEventListener('change', function (event) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                document.getElementById('profileImage').src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+    
+    // 쿠폰팝업
+
+    // Get the modal and the button
+	const modal = document.getElementById('myModal');
+	const openButton = document.getElementById('openModalButton');
+	const closeButton = document.getElementById('closeModalButton');
+
+    // 초기 상태를 숨김으로 설정
+	modal.style.display = "none"; // Hide the modal initially
+    // When the user clicks the button, open the modal
+    openButton.onclick = function () {
+      modal.style.display = "flex"; // Show the modal
+    }
+
+    // When the user clicks on the close button, close the modal
+    closeButton.onclick = function () {
+      modal.style.display = "none"; // Hide the modal
+    }
+
+    // When the user clicks outside the modal content, close the modal
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none"; // Hide the modal
+      }
+    }
 </script>
 
 </html>

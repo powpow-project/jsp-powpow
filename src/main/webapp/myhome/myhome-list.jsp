@@ -271,7 +271,7 @@
       text-align: center;
     }
     
-    #uploadButton{
+/*     #uploadButton{
       width: 120px;
       height: 32px;
       border-radius: 20px;
@@ -283,10 +283,11 @@
       line-height: 22px;
       font-weight: bold;
       cursor: pointer;
-    }
+      background-color: #113f8a;
+    } */
 
-    .imageupload-button {
-      width: 96px;
+    #uploadButton button{
+      width: 120px;
       height: 32px;
       border-radius: 20px;
       align-self: center;
@@ -297,7 +298,8 @@
       line-height: 22px;
       font-weight: normal;
       cursor: pointer;
-      margin-top: 50px;
+      margin-top: 20px;
+      margin-left:74px;
     }
 
     #profile-edit hr {
@@ -799,9 +801,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
+              <li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -820,13 +822,13 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./update.jsp" class="current-category h4">프로필</a>
+      <a href="./update.myhome" class="current-category h4">프로필</a>
       <p>|</p>
-      <a href="./likes.jsp" class="h4">좋아요</a>
+      <a href="./likes-list.myhome" class="h4">좋아요</a>
       <p>|</p>
-      <a href="./notification.jsp" class="h4">알림설정</a>
+      <a href="./notification.myhome" class="h4">알림설정</a>
       <p>|</p>
-      <a href="./password-update.jsp" class="h4">비밀번호 변경</a>
+      <a href="./password-update.myhome" class="h4">비밀번호 변경</a>
       </span>
   </div>
   <div id="page-content">
@@ -834,7 +836,7 @@
       <div class="profile-box">
         <img class="default-profile-image" src="../assets/images/member/${member.memberImage}" >
         <span class="id" ><c:out value="${member.memberNickname}"/></span>
-         <button id="uploadButton"><a href="./update.jsp">프로필 수정하기</a></button>
+         <a id="uploadButton" href="./update.myhome"><button>프로필 수정하기</button></a>
         <br>
         <hr>
         <br>
@@ -894,7 +896,7 @@
             <c:out value="${member.memberAddress}">address</c:out>
           </div>
         </div>
-        <a class="unsubscribe-message" href="./unsubscribe.jsp">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
+        <a class="unsubscribe-message" href="./myhome-unsubscribe.jsp">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
       </div>
     </div>
   </div>

@@ -50,9 +50,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -68,14 +68,14 @@
             </div>
         </div>
     </div>
-    <a href="./pet-kind.jsp"><button id="submit-button">+추가 등록하기</button></a>
-    <c:choose>
+    <a href="./pet-kind.myhome"><button id="submit-button">+추가 등록하기</button></a>
+ <%--    <c:choose>
     <c:when test="${empty pet}">
         <script>
-            window.location.href = 'no-pet-list.jsp';
+            window.location.href = 'no-pet.myhome';
         </script>
     </c:when>
-    <c:otherwise>
+    <c:otherwise> --%>
     <div id="animals">
         <c:forEach var="pet" items="${pet}">
         <div id="mydog">
@@ -120,8 +120,8 @@
         </c:forEach>
         </div>
     </div>
-      </c:otherwise>
-</c:choose>
+      </<%-- c:otherwise>
+</c:choose> --%>
     <footer>
         <div class="footer-container">
             <div class="footer-section">

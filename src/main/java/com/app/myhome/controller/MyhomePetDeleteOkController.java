@@ -8,15 +8,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
+import com.app.vo.PetVO;
 
-public class MyhomeDeleteController implements Action {
+public class MyhomePetDeleteOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
+		PetVO petVO = new PetVO();
 
+		result.setPath("../myhome/myhome-pet-list.jsp");
 		return null;
 	}
 

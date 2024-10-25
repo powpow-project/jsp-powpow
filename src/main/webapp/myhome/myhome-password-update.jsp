@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>마이홈 추가된 반려동물 없음</title>
+  <title>마이홈 비밀번호 변경</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -21,12 +21,6 @@
       transform: translateY(0);
     }
   }
-
-  body {
-    font-family: 'SpoqaHanSansNeo-Regular';
-  }
-
-  /* 헤더 부분 */
 
   .header-container {
     display: flex;
@@ -54,7 +48,6 @@
     display: flex;
     width: 1440px;
     margin: 0 auto;
-    /* 헤더 윗공간 조절 */
     margin-top: 20px;
     justify-content: space-between;
     align-items: end;
@@ -65,6 +58,7 @@
     position: absolute;
     line-height: 20px;
     margin-left: 10px;
+    /* border: 1px solid #818181; */
     background-color: #818181;
     height: 55px;
     width: 0.1px;
@@ -120,7 +114,7 @@
     padding-right: 31px;
   }
 
-  /* 메뉴부분 */
+  /* ë©”ë‰´ë¶€ë¶„ */
 
   .menu-container {
     display: flex;
@@ -191,29 +185,79 @@
     font-weight: bold;
   }
 
+  .sub-sub {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sub-sub a:hover {
+    color: #FFC303;
+    font-size: bold;
+  }
+  
+  .current-category {
+      color: #ffc303;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
 
   /* contents */
-  #no-pet-wrapper {
+  #password-wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 200px;
+    padding-top: 120px;
+    width: 464px;
     margin: 0 auto;
+    gap: 20px;
   }
 
-  .no-pet {
-    align-self: center;
-  }
-
-  #no-pet-wrapper button{
-    width: 118px;
-    height: 42px;
+  .password-edit p {
+    flex-flow: row;
     font-weight: bold;
+    gap: -20px;
+  }
+
+  #password-wrap input {
+    height: 53px;
     border-radius: 20px;
-    background-color: #113f8a;
-    color: #FFFFFF;
-    margin-top: 52px;
+    border: 0.5px solid #131313;
+    padding: 0 26px 0 26px;
+  }
+
+  #password-wrap a > button{
+    background-color: #FFC303;
+    border-radius: 20px;
+    border: none;
+    height: 55px;
+    width:464px;
+  }
+  
+  .current-password input{
+  	width:464px;
+  }
+
+  .password {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .new-password {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .check-password {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
   }
 
   /* footer */
@@ -227,7 +271,7 @@
     /* 배경색 */
     font-family: Arial, sans-serif;
     /* 폰트 스타일 */
-    margin-top: 220px;
+    margin-top: 150px;
   }
 
   .footer-black {
@@ -307,7 +351,6 @@
   .custom-list {
     list-style-type: none;
     /* 기본 리스트 스타일 제거 */
-    width:211px;
   }
 
   .custom-list li::before {
@@ -423,9 +466,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -442,13 +485,33 @@
     </div>
   </div>
   <div id="sub">
-    <div class="main-sub h1">반려동물</div>
+    <div class="main-sub h1">나의 정보</div>
+    <span class="sub-sub">
+      <a href="./myhome-list.jsp" class="h4">프로필</a>
+      <p>|</p>
+      <a href="./myhome-likes-list.jsp" class="h4">좋아요</a>
+      <p>|</p>
+      <a href="./myhome-notification.jsp" class="h4">알림설정</a>
+      <p>|</p>
+      <a href="./myhome-password-update.jsp" class="current-category h4">비밀번호 변경</a>
+    </span>
   </div>
 
-  <div id="no-pet-wrapper">
-    <p class="no-pet h4">반려동물이 없습니다.</p>
-    <p class="no-pet h4">프로필을 등록해주세요.</p>
-    <a rel="stylesheet" href="./pet-kind.jsp"><button class="h5">등록하기</button>
+  <div id="password-wrap">
+    <div class="current-password">
+      <p class="password-edit h6">현재 비밀번호<span class="sub-red">*</span></p>
+      <input placeholder="사용 중인 비밀번호를 입력해주세요" />
+    </div>
+    <div class="new-password">
+      <p class="password-edit h6">새로운 비밀번호<span class="sub-red">*</span></p>
+      <input placeholder="새로운 비밀번호를 입력해주세요" />
+      <p class="h6 gray500">*영문, 숫자를 포함해 8자 이상으로 만들어주세요.</p>
+    </div>
+    <div class="check-password">
+      <p class="password-edit h6">새로운 비밀번호 확인<span class="sub-red">*</span></p>
+      <input placeholder="다시 새로운 비밀번호를 입력해주세요" />
+    </div>
+    <a href="./myhome-password-complete.jsp"><button class="h6">완료</button></a>
   </div>
 
   <footer>
@@ -488,7 +551,7 @@
       <div class="footer">
         <div class="footer-section legal">
           <p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로 146, 3층 4층</p>
-          <p>contact@powpow.com | 사업자등록번호: 0000000</p>
+          <p>contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span></p>
           <p>통신판매업신고번호 제2024-서울강남-0000호</p>
         </div>
 

@@ -5,12 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>마이홈 알림설정</title>
+  <title>마이홈 추가된 반려동물 없음</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
-
   @keyframes fade_up {
     0% {
       opacity: 0;
@@ -22,6 +21,12 @@
       transform: translateY(0);
     }
   }
+
+  body {
+    font-family: 'SpoqaHanSansNeo-Regular';
+  }
+
+  /* 헤더 부분 */
 
   .header-container {
     display: flex;
@@ -49,6 +54,7 @@
     display: flex;
     width: 1440px;
     margin: 0 auto;
+    /* 헤더 윗공간 조절 */
     margin-top: 20px;
     justify-content: space-between;
     align-items: end;
@@ -59,7 +65,6 @@
     position: absolute;
     line-height: 20px;
     margin-left: 10px;
-    /* border: 1px solid #818181; */
     background-color: #818181;
     height: 55px;
     width: 0.1px;
@@ -115,7 +120,7 @@
     padding-right: 31px;
   }
 
-  /* ë©”ë‰´ë¶€ë¶„ */
+  /* 메뉴부분 */
 
   .menu-container {
     display: flex;
@@ -186,162 +191,29 @@
     font-weight: bold;
   }
 
-  .sub-sub {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .sub-sub a:hover {
-    color: #FFC303;
-    font-size: bold;
-  }
-
-  .current-category {
-    color: #ffc303;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-
 
   /* contents */
-  #notification {
+  #no-pet-wrapper {
     display: flex;
     flex-direction: column;
-    margin-top: 120px;
-    align-items: center;
-  }
-
-  #notification .not1 {
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: bold;
-    margin-right: 420px;
-  }
-
-  #notification .not2 {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 10px;
-    margin-right: 265px;
-  }
-
-  #notification .alarm-agree .toggle .set-alarm {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #828282;
-    border-radius: 20px;
-    width: 580px;
-    height: 200px;
-    padding: 60px 32px 59px 32px;
-    box-sizing: border-box;
-    align-items: left;
-    gap: 18px;
-    align-content: center;
-  }
-
-  .set-alarm{
-    display: flex;
     justify-content: center;
-  }
-  .set-alarm li {
-    display: flex;
-    list-style: none;
+    align-items: center;
+    padding-top: 200px;
     margin: 0 auto;
   }
 
-  #notification .alarm-agree {
-    text-align: center;
+  .no-pet {
+    align-self: center;
   }
 
-  #notification .alarm-agree .toggle {
-    position: relative;
-  }
-
-  p {
-    font-size: 20px;
-    line-height: 30px;
-  }
-
-  .toggle input {
-    display: none;
-  }
-
-  .toggle-label1 {
-    display: flex;
-    width: 60px;
-    height: 30px;
-    background: #cccccc;
+  #no-pet-wrapper button{
+    width: 118px;
+    height: 42px;
+    font-weight: bold;
     border-radius: 20px;
-    cursor: pointer;
-    position: relative;
-    margin-left: 80px;
-    padding-left: 2px;
-    box-sizing: border-box;
-  }
-
-
-  .toggle-label1:after {
-    content: "";
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    background: white;
-    border-radius: 50%;
-    transition: all 0.3s;
-    margin-top: 1.5px;
-    margin-left: 1px;
-  }
-
-  .toggle-label2 {
-    display: flex;
-    width: 60px;
-    height: 30px;
-    background: #cccccc;
-    border-radius: 20px;
-    cursor: pointer;
-    position: relative;
-    margin-left: 94px;
-    padding-left: 2px;
-    box-sizing: border-box;
-  }
-
-
-  .toggle-label2:after {
-    content: "";
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    background: white;
-    border-radius: 50%;
-    transition: all 0.3s;
-    margin-top: 1.5px;
-    margin-left: 1px;
-  }
-
-  #toggle-checkbox1:checked+.toggle-label1 {
-    background: #FFC303;
-  }
-
-  #toggle-checkbox1:checked+.toggle-label1:after {
-    transform: translateX(30px);
-  }
-
-  #toggle-checkbox2:checked+.toggle-label2 {
-    background: #FFC303;
-  }
-
-  #toggle-checkbox2:checked+.toggle-label2:after {
-    transform: translateX(30px);
-  }
-
-  .agree-marketing {
-    margin-top: 10px;
-    font-size: 12px;
-    line-height: 18px;
-    margin-right: 255px;
+    background-color: #113f8a;
+    color: #FFFFFF;
+    margin-top: 52px;
   }
 
   /* footer */
@@ -355,7 +227,7 @@
     /* 배경색 */
     font-family: Arial, sans-serif;
     /* 폰트 스타일 */
-    margin-top: 150px;
+    margin-top: 220px;
   }
 
   .footer-black {
@@ -435,6 +307,7 @@
   .custom-list {
     list-style-type: none;
     /* 기본 리스트 스타일 제거 */
+    width:211px;
   }
 
   .custom-list li::before {
@@ -550,9 +423,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -569,39 +442,15 @@
     </div>
   </div>
   <div id="sub">
-    <div class="main-sub h1">나의 정보</div>
-    <span class="sub-sub">
-      <a href="./list.jsp" class="h4">프로필</a>
-      <p>|</p>
-      <a href="./likes.jsp" class="h4">좋아요</a>
-      <p>|</p>
-      <a href="./notification.jsp" class="current-category h4">알림설정</a>
-      <p>|</p>
-      <a href="./password-update.jsp" class="h4">비밀번호 변경</a>
-      </span>
+    <div class="main-sub h1">반려동물</div>
   </div>
-  <div id="notification">
-    <span class="not1">이벤트 및 혜택 알림</span>
-    <span class="not2">특가, 쿠폰 등 이벤트 정보를 빠르게 알려드릴게요</span>
-    <div class="alarm-agree">
-      <div class="toggle">
-        <ul class="set-alarm">
-          <li>
-            <p>이메일 알림</p>
-            <input type="checkbox" id="toggle-checkbox1">
-            <label for="toggle-checkbox1" class="toggle-label1"></label>
-          </li>
-          <li>
-            <p>SMS 알림</p>
-            <input type="checkbox" id="toggle-checkbox2">
-            <label for="toggle-checkbox2" class="toggle-label2"></label>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <script src="script.js"></script>
-    <span class="agree-marketing">*알림 수신 동의와 함께 개인정보 마케팅 활용에 동의하시게 됩니다.</span>
+
+  <div id="no-pet-wrapper">
+    <p class="no-pet h4">반려동물이 없습니다.</p>
+    <p class="no-pet h4">프로필을 등록해주세요.</p>
+    <a rel="stylesheet" href="./myhome-pet-kind.jsp"><button class="h5">등록하기</button></a>
   </div>
+
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -639,7 +488,7 @@
       <div class="footer">
         <div class="footer-section legal">
           <p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로 146, 3층 4층</p>
-          <p>contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span></p>
+          <p>contact@powpow.com | 사업자등록번호: 0000000</p>
           <p>통신판매업신고번호 제2024-서울강남-0000호</p>
         </div>
 
@@ -699,12 +548,6 @@
       }, 100); // 100ms 지연 후 서브메뉴를 닫음
     });
   });
-  const checkbox = document.getElementById('toggle-checkbox');
-        const status = document.getElementById('status');
-
-    checkbox.addEventListener('change', () => {
-        status.textContent = checkbox.checked ? '현재 상태: 동의함' : '현재 상태: 동의하지 않음';
-    });
 </script>
 
 </html>

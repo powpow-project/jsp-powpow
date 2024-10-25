@@ -49,9 +49,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -70,23 +70,21 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./list.jsp" class="current-category h4">프로필</a>
+      <a href="./myhome-list.jsp" class="current-category h4">프로필</a>
       <p>|</p>
-      <a href="./likes.jsp" class="h4">좋아요</a>
+      <a href="./myhome-likes-list.jsp" class="h4">좋아요</a>
       <p>|</p>
-      <a href="./notification.jsp" class="h4">알림설정</a>
+      <a href="./myhome-notification.jsp" class="h4">알림설정</a>
       <p>|</p>
-      <a href="./password-update.jsp" class="h4">비밀번호 변경</a>
+      <a href="./myhome-password-update.jsp" class="h4">비밀번호 변경</a>
       </span>
   </div>
   <div id="page-content">
-    <a href="./list.jsp"><button onClick="alert('수정이 완료되었습니다.')" class="complete">완료</button></a>
+    <a href="./list.myhome"><button onClick="alert('수정이 완료되었습니다.')" class="complete">완료</button></a>
     <div id="profile-edit">
       <div class="profile-box">
-      <c:forEach var="member" items="${member}">
         <img class="default-profile-image" src="../assets/images/myhome/${member.memberImage}" alt="프로필 사진">
-        <input class="id"><c:out value="${member.memberNickname}" />
-    </c:forEach>
+        <span class="id"><c:out value="${member.memberNickname}" />name</span>
         <br>
         <hr>
         <br>

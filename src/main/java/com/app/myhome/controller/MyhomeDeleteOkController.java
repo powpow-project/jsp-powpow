@@ -11,12 +11,14 @@ import com.app.Result;
 import com.app.dao.MemberDAO;
 import com.app.vo.MemberVO;
 
-public class MyhomePetDeleteController implements Action {
+public class MyhomeDeleteOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 
+		
+		result.setPath("../index.jsp");
 		return null;
 	}
 

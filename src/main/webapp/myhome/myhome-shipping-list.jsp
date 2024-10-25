@@ -713,9 +713,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
