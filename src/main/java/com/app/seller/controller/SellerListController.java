@@ -24,7 +24,7 @@ public class SellerListController implements Action {
       List<ProductVO> products = productDAO.selectAll();
       req.setAttribute("products", products);
        
-      result.setPath("../seller/list.jsp");
+      result.setPath("../seller/seller-list.jsp");
       
       return result;
    }

@@ -20,7 +20,7 @@ public class SellerDeleteOkController implements Action {
       productDAO.delete(Long.parseLong(req.getParameter("id")));
       
       result.setRedirect(true);
-      result.setPath("list.seller");
+      result.setPath("seller-list.seller");
       
       return result;
    }
