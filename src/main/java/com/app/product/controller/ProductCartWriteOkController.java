@@ -33,7 +33,7 @@ public class ProductCartWriteOkController implements Action {
 //		장바구니에 추가
 		cartDAO.insert(cartVO);
 		
-		result.setPath("../product-cart-write.jsp");
+		result.setPath("../product-cart-list.jsp");
 		result.setRedirect(true);
 		
 		return result;

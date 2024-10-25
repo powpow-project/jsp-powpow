@@ -17,7 +17,7 @@ public class CartDAO {
  
 // 장바구니 추가
 	public void insert(CartVO cartVO) {
-		sqlSession.insert("cart.insert", cartVO);
+		sqlSession.insert("cart.insertCart", cartVO);
 	}
 
 // 장바구니 전체 조회 
@@ -27,12 +27,12 @@ public class CartDAO {
 
 // 장바구니 조회
 	public Optional<CartVO> select(Long id) {
-		return Optional.ofNullable(sqlSession.selectOne("cart.select", id));
+		return Optional.ofNullable(sqlSession.selectOne("cart.selectCartbyId", id));
 	}
 
 // 장바구니 삭제
 	public void delete(Long id) {
-		sqlSession.delete("cart.delete", id);
+		sqlSession.delete("cart.deleteCart", id);
 	}
 
 }

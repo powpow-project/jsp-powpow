@@ -89,11 +89,13 @@
                 <!-- 장바구니에 담긴 상품 목록 -->
                 <c:forEach var="cartItem" items="${cartItems}">
                     <div class="cart-item">
+                        
+                        <input type="hidden" name="productId" value="${cartItems.product}">
                         <!-- 상품 선택 체크박스 -->
                         <label><input type="checkbox" class="item-checkbox" checked></label>
-
+						
                         <!-- 상품 이미지 및 정보 -->
-                        <a href="#"><img src="../assets/images/shopping/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
+                        <a href="#"><img src="../assets/images/product/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
                         <div class="product-info">
                             <h3>${cartItem.productName}</h3>
                             <div class="price">
