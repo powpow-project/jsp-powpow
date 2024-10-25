@@ -26,7 +26,7 @@ deletePopupButton.addEventListener("click", (e) => {
   popup.style.display = "none";
   popupBg.style.display = "none";  
   globalThis.productid
-  document.location.href = "delete-ok.seller?id="+globalThis.productid;
+  document.location.href = "seller-delete-ok.seller?id="+globalThis.productid;
   
 });
 

@@ -22,20 +22,20 @@ public class SellerFrontController extends HttpServlet{
       String target = req.getRequestURI().replace(req.getContextPath() +"/seller/", "").split("\\.")[0];
       Result result = null;
 
-//      System.out.println(target);
+      System.out.println(target);
       
-      if(target.equals("write")) {
+      if(target.equals("seller-write")) {
            result = new Result();
-            result.setPath("../seller/write.jsp");
-      }else if(target.equals("write-ok")) {
+            result.setPath("../seller/seller-write.jsp");
+      }else if(target.equals("seller-write-ok")) {
             result = new SellerWriteOkController().execute(req, resp);
-      }else if(target.equals("list")) {
+      }else if(target.equals("seller-list")) {
           result = new SellerListController().execute(req, resp);
-      }else if(target.equals("update")) {
+      }else if(target.equals("seller-update")) {
          result = new SellerUpdateController().execute(req, resp);
-      }else if(target.equals("update-ok")) {
+      }else if(target.equals("seller-update-ok")) {
          result = new SellerUpdateOkController().execute(req, resp);
-      }else if(target.equals("delete-ok")) {
+      }else if(target.equals("seller-delete-ok")) {
          result = new SellerDeleteOkController().execute(req, resp);
       }else {
          result = new Result();

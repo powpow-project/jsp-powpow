@@ -6,10 +6,12 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.ProductDAO;
+import com.app.dao.SellerDAO;
 import com.app.vo.ProductVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -23,6 +25,13 @@ public class SellerUpdateOkController implements Action {
       ProductVO productVO = new ProductVO();
       String directory =req.getServletContext().getRealPath("/assets/images/product");
       int sizeLimit = 10*500*500;
+      SellerDAO sellerDAO = new SellerDAO();
+      HttpSession session = req.getSession();
+      
+//    String sellerEmail = (String)session.getAttribute("sellerEmail");
+      String sellerEmail = "abc123";
+      Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
+      
       
       File dir = new File(directory);
       if (!dir.exists()) {
@@ -32,38 +41,72 @@ public class SellerUpdateOkController implements Action {
       try {
          // 파일 업로드 처리
          MultipartRequest multi = new MultipartRequest(req, directory, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
+
+         System.out.println(multi.getParameter("productName"));
+         System.out.println(multi.getParameter("productPrice"));
+         System.out.println(multi.getParameter("productStock"));
+         System.out.println(multi.getParameter("productType"));
+         System.out.println(multi.getParameter("productDetail"));
+         System.out.println(multi.getParameter("productCategoryName"));
+         System.out.println(multi.getParameter("productCode"));
+         System.out.println(multi.getParameter("id"));
+         System.out.println(multi.getFilesystemName("productImage"));
+         System.out.println(multi.getFilesystemName("productSubImage2"));
+         System.out.println(multi.getFilesystemName("productSubImage2"));
+         System.out.println(multi.getFilesystemName("productSubImage3"));
          
          String title = multi.getParameter("title");
-         productVO.setId(Long.parseLong(multi.getParameter("id"))); // ID 추가
-         String mainImage = multi.getFilesystemName("productImage");
-         String fileName2 = multi.getFilesystemName("productSubImage1");
-         String fileName3 = multi.getFilesystemName("productSubImage2");
-         String fileName4 = multi.getFilesystemName("productSubImage3");
+         Long id = Long.parseLong(multi.getParameter("id"));
+         String productImage = multi.getFilesystemName("productImage");
+         String fileName1 = multi.getFilesystemName("productSubImage1");
+         String fileName2 = multi.getFilesystemName("productSubImage2");
+         String fileName3 = multi.getFilesystemName("productSubImage3");
+         
+         productVO.setId(id); // ID 추가
          productVO.setProductName(multi.getParameter("productName"));
          productVO.setProductPrice(Integer.parseInt(multi.getParameter("productPrice")));
          productVO.setProductStock(Integer.parseInt(multi.getParameter("productStock")));
+         productVO.setProductType(multi.getParameter("productType"));
          productVO.setProductDetail(multi.getParameter("productDetail"));
+         productVO.setProductCategoryName(multi.getParameter("productCategoryName"));
+         productVO.setProductCode(multi.getParameter("productCode"));
+         productVO.setSellerId(sellerId);
          
          // 파일이 성공적으로 업로드되었는지 확인
-         if (mainImage != null) {
-            productVO.setProductImage(mainImage);
-            productVO.setProductSubImage1(fileName2);
-            productVO.setProductSubImage2(fileName3);
-            productVO.setProductSubImage3(fileName4);
-            
+         System.out.println(productImage != null);
+         if (productImage != null) {
+        	 productVO.setProductImage(productImage);
+        	 productVO.setProductSubImage1(fileName1);
+        	 productVO.setProductSubImage2(fileName2);
+        	 productVO.setProductSubImage3(fileName3);
+           
          } else {
-            
+	    	 productDAO.select(id).map(ProductVO::getProductImage).ifPresent((image) -> {
+	    		 productVO.setProductImage(image);
+	    	 });
+	    	 productDAO.select(id).map(ProductVO::getProductSubImage1).ifPresent((image) -> {
+	    		 productVO.setProductSubImage1(image);
+	    	 });
+	    	 productDAO.select(id).map(ProductVO::getProductSubImage2).ifPresent((image) -> {
+	    		 productVO.setProductSubImage2(image);
+	    	 });
+	    	 productDAO.select(id).map(ProductVO::getProductSubImage3).ifPresent((image) -> {
+	    		 productVO.setProductSubImage3(image);
+	    	 });
          }
+         
+         
       } catch (Exception e) {
          e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
          req.setAttribute("errorMessage", "상품 수정 중 오류가 발생했습니다."); // 에러 메시지 설정
          return result; // 에러 페이지로 리턴할 수 있음
       }
       
+      System.out.println(productVO);
       productDAO.update(productVO);
       
       result.setRedirect(true);
-      result.setPath("../seller/list.seller");
+      result.setPath("../seller/seller-list.seller");
       return result;
    }
 
