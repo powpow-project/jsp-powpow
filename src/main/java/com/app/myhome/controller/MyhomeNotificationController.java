@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class MyhomeDeleteController implements Action {
+public class MyhomeNotificationController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
-
-		result.setPath("../myhome/myhome-delete-complete.jsp");
-		return result;
-	}
-
+		 Result result = new Result();
+		
+	        // 결과 페이지 설정
+	        result.setPath("../myhome/myhome-notification.jsp");
+	        return result;
+	    }
 }

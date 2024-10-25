@@ -9,13 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class MyhomeDeleteController implements Action {
+public class MyhomePetListController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-
-		result.setPath("../myhome/myhome-delete-complete.jsp");
+//		List<PetDAO> pets = new PetDAO().selectAll();
+		
+		if(/*펫이 null이면*/ true){
+			result.setPath("../myhome/myhome-pet-list.jsp");
+		}else {
+			result.setPath("../myhome/myhome-no-pet.jsp");
+		}
+		
 		return result;
 	}
 
