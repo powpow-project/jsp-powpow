@@ -411,9 +411,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./pet.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -433,10 +433,10 @@
     <div id="pet-kind">
         <p class="h4"><img src="../assets/images/myhome/check.svg" alt="체크아이콘" />프로필에 추가할 동물을 선택해주세요.</p>
         <div class="choose-pet-kind">
-            <a rel="stylesheet" href="../myhome/choose-dog.jsp"><img src="../assets/images/myhome/mypage-dog.svg" alt=""></a>
-            <a rel="stylesheet" href="../myhome/choose-cat.jsp"><img src="../assets/images/myhome/mypage-cat.svg" alt=""></a>
-            <a rel="stylesheet" href="../myhome/choose-bird.jsp"><img src="../assets/images/myhome/mypage-bird.svg" alt=""></a>
-            <a rel="stylesheet" href="../myhome/choose-fish.jsp"><img src="../assets/images/myhome/mypage-fish.svg" alt=""></a>
+            <a rel="stylesheet" href="../myhome/choose-dog.jsp"><img src="../assets/images/myhome/mypage-dog.svg" alt="dog"></a>
+            <a rel="stylesheet" href="../myhome/choose-cat.jsp"><img src="../assets/images/myhome/mypage-cat.svg" alt="cat"></a>
+            <a rel="stylesheet" href="../myhome/choose-bird.jsp"><img src="../assets/images/myhome/mypage-bird.svg" alt="bird"></a>
+            <a rel="stylesheet" href="../myhome/choose-fish.jsp"><img src="../assets/images/myhome/mypage-fish.svg" alt="fish"></a>
         </div>
     </div>
 

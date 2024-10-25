@@ -523,9 +523,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -541,7 +541,7 @@
             </div>
         </div>
     </div>
-    <a href="./pet.jsp"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
+    <a href="./pet-list.jsp"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
     <div id="mydog">
         <div class="card">
             <div class="profile-pic" id="profilePic">

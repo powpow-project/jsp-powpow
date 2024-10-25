@@ -23,11 +23,13 @@ public class MyhomeFrontController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=utf-8");
-		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
+		String target = req.getRequestURI().replace(req.getContextPath() + "/myhome/", "").split("\\.")[0];
 		Result result = null;
 		
 		if(target.equals("list")) {
-			result = new MyhomeListController().execute(req, resp);
+//			result = new MyhomeListController().execute(req, resp);
+			result = new Result();
+			result.setPath("../myhome/list.jsp");
 		}else if(target.equals("update")) {
 			result = new MyhomeUpdateController().execute(req, resp);
 		}else if(target.equals("update-ok")) {
@@ -35,7 +37,9 @@ public class MyhomeFrontController extends HttpServlet {
 		}else if(target.equals("delete")) {
 			result = new MyhomeDeleteController().execute(req, resp);
 		}else if(target.equals("pet-write")) {
-			result = new MyhomePetWriteController().execute(req, resp);
+			result = new Result();
+			result.setPath("../myhome/no-pet.jsp");
+//			result = new MyhomePetWriteController().execute(req, resp);
 		}else if(target.equals("pet-write-ok")) {
 			result = new MyhomePetWriteOkController().execute(req, resp);
 		}else if(target.equals("pet-update")) {

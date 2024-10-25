@@ -8,16 +8,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
+import com.app.dao.PetDAO;
+import com.app.dto.PetDTO;
+import com.app.vo.PetVO;
 
 public class MyhomePetWriteController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
+		PetDAO petDAO = new PetDAO();
+		PetDTO petDTO = new PetDTO();
+		PetVO petVO = new PetVO();
+		
+		
 
-		return null;
+		return result;
 	}
 
 }

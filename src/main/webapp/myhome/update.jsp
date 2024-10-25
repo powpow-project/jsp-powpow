@@ -49,9 +49,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -70,21 +70,23 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./profile.jsp" class="current-category h4">프로필</a>
+      <a href="./list.jsp" class="current-category h4">프로필</a>
       <p>|</p>
       <a href="./likes.jsp" class="h4">좋아요</a>
       <p>|</p>
       <a href="./notification.jsp" class="h4">알림설정</a>
       <p>|</p>
-      <a href="./set-password.jsp" class="h4">비밀번호 변경</a>
+      <a href="./password-update.jsp" class="h4">비밀번호 변경</a>
       </span>
   </div>
   <div id="page-content">
-    <a href="./profile-done.jsp"><button onClick="alert('수정이 완료되었습니다.')" class="complete">완료</button></a>
+    <a href="./list.jsp"><button onClick="alert('수정이 완료되었습니다.')" class="complete">완료</button></a>
     <div id="profile-edit">
       <div class="profile-box">
-        <img class="default-profile-image" src="../assets/images/myhome/default-profile.png" alt="프로필 사진">
-        <span class="id">NAME</span>
+      <c:forEach var="member" items="${member}">
+        <img class="default-profile-image" src="../assets/images/myhome/${member.memberImage}" alt="프로필 사진">
+        <input class="id"><c:out value="${member.memberNickname}" />
+    </c:forEach>
         <br>
         <hr>
         <br>
@@ -96,15 +98,19 @@
       <div class="edit-info">
         <div>
           <label class="edit-category1">닉네임</label>
-          <input class="edit-member" type="text" placeholder="찹쌀징어">
+         <c:forEach var="member" items="${member}">
+          <input class="edit-member" type="text" placeholder="${member.memberNickname}">
+        </c:forEach>
         </div>
         <div>
           <label class="edit-category2">아이디 (이메일)</label>
-          <input class="edit-member" type="email" placeholder="example@naver.com">
+          <c:out value="${member.memberEmail}"></c:out>
         </div>
         <div>
           <label class="edit-category3">휴대폰번호</label>
-          <input class="edit-member" type="text" placeholder="휴대폰 번호를 입력해주세요">
+          <c:forEach var="member" items="${member}">
+          <input class="edit-member" type="text" placeholder="${member.memberPhone}">
+       </c:forEach>
         </div>
         <div class="group-category4">
           <label class="edit-category4">주소</label>
@@ -115,7 +121,6 @@
             <input class="inputbutton" type="text" name="address" id="sample6_detailAddress" placeholder="상세주소">
           </div>
         </div>
-        <a class="unsubscribe-message" href="./unsubscribe.jsp">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이홈 반려동물</title>
+    <title>마이홈 탈퇴</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -186,95 +186,148 @@
 
     /* contents */
 
-    #animals {
-        display: flex;
-        justify-content: center;
+    #unsubscribe-container {
+        display: block;
+        margin-top: 100px;
     }
 
-    #submit-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 67px;
-        width: 161px;
-        height: 42px;
-        background-color: #1c4da0;
-        border-radius: 20px;
-        color: white;
-        margin-left: 700px;
+    .unsubscribe-text {
+        font-weight: bold;
     }
 
-    #mydog {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        margin-right: 50px;
-        margin-top: 60px;
-    }
 
-    .star {
-        margin-bottom: 70px;
-        margin-top: 20px;
-        margin-left: 199px;
-        transition: fill 0.3s ease;
-        cursor: pointer;
-    }
-
-    .card {
-        width: 270px;
-        height: 430px;
-        background-color: white;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    #unsubscribe-box {
         display: flex;
         flex-direction: column;
-        align-items: center;
-    }
-
-    input[type="file"] {
-        display: none;
-    }
-
-    .profile-pic {
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .profile-pic img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-    }
-
-    .name {
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    .edit-button {
-        background-color: #1c4da0;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        width: 96px;
-        height: 32px;
-    }
-
-
-    #mydog button {
-        padding: 10px 15px;
-        background-color: #1c4da0;
-        color: white;
-        border: none;
+        border: solid 1px #828282;
         border-radius: 20px;
-        cursor: pointer;
+        margin: 0 auto;
+        width: 954px;
+        height: 212px;
+        justify-content: center;
+        padding-left: 30px;
+        margin-top: 10px;
+    }
+
+    .back {
+        background-color: #113f8a;
+        color: #FFFFFF;
+        border-radius: 20px;
+        width: 90px;
+        height: 36px;
+        margin: 30px 0 0 380px;
+    }
+
+    .confirm {
+        border: solid 1px #828282;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        width: 90px;
+        height: 36px;
+    }
+
+ /* 쿠폰 팝업*/
+    .popup-button img {
+      border: none;
+      cursor: pointer;
+    }
+
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black with opacity */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      justify-content: center;
+      flex-direction:column;
+      background-color: #fff;
+      border-radius: 10px;
+      width: 416px;
+      height: 656px;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    .modal-content img{
+    	padding: 60px 110px;
+    }
+    
+    .modal-content span:nth-child(1){
+    	align-items:center;
+    	padding: 10px 80px;
+    }
+    .modal-content span:nth-child(2){
+    	align-items:center;
+    	padding: 10px 80px;
+    }
+    
+/* 	.last-confirm button{
+		boder: none;
+		background-color: #ffc303;
+	} */
+	
+	.last-confirm1{
+		margin-top:20px;
+		border: none;
+		background-color: #ffc303;
+		border-radius: 20px;
+		width: 245px;
+		height: 58px;
+	}
+	.last-confirm2{
+		margin-top:10px;
+		border: solid 1px #828282;
+		background-color: #ffffff;
+		border-radius: 20px;
+		width: 245px;
+		height: 58px;
+	}
+	
+
+    .modal-content button::after {
+      border-radius: 20px;
+      background-color: #113f8a;
+      color: white;
+      border: none;
+    }
+
+    /* Add animation for opening modal */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Close Button */
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background-color: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
     }
 
 
@@ -287,8 +340,6 @@
         /* 패딩 추가 */
         background-color: #f9f9f9;
         /* 배경색 */
-        font-family: Arial, sans-serif;
-        /* 폰트 스타일 */
         margin-top: 150px;
     }
 
@@ -484,9 +535,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./pet-list.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -502,40 +553,42 @@
             </div>
         </div>
     </div>
-    <a href="./pet-kind.jsp"><button id="submit-button">+추가 등록하기</button></a>
-    <div id="animals">
-        <div id="mydog">
-            <div class="card">
-                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
-                <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="../assets/images/myhome/default-dog.svg" alt="Profile Picture">
-                </div>
-                <div class="name">포포</div>
-                <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="../myhome/choose-dog.jsp"><button class="edit-button">편집</button></a>
-            </div>
+    <div id="unsubscribe-container">
+        <p class="unsubscribe-text h2">회원탈퇴 안내</p>
+        <p class="h5">회원탈퇴를 신청 하기 전에 안내 사항을 꼭 확인해주세요. </p>
+        <div id="unsubscribe-box">
+            <p class="h6 gray400">
+                포포 반려동물 용품점 탈퇴안내
+                <br>
+                회원님께서 회원 탈퇴를 원하신다니 저희 쇼핑몰의 서비스가 많이 부족하고 미흡했나 봅니다.
+                <br>불편하셨던 점이나 불만사항을 알려주시면 적극 반영해서 고객님의 불편함을 해결해 드리도록 노력하겠습니다.
+            </p>
+            <br>
+            <ol>
+                <p>■ 아울러 회원 탈퇴시의 아래 사항을 숙지하시기 바랍니다.</p>
+                <br>
+                <li class="gray400">
+                    회원 탈퇴 시 회원님의 정보는 상품 반품 및 A/S를 위해 <br>전자상거래 등에서의 소비자 보호에 관한 법률에 의거한
+                    고객정보 보호 정책에 따라 관리 됩니다.
+                </li>
+                <li class="gray400">
+                    탈퇴 시 회원님께서 보유하셨던 마일리지는 삭제 됩니다.
+                </li>
+            </ol>
         </div>
-        <div id="mydog">
-            <div class="card">
-                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
-                <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="../assets/images/myhome/default-cat.svg" alt="Profile Picture">
-                </div>
-                <div class="name">미미</div>
-                <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="../myhome/choose-cat.jsp"><button class="edit-button">편집</button></a>
-            </div>
+        <a href="./profile.jsp"><button class="back">이전으로</button></a>
+        <button class="confirm" id="openModalButton">탈퇴</button>
+        <div class="modal" id="myModal">
+        <div class="modal-content">
+        	<button class="close-button" id="closeModalButton">&times;</button>
+        	<div>
+        		<img src="../assets/images/myhome/bin.svg">
+        		<span class="h2">정말 탈퇴하시겠어요?</span>
+        		<span class="h4">탈퇴 버튼 선택 시, 계정은<br>삭제되며 복구되지 않습니다.</span>
+        	</div>
+        		<a href="./delete-ok.jsp"><button class="last-confirm1 h5">탈퇴</button></a>
+        		<a href="./delete.jsp"><button class="last-confirm2 h5">취소</button></a>
         </div>
-        <div id="mydog">
-            <div class="card">
-                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
-                <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="../assets/images/myhome/default-bird.svg" alt="Profile Picture">
-                </div>
-                <div class="name">도도</div>
-                <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="../myhome/choose-bird.jsp"><button class="edit-button">편집</button></a>
-            </div>
         </div>
     </div>
     <footer>
@@ -589,7 +642,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </footer>
 </body>
 <script>
@@ -597,26 +649,9 @@
     const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
     const subMenuAll = document.querySelector(".sub-menu-wrap");
     const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
-    const stars = document.querySelectorAll('.star');
-    
 
     let count = 0;
     let hoverTimeout; // 타임아웃을 저장할 변수
-    let isYellow = false;
-
-    // star
-   stars.forEach(star => {
-    star.addEventListener('click', () => {
-        // Deselect all stars
-        stars.forEach(s => {
-            s.setAttribute('src', '../assets/images/myhome/star.svg'); // Change to gray
-        });
-
-        // Select the clicked star
-        const filledSrc = star.getAttribute('data-filled-src');
-        star.setAttribute('src', filledSrc); // Change to yellow
-    });
-});
 
     mainMenus.forEach((menu) => {
         menu.addEventListener("mouseover", () => {
@@ -653,6 +688,32 @@
             }, 100); // 100ms 지연 후 서브메뉴를 닫음
         });
     });
+    
+    // 쿠폰팝업
+
+    // Get the modal and the button
+	const modal = document.getElementById('myModal');
+	const openButton = document.getElementById('openModalButton');
+	const closeButton = document.getElementById('closeModalButton');
+
+    // 초기 상태를 숨김으로 설정
+	modal.style.display = "none"; // Hide the modal initially
+    // When the user clicks the button, open the modal
+    openButton.onclick = function () {
+      modal.style.display = "flex"; // Show the modal
+    }
+
+    // When the user clicks on the close button, close the modal
+    closeButton.onclick = function () {
+      modal.style.display = "none"; // Hide the modal
+    }
+
+    // When the user clicks outside the modal content, close the modal
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none"; // Hide the modal
+      }
+    }
 </script>
 
 </html>

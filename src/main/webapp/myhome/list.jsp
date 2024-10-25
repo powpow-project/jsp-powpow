@@ -799,9 +799,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./list.jsp">나의 정보</a></li>
               <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./shipping-list.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -820,21 +820,21 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./profile.jsp" class="current-category h4">프로필</a>
+      <a href="./update.jsp" class="current-category h4">프로필</a>
       <p>|</p>
       <a href="./likes.jsp" class="h4">좋아요</a>
       <p>|</p>
       <a href="./notification.jsp" class="h4">알림설정</a>
       <p>|</p>
-      <a href="./set-password.jsp" class="h4">비밀번호 변경</a>
+      <a href="./password-update.jsp" class="h4">비밀번호 변경</a>
       </span>
   </div>
   <div id="page-content">
     <div id="profile-edit">
       <div class="profile-box">
         <img class="default-profile-image" src="../assets/images/member/${member.memberImage}" >
-        <span class="id" value="${member.memberName}">name</span>
-         <button id="uploadButton"><a href="./profile.jsp">프로필 수정하기</a></button>
+        <span class="id" ><c:out value="${member.memberNickname}"/></span>
+         <button id="uploadButton"><a href="./update.jsp">프로필 수정하기</a></button>
         <br>
         <hr>
         <br>
@@ -849,44 +849,23 @@
             <button class="switchto2">사용내역</button>
             <div class="main-content">
               <div class="main">
-              <input type="text" placeholder="쿠폰 코드를 입력해주세요">
-              <button class="add-coupon h6">추가하기</button>
-              <div class="coupon-container">
+              <input type="text" id="couponCode" placeholder="쿠폰 코드를 입력해주세요">
+              <button class="add-coupon h6" onclick="addCoupon()">추가하기</button>
+              <div class="coupon-container" id="couponContainer">
                 <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                   <c:forEach var="admin" items="${adminCoupon}">
+                  <p><c:out value="${adminCoupon.adminCouponCode}"></c:out></p>
+                  <p>유효기간 :<c:out value="${adminCoupon.adminCouponDate}"></c:out>까지</p>
+                  </c:forEach>
                 </div>
               </div>
               </div>
               <div class="main-content">
-              	 <div class="coupon-container2">
+              <div class="coupon-container2">
                 <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                  <c:forEach var="admin" items="${adminCoupon}">
+                  <p><c:out value="${adminCoupon.adminCouponCode}"></c:out></p>
+                  </c:forEach>
                 </div>
               </div>
               </div>
@@ -899,23 +878,20 @@
       <div class="edit-info">
         <div>
           <label class="edit-category1">닉네임</label>
-          <td><c:out value="${member.memberName}"></c:out></td>
+          <span><c:out value="${member.memberNickname}"></c:out></span>
         </div>
         <div>
           <label class="edit-category2">아이디 (이메일)</label>
-          <input class="edit-member" type="email" placeholder="example@naver.com">
+          <c:out value="${member.memberEmail}">email</c:out>
         </div>
         <div>
           <label class="edit-category3">휴대폰번호</label>
-          <input class="edit-member" type="text" placeholder="휴대폰 번호를 입력해주세요">
+          <c:out value="${member.memberPhone}">010-0000-0000</c:out>
         </div>
         <div class="group-category4">
           <label class="edit-category4">주소</label>
           <div class="input-container">
-            <input class="inputbutton" type="text" name="address" id="sample6_postcode" placeholder="우편번호">
-            <button class="auth-button" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">우편번호</button>
-            <input class="inputbutton" type="text" name="address"  id="sample6_address" placeholder="기본주소">
-            <input class="inputbutton" type="text" name="address" id="sample6_detailAddress" placeholder="상세주소">
+            <c:out value="${member.memberAddress}">address</c:out>
           </div>
         </div>
         <a class="unsubscribe-message" href="./unsubscribe.jsp">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
@@ -1073,5 +1049,32 @@ switch2.addEventListener("click", () => {
   addbutton.onclick = function () {
     modal.style.display = "File";
   }
+  
+  
+function addCoupon() {
+    var couponCode = document.getElementById('couponCode').value;
+    if (couponCode.trim() === '') {
+        alert('쿠폰 코드를 입력해주세요.');
+        return;
+    }
+
+    var couponContainer = document.getElementById('couponContainer');
+
+    var newCoupon = document.createElement('div');
+    newCoupon.className = 'coupon';
+
+    var couponTitle = document.createElement('p');
+    couponTitle.textContent = couponCode;
+
+    var expirationDate = document.createElement('p');
+    expirationDate.textContent = '유효기간 : ' + new Date().toISOString().split('T')[0] + '까지'; // 현재 날짜로 설정
+
+    newCoupon.appendChild(couponTitle);
+    newCoupon.appendChild(expirationDate);
+    couponContainer.appendChild(newCoupon);
+
+    // 입력 필드 초기화
+    document.getElementById('couponCode').value = '';
+}
 </script>
 </html>
