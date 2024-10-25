@@ -74,7 +74,7 @@
     <div class="buttons">
       <button class="search-btn">검색</button>
       <button class="reset-btn">초기화</button>
-      <button class="new-add-btn" onclick="location.href='write.seller'">상품등록</button>
+      <button class="new-add-btn" onclick="location.href='seller-write.seller'">상품등록</button>
     </div>
   </section>
   <section class="notice-list">
@@ -108,7 +108,7 @@
           <td><c:out value="${product.productDate}" /></td>
           <td>
             <div class="change-buttons">
-                <button type="button" class="edit-btn" onclick="location.href='update.seller?id=${product.id}'">수정</button>
+                <button type="button" class="edit-btn" onclick="location.href='seller-update.seller?id=${product.id}'">수정</button>
                 <button type="button" class="delete-btn" data-productid="${product.id}">삭제</button>
             </div>
           </td>

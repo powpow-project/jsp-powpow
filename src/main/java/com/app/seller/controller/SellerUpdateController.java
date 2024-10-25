@@ -19,12 +19,12 @@ public class SellerUpdateController implements Action {
       ProductDAO productDAO = new ProductDAO();
       
       ProductVO product = productDAO.select(Long.parseLong(req.getParameter("id"))).orElseThrow(()->{
-         throw new RuntimeException();
-      });
+          throw new RuntimeException();
+       });
       
       req.setAttribute("product", product);
 	      
-      result.setPath("update.jsp");
+      result.setPath("seller-update.jsp");
       return result;
       
    }

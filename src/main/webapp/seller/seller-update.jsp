@@ -11,7 +11,7 @@
 <title>상품관리</title>
 </head>
 <body>
-   <form action="update-ok.seller" method="post" id="frame" enctype="multipart/form-data">
+   <form action="seller-update-ok.seller" method="post" id="frame" enctype="multipart/form-data">
       <div class="menu-wrap">
         <img src="../assets/images/product/menu.png" alt="메뉴">
         <span class="h4">상품관리</span>
@@ -29,6 +29,7 @@
         <h3 class="title h3">상품 정보 입력</h3>
         <div class="info-wrap">
         <input type="hidden" name="id" value="${product.id}"/>
+        <input type="hidden" name="productCode" value="${product.productCode}"/>
           <div class="list-wrap">
             <p class="h6">상품명</p>
             <input type="text" name="productName" value="${product.productName}" />
@@ -226,7 +227,7 @@
             </div>
             <div class="button-wrap">
               <button class="register-btn h6" >수정 완료</button>
-              <button type="button" class="cancel-btn h6" onclick="location.href='list.seller';">취소</button>
+              <button type="button" class="cancel-btn h6" onclick="location.href='seller-list.seller';">취소</button>
             </div>
         </div>
         

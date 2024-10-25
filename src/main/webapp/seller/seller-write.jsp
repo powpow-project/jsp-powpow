@@ -10,7 +10,7 @@
 <title>상품관리</title>
 </head>
 <body>
-    <form action="write-ok.seller" method="post" id="frame" enctype="multipart/form-data">
+    <form action="seller-write-ok.seller" method="post" id="frame" enctype="multipart/form-data">
       <div class="menu-wrap">
         <img src="../assets/images/product/menu.png" alt="메뉴">
         <span class="h4">상품관리</span>
@@ -223,7 +223,7 @@
             </div>
             <div class="button-wrap">
               <button class="register-btn h6" >상품 등록</button>
-              <button type="button" class="cancel-btn h6" onclick="location.href='list.seller';">취소</button>
+              <button type="button" class="cancel-btn h6" onclick="location.href='seller-list.seller';">취소</button>
             </div>
         </div>
       </div>
