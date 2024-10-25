@@ -4,14 +4,13 @@ import java.util.Objects;
 
 public class MemberVO {
 
-	private Long id;
-	private Long adminId;                
+	private Long id;            
 	private String memberImage;
 	private String memberNickname;
 	private String memberEmail;
 	private String memberPassword;
 	private String memberPhone;
-	private String memberAdress;
+	private String memberAddress;
 	private boolean memberSms;      // SMS 수신 여부
     private boolean memberEmailCheck; // 이메일 확인 여부
     
@@ -23,14 +22,6 @@ public class MemberVO {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Long getAdminId() {
-		return adminId;
-	}
-
-	public void setAdminId(Long adminId) {
-		this.adminId = adminId;
 	}
 
 	public String getMemberImage() {
@@ -73,12 +64,12 @@ public class MemberVO {
 		this.memberPhone = memberPhone;
 	}
 
-	public String getMemberAdress() {
-		return memberAdress;
+	public String getMemberAddress() {
+		return memberAddress;
 	}
 
-	public void setMemberAdress(String memberAdress) {
-		this.memberAdress = memberAdress;
+	public void setMemberAddress(String memberAddress) {
+		this.memberAddress = memberAddress;
 	}
 
 	public boolean isMemberSms() {
@@ -99,10 +90,10 @@ public class MemberVO {
 
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", adminId=" + adminId + ", memberImage=" + memberImage + ", memberNickname="
-				+ memberNickname + ", memberEmail=" + memberEmail + ", memberPassword=" + memberPassword
-				+ ", memberPhone=" + memberPhone + ", memberAdress=" + memberAdress + ", memberSms=" + memberSms
-				+ ", memberEmailCheck=" + memberEmailCheck + "]";
+		return "MemberVO [id=" + id + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname
+				+ ", memberEmail=" + memberEmail + ", memberPassword=" + memberPassword + ", memberPhone=" + memberPhone
+				+ ", memberAddress=" + memberAddress + ", memberSms=" + memberSms + ", memberEmailCheck="
+				+ memberEmailCheck + "]";
 	}
 
 	@Override
@@ -121,5 +112,6 @@ public class MemberVO {
 		MemberVO other = (MemberVO) obj;
 		return Objects.equals(id, other.id);
 	}
+    
      
 }

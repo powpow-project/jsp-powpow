@@ -8,42 +8,94 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
-import com.app.member.controller.MemberBuyerWriteController;
-import com.app.member.controller.MemberBuyerWriteOkController;
+import com.app.member.controller.MemberBuyerJoinController;
+import com.app.member.controller.MemberBuyerJoinOkController;
+import com.app.member.controller.MemberBuyerListController;
+import com.app.member.controller.MemberBuyerLoginOkController;
+import com.app.member.controller.MemberBuyerUpdateController;
+import com.app.member.controller.MemberBuyerUpdateOkController;
 import com.app.member.controller.MemberDeleteOkController;
-import com.app.member.controller.MemberListController;
-import com.app.member.controller.MemberSellerWriteController;
-import com.app.member.controller.MemberSellerWriteOkController;
-import com.app.member.controller.MemberSnsController;
-import com.app.member.controller.MemberUpdateController;
-import com.app.member.controller.MemberUpdateOkController;
+import com.app.member.controller.MemberLoginController;
+import com.app.member.controller.MemberLogoutController;
+import com.app.member.controller.MemberSellerJoinController;
+import com.app.member.controller.MemberSellerJoinOkController;
+import com.app.member.controller.MemberSellerListController;
+import com.app.member.controller.MemberSellerLoginOkController;
+import com.app.member.controller.MemberSellerUpdateController;
+import com.app.member.controller.MemberSellerUpdateOkController;
+import com.app.member.controller.MemberSmsController;
 
 public class MemberFrontController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=utf-8");
-		String target = req.getRequestURI().replace(req.getContextPath() + "/", "").split("\\.")[0];
+		String target = req.getRequestURI().replace(req.getContextPath() + "/member/", "").split("\\.")[0];
 		Result result = null;
 		
-		if(target.equals("buyer-write")) {
-			result = new MemberBuyerWriteController().execute(req, resp);
-		}else if(target.equals("sns")) {
-			result = new MemberSnsController().execute(req, resp);
-		}else if(target.equals("buyer-write-ok")) {
-			result = new MemberBuyerWriteOkController().execute(req, resp);
-		}else if(target.equals("seller-write")) {
-			result = new MemberSellerWriteController().execute(req, resp);
-		}else if(target.equals("seller-write-ok")) {
-			result = new MemberSellerWriteOkController().execute(req, resp);
-		}else if(target.equals("list")) {
-			result = new MemberListController().execute(req, resp);
-		}else if(target.equals("update")) {
-			result = new MemberUpdateController().execute(req, resp);
-		}else if(target.equals("update-ok")) {
-			result = new MemberUpdateOkController().execute(req, resp);
+		System.out.println(target);
+		
+//		첫 시작 로그인페이지!!
+		if(target.equals("login")) {
+	        result = new Result();
+	        result.setPath("../member/member-login.jsp");	
+		
+//		구매자 로그인 완료 페이지
+		}else if(target.equals("buyer-login-ok")) {
+			result = new MemberBuyerLoginOkController().execute(req, resp);	
+			
+//		판매자 로그인 완료 페이지
+		}else if(target.equals("seller-login-ok")) {
+			result = new MemberSellerLoginOkController().execute(req, resp);
+			
+//		구매자,판매자 로그아웃 페이지		
+		}else if(target.equals("logout")) {
+			result = new MemberLogoutController().execute(req, resp);
+			
+//		인증번호 사용 (구매자,판매자 - 회원가입 전, 아이디 찾을 때, 비밀번호 재 설정할 때)
+		}else if(target.equals("buyer-sms")) {
+			result = new MemberSmsController().execute(req, resp);
+		
+//		구매자 회원가입 페이지		
+		}else if(target.equals("buyer-join")) {
+			result = new MemberBuyerJoinController().execute(req, resp);
+			
+//		구매자 회원가입 완료 페이지		
+		}else if(target.equals("buyer-join-ok")) {
+			result = new MemberBuyerJoinOkController().execute(req, resp);
+			
+//		판매자 회원가입 페이지	
+		}else if(target.equals("seller-join")) {
+			result = new MemberSellerJoinController().execute(req, resp);
+			
+//		판매자 회원가입 완료 페이지					
+		}else if(target.equals("seller-join-ok")) {
+			result = new MemberSellerJoinOkController().execute(req, resp);
+			
+//		로그인페이지				
+		}else if(target.equals("login")) {
+			result = new MemberLoginController().execute(req, resp);	
+			
+//		구매자 회원 정보 수정 페이지(비밀번호 재설정)
+		}else if(target.equals("buyer-update")) {
+			result = new MemberBuyerUpdateController().execute(req, resp);
+			
+//		구매자 회원 정보 수정 완료 페이지(비밀번호 재설정)			
+		}else if(target.equals("buyer-update-ok")) {
+			result = new MemberBuyerUpdateOkController().execute(req, resp);
+			
+//		판매자 회원 정보 수정 페이지(비밀번호 재설정)			
+		}else if(target.equals("seller-update")) {
+			result = new MemberSellerUpdateController().execute(req, resp);
+			
+//		판매자 회원 정보 수정 완료 페이지(비밀번호 재설정)	
+		}else if(target.equals("seller-update-ok")) {
+			result = new MemberSellerUpdateOkController().execute(req, resp);
+			
+//		구매자,판매자 계정 삭제			
 		}else if(target.equals("delete-ok")) {
 			result = new MemberDeleteOkController().execute(req, resp);
+			
 		}else {
 			result = new Result();
 			result.setPath("../not-found.jsp");

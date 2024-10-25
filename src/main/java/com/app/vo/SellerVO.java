@@ -3,8 +3,8 @@ package com.app.vo;
 import java.util.Objects;
 
 public class SellerVO {
+	
     private Long id;
-    private Long adminId;
     private Long businessId;
     private String sellerEmail;
     private String sellerPassword;
@@ -21,14 +21,6 @@ public class SellerVO {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Long getAdminId() {
-		return adminId;
-	}
-
-	public void setAdminId(Long adminId) {
-		this.adminId = adminId;
 	}
 
 	public Long getBusinessId() {
@@ -89,9 +81,9 @@ public class SellerVO {
 
 	@Override
 	public String toString() {
-		return "SellerVO [id=" + id + ", adminId=" + adminId + ", businessId=" + businessId + ", sellerEmail="
-				+ sellerEmail + ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone="
-				+ sellerPhone + ", sellerSms=" + sellerSms + ", sellerEmailCheck=" + sellerEmailCheck + "]";
+		return "SellerVO [id=" + id + ", businessId=" + businessId + ", sellerEmail=" + sellerEmail
+				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
+				+ ", sellerSms=" + sellerSms + ", sellerEmailCheck=" + sellerEmailCheck + "]";
 	}
 
 	@Override
@@ -110,7 +102,6 @@ public class SellerVO {
 		SellerVO other = (SellerVO) obj;
 		return Objects.equals(id, other.id);
 	}
-    
     
 
 }
