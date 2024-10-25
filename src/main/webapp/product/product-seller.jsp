@@ -117,7 +117,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="product-grid">
+			<div class="product-grid-container">
 				<div class="product">
 					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
 

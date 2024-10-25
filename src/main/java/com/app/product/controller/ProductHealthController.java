@@ -27,7 +27,7 @@ public class ProductHealthController implements Action {
 
 		req.setAttribute("products", products);
 
-		result.setPath("../product/health-main.jsp");
+		result.setPath("../product/product-health-main.jsp");
 		
 		return result;
 	}

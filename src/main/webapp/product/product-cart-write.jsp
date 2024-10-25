@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -7,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품있는장바구니</title>
-<link rel="stylesheet" href="../assets/css/shopping/cart-write.css">
+<link rel="stylesheet" href="../assets/css/product/cart-write.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 
@@ -94,7 +95,7 @@
                         <!-- 상품 이미지 및 정보 -->
                         <a href="#"><img src="../assets/images/shopping/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
                         <div class="product-info">
-                            <h3>${cartItem.productName}이름</h3>
+                            <h3>${cartItem.productName}</h3>
                             <div class="price">
                                 <span>가격: ${cartItem.productPrice}원</span>
                             </div>

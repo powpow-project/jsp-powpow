@@ -6,7 +6,7 @@
 	<!-- 장바구니 상품 추가 -->
 	<insert id="insertCart" parameterType="com.app.vo.CartVO">
 		INSERT INTO TBL_CART (ID, MEMBER_ID, PRODUCT_ID)
-		VALUES(CART_SEQ.NEXTVAL, #{id}, #{memberId}, #{productId})
+		VALUES(CART_SEQ.NEXTVAL, #{memberId}, #{productId})
 	</insert>
 
 	<!-- 장바구니 모든 리스트 -->
