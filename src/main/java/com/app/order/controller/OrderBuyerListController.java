@@ -16,7 +16,7 @@ import com.app.dao.ProductDAO;
 import com.app.vo.MemberVO;
 import com.app.vo.OrderVO;
 
-public class OrderListController implements Action {
+public class OrderBuyerListController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -28,7 +28,8 @@ public class OrderListController implements Action {
 //		ProductDAO productDAO = new ProductDAO();
 		HttpSession session = req.getSession();
 		
-		Long memberId = memberVO.getId();
+		session.setAttribute("id", 1L);
+		Long memberId = Long.parseLong((String)session.getAttribute("id"));
 		
         // ProductVO 리스트를 가져와서 JSP로 전달
 //		Optional<ProductVO> products = productDAO.select(Long.parseLong(req.getParameter("productId")));
@@ -36,17 +37,33 @@ public class OrderListController implements Action {
         
         // ProductVO 리스트를 가져와서 JSP로 전달
 		
-        try {
-			Optional<MemberVO> members = memberDAO.select(Long.parseLong(req.getParameter("id")));
-			req.setAttribute("members", members);
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	    if (memberId == null) {
+	        result.setPath("login.jsp"); // 로그인 페이지로 이동
+	        return result;
+	    }
 		
-       
-		result.setPath("list.order.jsp");
-//		result.setPath("write-ok.jsp");
+	    
+	    memberDAO.select(memberId).ifPresent((member) -> {
+	    	req.setAttribute("member", member);
+	    });
+	    
+	    
+//	    try {
+//	        Optional<MemberVO> optionalMember = memberDAO.select(memberId);
+//	        
+//	        if (optionalMember.isPresent()) {
+//	            MemberVO member = optionalMember.get();
+//	            req.setAttribute("member", member);  // JSP로 전달
+//	            System.out.println("Member found: " + member.getMemberNickname());
+//	        } else {
+//	            req.setAttribute("errorMessage", "회원 정보를 찾을 수 없습니다.");
+//	        }
+//	    } catch (Exception e) {
+//	        e.printStackTrace();
+//	    }
+//		
+//       
+		result.setPath("order-buyerlist.jsp");
 		return result;
 	}
 

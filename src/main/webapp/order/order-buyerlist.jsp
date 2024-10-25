@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../assets/css/order/order-write.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 
+
   <title>결제페이지</title>
 </head>
 <body>
@@ -71,9 +72,9 @@
     <p class="h2 highlight">배송지</p>
     <div class="session1">
       <div class="shopping-info">
-        <p class="h5 name"><c:out value="${members.memberNickname}" /></p>
+        <p class="h5 name">${member.memberNickname}</p>
           <div class="phone">
-            <p class="number h5">010-5910-7212
+            <p class="number h5">${member.memberPhone}</p>
               <div class="control-container">
               <input type="checkbox" id="a" class="screen-reader">
               <div class="label-box">
@@ -82,7 +83,7 @@
               </div>
           </div>
           </div>
-          <p class="adress h5">경기도 수원시 장안구 장안로 385번길 95(이목동, 수원 장안 STX KAN 2단지 앞파트)</p>
+          <p class="adress h5">${member.memberAdress}</p>
           <p class="adress h5">P111동 604호 (16342)</p>
       </div>
       <div class="delivery-section">

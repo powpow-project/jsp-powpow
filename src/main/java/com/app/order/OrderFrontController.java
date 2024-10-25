@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
 import com.app.order.controller.OrderDeleteOkController;
-import com.app.order.controller.OrderListController;
+import com.app.order.controller.OrderBuyerListController;
 import com.app.order.controller.OrderUpdateController;
 import com.app.order.controller.OrderWriteOkController;
 
@@ -31,8 +31,8 @@ public class OrderFrontController extends HttpServlet{
     	  result.setPath("../order/write.jsp");
       }else if(target.equals("write-ok")) {
     	  result = new OrderWriteOkController().execute(req, resp);
-      }else if(target.equals("list")) {
-    	  result = new OrderListController().execute(req, resp);
+      }else if(target.equals("order-buyerlist")) {
+    	  result = new OrderBuyerListController().execute(req, resp);
       }else if(target.equals("update")) {
     	  result = new OrderUpdateController().execute(req, resp);
       }else if(target.equals("delete-ok")) {
