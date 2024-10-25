@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<form action="loginAdmin-ok.admin" method="post" id="container">
+	<form action="admin-loginAdmin-ok.admin" method="post" id="container">
 		<img class="image" src="../assets/images/admin/powpow-logo.png" alt="powpow로고" />
 		<div id="admin">관리자</div>
 
@@ -19,7 +19,7 @@
 		<input type="password" name="adminPassword" placeholder="비밀번호를 입력해주세요."
 			required />
 
-		<button type="submit" id="button">로그인</button>
+		<button id="button">로그인</button>
 		<p>Or continue with</p>
 		<p class="links">
 			<a href="#">이용약관</a> | <a href="#">개인정보처리방침</a> | <a href="#">책임의

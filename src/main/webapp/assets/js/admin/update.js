@@ -36,7 +36,7 @@ function hideMenu() {
 }
 
 // 완료 버튼 클릭 시
-submitButton.addEventListener("click", () => {
+  submitButton.addEventListener("click", () => {
     const title = titleInput.value.trim();
     const content = contentInput.value.trim();
 
@@ -47,18 +47,14 @@ submitButton.addEventListener("click", () => {
     }
 
     // 게시글 등록 알림
-    alert("게시글이 등록되었습니다.");
-
-    // 폼 초기화
-    titleInput.value = "";
-    contentInput.value = "";
+    alert("게시글이 수정되었습니다.");
 });
+
 
 // 취소 버튼 클릭 시
 editButton.addEventListener("click", () => {
     const confirmCancel = confirm("정말로 취소하시겠습니까?");
     if (confirmCancel) {
-        alert("게시글이 취소되었습니다.");
-        // 추가적인 취소 동작을 구현할 수 있습니다.
+        alert("취소되었습니다.");
     }
 });

@@ -10,7 +10,8 @@
     <title>공지사항 신규등록</title>
 </head>
 <body>
-    <form action="write-ok.admin" method="post" id="frame">
+    <form action="admin-write-ok.admin" method="post" id="frame">
+    
         <div class="menu-wrap">
             <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
             <span>공지사항 관리</span>
@@ -62,17 +63,17 @@
             <div class="sub-wrap">
                 <div class="form-group">
                     <label for="title" class="label-title">제목</label>
-                    <input type="text" id="title" name="title" placeholder="제목을 입력해주세요." />
+                    <input type="text" id="title" name="adminNoticeTitle" placeholder="제목을 입력해주세요." />
                 </div>
                 <div class="form-group">
                     <label for="content" class="label-content">내용</label>
-                    <textarea id="content" name="content" class="content-title"
-                        placeholder="내용을 입력해주세요." rows="5"></textarea>
+                    <textarea id="content" name="adminNoticeContent" class="content-title"
+                        placeholder="내용을 입력해주세요."></textarea>
                 </div>
             </div>
             <div class="button-group">
-                <button type="submit" class="button-submit">완료</button>
-                <button type="submit" class="button-edit" onclick="cancelPost()">취소</button>
+                <button class="button-submit">완료</button>
+                <button class="button-edit" onclick="cancelPost()">취소</button>
             </div>
         </div>
     </form>

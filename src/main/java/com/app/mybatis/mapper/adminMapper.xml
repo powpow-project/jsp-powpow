@@ -9,36 +9,41 @@
 		WHERE ADMIN_EMAIL = #{adminEmail} AND ADMIN_PASSWORD = #{adminPassword}
 	</select>
 
-
 	<select id="selectByAdminEmail" resultType="AdminVO">
-      SELECT ID, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME, ADMIN_AUTH,
-      FROM TBL_ADMIN
-      WHERE ADMIN_EMAIL = #{adminEmail}
-   </select>
-
-
-
+	    SELECT ID, ADMIN_EMAIL, ADMIN_PASSWORD, ADMIN_NAME, ADMIN_AUTH
+	    FROM TBL_ADMIN
+	    WHERE ADMIN_EMAIL = #{adminEmail}
+	</select>
+	
+	
 	<!-- 공지사항 추가 -->
 	<insert id="insertAdminNotice" parameterType="AdminNoticeDTO">
-		SELECT TANO.ID, ADMIN_ID, ADMIN_NAME, ADMIN_NOTICE_TITLE, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_CONTENT
-		FROM TBL_ADMIN_NOTICE TANO
-		JOIN TBL_ADMIN TD 
-		ON TANO.ID = TD.ID
-		)
+	    INSERT INTO TBL_ADMIN_NOTICE (ID, ADMIN_ID, ADMIN_NOTICE_TITLE, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_CONTENT)
+	    VALUES (
+	    	ADMIN_NOTICE_SEQ.NEXTVAL,
+	        #{adminId}, 
+	        #{adminNoticeTitle, jdbcType=VARCHAR}, 
+	        #{adminNoticeNumber, jdbcType=INTEGER}, 
+	        #{adminNoticeContent, jdbcType=VARCHAR}
+	    )
 	</insert>
 	
-	
-	
 	<!-- 공지사항 전체 조회 -->
-	<select id="selectAll" resultType="AdminNoticeDTO">
-		SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE,
-		ADMIN_NOTICE_CONTENT
-		FROM TBL_ADMIN_NOTICE
-		ORDER BY ADMIN_NOTICE_DATE DESC
+	<select id="selectAllAdminNotices" resultType="AdminNoticeDTO">
+	    SELECT ID, ADMIN_ID, ADMIN_NOTICE_NUMBER, ADMIN_NOTICE_TITLE,
+	           ADMIN_NOTICE_CONTENT, ADMIN_NOTICE_DATE
+	    FROM TBL_ADMIN_NOTICE
+	    ORDER BY ADMIN_NOTICE_DATE DESC
 	</select>
 
-
-
+	<!-- 공지사항 조회(view notice) -->
+	<select id="selectAdminNotice" parameterType="Long" resultType="AdminNoticeDTO">
+	    SELECT ID, ADMIN_ID, ADMIN_NOTICE_TITLE, ADMIN_NOTICE_NUMBER, 
+	           ADMIN_NOTICE_CONTENT, ADMIN_NOTICE_DATE
+	    FROM TBL_ADMIN_NOTICE 
+	    WHERE ID = #{id}
+	</select>
+	
 	<!-- 공지사항 수정 -->
 	<update id="updateAdminNotice" parameterType="AdminNoticeDTO">
 		UPDATE TBL_ADMIN_NOTICE
@@ -46,6 +51,8 @@
 		ADMIN_NOTICE_CONTENT = #{adminNoticeContent}
 		WHERE ID = #{id}
 	</update>
+	
+
 
 	<!-- 공지사항 삭제 -->
 	<delete id="deleteAdminNotice" parameterType="Long">

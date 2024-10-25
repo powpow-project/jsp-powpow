@@ -10,7 +10,9 @@ public class AdminNoticeDTO {
     private int adminNoticeNumber;
     private String adminNoticeTitle;
     private String adminNoticeContent;
-    
+    private String adminName;
+    private String adminNoticeDate;
+   
     public AdminNoticeDTO() {;}
 
 	public Long getId() {
@@ -53,10 +55,27 @@ public class AdminNoticeDTO {
 		this.adminNoticeContent = adminNoticeContent;
 	}
 
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	public String getAdminNoticeDate() {
+		return adminNoticeDate;
+	}
+
+	public void setAdminNoticeDate(String adminNoticeDate) {
+		this.adminNoticeDate = adminNoticeDate;
+	}
+
 	@Override
 	public String toString() {
 		return "AdminNoticeDTO [id=" + id + ", adminId=" + adminId + ", adminNoticeNumber=" + adminNoticeNumber
-				+ ", adminNoticeTitle=" + adminNoticeTitle + ", adminNoticeContent=" + adminNoticeContent + "]";
+				+ ", adminNoticeTitle=" + adminNoticeTitle + ", adminNoticeContent=" + adminNoticeContent
+				+ ", adminName=" + adminName + ", adminNoticeDate=" + adminNoticeDate + "]";
 	}
 
 	@Override
@@ -75,4 +94,6 @@ public class AdminNoticeDTO {
 		AdminNoticeDTO other = (AdminNoticeDTO) obj;
 		return Objects.equals(id, other.id);
 	}
+    
+    
 }

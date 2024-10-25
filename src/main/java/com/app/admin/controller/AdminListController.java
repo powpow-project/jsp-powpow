@@ -10,22 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.AdminDAO;
-import com.app.vo.AdminNoticeVO;
-import com.app.vo.AdminVO;
+import com.app.dto.AdminNoticeDTO;
 
 public class AdminListController implements Action {
 
-	@Override
-	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    @Override
+    public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
-		Result result = new Result();
-		AdminDAO adminDAO = new AdminDAO();
-//		List<AdminVO> adminList = adminDAO.selectAll();
-		
-//		req.setAttribute("adminList", adminList);
-		
-		result.setPath("../admin/list.jsp");
-		return result;
-	}
+        Result result = new Result();
+        AdminDAO adminDAO = new AdminDAO();
+        
+        List<AdminNoticeDTO> adminNoticeList = adminDAO.selectAll();
+        
+        req.setAttribute("adminNoticeList", adminNoticeList);
+
+        System.out.println(adminNoticeList);
+        result.setPath("../admin/admin-list.jsp");
+        
+        return result;
+    }
 }
-

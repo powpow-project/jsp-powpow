@@ -9,25 +9,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.AdminDAO;
-import com.app.vo.AdminVO;
+import com.app.dto.AdminNoticeDTO;
 
 public class AdminUpdateController implements Action {
 
-    @Override
-    public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+	@Override
+	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		Result result = new Result();
+		AdminDAO adminDAO = new AdminDAO();
 
-        Result result = new Result();
-        AdminDAO adminDAO = new AdminDAO();
-        AdminVO adminVO = new AdminVO();
-        Long id = Long.parseLong(req.getParameter("adminId"));
-        
-      
-       
-        
-//        req.setAttribute("adminNotice", adminNotice);
-        result.setPath("update.admin");
-                
-        return result;
-    }
+		AdminNoticeDTO adminNotice = adminDAO.selectAdminNotice(Long.parseLong(req.getParameter("id"))).orElseThrow(() -> {
+			throw new RuntimeException();
+		});
+
+		req.setAttribute("adminNotice", adminNotice);
+		result.setPath("admin-update.jsp");
+
+		return result;
+	}
 }
-
