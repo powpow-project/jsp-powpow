@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class MemberDeleteOkController implements Action {
+public class MemberBuyerJoinCompleteController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		return null;
+		Result result = new Result();
+		
+		result.setPath("../member/member-buyer-join-complete.jsp");
+		return result;
 	}
 
 }
