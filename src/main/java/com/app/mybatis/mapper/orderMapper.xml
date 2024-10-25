@@ -8,7 +8,7 @@
 		VALUES(ORDER_SEQ.NEXTVAL, #{memberId}, #{productId}, #{orderNumber}, #{orderDate}, #{productCount})
 	</insert>
 	
-	<select id="select" resultType="com.app.dto.OrderDTO">
+	<select id="select" parameterType="Long" resultType="com.app.dto.OrderDTO">
 		SELECT TBO.ID, PRODUCT_ID ,PRODUCT_NAME, PRODUCT_PRICE, MEMBER_NAME,
 		MEMBER_ID, MEMBER_EMAIL, PRODUCT_COUNT, PRODUCT_COUNT * PRODUCT_PRICE AS TOTAL_PRICE
 		FROM TBL_ORDER TBO
