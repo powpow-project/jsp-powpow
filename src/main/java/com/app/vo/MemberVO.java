@@ -5,7 +5,6 @@ import java.util.Objects;
 public class MemberVO {
 
 	private Long id;
-	private Long adminId;                
 	private String memberImage;
 	private String memberNickname;
 	private String memberEmail;
@@ -23,14 +22,6 @@ public class MemberVO {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Long getAdminId() {
-		return adminId;
-	}
-
-	public void setAdminId(Long adminId) {
-		this.adminId = adminId;
 	}
 
 	public String getMemberImage() {
@@ -99,7 +90,7 @@ public class MemberVO {
 
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", adminId=" + adminId + ", memberImage=" + memberImage + ", memberNickname="
+		return "MemberVO [id=" + id + ", memberImage=" + memberImage + ", memberNickname="
 				+ memberNickname + ", memberEmail=" + memberEmail + ", memberPassword=" + memberPassword
 				+ ", memberPhone=" + memberPhone + ", memberAdress=" + memberAdress + ", memberSms=" + memberSms
 				+ ", memberEmailCheck=" + memberEmailCheck + "]";

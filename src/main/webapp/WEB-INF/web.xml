@@ -70,5 +70,15 @@
   	<url-pattern>*.myhome</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>OrderFrontController</servlet-name>
+  	<servlet-class>com.app.order.OrderFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>OrderFrontController</servlet-name>
+  	<url-pattern>*.order</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>
