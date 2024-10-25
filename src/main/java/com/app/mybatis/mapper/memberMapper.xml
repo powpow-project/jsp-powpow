@@ -89,5 +89,13 @@
    </delete>	
 	
 
+
+	<select id="select" parameterType="Long" resultType="MemberVO">
+		SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, 
+		MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMS, MEMBER_EMAILCHECK
+		FROM TBL_MEMBER
+		WHERE ID = #{id}
+	</select>
+
 	
 </mapper>
