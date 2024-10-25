@@ -8,13 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
+import com.app.dao.MemberDAO;
+import com.app.vo.MemberVO;
 
-public class MemberDeleteOkController implements Action {
+public class MemberBuyerJoinController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		return null;
+		Result result = new Result();
+		result.setPath("../member/member-buyer-join.jsp");
+		
+		return result;
 	}
 
 }

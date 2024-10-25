@@ -2,6 +2,92 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="member">
+<!-- 구매자 -->
+
+	<!-- 회원가입 _ 이메일, 비밀번호, 닉네임, 휴대전화번호, 주소, 동의 -->
+	<insert id="insertBuyer" parameterType="MemberVO">
+		INSERT INTO TBL_MEMBER(ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMS, MEMBER_EMAILCHECK)
+		VALUES(MEMBER_SEQ.NEXTVAL, #{memberImage}, #{memberNickname}, #{memberEmail}, #{memberPassword}, #{memberPhone}, #{memberAddress}, #{memberSms}, #{memberEmailCheck})
+	</insert>
 	
+   <!-- 회원가입시 이메일 중복 -->
+	<select id="selectBuyerByEmail" parameterType="String" resultType="MemberVO">
+		SELECT ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_NICKNAME
+		FROM TBL_MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+	</select>
+	
+   <!-- 이메일로 db 아이디 찾기 -->
+	<select id="findBuyerByEmail" parameterType="String" resultType="Long">
+		SELECT ID
+		FROM TBL_MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail}
+	</select>	
+
+   <!-- 회원가입시 닉네임 중복 -->
+	<select id="selectBuyerByNickName" parameterType="String" resultType="MemberVO">
+		SELECT ID, MEMBER_NICKNAME, MEMBER_PASSWORD, MEMBER_EMAIL
+		FROM TBL_MEMBER
+		WHERE MEMBER_NICKNAME = #{memberNickname}
+	</select>
+	
+	<!-- 정보 수정 _ 비밀번호, 닉네임, 휴대전화번호, 주소 -->	
+    <update id="updateBuyer" parameterType="MemberVO">
+        UPDATE TBL_MEMBER
+        SET MEMBER_PASSWORD = #{memberPassword}, MEMBER_NICKNAME = #{memberNickname}, MEMBER_PHONE = #{memberPhone}, MEMBER_ADDRESS = #{memberAddress}
+        WHERE ID = #{id}
+    </update>	
+
+   <!-- 회원탈퇴 -->	
+   <delete id="deleteBuyer" parameterType="Long">
+   		DELETE FROM TBL_MEMBER
+   		WHERE ID = #{id}
+   </delete>
+	
+	
+	
+<!-- 판매자 -->
+
+	<!-- 회원가입 _ 이메일, 비밀번호, 이름, 휴대전화 번호, 사업자 인증번호, 대표자명, 업체명, 동의 -->
+	<insert id="insertSeller" parameterType="SellerVO">
+		INSERT INTO TBL_SELLER(ID, bUSINESS_ID, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME, SELLER_PHONE, SELLER_SMS, SELLER_EMAILCHECK)
+		VALUES(SELLER_SEQ.NEXTVAL, #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck})
+	</insert>
+	
+   <!-- 회원가입시 이메일 중복 -->
+	<select id="selectSellerByEmail" parameterType="String" resultType="SellerVO">
+		SELECT ID, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME 
+		FROM TBL_SELLER
+		WHERE SELLER_EMAIL = #{sellerEmail}
+	</select>
+	
+   <!-- 이메일로 db 아이디 찾기 -->
+	<select id="findSellerByEmail" parameterType="String" resultType="Long">
+		SELECT ID
+		FROM TBL_SELLER
+		WHERE SELLER_EMAIL = #{sellerEmail}
+	</select>	
+	
+   <!-- 회원가입시 사업자 인증번호 중복 -->
+	<select id="selectSellerByNumber" parameterType="String" resultType="BusinessVO">
+		SELECT ID, SELLER_BUSINESS_NUMBER, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME 
+		FROM TBL_SELLER
+		WHERE SELLER_BUSINESS_NUMBER = #{sellerBusinessNumber}
+	</select>	
+	
+	<!-- 정보수정 _ 비밀번호, 이름, 휴대전화 번호  -->	
+    <update id="updateSeller" parameterType="MemberVO">
+        UPDATE TBL_SELLER
+        SET SELLER_PASSWORD = #{sellerPassword}, SELLER_NAME = #{sellerName}, SELLER_PHONE = #{sellerPhone}
+        WHERE ID = #{id}
+    </update>		
+    
+   <!-- 회원탈퇴 -->	
+   <delete id="deleteSeller" parameterType="Long">
+   		DELETE FROM TBL_SELLER
+   		WHERE ID = #{id}
+   </delete>	
+	
+
 	
 </mapper>
