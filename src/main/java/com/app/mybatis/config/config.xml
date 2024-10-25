@@ -22,7 +22,6 @@
    	<typeAlias type="com.app.vo.AdminCouponVO" alias="AdminCouponVO"/>
    	<typeAlias type="com.app.vo.AdminBannerVO" alias="AdminBannerVO"/>
    	<typeAlias type="com.app.vo.AdminNoticeVO" alias="AdminNoticeVO"/>
-   	<typeAlias type="com.app.dto.AdminNoticeDTO" alias="AdminNoticeDTO"/>
    	<typeAlias type="com.app.vo.PetVO" alias="PetVO"/>
    	<typeAlias type="com.app.vo.MemberVO" alias="MemberVO"/>
    	<typeAlias type="com.app.vo.CartVO" alias="CartVO"/>
@@ -30,6 +29,32 @@
    	<typeAlias type="com.app.vo.CommunityCommentVO" alias="CommunityCommentVO"/>
    	<typeAlias type="com.app.vo.CommunityPostVO" alias="CommunityPostVO"/>
    	<typeAlias type="com.app.vo.HealthplusCommunityPostVO" alias="HealthplusCommunityPostVO"/>
+   	
+   	
+   	<typeAlias type="com.app.dto.AdjustmentDTO" alias="AdjustmentDTO"/>
+   	<typeAlias type="com.app.dto.AdminBannerDTO" alias="AdminBannerDTO"/>
+   	<typeAlias type="com.app.dto.AdminCouponDTO" alias="AdminCouponDTO"/>
+   	<typeAlias type="com.app.dto.AdminDTO" alias="AdminDTO"/>
+   	<typeAlias type="com.app.dto.AdminNoticeDTO" alias="AdminNoticeDTO"/>
+   	<typeAlias type="com.app.dto.BusinessDTO" alias="BusinessDTO"/>
+   	<typeAlias type="com.app.dto.CartDTO" alias="CartDTO"/>
+   	<typeAlias type="com.app.dto.CommunityCommentDTO" alias="CommunityCommentDTO"/>
+   	<typeAlias type="com.app.dto.CommunityPostDTO" alias="CommunityPostDTO"/>
+   	<typeAlias type="com.app.dto.DeliveryDTO" alias="DeliveryDTO"/>
+   	<typeAlias type="com.app.dto.HealthplusCommunityEventDTO" alias="HealthplusCommunityEventDTO"/>
+   	<typeAlias type="com.app.dto.HealthplusCommunityPostDTO" alias="HealthplusCommunityPostDTO"/>
+   	<typeAlias type="com.app.dto.LikeDTO" alias="LikeDTO"/>
+   	<typeAlias type="com.app.dto.MemberDTO" alias="MemberDTO"/>
+   	<typeAlias type="com.app.dto.OrderDetailDTO" alias="OrderDetailDTO"/>
+   	<typeAlias type="com.app.dto.OrderDTO" alias="OrderDTO"/>
+   	<typeAlias type="com.app.dto.PayDTO" alias="PayDTO"/>
+   	<typeAlias type="com.app.dto.PetDTO" alias="PetDTO"/>
+   	<typeAlias type="com.app.dto.ProductCategoryDTO" alias="ProductCategoryDTO"/>
+   	<typeAlias type="com.app.dto.ProductDTO" alias="ProductDTO"/>
+   	<typeAlias type="com.app.dto.ProductReviewDTO" alias="ProductReviewDTO"/>
+   	<typeAlias type="com.app.dto.SellerDTO" alias="SellerDTO"/>
+   	<typeAlias type="com.app.dto.TogetherDTO" alias="TogetherDTO"/>
+   	
    </typeAliases>
    
    <environments default="oracle">

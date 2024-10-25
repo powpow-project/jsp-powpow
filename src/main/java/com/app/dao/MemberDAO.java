@@ -1,12 +1,19 @@
 package com.app.dao;
 
+
 import javax.servlet.http.HttpSession;
+
+import java.util.Optional;
+
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.MemberVO;
+
 import com.app.vo.SellerVO;
+
+
 
 public class MemberDAO {
 	public SqlSession sqlSession;
@@ -14,6 +21,7 @@ public class MemberDAO {
 	public MemberDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+
 	
 //	구매자 회원가입
 	public void insertBuyer(MemberVO memberVO) {
@@ -66,4 +74,11 @@ public class MemberDAO {
 
 	
 	
+
+//	특정 멤버 정보 조회
+	public Optional<MemberVO> select(Long id) {
+		return Optional.ofNullable(sqlSession.selectOne("member.select", id));
+	}
+	
 }
+

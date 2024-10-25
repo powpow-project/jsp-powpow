@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
 import com.app.order.controller.OrderDeleteOkController;
-import com.app.order.controller.OrderListController;
+import com.app.order.controller.OrderBuyerListController;
 import com.app.order.controller.OrderUpdateController;
 import com.app.order.controller.OrderWriteOkController;
 
@@ -22,13 +22,17 @@ public class OrderFrontController extends HttpServlet{
       // URI 가져와서 컨테스트패스 날리고 필요한것만 가져오기
 	  req.setCharacterEncoding("UTF-8");
 	  resp.setContentType("text/html; charset-utf-8");
-      String target = req.getRequestURI().replace(req.getContextPath() + "/","").split("\\.")[0];   
+      String target = req.getRequestURI().replace(req.getContextPath() +"/order/","").split("\\.")[0];  
       Result result = null;
+      System.out.println(target);
       
-      if(target.equals("write-ok")) {
+      if(target.equals("write")) {
+    	  result = new Result();
+    	  result.setPath("../order/write.jsp");
+      }else if(target.equals("write-ok")) {
     	  result = new OrderWriteOkController().execute(req, resp);
-      }else if(target.equals("list")) {
-    	  result = new OrderListController().execute(req, resp);
+      }else if(target.equals("order-buyerlist")) {
+    	  result = new OrderBuyerListController().execute(req, resp);
       }else if(target.equals("update")) {
     	  result = new OrderUpdateController().execute(req, resp);
       }else if(target.equals("delete-ok")) {

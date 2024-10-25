@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class MemberVO {
 
+
 	private Long id;            
 	private String memberImage;
 	private String memberNickname;
@@ -91,6 +92,7 @@ public class MemberVO {
 
 	@Override
 	public String toString() {
+
 		return "MemberVO [id=" + id + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname
 				+ ", memberEmail=" + memberEmail + ", memberPassword=" + memberPassword + ", memberPhone=" + memberPhone
 				+ ", memberAddress=" + memberAddress + ", memberSms=" + memberSms + ", memberEmailCheck="
