@@ -17,12 +17,12 @@ public class AdminDeleteOkController implements Action {
 		
 		Result result = new Result();
 		AdminDAO adminDAO = new AdminDAO();
-		
+       
 		adminDAO.deleteAdminNotice(Long.parseLong(req.getParameter("id")));
-		
+      
 		result.setRedirect(true);
-		result.setPath("list.admin");
-		
+		result.setPath("../admin/list.admin");
+	
 		return result;
 	}
 }
