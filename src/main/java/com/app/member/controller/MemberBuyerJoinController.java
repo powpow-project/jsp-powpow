@@ -28,7 +28,7 @@ public class MemberBuyerJoinController implements Action {
 //		memberVO.setMemberAdress(req.getParameter("memberAdress"));
 //		memberVO.setMemberSms("");
 //		memberVO.setMemberEmailCheck("");
-		memberDAO.insert(memberVO);
+//		memberDAO.insert(memberVO);
 		
 		result.setRedirect(true);
 		result.setPath(req.getContextPath() + "/buyer-join-complete.jsp");

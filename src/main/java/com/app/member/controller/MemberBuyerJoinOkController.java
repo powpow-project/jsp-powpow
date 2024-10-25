@@ -23,7 +23,7 @@ public class MemberBuyerJoinOkController implements Action {
 		memberVO.setMemberEmail(req.getParameter("memberEmail"));
 		System.out.println(req.getParameter("memberEmail"));
 		
-		memberDAO.insert(memberVO);
+//		memberDAO.insert(memberVO);
 		
 		result.setRedirect(true);
 		result.setPath(req.getContextPath() + "/buyer-join-complete.jsp");
