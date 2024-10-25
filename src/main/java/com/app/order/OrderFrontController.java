@@ -22,10 +22,14 @@ public class OrderFrontController extends HttpServlet{
       // URI 가져와서 컨테스트패스 날리고 필요한것만 가져오기
 	  req.setCharacterEncoding("UTF-8");
 	  resp.setContentType("text/html; charset-utf-8");
-      String target = req.getRequestURI().replace(req.getContextPath() + "/","").split("\\.")[0];   
+      String target = req.getRequestURI().replace(req.getContextPath() +"/order/","").split("\\.")[0];  
       Result result = null;
       
-      if(target.equals("write-ok")) {
+      System.out.println(target);
+      if(target.equals("write")) {
+    	  result = new Result();
+    	  result.setPath("../order/write.jsp");
+      }else if(target.equals("write-ok")) {
     	  result = new OrderWriteOkController().execute(req, resp);
       }else if(target.equals("list")) {
     	  result = new OrderListController().execute(req, resp);

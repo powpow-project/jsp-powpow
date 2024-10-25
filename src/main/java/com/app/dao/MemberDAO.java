@@ -18,6 +18,5 @@ public class MemberDAO {
 		return Optional.ofNullable(sqlSession.selectOne("member.select", id));
 	}
 	
-	
 }
 

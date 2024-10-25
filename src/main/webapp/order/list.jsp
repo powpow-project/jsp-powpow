@@ -71,7 +71,7 @@
     <p class="h2 highlight">배송지</p>
     <div class="session1">
       <div class="shopping-info">
-        <p class="h5 name">김태혁</p>
+        <p class="h5 name"><c:out value="${members.memberNickname}" /></p>
           <div class="phone">
             <p class="number h5">010-5910-7212
               <div class="control-container">
