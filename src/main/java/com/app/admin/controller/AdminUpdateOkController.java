@@ -28,7 +28,7 @@ public class AdminUpdateOkController implements Action {
         adminDAO.updateAdminNotice(adminNoticeDTO);
         
         result.setRedirect(true);
-        result.setPath("../admin/list.admin");
+        result.setPath("../admin/admin-list.admin");
         return result;
         
     }

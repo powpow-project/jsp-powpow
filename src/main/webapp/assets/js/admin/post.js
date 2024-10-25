@@ -35,27 +35,6 @@ function hideMenu() {
     menuFrame.removeEventListener("mouseleave", hideMenu);
 }
 
-// 완료 버튼 클릭 시
-/*submitButton.addEventListener("click", () => {
-    const title = titleInput.value.trim();
-    const content = contentInput.value.trim();
-
-    // 입력 검증
-    if (!title || !content) {
-        alert("제목과 내용을 입력해 주세요.");
-        return;
-    }
-
-    // 게시글 등록 알림
-    alert("게시글이 등록되었습니다.");
-
-    // 폼 초기화
-    titleInput.value = "";
-    contentInput.value = "";
-	
-	form.submit();
-});*/
-
 // 취소 버튼 클릭 시
 editButton.addEventListener("click", () => {
     const confirmCancel = confirm("정말로 취소하시겠습니까?");

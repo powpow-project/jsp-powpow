@@ -23,7 +23,7 @@ public class AdminUpdateController implements Action {
 		});
 
 		req.setAttribute("adminNotice", adminNotice);
-		result.setPath("update.jsp");
+		result.setPath("admin-update.jsp");
 
 		return result;
 	}

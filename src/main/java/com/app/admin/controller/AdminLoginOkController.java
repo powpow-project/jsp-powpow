@@ -31,12 +31,12 @@ public class AdminLoginOkController implements Action {
 
 		result.setRedirect(true);
 		if(adminEmail == null) {
-			result.setPath("../admin/loginAdmin.admin?login=false");
+			result.setPath("../admin/admin-loginAdmin.admin?login=false");
 			return result;
 		}
 		
 		session.setAttribute("adminEmail", adminEmail);
-		result.setPath("list.admin");
+		result.setPath("admin-list.admin");
 		return result;
 	}
 }

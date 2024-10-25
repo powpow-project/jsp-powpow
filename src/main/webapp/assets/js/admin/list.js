@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// 새 게시글 등록
 	newAdd.addEventListener("click", function() {
-		window.location.href = "../admin/write.admin"; // 게시글 작성 URL
+		window.location.href = "../admin/admin-write.admin"; // 게시글 작성 URL
 	});
 
 

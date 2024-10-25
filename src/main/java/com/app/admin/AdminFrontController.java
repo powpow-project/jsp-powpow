@@ -26,30 +26,30 @@ public class AdminFrontController extends HttpServlet{
 	    
 	  
 
-	    if (target.equals("loginAdmin")) { // 로그인 페이지 로직
+	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
 	        result = new Result();
-	        result.setPath("../admin/loginAdmin.jsp");
+	        result.setPath("../admin/admin-loginAdmin.jsp");
 
-	    } else if (target.equals("loginAdmin-ok")) { // 로그인 처리 로직
+	    } else if (target.equals("admin-loginAdmin-ok")) { // 로그인 처리 로직
 	        result = new AdminLoginOkController().execute(req, resp);
 	        
-	    } else if (target.equals("write")) { // 공지사항 등록 페이지 이동 처리
+	    } else if (target.equals("admin-write")) { // 공지사항 등록 페이지 이동 처리
 	    	result = new Result();
-	    	result.setPath("../admin/write.jsp"); // JSP로 포워딩
+	    	result.setPath("../admin/admin-write.jsp"); // JSP로 포워딩
 	    	
-	    } else if (target.equals("write-ok")) { // 공지사항 등록 페이지 완료
+	    } else if (target.equals("admin-write-ok")) { // 공지사항 등록 페이지 완료
 	    	result = new AdminWriteOkController().execute(req, resp);
 
-	    } else if (target.equals("list")) { // 공지사항 목록
+	    } else if (target.equals("admin-list")) { // 공지사항 목록
 	        result = new AdminListController().execute(req, resp);
 	        
-	    } else if (target.equals("update")) { // 공지사항 수정
+	    } else if (target.equals("admin-update")) { // 공지사항 수정
 	        result = new AdminUpdateController().execute(req, resp);
 
-	    } else if (target.equals("update-ok")) { // 공지사항 수정 완료
+	    } else if (target.equals("admin-update-ok")) { // 공지사항 수정 완료
 	        result = new AdminUpdateOkController().execute(req, resp);
 
-	    } else if (target.equals("delete-ok")) { // 공지사항 삭제
+	    } else if (target.equals("admin-delete-ok")) { // 공지사항 삭제
 	        result = new AdminDeleteOkController().execute(req, resp);
 
 	    } else {

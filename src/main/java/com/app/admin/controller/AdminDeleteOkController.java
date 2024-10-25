@@ -21,7 +21,7 @@ public class AdminDeleteOkController implements Action {
 		adminDAO.deleteAdminNotice(Long.parseLong(req.getParameter("id")));
       
 		result.setRedirect(true);
-		result.setPath("../admin/list.admin");
+		result.setPath("../admin/admin-list.admin");
 	
 		return result;
 	}

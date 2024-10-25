@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<form action="loginAdmin-ok.admin" method="post" id="container">
+	<form action="admin-loginAdmin-ok.admin" method="post" id="container">
 		<img class="image" src="../assets/images/admin/powpow-logo.png" alt="powpow로고" />
 		<div id="admin">관리자</div>
 

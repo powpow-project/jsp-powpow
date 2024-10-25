@@ -34,7 +34,7 @@ public class AdminWriteOkController {
 	    adminDAO.insertAdminNotice(adminNoticeDTO);
 
 	    result.setRedirect(true);
-	    result.setPath("../admin/list.admin");
+	    result.setPath("../admin/admin-list.admin");
 
 	    return result;
 	}

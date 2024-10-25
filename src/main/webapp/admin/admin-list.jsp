@@ -10,7 +10,7 @@
     <title>공지사항 관리</title>
 </head>
 <body>
-    <form action="write-ok.admin" method="post" id="frame">
+    <form action="admin-write-ok.admin" method="post" id="frame">
         <div class="menu-wrap">
             <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
             <span>공지사항 관리</span>
