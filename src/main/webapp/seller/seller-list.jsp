@@ -69,7 +69,7 @@
   </div>
   <section class="notice-search">
     <div class="search-bar">
-      <input type="text" class="search" placeholder="상품명/상품번호를 입력하세요">
+      <input type="text" class="search" placeholder="상품명을 입력하세요">
     </div>
     <div class="buttons">
       <button class="search-btn">검색</button>

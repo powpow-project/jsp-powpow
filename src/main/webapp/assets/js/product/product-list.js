@@ -11,6 +11,8 @@ const div = document.querySelectorAll("ul > li > div");
 const ps = document.querySelectorAll("ul > li > p");
 const menu = document.querySelector(".menu-icon");
 const menubars = document.querySelectorAll("#menu-frame");
+const search = document.querySelector(".search-btn")
+const searchInput = document.querySelector(".search");
 
 globalThis.productid = ""
 
@@ -88,7 +90,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// 검색 기능
+document.addEventListener('DOMContentLoaded', function() {
+search.addEventListener("click", function() {
+   const searchQuery = searchInput.value.toLowerCase();
+   const rows = document.querySelectorAll(".notice-list tbody tr");
 
-
+   rows.forEach(function(row) {
+      const title = row.querySelector("td:nth-child(3)").textContent.toLowerCase();
+      row.style.display = title.includes(searchQuery) ? "" : "none";
+	   });
+	});
+});
 
 
