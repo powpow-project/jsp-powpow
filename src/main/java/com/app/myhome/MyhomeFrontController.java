@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.myhome.controller.MyhomeDeleteController;
 import com.app.myhome.controller.MyhomeDeleteOkController;
 import com.app.myhome.controller.MyhomeLikesListController;
 import com.app.myhome.controller.MyhomeListController;
 import com.app.myhome.controller.MyhomeNoPetController;
+import com.app.myhome.controller.MyhomeNotificationController;
 import com.app.myhome.controller.MyhomePasswordUpdateController;
 import com.app.myhome.controller.MyhomePetDeleteOkController;
 import com.app.myhome.controller.MyhomePetKindController;
@@ -42,6 +44,8 @@ public class MyhomeFrontController extends HttpServlet {
 			result = new MyhomeUpdateController().execute(req, resp);
 		}else if(target.equals("update-ok")) {
 			result = new MyhomeUpdateOkController().execute(req, resp);
+		}else if(target.equals("delete")) {
+			result = new MyhomeDeleteController().execute(req, resp);
 		}else if(target.equals("delete-ok")) {
 			result = new MyhomeDeleteOkController().execute(req, resp);
 		}else if(target.equals("pet-list")) {
@@ -72,6 +76,8 @@ public class MyhomeFrontController extends HttpServlet {
 			result = new MyhomeLikesListController().execute(req, resp);
 		}else if(target.equals("password-update")) {
 			result = new MyhomePasswordUpdateController().execute(req, resp);
+		}else if(target.equals("notification")) {
+			result = new MyhomeNotificationController().execute(req, resp);
 			
 		}else {
 			result = new Result();

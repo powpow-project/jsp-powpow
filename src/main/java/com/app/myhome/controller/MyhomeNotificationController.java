@@ -5,26 +5,21 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
+import com.app.dao.MyhomeDAO;
 import com.app.vo.MemberVO;
 
-public class MyhomeDeleteOkController implements Action {
+public class MyhomeNotificationController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
-		String cancel = req.getParameter("delete-complete");
+		 Result result = new Result();
 		
-			if(/*탈퇴 취소한다면*/ cancel != null && cancel.equals("true")){
-				result.setPath("../myhome/myhome-list.jsp");
-			}else {
-				result.setPath("../myhome/myhome-delete-ok.jsp");
-			}
-			
-		return result;
-	}
-
+	        // 결과 페이지 설정
+	        result.setPath("../myhome/myhome-notification.jsp");
+	        return result;
+	    }
 }

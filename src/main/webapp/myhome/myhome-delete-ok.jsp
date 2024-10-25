@@ -535,9 +535,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -576,7 +576,7 @@
                 </li>
             </ol>
         </div>
-        <a href="./myhome-list.jsp"><button class="back">이전으로</button></a>
+        <a href="./list.myhome"><button class="back">이전으로</button></a>
         <button class="confirm" id="openModalButton">탈퇴</button>
         <div class="modal" id="myModal">
         <div class="modal-content">
@@ -586,8 +586,8 @@
         		<span class="h2">정말 탈퇴하시겠어요?</span>
         		<span class="h4">탈퇴 버튼 선택 시, 계정은<br>삭제되며 복구되지 않습니다.</span>
         	</div>
-        		<a href="./myhome-delete-complete.jsp"><button class="last-confirm1 h5">탈퇴</button></a>
-        		<a href="./myhome-delete-ok.jsp"><button class="last-confirm2 h5">취소</button></a>
+        		<a href="./delete-complete.myhome"><button class="last-confirm1 h5">탈퇴</button></a>
+        		<a href="./delete-ok.myhome"><button class="last-confirm2 h5">취소</button></a>
         </div>
         </div>
     </div>

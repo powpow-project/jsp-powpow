@@ -70,13 +70,13 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./myhome-list.jsp" class="current-category h4">프로필</a>
+      <a href="./list.myhome" class="current-category h4">프로필</a>
       <p>|</p>
-      <a href="./myhome-likes-list.jsp" class="h4">좋아요</a>
+      <a href="./likes-list.myhome" class="h4">좋아요</a>
       <p>|</p>
       <a href="./myhome-notification.jsp" class="h4">알림설정</a>
       <p>|</p>
-      <a href="./myhome-password-update.jsp" class="h4">비밀번호 변경</a>
+      <a href="./password-update.myhome" class="h4">비밀번호 변경</a>
       </span>
   </div>
   <div id="page-content">

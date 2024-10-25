@@ -896,7 +896,7 @@
             <c:out value="${member.memberAddress}">address</c:out>
           </div>
         </div>
-        <a class="unsubscribe-message" href="./myhome-unsubscribe.jsp">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
+        <a class="unsubscribe-message" href="./delete-ok.myhome">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
       </div>
     </div>
   </div>

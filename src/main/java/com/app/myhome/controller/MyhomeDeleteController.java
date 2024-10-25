@@ -8,22 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
+import com.app.vo.PetVO;
 
-public class MyhomeDeleteOkController implements Action {
+public class MyhomeDeleteController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-		String cancel = req.getParameter("delete-complete");
-		
-			if(/*탈퇴 취소한다면*/ cancel != null && cancel.equals("true")){
-				result.setPath("../myhome/myhome-list.jsp");
-			}else {
-				result.setPath("../myhome/myhome-delete-ok.jsp");
-			}
-			
+
+		result.setPath("../myhome/myhome-delete-complete.jsp");
 		return result;
 	}
 
