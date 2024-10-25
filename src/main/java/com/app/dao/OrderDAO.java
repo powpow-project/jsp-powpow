@@ -34,4 +34,8 @@ public class OrderDAO {
 	public void delete(Long id) {
 		sqlSession.delete("order.delete", id);
 	}
+
+	
 }
+
+	

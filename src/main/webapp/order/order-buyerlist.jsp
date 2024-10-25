@@ -83,7 +83,7 @@
               </div>
           </div>
           </div>
-          <p class="adress h5">${member.memberAdress}</p>
+          <p class="adress h5">${member.memberAddress}</p>
           <p class="adress h5">P111동 604호 (16342)</p>
       </div>
       <div class="delivery-section">

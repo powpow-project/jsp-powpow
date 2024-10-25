@@ -24,8 +24,8 @@ public class OrderFrontController extends HttpServlet{
 	  resp.setContentType("text/html; charset-utf-8");
       String target = req.getRequestURI().replace(req.getContextPath() +"/order/","").split("\\.")[0];  
       Result result = null;
-      
       System.out.println(target);
+      
       if(target.equals("write")) {
     	  result = new Result();
     	  result.setPath("../order/write.jsp");
