@@ -93,8 +93,8 @@
 							<td>운영자</td>
 							<td>
 								<div class="change-buttons">
-									<button type="button" class="edit-btn" onclick="location.href='update.admin?id=${adminNotice.id}'">수정</button>
-									<button type="button" class="delete-btn" onclick="location.href='delete-ok.admin?id=${adminNotice.id}'">삭제</button>
+									<button type="button" class="edit-btn" onclick="location.href='admin-update.admin?id=${adminNotice.id}'">수정</button>
+									<button type="button" class="delete-btn" onclick="location.href='admin-delete-ok.admin?id=${adminNotice.id}'">삭제</button>
 								</div>
 							</td>
 						</tr>

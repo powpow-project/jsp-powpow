@@ -19,7 +19,7 @@
 		<input type="password" name="adminPassword" placeholder="비밀번호를 입력해주세요."
 			required />
 
-		<button type="submit" id="button">로그인</button>
+		<button id="button">로그인</button>
 		<p>Or continue with</p>
 		<p class="links">
 			<a href="#">이용약관</a> | <a href="#">개인정보처리방침</a> | <a href="#">책임의

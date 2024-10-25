@@ -25,7 +25,6 @@ public class AdminFrontController extends HttpServlet{
 	    Result result = null;
 	    
 	  
-
 	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
 	        result = new Result();
 	        result.setPath("../admin/admin-loginAdmin.jsp");
