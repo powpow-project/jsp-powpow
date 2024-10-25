@@ -22,7 +22,7 @@ public class SellerUpdateOkController implements Action {
       ProductDAO productDAO = new ProductDAO();
       ProductVO productVO = new ProductVO();
       String directory =req.getServletContext().getRealPath("/assets/images/product");
-      int sizeLimit = 20*500*500; // 100mb
+      int sizeLimit = 10*500*500;
       
       File dir = new File(directory);
       if (!dir.exists()) {
