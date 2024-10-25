@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>탈퇴 완료</title>
-  <link rel="stylesheet" href="./css/leave-complete.css">
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -87,7 +86,7 @@
 
   <div class="completion-main">
     <div class="logo-box">
-      <a href="../login/main.jsp">
+      <a href="../login/index.jsp">
         <img id="logo" src="../assets/images/myhome/logo.png" alt="로고" />
       </a>
     </div>

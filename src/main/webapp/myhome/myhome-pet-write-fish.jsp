@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이홈 반려동물</title>
+    <title>마이홈 반려어추가</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -185,23 +185,17 @@
     }
 
     /* contents */
-
-    #animals {
-        display: flex;
-        justify-content: center;
-    }
-
     #submit-button {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 67px;
-        width: 161px;
+        width: 89px;
         height: 42px;
         background-color: #1c4da0;
         border-radius: 20px;
         color: white;
-        margin-left: 700px;
+        margin-left: 910px;
     }
 
     #mydog {
@@ -210,16 +204,6 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto;
-        margin-right: 50px;
-        margin-top: 60px;
-    }
-
-    .star {
-        margin-bottom: 70px;
-        margin-top: 20px;
-        margin-left: 199px;
-        transition: fill 0.3s ease;
-        cursor: pointer;
     }
 
     .card {
@@ -231,6 +215,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
@@ -267,6 +252,44 @@
         height: 32px;
     }
 
+    .pre-title {
+        font-weight: bold;
+    }
+
+    .title {
+        flex-direction: row;
+        margin-left: 60px;
+        font-weight: bold;
+    }
+
+    .title p {
+        padding-top: 30px;
+    }
+
+     .input-wrap {
+        margin-top: 30px;
+        margin-left: 58px;
+    }
+
+    .input-wrap input {
+        border-radius: 20px;
+        height: 30px;
+        padding-left: 26px;
+        margin-top: 20px;
+    }
+
+    .input {
+        width: 285px;
+    }
+
+    .option {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .option p {
+        margin-top: 25px;
+    }
 
     #mydog button {
         padding: 10px 15px;
@@ -277,6 +300,17 @@
         cursor: pointer;
     }
 
+    .message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 400px;
+    }
+
+    .birthday {
+        width: 285px;
+        padding-right: 26px;
+    }
 
     /* footer */
 
@@ -289,7 +323,7 @@
         /* 배경색 */
         font-family: Arial, sans-serif;
         /* 폰트 스타일 */
-        margin-top: 150px;
+        margin-top: 214px;
     }
 
     .footer-black {
@@ -484,60 +518,47 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-no-pet.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
-
                         <ul>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                             <li class="sub-menu"><a href="#"></a></li>
                         </ul>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <a href="./pet-kind.jsp"><button id="submit-button">+추가 등록하기</button></a>
-    <div id="animals">
-        <div id="mydog">
-            <div class="card">
-                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
-                <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="../assets/images/myhome/default-dog.svg" alt="Profile Picture">
-                </div>
-                <div class="name">포포</div>
-                <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="../myhome/choose-dog.jsp"><button class="edit-button">편집</button></a>
+     <a href="./pet-write-ok.myhome?petKind=fish"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
+    <div id="mydog">
+        <div class="card">
+            <div class="profile-pic" id="profilePic">
+                <img id="profileImage" src="../assets/images/myhome/default-fish.svg" alt="Profile Picture">
             </div>
+            <div class="name">도리</div>
+            <input type="file" id="imageUpload" accept="image/*">
+            <button class="edit-button" onclick="document.getElementById('imageUpload').click();">이미지 편집</button>
         </div>
-        <div id="mydog">
-            <div class="card">
-                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
-                <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="../assets/images/myhome/default-cat.svg" alt="Profile Picture">
-                </div>
-                <div class="name">미미</div>
-                <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="../myhome/choose-cat.jsp"><button class="edit-button">편집</button></a>
-            </div>
+        <div class="title h5">
+            <span class="pre-title">기본사항*</span>
+            <p>이름</p>
+            <p>품종</p>
+            <p>생일</p>
+            <p>몸무게(kg)</p>
         </div>
-        <div id="mydog">
-            <div class="card">
-                <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
-                <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="../assets/images/myhome/default-bird.svg" alt="Profile Picture">
-                </div>
-                <div class="name">도도</div>
-                <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="../myhome/choose-bird.jsp"><button class="edit-button">편집</button></a>
-            </div>
+        <div class="input-wrap">
+            <input class="input" type="text" placeholder="도리">
+            <p><input class="input" type="text" placeholder="예) 금붕어"></p>
+            <p><input class="birthday" type="month"></p>
+            <input class="input" type="number">
         </div>
     </div>
+    <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -597,26 +618,9 @@
     const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
     const subMenuAll = document.querySelector(".sub-menu-wrap");
     const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
-    const stars = document.querySelectorAll('.star');
-    
 
     let count = 0;
     let hoverTimeout; // 타임아웃을 저장할 변수
-    let isYellow = false;
-
-    // star
-   stars.forEach(star => {
-    star.addEventListener('click', () => {
-        // Deselect all stars
-        stars.forEach(s => {
-            s.setAttribute('src', '../assets/images/myhome/star.svg'); // Change to gray
-        });
-
-        // Select the clicked star
-        const filledSrc = star.getAttribute('data-filled-src');
-        star.setAttribute('src', filledSrc); // Change to yellow
-    });
-});
 
     mainMenus.forEach((menu) => {
         menu.addEventListener("mouseover", () => {
@@ -652,6 +656,17 @@
                 });
             }, 100); // 100ms 지연 후 서브메뉴를 닫음
         });
+    });
+    // When the user selects a file, this function will update the profile picture
+    document.getElementById('imageUpload').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('profileImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
     });
 </script>
 

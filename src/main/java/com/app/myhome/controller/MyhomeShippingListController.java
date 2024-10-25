@@ -14,7 +14,7 @@ import com.app.dao.MemberDAO;
 import com.app.dao.MyhomeDAO;
 import com.app.vo.MemberVO;
 
-public class MyhomeListController implements Action {
+public class MyhomeShippingListController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -30,7 +30,7 @@ public class MyhomeListController implements Action {
 //		MemberVO member = memberDAO.selectMemberByEmail(memberEmail);
 		
 //		req.setAttribute("member", member);
-		result.setPath("../myhome/myhome-list.jsp");
+		result.setPath("../myhome/myhome-shipping-list.jsp");
 
 		return result;
 	}
