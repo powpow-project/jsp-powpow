@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/admin/post.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-write.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
     <title>공지사항 신규등록</title>
@@ -68,7 +68,7 @@
                 <div class="form-group">
                     <label for="content" class="label-content">내용</label>
                     <textarea id="content" name="adminNoticeContent" class="content-title"
-                        placeholder="내용을 입력해주세요."></textarea>
+                        placeholder="내용을 입력해주세요." maxlength="2000"></textarea>
                 </div>
             </div>
             <div class="button-group">
@@ -77,6 +77,6 @@
             </div>
         </div>
     </form>
-    <script src="../assets/js/admin/post.js"></script>
+    <script src="../assets/js/admin/admin-write.js"></script>
 </body>
 </html>

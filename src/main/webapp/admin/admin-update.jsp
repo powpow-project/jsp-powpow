@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/admin/update.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-update.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
     <title>공지사항 수정</title>
@@ -75,10 +75,10 @@
             </div>
             <div class="button-group">
                 <button class="button-submit">완료</button> 
-                <button type="button" class="button-edit" onclick="cancelPost()">취소</button>
+                <button class="button-edit" onclick="cancelPost()">취소</button>
             </div>
         </div>
     </form>
-    <script src="../assets/js/admin/update.js"></script>
+    <script src="../assets/js/admin/admin-update.js"></script>
 </body>
 </html>
