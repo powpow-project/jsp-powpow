@@ -25,7 +25,7 @@ public class SellerWriteOkController implements Action {
       ProductDAO productDAO = new ProductDAO();
       SellerDAO sellerDAO = new SellerDAO();
       String directory =req.getServletContext().getRealPath("/assets/images/product");
-      int sizeLimit = 20*500*500; // 100mb
+      int sizeLimit = 10*500*500; // 100mb
       String productCode = String.valueOf((int)(Math.random() * 900000) + 100000);
       
       

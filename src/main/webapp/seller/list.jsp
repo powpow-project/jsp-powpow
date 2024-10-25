@@ -1,4 +1,4 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%-- <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -74,10 +74,9 @@
     <div class="buttons">
       <button class="search-btn">검색</button>
       <button class="reset-btn">초기화</button>
-      <button class="new-add-btn" onclick="location.href='seller-write.seller'">상품등록</button>
+      <button class="new-add-btn" onclick="location.href='write.seller'">상품등록</button>
     </div>
   </section>
-      
   <section class="notice-list">
     <table>
      <thead>
@@ -94,7 +93,8 @@
       </tr>
      </thead>
       <tbody>
-        <c:forEach var="product" items="${products}" varStatus="status">
+        
+	  <c:forEach var="product" items="${products}" varStatus="status">
         <tr>
           <td>${status.index + 1}</td>  <!-- 행 번호 출력 -->
           <td>
@@ -109,11 +109,12 @@
           <td>
             <div class="change-buttons">
                 <button type="button" class="edit-btn" onclick="location.href='update.seller?id=${product.id}'">수정</button>
-                <button class="delete-btn">삭제</button>
+                <button type="button" class="delete-btn" data-productid="${product.id}">삭제</button>
             </div>
           </td>
          </tr>
-       </c:forEach> 
+	  	</c:forEach>
+      
      </tbody>
      </table>
     </section>
@@ -121,32 +122,14 @@
     <div class="pop-up">
       <p>삭제하시겠습니까?</p>
       <div class="check-buttons">
-        <button class="delete-btn" onclick="location.href='delete-ok.seller?id=${product.id}'">확인</button>
+        <button type="button" class="delete-btn confirm-btn" >확인</button>
         <button class="cancel-btn">취소</button>
       </div>
     </div>
+    
     <div class="popup-bg"></div>
   </div>
 </body>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 모든 .product-status 요소를 찾음
-    const statusCells = document.querySelectorAll('.product-status');
-
-    // 각 요소에 대해 반복
-    statusCells.forEach(function(cell) {
-        // data-stock 속성에서 재고 값을 가져옴
-        const stock = cell.getAttribute('data-stock');
-
-        // 재고 값이 있으면 "판매중", 없으면 "품절"로 표시
-        if (stock && parseInt(stock) > 0) {
-            cell.textContent = '판매중';
-        } else {
-            cell.textContent = '품절';
-        }
-    });
-});
-</script>
 <script src="../assets/js/product/product-list.js">
 </script>
 </html>

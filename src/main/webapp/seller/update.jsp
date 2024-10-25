@@ -23,6 +23,8 @@
         <h1 class="h1">상품 수정</h1>
       </div>
 
+
+      
       <div id="product-insert">
         <h3 class="title h3">상품 정보 입력</h3>
         <div class="info-wrap">
@@ -51,6 +53,7 @@
                <div class="list-wrap">
                   <p class="h6">분류</p>
                 <select name="productType">
+                    <option value="헬스+">헬스+</option>
                     <option value="사료/간식">사료/간식</option>
                     <option value="배변용품">배변용품</option>
                     <option value="장난감">장난감</option>
@@ -60,12 +63,11 @@
               <div class="list-wrap">
                 <p class="h6">상품간략설명</p>
                 <textarea
-                  type="text"
+                  id="productDetailTextarea"
                   name="productDetail"
                   class="description"
                   placeholder="내용을 설명해주세요."
-                  value="${product.productDetail}"
-                ></textarea>
+                ><c:out value="${product.productDetail}"></c:out></textarea>
               </div>
             </div>
             <div class="line">
@@ -223,10 +225,12 @@
               </div>
             </div>
             <div class="button-wrap">
-              <button class="register-btn h6" >상품 등록</button>
+              <button class="register-btn h6" >수정 완료</button>
               <button type="button" class="cancel-btn h6" onclick="location.href='list.seller';">취소</button>
             </div>
         </div>
+        
+        
       </div>
     </form>
 </body>
@@ -271,6 +275,6 @@
            reader.readAsDataURL(file);
        }
    });
-   
+  	
 </script>
 </html>

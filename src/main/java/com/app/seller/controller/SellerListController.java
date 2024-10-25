@@ -21,10 +21,10 @@ public class SellerListController implements Action {
 
         
    
-       List<ProductVO> products = productDAO.selectAll();
-       req.setAttribute("products", products);
-
-       result.setPath("../seller/list.jsp");
+      List<ProductVO> products = productDAO.selectAll();
+      req.setAttribute("products", products);
+       
+      result.setPath("../seller/list.jsp");
       
       return result;
    }
