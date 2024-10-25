@@ -90,7 +90,7 @@
                 <c:forEach var="cartItem" items="${cartItems}">
                     <div class="cart-item">
                         
-                        <input type="hidden" name="productId" value="${cartItems.product}">
+                        <%-- <input type="hidden" name="productId" value="${cartItem.product}"> --%>
                         <!-- 상품 선택 체크박스 -->
                         <label><input type="checkbox" class="item-checkbox" checked></label>
 						

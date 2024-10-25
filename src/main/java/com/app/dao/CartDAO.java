@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.app.dto.CartDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.CartVO;
 
@@ -21,7 +22,7 @@ public class CartDAO {
 	}
 
 // 장바구니 전체 조회 
-	public List<CartVO> selectAll() {
+	public List<CartDTO> selectAll() {
 		return sqlSession.selectList("cart.selectAll");
 	}
 

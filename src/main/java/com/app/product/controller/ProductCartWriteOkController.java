@@ -22,8 +22,8 @@ public class ProductCartWriteOkController implements Action {
 		HttpSession session = req.getSession();
 		
 //		회원정보 가져오기
-		Long memberId = (Long) session.getAttribute("memberId");
-		cartVO.setMemberId(memberId);
+		String memberEmail = (String)session.getAttribute("memberEmail");
+		cartVO.setMemberId(1L);
 //		상품정보 가져오기
 		
 		Long productId = Long.parseLong(req.getParameter("productId"));
@@ -33,7 +33,7 @@ public class ProductCartWriteOkController implements Action {
 //		장바구니에 추가
 		cartDAO.insert(cartVO);
 		
-		result.setPath("../product-cart-list.jsp");
+		result.setPath("../product/product-cart-list.product");
 		result.setRedirect(true);
 		
 		return result;
