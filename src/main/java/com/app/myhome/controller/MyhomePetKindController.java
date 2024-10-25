@@ -12,18 +12,16 @@ import com.app.dao.PetDAO;
 import com.app.dto.PetDTO;
 import com.app.vo.PetVO;
 
-public class MyhomePetWriteOkController implements Action {
+public class MyhomePetKindController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-
-		System.out.println("실행");
-		System.out.println(req.getParameter("petKind"));
-	      
-	    result.setRedirect(true);
-	    result.setPath("../myhome/pet-list.myhome");
-	  
+//		PetDAO petDAO = new PetDAO();
+//		PetDTO petDTO = new PetDTO();
+//		PetVO petVO = new PetVO();
+		
+		result.setPath("../myhome/myhome-pet-kind.jsp");
 		return result;
 	}
 

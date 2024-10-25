@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
+import com.app.vo.PetVO;
 
 public class MyhomeDeleteController implements Action {
 
@@ -17,7 +16,8 @@ public class MyhomeDeleteController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 
-		return null;
+		result.setPath("../myhome/myhome-delete-complete.jsp");
+		return result;
 	}
 
 }

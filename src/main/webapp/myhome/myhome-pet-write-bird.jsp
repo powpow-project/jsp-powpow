@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이홈 반려종류</title>
+    <title>마이홈 반려새추가</title>
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
@@ -22,8 +22,14 @@
         }
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
     body {
-        font-family: 'SpoqaHanSansNeo-Regular';
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
     /* 헤더 부분 */
@@ -179,31 +185,137 @@
     }
 
     /* contents */
-    #pet-kind {
+    #submit-button {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding-top: 221px;
+        margin-top: 67px;
+        width: 89px;
+        height: 42px;
+        background-color: #1c4da0;
+        border-radius: 20px;
+        color: white;
+        margin-left: 910px;
+    }
+
+    #mydog {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         margin: 0 auto;
     }
 
-    .choose-pet-kind {
+    .card {
+        width: 270px;
+        height: 430px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .profile-pic {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+    .name {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .edit-button {
+        background-color: #1c4da0;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 96px;
+        height: 32px;
+    }
+
+    .pre-title {
+        font-weight: bold;
+    }
+
+    .title {
+        flex-direction: row;
+        margin-left: 60px;
+        font-weight: bold;
+    }
+
+    .title p {
+        padding-top: 30px;
+    }
+
+    .input-wrap {
+        margin-top: 30px;
+        margin-left: 58px;
+    }
+
+    .input-wrap input {
+        border-radius: 20px;
+        height: 30px;
+        padding-left: 26px;
         margin-top: 20px;
     }
 
-    .choose-pet-kind a{
-        margin-right: 25px;
+    .input {
+        width: 285px;
     }
 
-    .choose-pet-kind img {
-        border: solid 1px #131313;
+    .option {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .option p {
+        margin-top: 25px;
+    }
+
+    #mydog button {
+        padding: 10px 15px;
+        background-color: #1c4da0;
+        color: white;
+        border: none;
         border-radius: 20px;
-        padding: 83px 34px;
+        cursor: pointer;
+    }
+
+    .message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 400px;
+    }
+
+    .weight input {
+        width: 285px;
         flex-direction: row;
     }
 
-
+    .birthday {
+        width: 285px;
+        padding-right: 26px;
+    }
 
     /* footer */
 
@@ -411,9 +523,9 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-                            <li class="sub-menu"><a href="./pet.jsp">반려동물 정보</a></li>
-                            <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+                            <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
+                            <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
 
@@ -429,17 +541,40 @@
             </div>
         </div>
     </div>
-
-    <div id="pet-kind">
-        <p class="h4"><img src="../assets/images/myhome/check.svg" alt="체크아이콘" />프로필에 추가할 동물을 선택해주세요.</p>
-        <div class="choose-pet-kind">
-            <a rel="stylesheet" href="../myhome/choose-dog.jsp"><img src="../assets/images/myhome/mypage-dog.svg" alt=""></a>
-            <a rel="stylesheet" href="../myhome/choose-cat.jsp"><img src="../assets/images/myhome/mypage-cat.svg" alt=""></a>
-            <a rel="stylesheet" href="../myhome/choose-bird.jsp"><img src="../assets/images/myhome/mypage-bird.svg" alt=""></a>
-            <a rel="stylesheet" href="../myhome/choose-fish.jsp"><img src="../assets/images/myhome/mypage-fish.svg" alt=""></a>
+    <a href="./pet-write-ok.myhome?petKind=bird"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
+    <div id="mydog">
+        <div class="card">
+            <div class="profile-pic" id="profilePic">
+                <img id="profileImage" src="../assets/images/myhome/default-bird.svg" alt="Profile Picture">
+            </div>
+            <div class="name">도도</div>
+            <input type="file" id="imageUpload" accept="image/*">
+            <button class="edit-button" onclick="document.getElementById('imageUpload').click();">이미지 편집</button>
+        </div>
+        <div class="title h5">
+            <span class="pre-title">기본사항*</span>
+            <p>이름</p>
+            <p>성별</p>
+            <p>품종</p>
+            <p>생일</p>
+            <p>몸무게(kg)</p>
+            <p>동물병원</p>
+        </div>
+        <div class="input-wrap">
+            <input class="input" type="text" placeholder="도도">
+            <label class="option">
+                <input type="radio" name="gender" value="female">
+                <p>여아</p>
+                <input type="radio" name="gender" value="male">
+                <p>남아</p>
+            </label>
+            <input class="input" type="text" placeholder="예) 앵무새">
+            <p><input class="birthday" type="month"></p>
+            <label class="weight"><input type="number"></label>
+            <p><input class="input" type="text" placeholder="병원명"></p>
         </div>
     </div>
-
+    <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -491,6 +626,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </footer>
 </body>
 <script>
@@ -536,6 +672,17 @@
                 });
             }, 100); // 100ms 지연 후 서브메뉴를 닫음
         });
+    });
+    // When the user selects a file, this function will update the profile picture
+    document.getElementById('imageUpload').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('profileImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
     });
 </script>
 

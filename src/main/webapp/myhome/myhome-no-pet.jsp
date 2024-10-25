@@ -423,9 +423,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./pet.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-pet-list.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -448,7 +448,7 @@
   <div id="no-pet-wrapper">
     <p class="no-pet h4">반려동물이 없습니다.</p>
     <p class="no-pet h4">프로필을 등록해주세요.</p>
-    <a rel="stylesheet" href="./pet-kind.jsp"><button class="h5">등록하기</button>
+    <a rel="stylesheet" href="./myhome-pet-kind.jsp"><button class="h5">등록하기</button></a>
   </div>
 
   <footer>

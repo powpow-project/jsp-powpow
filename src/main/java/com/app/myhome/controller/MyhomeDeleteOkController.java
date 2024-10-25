@@ -8,22 +8,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.PetDAO;
-import com.app.dto.PetDTO;
-import com.app.vo.PetVO;
+import com.app.dao.MemberDAO;
+import com.app.vo.MemberVO;
 
-public class MyhomePetWriteOkController implements Action {
+public class MyhomeDeleteOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-
-		System.out.println("실행");
-		System.out.println(req.getParameter("petKind"));
-	      
-	    result.setRedirect(true);
-	    result.setPath("../myhome/pet-list.myhome");
-	  
+		String cancel = req.getParameter("delete-complete");
+		
+			if(/*탈퇴 취소한다면*/ cancel != null && cancel.equals("true")){
+				result.setPath("../myhome/myhome-list.jsp");
+			}else {
+				result.setPath("../myhome/myhome-delete-ok.jsp");
+			}
+			
 		return result;
 	}
 

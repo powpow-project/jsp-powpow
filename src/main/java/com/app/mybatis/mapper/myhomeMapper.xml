@@ -2,6 +2,89 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="myhome">
+
+<!-- member -->
+	<update id="updateMember" parameterType="com.app.vo.MemberVO">
+		UPDATE TBL_MEMBER
+		SET MEMBER_NICKNAME = #{memberNickname},
+        	MEMBER_PHONE = #{memberPhone},
+        	MEMBER_ADDRESS = #{memberAddress},
+        	MEMBER_IMAGE = #{memberImage}
+    	WHERE ID = #{id}
+	</update>
 	
+	<update id="updatePassword" parameterType="com.app.vo.MemberVO">
+    	UPDATE TBL_MEMBER
+    	SET MEMBER_PASSWORD = #{memberPassword}
+    	WHERE ID = #{id}
+	</update>
+	
+	<delete id="deleteMember">
+		DELETE FROM TBL_MEMBER
+		WHERE ID = #{id}
+	</delete>
+	
+    <select id="selectMemberByEmail" resultType="com.app.vo.MemberVO">
+        SELECT ID,
+               ADMIN_ID,
+               MEMBER_IMAGE,
+               MEMBER_NICKNAME,
+               MEMBER_EMAIL,
+               MEMBER_PASSWORD,
+               MEMBER_PHONE,
+               MEMBER_ADDRESS,
+               MEMBER_SMS,
+               MEMBER_EMAILCHECK
+        FROM TBL_MEMBER
+        WHERE MEMBER_EMAIL = #{memberEmail}
+    </select>
+	
+	
+	<!-- coupon -->
+	<select id="selectCoupon" resultType="AdminCouponDTO">
+		SELECT ID, ADMIN_COUPON_TITLE, ADMIN_COUPON_CODE, ADMIN_COUPON_DATE, ADMIN_COUPON_CONTENT
+		FROM TBL_ADMIN_COUPON
+		WHERE ADMIN_COUPON_CODE = #{adminCouponCode}
+	</select>
+
+	<!-- ORDER -->
+	
+	<select id="selectOrder" resultType="OrderDTO">
+		SELECT ID, MEMBER_ID, PRODUCT_ID, ORDER_ID, ORDER_NUMBER, ORDER_DATE
+		FROM TBL_ORDER
+		ORDER BY ID ASC
+	</select>
+	
+	<!-- pet -->
+	
+	 <select id="selectPetKinds" resultType="string">
+        SELECT PET_KIND 
+        FROM TBL_PET; <!-- 데이터베이스 테이블을 사용 -->
+    </select>
+	
+	<insert id="insertPet" parameterType="com.app.vo.PetVO">
+		INSERT INTO TBL_PET(ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER)
+		VALUES(PET_SEQ.NEXTVAL, #{memberId}, #{petKind}, #{petImage}, #{petName}, #{petGender}, #{petBreed}, #{petBirth}, #{petVet}, #{petWeight}, #{petNeuter})
+	</insert>
+	
+	<update id="updatePet" parameterType="com.app.vo.PetVO">
+		UPDATE TBL_PET
+		SET PET_NAME = #{petName}, PET_GENDER = #{petGender}, PET_BREED = #{petBreed}, PET_BIRTH = #{petBirth}, PET_WEIGHT = #{petWeight}, PET_NEUTER = #{petNeuter}, PET_VET = #{petVet}
+		WHERE ID = #{id}
+	</update>
+	
+	<select id="selectPetId" resultType="PetDTO">
+		SELECT ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER
+		FROM TBL_PET TBP
+		JOIN TBL_MEMBER TBM
+		ON TBP.MEMBER_ID = TBM.ID
+		AND TBM.ID = #{memberId}
+		ORDER BY TBP.ID
+	</select>
+		
+	<delete  id="deletePet">
+		DELETE FROM TBL_PET
+		WHERE ID = #{id}
+	</delete>
 	
 </mapper>

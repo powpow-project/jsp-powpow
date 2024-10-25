@@ -5,11 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>마이홈 비밀번호 변경</title>
+  <title>마이홈 알림설정</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style>
+
   @keyframes fade_up {
     0% {
       opacity: 0;
@@ -196,68 +197,151 @@
     color: #FFC303;
     font-size: bold;
   }
-  
+
   .current-category {
-      color: #ffc303;
-      font-weight: bold;
-      text-decoration: none;
-    }
+    color: #ffc303;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
 
 
   /* contents */
-  #password-wrap {
+  #notification {
     display: flex;
     flex-direction: column;
-    padding-top: 120px;
-    width: 464px;
-    margin: 0 auto;
-    gap: 20px;
+    margin-top: 120px;
+    align-items: center;
   }
 
-  .password-edit p {
-    flex-flow: row;
+  #notification .not1 {
+    font-size: 20px;
+    line-height: 30px;
     font-weight: bold;
-    gap: -20px;
+    margin-right: 420px;
   }
 
-  #password-wrap input {
-    height: 53px;
+  #notification .not2 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    margin-right: 265px;
+  }
+
+  #notification .alarm-agree .toggle .set-alarm {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #828282;
     border-radius: 20px;
-    border: 0.5px solid #131313;
-    padding: 0 26px 0 26px;
+    width: 580px;
+    height: 200px;
+    padding: 60px 32px 59px 32px;
+    box-sizing: border-box;
+    align-items: left;
+    gap: 18px;
+    align-content: center;
   }
 
-  #password-wrap a > button{
-    background-color: #FFC303;
+  .set-alarm{
+    display: flex;
+    justify-content: center;
+  }
+  .set-alarm li {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+  }
+
+  #notification .alarm-agree {
+    text-align: center;
+  }
+
+  #notification .alarm-agree .toggle {
+    position: relative;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .toggle input {
+    display: none;
+  }
+
+  .toggle-label1 {
+    display: flex;
+    width: 60px;
+    height: 30px;
+    background: #cccccc;
     border-radius: 20px;
-    border: none;
-    height: 55px;
-    width:464px;
-  }
-  
-  .current-password input{
-  	width:464px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 80px;
+    padding-left: 2px;
+    box-sizing: border-box;
   }
 
-  .password {
-    width: 100%;
-    gap: 5px;
-    display: flex;
-    flex-direction: column;
+
+  .toggle-label1:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+    margin-top: 1.5px;
+    margin-left: 1px;
   }
 
-  .new-password {
-    width: 100%;
-    gap: 5px;
+  .toggle-label2 {
     display: flex;
-    flex-direction: column;
+    width: 60px;
+    height: 30px;
+    background: #cccccc;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 94px;
+    padding-left: 2px;
+    box-sizing: border-box;
   }
 
-  .check-password {
-    width: 100%;
-    gap: 5px;
-    display: flex;
-    flex-direction: column;
+
+  .toggle-label2:after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+    margin-top: 1.5px;
+    margin-left: 1px;
+  }
+
+  #toggle-checkbox1:checked+.toggle-label1 {
+    background: #FFC303;
+  }
+
+  #toggle-checkbox1:checked+.toggle-label1:after {
+    transform: translateX(30px);
+  }
+
+  #toggle-checkbox2:checked+.toggle-label2 {
+    background: #FFC303;
+  }
+
+  #toggle-checkbox2:checked+.toggle-label2:after {
+    transform: translateX(30px);
+  }
+
+  .agree-marketing {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    margin-right: 255px;
   }
 
   /* footer */
@@ -466,9 +550,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./myhome-list.jsp">나의 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-no-pet.jsp">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./myhome-shipping-list.jsp">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -487,33 +571,37 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./profile.jsp" class="h4">프로필</a>
+      <a href="./myhome-list.jsp" class="h4">프로필</a>
       <p>|</p>
-      <a href="./likes.jsp" class="h4">좋아요</a>
+      <a href="./myhome-likes-list.jsp" class="h4">좋아요</a>
       <p>|</p>
-      <a href="./notification.jsp" class="h4">알림설정</a>
+      <a href="./myhome-notification.jsp" class="current-category h4">알림설정</a>
       <p>|</p>
-      <a href="./set-password.jsp" class="current-category h4">비밀번호 변경</a>
-    </span>
+      <a href="./myhome-password-update.jsp" class="h4">비밀번호 변경</a>
+      </span>
   </div>
-
-  <div id="password-wrap">
-    <div class="current-password">
-      <p class="password-edit h6">현재 비밀번호<span class="sub-red">*</span></p>
-      <input placeholder="사용 중인 비밀번호를 입력해주세요" />
+  <div id="notification">
+    <span class="not1">이벤트 및 혜택 알림</span>
+    <span class="not2">특가, 쿠폰 등 이벤트 정보를 빠르게 알려드릴게요</span>
+    <div class="alarm-agree">
+      <div class="toggle">
+        <ul class="set-alarm">
+          <li>
+            <p>이메일 알림</p>
+            <input type="checkbox" id="toggle-checkbox1">
+            <label for="toggle-checkbox1" class="toggle-label1"></label>
+          </li>
+          <li>
+            <p>SMS 알림</p>
+            <input type="checkbox" id="toggle-checkbox2">
+            <label for="toggle-checkbox2" class="toggle-label2"></label>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="new-password">
-      <p class="password-edit h6">새로운 비밀번호<span class="sub-red">*</span></p>
-      <input placeholder="새로운 비밀번호를 입력해주세요" />
-      <p class="h6 gray500">*영문, 숫자를 포함해 8자 이상으로 만들어주세요.</p>
-    </div>
-    <div class="check-password">
-      <p class="password-edit h6">새로운 비밀번호 확인<span class="sub-red">*</span></p>
-      <input placeholder="다시 새로운 비밀번호를 입력해주세요" />
-    </div>
-    <a href="./password-complete.jsp"><button class="h6">완료</button></a>
+    <script src="script.js"></script>
+    <span class="agree-marketing">*알림 수신 동의와 함께 개인정보 마케팅 활용에 동의하시게 됩니다.</span>
   </div>
-
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -611,6 +699,12 @@
       }, 100); // 100ms 지연 후 서브메뉴를 닫음
     });
   });
+  const checkbox = document.getElementById('toggle-checkbox');
+        const status = document.getElementById('status');
+
+    checkbox.addEventListener('change', () => {
+        status.textContent = checkbox.checked ? '현재 상태: 동의함' : '현재 상태: 동의하지 않음';
+    });
 </script>
 
 </html>

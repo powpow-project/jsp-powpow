@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>마이홈 프로필</title>
+<meta charset="UTF-8">
+<title>나의 프로필</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
-  <style>
-  @keyframes fade_up {
+</head>
+<style>
+  @charset "UTF-8";@charset "UTF-8";
+@keyframes fade_up {
     0% {
       opacity: 0;
       transform: translateY(10%);
@@ -235,7 +237,7 @@
       display: flex;
       flex-direction: row;
       gap: 60px;
-      margin-top: 26px;
+      margin-top: 100px;
     }
 
     .profile-box {
@@ -245,28 +247,47 @@
       height: 430px;
       width: 270px;
       border-radius: 20px;
-      padding-top: 50px;
+      padding-top: 40px;
       box-sizing: border-box;
-    }
+    } 
 
     .default-profile-image {
       border-radius: 50%;
-      padding: 0px 75px;
+      width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border: 1px solid #828282;
     }
-
-    .id {
+    
+   
+      .id {
       font-size: 20px;
       font-weight: bold;
       columns: #131313;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 15px;
+      padding-bottom: 20px;
       width: 270px;
       height: 24px;
       text-align: center;
     }
+    
+/*     #uploadButton{
+      width: 120px;
+      height: 32px;
+      border-radius: 20px;
+      align-self: center;
+      margin-top: 20px;
+      color: white;
+      border-style: none;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #113f8a;
+    } */
 
-    .imageupload-button button {
-      width: 96px;
+    #uploadButton button{
+      width: 120px;
       height: 32px;
       border-radius: 20px;
       align-self: center;
@@ -276,9 +297,9 @@
       font-size: 14px;
       line-height: 22px;
       font-weight: normal;
-      margin-left: 87px;
       cursor: pointer;
       margin-top: 20px;
+      margin-left:74px;
     }
 
     #profile-edit hr {
@@ -740,11 +761,9 @@
       color: #767676;
       line-height: 1.5;
     }
-  </style>
-</head>
-
+</style>
 <body>
-  <div class="header-container">
+<div class="header-container">
     <div id="header-wrap">
       <div id="border">
         <div id="nav">
@@ -782,9 +801,9 @@
               <li class="sub-menu"><a href="#">헬스+</a></li>
             </ul>
             <ul>
-              <li class="sub-menu"><a href="./profile.jsp">나의 정보</a></li>
-              <li class="sub-menu"><a href="./no-pet.jsp">반려동물 정보</a></li>
-              <li class="sub-menu"><a href="./shipping-status.jsp">나의 쇼핑</a></li>
+              <li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
+              <li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
+              <li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
               <li class="sub-menu"><a href="#">내 게시글</a></li>
             </ul>
 
@@ -803,25 +822,21 @@
   <div id="sub">
     <div class="main-sub h1">나의 정보</div>
     <span class="sub-sub">
-      <a href="./profile.jsp" class="current-category h4">프로필</a>
+      <a href="./update.myhome" class="current-category h4">프로필</a>
       <p>|</p>
-      <a href="./likes.jsp" class="h4">좋아요</a>
+      <a href="./likes-list.myhome" class="h4">좋아요</a>
       <p>|</p>
-      <a href="./notification.jsp" class="h4">알림설정</a>
+      <a href="./notification.myhome" class="h4">알림설정</a>
       <p>|</p>
-      <a href="./set-password.jsp" class="h4">비밀번호 변경</a>
+      <a href="./password-update.myhome" class="h4">비밀번호 변경</a>
       </span>
   </div>
   <div id="page-content">
-    <button onClick="alert('수정이 완료되었습니다.')" class="complete">완료</button>
     <div id="profile-edit">
       <div class="profile-box">
-        <img class="default-profile-image" src="../assets/images/myhome/default-profile.png" alt="기본 프로필 사진">
-        <span class="id">찹쌀징어</span>
-        <div class="imageupload-button">
-          <button id="uploadButton">이미지 편집</button>
-          <input type="file" id="fileInput" style="display: none;" accept="images/*">
-        </div>
+        <img class="default-profile-image" src="../assets/images/member/${member.memberImage}" >
+        <span class="id" ><c:out value="${member.memberNickname}"/></span>
+         <a id="uploadButton" href="./update.myhome"><button>프로필 수정하기</button></a>
         <br>
         <hr>
         <br>
@@ -836,44 +851,23 @@
             <button class="switchto2">사용내역</button>
             <div class="main-content">
               <div class="main">
-              <input type="text" placeholder="쿠폰 코드를 입력해주세요">
-              <button class="add-coupon h6">추가하기</button>
-              <div class="coupon-container">
+              <input type="text" id="couponCode" placeholder="쿠폰 코드를 입력해주세요">
+              <button class="add-coupon h6" onclick="addCoupon()">추가하기</button>
+              <div class="coupon-container" id="couponContainer">
                 <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>추가된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                   <c:forEach var="admin" items="${adminCoupon}">
+                  <p><c:out value="${adminCoupon.adminCouponCode}"></c:out></p>
+                  <p>유효기간 :<c:out value="${adminCoupon.adminCouponDate}"></c:out>까지</p>
+                  </c:forEach>
                 </div>
               </div>
               </div>
               <div class="main-content">
-              	 <div class="coupon-container2">
+              <div class="coupon-container2">
                 <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
-                </div>
-                <div class="coupon">
-                  <p>사용된 쿠폰명</p>
-                  <p>유효기간 : 2024-10-04 ~ 10-30 까지</p>
+                  <c:forEach var="admin" items="${adminCoupon}">
+                  <p><c:out value="${adminCoupon.adminCouponCode}"></c:out></p>
+                  </c:forEach>
                 </div>
               </div>
               </div>
@@ -886,31 +880,27 @@
       <div class="edit-info">
         <div>
           <label class="edit-category1">닉네임</label>
-          <input class="edit-member" type="text" placeholder="찹쌀징어">
+          <span><c:out value="${member.memberNickname}"></c:out></span>
         </div>
         <div>
           <label class="edit-category2">아이디 (이메일)</label>
-          <input class="edit-member" type="email" placeholder="example@naver.com">
+          <c:out value="${member.memberEmail}">email</c:out>
         </div>
         <div>
           <label class="edit-category3">휴대폰번호</label>
-          <input class="edit-member" type="text" placeholder="휴대폰 번호를 입력해주세요">
+          <c:out value="${member.memberPhone}">010-0000-0000</c:out>
         </div>
         <div class="group-category4">
           <label class="edit-category4">주소</label>
           <div class="input-container">
-            <input class="inputbutton" type="text" name="address" id="sample6_postcode" placeholder="우편번호">
-            <button class="auth-button" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">우편번호</button>
-            <input class="inputbutton" type="text" name="address"  id="sample6_address" placeholder="기본주소">
-            <input class="inputbutton" type="text" name="address" id="sample6_detailAddress" placeholder="상세주소">
+            <c:out value="${member.memberAddress}">address</c:out>
           </div>
         </div>
-        <a class="unsubscribe-message" href="./unsubscribe.jsp">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
+        <a class="unsubscribe-message" href="./delete-ok.myhome">*즉시탈퇴 > SMS 인증 후 POWPOW 탈퇴하기</a>
       </div>
     </div>
   </div>
-
-  <footer>
+    <footer>
     <div class="footer-container">
       <div class="footer-section">
         <h3>고객센터 &gt;</h3>
@@ -963,7 +953,6 @@
     </div>
   </footer>
 </body>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
   const mainMenus = document.querySelectorAll(".menu-wrap .menu");
   const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
@@ -1007,9 +996,6 @@
         });
       }, 100); // 100ms 지연 후 서브메뉴를 닫음
     });
-  });
-  document.getElementById('uploadButton').addEventListener('click', function () {
-    document.getElementById('fileInput').click();
   });
   
 //쿠폰팝업
@@ -1065,24 +1051,32 @@ switch2.addEventListener("click", () => {
   addbutton.onclick = function () {
     modal.style.display = "File";
   }
+  
+  
+function addCoupon() {
+    var couponCode = document.getElementById('couponCode').value;
+    if (couponCode.trim() === '') {
+        alert('쿠폰 코드를 입력해주세요.');
+        return;
+    }
 
-  function sample6_execDaumPostcode() {
-      new daum.Postcode({
-          oncomplete: function(data) {
-              var addr = ''; // 주소 변수
+    var couponContainer = document.getElementById('couponContainer');
 
-              // 선택한 주소 타입에 따라 주소 값을 가져온다.
-              addr = data.userSelectedType === 'R' ? data.roadAddress : data.jibunAddress;
+    var newCoupon = document.createElement('div');
+    newCoupon.className = 'coupon';
 
-              // 우편번호와 주소 정보를 필드에 넣는다.
-              document.getElementById('sample6_postcode').value = data.zonecode;
-              document.getElementById("sample6_address").value = addr;
-              document.getElementById("sample6_detailAddress").focus(); // 상세주소 필드로 이동
-          }
-      }).open();
-  }
+    var couponTitle = document.createElement('p');
+    couponTitle.textContent = couponCode;
 
+    var expirationDate = document.createElement('p');
+    expirationDate.textContent = '유효기간 : ' + new Date().toISOString().split('T')[0] + '까지'; // 현재 날짜로 설정
 
+    newCoupon.appendChild(couponTitle);
+    newCoupon.appendChild(expirationDate);
+    couponContainer.appendChild(newCoupon);
+
+    // 입력 필드 초기화
+    document.getElementById('couponCode').value = '';
+}
 </script>
-
 </html>
