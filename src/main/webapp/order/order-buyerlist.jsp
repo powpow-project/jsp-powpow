@@ -112,21 +112,22 @@
             <div class="item-body">
               <img src="../assets/images/not-found-image.png" alt="오곡 베이 올모두 즉석미감&숙취곤약 파우치 젤리 간식">
               <div class="product-info">
-                  <p class="h5">오곡 베이 올모두 즉석미감&숙취곤약 파우치 젤리 간식 69g</p>
-                  <p class="h5">유통기한: 2025-02-22</p>
+                  <p class="h5">${product.productName}</p>
+                  <p class="h5">${product.productDate}</p>
                   <div class="price-wrap">
-                    <p class="h4">가격: 4,050 원</p> <p class="h5">4,500원</p>
+                    <p class="h4">할인된 금액</p> <p class="h5">${product.productPrice}원</p>
                   </div>
               </div>
             </div>
             <select class="delivery-check">
               <option value="" class="check1 h6">적용할 쿠폰</option>
-              <option value="1">할인 쿠폰</option>
+              <option value="1">할인 쿠폰 name 받을곳</option>
               <option value="2">3번째요~</option>
           </select>
         </div>
     </div>
     <button>결제하기</button>
+</div>
 </div>
  <footer>
     <div class="footer-container">
@@ -179,7 +180,6 @@
       </div>
     </div>
   </footer>
-</div>
   </body>
   <script>
 const mainMenus = document.querySelectorAll(".menu-wrap .menu");

@@ -29,7 +29,10 @@ public class OrderBuyerListController implements Action {
 		HttpSession session = req.getSession();
 		
 		session.setAttribute("id", 1L);
-		Long memberId = Long.parseLong((String)session.getAttribute("id"));
+		Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
+		
+		Long productId = 2L;
+		
 		
         // ProductVO 리스트를 가져와서 JSP로 전달
 //		Optional<ProductVO> products = productDAO.select(Long.parseLong(req.getParameter("productId")));
@@ -37,15 +40,21 @@ public class OrderBuyerListController implements Action {
         
         // ProductVO 리스트를 가져와서 JSP로 전달
 		
-	    if (memberId == null) {
-	        result.setPath("login.jsp"); // 로그인 페이지로 이동
-	        return result;
-	    }
+//	    if (memberId == null) {
+//	        result.setPath("login.jsp"); // 로그인 페이지로 이동
+//	        return result;
+//	    }
 		
 	    
 	    memberDAO.select(memberId).ifPresent((member) -> {
 	    	req.setAttribute("member", member);
 	    });
+	    
+	    productDAO.select(productId).ifPresent((product) -> {
+	    	req.setAttribute("product", product);
+	    });
+	    
+	   
 	    
 	    
 //	    try {
