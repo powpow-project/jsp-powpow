@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
     <title>공지사항 관리</title>
 </head>
 <body>
-    <form method="post" id="frame">
+    <form action="write-ok.admin" method="post" id="frame">
         <div class="menu-wrap">
             <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
             <span>공지사항 관리</span>
@@ -65,7 +66,7 @@
             <div class="buttons">
                 <button type="button" class="search-btn">검색</button>
                 <button type="button" class="reset-btn">초기화</button>
-				<button type="button" class="new-add-btn">게시글 등록</button>
+				<button type="button" class="new-add-btn">신규 등록</button>
             </div>
         </section>
 
@@ -75,26 +76,30 @@
                     <tr>
                         <th>No</th>
                         <th>제목</th>
-                        <th>조회</th>
+                        <th>상세내용</th>
                         <th>등록일</th>
                         <th>작성자</th>
                         <th>관리</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>2</td>
-                        <td>9월 21일 공지사항</td>
-                        <td>110</td>
-                        <td>2024-09-21</td>
-                        <td>운영자</td>
-                        <td>
-                            <div class="change-buttons">
-                                <button type="button" class="edit-btn">수정</button>
-                                <button type="button" class="delete-btn">삭제</button>
-                            </div>
-                        </td>
-                </tbody>
+					<c:forEach var="adminNotice" items="${adminNoticeList}" varStatus="status">
+					
+						<tr>
+							<td>${status.index + 1}</td>
+							<td><c:out value="${adminNotice.adminNoticeTitle}" /></td>
+							<td><c:out value="${adminNotice.adminNoticeContent}" /></td>
+							<td><c:out value="${adminNotice.adminNoticeDate}" /></td>
+							<td>운영자</td>
+							<td>
+								<div class="change-buttons">
+									<button type="button" class="edit-btn" onclick="location.href='update.admin?id=${adminNotice.id}'">수정</button>
+									<button type="button" class="delete-btn" onclick="location.href='delete-ok.admin?id=${adminNotice.id}'">삭제</button>
+								</div>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
             </table>
         </section>
     </form>

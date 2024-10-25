@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="../assets/css/admin/update.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
-    <title>공지사항 신규등록</title>
+    <title>공지사항 수정</title>
 </head>
 <body>
-    <div id="frame">
+    <form action="update-ok.admin" method="post" id="frame">
+        
         <div class="menu-wrap">
             <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
             <span>공지사항 관리</span>
@@ -60,22 +62,23 @@
         </div>
         <div class="form-wrap">
             <div class="sub-wrap">
+             <input type="hidden" name="id" value="${adminNotice.id}" />
                 <div class="form-group">
                     <label for="title" class="label-title">제목</label>
-                    <input type="text" id="title" name="title" placeholder="제목을 입력해주세요." />
+                    <input type="text" id="title" name="adminNoticeTitle" placeholder="제목을 입력해주세요." value="${adminNotice.adminNoticeTitle}" />
                 </div>
                 <div class="form-group">
                     <label for="content" class="label-content">내용</label>
-                    <textarea id="content" name="content" class="content-title"
-                        placeholder="내용을 입력해주세요." rows="5"></textarea>
+                    <textarea id="content" name="adminNoticeContent" class="content-title"
+                        placeholder="내용을 입력해주세요."><c:out value="${adminNotice.adminNoticeContent}"/></textarea>
                 </div>
             </div>
             <div class="button-group">
-                <button type="submit" class="button-submit">완료</button>
+                <button class="button-submit">완료</button> 
                 <button type="button" class="button-edit" onclick="cancelPost()">취소</button>
             </div>
         </div>
-    </div>
+    </form>
     <script src="../assets/js/admin/update.js"></script>
 </body>
 </html>
