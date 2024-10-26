@@ -61,7 +61,7 @@
         </div>
         <section class="notice-search">
             <div class="search-bar">
-                <input type="text" class="search" placeholder="내용을 입력해주세요.">
+                <input type="text" class="search" placeholder="제목을 입력해주세요.">
             </div>
             <div class="buttons">
                 <button type="button" class="search-btn">검색</button>
