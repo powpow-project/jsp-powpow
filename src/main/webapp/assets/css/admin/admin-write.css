@@ -114,6 +114,7 @@ img {
   margin: 28px 0;
   gap: 72px;
   padding-left: 28px;
+  position: relative;
 }
 
 #frame > .menu-wrap > span {
@@ -199,7 +200,7 @@ input, textarea {
 .label-content {
   display: flex;
   align-items: start;
-  margin-top: 16px;/* 내용과 인풋박스 간격 설정 */
+  margin-top: 16px;
 }
 .sub-wrap {
 	margin: 0 auto;
@@ -233,16 +234,17 @@ input, textarea {
 
 
 /**************메뉴바**************/
-#menu-frame  {
-	display: none;
-	flex-direction: column;
-	width: 1440px;
-	align-items: start;
-	margin-top: 0px;
-	animation: lift-detail 0.1s;
-	position: absolute;
-	top: 85px;
-	left: 30px;
+
+#menu-frame {
+    display: none;
+    flex-direction: column;
+    width: 1440px;
+    align-items: start;
+    margin-top: 0px;
+    animation: lift-detail 0.1s;
+    position: absolute;
+    top: 85px;
+    left: 30px;
 }
 
 .menu-header {
@@ -310,7 +312,3 @@ ul>li>div>p {
 	padding-left: 10px;
 	cursor: pointer;
 }
-
-
-
-

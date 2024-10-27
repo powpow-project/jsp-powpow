@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.admin.controller.AdminBannerListController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
 import com.app.admin.controller.AdminLoginOkController;
@@ -32,6 +33,8 @@ public class AdminFrontController extends HttpServlet{
 	    } else if (target.equals("admin-loginAdmin-ok")) { // 로그인 처리 로직
 	        result = new AdminLoginOkController().execute(req, resp);
 	        
+	    // 공지사항 관리 목록
+	        
 	    } else if (target.equals("admin-write")) { // 공지사항 등록 페이지 이동 처리
 	    	result = new Result();
 	    	result.setPath("../admin/admin-write.jsp"); // JSP로 포워딩
@@ -50,6 +53,28 @@ public class AdminFrontController extends HttpServlet{
 
 	    } else if (target.equals("admin-delete-ok")) { // 공지사항 삭제
 	        result = new AdminDeleteOkController().execute(req, resp);
+	        
+	    
+	    // 배너관리 목록
+	        
+	    } else if (target.equals("admin-banner-list")) { // 배너 목록
+	        result = new AdminBannerListController().execute(req, resp);
+	    	
+	    } else if (target.equals("admin-banner-write")) { // 배너 신규등록 페이지
+	        result = new Result();
+	        result.setPath("../admin/admin-banner-write.jsp");
+	        
+	    } else if (target.equals("admin-banner-write-ok")) { // 공지사항 등록 페이지 완료
+//	    	result = new AdminBannerWriteOkController().execute(req, resp);
+	    	
+	    } else if (target.equals("admin-banner-update")) { // 공지사항 수정
+//	        result = new AdminBannerUpdateController().execute(req, resp);
+
+	    } else if (target.equals("admin-banner-update-ok")) { // 공지사항 수정 완료
+//	        result = new AdminBannerUpdateOkController().execute(req, resp);
+
+	    } else if (target.equals("admin-banner-delete-ok")) { // 공지사항 삭제
+//	        result = new AdminBannerDeleteOkController().execute(req, resp);
 
 	    } else {
 	        result = new Result();
