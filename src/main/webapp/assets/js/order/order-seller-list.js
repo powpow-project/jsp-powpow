@@ -60,3 +60,15 @@ menubars.forEach((menubar) => {
     menubar.style.display = "none";
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+search.addEventListener("click", function() {
+   const searchQuery = searchInput.value.toLowerCase();
+   const rows = document.querySelectorAll(".notice-list tbody tr");
+
+   rows.forEach(function(row) {
+      const title = row.querySelector("td:nth-child(3)").textContent.toLowerCase();
+      row.style.display = title.includes(searchQuery) ? "" : "none";
+	   });
+	});
+});

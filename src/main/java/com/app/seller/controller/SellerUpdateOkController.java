@@ -42,19 +42,6 @@ public class SellerUpdateOkController implements Action {
          // 파일 업로드 처리
          MultipartRequest multi = new MultipartRequest(req, directory, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
 
-         System.out.println(multi.getParameter("productName"));
-         System.out.println(multi.getParameter("productPrice"));
-         System.out.println(multi.getParameter("productStock"));
-         System.out.println(multi.getParameter("productType"));
-         System.out.println(multi.getParameter("productDetail"));
-         System.out.println(multi.getParameter("productCategoryName"));
-         System.out.println(multi.getParameter("productCode"));
-         System.out.println(multi.getParameter("id"));
-         System.out.println(multi.getFilesystemName("productImage"));
-         System.out.println(multi.getFilesystemName("productSubImage2"));
-         System.out.println(multi.getFilesystemName("productSubImage2"));
-         System.out.println(multi.getFilesystemName("productSubImage3"));
-         
          String title = multi.getParameter("title");
          Long id = Long.parseLong(multi.getParameter("id"));
          String productImage = multi.getFilesystemName("productImage");

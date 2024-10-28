@@ -20,8 +20,8 @@ public class OrderDAO {
 		sqlSession.insert("order.insert", orderVO);
 	}
 	
-//	주문 내역
-	public List<OrderDTO> select(Long memberId) {
+//	구매자 주문 내역
+	public List<OrderDTO> selectByMember(Long memberId) {
 		return sqlSession.selectList("order.select", memberId);
 	}
 	
@@ -35,7 +35,10 @@ public class OrderDAO {
 		sqlSession.delete("order.delete", id);
 	}
 
-	
+//	판매자 주문 내역
+	public List<OrderDTO> selectBySeller(Long sellerId){
+		return sqlSession.selectList("order.selectBySeller", sellerId);
+	}
 }
 
 	
