@@ -4,13 +4,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/admin/list.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-list.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
     <title>공지사항 관리</title>
 </head>
 <body>
-    <form action="admin-write-ok.admin" method="post" id="frame">
+    <form id="frame">
         <div class="menu-wrap">
             <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
             <span>공지사항 관리</span>
@@ -25,7 +25,6 @@
                         <div>
                             <p>공지사항 조회</p>
                             <p>공지사항 신규등록</p>
-                            <p>공지사항 수정</p>
                         </div>
                     </li>
                     <li>
@@ -33,7 +32,6 @@
                         <div>
                             <p>배너조회</p>
                             <p>배너 신규등록</p>
-                            <p>배너 수정</p>
                         </div>
                     </li>
                     <li>
@@ -48,7 +46,6 @@
                         <div>
                             <p>쿠폰조회</p>
                             <p>쿠폰 신규등록</p>
-                            <p>쿠폰 수정</p>
                         </div>
                     </li>
                 </ul>
@@ -61,7 +58,7 @@
         </div>
         <section class="notice-search">
             <div class="search-bar">
-                <input type="text" class="search" placeholder="내용을 입력해주세요.">
+                <input type="text" class="search" placeholder="제목을 입력해주세요.">
             </div>
             <div class="buttons">
                 <button type="button" class="search-btn">검색</button>
@@ -94,7 +91,7 @@
 							<td>
 								<div class="change-buttons">
 									<button type="button" class="edit-btn" onclick="location.href='admin-update.admin?id=${adminNotice.id}'">수정</button>
-									<button type="button" class="delete-btn" onclick="location.href='admin-delete-ok.admin?id=${adminNotice.id}'">삭제</button>
+									<button type="button" class="delete-btn" data-id="${adminNotice.id}">삭제</button>
 								</div>
 							</td>
 						</tr>
@@ -104,6 +101,6 @@
         </section>
     </form>
 
-    <script src="../assets/js/admin/list.js"></script>
+    <script src="../assets/js/admin/admin-list.js"></script>
 </body>
 </html>

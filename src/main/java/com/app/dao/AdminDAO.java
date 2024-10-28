@@ -2,8 +2,10 @@ package com.app.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.app.dto.AdminBannerDTO;
 import com.app.dto.AdminNoticeDTO;
 import com.app.mybatis.config.MyBatisConfig;
+import com.app.vo.AdminBannerVO;
 import com.app.vo.AdminVO;
 
 import java.util.List;
@@ -25,10 +27,10 @@ public class AdminDAO {
     public AdminVO selectByAdminEmail(String adminEmail) {
         return sqlSession.selectOne("admin.selectByAdminEmail", adminEmail);
     }
-    
+
     // 공지사항 추가
     public void insertAdminNotice(AdminNoticeDTO adminNoticeDTO) {
-    	sqlSession.insert("admin.insertAdminNotice", adminNoticeDTO);
+        sqlSession.insert("admin.insertAdminNotice", adminNoticeDTO);
     }
 
     // 전체 공지사항 조회
@@ -38,8 +40,8 @@ public class AdminDAO {
 
     // 공지사항 게시글 상세보기 조회(updateController)
     public Optional<AdminNoticeDTO> selectAdminNotice(Long id) {
-    	return Optional.ofNullable(sqlSession.selectOne("admin.selectAdminNotice", id));
-    }   
+        return Optional.ofNullable(sqlSession.selectOne("admin.selectAdminNotice", id));
+    }
 
     // 공지사항 수정
     public void updateAdminNotice(AdminNoticeDTO adminNoticeDTO) {
@@ -49,5 +51,30 @@ public class AdminDAO {
     // 공지사항 삭제
     public void deleteAdminNotice(Long id) {
         sqlSession.delete("admin.deleteAdminNotice", id);
+    }
+
+    // 배너 추가
+    public void insertAdminBanner(AdminBannerDTO adminBannerDTO) {
+        sqlSession.insert("admin.insertAdminBanner", adminBannerDTO);
+    }
+
+    // 전체 배너 조회
+    public List<AdminBannerDTO> selectAllBanners() {
+        return sqlSession.selectList("admin.selectAllAdminBanners");
+    }
+
+    // 배너 상세 조회
+    public Optional<AdminBannerDTO> selectAdminBanner(Long id) {
+        return Optional.ofNullable(sqlSession.selectOne("admin.selectAdminBanner", id));
+    }
+
+    // 배너 수정
+    public void updateAdminBanner(AdminBannerDTO adminBannerDTO) {
+        sqlSession.update("admin.updateAdminBanner", adminBannerDTO);
+    }
+
+    // 배너 삭제
+    public void deleteAdminBanner(Long id) {
+        sqlSession.delete("admin.deleteAdminBanner", id);
     }
 }

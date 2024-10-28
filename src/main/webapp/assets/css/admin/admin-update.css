@@ -1,0 +1,317 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
+	q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+	th, td, article, aside, canvas, details, figcaption, figure, footer,
+	header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent
+}
+
+body {
+	line-height: 1
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block
+}
+
+nav ul {
+	list-style: none
+}
+
+blockquote, q {
+	quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: none
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent
+}
+
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none
+}
+
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold
+}
+
+del {
+	text-decoration: line-through
+}
+
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0
+}
+
+input, select {
+	vertical-align: middle
+}
+
+/************ 메뉴상단*************/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  padding-bottom: 100px;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+#frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+ }
+
+#frame > .menu-wrap{
+  display: flex;
+  align-items: center;
+  width: 1440px;
+  margin: 28px 0;
+  gap: 72px;
+  padding-left: 28px;
+  position: relative;
+}
+
+#frame > .menu-wrap > span {
+font-weight: bold;
+font-size: 20px;
+margin-top: 4px;
+}
+
+#frame > .division-line {
+  border: solid 0.1px #828282;
+  width: 1440px;
+}
+ 
+.title {
+  margin: 42px 0 35px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 1191px;
+}
+
+ h1 {
+  font-size: 40px;
+  font-weight: bold;
+ }
+
+.form-group {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  width: 850px;
+}
+
+.form-wrap {
+  width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+input{
+  width: 763px;
+  height: 55px;
+  border-radius: 20px;
+}
+
+.label-title, .label-content {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.content-title, .content {
+  width: 763px;
+  border-radius: 20px;
+  border: solid 1px #828282;
+  height: 500px;
+  resize: none;
+  padding: 15px;
+}
+
+input, textarea {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-size: 14px;
+  color: #828282;
+  padding: 15px;
+  border: solid 1px #828282;
+  border-radius: 20px;
+}
+
+.label-title {
+  display: flex;
+  align-items: center;
+}
+
+.label-content {
+  display: flex;
+  align-items: start;
+  margin-top: 16px;/* 내용과 인풋박스 간격 설정 */
+}
+.sub-wrap {
+	margin: 0 auto;
+}
+
+.button-group {
+  display: flex;
+  width: 1200px;
+  justify-content: center;
+  margin: 100px;
+}
+
+.button-submit,
+.button-edit {
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.button-submit {
+  background-color: #113F8A;
+  margin-right: 10px;
+}
+
+.button-edit {
+  background-color: #FFC303;
+}
+
+
+/**************메뉴바**************/
+#menu-frame  {
+	display: none;
+	flex-direction: column;
+	width: 1440px;
+	align-items: start;
+	margin-top: 0px;
+	animation: lift-detail 0.1s;
+	position: absolute;
+	top: 85px;
+	left: 30px;
+}
+
+.menu-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	max-width: 220px;
+}
+
+.welcome {
+	font-size: 14px;
+	text-align: left;
+    vertical-align: bottom;
+}
+
+.logout {
+	font-size: 10px;
+	color: #ffc303;
+	background-color: white;
+	border: none;
+	margin-left: auto;
+	font-weight: bold;
+	cursor: pointer;
+	margin-right: 24px;
+	vertical-align: bottom;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	width: 200px;
+	position: absolute;
+	z-index: 1000;
+}
+
+ul>li {
+	width: 200px;
+}
+
+ul>li>p {
+	width: 200px;
+	height: 40px;
+	background: #828282;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	cursor: pointer;
+	padding-left: 15px;
+	margin: 16px 0;
+}
+
+ul>li>div {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.3s ease;
+	padding-left: 15px;
+}
+
+ul>li>div>p {
+	margin: 10px 0;
+	text-align: left;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+
+
+

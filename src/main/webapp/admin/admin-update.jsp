@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/admin/update.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-update.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
     <title>공지사항 수정</title>
@@ -27,7 +27,6 @@
                         <div>
                             <p>공지사항 조회</p>
                             <p>공지사항 신규등록</p>
-                            <p>공지사항 수정</p>
                         </div>
                     </li>
                     <li>
@@ -35,7 +34,6 @@
                         <div>
                             <p>배너조회</p>
                             <p>배너 신규등록</p>
-                            <p>배너 수정</p>
                         </div>
                     </li>
                     <li>
@@ -50,7 +48,6 @@
                         <div>
                             <p>쿠폰조회</p>
                             <p>쿠폰 신규등록</p>
-                            <p>쿠폰 수정</p>
                         </div>
                     </li>
                 </ul>
@@ -60,6 +57,7 @@
         <div class="title">
             <h1 class="h1">게시글 수정</h1>
         </div>
+        
         <div class="form-wrap">
             <div class="sub-wrap">
              <input type="hidden" name="id" value="${adminNotice.id}" />
@@ -75,10 +73,10 @@
             </div>
             <div class="button-group">
                 <button class="button-submit">완료</button> 
-                <button type="button" class="button-edit" onclick="cancelPost()">취소</button>
+                <button class="button-edit" onclick="cancelPost()">취소</button>
             </div>
         </div>
     </form>
-    <script src="../assets/js/admin/update.js"></script>
+    <script src="../assets/js/admin/admin-update.js"></script>
 </body>
 </html>

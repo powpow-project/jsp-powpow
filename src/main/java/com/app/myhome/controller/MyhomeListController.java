@@ -8,16 +8,26 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
 
 public class MyhomeListController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
+//		MyhomeDAO myhomeDAO = new MyhomeDAO();
+//		MemberVO membrVO = new MemberVO();
+//		MemberDAO memberDAO = new MemberDAO();
+//		HttpSession session = req.getSession();
+		
+//		String memberEmail = session.getAttribute("memberEmail");
+		String memberEmail = "jingeo@gmail.com";
+		
+//		MemberVO member = memberDAO.selectMemberByEmail(memberEmail);
+		
+//		req.setAttribute("member", member);
+		result.setPath("../myhome/myhome-list.jsp");
 
-		return null;
+		return result;
 	}
 
 }
