@@ -1,12 +1,14 @@
 package com.app.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.dto.OrderDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.OrderVO;
+import com.app.vo.ProductVO;
 
 public class OrderDAO {
 	public SqlSession sqlSession;
@@ -22,7 +24,7 @@ public class OrderDAO {
 	
 //	구매자 주문 내역
 	public List<OrderDTO> selectByMember(Long memberId) {
-		return sqlSession.selectList("order.select", memberId);
+		return sqlSession.selectList("order.selectByMember", memberId);
 	}
 	
 //	주문 수량 조회
@@ -38,6 +40,11 @@ public class OrderDAO {
 //	판매자 주문 내역
 	public List<OrderDTO> selectBySeller(Long sellerId){
 		return sqlSession.selectList("order.selectBySeller", sellerId);
+	}
+
+//	오더 조회
+	public Optional<OrderVO> select(Long id) {
+		return Optional.ofNullable(sqlSession.selectOne("order.select", id));
 	}
 }
 

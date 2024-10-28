@@ -333,6 +333,12 @@ select {
   color: #888888;
 }
 
+.product-info .price-wrap .pcount {
+  margin-left: auto;
+  color: black;
+  text-decoration: none;
+}
+
 .control-container {
   display: flex;
   position: relative;
