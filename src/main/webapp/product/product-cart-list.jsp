@@ -79,41 +79,43 @@
 			</div>
 			<main>
 				<h2 class="h2">장바구니</h2>
-            <section class="cart-section">
-                <!-- 전체 선택 및 삭제 버튼 -->
-                <div class="all">
-                    <label><input type="checkbox" id="select-all" class="item-checkbox" checked> 전체선택</label>
-                    <button id="delete-button" class="check-delete">선택 삭제</button>
-                </div>
-                
-                <!-- 장바구니에 담긴 상품 목록 -->
-                <c:forEach var="cartItem" items="${cartItems}">
-                    <div class="cart-item">
-                        
-                        <%-- <input type="hidden" name="productId" value="${cartItem.product}"> --%>
-                        <!-- 상품 선택 체크박스 -->
-                        <label><input type="checkbox" class="item-checkbox" checked></label>
-						
-                        <!-- 상품 이미지 및 정보 -->
-                        <a href="#"><img src="../assets/images/product/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
-                        <div class="product-info">
-                            <h3>${cartItem.productName}</h3>
-                            <div class="price">
-                                <span>가격: ${cartItem.productPrice}원</span>
-                            </div>
-                        </div>
-
-                        <!-- 수량 조절 버튼 -->
-							<div class="quantity-control">
-								<span><button class="btn-minus">-</button></span> <input
-									type="text" value="1" class="quantity-input"> <span><button
-										class="btn-plus">+</button></span>
-							</div>
+				<section class="cart-section">
+						<!-- 전체 선택 및 삭제 버튼 -->
+						<div class="all">
+							<label><input type="checkbox" id="select-all"
+								class="item-checkbox" checked> 전체선택</label>
+							<button type="submit" id="delete-button" onclick="location.href='product-cart-delete.product?id='" class="check-delete">선택삭제</button>
 						</div>
-                </c:forEach>
-            </section>
 
-            <!-- 결제 정보 -->
+						<!-- 장바구니에 담긴 상품 목록 -->
+						<c:forEach var="cartItem" items="${cartItems}">
+							<div class="cart-item">
+								<!-- 상품 선택 체크박스 -->
+								<label> <input type="checkbox" name="selectedIds" value="${cartItem.id}" class="item-checkbox">
+								</label>
+
+								<!-- 상품 이미지 및 정보 -->
+								<a href="#"><img
+									src="../assets/images/product/${cartItem.productImage}"
+									alt="${cartItem.productName}" class="product-img"></a>
+								<div class="product-info">
+									<h3>${cartItem.productName}</h3>
+									<div class="price">
+										<span>가격: ${cartItem.productPrice}원</span>
+									</div>
+								</div>
+
+								<!-- 수량 조절 버튼 -->
+								<div class="quantity-control">
+									<span><button class="btn-minus">-</button></span> <input
+										type="text" value="1" class="quantity-input"> <span><button
+											class="btn-plus">+</button></span>
+								</div>
+							</div>
+						</c:forEach>
+				</section>
+
+				<!-- 결제 정보 -->
             <section class="payment-info">
                 <h2 class="h2">결제 정보</h2>
 

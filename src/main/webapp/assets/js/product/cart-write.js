@@ -66,26 +66,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // 전체 선택/해제 및 선택 삭제 기능
     const selectAllCheckbox = document.getElementById("select-all");
     const itemCheckboxes = document.querySelectorAll(".cart-item .item-checkbox");
-    const deleteButton = document.getElementById("delete-button");
 
     if (selectAllCheckbox) {
         selectAllCheckbox.addEventListener("click", function() {
             const isChecked = selectAllCheckbox.checked;
             itemCheckboxes.forEach(function(checkbox) {
                 checkbox.checked = isChecked;
-            });
-        });
-    }
-
-    if (deleteButton) {
-        deleteButton.addEventListener("click", function() {
-            itemCheckboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    const cartItem = checkbox.closest(".cart-item");
-                    if (cartItem) {
-                        cartItem.remove();
-                    }
-                }
             });
         });
     }
