@@ -207,7 +207,6 @@
 <script src="../assets/js/product/cart-write.js"></script>
 <script>
 // 선택 삭제 폼 제출 함수
-
 	function submitDeleteForm() {
 		document.getElementById("delete-form").submit();
 	}
