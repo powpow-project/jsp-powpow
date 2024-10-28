@@ -132,7 +132,10 @@
     
 	 <form action="myhome/shipping-list.myhome.jsp" method="post">
 	    <input type="hidden" name="productId" value="${product.productId}">
-	    <input type="number" name="productCount" value="1" min="1" max="10">
+	    <input type="hidden" name="memberId" value="${product.productId}">
+	    <input type="hidden" name="productCount" value="${product.productId}">
+	    <input type="hidden" name="orderId" value="${product.productId}">
+	    
 	    <button type="submit">결제하기</button>
 	</form>
 </div>
