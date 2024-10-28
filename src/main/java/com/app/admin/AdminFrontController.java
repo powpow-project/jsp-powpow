@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
 import com.app.admin.controller.AdminBannerListController;
+import com.app.admin.controller.AdminBannerUpdateController;
+import com.app.admin.controller.AdminBannerWriteOkController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
 import com.app.admin.controller.AdminLoginOkController;
@@ -25,7 +27,9 @@ public class AdminFrontController extends HttpServlet{
 	    String target = req.getRequestURI().replace(req.getContextPath() + "/admin/", "").split("\\.")[0];
 	    Result result = null;
 	    
-	  
+	    
+	    // 로그인 목록
+	    
 	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
 	        result = new Result();
 	        result.setPath("../admin/admin-loginAdmin.jsp");
@@ -65,10 +69,10 @@ public class AdminFrontController extends HttpServlet{
 	        result.setPath("../admin/admin-banner-write.jsp");
 	        
 	    } else if (target.equals("admin-banner-write-ok")) { // 공지사항 등록 페이지 완료
-//	    	result = new AdminBannerWriteOkController().execute(req, resp);
+	    	result = new AdminBannerWriteOkController().execute(req, resp);
 	    	
 	    } else if (target.equals("admin-banner-update")) { // 공지사항 수정
-//	        result = new AdminBannerUpdateController().execute(req, resp);
+	        result = new AdminBannerUpdateController().execute(req, resp);
 
 	    } else if (target.equals("admin-banner-update-ok")) { // 공지사항 수정 완료
 //	        result = new AdminBannerUpdateOkController().execute(req, resp);

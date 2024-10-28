@@ -10,7 +10,7 @@
     <title>배너 신규등록</title>
 </head>
 <body>
-    <form id="frame">
+    <form action="admin-banner-write-ok.admin" method="post" id="frame">
         <div class="menu-wrap">
             <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
             <span>배너 관리</span>
@@ -59,83 +59,80 @@
         </div>
 
         <div id="container">
-            <form id="banner-form">
-                
-                <!-- 배너명 -->
-                <div class="form-row">
-                    <label for="banner-name">배너명</label>
+            <!-- 배너명 -->
+            <div class="form-row">
+                <label for="banner-name">배너명</label>
+                <input
+                    type="text"
+                    id="banner-name"
+                    name="banner-name"
+                    placeholder="제목을 입력해주세요. (20자 이내)"
+                    required
+                />
+            </div>
+
+            <!-- 배너 타입 -->
+            <div class="form-row">
+                <label for="banner-type">배너 타입</label>
+                <select id="banner-type" name="banner-type">
+                    <option value="image">이미지</option>
+                    <option value="text">텍스트</option>
+                    <option value="video">비디오</option>
+                </select>
+            </div>
+
+            <!-- 배너 링크 -->
+            <div class="form-row">
+                <label for="banner-link">배너 링크</label>
+                <input
+                    type="url"
+                    id="banner-link"
+                    name="banner-link"
+                    placeholder="배너 클릭 시 이동할 URL"
+                />
+            </div>
+
+            <!-- 배너 이미지 -->
+            <div class="form-row">
+                <label for="banner-image">배너 이미지</label>
+                <div class="file-upload-group">
                     <input
-                        type="text"
-                        id="banner-name"
-                        name="banner-name"
-                        placeholder="제목을 입력해주세요. (20자 이내)"
+                        type="file"
+                        id="banner-image"
+                        name="banner-image"
+                        accept=".jpg, .png, .gif"
                         required
                     />
                 </div>
+            </div>
 
-                <!-- 배너 타입 -->
-                <div class="form-row">
-                    <label for="banner-type">배너 타입</label>
-                    <select id="banner-type" name="banner-type">
-                        <option value="image">이미지</option>
-                        <option value="text">텍스트</option>
-                        <option value="video">비디오</option>
-                    </select>
+            <!-- 기간 -->
+            <div class="form-row">
+                <label for="unlimited">기간</label>
+                <div class="input-group">
+                    <input type="radio" id="unlimited" name="duration" value="unlimited" />
+                    <label for="unlimited">무제한</label>
+                    <input type="date" id="start-date" name="start-date" />
+                    <span>~</span>
+                    <input type="date" id="end-date" name="end-date" />
                 </div>
+            </div>
 
-                <!-- 배너 링크 -->
-                <div class="form-row">
-                    <label for="banner-link">배너 링크</label>
-                    <input
-                        type="url"
-                        id="banner-link"
-                        name="banner-link"
-                        placeholder="배너 클릭 시 이동할 URL"
-                    />
+            <!-- 사용 여부 -->
+            <div class="form-row">
+                <label>사용 여부</label>
+                <div class="radio-group">
+                    <input type="radio" id="use" name="use-status" value="use" required />
+                    <label for="use">사용함</label>
+                    <input type="radio" id="no-use" name="use-status" value="no-use" />
+                    <label for="no-use">사용 안함</label>
                 </div>
-
-                <!-- 배너 이미지 -->
-                <div class="form-row">
-                    <label for="banner-image">배너 이미지</label>
-                    <div class="file-upload-group">
-                        <input
-                            type="file"
-                            id="banner-image"
-                            name="banner-image"
-                            accept=".jpg, .png, .gif"
-                            required
-                        />
-                    </div>
-                </div>
-
-                <!-- 기간 -->
-                <div class="form-row">
-                    <label for="unlimited">기간</label>
-                    <div class="input-group">
-                        <input type="radio" id="unlimited" name="duration" value="unlimited" />
-                        <label for="unlimited">무제한</label>
-                        <input type="date" id="start-date" name="start-date" />
-                        <span>~</span>
-                        <input type="date" id="end-date" name="end-date" />
-                    </div>
-                </div>
-
-                <!-- 사용 여부 -->
-                <div class="form-row">
-                    <label>사용 여부</label>
-                    <div class="radio-group">
-                        <input type="radio" id="use" name="use-status" value="use" required />
-                        <label for="use">사용함</label>
-                        <input type="radio" id="no-use" name="use-status" value="no-use" />
-                        <label for="no-use">사용 안함</label>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
 
         <div class="change-buttons">
-            <button class="button-submit">등록</button>
-            <button class="button-edit">취소</button>
+		    <button class="button-submit">등록</button>
+		    <button class="button-edit">취소</button>
         </div>
     </form>
 

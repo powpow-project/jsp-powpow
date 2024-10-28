@@ -255,15 +255,6 @@ img {
   height: 40px;
 }
 
-#frame {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
- }
-
 #frame > .menu-wrap{
   display: flex;
   align-items: center;
@@ -372,7 +363,19 @@ margin-top: 4px;
   background-color: #fff;
 }
 
-.notice-list{
+
+#frame {
+  width: 1440px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.notice-list {
+  width: 1440px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -411,32 +414,37 @@ table tr > th:nth-child(1){
   display: flex;
   align-items: center;
 }
+
 table tr > th:nth-child(2){
-  width: 488px;
+  width: 342px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
+
 table tr > th:nth-child(3){
-  width: 244px;
+  width: 366px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
+
 table tr > th:nth-child(4){
-  width: 244px;
+  width: 268px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
+
 table tr > th:nth-child(5){
-  width: 244px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
+
 table tr > th:nth-child(6){
-  width: 98px;
+  width: 122px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -450,37 +458,39 @@ table tr > td:nth-child(1){
 }
 
 table tr > td:nth-child(2){
-  width: 488px;
+  width: 342px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > td:nth-child(3){
-  width: 244px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
-table tr > td:nth-child(4){
-  display: flex;
-  width: 244px;
-  flex-shrink: 0;
-  align-items: center;
-}
-table tr > td:nth-child(5){
-  width: 244px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
-table tr > td:nth-child(6){
-  width: 98px;
+  width: 366px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
+table tr > td:nth-child(4){
+  display: flex;
+  width: 268px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+table tr > td:nth-child(5){
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+table tr > td:nth-child(6){
+  width: 122px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
 
 
 

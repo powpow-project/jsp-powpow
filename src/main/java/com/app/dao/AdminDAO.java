@@ -54,8 +54,8 @@ public class AdminDAO {
     }
 
     // 배너 추가
-    public void insertAdminBanner(AdminBannerVO adminBannerVO) {
-        sqlSession.insert("admin.insertAdminBanner", adminBannerVO);
+    public void insertAdminBanner(AdminBannerDTO adminBannerDTO) {
+        sqlSession.insert("admin.insertAdminBanner", adminBannerDTO);
     }
 
     // 전체 배너 조회

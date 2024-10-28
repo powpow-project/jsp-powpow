@@ -57,6 +57,7 @@
         <div class="title">
             <h1 class="h1">게시글 수정</h1>
         </div>
+        
         <div class="form-wrap">
             <div class="sub-wrap">
              <input type="hidden" name="id" value="${adminNotice.id}" />
