@@ -6,7 +6,7 @@ public class OrderVO {
 	private Long id;
 	private Long memberId;
 	private Long productId;
-	private int odrderNumber;
+	private int orderNumber;
 	private String orderDate;
 	private int productCount;
 	
@@ -36,12 +36,12 @@ public class OrderVO {
 		this.productId = productId;
 	}
 
-	public int getOdrderNumber() {
-		return odrderNumber;
+	public int getOrderNumber() {
+		return orderNumber;
 	}
 
-	public void setOdrderNumber(int odrderNumber) {
-		this.odrderNumber = odrderNumber;
+	public void setOrderNumber(int odrderNumber) {
+		this.orderNumber = odrderNumber;
 	}
 
 	public String getOrderDate() {
@@ -62,8 +62,8 @@ public class OrderVO {
 
 	@Override
 	public String toString() {
-		return "OrderVO [id=" + id + ", memberId=" + memberId + ", productId=" + productId + ", odrderNumber="
-				+ odrderNumber + ", orderDate=" + orderDate + ", productCount=" + productCount + "]";
+		return "OrderVO [id=" + id + ", memberId=" + memberId + ", productId=" + productId + ", orderNumber="
+				+ orderNumber + ", orderDate=" + orderDate + ", productCount=" + productCount + "]";
 	}
 
 	@Override
