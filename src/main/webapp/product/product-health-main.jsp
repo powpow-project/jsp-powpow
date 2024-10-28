@@ -114,8 +114,7 @@
 										</div>
 										<div class="hover-box-cart">
 											<a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}"> 
-											<img src="../assets/images/shopping/carthovar.png" alt="장바구니 추가">
-											</a>
+											<img src="../assets/images/shopping/carthovar.png" alt="장바구니 추가"></a>
 										</div>
 										<div class="hover-box-heart">
 											<a class="hover-heart" href="#"> 
@@ -164,8 +163,8 @@
 												<img src="../assets/images/shopping/share.png"></a>
 											</div>
 											<div class="hover-box-cart">
-												<a class="hover-cart" href="#"> 
-												<img src="../assets/images/shopping/carthovar.png"></a>
+												<a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}"> 
+											<img src="../assets/images/shopping/carthovar.png" alt="장바구니 추가"></a>
 											</div>
 											<div class="hover-box-heart">
 												<a class="hover-heart" href="#"> 
@@ -211,8 +210,8 @@
 														<img src="../assets/images/shopping/share.png"></a>
 													</div>
 													<div class="hover-box-cart">
-														<a class="hover-cart" href="#"> 
-														<img src="../assets/images/shopping/carthovar.png"></a>
+														<a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}"> 
+											<img src="../assets/images/shopping/carthovar.png" alt="장바구니 추가"></a>
 													</div>
 													<div class="hover-box-heart">
 														<a class="hover-heart" href="#"> 
@@ -260,8 +259,8 @@
 																src="../assets/images/shopping/share.png"></a>
 														</div>
 														<div class="hover-box-cart">
-															<a class="hover-cart" href="#"> <img
-																src="../assets/images/shopping/carthovar.png"></a>
+															<a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}"> 
+															<img src="../assets/images/shopping/carthovar.png" alt="장바구니 추가"></a>
 														</div>
 														<div class="hover-box-heart">
 															<a class="hover-heart" href="#"> <img
