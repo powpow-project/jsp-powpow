@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.admin.controller.AdminBannerDeleteOkController;
 import com.app.admin.controller.AdminBannerListController;
 import com.app.admin.controller.AdminBannerUpdateController;
+import com.app.admin.controller.AdminBannerUpdateOkController;
 import com.app.admin.controller.AdminBannerWriteOkController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
@@ -75,10 +77,10 @@ public class AdminFrontController extends HttpServlet{
 	        result = new AdminBannerUpdateController().execute(req, resp);
 
 	    } else if (target.equals("admin-banner-update-ok")) { // 공지사항 수정 완료
-//	        result = new AdminBannerUpdateOkController().execute(req, resp);
+	        result = new AdminBannerUpdateOkController().execute(req, resp);
 
 	    } else if (target.equals("admin-banner-delete-ok")) { // 공지사항 삭제
-//	        result = new AdminBannerDeleteOkController().execute(req, resp);
+	        result = new AdminBannerDeleteOkController().execute(req, resp);
 
 	    } else {
 	        result = new Result();

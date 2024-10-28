@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@
 <title>배너 수정</title>
 </head>
 <body>
-	<form id="frame">
+	<form action="admin-banner-update-ok.admin" method="post" id="frame">
 
 		<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
@@ -63,14 +64,6 @@
 			<form id="banner-form">
 				<input type="hidden" name="id" value="${adminBanner.id}" />
 
-				<!-- 배너명 -->
-				<div class="form-row">
-					<label for="banner-name">배너명</label> <input type="text"
-						id="banner-name" name="banner-name"
-						placeholder="제목을 입력해주세요. (20자 이내)"
-						value="${adminBanner.adminBannerTitle}" />
-				</div>
-
 				<form>
 					<!-- 배너명 -->
 					<div class="form-row">
@@ -112,39 +105,45 @@
 					<!-- 기간 -->
 					<div class="form-row">
 						<label for="unlimited">기간</label>
-						<div class="input-group">
-							<input type="radio" id="unlimited" name="duration"
-								value="unlimited"
-								${!adminBanner.adminBannerStart && !adminBanner.adminBannerEnd ? 'checked' : ''} />
-							<label for="unlimited">무제한</label> <input type="date"
-								id="start-date" name="start-date"
-								value="${adminBanner.adminBannerStart ? adminBanner.adminBannerStart.toISOString().slice(0, 10) : ''}" />
+
+						<label for="unlimited">무제한</label> 
+						<input type="date" id="start-date" name="start-date" value="${adminBanner.adminBannerStart}" /> 
 							<span>~</span> 
-							<input type="date" id="end-date" name="end-date"
-								value="${adminBanner.adminBannerEnd ? adminBanner.adminBannerEnd.toISOString().slice(0, 10) : ''}" />
-						</div>
+						<input type="date" id="end-date" name="end-date" value="${adminBanner.adminBannerEnd}" />
 					</div>
+		
 
-					<!-- 사용 여부 -->
-					<div class="form-row">
-						<label>사용 여부</label>
-						<div class="radio-group">
-							<input type="radio" id="use" name="use-status" value="use"
-								required ${adminBanner.adminBannerStatus== 'use' ? 'checked' : ''} />
-							<label for="use">사용함</label> <input type="radio" id="no-use"
-								name="use-status" value="no-use"
-								${adminBanner.adminBannerStatus == 'no-use' ? 'checked' : ''} />
-							<label for="no-use">사용 안함</label>
-						</div>
-					</div>
-				</form>
+		<!-- 사용 여부 -->
+		<div class="form-row">
+			<label>사용 여부</label>
+			<div class="radio-group">
+				<input type="radio" id="use" name="use-status" value="use" required />
+				<label for="use">사용함</label> <input type="radio" id="no-use"
+					name="use-status" value="no-use" /> 
+					<label for="no-use">사용 안함</label>
+			</div>
+		</div>
+		</div>
 
-				<div class="change-buttons">
-					<button class="button-submit">등록</button>
-					<button class="button-edit">취소</button>
-				</div>
-			</form>
-
-			<script src="../assets/js/admin/admin-banner-update.js"></script>
+	<div class="change-buttons">
+		<button class="button-submit">등록</button>
+		<button class="button-edit">취소</button>
+	</div>
+	</form>
+	
+	<script>
+	
+		const startdateInput = document.querySelector("#start-date");
+		let startDate = `${adminBanner.adminBannerStart}`;
+		startDate = startDate.split(" ")[0];
+		startdateInput.value = startDate; 
+		
+		const endDateInput = document.querySelector("#end-date");
+		let endDate = `${adminBanner.adminBannerEnd}`;
+		endDate = endDate.split(" ")[0];
+		endDateInput.value = endDate;
+		
+	</script>
+	<script src="../assets/js/admin/admin-banner-update.js"></script>
 </body>
 </html>

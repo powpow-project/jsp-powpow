@@ -1,7 +1,6 @@
 package com.app.admin.controller;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -51,31 +50,20 @@ public class AdminBannerWriteOkController implements Action {
 			return null;
 		}
 
-		try {
-			// 날짜 형식 변경 (시간 추가)
-			String bannerStartFormatted = bannerStart + " 00:00:00";
-			String bannerEndFormatted = bannerEnd + " 23:59:59";
-
-			// String을 Timestamp로 변환
-			Timestamp startTimestamp = Timestamp.valueOf(bannerStartFormatted);
-			Timestamp endTimestamp = Timestamp.valueOf(bannerEndFormatted);
 
 			adminBannerDTO.setAdminId(adminId);
 			adminBannerDTO.setAdminBannerTitle(bannerTitle);
 			adminBannerDTO.setAdminBannerType(bannerType);
 			adminBannerDTO.setAdminBannerImage(bannerImage);
-			adminBannerDTO.setAdminBannerStart(startTimestamp);
-			adminBannerDTO.setAdminBannerEnd(endTimestamp);
+			adminBannerDTO.setAdminBannerStart(bannerStart);
+			adminBannerDTO.setAdminBannerEnd(bannerStart);
 
 			adminDAO.insertAdminBanner(adminBannerDTO);
 
 			result.setPath("../admin/admin-banner-list.admin");
 			result.setRedirect(true);
 
-		} catch (IllegalArgumentException e) {
-			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "유효하지 않은 날짜 형식입니다.");
-			return null;
-		}
+
 		return result;
 	}
 }

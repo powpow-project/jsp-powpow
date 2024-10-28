@@ -1,6 +1,5 @@
 package com.app.dto;
 
-import java.sql.Timestamp;
 import java.util.Objects;
 
 public class AdminBannerDTO {
@@ -8,8 +7,8 @@ public class AdminBannerDTO {
     private Long id;
     private Long adminId;
     private Long adminBannerId;
-    private Timestamp adminBannerStart;
-    private Timestamp adminBannerEnd;
+    private String adminBannerStart;
+    private String adminBannerEnd;
     private String adminBannerTitle;
     private String adminBannerType;
     private String adminBannerImage;
@@ -40,19 +39,19 @@ public class AdminBannerDTO {
         this.adminBannerId = adminBannerId;
     }
 
-    public Timestamp getAdminBannerStart() {
+    public String getAdminBannerStart() {
         return adminBannerStart;
     }
 
-    public void setAdminBannerStart(Timestamp adminBannerStart) {
+    public void setAdminBannerStart(String adminBannerStart) {
         this.adminBannerStart = adminBannerStart;
     }
 
-    public Timestamp getAdminBannerEnd() {
+    public String getAdminBannerEnd() {
         return adminBannerEnd;
     }
 
-    public void setAdminBannerEnd(Timestamp adminBannerEnd) {
+    public void setAdminBannerEnd(String adminBannerEnd) {
         this.adminBannerEnd = adminBannerEnd;
     }
 

@@ -110,7 +110,7 @@
             <div class="form-row">
                 <label for="unlimited">기간</label>
                 <div class="input-group">
-                    <input type="radio" id="unlimited" name="duration" value="unlimited" />
+                    <input type="checkbox" id="unlimited" name="duration" value="unlimited" />
                     <label for="unlimited">무제한</label>
                     <input type="date" id="start-date" name="start-date" />
                     <span>~</span>

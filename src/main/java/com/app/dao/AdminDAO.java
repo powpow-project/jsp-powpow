@@ -64,13 +64,13 @@ public class AdminDAO {
     }
 
     // 배너 상세 조회
-    public Optional<AdminBannerVO> selectAdminBanner(Long id) {
+    public Optional<AdminBannerDTO> selectAdminBanner(Long id) {
         return Optional.ofNullable(sqlSession.selectOne("admin.selectAdminBanner", id));
     }
 
     // 배너 수정
-    public void updateAdminBanner(AdminBannerVO adminBannerVO) {
-        sqlSession.update("admin.updateAdminBanner", adminBannerVO);
+    public void updateAdminBanner(AdminBannerDTO adminBannerDTO) {
+        sqlSession.update("admin.updateAdminBanner", adminBannerDTO);
     }
 
     // 배너 삭제
