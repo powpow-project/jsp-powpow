@@ -1,0 +1,114 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/seller/seller-revenue-list.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="icon" href="../assets/images/favicon.ico">	
+  <title>매출관리</title>
+</head>
+<body>
+  <div id="frame">
+    <div class="menu-wrap">
+      <img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴">
+      <span>매출관리</span>
+      
+      <div id="menu-frame">
+				<div class="menu-header">
+					<div class="welcome">seller님 환영합니다!</div>
+					<button class="logout">로그아웃</button>
+				</div>
+				<div class="menu-form">
+					<ul>
+						<li>
+							<p>상품 관리</p>
+							<div>
+								<p>상품 조회</p>
+								<p>상품 등록</p>
+								<p>상품 수정</p>
+							</div>
+						</li>
+						<li>
+							<p>주문 관리</p>
+							<div>
+								<p>주문조회</p>
+							</div>
+						</li>
+						<li>
+							<p>정산 관리</p>
+							<div>
+								<p>정산내역조회</p>
+							</div>
+						</li>
+						<li>
+							<p>판매자 관리</p>
+							<div>
+								<p>판매자정보 관리</p>
+								<p>사업자정보 관리</p>
+							</div>
+						</li>
+						<li>
+							<p>매출 관리</p>
+							<div>
+								<p>매출 조회</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+      
+    </div>
+    <div class="division-line"></div>
+  
+    <div class="title">
+      <h1 class="h1">매출조회</h1>
+    </div>
+    <section class="notice-search">
+      <div class="input-group">
+        <input type="date" id="start-date" name="start-date" />
+        <span>~</span>
+        <input type="date" id="end-date" name="end-date" />
+      </div>
+      <div class="buttons">
+        <button class="search-btn">검색</button>
+        <button class="reset-btn">초기화</button>
+      </div>
+    </section>
+        
+      <section class="notice-list">
+        <table>
+          <thead>
+            <tr>
+              <th>주문일자</th>
+              <th>총 판매수량</th>
+              <th>취소 판매수량</th>
+              <th>취소금액</th>
+              <th>총 판매금액</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr class="tr-border">
+            <td>합계</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+</body>
+<script src="../assets/js/seller/seller-revenue-list.js"></script>
+</html>

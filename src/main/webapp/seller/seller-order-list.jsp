@@ -110,7 +110,7 @@
 							<td><c:out value="${orderList.productCount}" /></td>
 							<td><c:out value="${orderList.totalPrice}" /></td>
 							<td><c:out value="배송 전,배송 후,배송완료,주문취소" /></td>
-							<td><c:out value="${orderList.orderDate}" /></td>
+							<td><c:out value="${orderList.orderDate.substring(0, 16)}" /></td>
 							<td>
 								<button class="details-button">상세</button>
 							</td>
