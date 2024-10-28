@@ -24,7 +24,7 @@ public class MemberDAO {
 	public String selectBuyer(MemberVO memberVO) {
 		return sqlSession.selectOne("member.selectBuyer", memberVO);
 	}
-	
+
 //	구매자 계정 삭제
 	public void deleteBuyer(Long id) {
 		sqlSession.delete("member.deleteBuyer", id);

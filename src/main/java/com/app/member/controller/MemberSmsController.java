@@ -11,42 +11,31 @@ import com.app.Result;
 
 public class MemberSmsController implements Action {
 
-	@Override
-	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-//		package sms;
-//
-//		import java.util.HashMap;
-//
-//		import org.json.simple.JSONObject;
-//
-//		import net.nurigo.java_sdk.api.Message;
-//		import net.nurigo.java_sdk.exceptions.CoolsmsException;
-//
-//		public class Sms {
-//			public static void main(String[] args) {
-//				String api_key = "NCS9N9SYNY3LYZLH";
-//				String api_secret = "JIHJZVV1DKNKAUM3PLMR0NMH1YGGECDY";
-//				Message coolsms = new Message(api_key, api_secret);
-//				
-//				// 4 params(to, from, type, text) are mandatory. must be filled
-//				HashMap<String, String> params = new HashMap<String, String>();
-//				params.put("to", "01040685166");
-//				params.put("from", "01040685166");
-//				params.put("type", "SMS");
-//				params.put("text", "메롱~!");
-//				params.put("app_version", "text app 1.2"); // application name and version
-//
-//				try {
-//					JSONObject obj = (JSONObject) coolsms.send(params);
-//					System.out.println(obj.toString());
-//				} catch (CoolsmsException e) { 
-//					System.out.println(e.getMessage());
-//					System.out.println(e.getCode());
-//				}
-//			}
-//		}
+    private UserService userService;  // UserService 변수 선언
 
-		return null;
-	}
+    public MemberSmsController() {
+        this.userService = new UserService();  // UserService 객체 생성
+    }
 
+    @Override
+    public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        String phone = req.getParameter("phone");  // 클라이언트로부터 전화번호 가져오기
+        String certificationCode = sendCertificationCode(phone);  // 인증 코드 생성
+
+        // 필요한 후속 작업 (예: 응답 처리)
+        Result result = new Result();
+        result.setRedirect(false);  // 리다이렉트 여부 설정
+        req.setAttribute("certificationCode", certificationCode);  // 요청 속성에 인증 코드 저장
+        return result;  // Result 객체 반환
+    }
+
+    public String sendCertificationCode(String phone) {
+        // 6자리 랜덤 숫자 생성
+        int randomNumber = (int)((Math.random() * (999999 - 100000 + 1)) + 100000);
+        
+        // 전화번호 인증 메소드 호출
+        userService.certifiedPhoneNumber(phone, randomNumber);
+        
+        return Integer.toString(randomNumber);  // 생성된 랜덤 숫자 반환
+    }
 }

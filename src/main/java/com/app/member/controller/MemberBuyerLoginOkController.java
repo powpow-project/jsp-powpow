@@ -11,7 +11,6 @@ import com.app.Action;
 import com.app.Result;
 import com.app.dao.MemberDAO;
 import com.app.vo.MemberVO;
-import com.app.vo.SellerVO;
 
 public class MemberBuyerLoginOkController implements Action {
 

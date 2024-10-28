@@ -114,18 +114,20 @@ updateButtonState(activeBtn);
            if (globalThis.flag.filter((check) => check).length !== globalThis.flag.length) {
                alert("아이디 또는 비밀번호를 확인하세요.");
                return;
+			   // 구매자 로그인 폼 제출
+			   document.querySelector(".main-content.member form").submit();
            }
-           // 구매자 로그인 폼 제출
-           document.querySelector(".main-content.member form").submit();
+
        });
 
        sellerButton.addEventListener("click", () => {
            if (globalThis.flag.filter((check) => check).length !== globalThis.flag.length) {
                alert("아이디 또는 비밀번호를 확인하세요.");
                return;
+			   // 판매자 로그인 폼 제출
+			   document.querySelector(".main-content.seller form").submit();
            }
-           // 판매자 로그인 폼 제출
-           document.querySelector(".main-content.seller form").submit();
+
        });
    });
    

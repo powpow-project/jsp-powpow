@@ -24,8 +24,8 @@ public class MemberSellerJoinOkController implements Action {
 		SellerVO sellerVO = new SellerVO();
 
 
-//		 #{businessId}, #{sellerEmail}, #{sellerPasswo나아 몬가 학원 다니는 거 좀만 더 집중해볼까 해가지구 rd}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck}
-		sellerVO.setBusi(req.getParameter("email"));
+//		 #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck}
+//		sellerVO.setBusi(req.getParameter("email"));
 		sellerVO.setSellerPassword(req.getParameter("password"));
 		sellerVO.setSellerName(req.getParameter("name"));
 		sellerVO.setSellerPhone(req.getParameter("phone"));
