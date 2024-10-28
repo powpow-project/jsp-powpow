@@ -42,13 +42,17 @@
                 </label>
                 <p class="id-save">아이디 저장</p>
               </div>
-              <a class="forgot" href="http://localhost:9000/powpow/login/find.jsp">아이디 혹은 비밀번호를 잊어버리셨나요?</a>
+              <form action="find-choice.member" method="post">
+              	<button class="forgot" name="action" value="find">아이디 혹은 비밀번호를 잊어버리셨나요?</button>
+              </form>
             </div>
           </div>
           <div class="text-box">
             <p class="text">계정이 없으신가요?</p>
             <p class="text1">|</p>
-            <a class="text" href="http://localhost:9000/powpow/login/join.jsp">회원가입</a>
+            <form action="join-choice.member" method="post">
+           	 <button class="text" name="action" value="join">회원가입</button>
+            </form>
           </div>
           <p class="text2">Or continue with</p>
           <div class="simple-login-box">
@@ -78,13 +82,17 @@
                 </label>
                 <p class="id-save">아이디 저장</p>
               </div>
-              <a class="forgot" href="http://localhost:9000/powpow/login/find.jsp">아이디 혹은 비밀번호를 잊어버리셨나요?</a>
+               <form action="find-choice.member" method="post">
+              	<button class="forgot" name="action" value="find">아이디 혹은 비밀번호를 잊어버리셨나요?</button>
+              </form>
             </div>
           </div>
           <div class="text-box">
             <p class="text">계정이 없으신가요?</p>
             <p class="text1">|</p>
-            <a class="text" href="http://localhost:9000/powpow/login/join.jsp">회원가입</a>
+            <form action="join-choice.member" method="post">
+           	 <button class="text" name="action" value="join">회원가입</button>
+            </form>
           </div>
           </div>
           </div>

@@ -6,11 +6,11 @@ const mark = document.querySelector(".mark");
 		if(input.type === "password"){
 			input.setAttribute("type", "text");
 			inputConfirm.setAttribute("type", "text");
-			mark.style.backgroundImage = "url('../assets/images/login/eye-on.svg')";
+			mark.style.backgroundImage = "url('../assets/images/member/eye-on.svg')";
 		}else{
 			input.setAttribute("type", "password");
 			inputConfirm.setAttribute("type", "password");
-			mark.style.backgroundImage = "url('../assets/images/login/eye-off.svg')";
+			mark.style.backgroundImage = "url('../assets/images/member/eye-off.svg')";
 		}
 	})
 
@@ -76,25 +76,41 @@ const mark = document.querySelector(".mark");
 		       const existingEmails = ["qwe3401@naver.com"];
 		       const existingNames = ["쏘오연"];
 
+			   
 		       // 이메일 검증
 		       function validateEmail() {
 		           if (!emailInput.value) {
 		               emailResult.innerText = "이메일을 입력하세요.";
 		               emailResult.style.color = "red";
 		               return false;
-		           } else if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
-		               emailResult.innerText = "올바른 이메일 주소가 아닙니다.";
-		               emailResult.style.color = "red";
-		               return false;
-		           } else if (existingEmails.includes(emailInput.value)) {
-		               emailResult.innerText = "이미 사용 중인 이메일입니다.";
-		               emailResult.style.color = "red";
-		               return false;
-		           }
-		           emailResult.innerText = "사용 가능한 이메일입니다.";
-		           emailResult.style.color = "green";
+		           } 
 		           return true;
 		       }
+			   
+			   const emailButton = document.querySelector("#email-check");
+			   
+			   emailButton.addEventListener("click", (event) => {
+			   	           event.preventDefault(); // 기본 폼 제출 방지
+
+						       if (!emailInput.value) {
+						           emailResult.innerText = "이메일을 입력하세요.";
+						           emailResult.style.color = "red";
+						           return false;
+						       } else if (!/\S+@\S+\.\S+/.test(emailInput.value)) {
+						           emailResult.innerText = "올바른 이메일 주소가 아닙니다.";
+						           emailResult.style.color = "red";
+						           return false;
+						       } else if (existingEmails.includes(emailInput.value)) {
+						           emailResult.innerText = "이미 사용 중인 이메일입니다.";
+						           emailResult.style.color = "red";
+						           return false;
+						       }
+						       emailResult.innerText = "사용 가능한 이메일입니다.";
+						       emailResult.style.color = "green";
+						       return true;
+						   });
+
+					   
 
 		       // 닉네임 검증
 		       function validateName() {
@@ -102,15 +118,30 @@ const mark = document.querySelector(".mark");
 		               nameResult.innerText = "닉네임을 입력하세요.";
 		               nameResult.style.color = "red";
 		               return false;
-		           } else if (existingNames.includes(nameInput.value)) {
-		               nameResult.innerText = "이미 사용 중인 닉네임입니다.";
-		               nameResult.style.color = "red";
-		               return false;
-		           }
-		           nameResult.innerText = "사용 가능한 닉네임입니다.";
-		           nameResult.style.color = "green";
+		           } 
 		           return true;
 		       }
+			   
+			   const nameButton = document.querySelector("#name-check");
+			   		   
+			   		   nameButton.addEventListener("click", (event) => {
+			   		   	           event.preventDefault(); // 기본 폼 제출 방지
+
+								   if (!nameInput.value) {
+								       nameResult.innerText = "닉네임을 입력하세요.";
+								       nameResult.style.color = "red";
+								       return false;
+								   } else if (existingNames.includes(nameInput.value)) {
+								       nameResult.innerText = "이미 사용 중인 닉네임입니다.";
+								       nameResult.style.color = "red";
+								       return false;
+								   }
+								   nameResult.innerText = "사용 가능한 닉네임입니다.";
+								   nameResult.style.color = "green";
+								   return true;
+			   					   });		
+								   
+								   	   
 
 		       // 비밀번호 검증
 		       function validatePassword() {
@@ -213,12 +244,10 @@ const mark = document.querySelector(".mark");
 		           const isAddressValid = validateAddress();
 		           const isAgreementsValid = validateAgreements();
 
-		       /*    if (isEmailValid && isPasswordValid && isNameValid && isAddressValid && isAgreementsValid) {
-		               alert("회원가입이 완료되었습니다!");
-		               // 여기에 실제 회원가입 로직을 추가할 수 있습니다.
-		           }*/
-				   
-				   loginForm.submit();
+		       	  if (isEmailValid && isPasswordValid && isNameValid && isAddressValid && isAgreementsValid) {
+					   loginForm.submit();
+		           }
+				   return;
 		       });
 
 

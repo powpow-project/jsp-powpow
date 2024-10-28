@@ -68,13 +68,6 @@
 		WHERE SELLER_EMAIL = #{sellerEmail}
 	</select>	
 	
-   <!-- 회원가입시 사업자 인증번호 중복 -->
-	<select id="selectSellerByNumber" parameterType="String" resultType="BusinessVO">
-		SELECT ID, SELLER_BUSINESS_NUMBER, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME 
-		FROM TBL_SELLER
-		WHERE SELLER_BUSINESS_NUMBER = #{sellerBusinessNumber}
-	</select>	
-	
 	<!-- 정보수정 _ 비밀번호, 이름, 휴대전화 번호  -->	
     <update id="updateSeller" parameterType="MemberVO">
         UPDATE TBL_SELLER
@@ -86,7 +79,21 @@
    <delete id="deleteSeller" parameterType="Long">
    		DELETE FROM TBL_SELLER
    		WHERE ID = #{id}
-   </delete>	
+   </delete>
+   
+   <!-- Business 정보 -->
+ 	<insert id="insertBusiness" parameterType="BusinessVO">
+		INSERT INTO TBL_BUSINESS(ID, BUSINESS_NAME, BUSINESS_REPRESENTAIVE_NAME, BUSINESS_NUMBER )
+		VALUES(SELLER_SEQ.NEXTVAL, #{businessId},  #{businessName}, #{businessRepresentaiveName}, #{businessNumber})
+	</insert>
+	
+   <!-- 회원가입시 사업자 인증번호 중복 -->
+	<select id="selectSellerByNumber" parameterType="String" resultType="BusinessVO">
+		SELECT ID, BUSINESS_ID, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME 
+		FROM TBL_SELLER
+		WHERE SELLER_BUSINESS_NUMBER = #{sellerBusinessNumber}
+	</select>		
+   	
 	
 
 	

@@ -40,7 +40,7 @@ public class MemberBuyerJoinOkController implements Action {
 		memberDAO.insertBuyer(memberVO);
 		
 		result.setRedirect(true);
-		result.setPath("../member/member-buyer-join-complete.member");
+		result.setPath("../member/buyer-join-complete.member");
 		
 		return result;
 	}

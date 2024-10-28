@@ -10,12 +10,14 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
 </head>
 <body>
+<form action="seller-join-ok.member" method="post">
 <div class="saller-main">
     <div class="logo-box">
       <a href="../index.jsp">
         <img id="logo" src="../assets/images/member/logo.png" alt="로고" />
       </a>
     </div>
+    
     <div class="input">
       <div>
         <div class="text-box">
@@ -24,9 +26,10 @@
         </div>
         <div class="input-container">
           <input class="inputbutton" type="email" name="email" placeholder="아이디(이메일)">
-          <button class="auth-button">확인</button>
+          <button class="auth-button" id="email-check">확인</button>
         </div>
       </div>
+      
       <div>
         <div class="text-box">
           <p id="text">비밀번호</p>
@@ -35,6 +38,7 @@
         <div class="input-container">
           <input class="inputbutton" type="password" name="password" placeholder="비밀번호">
           <div class="mark"></div>
+          <p class="result" id="password-result"></p>
         </div>
       </div>
 
@@ -45,6 +49,7 @@
         </div>
         <div class="input-container">
          <input class="inputbutton" type="password" name="passwordConfirm" placeholder="비밀번호 확인">
+        <p class="result" id="passwordConfirm-result"></p>
         </div>
       </div>
       <div>
@@ -53,16 +58,14 @@
           <p id="text" class="red">*</p>
         </div>
         <input class="inputbutton" type="text" name="name" placeholder="이름">
+        <p id="name-result"></p>
       </div>
       <div>
         <div class="text-box">
           <p id="text">휴대전화 번호</p>
           <p id="text" class="red">*</p>
         </div>
-        <div class="input-container">
-          <input class="inputbutton" type="number" name="phone" placeholder="휴대폰 번호 입력 ('-'제외 11자리 입력)">
-          <button class="auth-button">인증</button>
-        </div>
+            <input class="inputbutton" type="string" name="phone" placeholder="">
       </div>
       <div class="line"></div>
       <div>
@@ -81,6 +84,7 @@
           <p id="text" class="red">*</p>
         </div>
         <input class="inputbutton" type="text" name="name">
+        <p id="kingname-result"></p>
       </div>
       <div>
         <div class="text-box">
@@ -88,6 +92,7 @@
           <p id="text" class="red">*</p>
         </div>
         <input class="inputbutton" type="text" name="companyname">
+        <p id="companyname-result"></p>
       </div>
       <div class="line"></div>
       </div>
@@ -98,6 +103,8 @@
       </div>
 
       <div class="agree-box">
+             <input type="hidden" name="sms" value="1" />
+            <input type="hidden" name="emailcheck" value="1" />
 
         <div class="agreeAll">
           <label>
@@ -158,12 +165,11 @@
 
 
       </div>
-      <a href="http://localhost:9000/powpow/seller-join-complete.jsp">
-        <button class="login-button">회원가입</button>
-      </a>
+        <button type="button" class="login-button">회원가입</button>
   </div>
   <script src="../assets/js/jQuery.js"></script>
   <script src="../assets/js/member/member-seller-join.js"></script>
+</form>
 </body>
 
 </html>
