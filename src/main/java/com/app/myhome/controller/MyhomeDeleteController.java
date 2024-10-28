@@ -16,7 +16,10 @@ public class MyhomeDeleteController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		MemberDAO memberDAO = new MemberDAO();
-		result.setPath("../myhome/myhome-delete-complete.jsp");
+		
+		memberDAO.deleteBuyer(Long.parseLong(req.getParameter("id")));
+		
+		result.setPath("../login/login.member");
 		return result;
 	}
 
