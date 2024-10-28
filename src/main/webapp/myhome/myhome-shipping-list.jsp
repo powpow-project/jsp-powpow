@@ -175,6 +175,10 @@
 					<span>아직 주문한 상품이 없어요</span>
 				</div>
 				<div id="product-list" class="ordered-product">
+				<img src="${product.image}"/>
+				<span>제품명:${product.name}</span>
+				<span>결제가:${product.price}원</span>
+				<span>주문일자:${order.date}</span>
 				</div>
 			</div>
 		</div>

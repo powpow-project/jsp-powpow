@@ -139,7 +139,8 @@ subMenus.forEach((sub, i) => {
 		orderedProducts.forEach(product => {
 			const productItem = document.createElement('div');
 			productItem.className = 'product-item';
-			productItem.innerHTML = `<img src="${product.image}" alt="${product.name}"><span>${product.name}</span><span>${product.price}원</span>`;
+			productItem.innerHTML = `<div style="display:flex;
+			flex-direction:row; gap:10px;"><img src="${product.image}" alt="${product.name}"><span>${product.name}</span><span>${product.price}원</span></div>`;
 			productList.appendChild(productItem);
 		});
 	}
@@ -159,24 +160,28 @@ subMenus.forEach((sub, i) => {
 	    price: 15000,
 	    orderDate: '2024-10-28'
 	});
+	
 	addProduct({
 	    name: '상품명',
 	    image: '../assets/images/product/royal43.jpg',
 	    price: 8000,
 	    orderDate: '2024-10-28'
 	});
+	
 	addProduct({
 	    name: '상품명',
 	    image: '../assets/images/product/royal44.jpg',
 	    price: 12000,
 	    orderDate: '2024-10-28'
 	});
+	
 	addProduct({
 	    name: '상품명',
 	    image: '../assets/images/product/royal44.jpg',
 	    price: 12000,
 	    orderDate: '2024-10-28'
 	});
+	
 	addProduct({
 	    name: '상품명',
 	    image: '../assets/images/product/royal44.jpg',
