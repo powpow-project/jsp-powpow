@@ -70,17 +70,40 @@ public class AdminFrontController extends HttpServlet{
 	        result = new Result();
 	        result.setPath("../admin/admin-banner-write.jsp");
 	        
-	    } else if (target.equals("admin-banner-write-ok")) { // 공지사항 등록 페이지 완료
+	    } else if (target.equals("admin-banner-write-ok")) { // 배너 등록 페이지 완료
 	    	result = new AdminBannerWriteOkController().execute(req, resp);
 	    	
-	    } else if (target.equals("admin-banner-update")) { // 공지사항 수정
+	    } else if (target.equals("admin-banner-update")) { // 배너 수정
 	        result = new AdminBannerUpdateController().execute(req, resp);
 
-	    } else if (target.equals("admin-banner-update-ok")) { // 공지사항 수정 완료
+	    } else if (target.equals("admin-banner-update-ok")) { // 배너 수정 완료
 	        result = new AdminBannerUpdateOkController().execute(req, resp);
 
-	    } else if (target.equals("admin-banner-delete-ok")) { // 공지사항 삭제
+	    } else if (target.equals("admin-banner-delete-ok")) { // 배너 삭제
 	        result = new AdminBannerDeleteOkController().execute(req, resp);
+	        
+	    
+	    // 쿠폰관리 목록
+	        
+	    } else if (target.equals("admin-coupon-list")) { // 쿠폰 목록
+//	        result = new AdminCouponListController().execute(req, resp);
+	    	
+	    } else if (target.equals("admin-coupon-write")) { // 쿠폰 신규등록 페이지
+	        result = new Result();
+	        result.setPath("../admin/admin-coupon-write.jsp");
+	        
+	    } else if (target.equals("admin-coupon-write-ok")) { // 쿠폰 등록 페이지 완료
+//	    	result = new AdminCouponWriteOkController().execute(req, resp);
+	    	
+	    } else if (target.equals("admin-coupon-update")) { // 쿠폰 수정
+//	        result = new AdminCouponUpdateController().execute(req, resp);
+
+	    } else if (target.equals("admin-coupon-update-ok")) { // 쿠폰 수정 완료
+//	        result = new AdminCouponUpdateOkController().execute(req, resp);
+
+	    } else if (target.equals("admin-coupon-delete-ok")) { // 공지사항 삭제
+//	        result = new AdminCouponDeleteOkController().execute(req, resp);
+	        
 
 	    } else {
 	        result = new Result();
