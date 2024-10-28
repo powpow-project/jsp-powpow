@@ -38,6 +38,4 @@ public class AdminWriteOkController {
 
 	    return result;
 	}
-
-	
 }

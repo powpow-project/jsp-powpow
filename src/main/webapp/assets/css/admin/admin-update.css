@@ -114,6 +114,7 @@ img {
   margin: 28px 0;
   gap: 72px;
   padding-left: 28px;
+  position: relative;
 }
 
 #frame > .menu-wrap > span {
