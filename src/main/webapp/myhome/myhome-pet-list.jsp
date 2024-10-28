@@ -26,14 +26,14 @@
                             <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
                         </div>
                         <div class="sector"></div>
-                        <div class="login"><a href="#">로그인</a></div>
+                        <div class="login"><a href="../member/login.member">로그인</a></div>
                     </div>
                 </div>
                 <div class="menu-container">
                     <ul class="menu-wrap h4">
                         <li class="menu"><a href="#">스토어</a></li>
                         <li class="menu"><a href="#">커뮤니티</a></li>
-                        <li class="menu"><a href="#">마이홈</a></li>
+                        <li class="menu"><a href="./list.myhome">마이홈</a></li>
                         <li class="menu"><a href="#">이벤트</a></li>
                     </ul>
                     <div id="sector"></div>
