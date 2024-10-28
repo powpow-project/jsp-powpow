@@ -104,12 +104,12 @@
                         </div>
 
                         <!-- 수량 조절 버튼 -->
-                        <div class="quantity-control">
-                            <span><button class="btn-minus">-</button></span>
-                            <input type="text" value="${cartItem.quantity}" class="quantity-input">
-                            <span><button class="btn-plus">+</button></span>
-                        </div>
-                    </div>
+							<div class="quantity-control">
+								<span><button class="btn-minus">-</button></span> <input
+									type="text" value="1" class="quantity-input"> <span><button
+										class="btn-plus">+</button></span>
+							</div>
+						</div>
                 </c:forEach>
             </section>
 
@@ -203,7 +203,7 @@
 	</footer>
 </body>
 
-<script src="../assets/js/shopping/cart-write.js"></script>
+<script src="../assets/js/product/cart-write.js"></script>
 <script>
     </script>
 
