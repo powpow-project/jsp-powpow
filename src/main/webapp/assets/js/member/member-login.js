@@ -59,17 +59,19 @@ updateButtonState(activeBtn);
            main[1].style.display = "block";
        });
 
+	   
+	   
        // 구매자 로그인 유효성 검사
-       const buyerButton = document.querySelector(".main-content.mebmer .login-button");
-       const buyerId = document.querySelector(".main-content.mebmer input[name=id]");
-       const buyerPassword = document.querySelector(".main-content.mebmer input[name=password]");
-       const buyerIdResult = document.querySelector(".main-content.mebmer #id-result");
-       const buyerPasswordResult = document.querySelector(".main-content.mebmer #password-result");
+       const buyerButton = document.querySelector(".main-content.member .login-button");
+       const buyerId = document.querySelector(".main-content.member input[name=buyerEmail]");
+       const buyerPassword = document.querySelector(".main-content.member input[name=buyerPassword]");
+       const buyerIdResult = document.querySelector(".main-content.member #id-result");
+       const buyerPasswordResult = document.querySelector(".main-content.member #password-result");
        
        // 판매자 로그인 유효성 검사
        const sellerButton = document.querySelector(".main-content.seller .login-button");
-       const sellerId = document.querySelector(".main-content.seller input[name=id]");
-       const sellerPassword = document.querySelector(".main-content.seller input[name=password]");
+       const sellerId = document.querySelector(".main-content.seller input[name=sellerEmail]");
+       const sellerPassword = document.querySelector(".main-content.seller input[name=sellerPassword]");
        const sellerIdResult = document.querySelector(".main-content.seller #id-result");
        const sellerPasswordResult = document.querySelector(".main-content.seller #password-result");
 
@@ -114,7 +116,7 @@ updateButtonState(activeBtn);
                return;
            }
            // 구매자 로그인 폼 제출
-           document.querySelector(".main-content.mebmer form").submit();
+           document.querySelector(".main-content.member form").submit();
        });
 
        sellerButton.addEventListener("click", () => {

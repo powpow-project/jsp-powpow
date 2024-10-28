@@ -21,8 +21,8 @@ public class MemberDAO {
 	}
 		
 //	구매자 로그인
-	public String select(MemberVO memberVO) {
-		return sqlSession.selectOne("member.select", memberVO);
+	public String selectBuyer(MemberVO memberVO) {
+		return sqlSession.selectOne("member.selectBuyer", memberVO);
 	}
 	
 //	구매자 계정 삭제
@@ -48,8 +48,8 @@ public class MemberDAO {
 	}
 	
 //	판매자 로그인
-	public String select(SellerVO sellerVO) {
-		return sqlSession.selectOne("member.select", sellerVO);
+	public String selectSeller(SellerVO sellerVO) {
+		return sqlSession.selectOne("member.selectSeller", sellerVO);
 	}
 
 	

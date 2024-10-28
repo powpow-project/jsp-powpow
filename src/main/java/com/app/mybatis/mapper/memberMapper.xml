@@ -61,6 +61,24 @@
 		WHERE SELLER_EMAIL = #{sellerEmail}
 	</select>
 	
+	<!--join 시키기 -->	
+	<select id="selectBusiness" resultType="SellerDTO">
+		SELECT 
+		    TBS.ID AS SELLER_ID, 
+		    TBS.SELLER_EMAIL, 
+		    TBS.SELLER_NAME, 
+		    TBS.SELLER_PHONE, 
+		    TBB.ID AS BUSINESS_ID,
+		    TBB.BUSINESS_NAME, 
+		    TBB.BUSINESS_REPRESENTAIVE_NAME, 
+		    TBB.BUSINESS_NUMBER
+		FROM TBL_SELLER TBS
+		JOIN TBL_BUSINESS TBB
+		ON TBS.BUSINESS_ID = TBB.ID
+		AND TBB.ID = #{businessId}
+		ORDER BY TBS.ID DESC
+	</select>	
+	
    <!-- 이메일로 db 아이디 찾기 -->
 	<select id="findSellerByEmail" parameterType="String" resultType="Long">
 		SELECT ID
@@ -81,11 +99,6 @@
    		WHERE ID = #{id}
    </delete>
    
-   <!-- Business 정보 -->
- 	<insert id="insertBusiness" parameterType="BusinessVO">
-		INSERT INTO TBL_BUSINESS(ID, BUSINESS_NAME, BUSINESS_REPRESENTAIVE_NAME, BUSINESS_NUMBER )
-		VALUES(SELLER_SEQ.NEXTVAL, #{businessId},  #{businessName}, #{businessRepresentaiveName}, #{businessNumber})
-	</insert>
 	
    <!-- 회원가입시 사업자 인증번호 중복 -->
 	<select id="selectSellerByNumber" parameterType="String" resultType="BusinessVO">
