@@ -34,15 +34,15 @@ public class ProductFrontController extends HttpServlet{
     	  result = new ProductSellerController().execute(req, resp);
       }else if(target.equals("search")) {
     	  result = new ProductSearchController().execute(req, resp);
-      }else if(target.equals("health")) {
+      }else if(target.equals("product-health-main")) {
     	  result = new ProductHealthController().execute(req, resp); 
       }else if(target.equals("detail")) {
     	  result = new ProductDetailController().execute(req, resp);
-      }else if(target.equals("cart-list")) {
-    	  result = new ProductCartListController().execute(req, resp);
-      }else if(target.equals("cart-write-ok")) {
+      }else if(target.equals("product-cart-write-ok")) {
     	  result = new ProductCartWriteOkController().execute(req, resp);
-      }else if(target.equals("cart-delete")) {
+      }else if(target.equals("product-cart-list")) {
+    	  result = new ProductCartListController().execute(req, resp);
+      }else if(target.equals("product-cart-delete")) {
     	  result = new ProductCartDeleteController().execute(req, resp);
       }else {
 		result = new Result();

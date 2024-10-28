@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -7,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품있는장바구니</title>
-<link rel="stylesheet" href="../assets/css/shopping/cart-write.css">
+<link rel="stylesheet" href="../assets/css/product/cart-write.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 
@@ -88,25 +89,27 @@
                 <!-- 장바구니에 담긴 상품 목록 -->
                 <c:forEach var="cartItem" items="${cartItems}">
                     <div class="cart-item">
+                        
+                        <%-- <input type="hidden" name="productId" value="${cartItem.product}"> --%>
                         <!-- 상품 선택 체크박스 -->
                         <label><input type="checkbox" class="item-checkbox" checked></label>
-
+						
                         <!-- 상품 이미지 및 정보 -->
-                        <a href="#"><img src="../assets/images/shopping/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
+                        <a href="#"><img src="../assets/images/product/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
                         <div class="product-info">
-                            <h3>${cartItem.productName}이름</h3>
+                            <h3>${cartItem.productName}</h3>
                             <div class="price">
                                 <span>가격: ${cartItem.productPrice}원</span>
                             </div>
                         </div>
 
                         <!-- 수량 조절 버튼 -->
-                        <div class="quantity-control">
-                            <span><button class="btn-minus">-</button></span>
-                            <input type="text" value="${cartItem.quantity}" class="quantity-input">
-                            <span><button class="btn-plus">+</button></span>
-                        </div>
-                    </div>
+							<div class="quantity-control">
+								<span><button class="btn-minus">-</button></span> <input
+									type="text" value="1" class="quantity-input"> <span><button
+										class="btn-plus">+</button></span>
+							</div>
+						</div>
                 </c:forEach>
             </section>
 
@@ -200,7 +203,7 @@
 	</footer>
 </body>
 
-<script src="../assets/js/shopping/cart-write.js"></script>
+<script src="../assets/js/product/cart-write.js"></script>
 <script>
     </script>
 
