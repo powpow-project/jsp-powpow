@@ -1,6 +1,6 @@
 const mark = document.querySelector(".mark");
 	mark.addEventListener("click", () => {
-		const input = document.querySelector("input[name='password']");
+		const input = document.querySelector("input[name='buyerPassword']");
 		const inputConfirm = document.querySelector("input[name='passwordConfirm']");
 		
 		if(input.type === "password"){

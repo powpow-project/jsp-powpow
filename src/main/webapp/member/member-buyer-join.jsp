@@ -26,7 +26,7 @@
 	        <p id="text" class="red">*</p>
 	    </div>
 	    <div class="input-container">
-	        <input class="inputbutton" type="email" id="email" name="email" placeholder="아이디(이메일)">
+	        <input class="inputbutton" type="email" id="email" name="buyerEmail" placeholder="아이디(이메일)">
 	        <button class="auth-button" id="email-check">확인</button>
 	        <p class="result" id="email-result"></p>
 	    </div>
@@ -38,7 +38,7 @@
 	        <p id="text" class="red">*</p>
 	    </div>
 	    <div class="input-container">
-	        <input class="inputbutton" type="password" name="password" id="password" placeholder="비밀번호">      
+	        <input class="inputbutton" type="password" name="buyerPassword" id="password" placeholder="비밀번호">      
 	        <div class="mark"></div>
 	        <p class="result" id="password-result"></p>
 	    </div>

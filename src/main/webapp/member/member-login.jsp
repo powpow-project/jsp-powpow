@@ -52,7 +52,7 @@
                 </label>
                 <p class="id-save">아이디 저장</p>
               </div>
-              <form action="join-choice.member" method="post">
+              <form action="find-choice.member" method="post">
             	 <button class="forgot" name="action" value="find">아이디 혹은 비밀번호를 잊어버리셨나요?</button>
               </form>
             </div>
@@ -94,7 +94,7 @@
                 </label>
                 <p class="id-save">아이디 저장</p>
               </div>
-              <form action="join-choice.member" method="post">
+              <form action="find-choice.member" method="post">
             	 <button class="forgot" name="action" value="find">아이디 혹은 비밀번호를 잊어버리셨나요?</button>
               </form>
             </div>
