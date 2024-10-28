@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../assets/css/admin/loginAdmin.css">
+<link rel="stylesheet" href="../assets/css/admin/admin-loginAdmin.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 <title>관리자어드민 로그인</title>
@@ -27,6 +27,6 @@
 		</p>
 	</form>
 </body>
-<script src="../assets/js/admin/loginAdmin.js">
+<script src="../assets/js/admin/admin-loginAdmin.js">
 </script>
 </html>
