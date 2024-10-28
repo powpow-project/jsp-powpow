@@ -196,7 +196,6 @@
         justify-content: center;
         margin: 0 auto;
         margin-top: 109px;
-        margin-bottom: 180px;
     }
 
     .profile-box {
@@ -388,7 +387,7 @@
     justify-content: space-between;
     width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 150px 0 0 0;
   }
 
   .footer-section {
