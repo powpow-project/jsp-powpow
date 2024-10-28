@@ -1,0 +1,621 @@
+@charset "UTF-8";
+
+/*
+*  html5resetcss
+*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+@font-face {
+  font-family: 'SpoqaHanSansNeo-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 헤더 고정 영역 스타일
+ctrl + c + k
+*/
+
+/* 전체 화면 스타일 */
+
+#community-wrap{
+  display: flex;
+  flex-direction: column;
+  width: 1920px;
+  height: 3016px;
+  align-items: center;
+  margin: 0 auto;
+  /* border: solid 4px black; */
+}
+
+/* 커뮤니티 헤더 - 전체 위치 잡음*/
+
+#community-wrap #community-header{
+  display: flex;
+  flex-wrap: wrap;
+  height: 151px;
+  width: 1440px;
+  border-bottom: solid 1px #131313;
+  /* border: solid 4px black; */
+}
+
+
+/* 메인 배너 영역 */
+
+.community-main-banner-wrapper{
+  position: relative;
+  width: 1440px;
+}
+
+
+.community-banner-content {
+  position: absolute;
+  display: inline;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1440px;
+  height: 150px;
+  bottom: 0%;
+  margin: 0 0 50px 50px;
+  /* border: solid 4px black; */
+}
+
+.community-banner-title {
+  font-weight: bold;
+  font-size: 64px;
+  display: block;
+  line-height: 54px;
+  letter-spacing: -3%;
+  /* border: solid 4px black; */
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.community-banner-small-title {
+  display: block;
+  font-family: 'SpoqaHanSansNeo-Regular';
+  font-weight: bold;
+  font-size: 24px;
+  width: 100%;
+  line-height: 36px;
+  letter-spacing: -3%;
+  color: #FFFFFF;
+  /* border: solid 4px black; */
+}
+
+
+.profile {
+  height: 40px;
+  width: 89px;
+  /* border: solid 4px black; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+}
+
+.profile p {
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 24px;
+  letter-spacing: -3%;
+}
+
+
+
+/* body {
+  font-family: 'SpoqaHanSansNeo-Regular';
+} */
+
+#main-banner-section {
+  width: 1440px;
+  height: 78px;
+  display: block;
+}
+
+/* 내 게시물 작성하기 메인 카테고리 */
+
+.community-main-post-wrapper {
+  width: 1440px;
+  height: 378px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* border: solid 4px black; */
+}
+
+.community-main-post {
+  display: block;
+  width: 1440px;
+  height: 59px;
+  justify-content: space-between;
+  /* border: 4px solid black; */
+}
+
+.community-main-post-title {
+  line-height: 36px;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: -3%;
+  color: #131313;
+}
+
+.community-main-post-small-title{
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: -3%;
+  color: #131313;
+}
+
+.community-main-post-image-wrapper {
+  width: 1440px;
+  height: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  /* border: solid 4px black; */
+}
+
+.community-post-image img{
+  width: 250px;
+  height: 250px;
+}
+
+
+.community-main-post-image {
+  width: 1440px;
+  height: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.community-main-post-image ul{
+  width: 1440px;
+  height: 280px;
+  overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border: solid 4px black; */
+}
+
+.community-main-post-image ul li{
+  margin: 0 25px 0 0;
+  
+}
+
+
+
+
+.community-main-post-new-image-wrapper{
+  width: 280px;
+  height: 280px;
+  box-sizing: border-box;
+  border: 2px #131313 inset;
+  border-style: dashed;
+  background-color: #F8F9FA;
+  border-radius: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* margin: 0 auto; */
+}
+
+.main-post-new-image-box{
+  width: 128px;
+  height: 41px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.community-main-post-new-image-wrapper a{
+  font-weight: bold;
+}
+
+.main-post-new-image img{
+  height: 20px;
+  width: 20px;
+}
+
+.community-post-images{
+  height: 300px;
+  width: 300px;
+}
+
+.community-post-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  top: 40%;
+  border: none;
+  transform: translate(10px);
+  background-color: transparent;
+}
+
+.community-main-others-post-wrapper{
+  display: block;
+  width: 1440px;
+  margin: 45px;
+}
+
+.community-others-post-title{
+  line-height: 36px;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: -3%;
+  color: #131313;
+}
+
+.community-others-post-small-title{
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: -3%;
+  color: #131313;
+}
+
+
+
+.main-others-post-new-image {
+  width: 220px;
+  height: 300px;
+  border-radius: 10%;
+  background-color: #F8F9FA;
+  box-sizing: border-box;
+  border: solid #131313 2px;
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.others-post-image-wrapper {
+  margin: 19px 0 0 0;
+  height: 320px;
+  width: 1440px;
+  display: flex;
+  align-items: center;
+}
+
+.others-post-image-wrapper ul {
+  width: 1449px;
+  height: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.new-image {
+  width: 220px;
+  height: 300px;
+  display: flex;
+  background-color: #F8F9FA;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px #131313 dashed;
+}
+
+.new-image button{
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.others-post-image-wrapper .post-image {
+  width: 220px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.title-likes {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  left: 17px;
+  bottom: 15%;
+  cursor: pointer;
+}
+
+.id {
+  width: 94px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.id .h5{
+  color: #FFFFFF;
+}
+
+.like-button {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.liked-button {
+  position: absolute;
+  top: 9px;
+  display: none;
+}
+
+.other-post-button {
+  position: absolute;
+  right: 0px;
+  top: 40%;
+  transform: translate(10px);
+}
+
+/* 이미지 영역 */
+
+.others-post-image-wrapper ul{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  width: 1440px;
+  height: 300px;
+  position: relative;
+}
+
+
+/* 포포 커뮤니티 이벤트 배너 */
+.community-event-banner-wrapper {
+  width: 1200px;
+  height: 300px;
+  display: block;
+  align-items: center;
+}
+
+.community-event-banner-section {
+  display: block;
+  width: 1440px;
+  height: 39px;
+  /* border: solid 4px black; */
+}
+
+/* 포포 커뮤니티 추천 게시물 탭*/
+
+.community-main-recommend-post-wrapper {
+  width: 1440px;
+  height: 541px;
+  display: flex;
+  flex-direction: column;
+  /* border: solid 4px black; */
+  justify-content: space-between;
+}
+
+.community-main-recommend-post {
+  display: block;
+  height: 36px;
+  /* border: solid 4px black; */
+}
+.other-post-button button{
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translate(0px);
+  background-color: transparent;
+
+}
+
+.recommend-post-title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36px;
+  letter-spacing: -3%;
+  color: #131313;
+  margin-bottom: 19px;
+}
+
+
+
+.recommend-post-image {
+  position: relative;
+  height: 486px;
+  width: 342px;
+}
+
+.recommend-post-image .profile{
+  position: absolute;
+  left: 9px;
+  bottom: 9px;
+}
+
+
+.community-main-recommend-post ul {
+  width: 1440px;
+  height: 486px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: solid 4px black; */
+
+}
+
+.community-main-recommend-post ul li {
+  width: 342px;
+  height: 486px;
+  /* border: solid 4px black; */
+}
+
+.community-last-section {
+  height: 98px;
+  display: block;
+  width: 1440px;
+
+}
+
+.powpow-info {
+  width: 1920px;
+  height: 332px;
+  display: block;
+}
+
+/* swiper-slide2 */
+
+.swiper2 {
+  width: 1195px;
+  height: 302px;
+}
+
+.swiper-slide .swiper2-img{
+  text-align: center;
+  font-size: 18px;
+  width: 220px;
+  height: 300px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+}
+
+.swiper-slide .profile-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 194px;
+  height: 40px;
+
+}
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  width: 100px;
+  height: 40px;
+
+}
+
+
+
+
+
+
+
+
+#id {
+  color: #FFFFFF;
+}
+
+.thumbnail {
+  position: relative;
+  border-radius: 20px;
+  display: block;
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+.profile-id-wrapper {
+  width: 194px;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+}
+
+.profile-id img {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+}
+
+.like-buttons {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.like-button {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.liked-button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: none;
+  cursor: pointer;
+}
+
+.profile-id {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  height: 40px;
+}
+
+
+.profile-id-wrapper p{
+  color: #FFFFFF;
+  align-items: center;
+}
+
+
+.disable {
+  display: none;
+}
+
+.enable {
+  display: flex;
+}
