@@ -68,6 +68,9 @@
             </div>
         </div>
     </div>
+    <div class="sub h1">
+    	<p>반려동물 정보</p>
+    </div>
     <a href="./pet-kind.myhome"><button id="submit-button">+추가 등록하기</button></a>
  <%--    <c:choose>
     <c:when test="${empty pet}">

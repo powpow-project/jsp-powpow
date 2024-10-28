@@ -176,6 +176,16 @@
 
     /* contents */
 
+	 .sub {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        width: 1440px;
+        height: 96px;
+        margin: 0 auto;
+        font-weight: bold;
+    }
+
     #animals {
         display: flex;
         justify-content: center;
@@ -185,7 +195,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 67px;
         width: 161px;
         height: 42px;
         background-color: #1c4da0;
