@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Action;
 import com.app.Result;
 
-public class MyhomeListController implements Action {
+public class MyhomeLikesListController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -25,7 +25,7 @@ public class MyhomeListController implements Action {
 //		MemberVO member = memberDAO.selectMemberByEmail(memberEmail);
 		
 //		req.setAttribute("member", member);
-		result.setPath("../myhome/myhome-list.jsp");
+		result.setPath("../myhome/myhome-likes.jsp");
 
 		return result;
 	}

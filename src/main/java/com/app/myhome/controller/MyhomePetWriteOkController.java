@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
 
 public class MyhomePetWriteOkController implements Action {
 
@@ -17,7 +15,13 @@ public class MyhomePetWriteOkController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 
-		return null;
+		System.out.println("실행");
+		System.out.println(req.getParameter("petKind"));
+	      
+	    result.setRedirect(true);
+	    result.setPath("../myhome/pet-list.myhome");
+	  
+		return result;
 	}
 
 }
