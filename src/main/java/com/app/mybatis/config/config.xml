@@ -8,7 +8,6 @@
    
    <typeAliases>
    	<typeAlias type="com.app.vo.ProductVO" alias="ProductVO"/>
-   	<typeAlias type="com.app.vo.ProductCategoryVO" alias="ProductCategoryVO"/>
    	<typeAlias type="com.app.vo.ProductReviewVO" alias="ProductReviewVO"/>
    	<typeAlias type="com.app.vo.TogetherVO" alias="TogetherVO"/>
    	<typeAlias type="com.app.vo.LikeVO" alias="LikeVO"/>
@@ -26,9 +25,10 @@
    	<typeAlias type="com.app.vo.MemberVO" alias="MemberVO"/>
    	<typeAlias type="com.app.vo.CartVO" alias="CartVO"/>
    	<typeAlias type="com.app.vo.PayVO" alias="PayVO"/>
-   	<typeAlias type="com.app.vo.CommunityCommentVO" alias="CommunityCommentVO"/>
-   	<typeAlias type="com.app.vo.CommunityPostVO" alias="CommunityPostVO"/>
-   	<typeAlias type="com.app.vo.HealthplusCommunityPostVO" alias="HealthplusCommunityPostVO"/>
+   	<typeAlias type="com.app.vo.CommCommentVO" alias="CommCommentVO"/>
+   	<typeAlias type="com.app.vo.CommPostVO" alias="CommPostVO"/>
+   	<typeAlias type="com.app.vo.HpCommunityPostVO" alias="HpCommunityPostVO"/>
+   	<typeAlias type="com.app.vo.CancleProductVO" alias="CancleProductVO"/>
    	
    	
    	<typeAlias type="com.app.dto.AdjustmentDTO" alias="AdjustmentDTO"/>
@@ -38,22 +38,21 @@
    	<typeAlias type="com.app.dto.AdminNoticeDTO" alias="AdminNoticeDTO"/>
    	<typeAlias type="com.app.dto.BusinessDTO" alias="BusinessDTO"/>
    	<typeAlias type="com.app.dto.CartDTO" alias="CartDTO"/>
-   	<typeAlias type="com.app.dto.CommunityCommentDTO" alias="CommunityCommentDTO"/>
-   	<typeAlias type="com.app.dto.CommunityPostDTO" alias="CommunityPostDTO"/>
+   	<typeAlias type="com.app.dto.CommCommentDTO" alias="CommCommentDTO"/>
+   	<typeAlias type="com.app.dto.CommPostDTO" alias="CommPostDTO"/>
    	<typeAlias type="com.app.dto.DeliveryDTO" alias="DeliveryDTO"/>
-   	<typeAlias type="com.app.dto.HealthplusCommunityEventDTO" alias="HealthplusCommunityEventDTO"/>
-   	<typeAlias type="com.app.dto.HealthplusCommunityPostDTO" alias="HealthplusCommunityPostDTO"/>
+   	<typeAlias type="com.app.dto.HpCommunityPostDTO" alias="HpCommunityPostDTO"/>
    	<typeAlias type="com.app.dto.LikeDTO" alias="LikeDTO"/>
    	<typeAlias type="com.app.dto.MemberDTO" alias="MemberDTO"/>
    	<typeAlias type="com.app.dto.OrderDetailDTO" alias="OrderDetailDTO"/>
    	<typeAlias type="com.app.dto.OrderDTO" alias="OrderDTO"/>
    	<typeAlias type="com.app.dto.PayDTO" alias="PayDTO"/>
    	<typeAlias type="com.app.dto.PetDTO" alias="PetDTO"/>
-   	<typeAlias type="com.app.dto.ProductCategoryDTO" alias="ProductCategoryDTO"/>
    	<typeAlias type="com.app.dto.ProductDTO" alias="ProductDTO"/>
    	<typeAlias type="com.app.dto.ProductReviewDTO" alias="ProductReviewDTO"/>
    	<typeAlias type="com.app.dto.SellerDTO" alias="SellerDTO"/>
    	<typeAlias type="com.app.dto.TogetherDTO" alias="TogetherDTO"/>
+   	<typeAlias type="com.app.dto.CancleProductDTO" alias="CancleProductDTO"/>
    	
    </typeAliases>
    
@@ -81,6 +80,7 @@
  	   <mapper resource="com/app/mybatis/mapper/myhomeMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/healthplusCommunityMapper.xml"/>
  	   <mapper resource="com/app/mybatis/mapper/communityMapper.xml"/>
+ 	   <mapper resource="com/app/mybatis/mapper/cancleProductMapper.xml"/>
  	</mappers>
  </configuration>
  

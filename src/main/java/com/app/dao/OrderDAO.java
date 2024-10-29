@@ -1,6 +1,8 @@
 package com.app.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
@@ -8,7 +10,6 @@ import org.apache.ibatis.session.SqlSession;
 import com.app.dto.OrderDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.OrderVO;
-import com.app.vo.ProductVO;
 
 public class OrderDAO {
 	public SqlSession sqlSession;
@@ -45,6 +46,14 @@ public class OrderDAO {
 //	오더 조회
 	public Optional<OrderVO> select(Long id) {
 		return Optional.ofNullable(sqlSession.selectOne("order.select", id));
+	}
+	
+//	날짜별 주문 총내역
+	public List<OrderDTO> selectByDate(String orderDate, Long sellerId){
+	    Map<String, Object> params = new HashMap<>();
+	    params.put("orderDate", orderDate);
+	    params.put("sellerId", sellerId);
+	    return sqlSession.selectList("order.selectByDate", params);
 	}
 }
 
