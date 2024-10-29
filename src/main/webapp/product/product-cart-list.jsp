@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -79,41 +80,34 @@
 			</div>
 			<main>
 				 <h2 class="h2">장바구니</h2>
-            <section class="cart-section">
-                <!-- 선택 삭제 버튼을 포함하는 form 태그 추가 -->
-                <form action="product-cart-delete.product" method="POST" id="delete-form">
-                    <div class="all">
-                        <label><input type="checkbox" id="select-all" class="item-checkbox"> 전체선택</label>
-                        <button type="button" id="delete-button" onclick="submitDeleteForm()" class="check-delete">선택삭제</button>
-                    </div>
-                    
-                    <!-- 장바구니에 담긴 상품 목록 -->
-                    <c:forEach var="cartItem" items="${cartItems}">
-                        <div class="cart-item">
-                            <!-- 상품 선택 체크박스 -->
-                            <label> 
-                                <input type="checkbox" name="selectedIds" value="${cartItem.productId}" class="item-checkbox">
-                            </label>
-
-                            <!-- 상품 이미지 및 정보 -->
-                            <a href="#"><img src="../assets/images/product/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
-                            <div class="product-info">
-                                <h3>${cartItem.productName}</h3>
-                                <div class="price">
-                                    <span>가격: ${cartItem.productPrice}원</span>
-                                </div>
-                            </div>
-
-                            <!-- 수량 조절 버튼 -->
-                            <div class="quantity-control">
-                                <span><button type="button" class="btn-minus">-</button></span>
-                                <input type="text" value="1" class="quantity-input">
-                                <span><button type="button" class="btn-plus">+</button></span>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </form>
-            </section>
+			<section class="cart-section">
+				<form action="product-cart-delete.product" method="POST" id="delete-form">
+					<div class="all">
+						<label><input type="checkbox" id="select-all" class="item-checkbox"> 전체선택</label>
+						<button type="button" id="delete-button" onclick="submitDeleteForm()" class="check-delete">선택삭제</button>
+					</div>
+					
+					<c:forEach var="cartItem" items="${cartItems}">
+						<div class="cart-item">
+							<label>
+								<input type="checkbox" id="cartItem_${cartItem.productId}" name="selectedIds" value="${cartItem.productId}" class="item-checkbox">
+							</label>
+							<a href="#"><img src="../assets/images/product/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
+							<div class="product-info">
+								<h3>${cartItem.productName}</h3>
+								<div class="price">
+									<span>가격: ${cartItem.productPrice}원</span>
+								</div>
+							</div>
+							<div class="quantity-control">
+								<button type="button" class="btn-minus">-</button>
+								<input type="text" value="1" class="quantity-input">
+								<button type="button" class="btn-plus">+</button>
+							</div>
+						</div>
+					</c:forEach>
+				</form>
+			</section>
 				<!-- 결제 정보 -->
             <section class="payment-info">
                 <h2 class="h2">결제 정보</h2>
@@ -207,10 +201,11 @@
 <script src="../assets/js/product/cart-write.js"></script>
 <script>
 // 선택 삭제 폼 제출 함수
-	function submitDeleteForm() {
-		document.getElementById("delete-form").submit();
-	}
-	
+
+function submitDeleteForm() {
+    document.getElementById("delete-form").submit();
+    
+}
 </script>
 
 </html>
