@@ -33,6 +33,7 @@ public class AdminCouponWriteOkController implements Action {
 		Integer couponQuantity = Integer.parseInt(req.getParameter("adminCouponQuantity"));
 		Double couponDiscountRate = Double.parseDouble(req.getParameter("adminCouponDiscountRate"));
 
+		
 		if (couponTitle == null || couponTitle.trim().isEmpty()) {
 			resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "쿠폰 제목을 입력해 주세요.");
 			return null;

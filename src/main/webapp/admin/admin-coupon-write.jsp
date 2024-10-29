@@ -63,15 +63,15 @@
 			<form id="coupon-form">
 				<div class="box1">
 					<label class="label" for="event-title">쿠폰 이름</label> <input
-						type="text" id="event-title" placeholder="예) 쿠폰이벤트 기획전 -1"
+						type="text" id="event-title" placeholder="ex) 쿠폰이벤트 기획전 -1"
 						required />
 				</div>
 
 				<div class="box1">
 					<label class="label" for="coupon-code">쿠폰 코드</label> <input
 						type="text" id="coupon-code"
-						placeholder="쿠폰 번호 16자리를 입력해 주세요. ex.1111-1111-1111-1111"
-						maxlength="16" required />
+						placeholder="쿠폰 번호 16자리를 입력해 주세요. ex) 1111-1111-1111-1111"
+						maxlength="20" required />
 				</div>
 
 				<div class="box1">
@@ -100,7 +100,7 @@
 
 				<div class="box1">
 					<label class="label" for="coupon-quantity">쿠폰 수량제한</label> <input
-						type="text" id="coupon-quantity" placeholder="예) 1000"
+						type="text" id="coupon-quantity" placeholder="ex) 1000"
 						maxlength="1000" required />
 				</div>
 
@@ -114,13 +114,13 @@
 								<label> <input type="radio" name="discount" value="custom" />직접입력
 							</label>
 						</div>
-						<input type="text" class="custom-discount" placeholder="예) 7%" />
+						<input type="text" class="custom-discount" placeholder="ex) 7%" />
 					</div>
 				</div>
 
 				<div class="button-group">
-					<button type="button" class="button-submit" id="submit-button">완료</button>
-					<button type="button" class="button-edit">취소</button>
+				    <button class="button-submit">등록</button>
+				    <button class="button-edit">취소</button>
 				</div>
 			</form>
 		</div>

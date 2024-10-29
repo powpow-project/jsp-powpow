@@ -63,9 +63,9 @@
 				<input type="text" class="search" placeholder="쿠폰명/쿠폰번호를 입력하세요" />
 			</div>
 			<div class="buttons">
-				<button class="search-btn">검색</button>
-				<button class="reset-btn">초기화</button>
-				<button class="new-add-btn">신규 추가</button>
+				<button type="button" class="search-btn">검색</button>
+				<button type="button" class="reset-btn">초기화</button>
+				<button type="button" class="new-add-btn">신규 추가</button>
 			</div>
 		</section>
 
