@@ -139,7 +139,7 @@
                 <img src="assets/images/main/pubby.jpg" alt="Cat Post" />
               </div>
               <div class="post-card">
-                <img src="assets/images/main/pubby.jpg" alt="Another Cat Post" />
+                <img src="assets/images/main/6.jpg" alt="Another Cat Post" />
               </div>
               <div class="post-card">
                 <img src="assets/images/main/4.jpg" alt="Bird Post" />
@@ -148,7 +148,7 @@
                 <img src="assets/images/main/5.jpg" alt="Bird Post" />
               </div>
               <div class="post-card">
-                <img src="assets/images/main/1.jpg" alt="Bird Post" />
+                <img src="assets/images/main/pubby2.jpg" alt="Another Dog Post" />
               </div>
             </div>
           </section>

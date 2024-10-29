@@ -45,8 +45,7 @@
 	</select>
 
 	<!-- 공지사항 조회(view notice) -->
-	<select id="selectAdminNotice" parameterType="Long"
-		resultType="AdminNoticeDTO">
+	<select id="selectAdminNotice" parameterType="Long" resultType="AdminNoticeDTO">
 		SELECT ID, ADMIN_ID, ADMIN_NOTICE_TITLE,
 		ADMIN_NOTICE_NUMBER,
 		ADMIN_NOTICE_CONTENT, ADMIN_NOTICE_DATE
@@ -72,8 +71,7 @@
 	</delete>
 
 	<!-- 배너 리스트 조회 -->
-	<select id="selectAllAdminBanners"
-		resultType="com.app.dto.AdminBannerDTO">
+	<select id="selectAllAdminBanners" resultType="com.app.dto.AdminBannerDTO">
 		SELECT ID, ADMIN_ID, ADMIN_BANNER_ID, ADMIN_BANNER_START,
 		ADMIN_BANNER_END,
 		ADMIN_BANNER_TITLE, ADMIN_BANNER_TYPE,
@@ -82,8 +80,7 @@
 	</select>
 
 	<!-- 배너 추가 -->
-	<insert id="insertAdminBanner"
-		parameterType="com.app.dto.AdminBannerDTO">
+	<insert id="insertAdminBanner" parameterType="com.app.dto.AdminBannerDTO">
 		INSERT INTO TBL_ADMIN_BANNER (
 		ID,
 		ADMIN_ID,
@@ -104,8 +101,7 @@
 	</insert>
 
 	<!-- 배너 조회(수정) -->
-	<select id="selectAdminBanner"
-		resultType="com.app.dto.AdminBannerDTO">
+	<select id="selectAdminBanner" resultType="com.app.dto.AdminBannerDTO">
 		SELECT ID, ADMIN_ID, ADMIN_BANNER_ID, ADMIN_BANNER_TITLE,
 		ADMIN_BANNER_TYPE,
 		ADMIN_BANNER_IMAGE,
@@ -128,8 +124,7 @@
 		ADMIN_BANNER_START =
 		#{adminBannerStart, jdbcType=DATE},
 		ADMIN_BANNER_END =
-		#{adminBannerEnd,
-		jdbcType=DATE}
+		#{adminBannerEnd, jdbcType=DATE}
 		WHERE
 		ID = #{id, jdbcType=INTEGER}
 	</update>
@@ -137,7 +132,68 @@
 	<!-- 배너 삭제 -->
 	<delete id="deleteAdminBanner">
 		DELETE FROM TBL_ADMIN_BANNER
-		WHERE ID = #{id, jdbcType=INTEGER}
+		WHERE ID = #{id,
+		jdbcType=INTEGER}
+	</delete>
+
+
+
+	<!-- 쿠폰 조회 -->
+	<select id="selectAllAdminCoupons" resultType="AdminCouponDTO">
+		SELECT *
+		FROM TBL_ADMIN_COUPON
+	</select>
+
+	<!-- 특정 쿠폰 조회 -->
+	<select id="selectCouponById" parameterType="String" resultType="AdminCouponDTO">
+		SELECT *
+		FROM TBL_ADMIN_COUPON
+		WHERE ID = #{id}
+	</select>
+
+	<!-- 관리자 ID로 쿠폰 조회 -->
+	<select id="selectCouponsByAdminId" parameterType="AdminVO"
+		resultType="AdminCouponDTO">
+		SELECT *
+		FROM TBL_ADMIN_COUPON
+		WHERE ADMIN_ID = #{adminId}
+	</select>
+
+	<!-- 쿠폰 신규등록 -->
+	<insert id="insertCoupon" parameterType="AdminCouponDTO">
+		INSERT INTO TBL_ADMIN_COUPON (
+		ID, ADMIN_ID, ADMIN_COUPON_TITLE, ADMIN_COUPON_TYPE, ADMIN_COUPON_CODE,
+		ADMIN_COUPON_START, ADMIN_COUPON_END, ADMIN_COUPON_CONTENT,
+		ADMIN_COUPON_QUANTITY, ADMIN_COUPON_DISCOUNT_RATE, CREATED_AT
+		) VALUES (
+		ADMIN_COUPON_SEQ.NEXTVAL, #{adminId}, #{adminCouponTitle}, #{adminCouponType},
+		#{adminCouponCode},
+		#{adminCouponStart, jdbcType=DATE},
+		#{adminCouponEnd, jdbcType=DATE},
+		#{adminCouponContent},
+		#{adminCouponQuantity}, #{adminCouponDiscountRate}, CURRENT_TIMESTAMP)
+	</insert>
+
+	<!-- 쿠폰 수정 -->
+	<update id="updateCouponById" parameterType="AdminCouponDTO">
+		UPDATE TBL_ADMIN_COUPON
+		SET
+		ADMIN_ID = #{adminId},
+		ADMIN_COUPON_TITLE = #{adminCouponTitle},
+		ADMIN_COUPON_TYPE = #{adminCouponType},
+		ADMIN_COUPON_CODE = #{adminCouponCode},
+		ADMIN_COUPON_START = #{adminCouponStart, jdbcType=DATE},
+		ADMIN_COUPON_END = #{adminCouponEnd, jdbcType=DATE},
+		ADMIN_COUPON_CONTENT = #{adminCouponContent},
+		ADMIN_COUPON_QUANTITY = #{adminCouponQuantity},
+		ADMIN_COUPON_DISCOUNT_RATE = #{adminCouponDiscountRate}
+		WHERE ID = #{id}
+	</update>
+
+	<!-- 쿠폰 삭제 -->
+	<delete id="deleteCouponById">
+		DELETE FROM TBL_ADMIN_COUPON
+		WHERE ID = #{id}
 	</delete>
 
 </mapper>

@@ -77,6 +77,6 @@
             </div>
         </div>
     </form>
-    <script src="../assets/js/admin/admin-update.js"></script>
 </body>
+    <script src="../assets/js/admin/admin-update.js"></script>
 </html>

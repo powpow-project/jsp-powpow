@@ -136,6 +136,6 @@
         </div>
     </form>
 
-    <script src="../assets/js/admin/admin-banner-write.js"></script>
 </body>
+    <script src="../assets/js/admin/admin-banner-write.js"></script>
 </html>

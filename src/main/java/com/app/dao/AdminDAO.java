@@ -3,6 +3,7 @@ package com.app.dao;
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.dto.AdminBannerDTO;
+import com.app.dto.AdminCouponDTO;
 import com.app.dto.AdminNoticeDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.AdminBannerVO;
@@ -76,5 +77,10 @@ public class AdminDAO {
     // 배너 삭제
     public void deleteAdminBanner(Long id) {
         sqlSession.delete("admin.deleteAdminBanner", id);
+    }
+    
+    // 전체 쿠폰 조회
+    public List<AdminCouponDTO> selectAllCoupons() {
+        return sqlSession.selectList("admin.selectAllAdminCoupons");
     }
 }

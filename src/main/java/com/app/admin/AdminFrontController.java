@@ -13,6 +13,7 @@ import com.app.admin.controller.AdminBannerListController;
 import com.app.admin.controller.AdminBannerUpdateController;
 import com.app.admin.controller.AdminBannerUpdateOkController;
 import com.app.admin.controller.AdminBannerWriteOkController;
+import com.app.admin.controller.AdminCouponListController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
 import com.app.admin.controller.AdminLoginOkController;
@@ -86,11 +87,11 @@ public class AdminFrontController extends HttpServlet{
 	    // 쿠폰관리 목록
 	        
 	    } else if (target.equals("admin-coupon-list")) { // 쿠폰 목록
-//	        result = new AdminCouponListController().execute(req, resp);
+	        result = new AdminCouponListController().execute(req, resp);
 	    	
 	    } else if (target.equals("admin-coupon-write")) { // 쿠폰 신규등록 페이지
-	        result = new Result();
-	        result.setPath("../admin/admin-coupon-write.jsp");
+//	        result = new Result();
+//	        result.setPath("../admin/admin-coupon-write.jsp");
 	        
 	    } else if (target.equals("admin-coupon-write-ok")) { // 쿠폰 등록 페이지 완료
 //	    	result = new AdminCouponWriteOkController().execute(req, resp);

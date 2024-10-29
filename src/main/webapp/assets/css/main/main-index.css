@@ -488,6 +488,7 @@ footer {
     padding: 20px; /* 패딩 추가 */
     background-color: #f9f9f9; /* 배경색 */
     font-family: Arial, sans-serif; /* 폰트 스타일 */
+    
   }
   .footer-black{
     color: #000;
@@ -618,8 +619,6 @@ footer {
  }
 
  .banner img {
-  width: 1074px;
-  height: 540px;
   border-radius: 20px;
   border: solid 0.1px #EBEBEB;
  }
@@ -703,7 +702,7 @@ footer {
 
 .post-cards {
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
    margin-top: 33px;
 }
 
@@ -732,7 +731,7 @@ footer {
  /*****************제품 섹션*******************/
 
  .products {
-  margin-top: 40px;
+  margin-top: 150px;
 }
 
 .header {
@@ -747,9 +746,6 @@ footer {
   height: auto;
 }
 
-.more-button {
-  margin-left: auto;
-}
 
 .products h2 {
   font-size: 28px;
@@ -758,22 +754,22 @@ footer {
 }
 
 .more-button {
-  color: black;
-  position: relative;
-  border: none;
-  left: 93%;
-  bottom: 32px;
-  padding: 10px 15px;
-  cursor: pointer;
+    color: black;
+    border: none;
+    left: 93%;
+    bottom: 32px;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
 .product-cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .product-card {
-  width: 180px;
+  width: 220px;
+  height: 220px;
   text-align: center;
 }
 

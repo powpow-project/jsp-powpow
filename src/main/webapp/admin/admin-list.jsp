@@ -101,6 +101,6 @@
         </section>
     </form>
 
-    <script src="../assets/js/admin/admin-list.js"></script>
 </body>
+    <script src="../assets/js/admin/admin-list.js"></script>
 </html>
