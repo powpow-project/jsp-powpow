@@ -2,20 +2,11 @@ package com.app.dto;
 
 import java.util.Objects;
 
-public class OrderDTO {
+public class CancleProductDTO {
 	private Long id;
-	private Long sellerId;
-	private Long memberId;
 	private Long productId;
-	private String orderNumber;
-	private String orderDate;
-	private int productCount;
-	private String sellerEmail;
-	private String sellerPassword;
-	private String sellerName;
-	private String sellerPhone;
-	private char sellerSms;
-	private char sellerEmailcheck;
+	private Long memberId;
+	private Long sellerId;
 	private String memberImage;
 	private String memberNickname;
 	private String memberEmail;
@@ -36,8 +27,14 @@ public class OrderDTO {
 	private int totalPrice;
 	private int oneDayTotalCount;
 	private int oneDayTotalPrice;
+	private String sellerEmail;
+	private String sellerPassword;
+	private String sellerName;
+	private String sellerPhone;
+	private char sellerSms;
+	private char sellerEmailcheck;
 	
-	public OrderDTO() {;}
+	public CancleProductDTO() {;}
 
 	public Long getId() {
 		return id;
@@ -45,22 +42,6 @@ public class OrderDTO {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Long getSellerId() {
-		return sellerId;
-	}
-
-	public void setSellerId(Long sellerId) {
-		this.sellerId = sellerId;
-	}
-
-	public Long getMemberId() {
-		return memberId;
-	}
-
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
 	}
 
 	public Long getProductId() {
@@ -71,76 +52,20 @@ public class OrderDTO {
 		this.productId = productId;
 	}
 
-	public String getOrderNumber() {
-		return orderNumber;
+	public Long getMemberId() {
+		return memberId;
 	}
 
-	public void setOrderNumber(String orderNumber) {
-		this.orderNumber = orderNumber;
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
 	}
 
-	public String getOrderDate() {
-		return orderDate;
+	public Long getSellerId() {
+		return sellerId;
 	}
 
-	public void setOrderDate(String orderDate) {
-		this.orderDate = orderDate;
-	}
-
-	public int getProductCount() {
-		return productCount;
-	}
-
-	public void setProductCount(int productCount) {
-		this.productCount = productCount;
-	}
-
-	public String getSellerEmail() {
-		return sellerEmail;
-	}
-
-	public void setSellerEmail(String sellerEmail) {
-		this.sellerEmail = sellerEmail;
-	}
-
-	public String getSellerPassword() {
-		return sellerPassword;
-	}
-
-	public void setSellerPassword(String sellerPassword) {
-		this.sellerPassword = sellerPassword;
-	}
-
-	public String getSellerName() {
-		return sellerName;
-	}
-
-	public void setSellerName(String sellerName) {
-		this.sellerName = sellerName;
-	}
-
-	public String getSellerPhone() {
-		return sellerPhone;
-	}
-
-	public void setSellerPhone(String sellerPhone) {
-		this.sellerPhone = sellerPhone;
-	}
-
-	public char getSellerSms() {
-		return sellerSms;
-	}
-
-	public void setSellerSms(char sellerSms) {
-		this.sellerSms = sellerSms;
-	}
-
-	public char getSellerEmailcheck() {
-		return sellerEmailcheck;
-	}
-
-	public void setSellerEmailcheck(char sellerEmailcheck) {
-		this.sellerEmailcheck = sellerEmailcheck;
+	public void setSellerId(Long sellerId) {
+		this.sellerId = sellerId;
 	}
 
 	public String getMemberImage() {
@@ -303,20 +228,67 @@ public class OrderDTO {
 		this.oneDayTotalPrice = oneDayTotalPrice;
 	}
 
+	public String getSellerEmail() {
+		return sellerEmail;
+	}
+
+	public void setSellerEmail(String sellerEmail) {
+		this.sellerEmail = sellerEmail;
+	}
+
+	public String getSellerPassword() {
+		return sellerPassword;
+	}
+
+	public void setSellerPassword(String sellerPassword) {
+		this.sellerPassword = sellerPassword;
+	}
+
+	public String getSellerName() {
+		return sellerName;
+	}
+
+	public void setSellerName(String sellerName) {
+		this.sellerName = sellerName;
+	}
+
+	public String getSellerPhone() {
+		return sellerPhone;
+	}
+
+	public void setSellerPhone(String sellerPhone) {
+		this.sellerPhone = sellerPhone;
+	}
+
+	public char getSellerSms() {
+		return sellerSms;
+	}
+
+	public void setSellerSms(char sellerSms) {
+		this.sellerSms = sellerSms;
+	}
+
+	public char getSellerEmailcheck() {
+		return sellerEmailcheck;
+	}
+
+	public void setSellerEmailcheck(char sellerEmailcheck) {
+		this.sellerEmailcheck = sellerEmailcheck;
+	}
+
 	@Override
 	public String toString() {
-		return "OrderDTO [id=" + id + ", sellerId=" + sellerId + ", memberId=" + memberId + ", productId=" + productId
-				+ ", orderNumber=" + orderNumber + ", orderDate=" + orderDate + ", productCount=" + productCount
-				+ ", sellerEmail=" + sellerEmail + ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName
-				+ ", sellerPhone=" + sellerPhone + ", sellerSms=" + sellerSms + ", sellerEmailcheck=" + sellerEmailcheck
-				+ ", memberImage=" + memberImage + ", memberNickname=" + memberNickname + ", memberEmail=" + memberEmail
-				+ ", memberPhone=" + memberPhone + ", memberAddress=" + memberAddress + ", memberSms=" + memberSms
-				+ ", memberEmailcheck=" + memberEmailcheck + ", productName=" + productName + ", productPrice="
-				+ productPrice + ", productImage=" + productImage + ", productCode=" + productCode + ", productType="
-				+ productType + ", productCategoryName=" + productCategoryName + ", productDetail=" + productDetail
-				+ ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
+		return "CancleProductDTO [id=" + id + ", productId=" + productId + ", memberId=" + memberId + ", sellerId="
+				+ sellerId + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname + ", memberEmail="
+				+ memberEmail + ", memberPhone=" + memberPhone + ", memberAddress=" + memberAddress + ", memberSms="
+				+ memberSms + ", memberEmailcheck=" + memberEmailcheck + ", productName=" + productName
+				+ ", productPrice=" + productPrice + ", productImage=" + productImage + ", productCode=" + productCode
+				+ ", productType=" + productType + ", productCategoryName=" + productCategoryName + ", productDetail="
+				+ productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
 				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", oneDayTotalCount="
-				+ oneDayTotalCount + ", oneDayTotalPrice=" + oneDayTotalPrice + "]";
+				+ oneDayTotalCount + ", oneDayTotalPrice=" + oneDayTotalPrice + ", sellerEmail=" + sellerEmail
+				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
+				+ ", sellerSms=" + sellerSms + ", sellerEmailcheck=" + sellerEmailcheck + "]";
 	}
 
 	@Override
@@ -332,9 +304,11 @@ public class OrderDTO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		OrderDTO other = (OrderDTO) obj;
+		CancleProductDTO other = (CancleProductDTO) obj;
 		return Objects.equals(id, other.id);
 	}
+	
+	
 	
 	
 	

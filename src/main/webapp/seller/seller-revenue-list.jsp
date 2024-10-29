@@ -98,13 +98,15 @@
             <td></td>
             <td></td>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+	          <c:forEach var="revenueList" items="${revenueListForSeller}" varStatus="status">
+		          <tr>
+		            <td><c:out value="${revenueList.orderDate}" /></td>
+		            <td><c:out value="${revenueList.oneDayTotalCount}" /></td>
+		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
+		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
+		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
+		          </tr>
+	          </c:forEach>
           </tbody>
         </table>
       </section>
