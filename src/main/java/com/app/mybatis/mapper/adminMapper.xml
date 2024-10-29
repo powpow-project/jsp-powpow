@@ -136,8 +136,6 @@
 		jdbcType=INTEGER}
 	</delete>
 
-
-
 	<!-- 쿠폰 조회 -->
 	<select id="selectAllAdminCoupons" resultType="AdminCouponDTO">
 		SELECT *
@@ -160,19 +158,23 @@
 	</select>
 
 	<!-- 쿠폰 신규등록 -->
-	<insert id="insertCoupon" parameterType="AdminCouponDTO">
-		INSERT INTO TBL_ADMIN_COUPON (
-		ID, ADMIN_ID, ADMIN_COUPON_TITLE, ADMIN_COUPON_TYPE, ADMIN_COUPON_CODE,
-		ADMIN_COUPON_START, ADMIN_COUPON_END, ADMIN_COUPON_CONTENT,
-		ADMIN_COUPON_QUANTITY, ADMIN_COUPON_DISCOUNT_RATE, CREATED_AT
-		) VALUES (
-		ADMIN_COUPON_SEQ.NEXTVAL, #{adminId}, #{adminCouponTitle}, #{adminCouponType},
-		#{adminCouponCode},
-		#{adminCouponStart, jdbcType=DATE},
-		#{adminCouponEnd, jdbcType=DATE},
-		#{adminCouponContent},
-		#{adminCouponQuantity}, #{adminCouponDiscountRate}, CURRENT_TIMESTAMP)
+	<insert id="insertAdminCoupon" parameterType="AdminCouponDTO">
+	    INSERT INTO TBL_ADMIN_COUPON (
+	        ID, ADMIN_ID, ADMIN_COUPON_TITLE, ADMIN_COUPON_TYPE, ADMIN_COUPON_CODE,
+	        ADMIN_COUPON_START, ADMIN_COUPON_END, ADMIN_COUPON_CONTENT,
+	        ADMIN_COUPON_QUANTITY, ADMIN_COUPON_DISCOUNT_RATE, CREATED_AT
+	    ) VALUES (
+	        ADMIN_COUPON_SEQ.NEXTVAL, #{adminId}, #{adminCouponTitle}, #{adminCouponType},
+	        #{adminCouponCode},
+	        #{adminCouponStart, jdbcType=DATE},
+	        #{adminCouponEnd, jdbcType=DATE},
+	        #{adminCouponContent},
+	        #{adminCouponQuantity}, 
+	        #{adminCouponDiscountRate, jdbcType=DOUBLE},
+	        CURRENT_TIMESTAMP
+	    )
 	</insert>
+	
 
 	<!-- 쿠폰 수정 -->
 	<update id="updateCouponById" parameterType="AdminCouponDTO">

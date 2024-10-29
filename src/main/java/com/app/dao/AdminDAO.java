@@ -95,12 +95,12 @@ public class AdminDAO {
     }
 
     // 쿠폰 수정
-    public void updateCoupon(AdminCouponDTO adminCouponDTO) {
+    public void updateAdminCoupon(AdminCouponDTO adminCouponDTO) {
         sqlSession.update("admin.updateAdminCoupon", adminCouponDTO);
     }
 
     // 쿠폰 삭제
-    public void deleteCoupon(Long id) {
+    public void deleteAdminCoupon(Long id) {
         sqlSession.delete("admin.deleteAdminCoupon", id);
     }
 }

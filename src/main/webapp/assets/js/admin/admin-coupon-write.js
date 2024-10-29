@@ -1,81 +1,77 @@
-const menuIcon = document.querySelector(".menu-wrap img");
-const menuFrame = document.querySelector("#menu-frame");
-const listItems = document.querySelectorAll("li");
-const subMenus = document.querySelectorAll("ul > li > div");
-const cancelButton = document.querySelector(".button-edit");
-const couponForm = document.querySelector("#couponForm");
-const submitButton = document.querySelector("#submitButton");
-const couponNameInput = document.querySelector("#couponNameInput");
-const unlimitedCheckbox = document.querySelector("#unlimitedCheckbox"); // 무제한 체크박스 선택
-const startDateInput = document.querySelector("#startDateInput"); // 시작 날짜 입력란 선택
-const endDateInput = document.querySelector("#endDateInput"); // 종료 날짜 입력란 선택
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('form'); 
+    const customDiscountInput = document.querySelector('.custom-discount');
+    const customDiscountRadio = document.querySelector('input[value="custom"]');
+    const startDateInput = document.getElementById('start-date');
+    const endDateInput = document.getElementById('end-date');
+    const couponCodeInput = document.getElementById('coupon-code');
 
+    // 커스텀 할인 입력란 표시/숨기기
+    customDiscountRadio.addEventListener('change', function () {
+        customDiscountInput.style.display = customDiscountRadio.checked ? 'inline' : 'none';
+    });
 
-document.addEventListener("DOMContentLoaded", () => {
+    // 쿠폰 코드 길이 제한
+    couponCodeInput.addEventListener('input', function () {
+        const value = couponCodeInput.value;
+        if (value.length > 16) {
+            alert('쿠폰 코드는 최대 16자리까지 입력 가능합니다.');
+            couponCodeInput.value = value.substring(0, 16);
+        }
+    });
 
-	listItems.forEach((li, i) => {
-		if (subMenus[i]) {
-			li.addEventListener("mouseover", () => {
-				subMenus[i].style.height = `${subMenus[i].children.length * 40}px`;
-			});
-			li.addEventListener("mouseleave", () => {
-				subMenus[i].style.height = 0;
-			});
-		}
-	});
+    // 날짜 유효성 검사
+    function validateDates() {
+        const startDate = new Date(startDateInput.value);
+        const endDate = new Date(endDateInput.value);
+        if (startDate && endDate && startDate > endDate) {
+            alert('종료일은 시작일 이후여야 합니다.');
+            endDateInput.value = ''; 
+        }
+    }
 
-	// 메뉴 토글 기능
-	menuIcon.addEventListener("click", toggleMenu);
+    startDateInput.addEventListener('change', validateDates);
+    endDateInput.addEventListener('change', validateDates);
 
-	function toggleMenu() {
-		const isActive = menuFrame.style.display === "block";
-		menuFrame.style.display = isActive ? "none" : "block";
+    // 폼 제출 시 유효성 검사
+    form.addEventListener('submit', function (event) {
+        if (form.checkValidity()) {
+            alert('쿠폰이 성공적으로 등록되었습니다.');
+            form.submit(); // 폼을 수동으로 제출
+        } else {
+            alert('모든 필드를 올바르게 입력해주세요.');
+            event.preventDefault(); 
+        }
+    });
 
+    // 메뉴 관련 기능
+    const menuIcon = document.querySelector(".menu-wrap img");
+    const menuFrame = document.querySelector("#menu-frame");
+    const listItems = document.querySelectorAll("li");
+    const subMenus = document.querySelectorAll("ul > li > div");
 
-		if (!isActive) {
-			menuFrame.addEventListener("mouseleave", hideMenu);
-		}
-	}
+    listItems.forEach((li, i) => {
+        li.addEventListener("mouseover", () => {
+            subMenus[i].style.height = `${subMenus[i].children.length * 40}px`; 
+        });
+        li.addEventListener("mouseleave", () => {
+            subMenus[i].style.height = 0;
+        });
+    });
 
-	function hideMenu() {
-		menuFrame.style.display = "none";
-		menuFrame.removeEventListener("mouseleave", hideMenu);
-	}
+    menuIcon.addEventListener("click", toggleMenu);
 
-	// 취소 버튼 클릭 시 폼 초기화
-	cancelButton.addEventListener("click", (event) => {
-		event.preventDefault();
-		couponForm.reset();
-		alert("쿠폰 등록이 취소되었습니다.");
-	});
+    function toggleMenu() {
+        const isActive = menuFrame.style.display === "block";
+        menuFrame.style.display = isActive ? "none" : "block";
 
-	// 등록 버튼 클릭
-	submitButton.addEventListener("click", (event) => {
-		event.preventDefault();
+        if (!isActive) {
+            menuFrame.addEventListener("mouseleave", hideMenu);
+        }
+    }
 
-		const couponName = couponNameInput.value.trim();
-		if (!couponName) {
-			alert("쿠폰명을 입력해 주세요.");
-			return;
-		}
-
-		if (!unlimitedCheckbox.checked) {
-			const startDate = startDateInput.value;
-			const endDate = endDateInput.value;
-
-			if (!startDate || !endDate) {
-				alert("기간을 설정해 주세요.");
-				return;
-			}
-
-			const startDateObj = new Date(startDate);
-			const endDateObj = new Date(endDate);
-
-			if (startDateObj > endDateObj) {
-				alert("종료 날짜는 시작 날짜보다 빠를 수 없습니다.");
-				return;
-			}
-		}
-		couponForm.submit();
-	});
+    function hideMenu() {
+        menuFrame.style.display = "none";
+        menuFrame.removeEventListener("mouseleave", hideMenu);
+    }
 });

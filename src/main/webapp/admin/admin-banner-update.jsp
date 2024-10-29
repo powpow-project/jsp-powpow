@@ -12,7 +12,7 @@
 <title>배너 수정</title>
 </head>
 <body>
-	<form action="admin-banner-update-ok.admin" method="post" id="frame">
+	<form action="admin-banner-update-ok.admin" method="POST" id="frame">
 
 		<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
