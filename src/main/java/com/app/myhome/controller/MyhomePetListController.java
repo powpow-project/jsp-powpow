@@ -8,13 +8,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
+import com.app.dao.PetDAO;
 
 public class MyhomePetListController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-//		List<PetDAO> pets = new PetDAO().selectAll();
+		PetDAO petDAO = new PetDAO();
+		
+		
 		
 		if(/*펫이 null이면*/ true){
 			result.setPath("../myhome/myhome-pet-list.jsp");

@@ -8,7 +8,7 @@ public class PetVO {
 	private String petKind;
 	private String petImage;
 	private String petName;
-	private String petGender;
+	private boolean petGender;
 	private String petBreed;
 	private String petBirth;
 	private String petVet;
@@ -47,10 +47,10 @@ public class PetVO {
 	public void setPetName(String petName) {
 		this.petName = petName;
 	}
-	public String getPetGender() {
+	public boolean getPetGender() {
 		return petGender;
 	}
-	public void setPetGender(String petGender) {
+	public void setPetGender(boolean petGender) {
 		this.petGender = petGender;
 	}
 	public String getPetBreed() {

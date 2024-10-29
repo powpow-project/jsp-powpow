@@ -44,6 +44,7 @@ const mainMenus = document.querySelectorAll(".menu-wrap .menu");
            }, 100); // 100ms 지연 후 서브메뉴를 닫음
        });
    });
+   
    // When the user selects a file, this function will update the profile picture
    document.getElementById('imageUpload').addEventListener('change', function (event) {
        const file = event.target.files[0];
