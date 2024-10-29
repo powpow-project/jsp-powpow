@@ -123,6 +123,7 @@ const mark = document.querySelector(".mark");
 		       }
 			   
 			   const nameButton = document.querySelector("#name-check");
+			   
 			   		   
 			   		   nameButton.addEventListener("click", (event) => {
 			   		   	           event.preventDefault(); // 기본 폼 제출 방지
@@ -140,25 +141,23 @@ const mark = document.querySelector(".mark");
 								   nameResult.style.color = "green";
 								   return true;
 			   					   });		
-								   
-								   	   
+
 
 		       // 비밀번호 검증
 		       function validatePassword() {
 		           const password = passwordInput.value;
 		           const passwordConfirm = passwordConfirmInput.value;
+				   const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#])[A-Za-z\d!@#]{8,}$/;
 
 		           if (!password) {
 		               passwordResult.textContent = "비밀번호를 입력하세요.";
 		               passwordResult.style.color = "red";
 		               return false;
-		           } else if (password.length < 8) {
-		               passwordResult.textContent = "비밀번호는 8자 이상이어야 합니다.";
+		           } else if (!passwordPattern.test(password)) {
+		               passwordResult.textContent = "비밀번호는 영문,숫자,특수문자를 포함한 8자 이상으로 만들어주세요.";
 		               passwordResult.style.color = "red";
 		               return false;
-		           }
-
-		           if (!passwordConfirm) {
+		          } if (!passwordConfirm) {
 		               passwordConfirmResult.textContent = "비밀번호 확인을 입력하세요.";
 		               passwordConfirmResult.style.color = "red";
 		               return false;

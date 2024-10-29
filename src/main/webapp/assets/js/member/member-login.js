@@ -5,20 +5,20 @@ const memberBtn = document.querySelector(".member-btn");
 const sellerBtn = document.querySelector(".seller-btn");
 const mainContents = document.querySelectorAll(".main-content");
 
-// 초기 상태 설정
-let activeBtn = "member"; // 기본적으로 회원 탭 활성화
+// 페이지 진입 시 member에 회색 포커스 유지
+let activeBtn = "member"; 
 
 // 회원 버튼 클릭 이벤트
 memberBtn.addEventListener("click", () => {
-    mainContents.forEach(content => content.style.display = "none"); // 모든 내용 숨김
-    mainContents[0].style.display = "block"; // 회원 내용 표시
+    mainContents.forEach(content => content.style.display = "none"); 
+    mainContents[0].style.display = "block"; 
     updateButtonState("member");
 });
 
 // 판매자 버튼 클릭 이벤트
 sellerBtn.addEventListener("click", () => {
-    mainContents.forEach(content => content.style.display = "none"); // 모든 내용 숨김
-    mainContents[1].style.display = "block"; // 판매자 내용 표시
+    mainContents.forEach(content => content.style.display = "none");
+    mainContents[1].style.display = "block"; 
     updateButtonState("seller");
 });
 
@@ -33,7 +33,7 @@ function updateButtonState(active) {
     }
 }
 
-// 페이지 로드 시 기본 버튼 상태 설정
+// 새로고침해두 member에 회색 포커스 유지
 updateButtonState(activeBtn);
 
   
