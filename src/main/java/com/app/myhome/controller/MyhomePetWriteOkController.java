@@ -19,6 +19,8 @@ public class MyhomePetWriteOkController implements Action {
 		Result result = new Result();
 		PetDAO petDAO = new PetDAO();
 		PetVO petVO = new PetVO();
+		
+		
 		HttpSession session = req.getSession();
 		
 		System.out.println("실행");
