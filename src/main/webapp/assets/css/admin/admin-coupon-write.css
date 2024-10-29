@@ -1,0 +1,425 @@
+/********상단 헤더 공통 부분**********/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
+	q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+	th, td, article, aside, canvas, details, figcaption, figure, footer,
+	header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+	line-height: 1;
+	font-family: "Spoqa Han Sans Neo", sans-serif;
+	/* Keep only one body style */
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
+
+nav ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input, select {
+	vertical-align: middle;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+img {
+	width: 40px;
+	height: 40px;
+}
+
+.menu-icon {
+	cursor: pointer;
+}
+
+#frame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 100px;
+}
+
+#frame>.menu-wrap {
+	display: flex;
+	align-items: center;
+	width: 1440px;
+	margin: 28px 0;
+	gap: 72px;
+	padding-left: 28px;
+	position: relative;
+}
+
+#frame>.menu-wrap>span {
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 4px;
+}
+
+#frame>.division-line {
+	border: solid 0.1px #828282;
+	width: 1440px;
+}
+
+.title {
+	margin: 43px 0 80px 0;
+	display: flex;
+	justify-content: space-between;
+	width: 1191px;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+/********메뉴바 부분**********/
+#menu-frame {
+	display: none;
+	flex-direction: column;
+	width: 1440px;
+	align-items: start;
+	margin-top: 0px;
+	animation: lift-detail 0.1s;
+	position: absolute;
+	top: 85px;
+	left: 30px;
+}
+
+.menu-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	max-width: 220px;
+}
+
+.welcome {
+	font-size: 14px;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+.logout {
+	font-size: 10px;
+	color: #ffc303;
+	background-color: white;
+	border: none;
+	margin-left: auto;
+	font-weight: bold;
+	cursor: pointer;
+	margin-right: 24px;
+	vertical-align: bottom;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	width: 200px;
+	position: absolute;
+	z-index: 1000;
+}
+
+ul>li {
+	width: 200px;
+}
+
+ul>li>p {
+	width: 200px;
+	height: 40px;
+	background: #828282;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	cursor: pointer;
+	padding-left: 15px;
+	margin: 16px 0;
+}
+
+ul>li>div {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.3s ease;
+	padding-left: 15px;
+}
+
+ul>li>div>p {
+	margin: 10px 0;
+	text-align: left;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+/********상세 내용 부분**********/
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Spoqa Han Sans Neo', sans-serif;
+	padding-bottom: 100px;
+}
+
+img {
+	width: 40px;
+	height: 40px;
+}
+
+#frame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#frame>.menu-wrap {
+	display: flex;
+	align-items: center;
+	width: 1440px;
+	margin: 28px 0;
+	gap: 72px;
+	padding-left: 28px;
+}
+
+#frame>.menu-wrap>span {
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 4px;
+}
+
+#frame>.division-line {
+	border: solid 0.1px #828282;
+	width: 1440px;
+}
+
+.title {
+	margin: 42px 0 35px 0;
+	display: flex;
+	justify-content: space-between;
+	width: 1191px;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+#start-date {
+	border-radius: 20px;
+	width: 218px;
+	height: 55px;
+	border: 0.5px solid #ccc;
+	margin-right: 10px;
+	padding: 10px;
+	color: #828282;
+}
+
+#end-date {
+	border-radius: 20px;
+	width: 218px;
+	height: 55px;
+	border: 0.5px solid #ccc;
+	margin-left: 10px;
+	padding: 10px;
+		color: #828282;
+}
+
+.coupon-form {
+	display: flex;
+	align-items: center;
+}
+
+.box1 {
+	margin-top: 20px;
+}
+
+.label {
+	display: flex;
+	align-items: center;
+	width: 230px;
+	text-align: left;
+	font-weight: bold;
+}
+
+input[type="text"], select, textarea {
+	width: 464px;
+	height: 55px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	margin-top: 15px;
+}
+
+textarea {
+	height: 80px;
+}
+
+.button-group {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.button-submit, .button-edit {
+	width: 90px;
+	height: 30px;
+	border: none;
+	border-radius: 20px;
+	color: white;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 6px;
+}
+
+.button-submit {
+	background-color: #113F8A;
+	margin-right: 10px;
+}
+
+.button-edit {
+	background-color: #FFC303;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.box1 {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.box1 label {
+	display: flex;
+	align-items: center;
+	width: 230px;
+	font-weight: bold;
+	align-items: flex-start;
+}
+
+.box1 input[type="text"] {
+	width: 464px;
+	height: 55px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	margin-top: 15px;
+}
+
+textarea {
+	box-sizing: border-box;
+	resize: vertical;
+	width: 464px;
+	min-height: 150px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin-top: 15px;
+	font-family: 'Spoqa Han Sans Neo', sans-serif !important;
+}
+
+.discount-type {
+	display: flex;
+	align-items: flex-start;
+	margin-top: 30px;
+}
+
+.discount-type label {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 5px;
+}
+
+.discount-type .box2 label {
+	display: flex;
+	align-items: center;
+}
+
+.custom-discount {
+	width: 90px;
+	height: 30px;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+.result {
+	margin-top: 20px;
+}
+
+button {
+	margin-top: 10px;
+	padding: 5px 10px;
+}
+
+.box2 {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.box3 {
+	display: flex;
+	flex-direction: column;
+}
+
+button {
+	padding: 10px 20px;
+	border: none;
+	background-color: #ccc;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #bbb;
+}

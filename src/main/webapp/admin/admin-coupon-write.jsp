@@ -11,7 +11,7 @@
 <title>쿠폰 신규등록</title>
 </head>
 <body>
-	<form id="frame">
+    <form action="admin-coupon-write-ok.admin" method="post" id="frame">
 		<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
 			<span>쿠폰 관리</span>
@@ -59,17 +59,6 @@
 			<h1 class="h1">쿠폰 신규등록</h1>
 		</div>
 
-		<section class="notice-search">
-			<div class="search-bar">
-				<input type="text" class="search" placeholder="쿠폰명/쿠폰번호를 입력하세요" />
-			</div>
-			<div class="buttons">
-				<button class="search-btn">검색</button>
-				<button class="reset-btn">초기화</button>
-				<button class="new-add-btn">신규 추가</button>
-			</div>
-		</section>
-
 		<div class="container">
 			<form id="coupon-form">
 				<div class="box1">
@@ -86,15 +75,20 @@
 				</div>
 
 				<div class="box1">
-					<label class="label" for="event-period">이벤트
-						기간 (쿠폰 유효기간)</label> <input type="text" id="event-period"
-						placeholder="2024-09-01 ~ 2024-09-30" required />
+					<label class="label" for="event-period">이벤트 기간 (쿠폰 유효기간)</label> 
+						<input type="date" id="start-date" name="start-date" />
+						<span>~</span>
+						<input type="date" id="end-date" name="end-date" />
 				</div>
 
 				<div class="box1">
 					<label class="label" for="event-category">이벤트 카테고리</label> <select
 						id="event-category" required>
-						<option value="category1">강아지 자료/간식</option>
+					    <option value="category4">헬스+</option>
+						<option value="category1">강아지</option>
+						<option value="category2">고양이</option>
+						<option value="category3">새</option>
+						<option value="category4">물고기</option>
 					</select>
 				</div>
 
@@ -115,10 +109,9 @@
 					<div class="box3">
 						<div class="box2">
 							<label><input type="radio"
-								name="discount" value="10" /> 10%</label> <label> <input
-								type="radio" name="discount" value="20" /> 20%
-							</label> <label> <input type="radio" name="discount"
-								value="custom" />직접입력
+								name="discount" value="10" /> 10%</label> 
+								<label> <input type="radio" name="discount" value="20" /> 20% </label> 
+								<label> <input type="radio" name="discount" value="custom" />직접입력
 							</label>
 						</div>
 						<input type="text" class="custom-discount" placeholder="예) 7%" />

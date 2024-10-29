@@ -83,4 +83,24 @@ public class AdminDAO {
     public List<AdminCouponDTO> selectAllCoupons() {
         return sqlSession.selectList("admin.selectAllAdminCoupons");
     }
+    
+    // 쿠폰 추가
+    public void insertCoupon(AdminCouponDTO adminCouponDTO) {
+        sqlSession.insert("admin.insertAdminCoupon", adminCouponDTO);
+    }
+
+    // 쿠폰 상세 조회
+    public Optional<AdminCouponDTO> selectCoupon(Long id) {
+        return Optional.ofNullable(sqlSession.selectOne("admin.selectAdminCoupon", id));
+    }
+
+    // 쿠폰 수정
+    public void updateCoupon(AdminCouponDTO adminCouponDTO) {
+        sqlSession.update("admin.updateAdminCoupon", adminCouponDTO);
+    }
+
+    // 쿠폰 삭제
+    public void deleteCoupon(Long id) {
+        sqlSession.delete("admin.deleteAdminCoupon", id);
+    }
 }
