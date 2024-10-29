@@ -104,12 +104,12 @@
             <td><c:out value="날짜" /></td>
         	<c:forEach var="orderList" items="${orderListForSeller}">
             	<td><c:out value="${orderList.orderTotalCount}" /></td>
-            	<td><c:out value="${orderList.cancleTotalCount}" /></td>
+            	<td><c:out value="${orderList.orderTotalPrice}" data-ordertotalprice="${orderList.orderTotalPrice}"/></td>
          	</c:forEach>
          	<c:forEach var="cancleList" items="${cancleListForSeller}">
-            	<td><c:out value="${cancleList.orderTotalPrice}" /></td>
+            	<td><c:out value="${cancleList.cancleTotalCount}" /></td>
             	<td><c:out value="${cancleList.cancleTotalPrice}" /></td>
-            	<td><c:out value="${order.orderTotalPrice - cancle.cancleTotalPrice}" /></td>
+            	<td><c:out value="${orderList.orderTotalPrice - cancleList.cancleTotalPrice}" /></td>
         	</c:forEach>
           </tr>
           </tbody>
