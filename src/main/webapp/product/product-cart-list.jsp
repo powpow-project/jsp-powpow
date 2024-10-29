@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -7,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품있는장바구니</title>
-<link rel="stylesheet" href="../assets/css/shopping/cart-write.css">
+<link rel="stylesheet" href="../assets/css/product/cart-write.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 
@@ -77,40 +78,35 @@
 				</div>
 			</div>
 			<main>
-				<h2 class="h2">장바구니</h2>
-            <section class="cart-section">
-                <!-- 전체 선택 및 삭제 버튼 -->
-                <div class="all">
-                    <label><input type="checkbox" id="select-all" class="item-checkbox" checked> 전체선택</label>
-                    <button id="delete-button" class="check-delete">선택 삭제</button>
-                </div>
-                
-                <!-- 장바구니에 담긴 상품 목록 -->
-                <c:forEach var="cartItem" items="${cartItems}">
-                    <div class="cart-item">
-                        <!-- 상품 선택 체크박스 -->
-                        <label><input type="checkbox" class="item-checkbox" checked></label>
+				 <h2 class="h2">장바구니</h2>
+			<section class="cart-section">
+				<form action="product-cart-delete.product" method="POST" >
+					<div class="all">
+						<label><input type="checkbox" id="select-all" class="item-checkbox"> 전체선택</label>
+						<button type="button" id="delete-button" data-productid="${product.id}" class="check-delete">선택삭제</button>
+					</div>
 
-                        <!-- 상품 이미지 및 정보 -->
-                        <a href="#"><img src="../assets/images/shopping/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
-                        <div class="product-info">
-                            <h3>${cartItem.productName}이름</h3>
-                            <div class="price">
-                                <span>가격: ${cartItem.productPrice}원</span>
-                            </div>
-                        </div>
-
-                        <!-- 수량 조절 버튼 -->
-                        <div class="quantity-control">
-                            <span><button class="btn-minus">-</button></span>
-                            <input type="text" value="${cartItem.quantity}" class="quantity-input">
-                            <span><button class="btn-plus">+</button></span>
-                        </div>
-                    </div>
-                </c:forEach>
-            </section>
-
-            <!-- 결제 정보 -->
+						<c:forEach var="cartItem" items="${cartItems}">
+							<div class="cart-item">
+								<label> <input type="checkbox"
+									id="cartItem_${cartItem.productId}" name="selectedIds"
+									value="${cartItem.productId}" class="item-checkbox">
+								</label> <a href="#"><img
+									src="../assets/images/product/${cartItem.productImage}"
+									alt="${cartItem.productName}" class="product-img"></a>
+								<div class="product-info">
+									<h3>${cartItem.productName}</h3>
+									<div class="price">
+										<span>가격: ${cartItem.productPrice}원</span>
+									</div>
+								</div>
+								<button type="button" class="delete-button"
+									data-product-id="${cartItem.productId}">삭제</button>
+							</div>
+						</c:forEach>
+					</form>
+			</section>
+				<!-- 결제 정보 -->
             <section class="payment-info">
                 <h2 class="h2">결제 정보</h2>
 
@@ -200,8 +196,18 @@
 	</footer>
 </body>
 
-<script src="../assets/js/shopping/cart-write.js"></script>
+<script src="../assets/js/product/cart-write.js"></script>
 <script>
-    </script>
+document.addEventListener("DOMContentLoaded", function() {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-product-id'); // data-product-id 속성에서 상품 ID 가져오기
+            document.location.href = `product-cart-delete?id=${productId}`; // 상품 삭제 요청 전송
+        });
+    });
+});
+</script>
 
 </html>
