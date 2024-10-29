@@ -37,9 +37,7 @@
               </div>
             </div>
           </div>
-          <a href="http://localhost:9000/powpow/buyer-id-find-complete.jsp">
             <button class="next-button">다음</button>
-          </a>
         </div>
 
 
