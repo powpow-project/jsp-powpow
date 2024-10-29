@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
+import com.app.dao.CancleProductDAO;
 import com.app.dao.OrderDAO;
 import com.app.dao.SellerDAO;
 
@@ -19,6 +20,7 @@ public class SellerRevenueListController implements Action {
 		Result result = new Result();
 		SellerDAO sellerDAO = new SellerDAO();
 		OrderDAO orderDAO = new OrderDAO();
+		CancleProductDAO cancleProductDAO = new CancleProductDAO();
 		HttpSession session = req.getSession();
 		
 		
@@ -27,7 +29,8 @@ public class SellerRevenueListController implements Action {
 		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
 		
 		
-		req.setAttribute("revenueListForSeller", orderDAO.selectBySeller(sellerId));
+		req.setAttribute("revenueListForSeller", orderDAO.selectByDate(sellerId));
+		req.setAttribute("revenueListForSeller", cancleProductDAO.selectByDate(sellerId));
 		result.setPath("seller-revenue-list.jsp");
 		
 		return result;

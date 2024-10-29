@@ -7,6 +7,7 @@ public class CancleProductDTO {
 	private Long productId;
 	private Long memberId;
 	private Long sellerId;
+	private String cancleProductDate;
 	private String memberImage;
 	private String memberNickname;
 	private String memberEmail;
@@ -66,6 +67,14 @@ public class CancleProductDTO {
 
 	public void setSellerId(Long sellerId) {
 		this.sellerId = sellerId;
+	}
+
+	public String getCancleProductDate() {
+		return cancleProductDate;
+	}
+
+	public void setCancleProductDate(String cancleProductDate) {
+		this.cancleProductDate = cancleProductDate;
 	}
 
 	public String getMemberImage() {
@@ -279,12 +288,13 @@ public class CancleProductDTO {
 	@Override
 	public String toString() {
 		return "CancleProductDTO [id=" + id + ", productId=" + productId + ", memberId=" + memberId + ", sellerId="
-				+ sellerId + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname + ", memberEmail="
-				+ memberEmail + ", memberPhone=" + memberPhone + ", memberAddress=" + memberAddress + ", memberSms="
-				+ memberSms + ", memberEmailcheck=" + memberEmailcheck + ", productName=" + productName
-				+ ", productPrice=" + productPrice + ", productImage=" + productImage + ", productCode=" + productCode
-				+ ", productType=" + productType + ", productCategoryName=" + productCategoryName + ", productDetail="
-				+ productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
+				+ sellerId + ", cancleProductDate=" + cancleProductDate + ", memberImage=" + memberImage
+				+ ", memberNickname=" + memberNickname + ", memberEmail=" + memberEmail + ", memberPhone=" + memberPhone
+				+ ", memberAddress=" + memberAddress + ", memberSms=" + memberSms + ", memberEmailcheck="
+				+ memberEmailcheck + ", productName=" + productName + ", productPrice=" + productPrice
+				+ ", productImage=" + productImage + ", productCode=" + productCode + ", productType=" + productType
+				+ ", productCategoryName=" + productCategoryName + ", productDetail=" + productDetail
+				+ ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
 				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", oneDayTotalCount="
 				+ oneDayTotalCount + ", oneDayTotalPrice=" + oneDayTotalPrice + ", sellerEmail=" + sellerEmail
 				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
@@ -307,7 +317,7 @@ public class CancleProductDTO {
 		CancleProductDTO other = (CancleProductDTO) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 	
 	
 	
