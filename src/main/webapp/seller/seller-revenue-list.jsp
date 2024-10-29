@@ -67,18 +67,20 @@
     <div class="title">
       <h1 class="h1">매출조회</h1>
     </div>
-    <section class="notice-search">
-      <div class="input-group">
-        <input type="date" id="start-date" name="start-date" />
-        <span>~</span>
-        <input type="date" id="end-date" name="end-date" />
-      </div>
-      <div class="buttons">
-        <button class="search-btn">검색</button>
-        <button class="reset-btn">초기화</button>
-      </div>
-    </section>
-        
+    <form action="seller-serach-ok.seller" method="post">
+	    <section class="notice-search">
+	      <div class="input-group">
+	        <input type="date" id="start-date" name="start-date"  value="${startDate != null ? startDate : ''}"/>
+	        <span>~</span>
+	        <input type="date" id="end-date" name="end-date" value="${endDate != null ? endDate : ''}"/>
+	      </div>
+	      <div class="buttons">
+	        <button class="search-btn">검색</button>
+	        <button type="button" class="reset-btn">초기화</button>
+	      </div>
+	    </section>
+    </form>  
+      
       <section class="notice-list">
         <table>
           <thead>
@@ -101,15 +103,19 @@
             <td><c:out value="${totalSales}" /></td>
           </tr>
           <tr>
-            <td><c:out value="날짜" /></td>
         	<c:forEach var="orderList" items="${orderListForSeller}">
+            <td><c:out value="${orderList.orderDate}" /></td>
             	<td><c:out value="${orderList.orderTotalCount}" /></td>
-            	<td><c:out value="${orderList.orderTotalPrice}" data-ordertotalprice="${orderList.orderTotalPrice}"/></td>
+            	<td  data-ordertotalprice="${orderList.orderTotalPrice}">
+            		<c:out value="${orderList.orderTotalPrice}"/>
+            	</td>
          	</c:forEach>
          	<c:forEach var="cancleList" items="${cancleListForSeller}">
             	<td><c:out value="${cancleList.cancleTotalCount}" /></td>
-            	<td><c:out value="${cancleList.cancleTotalPrice}" /></td>
-            	<td><c:out value="${orderList.orderTotalPrice - cancleList.cancleTotalPrice}" /></td>
+            	<td data-cancletotalprice="${cancleList.cancleTotalPrice}">
+            		<c:out value="${cancleList.cancleTotalPrice}" />
+            	</td>
+            	<td class="calculated-price"></td>
         	</c:forEach>
           </tr>
           </tbody>
@@ -117,5 +123,21 @@
       </section>
     </div>
 </body>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	    const orderCells = document.querySelectorAll('[data-ordertotalprice]');
+	    const cancleCells = document.querySelectorAll('[data-cancletotalprice]');
+	    const calculatedCells = document.querySelectorAll('.calculated-price');
+	
+	    orderCells.forEach((orderCell, index) => {
+	
+	    	const orderTotalPrice = orderCell.getAttribute('data-ordertotalprice');
+	        const cancelTotalPrice = canceleCells[index].getAttribute('data-cancletotalprice');
+	
+	        const netPrice = orderTotalPrice - cancelTotalPrice;
+	        calculatedCells[index].textContent = netPrice;
+	    });
+	});
+</script>
 <script src="../assets/js/seller/seller-revenue-list.js"></script>
 </html>
