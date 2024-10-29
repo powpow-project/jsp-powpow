@@ -88,9 +88,12 @@
       </div>
       <div class="delivery-section">
         <select class="delivery-check">
-            <option value="" class="check1 h6">배송 메모를 입력해주세요.</option>
-            <option value="1">할인 쿠폰1</option>
-            <option value="2">할인 쿠폰2</option>
+            <option value="" class="check1 h6">배송 메모를 선택해주세요.</option>
+            <option value="1">직접 받을게요(부재 시 문앞)</option>
+            <option value="2">문 앞에 놔주세요(초인종 O)</option>
+            <option value="3">문 앞에 놔주세요(초인종 X)</option>
+            <option value="4">도착하면 전화해주세요</option>
+            <option value="5">도착하면 문자해주세요</option>
         </select>
 
         <div class="control-container">
@@ -115,7 +118,7 @@
                   <p class="h5">${product.productName}</p>
                   <p class="h5">${product.productDate}</p>
                   <div class="price-wrap">
-                    <p class="h4">할인된 금액</p> <p class="h5">${product.productPrice}원</p>
+                    <p class="h4">할인된 금액</p> <p class="h5">${product.productPrice}원</p> <p class="h5 pcount">${order.productCount}개</p>
                   </div>
               </div>
             </div>
@@ -126,7 +129,15 @@
           </select>
         </div>
     </div>
-    <button>결제하기</button>
+    
+	 <form action="myhome/shipping-list.myhome.jsp" method="post">
+	    <input type="hidden" name="productId" value="${product.productId}">
+	    <input type="hidden" name="memberId" value="${product.productId}">
+	    <input type="hidden" name="productCount" value="${product.productId}">
+	    <input type="hidden" name="orderId" value="${product.productId}">
+	    
+	    <button type="submit">결제하기</button>
+	</form>
 </div>
 </div>
  <footer>

@@ -34,6 +34,8 @@ public class OrderDTO {
 	private String productSubImage2;
 	private String productSubImage3;
 	private int totalPrice;
+	private int oneDayTotalCount;
+	private int oneDayTotalPrice;
 	
 	public OrderDTO() {;}
 
@@ -285,6 +287,22 @@ public class OrderDTO {
 		this.totalPrice = totalPrice;
 	}
 
+	public int getOneDayTotalCount() {
+		return oneDayTotalCount;
+	}
+
+	public void setOneDayTotalCount(int oneDayTotalCount) {
+		this.oneDayTotalCount = oneDayTotalCount;
+	}
+
+	public int getOneDayTotalPrice() {
+		return oneDayTotalPrice;
+	}
+
+	public void setOneDayTotalPrice(int oneDayTotalPrice) {
+		this.oneDayTotalPrice = oneDayTotalPrice;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderDTO [id=" + id + ", sellerId=" + sellerId + ", memberId=" + memberId + ", productId=" + productId
@@ -297,7 +315,8 @@ public class OrderDTO {
 				+ productPrice + ", productImage=" + productImage + ", productCode=" + productCode + ", productType="
 				+ productType + ", productCategoryName=" + productCategoryName + ", productDetail=" + productDetail
 				+ ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
-				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + "]";
+				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", oneDayTotalCount="
+				+ oneDayTotalCount + ", oneDayTotalPrice=" + oneDayTotalPrice + "]";
 	}
 
 	@Override

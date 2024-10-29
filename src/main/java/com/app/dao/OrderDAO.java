@@ -1,6 +1,9 @@
 package com.app.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -22,7 +25,7 @@ public class OrderDAO {
 	
 //	구매자 주문 내역
 	public List<OrderDTO> selectByMember(Long memberId) {
-		return sqlSession.selectList("order.select", memberId);
+		return sqlSession.selectList("order.selectByMember", memberId);
 	}
 	
 //	주문 수량 조회
@@ -38,6 +41,16 @@ public class OrderDAO {
 //	판매자 주문 내역
 	public List<OrderDTO> selectBySeller(Long sellerId){
 		return sqlSession.selectList("order.selectBySeller", sellerId);
+	}
+
+//	오더 조회
+	public Optional<OrderVO> select(Long id) {
+		return Optional.ofNullable(sqlSession.selectOne("order.select", id));
+	}
+	
+//	날짜별 주문 총내역
+	public List<OrderDTO> selectByDate(Long sellerId){
+	    return sqlSession.selectList("order.selectByDate", sellerId);
 	}
 }
 
