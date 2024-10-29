@@ -85,8 +85,8 @@
             <tr>
               <th>날짜별</th>
               <th>주문수량</th>
-              <th>취소수량</th>
               <th>주문금액</th>
+              <th>취소수량</th>
               <th>취소금액</th>
               <th>총 판매금액</th>
             </tr>
@@ -94,21 +94,24 @@
         <tbody>
           <tr class="tr-border">
             <td>합계</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><c:out value="${totalOrderCount}" /></td>
+            <td><c:out value="${totalOrderPrice}" /></td>
+            <td><c:out value="${totalCancleCount}" /></td>
+            <td><c:out value="${totalCanclePrice}" /></td>
+            <td><c:out value="${totalSales}" /></td>
           </tr>
-	          <c:forEach var="revenueList" items="${revenueListForSeller}" varStatus="status">
-		          <tr>
-		            <td><c:out value="${revenueList.orderDate}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalCount}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
-		          </tr>
-	          </c:forEach>
+          <tr>
+            <td><c:out value="날짜" /></td>
+        	<c:forEach var="orderList" items="${orderListForSeller}">
+            	<td><c:out value="${orderList.orderTotalCount}" /></td>
+            	<td><c:out value="${orderList.cancleTotalCount}" /></td>
+         	</c:forEach>
+         	<c:forEach var="cancleList" items="${cancleListForSeller}">
+            	<td><c:out value="${cancleList.orderTotalPrice}" /></td>
+            	<td><c:out value="${cancleList.cancleTotalPrice}" /></td>
+            	<td><c:out value="${order.orderTotalPrice - cancle.cancleTotalPrice}" /></td>
+        	</c:forEach>
+          </tr>
           </tbody>
         </table>
       </section>
