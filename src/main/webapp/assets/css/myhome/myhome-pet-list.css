@@ -51,7 +51,6 @@
         width: 1440px;
         margin: 0 auto;
         /* 헤더 윗공간 조절 */
-        margin-top: 20px;
         justify-content: space-between;
         align-items: end;
         margin-bottom: 15px;
@@ -103,7 +102,8 @@
     #header-wrap #nav .right .login {
         display: flex;
         font-size: 16px;
-        margin-left: 26px;
+        margin-left: 23px;
+        margin-bottom: 6px;
     }
 
     #header-wrap #nav .right .login a {
@@ -113,8 +113,14 @@
         text-align: center;
         justify-content: center;
         text-decoration-line: none;
-        color: black;
+        color: #131313;
         padding-right: 31px;
+    }
+    
+    .bar{
+    border: 1px solid #828282;
+    height:35px;
+    margin-left: 19px;
     }
 
     /* 메뉴부분 */
@@ -138,7 +144,6 @@
         display: flex;
         height: 50px;
         font-weight: bold;
-        border-top: solid #818181 0.1px;
         border-bottom: solid #818181 0.1px;
     }
 
@@ -214,7 +219,7 @@
     }
 
     .star {
-        margin-bottom: 70px;
+        margin-bottom: 40px;
         margin-top: 20px;
         margin-left: 199px;
         transition: fill 0.3s ease;
@@ -242,7 +247,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        border: 1px solid #131313;
     }
 
     .profile-pic img {
@@ -300,7 +306,7 @@
         justify-content: space-between;
         width: 1200px;
         margin: 0 auto;
-        padding: 150px 0 0 0;
+        padding: 300px 0 0 0;
     }
 
     .footer-section {
