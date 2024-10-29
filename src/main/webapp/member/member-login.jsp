@@ -12,7 +12,6 @@
 </head>
 <body> 
 <c:if test="${not empty param.login}">
-	<%-- ${empty param.login} = false 그래서 not 을 붙여서 true 가 되게.--%>
 	<script>
 	alert("아이디 또는 비밀번호를 확인해주세요")
 	</script>
@@ -29,6 +28,7 @@
           <button class="seller-btn">판매자</button>
         </div>
         <div class="main">
+        
           <div class="main-content member">
           <form action="login-ok.member" method="post">
             <div id="idFind" class="input">
@@ -39,7 +39,7 @@
 	              <input class="inputbutton" type="password" name="buyerPassword" placeholder="회원 비밀번호를 입력해주세요">
 	              <p id="password-result"></p>
 
-            <button class="login-button">로그인</button>
+            <button type="button" class="login-button">로그인</button>
           </div>
           </form>
           

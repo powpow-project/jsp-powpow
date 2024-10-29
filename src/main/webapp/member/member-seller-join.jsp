@@ -25,8 +25,9 @@
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-          <input class="inputbutton" type="email" name="email" placeholder="아이디(이메일)">
+          <input class="inputbutton" type="email" name="sellerEmail" id="email" placeholder="아이디(이메일)">
           <button class="auth-button" id="email-check">확인</button>
+          <p class="result" id="email-result"></p>
         </div>
       </div>
       
@@ -36,7 +37,7 @@
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-          <input class="inputbutton" type="password" name="password" placeholder="비밀번호">
+          <input class="inputbutton" type="password" name="sellerPassword" placeholder="비밀번호">
           <div class="mark"></div>
           <p class="result" id="password-result"></p>
         </div>
@@ -48,7 +49,7 @@
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-         <input class="inputbutton" type="password" name="passwordConfirm" placeholder="비밀번호 확인">
+         <input class="inputbutton" type="password" name="passwordConfirm" id="passwordConfirm" placeholder="비밀번호 확인">
         <p class="result" id="passwordConfirm-result"></p>
         </div>
       </div>
@@ -74,8 +75,9 @@
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-          <input class="inputbutton" type="number" name="number" placeholder="'-'없이 입력">
+          <input class="inputbutton" type="number" name="number" id="number" placeholder="'-'없이 입력">
           <button class="auth-button">인증</button>
+          <p class="result" id="number-result"></p>
         </div>
       </div>
       <div>
@@ -83,7 +85,7 @@
           <p id="text">대표자명</p>
           <p id="text" class="red">*</p>
         </div>
-        <input class="inputbutton" type="text" name="name">
+        <input class="inputbutton" type="text" name="kingname">
         <p id="kingname-result"></p>
       </div>
       <div>

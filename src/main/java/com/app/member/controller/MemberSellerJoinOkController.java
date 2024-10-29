@@ -22,17 +22,23 @@ public class MemberSellerJoinOkController implements Action {
 		Result result = new Result();
 		MemberDAO memberDAO = new MemberDAO();
 		SellerVO sellerVO = new SellerVO();
+		BusinessVO businessVO = new BusinessVO();
 
 
 //		 #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck}
-//		sellerVO.setBusi(req.getParameter("email"));
-		sellerVO.setSellerPassword(req.getParameter("password"));
+		businessVO.setBusinessName("kingname");
+		businessVO.setBusinessNumber("number");
+		businessVO.setBusinessRepresentativeName("companyname");
+		sellerVO.setSellerEmail("sellerEmail");
+		sellerVO.setSellerPassword(req.getParameter("sellerpassword"));
 		sellerVO.setSellerName(req.getParameter("name"));
 		sellerVO.setSellerPhone(req.getParameter("phone"));
 		sellerVO.setSellerSms(req.getParameter("sms").charAt(0));
 		sellerVO.setSellerEmailCheck(req.getParameter("emailcheck").charAt(0));
 		
+		
 		memberDAO.insertSeller(sellerVO);
+		memberDAO.insertBusiness(businessVO);
 		
 		result.setRedirect(true);
 		result.setPath("../member/seller-join-complete.member");

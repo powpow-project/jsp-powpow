@@ -58,7 +58,6 @@ public class MemberFrontController extends HttpServlet{
 //		판매자 선택 후 아이디/비밀번호 찾기 페이지
 		}else if(target.equals("seller-account-find")) {
 			result = new MemberSellerAccountFindController().execute(req, resp);		
-			
 	        
 //		구매자 로그인 완료 페이지
 		}else if(target.equals("buyer-login-ok")) {

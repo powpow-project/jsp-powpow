@@ -30,6 +30,7 @@
    	<typeAlias type="com.app.vo.CommunityCommentVO" alias="CommunityCommentVO"/>
    	<typeAlias type="com.app.vo.CommunityPostVO" alias="CommunityPostVO"/>
    	<typeAlias type="com.app.vo.HealthplusCommunityPostVO" alias="HealthplusCommunityPostVO"/>
+   	<typeAlias type="com.app.dto.SellerDTO" alias="SellerDTO"/>
    </typeAliases>
    
    <environments default="oracle">

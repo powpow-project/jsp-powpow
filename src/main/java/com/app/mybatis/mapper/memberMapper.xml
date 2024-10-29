@@ -4,6 +4,13 @@
 <mapper namespace="member">
 <!-- 구매자 -->
 
+	<!-- 로그인..? -->
+	<select id="selectBuyer" resultType="String">
+		SELECT MEMBER_EMAIL 
+		FROM TBL_MEMBER
+		WHERE MEMBER_EMAIL = #{memberEmail} AND MEMBER_PASSWORD = #{memberPassword}
+	</select>	
+
 	<!-- 회원가입 _ 이메일, 비밀번호, 닉네임, 휴대전화번호, 주소, 동의 -->
 	<insert id="insertBuyer" parameterType="MemberVO">
 		INSERT INTO TBL_MEMBER(ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMS, MEMBER_EMAILCHECK)
@@ -54,6 +61,11 @@
 		VALUES(SELLER_SEQ.NEXTVAL, #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck})
 	</insert>
 	
+	<insert id="insertBusiness" parameterType="SellerVO"> 
+		INSERT INTO TBL_BUSINESS(ID, BUSINESS_NAME, BUSINESS_REPRESENTAIVE_NAME, BUSINESS_NUMBER)
+		VALUES(SELLER_SEQ.NEXTVAL, #{businessName}, #{businessRepresentaiveName}, #{businessNumber})
+	</insert>
+	
    <!-- 회원가입시 이메일 중복 -->
 	<select id="selectSellerByEmail" parameterType="String" resultType="SellerVO">
 		SELECT ID, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME 
@@ -61,7 +73,10 @@
 		WHERE SELLER_EMAIL = #{sellerEmail}
 	</select>
 	
-	<!--join 시키기 -->	
+	
+	
+<!-- 	11
+join 시키기	
 	<select id="selectBusiness" resultType="SellerDTO">
 		SELECT 
 		    TBS.ID AS SELLER_ID, 
@@ -77,7 +92,8 @@
 		ON TBS.BUSINESS_ID = TBB.ID
 		AND TBB.ID = #{businessId}
 		ORDER BY TBS.ID DESC
-	</select>	
+	</select>	 -->
+	
 	
    <!-- 이메일로 db 아이디 찾기 -->
 	<select id="findSellerByEmail" parameterType="String" resultType="Long">
