@@ -12,6 +12,7 @@ import com.app.seller.controller.SellerDeleteOkController;
 import com.app.seller.controller.SellerListController;
 import com.app.seller.controller.SellerOrderListController;
 import com.app.seller.controller.SellerRevenueListController;
+//import com.app.seller.controller.SellerSearchOkController;
 import com.app.seller.controller.SellerUpdateController;
 import com.app.seller.controller.SellerUpdateOkController;
 import com.app.seller.controller.SellerWriteOkController;
@@ -46,6 +47,9 @@ public class SellerFrontController extends HttpServlet{
          
       }else if(target.equals("seller-order-list")) {
     	  result = new SellerOrderListController().execute(req, resp);
+    	  
+      }else if(target.equals("seller-serach-ok")) {
+//    	  result = new SellerSearchOkController().execute(req, resp);
     	  
       }else if(target.equals("seller-revenue-list")) {
     	  result = new SellerRevenueListController().execute(req, resp);

@@ -67,26 +67,28 @@
     <div class="title">
       <h1 class="h1">매출조회</h1>
     </div>
-    <section class="notice-search">
-      <div class="input-group">
-        <input type="date" id="start-date" name="start-date" />
-        <span>~</span>
-        <input type="date" id="end-date" name="end-date" />
-      </div>
-      <div class="buttons">
-        <button class="search-btn">검색</button>
-        <button class="reset-btn">초기화</button>
-      </div>
-    </section>
-        
+    <form action="seller-serach-ok.seller" method="post">
+	    <section class="notice-search">
+	      <div class="input-group">
+	        <input type="date" id="start-date" name="start-date"  value="${startDate != null ? startDate : ''}"/>
+	        <span>~</span>
+	        <input type="date" id="end-date" name="end-date" value="${endDate != null ? endDate : ''}"/>
+	      </div>
+	      <div class="buttons">
+	        <button class="search-btn">검색</button>
+	        <button type="button" class="reset-btn">초기화</button>
+	      </div>
+	    </section>
+    </form>  
+      
       <section class="notice-list">
         <table>
           <thead>
             <tr>
               <th>날짜별</th>
               <th>주문수량</th>
-              <th>취소수량</th>
               <th>주문금액</th>
+              <th>취소수량</th>
               <th>취소금액</th>
               <th>총 판매금액</th>
             </tr>
@@ -94,25 +96,48 @@
         <tbody>
           <tr class="tr-border">
             <td>합계</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><c:out value="${totalOrderCount}" /></td>
+            <td><c:out value="${totalOrderPrice}" /></td>
+            <td><c:out value="${totalCancleCount}" /></td>
+            <td><c:out value="${totalCanclePrice}" /></td>
+            <td><c:out value="${totalSales}" /></td>
           </tr>
-	          <c:forEach var="revenueList" items="${revenueListForSeller}" varStatus="status">
-		          <tr>
-		            <td><c:out value="${revenueList.orderDate}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalCount}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
-		            <td><c:out value="${revenueList.oneDayTotalPrice}" /></td>
-		          </tr>
-	          </c:forEach>
+          <tr>
+        	<c:forEach var="orderList" items="${orderListForSeller}">
+            <td><c:out value="${orderList.orderDate}" /></td>
+            	<td><c:out value="${orderList.orderTotalCount}" /></td>
+            	<td  data-ordertotalprice="${orderList.orderTotalPrice}">
+            		<c:out value="${orderList.orderTotalPrice}"/>
+            	</td>
+         	</c:forEach>
+         	<c:forEach var="cancleList" items="${cancleListForSeller}">
+            	<td><c:out value="${cancleList.cancleTotalCount}" /></td>
+            	<td data-cancletotalprice="${cancleList.cancleTotalPrice}">
+            		<c:out value="${cancleList.cancleTotalPrice}" />
+            	</td>
+            	<td class="calculated-price"></td>
+        	</c:forEach>
+          </tr>
           </tbody>
         </table>
       </section>
     </div>
 </body>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	    const orderCells = document.querySelectorAll('[data-ordertotalprice]');
+	    const cancleCells = document.querySelectorAll('[data-cancletotalprice]');
+	    const calculatedCells = document.querySelectorAll('.calculated-price');
+	
+	    orderCells.forEach((orderCell, index) => {
+	
+	    	const orderTotalPrice = orderCell.getAttribute('data-ordertotalprice');
+	        const cancelTotalPrice = canceleCells[index].getAttribute('data-cancletotalprice');
+	
+	        const netPrice = orderTotalPrice - cancelTotalPrice;
+	        calculatedCells[index].textContent = netPrice;
+	    });
+	});
+</script>
 <script src="../assets/js/seller/seller-revenue-list.js"></script>
 </html>
