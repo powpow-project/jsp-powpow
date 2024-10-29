@@ -32,7 +32,7 @@ public class CartDAO {
 	}
 
 // 장바구니 삭제
-	public void delete(Long id) {
+	public void deleteCart(Long id) {
 		sqlSession.delete("cart.deleteCart", id);
 	}
 
