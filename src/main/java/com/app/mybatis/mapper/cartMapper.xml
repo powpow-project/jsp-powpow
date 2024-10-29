@@ -32,7 +32,12 @@
 
 	<!-- 장바구니 상품 삭제 -->
 	<delete id="deleteCart" parameterType="Long">
-		DELETE FROM TBL_CART
-		WHERE ID = #{id}
+		DELETE FROM(
+			SELECT TP.ID 
+			FROM TBL_CART TC
+			JOIN TBL_PRODUCT TP 
+			ON TC.PRODUCT_ID = TP.ID
+		)TP 
+		WHERE TP.ID = #{productId}
 	</delete>
 </mapper>

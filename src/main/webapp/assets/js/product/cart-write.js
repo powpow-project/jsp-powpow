@@ -64,15 +64,27 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // 전체 선택/해제 및 선택 삭제 기능
-    const selectAllCheckbox = document.getElementById("select-all");
-    const itemCheckboxes = document.querySelectorAll(".cart-item .item-checkbox");
+	const deleteButton = document.getElementById("delete-button");
+	        const selectAllCheckbox = document.getElementById("select-all");
+	        const itemCheckboxes = document.querySelectorAll('.item-checkbox');
 
-    if (selectAllCheckbox) {
-        selectAllCheckbox.addEventListener("click", function() {
-            const isChecked = selectAllCheckbox.checked;
-            itemCheckboxes.forEach(function(checkbox) {
-                checkbox.checked = isChecked;
-            });
-        });
-    }
+	        // 선택 삭제 버튼 클릭 이벤트
+	        deleteButton.addEventListener("click", () => {
+	            const selectedIds = Array.from(itemCheckboxes)
+	                .filter(checkbox => checkbox.checked)
+	                .map(checkbox => checkbox.value);
+
+	            if (selectedIds.length > 0) {
+	                document.getElementById('cart-form').submit(); // 선택된 상품 ID를 포함하여 폼 제출
+	            } else {
+	                alert("삭제할 상품을 선택해주세요.");
+	            }
+	        });
+
+	        // 전체 선택 체크박스 이벤트
+	        selectAllCheckbox.addEventListener("change", () => {
+	            itemCheckboxes.forEach(checkbox => {
+	                checkbox.checked = selectAllCheckbox.checked;
+	            });
+	        });
 });

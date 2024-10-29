@@ -1,6 +1,7 @@
 package com.app.product.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,23 +15,21 @@ public class ProductCartDeleteController implements Action {
 
     @Override
     public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
-		CartDAO cartDAO = new CartDAO();
+    	Result result = new Result();
+        CartDAO cartDAO = new CartDAO();
 
-		// 선택된 상품 ID 배열을 받아 삭제 처리
-		String[] selectedIds = req.getParameterValues("selectedIds");
+        // 체크박스에서 선택된 상품 ID 가져오기
+        String[] selectedIds = req.getParameterValues("selectedIds");
 
-		if (selectedIds != null && selectedIds.length > 0) {
-			// CartDAO 객체 생성
-			for (String idStr : selectedIds) {
-				Long productId = Long.parseLong(idStr);
-				// 삭제 메서드 호출
-				cartDAO.delete(productId);
-			}
-		}
-
-		result.setRedirect(true);
-		result.setPath("../product/product-cart-list.product");
-		return result;
-	}
+        if (selectedIds != null) {
+            for (String id : selectedIds) {
+                Long productId = Long.parseLong(id);
+                cartDAO.deleteCart(productId);  
+                System.out.println(productId);
+            }
+        }
+        result.setRedirect(true);
+        result.setPath("../product/product-cart-list.product");
+        return result;
+    }
 }
