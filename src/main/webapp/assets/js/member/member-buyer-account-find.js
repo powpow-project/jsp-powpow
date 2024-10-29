@@ -28,9 +28,10 @@ passwordBtn.addEventListener("click", () => {
 
 
 
+
 /*인증요청*/
 document.addEventListener("DOMContentLoaded", () => {
-    const authButton = document.getElementById("auth-button"); // 인증 요청 버튼
+    const authButton = document.getElementById("request-auth"); // 인증 요청 버튼
     const authNumberContainer = document.getElementById("authNumberContainer"); // 인증번호 입력란
     const confirmButton = document.querySelector(".confirm-button"); // 확인 버튼
     const authNumberInput = document.querySelector("input[name='authNumber']"); // 인증번호 입력란

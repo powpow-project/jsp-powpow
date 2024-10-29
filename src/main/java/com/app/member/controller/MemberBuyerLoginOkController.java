@@ -19,15 +19,10 @@ public class MemberBuyerLoginOkController implements Action {
 		   Result result = new Result();
 	        MemberDAO memberDAO = new MemberDAO();
 	        MemberVO memberVO = new MemberVO();
-	        
 	        HttpSession session = req.getSession();
-
-	        // 로그인 정보 받기
-	        String buyerEmail = req.getParameter("buyerEmail");
-	        String buyerPassword = req.getParameter("buyerPassword");
 	        
-	        memberVO.setMemberEmail(buyerEmail);
-	        memberVO.setMemberPassword(buyerPassword);
+	        memberVO.setMemberEmail(req.getParameter("buyerEmail"));
+	        memberVO.setMemberPassword(req.getParameter("buyerPassword"));
 
 	        // 구매자 로그인 시도
 	        String loggedInEmail = memberDAO.selectBuyer(memberVO);
@@ -42,7 +37,7 @@ public class MemberBuyerLoginOkController implements Action {
 	        
 	        // 로그인 성공
 	        session.setAttribute("buyerEmail", loggedInEmail);
-	        result.setPath(req.getContextPath() + "../../../src/main/webapp/index.jsp"); // 메인 페이지로 리다이렉트
+	        result.setPath("../../../index.jsp"); // 메인 페이지로 리다이렉트
 	        return result;
 	    }
 	}

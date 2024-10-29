@@ -27,7 +27,6 @@ import com.app.member.controller.MemberSellerJoinOkController;
 import com.app.member.controller.MemberSellerLoginOkController;
 import com.app.member.controller.MemberSellerUpdateController;
 import com.app.member.controller.MemberSellerUpdateOkController;
-import com.app.member.controller.MemberSmsController;
 
 public class MemberFrontController extends HttpServlet{
 	@Override

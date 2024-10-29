@@ -1,15 +1,15 @@
-package com.app.member.controller;
-
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.app.Action;
-import com.app.Result;
-
-public class MemberSmsController implements Action {
+//package com.app.member.controller;
+//
+//import java.io.IOException;
+//
+//import javax.servlet.ServletException;
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
+//
+//import com.app.Action;
+//import com.app.Result;
+//
+//public class MemberSmsController implements Action {
 
 //	public class Sms {
 //		public static void main(String[] args) {
@@ -45,4 +45,4 @@ public class MemberSmsController implements Action {
 //        
 //        return Integer.toString(randomNumber);  // 생성된 랜덤 숫자 반환
 //    }
-}
+//}
