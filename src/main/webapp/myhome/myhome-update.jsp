@@ -74,7 +74,7 @@
       <p>|</p>
       <a href="./likes-list.myhome" class="h4">좋아요</a>
       <p>|</p>
-      <a href="./myhome-notification.jsp" class="h4">알림설정</a>
+      <a href="./notification.myhome" class="h4">알림설정</a>
       <p>|</p>
       <a href="./password-update.myhome" class="h4">비밀번호 변경</a>
       </span>
@@ -96,9 +96,7 @@
       <div class="edit-info">
         <div>
           <label class="edit-category1">닉네임</label>
-         <c:forEach var="member" items="${member}">
           <input class="edit-member" type="text" placeholder="${member.memberNickname}">
-        </c:forEach>
         </div>
         <div>
           <label class="edit-category2">아이디 (이메일)</label>
@@ -106,9 +104,7 @@
         </div>
         <div>
           <label class="edit-category3">휴대폰번호</label>
-          <c:forEach var="member" items="${member}">
           <input class="edit-member" type="text" placeholder="${member.memberPhone}">
-       </c:forEach>
         </div>
         <div class="group-category4">
           <label class="edit-category4">주소</label>
