@@ -34,7 +34,7 @@ public class MyhomePetUpdateController implements Action {
 	    petDAO.updatePet(petVO);
 	    
 	    PetVO pet = petDAO.selectPetId(id).orElseThrow(() -> new RuntimeException("Pet not found with ID: " + id));
-	    result.setPath("../myhome/myhome-pet-.jsp"); // JSP 경로
+	    result.setPath("../myhome/myhome-pet-list.jsp"); // JSP 경로
 	    
 	    
 	    return result;

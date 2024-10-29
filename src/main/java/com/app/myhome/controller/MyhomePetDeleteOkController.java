@@ -17,6 +17,7 @@ public class MyhomePetDeleteOkController implements Action {
 		Result result = new Result();
 		PetVO petVO = new PetVO();
 
+		
 		result.setPath("../myhome/myhome-pet-list.jsp");
 		return null;
 	}
