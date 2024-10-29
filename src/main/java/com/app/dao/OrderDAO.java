@@ -49,11 +49,8 @@ public class OrderDAO {
 	}
 	
 //	날짜별 주문 총내역
-	public List<OrderDTO> selectByDate(String orderDate, Long sellerId){
-	    Map<String, Object> params = new HashMap<>();
-	    params.put("orderDate", orderDate);
-	    params.put("sellerId", sellerId);
-	    return sqlSession.selectList("order.selectByDate", params);
+	public List<OrderDTO> selectByDate(Long sellerId){
+	    return sqlSession.selectList("order.selectByDate", sellerId);
 	}
 }
 

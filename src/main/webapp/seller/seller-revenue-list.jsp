@@ -83,9 +83,10 @@
         <table>
           <thead>
             <tr>
-              <th>주문일자</th>
-              <th>총 판매수량</th>
-              <th>취소 판매수량</th>
+              <th>날짜별</th>
+              <th>주문수량</th>
+              <th>취소수량</th>
+              <th>주문금액</th>
               <th>취소금액</th>
               <th>총 판매금액</th>
             </tr>
@@ -93,6 +94,7 @@
         <tbody>
           <tr class="tr-border">
             <td>합계</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

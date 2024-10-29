@@ -259,96 +259,80 @@ table tr > td {
 }
 
 table tr > th:nth-child(1){
-  width: 288px;
+  width: 340px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > th:nth-child(2){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > th:nth-child(3){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > th:nth-child(4){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > th:nth-child(5){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > th:nth-child(6){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > td:nth-child(1){
-  width: 288px;
+  width: 340px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > td:nth-child(2){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > td:nth-child(3){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > td:nth-child(4){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > td:nth-child(5){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 table tr > td:nth-child(6){
-  width: 288px;
+  width: 220px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
-table tbody tr td .image{
-  border: none;
-  width: 98px;
-  height: 98px;
-  border-radius: 20px;
-  background-color: #828282;
-  display: inline-flex;
-}
 
-.details-button{
-  width: 53px;
-  height: 30px;
-  border: solid 1px #888888;
-  color: #828282;
-  background-color: #fff;
-  border-radius: 10px;
-}
  
