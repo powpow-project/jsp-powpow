@@ -12,7 +12,7 @@ public class PetDTO {
 	private String petBreed;
 	private String petBirth;
 	private String petVet;
-	private int petWeight;
+	private double petWeight;
 	private boolean petNeuter;
 	private String memberEmail;
 	
@@ -90,11 +90,11 @@ public class PetDTO {
 		this.petVet = petVet;
 	}
 
-	public int getPetWeight() {
+	public double getPetWeight() {
 		return petWeight;
 	}
 
-	public void setPetWeight(int petWeight) {
+	public void setPetWeight(double petWeight) {
 		this.petWeight = petWeight;
 	}
 

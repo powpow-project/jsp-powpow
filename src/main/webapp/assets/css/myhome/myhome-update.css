@@ -171,10 +171,11 @@
     #sub {
       display: flex;
       flex-direction: column;
-      padding-top: 20px;
+      padding-top: 40px;
       width: 1440px;
       height: 96px;
       margin: 0 auto;
+      margin-bottom: 50px;
     }
 
     #sub .main-sub {
@@ -213,6 +214,7 @@
       margin-left: 1108px;
       border-style: none;
       cursor: pointer;
+      margin-top:50px;
     }
 
     #page-content {
@@ -618,7 +620,7 @@
       /* 배경색 */
       font-family: 'SpoqaHanSansNeo-Regular';
       /* 폰트 스타일 */
-      margin-top: 150px;
+      margin-top: 300px;
     }
 
     .footer-black {
