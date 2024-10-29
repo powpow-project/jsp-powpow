@@ -19,7 +19,9 @@ public class MyhomeDeleteController implements Action {
 		
 		memberDAO.deleteBuyer(Long.parseLong(req.getParameter("id")));
 		
-		result.setPath("../login/login.member");
+		
+		result.setRedirect(true);
+		result.setPath("../myhome/delete.member");
 		return result;
 	}
 
