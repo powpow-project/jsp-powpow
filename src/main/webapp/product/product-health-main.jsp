@@ -343,22 +343,29 @@
 <script src="../assets/js/product/health-main.js">
 </script>
 <script>
- 
-    document.getElementsByName('productCategoryName')[0].addEventListener('change', (e) => {
-        const selectedCategory = e.target.value; 
-        const products = document.querySelectorAll('.product');
+document.addEventListener('DOMContentLoaded', () => {
+    const categoryElement = document.getElementsByName('productCategoryName')[0];
 
-        // 모든 상품 숨기기
-        products.forEach((product) => {
-            const productCategory = product.getAttribute('data-category');
-            // 전체 상품 또는 선택한 카테고리의 상품만 보이게 설정
-            if (selectedCategory === 'all' || productCategory === selectedCategory) {
-                product.style.display = 'block';  // 상품 보이기
-            } else {
-                product.style.display = 'none';   // 상품 숨기기
-            }
+    if (categoryElement) { // 요소가 존재하는지 확인
+        categoryElement.addEventListener('change', (e) => {
+            const selectedCategory = e.target.value; 
+            const products = document.querySelectorAll('.product');
+
+            // 모든 상품 숨기기
+            products.forEach((product) => {
+                const productCategory = product.getAttribute('data-category');
+                // 전체 상품 또는 선택한 카테고리의 상품만 보이게 설정
+                if (selectedCategory === 'all' || productCategory === selectedCategory) {
+                    product.style.display = 'block';  // 상품 보이기
+                } else {
+                    product.style.display = 'none';   // 상품 숨기기
+                }
+            });
         });
-    });
+    } else {
+        console.error("Product category element not found.");
+    }
+});
 </script>
 
 </html>

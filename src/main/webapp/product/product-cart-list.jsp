@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -88,6 +87,7 @@
 					</div>
 					
 					<c:forEach var="cartItem" items="${cartItems}">
+    				<p>상품 ID: ${cartItem.productId}</p>
 						<div class="cart-item">
 							<label>
 								<input type="checkbox" id="cartItem_${cartItem.productId}" name="selectedIds" value="${cartItem.productId}" class="item-checkbox">
@@ -203,9 +203,10 @@
 // 선택 삭제 폼 제출 함수
 
 function submitDeleteForm() {
-    document.getElementById("delete-form").submit();
-    
+    document.getElementById("delete-form").submit();  
 }
+
+
 </script>
 
 </html>
