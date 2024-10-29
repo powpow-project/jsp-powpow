@@ -26,14 +26,14 @@
                             <a href="#"><img src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
                         </div>
                         <div class="sector"></div>
-                        <div class="login"><a href="#">로그인</a></div>
+                        <div class="login"><a href="../member/login.member">로그인</a></div>
                     </div>
                 </div>
                 <div class="menu-container">
                     <ul class="menu-wrap h4">
-                        <li class="menu"><a href="#">스토어</a></li>
+                        <li class="menu"><a href="./product/list.product">스토어</a></li>
                         <li class="menu"><a href="#">커뮤니티</a></li>
-                        <li class="menu"><a href="#">마이홈</a></li>
+                        <li class="menu"><a href="./list.myhome">마이홈</a></li>
                         <li class="menu"><a href="#">이벤트</a></li>
                     </ul>
                     <div id="sector"></div>
@@ -46,14 +46,14 @@
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
-                            <li class="sub-menu"><a href="#">홈</a></li>
+                            <li class="sub-menu"><a href="../community/list.community">홈</a></li>
                             <li class="sub-menu"><a href="#">헬스+</a></li>
                         </ul>
                         <ul>
                             <li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
                             <li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
                             <li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
-                            <li class="sub-menu"><a href="#">내 게시글</a></li>
+                            <li class="sub-menu"><a href="../community/read.community">내 게시글</a></li>
                         </ul>
 
                         <ul>
