@@ -247,12 +247,13 @@
     }
 
     .title {
-        flex-direction: row;
+        flex-direction: column;
         margin-left: 60px;
         font-weight: bold;
     }
 
-    .title p {
+    .title label {
+    display:block;
         padding-top: 30px;
     }
 
