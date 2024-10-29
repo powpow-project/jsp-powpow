@@ -253,6 +253,11 @@ body {
   position: relative;
 }
 
+.product-wrap .banner img{
+	display: flex;
+	width: 1000px;
+}
+
 /* all 서브랑 타이틀 묶은거 */
 .all-sup-title {
   display: flex;

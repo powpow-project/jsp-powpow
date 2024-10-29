@@ -1,5 +1,7 @@
+<%@page import="com.app.vo.ProductVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +9,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/product/product-main.css">
   <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
   <title>쇼핑 메인</title>
 </head>
 <body>
+
   <div class="header-container">
     <div id="header-wrap">
       <div id="border">
               <div id="nav">
                 <div class="left">
-                    <img src="./images/main-logo.png" alt="로고">
+                    <img src="../assets/images/powpow-logo.png" alt="로고">
                 </div>
                 <div class="right">
                   <div class="icons">
-                    <a href="#"><img src="./images/search_icon 2.jpg" alt="검색"></a>
-                    <a href="#"><img src="./images/truck_transport_icon 2.jpg" alt="배송"></a>
-                    <a href="#"><img src="./images/shopping_cart_icon 2.jpg" alt="카트"></a>
+                    <a href="#"><img src="../assets/images/search-icon.jpg" alt="검색"></a>
+                    <a href="#"><img src="../assets/images/truck-icon.jpg" alt="배송"></a>
+                    <a href="#"><img src="../assets/images/shopping-cart-icon.jpg" alt="카트"></a>
                   </div>
                   <div class="sector"></div>           
                     <div class="login"><a href="#">로그인</a></div>
@@ -69,7 +73,7 @@
      <div class="body-container">
        <div class="body-wrap">
          <div class="sub-logo">
-           <img src="./images/Icon_Dog 1.jpg" alt="개">
+           <img src="../assets/images/shopping/Icon-Dog.jpg" alt="개">
            <p>강아지</p>
              </div>
              <div class="sub-logo-title-wrap">
@@ -90,31 +94,41 @@
            <p class="entire-count">전체 16개</p>
          
            <div class="product-wrap">
-             
-               <div class="product">
+        <c:forEach var="product" items="${product}" varStatus="status">
+        
+           <c:choose>
+              <c:when test="${status.index == 7}">
+        			<div class="banner">
+            <img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
+        		</div>
+    		</c:when>
+    		
+    		<c:otherwise>
+    		 <c:if test="${product.productType == '사료/간식'}">
+               <div class="product"
+               data-category="${product.productType}">
                  <div class="product-image-wrap">
-                  <img src="./images/not-found.png">
+                  <img src="../assets/images/product/${product.productImage}">
                   <div class="hover-box">
                     <div class=hover-box-new>
                       <a class="hover-new" href="#">
-                        <img src="./images/new.png">
+                        <img src="../assets/images/shopping/new.png">
                       </a>
                     </div>
                     <div class=hover-box-cart>
-                      <a class="hover-cart" href="#">
-                        <img src="./images/cart.png">
+                      <a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}">
+                        <img src="../assets/images/shopping/cart.png">
                       </a>
                     </div>
                     <div class=hover-box-heart>
                       <a class="hover-heart" href="#">
-                        <img src="./images/heart.png">
+                        <img src="../assets/images/shopping/heart.png">
                       </a>
                     </div>
                   </div>
                  </div>
                  <div class="product-info">
-                   <p id="product-name">아카나 독 레시피, 2kg</p>
-                   <p id="product-price">25,200원</p>
+                    <p class="product-name">${product.productName}</p>
                    <div class="delivery-info">
                       <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
                    </div>
@@ -123,105 +137,59 @@
                    </div>
                  </div>
                </div>
-
-               <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
+            </c:if>
+          </c:otherwise>
+        </c:choose>
+     </c:forEach>
+     
+     
+            <c:forEach var="product" items="${product}" varStatus="status">
+        
+           <c:choose>
+              <c:when test="${status.index == 7}">
+        			<div class="banner">
+            <img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
+        		</div>
+    		</c:when>
+    		
+    		<c:otherwise>
+    		 <c:if test="${product.productType == '배변용품'}">
+               <div class="product"
+               data-category="${product.productType}">
+                 <div class="product-image-wrap">
+                  <img src="../assets/images/product/${product.productImage}">
+                  <div class="hover-box">
+                    <div class=hover-box-new>
+                      <a class="hover-new" href="#">
+                        <img src="../assets/images/shopping/new.png">
+                      </a>
+                    </div>
+                    <div class=hover-box-cart>
+                      <a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}">
+                        <img src="../assets/images/shopping/cart.png">
+                      </a>
+                    </div>
+                    <div class=hover-box-heart>
+                      <a class="hover-heart" href="#">
+                        <img src="../assets/images/shopping/heart.png">
+                      </a>
+                    </div>
+                  </div>
+                 </div>
+                 <div class="product-info">
+                    <p class="product-name">${product.productName}</p>
+                   <div class="delivery-info">
+                      <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
                    </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
+                   <div class="product-star">
+                     <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
                    </div>
                  </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
+               </div>
+            </c:if>
+          </c:otherwise>
+        </c:choose>
+     </c:forEach>
 
               <div class="all-sup-title">
                 <div class="all-category-dropdown">
@@ -229,7 +197,7 @@
                     <li class="all-category-item">
                       <p class="all-category-title">
                         인기상품순
-                        <img class="all-toggle-icon" src="./images/ep_arrow-down-bold.png" alt="Toggle Icon" />
+                        <img class="all-toggle-icon" src="../assets/images/ep_arrow-down-bold.png" alt="Toggle Icon" />
                       </p>
                       <div class="all-sub-category" style="display: none;">
                         <p>판매 인기순</p>
@@ -242,416 +210,12 @@
                 </div>
               </div>
 
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- middle -->
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
               <div>
-                <img class="shopbanner" src="./images/shopping-banner.png">
               </div>
-                
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product">
-                <div class="product-image-wrap">
-                 <img src="./images/not-found.png">
-                 <div class="hover-box">
-                   <div class=hover-box-new>
-                     <a class="hover-new" href="#">
-                       <img src="./images/new.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-cart>
-                     <a class="hover-cart" href="#">
-                       <img src="./images/cart.png">
-                     </a>
-                   </div>
-                   <div class=hover-box-heart>
-                     <a class="hover-heart" href="#">
-                       <img src="./images/heart.png">
-                     </a>
-                   </div>
-                 </div>
-                </div>
-                <div class="product-info">
-                  <p id="product-name">아카나 독 레시피, 2kg</p>
-                  <p id="product-price">25,200원</p>
-                  <div class="delivery-info">
-                     <p id="product-start">오늘출발</p><p id="product-limit">오후 3시전 주문시</p><p id="product-free">(무료배송)</p>
-                  </div>
-                  <div class="product-star">
-                    <p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
-                  </div>
-                </div>
-              </div>
-
-              
-              
-        
+    
             </div>
        </div>
      </div>
-
      <footer>
       <div class="footer-container">
           <div class="footer-section">
@@ -706,112 +270,7 @@
           </div>
       </div>
   </footer>
-
-
-    
-
-
-  
 </body>
-<script>
-  const mainMenus = document.querySelectorAll(".menu-wrap .menu");
-  const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
-  const subMenuAll = document.querySelector(".sub-menu-wrap");
-  const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
-  
-  let count = 0;
-  let hoverTimeout; // 타임아웃을 저장할 변수
-  
-  mainMenus.forEach((menu) => {
-    menu.addEventListener("mouseover", () => {
-      clearTimeout(hoverTimeout); // 기존에 설정된 타임아웃이 있으면 제거
-      subMenuUl.forEach((ul) => {
-        ul.style.height = "250px";
-        ul.style.backgroundColor = "white";
-      });
-    });
-  
-    menu.addEventListener("mouseleave", () => {
-      hoverTimeout = setTimeout(() => {
-        subMenuUl.forEach((ul) => {
-          ul.style.height = "0";
-          ul.style.backgroundColor = "none";
-        });
-      }, 100); // 100ms 지연 후 메뉴를 닫음
-    });
-  });
-  
-  subMenus.forEach((sub, i) => {
-    sub.addEventListener("mouseover", () => {
-      clearTimeout(hoverTimeout); // 서브메뉴에서도 마우스 오버 시 타임아웃 제거
-      subMenuUl.forEach((ul) => {
-        ul.style.height = "250px";
-      });
-    });
-  
-    sub.addEventListener("mouseleave", () => {
-      hoverTimeout = setTimeout(() => {
-        subMenuUl.forEach((ul) => {
-          ul.style.height = "0";
-        });
-      }, 100); // 100ms 지연 후 서브메뉴를 닫음
-    });
-  });
+<script src="../assets/js/product/product-main.js"></script>
 
-  document.addEventListener('DOMContentLoaded', () => {
-  // 모든 카테고리 항목을 선택
-  const categoryItems = document.querySelectorAll('.category-item');
-
-  // 각 카테고리 항목에 대해 이벤트 리스너 추가
-  categoryItems.forEach((item) => {
-    const categoryTitle = document.querySelector('.category-title');
-    const subCategory = document.querySelector('.sub-category');
-    const toggleIcon = document.querySelector('.toggle-icon');
-
-    // 카테고리 제목을 클릭하면 서브 카테고리 보이기/숨기기 + 아이콘 변경
-    categoryTitle.addEventListener('click', () => {
-      if (subCategory.style.display === 'none' || subCategory.style.display === '') {
-        subCategory.style.display = 'block';  // 서브 카테고리 보이기
-        toggleIcon.src = '../cart/img/arrowup.png';  // 아이콘을 위로 변경
-      } else {
-        subCategory.style.display = 'none';  // 서브 카테고리 숨기기
-        toggleIcon.src = '../cart/img/arrow.png';  // 아이콘을 아래로 변경
-      }
-    });
-
-    // 마우스가 서브 카테고리에서 벗어났을 때 서브 카테고리 숨기기 + 아이콘 변경
-    subCategory.addEventListener('mouseleave', () => {
-      subCategory.style.display = 'none';
-      toggleIcon.src = '../cart/img/arrow.png';  // 아이콘을 원래 상태로 변경
-    });
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const allcategoryTitle = document.querySelector('.all-category-title');
-  const allsubCategory = document.querySelector('.all-sub-category');
-  const alltoggleIcon = document.querySelector('.toggle-icon');
-
-  let isSubCategoryVisible = false; // 서브 카테고리의 상태를 저장하는 변수
-
-  // 카테고리 제목을 클릭했을 때 실행되는 함수
-  allcategoryTitle.addEventListener('click', () => {
-    isSubCategoryVisible = !isSubCategoryVisible;  // 상태 토글
-
-    if (isSubCategoryVisible) {
-      allsubCategory.style.display = 'block';  // 서브 카테고리 보이기
-      alltoggleIcon.src = '../cart/img/arrowup.png'; // 아이콘을 위로 변경
-    } else {
-      allsubCategory.style.display = 'none';  // 서브 카테고리 숨기기
-      alltoggleIcon.src = '../cart/img/arrow.png'; // 아이콘을 아래로 변경
-    }
-    allsubCategory.addEventListener('mouseleave', () => {
-      allsubCategory.style.display = 'none';
-      alltoggleIcon.src = '../cart/img/arrow.png';  // 아이콘을 원래 상태로 변경
-    });
-  });
-});
-
-
-    </script>
 </html>
