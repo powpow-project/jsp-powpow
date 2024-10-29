@@ -42,7 +42,6 @@ public class ProductDAO {
 		sqlSession.delete("product.delete", id);
 	}
 	
-	
 //	재고변경
 	public void updateStock(OrderVO orderVO) {
 		sqlSession.update("product.updateStock", orderVO);
