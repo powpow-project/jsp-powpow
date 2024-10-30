@@ -25,7 +25,7 @@
 						<div class="icons">
 							<a href="#"><img src="../assets/images/shopping/search.png"alt="검색"></a> 
 							<a href="#"><img src="../assets/images/shopping/icon 2.png" alt="배송"></a> 
-							<a href="cart.jsp"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
+							<a href="./product-cart-list.product"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
 						</div>
 						<div class="sector"></div>
 						<div class="login">

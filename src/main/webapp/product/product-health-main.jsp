@@ -25,7 +25,7 @@
 						<div class="icons">
 							<a href="#"><img src="../assets/images/shopping/search.png"alt="검색"></a> 
 							<a href="#"><img src="../assets/images/shopping/icon 2.png" alt="배송"></a> 
-							<a href="http://localhost:9000/powpow/product/product-cart-list.product"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
+							<a href="./product-cart-list.product"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
 						</div>
 						<div class="sector"></div>
 						<div class="login">
@@ -47,7 +47,7 @@
 							<li class="sub-menu"><a href="#">고양이</a></li>
 							<li class="sub-menu"><a href="#">새</a></li>
 							<li class="sub-menu"><a href="#">물고기</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
+							<li class="./product-health-main.product"><a href="#">헬스+</a></li>
 						</ul>
 						<ul>
 							<li class="sub-menu"><a href="#">홈</a></li>
@@ -89,9 +89,9 @@
 						<span>성장기별 추천 아이템이에요!</span>
 					</div>
 					<div class="category-buttons">
-						<button data-category="퍼피" class="category-button active">퍼피</button>
-    					<button data-category="어덜트" class="category-button">어덜트</button>
-    					<button data-category="시니어" class="category-button">시니어</button>
+						<button data-category="강아지 퍼피" class="category-button active">퍼피</button>
+    					<button data-category="강아지 어덜트" class="category-button">어덜트</button>
+    					<button data-category="강아지 시니어" class="category-button">시니어</button>
 					</div>
 				</div>
 				<a href="#" class="view-all">전체보기</a>
@@ -100,9 +100,8 @@
 				<button class="slider-btn prev">&#10094;</button>
 				<div class="slider">
 					<c:forEach var="product" items="${products}">
-						<c:if test="${product.productCategoryName == '강아지'}">
-							<div class="product"
-								data-category="${product.productCategoryName}">
+						<c:if test="${product.productCategoryName == '강아지' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						 <div class="product" data-category="강아지 ${product.productAge}">
 								<div class="product-image-wrap">
 									<img src="../assets/images/product/${product.productImage}"
 										alt="${product.productName}">
@@ -139,9 +138,9 @@
 							<span>성장기별 추천 아이템이에요!</span>
 						</div>
 						<div class="category-buttons">
-							<button data-category="퍼피" class="category-button active">퍼피</button>
-    						<button data-category="어덜트" class="category-button">어덜트</button>
-    						<button data-category="시니어" class="category-button">시니어</button>
+							<button data-category="고양이 퍼피" class="category-button active">퍼피</button>
+    						<button data-category="고양이 어덜트" class="category-button">어덜트</button>
+    						<button data-category="고양이 시니어" class="category-button">시니어</button>
 						</div>
 					</div>
 					<a href="#" class="view-all">전체보기</a>
@@ -151,9 +150,8 @@
 					<button class="slider-btn prev">&#10094;</button>
 					<div class="slider">
 						<c:forEach var="product" items="${products}">
-							<c:if test="${product.productCategoryName == '고양이'}">
-								<div class="product"
-									data-category="${product.productCategoryName}">
+							<c:if test="${product.productCategoryName == '고양이' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						 	<div class="product" data-category="고양이 ${product.productAge}">
 									<div class="product-image-wrap">
 										<img src="../assets/images/product/${product.productImage}"
 											alt="${product.productName}">
@@ -186,9 +184,9 @@
 									<span>성장기별 추천 아이템이에요!</span>
 								</div>
 								<div class="category-buttons">
-									<button data-category="퍼피" class="category-button active">퍼피</button>
-    								<button data-category="어덜트" class="category-button">어덜트</button>
-    								<button data-category="시니어" class="category-button">시니어</button>
+									<button data-category="새 퍼피" class="category-button active">퍼피</button>
+    								<button data-category="새 어덜트" class="category-button">어덜트</button>
+    								<button data-category="새 시니어" class="category-button">시니어</button>
 								</div>
 							</div>
 							<a href="#" class="view-all">전체보기</a>
@@ -198,9 +196,8 @@
 							<button class="slider-btn prev">&#10094;</button>
 							<div class="slider">
 								<c:forEach var="product" items="${products}">
-									<c:if test="${product.productCategoryName == '새'}">
-										<div class="product"
-											data-category="${product.productCategoryName}">
+									<c:if test="${product.productCategoryName == '새' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						 			<div class="product" data-category="새 ${product.productAge}">
 											<div class="product-image-wrap">
 												<img src="../assets/images/product/${product.productImage}"
 													alt="${product.productName}">
@@ -235,9 +232,9 @@
 											alt="물고기 헬스+"> <span>성장기별 추천 아이템이에요!</span>
 									</div>
 									<div class="category-buttons">
-										<button data-category="퍼피" class="category-button active">퍼피</button>
-    									<button data-category="어덜트" class="category-button">어덜트</button>
-    									<button data-category="시니어" class="category-button">시니어</button>
+										<button data-category="물고기 퍼피" class="category-button active">퍼피</button>
+    									<button data-category="물고기 어덜트" class="category-button">어덜트</button>
+    									<button data-category="물고기 시니어" class="category-button">시니어</button>
 									</div>
 								</div>
 								<a href="#" class="view-all">전체보기</a>
@@ -247,9 +244,8 @@
 								<button class="slider-btn prev">&#10094;</button>
 								<div class="slider">
 									<c:forEach var="product" items="${products}">
-										<c:if test="${product.productCategoryName == '물고기'}">
-											<div class="product"
-												data-category="${product.productCategoryName}">
+										<c:if test="${product.productCategoryName == '물고기' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						 				<div class="product" data-category="물고기 ${product.productAge}">
 												<div class="product-image-wrap">
 													<img src="../assets/images/product/${product.productImage}"
 														alt="${product.productName}">
@@ -346,25 +342,46 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const categoryElement = document.getElementsByName('productCategoryName')[0];
+    const categoryButtons = document.querySelectorAll('.category-button');
+    const products = document.querySelectorAll('.product');
 
-    if (categoryElement) { // 요소가 존재하는지 확인
+    // 기본으로 '퍼피' 카테고리의 상품만 표시
+    filterProducts(['강아지 퍼피', '고양이 퍼피']);
+
+    // 'productCategoryName' 드롭다운 변경 이벤트 처리
+    if (categoryElement) {
         categoryElement.addEventListener('change', (e) => {
-            const selectedCategory = e.target.value; 
-            const products = document.querySelectorAll('.product');
-
-            // 모든 상품 숨기기
-            products.forEach((product) => {
-                const productCategory = product.getAttribute('data-category');
-                // 전체 상품 또는 선택한 카테고리의 상품만 보이게 설정
-                if (selectedCategory === 'all' || productCategory === selectedCategory) {
-                    product.style.display = 'block';  // 상품 보이기
-                } else {
-                    product.style.display = 'none';   // 상품 숨기기
-                }
-            });
+            const animalCategory = e.target.value;
+            filterProducts(animalCategory);
         });
-    } else {
-        console.error("Product category element not found.");
+    } 
+
+    // 카테고리 버튼 클릭 이벤트 처리
+    categoryButtons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            // 모든 버튼의 'active' 클래스 제거
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+            // 클릭한 버튼에 'active' 클래스 추가
+            e.target.classList.add('active');
+
+            // 클릭한 버튼의 카테고리로 상품 필터링
+            const animalCategory = e.target.getAttribute('data-category');
+            filterProducts(animalCategory);
+        });
+    });
+
+    // 선택된 카테고리에 맞는 상품만 표시하는 필터링 함수
+    function filterProducts(animalCategory) {
+        products.forEach((product) => {
+            const productCategory = product.getAttribute('data-category');
+            // 선택된 카테고리와 일치하는 상품만 표시
+            if(productCategory === animalCategory){
+            	product.style.display = 'block';
+            }else {
+            	product.style.display = 'none';
+            }
+        });
     }
 });
 </script>

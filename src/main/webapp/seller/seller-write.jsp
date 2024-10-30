@@ -62,8 +62,8 @@
 					<p class="h6">분류</p>
 					<select name="productAge">
 						<option value="퍼피">퍼피</option>
-						<option value="어덜트">시니어</option>
-						<option value="시니어">배변용품</option>
+						<option value="어덜트">어덜트</option>
+						<option value="시니어">시니어</option>
 					</select>
 				</div>
 				

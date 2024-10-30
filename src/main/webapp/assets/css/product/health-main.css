@@ -568,8 +568,7 @@ button {
   display: block;
 }
 .category-button.active {
-    background-color: #FFD700; /* 예시 색상 */
-    color: #fff;
+    border-color: #FFC303; /* 예시 색상 */
 }
 
 .product-image-wrap {
