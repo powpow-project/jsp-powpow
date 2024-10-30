@@ -10,6 +10,7 @@ public class ProductDTO {
 	private Long sellerId;
 	private String productName;
 	private int productPrice;
+	private String productAge;
 	private String productImage;
 	private String productCode;
 	private String productDate;
@@ -61,6 +62,14 @@ public class ProductDTO {
 
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
+	}
+
+	public String getProductAge() {
+		return productAge;
+	}
+
+	public void setProductAge(String productAge) {
+		this.productAge = productAge;
 	}
 
 	public String getProductImage() {
@@ -145,12 +154,12 @@ public class ProductDTO {
 
 	@Override
 	public String toString() {
-		return "ProductVO [id=" + id + ", productCategoryId=" + productCategoryId + ", sellerId=" + sellerId
-				+ ", productName=" + productName + ", productPrice=" + productPrice + ", productImage=" + productImage
-				+ ", productCode=" + productCode + ", productDate=" + productDate + ", productStock=" + productStock
-				+ ", productType=" + productType + ", productEditDate=" + productEditDate + ", productDetail="
-				+ productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
-				+ ", productSubImage3=" + productSubImage3 + "]";
+		return "ProductDTO [id=" + id + ", productCategoryId=" + productCategoryId + ", sellerId=" + sellerId
+				+ ", productName=" + productName + ", productPrice=" + productPrice + ", productAge=" + productAge
+				+ ", productImage=" + productImage + ", productCode=" + productCode + ", productDate=" + productDate
+				+ ", productStock=" + productStock + ", productType=" + productType + ", productEditDate="
+				+ productEditDate + ", productDetail=" + productDetail + ", productSubImage1=" + productSubImage1
+				+ ", productSubImage2=" + productSubImage2 + ", productSubImage3=" + productSubImage3 + "]";
 	}
 
 	@Override
@@ -169,6 +178,8 @@ public class ProductDTO {
 		ProductDTO other = (ProductDTO) obj;
 		return Objects.equals(id, other.id);
 	}
+
+
 
 	
 	
