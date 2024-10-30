@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="../assets/css/myhome/myhome-pet-write-bird.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+   <style type="text/css">
+      #profilePic{
+         width : 120px;
+         height : 120px;
+         border : solid 1px #333;
+         background-image : url('../assets/images/myhome/default-bird.svg');
+         background-repeat : no-repeat;
+          background-size: cover;
+      }
+      
+   </style>    
+   
 </head>
 <body>
     <div class="header-container">
@@ -67,40 +80,42 @@
             </div>
         </div>
     </div>
-    <a href="./pet-write-ok.myhome?petKind=bird"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
-    <div id="mydog">
-        <div class="card">
-            <div class="profile-pic" id="profilePic">
-                <img id="profileImage" src="../assets/images/myhome/default-bird.svg" alt="Profile Picture">
-            </div>
-            <div class="name">도도</div>
-            <input type="file" id="imageUpload" accept="image/*">
-            <button class="edit-button" onclick="document.getElementById('imageUpload').click();">이미지 편집</button>
-        </div>
-        <div class="title h5">
-            <span class="pre-title">기본사항*</span>
-            <p>이름</p>
-            <p>성별</p>
-            <p>품종</p>
-            <p>생일</p>
-            <p>몸무게(kg)</p>
-            <p>동물병원</p>
-        </div>
-        <div class="input-wrap">
-            <input class="input" type="text" placeholder="도도">
-            <label class="option">
-                <input type="radio" name="gender" value="female">
-                <p>여아</p>
-                <input type="radio" name="gender" value="male">
-                <p>남아</p>
-            </label>
-            <input class="input" type="text" placeholder="예) 앵무새">
-            <p><input class="birthday" type="month"></p>
-            <label class="weight"><input type="number"></label>
-            <p><input class="input" type="text" placeholder="병원명"></p>
-        </div>
-    </div>
-    <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
+    <form action="pet-write-ok.myhome?petKind=bird" method="post" id="frame" enctype="multipart/form-data">
+      <button id="submit-button" type="button">완료</button>
+      <div id="mydog">
+           <div class="card">
+               <div class="profile-pic" id="profilePic"></div>
+               <div class="name">name</div>
+                 <input type="file" id="imageUpload" name="petImage">
+               <label for="imageUpload">
+                  <h1 id="edit-button" class="edit-button">이미지 편집</h1>
+               </label>
+           </div>
+           <div class="title h5">
+               <span class="pre-title">기본사항*</span>
+               <label for="petName">이름</label>
+               <label for="petGender">성별</label>
+               <label for="petBreed">품종</label>
+               <label for="petBirth">생일</label>
+               <label for="petWeight">몸무게(kg)</label>
+               <label for="petVet">동물병원</label>
+           </div>
+           <div class="input-wrap">
+            <input class="input" id="petName" type="text" name="petName" placeholder="도도">
+               <label class="option">
+                   <input type="radio" name="petGender" value="female">
+                   <p>여아</p>
+                   <input type="radio" name="petGender" value="male">
+                   <p>남아</p>
+               </label>
+               <input class="input" name="petBreed" type="text" placeholder="예) 앵무새">
+               <p><input name="petBirth" class="birthday" type="month"></p>
+               <label class="weight"><input name="petWeight" type="number"></label>
+               <p><input class="input" name="petVet" type="text" placeholder="병원명"></p>
+           </div>
+       </div>
+    </form>
+       아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     <footer>
         <div class="footer-container">
             <div class="footer-section">

@@ -184,8 +184,12 @@
         height: 42px;
         background-color: #1c4da0;
         border-radius: 20px;
-        color: white;
+        color: #ffffff;
         margin-left: 910px;
+    }
+    
+    #submit-button a{
+    	color: #ffffff;
     }
 
     #mydog {
@@ -195,6 +199,15 @@
         justify-content: center;
         margin: 0 auto;
     }
+    
+     #profilePic{
+         width : 120px;
+         height : 120px;
+         border : solid 1px #333;
+         background-image : url('../assets/images/myhome/default-bird.svg');
+         background-repeat : no-repeat;
+          background-size: cover;
+      }
 
     .card {
         width: 270px;
@@ -247,12 +260,13 @@
     }
 
     .title {
-        flex-direction: row;
+        flex-direction: column;
         margin-left: 60px;
         font-weight: bold;
     }
 
-    .title p {
+    .title label {
+    display:block;
         padding-top: 30px;
     }
 
@@ -316,9 +330,6 @@
         /* 패딩 추가 */
         background-color: #f9f9f9;
         /* 배경색 */
-        font-family: Arial, sans-serif;
-        /* 폰트 스타일 */
-        margin-top: 214px;
     }
 
     .footer-black {
@@ -328,9 +339,9 @@
     .footer-container {
         display: flex;
         justify-content: space-between;
-        width: 1200px;
+        width: 1440px;
         margin: 0 auto;
-        padding: 150px 0 0 0;
+        padding: 300px 0 0 0;
     }
 
     .footer-section {
