@@ -104,12 +104,12 @@
             <td><c:out value="${totalSales}" /></td>
           </tr>
           <tr>
-        	<c:forEach var="dataMap" items="${dataMap}">
-            	<td><c:out value="${dataMap.orderDate.substring(0, 10)}" /></td>
-            	<td><c:out value="날짜별 수량: ${dataMap}" /></td>
-            	<td><c:out value="날짜별 주문금액:${}"/></td>
-            	<td><c:out value="날짜별 수량:${}" /></td>
-            	<td><c:out value="날짜별 취소금액:${}" /></td>
+        	<c:forEach var="orderListForSeller" items="${orderListForSeller}">
+            	<td><c:out value="${orderListForSeller.orderDate.substring(0, 10)}" /></td>
+            	<td><c:out value="날짜별 수량: ${orderListForSeller.orderTotalCount}" /></td><!-- 수정해야됨 -->
+            	<td><c:out value="날짜별 주문금액:${orderListForSeller.orderTotalPrice}"/></td>
+            	<td><c:out value="날짜별 수량:${orderListForSeller.orderTotalCount}" /></td>
+            	<td><c:out value="날짜별 취소금액:${orderListForSeller.orderTotalPrice}" /></td>
             	<td class="calculated-price"></td>
         	</c:forEach>
           </tr>

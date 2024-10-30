@@ -1,9 +1,7 @@
 package com.app.seller.controller;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -39,10 +37,6 @@ public class SellerRevenueListController implements Action {
 		List<OrderDTO> orderList = orderDAO.selectByDate(sellerId, startDate, endDate);
 		List<CancleProductDTO> cancleList = cancleProductDAO.selectByDate(sellerId, startDate, endDate);
 		
-		Map<String, Object> dataMap = new HashMap<>();
-			dataMap.put("orderListForSeller", orderList);
-			dataMap.put("cancleListForSeller", cancleList);
-		
 		int totalOrderCount = 0;
 		int totalOrderPrice = 0;
 		int totalCancleCount = 0;
@@ -76,8 +70,8 @@ public class SellerRevenueListController implements Action {
 		
 		req.setAttribute("orderDate", orderDate);
 		req.setAttribute("cancleDate", cancleDate);
-		req.setAttribute("dataMap", dataMap);
-		
+		req.setAttribute("orderListForSeller", orderList);
+		req.setAttribute("cancleListForSeller", cancleList);
 		
 		result.setPath("seller-revenue-list.jsp");
 		return result;
