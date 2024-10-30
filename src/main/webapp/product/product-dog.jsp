@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/css/product/product-main.css">
+  <link rel="stylesheet" href="../assets/css/product/product-dog.css">
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
   <title>쇼핑 메인</title>
@@ -99,7 +99,11 @@
            <!-- <p class="product-type-name">사료/간식</p> -->
            
         <c:forEach var="product" items="${product}" varStatus="status">
+        	
            <c:choose>
+                         <c:when test="${status.index == 0}">
+                         <p>${product.productType}</p>
+    		</c:when>
               <c:when test="${status.index == 8}">
         			<div class="banner">
             <img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">

@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             products.forEach((product) => {
                 const productCategory = product.getAttribute('data-category');
                 // 전체 상품 또는 선택한 카테고리의 상품만 보이게 설정
-                if (selectedCategory === 'all' || productCategory === selectedCategory) {
+                if (selectedCategory === 'product-all-wrap' || productCategory === selectedCategory) {
                     product.style.display = 'block';  // 상품 보이기
                 } else {
                     product.style.display = 'none';   // 상품 숨기기

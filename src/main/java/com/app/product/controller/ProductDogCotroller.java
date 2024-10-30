@@ -30,7 +30,7 @@ public class ProductDogCotroller implements Action {
 		
 		
 		
-		result.setPath("../product/product-main.jsp");
+		result.setPath("../product/product-dog.jsp");
 		return result;
 	}
 
