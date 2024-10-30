@@ -3,6 +3,7 @@ package com.app.dao;
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.dto.AdminBannerDTO;
+import com.app.dto.AdminCouponDTO;
 import com.app.dto.AdminNoticeDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.AdminBannerVO;
@@ -76,5 +77,36 @@ public class AdminDAO {
     // 배너 삭제
     public void deleteAdminBanner(Long id) {
         sqlSession.delete("admin.deleteAdminBanner", id);
+    }
+    
+    // 전체 쿠폰 조회
+    public List<AdminCouponDTO> selectAllCoupons() {
+        return sqlSession.selectList("admin.selectAllAdminCoupons");
+    }
+    
+    // 쿠폰 추가
+    public void insertAdminCoupon(AdminCouponDTO adminCouponDTO) {
+        sqlSession.insert("admin.insertAdminCoupon", adminCouponDTO);
+    }
+
+    // 쿠폰 상세 조회
+    public Optional<AdminCouponDTO> selectAdminCoupon(Long id) {
+        return Optional.ofNullable(sqlSession.selectOne("admin.selectCouponById", id));
+    }
+
+    // 쿠폰 수정
+    public void updateAdminCoupon(AdminCouponDTO adminCouponDTO) {
+        sqlSession.update("admin.updateAdminCouponById", adminCouponDTO); 
+    }
+
+    // 쿠폰 삭제
+    public void deleteAdminCoupon(Long id) {
+        sqlSession.delete("admin.deleteCouponById", id);
+    }
+    
+    // 쿠폰 코드 중복 체크
+    public boolean checkCouponCodeExists(String couponCode) {
+        Integer count = sqlSession.selectOne("admin.checkCouponCodeExists", couponCode);
+        return count != null && count > 0; // 존재하는 경우 true 반환
     }
 }
