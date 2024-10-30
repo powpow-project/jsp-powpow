@@ -167,7 +167,7 @@
 
 
       </div>
-        <button type="button" class="login-button">회원가입</button>
+        <button type="submit" class="login-button">회원가입</button>
   </div>
   <script src="../assets/js/jQuery.js"></script>
   <script src="../assets/js/member/member-seller-join.js"></script>
