@@ -53,7 +53,7 @@
 		ORDER BY TBO.ID DESC
 	</select>
 	
-	<select id="selectByDate" resultType="OrderDTO">
+	<select id="selectByDate" parameterType="map" resultType="OrderDTO">
 		SELECT 
     		SUM(PRODUCT_COUNT) AS ORDER_TOTAL_COUNT,
     		SUM(PRODUCT_COUNT * PRODUCT_PRICE) AS ORDER_TOTAL_PRICE
@@ -65,7 +65,8 @@
 		JOIN TBL_SELLER TS 
 		ON TP.SELLER_ID = TS.ID
 		WHERE TS.ID = #{sellerId}
-    	AND TBO.ORDER_DATE BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD') AND TO_DATE(#{endDate}, 'YYYY-MM-DD')	
+    	AND TBO.ORDER_DATE BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD') 
+    	AND TO_DATE(#{endDate}, 'YYYY-MM-DD')	
 		ORDER BY TBO.ID DESC
 	</select>
 	

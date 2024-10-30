@@ -68,11 +68,12 @@
       <h1 class="h1">매출조회</h1>
     </div>
     <form action="seller-serach-ok.seller" method="post">
+   		<input type="hidden" name="sellerId" value="${sellerId}"/>
 	    <section class="notice-search">
 	      <div class="input-group">
-	        <input type="date" id="start-date" name="start-date"  value="${startDate != null ? startDate : ''}"/>
+	        <input type="date" id="start-date" name="startDate" value="${startDate}"/>
 	        <span>~</span>
-	        <input type="date" id="end-date" name="end-date" value="${endDate != null ? endDate : ''}"/>
+	        <input type="date" id="end-date" name="endDate" value="${endDate}"/>
 	      </div>
 	      <div class="buttons">
 	        <button class="search-btn">검색</button>
@@ -104,7 +105,7 @@
           </tr>
           <tr>
         	<c:forEach var="orderList" items="${orderListForSeller}">
-            <td><c:out value="${orderList.orderDate}" /></td>
+            	<td><c:out value="${orderList.orderDate}" /></td>
             	<td><c:out value="${orderList.orderTotalCount}" /></td>
             	<td  data-ordertotalprice="${orderList.orderTotalPrice}">
             		<c:out value="${orderList.orderTotalPrice}"/>
