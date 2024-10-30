@@ -119,4 +119,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	    });
 	  });
 	});
+	
+	
+	document.querySelectorAll('.sub-logo-title-menu a').forEach(link => {
+	  link.addEventListener('click', function(event) {
+	    event.preventDefault();
+
+	    document.querySelectorAll('.product-wrap > div').forEach(section => {
+	      section.style.display = 'none';
+	    });
+
+	    const targetId = this.getAttribute('data-target');
+	    document.getElementById(targetId).style.display = 'contents';
+	  });
+	});
 

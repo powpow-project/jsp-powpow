@@ -253,6 +253,25 @@ body {
   position: relative;
 }
 
+.product-wrap #product-all-wrap {
+	display: contents;
+	/* display:none; */
+}
+
+.product-wrap #feed-wrap {
+	display: contents;
+	/* display:none; */
+}
+
+.product-wrap #toiletries-wrap {
+	display: contents;
+	display:none;
+}
+
+.product-wrap .product-type-name {
+	display: flex;
+}
+
 .product-wrap .banner img{
 	display: flex;
 	width: 1000px;

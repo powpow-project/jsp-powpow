@@ -79,25 +79,28 @@
              <div class="sub-logo-title-wrap">
           <div class="sub-logo-title">
             <ul>
-              <li class="sub-logo-title-menu"><a class="h4" href="#">전체</a></li>
+              <li class="sub-logo-title-menu"><a class="h4" href="#" data-target=product-all-wrap>전체</a></li>
               <li class="sub-logo-title-menu"><div class="sector"></div></li>
-              <li class="sub-logo-title-menu"><a class="h4" href="#">사료/간식</a></li>
+              <li class="sub-logo-title-menu"><a class="h4" href="#" data-target="feed-wrap">사료/간식</a></li>
               <li class="sub-logo-title-menu"><div class="sector"></div></li>
-              <li class="sub-logo-title-menu"><a class="h4" href="#">배변용품</a></li>
+              <li class="sub-logo-title-menu"><a class="h4" href="#" data-target="toiletries-wrap">배변용품</a></li>
               <li class="sub-logo-title-menu"><div class="sector"></div></li>
-              <li class="sub-logo-title-menu"><a class="h4" href="#">장난감</a></li>
+              <li class="sub-logo-title-menu"><a class="h4" href="#" data-target="feed-wrap">장난감</a></li>
               <li class="sub-logo-title-menu"><div class="sector"></div></li>
-              <li class="sub-logo-title-menu"><a class="h4" href="#">미용/목욕</a></li>
+              <li class="sub-logo-title-menu"><a class="h4" href="#" data-target="feed-wrap">미용/목욕</a></li>
             </ul>
            </div>
            </div>
            <p class="entire-count">전체 16개</p>
          
            <div class="product-wrap">
+           <div id="product-all-wrap">
+           <div id="feed-wrap">
+           <!-- <p class="product-type-name">사료/간식</p> -->
+           
         <c:forEach var="product" items="${product}" varStatus="status">
-        
            <c:choose>
-              <c:when test="${status.index == 7}">
+              <c:when test="${status.index == 8}">
         			<div class="banner">
             <img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
         		</div>
@@ -117,7 +120,7 @@
                     </div>
                     <div class=hover-box-cart>
                       <a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}">
-                        <img src="../assets/images/shopping/cart.png">
+                        <img src="../assets/images/shopping/carthovar.png">
                       </a>
                     </div>
                     <div class=hover-box-heart>
@@ -141,12 +144,12 @@
           </c:otherwise>
         </c:choose>
      </c:forEach>
-     
-     
+     </div>
+     	<div id="toiletries-wrap">
             <c:forEach var="product" items="${product}" varStatus="status">
         
            <c:choose>
-              <c:when test="${status.index == 7}">
+              <c:when test="${status.index == 8}">
         			<div class="banner">
             <img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
         		</div>
@@ -166,7 +169,7 @@
                     </div>
                     <div class=hover-box-cart>
                       <a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}">
-                        <img src="../assets/images/shopping/cart.png">
+                        <img src="../assets/images/shopping/carthovar.png">
                       </a>
                     </div>
                     <div class=hover-box-heart>
@@ -190,6 +193,7 @@
           </c:otherwise>
         </c:choose>
      </c:forEach>
+   </div>  
 
               <div class="all-sup-title">
                 <div class="all-category-dropdown">
@@ -212,7 +216,7 @@
 
               <div>
               </div>
-    
+    		</div>
             </div>
        </div>
      </div>
