@@ -14,6 +14,7 @@ import com.app.product.controller.ProductCartWriteOkController;
 import com.app.product.controller.ProductDetailController;
 import com.app.product.controller.ProductHealthController;
 import com.app.product.controller.ProductListController;
+import com.app.product.controller.ProductMainCotroller;
 import com.app.product.controller.ProductSearchController;
 import com.app.product.controller.ProductSellerController;
 
@@ -28,7 +29,10 @@ public class ProductFrontController extends HttpServlet{
       
       System.out.println(target);
       
-      if(target.equals("list")) {
+      
+      if(target.equals("product-main")) {
+    	  result = new ProductMainCotroller().execute(req, resp);
+      }else if(target.equals("list")) {
     	  result = new ProductListController().execute(req, resp);
       }else if(target.equals("product-seller")) {
     	  result = new ProductSellerController().execute(req, resp);
