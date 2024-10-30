@@ -7,9 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	const menuFrame = document.querySelector("#menu-frame");
 	const listItems = document.querySelectorAll("li");
 	const divs = document.querySelectorAll("ul > li > div");
-	const unlimitedCheckbox = document.getElementById("unlimited");
-	const startDateInput = document.getElementById("start-date");
-	const endDateInput = document.getElementById("end-date");
 
 	// 초기화 버튼
 	reset.addEventListener("click", () => {
@@ -51,36 +48,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// 새 게시글 등록
 	newAdd.addEventListener("click", function() {
-		window.location.href = "../admin/admin-banner-write.admin";
+		window.location.href = "../admin/admin-coupon-write.admin";
 	});
 
-	// 삭제 버튼 기능
 	const deleteButtons = document.querySelectorAll(".delete-btn");
 	deleteButtons.forEach(function(button) {
-	   button.addEventListener("click", function() {
-	      if (confirm("정말 삭제하시겠습니까?")) {
-	         const id = button.getAttribute('data-id'); 
-	         location.href = `admin-banner-delete-ok.admin?id=${id}`;
-	         button.closest("tr").remove();
-	         alert("공지사항이 삭제되었습니다.");
-	      }
-	   });
-	});
-
-	// 무제한 체크박스 클릭 시 '무제한' 텍스트 표시
-	unlimitedCheckbox.addEventListener("change", () => {
-		const isChecked = unlimitedCheckbox.checked;
-
-		if (isChecked) {
-			startDateInput.value = "무제한";
-			endDateInput.value = "무제한";
-			startDateInput.disabled = true;
-			endDateInput.disabled = true;
-		} else {
-			startDateInput.value = "";
-			endDateInput.value = "";
-			startDateInput.disabled = false;
-			endDateInput.disabled = false;
-		}
+		button.addEventListener("click", function() {
+			if (confirm("정말 삭제하시겠습니까?")) {
+				const id = button.getAttribute('data-id');
+				location.href = `admin-coupon-delete-ok.admin?id=${id}`;
+				button.closest("tr").remove();
+				alert("공지사항이 삭제되었습니다.");
+			} else {
+			}
+		});
 	});
 });
