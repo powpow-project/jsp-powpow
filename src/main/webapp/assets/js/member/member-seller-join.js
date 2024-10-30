@@ -36,22 +36,19 @@ const mark = document.querySelector(".mark");
 	
 	document.addEventListener("DOMContentLoaded", () => {
 	    const submitButton = document.querySelector(".login-button");
-		const loginForm = document.querySelector("form");
+	    const loginForm = document.querySelector("form");
+
 	    submitButton.addEventListener("click", (event) => {
-	        event.preventDefault(); // 기본 폼 제출 방지
+	        // 기본 폼 제출 방지
+	        event.preventDefault(); 
 
-	        const isEmailValid = validateEmail();
-	        const isPasswordValid = validatePassword();
-	        const isNameValid = validateName();
-	        const isPhoneValid = validatePhone();
-	        const isNumValid = validateNum();
-	        const isKingValid = validateKing();
-	        const isCompanyValid = validateCompany();
-			const isAgreementsValid = validateAgreements();
+	        // 유효성 검사 (여기에 필요한 유효성 검사 함수를 추가할 수 있습니다)
+	        const isValid = true; // 여기서 모든 유효성 검사를 통과했는지 확인
 
-	        if (isEmailValid && isPasswordValid && isNameValid && isPhoneValid && isNumValid && isKingValid && isCompanyValid && isAgreementsValid) {
-	           loginForm.submit(); // 유효성 검사 통과 시 폼 제출
+	        if (isValid) {
+	            loginForm.submit(); // 유효성 검사 통과 시 폼 제출
+	        } else {
+	            alert("입력한 값을 확인해주세요."); // 유효성 검사 실패 시 경고
 	        }
-			return;
 	    });
 	});

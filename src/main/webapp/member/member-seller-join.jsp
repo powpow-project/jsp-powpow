@@ -25,7 +25,7 @@
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-          <input class="inputbutton" type="email" name="sellerEmail" id="email" placeholder="아이디(이메일)">
+          <input class="inputbutton" type="text" name="sellerEmail" id="email" placeholder="아이디(이메일)">
           <button class="auth-button" id="email-check">확인</button>
           <p class="result" id="email-result"></p>
         </div>
@@ -167,7 +167,7 @@
 
 
       </div>
-        <button type="submit" class="login-button">회원가입</button>
+        <button type="button" class="login-button">회원가입</button>
   </div>
   <script src="../assets/js/jQuery.js"></script>
   <script src="../assets/js/member/member-seller-join.js"></script>

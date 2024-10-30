@@ -61,9 +61,9 @@
 		VALUES(SELLER_SEQ.NEXTVAL, #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck})
 	</insert>
 	
-	<insert id="insertBusiness" parameterType="SellerVO"> 
-		INSERT INTO TBL_BUSINESS(ID, BUSINESS_NAME, BUSINESS_REPRESENTAIVE_NAME, BUSINESS_NUMBER)
-		VALUES(SELLER_SEQ.NEXTVAL, #{businessName}, #{businessRepresentaiveName}, #{businessNumber})
+	<insert id="insertBusiness" parameterType="BusinessVO" useGeneratedKeys="true" keyProperty="id">
+	    INSERT INTO TBL_BUSINESS(ID, BUSINESS_NAME, BUSINESS_REPRESENTATIVE_NAME, BUSINESS_NUMBER)
+	    VALUES(SELLER_SEQ.NEXTVAL, #{businessName}, #{businessRepresentativeName}, #{businessNumber})
 	</insert>
 	
    <!-- 회원가입시 이메일 중복 -->

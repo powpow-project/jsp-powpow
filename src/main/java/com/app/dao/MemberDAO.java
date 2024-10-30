@@ -49,8 +49,9 @@ public class MemberDAO {
 		sqlSession.insert("member.insertSeller", sellerVO);
 	}
 //	판매자 비즈니스 정보 추가
-	public void insertBusiness(BusinessVO businessVO) {
-		sqlSession.insert("member.insertBusiness", businessVO);
+	public Long insertBusiness(BusinessVO businessVO) {
+	    sqlSession.insert("member.insertBusiness", businessVO);
+	    return businessVO.getId(); 
 	}
 	
 //	판매자 로그인
