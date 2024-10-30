@@ -29,15 +29,21 @@ public class MemberSellerJoinOkController implements Action {
 		businessVO.setBusinessName(req.getParameter("kingname"));
 		businessVO.setBusinessNumber(req.getParameter("number"));
 		businessVO.setBusinessRepresentativeName(req.getParameter("companyname"));
-		
-		Long businessId = memberDAO.insertBusiness(businessVO);
-		
 		sellerVO.setSellerEmail(req.getParameter("sellerEmail"));
 		sellerVO.setSellerPassword(req.getParameter("sellerpassword"));
 		sellerVO.setSellerName(req.getParameter("name"));
 		sellerVO.setSellerPhone(req.getParameter("phone"));
 		sellerVO.setSellerSms(req.getParameter("sms").charAt(0));
 		sellerVO.setSellerEmailCheck(req.getParameter("emailcheck").charAt(0));
+		
+		System.out.println(req.getParameter("kingname"));
+		System.out.println(req.getParameter("number"));
+		System.out.println(req.getParameter("companyname"));
+		System.out.println(req.getParameter("sellerEmail"));
+		System.out.println(req.getParameter("name"));
+		System.out.println(req.getParameter("phone"));
+		System.out.println(req.getParameter("sms").charAt(0));
+		System.out.println(req.getParameter("emailcheck").charAt(0));
 		
 		
 		memberDAO.insertSeller(sellerVO);
