@@ -7,6 +7,7 @@ public class ProductVO {
 	private Long sellerId;
 	private String productName;
 	private int productPrice;
+	private String productAge;
 	private String productImage;
 	private String productCode;
 	private String productDate;
@@ -51,6 +52,14 @@ public class ProductVO {
 
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
+	}
+
+	public String getProductAge() {
+		return productAge;
+	}
+
+	public void setProductAge(String productAge) {
+		this.productAge = productAge;
 	}
 
 	public String getProductImage() {
@@ -144,9 +153,9 @@ public class ProductVO {
 	@Override
 	public String toString() {
 		return "ProductVO [id=" + id + ", sellerId=" + sellerId + ", productName=" + productName + ", productPrice="
-				+ productPrice + ", productImage=" + productImage + ", productCode=" + productCode + ", productDate="
-				+ productDate + ", productStock=" + productStock + ", productType=" + productType
-				+ ", productCategoryName=" + productCategoryName + ", productEditDate=" + productEditDate
+				+ productPrice + ", productAge=" + productAge + ", productImage=" + productImage + ", productCode="
+				+ productCode + ", productDate=" + productDate + ", productStock=" + productStock + ", productType="
+				+ productType + ", productCategoryName=" + productCategoryName + ", productEditDate=" + productEditDate
 				+ ", productDetail=" + productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2="
 				+ productSubImage2 + ", productSubImage3=" + productSubImage3 + "]";
 	}
@@ -167,7 +176,7 @@ public class ProductVO {
 		ProductVO other = (ProductVO) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 	
 	
 	
