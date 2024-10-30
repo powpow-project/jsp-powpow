@@ -8,13 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.product.controller.ProductBirdCotroller;
 import com.app.product.controller.ProductCartDeleteController;
 import com.app.product.controller.ProductCartListController;
 import com.app.product.controller.ProductCartWriteOkController;
+import com.app.product.controller.ProductCatCotroller;
 import com.app.product.controller.ProductDetailController;
+import com.app.product.controller.ProductDogCotroller;
+import com.app.product.controller.ProductFishCotroller;
 import com.app.product.controller.ProductHealthController;
 import com.app.product.controller.ProductListController;
-import com.app.product.controller.ProductMainCotroller;
 import com.app.product.controller.ProductSearchController;
 import com.app.product.controller.ProductSellerController;
 
@@ -30,8 +33,14 @@ public class ProductFrontController extends HttpServlet{
       System.out.println(target);
       
       
-      if(target.equals("product-main")) {
-    	  result = new ProductMainCotroller().execute(req, resp);
+      if(target.equals("product-dog")) {
+    	  result = new ProductDogCotroller().execute(req, resp);
+      }else if(target.equals("product-Cat")) {
+    	  result = new ProductCatCotroller().execute(req, resp);
+      }else if(target.equals("product-Bird")) {
+    	  result = new ProductBirdCotroller().execute(req, resp);
+      }else if(target.equals("product-Fish")) {
+    	  result = new ProductFishCotroller().execute(req, resp);
       }else if(target.equals("list")) {
     	  result = new ProductListController().execute(req, resp);
       }else if(target.equals("product-seller")) {
