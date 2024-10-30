@@ -23,28 +23,28 @@
 				<ul>
 					<li>
 						<p>
-							<a href="http://localhost:9000/powpow/admin/admin-list.admin" style="color: white;">공지사항 관리</a>
+							<a href="../admin/admin-list.admin" style="color: white;">공지사항 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="http://localhost:9000/powpow/admin/admin-list.admin" >공지사항 조회</a>
+								<a href="../admin/admin-list.admin" >공지사항 조회</a>
 							</p>
 							<p>
-								<a href="http://localhost:9000/powpow/admin/admin-write.admin">공지사항 신규등록</a>
+								<a href="../admin/admin-write.admin">공지사항 신규등록</a>
 							</p>
 						</div>
 					</li>
 					<li>
 						<p>
 							<a
-								href="http://localhost:9000/powpow/admin/admin-banner-list.admin" style="color: white;">배너 관리</a>
+								href="../admin/admin-banner-list.admin" style="color: white;">배너 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="http://localhost:9000/powpow/admin/admin-banner-list.admin">배너 조회</a>
+								<a href="../admin/admin-banner-list.admin">배너 조회</a>
 							</p>
 							<p>
-								<a href="http://localhost:9000/powpow/admin/admin-banner-write.admin">배너 신규등록</a>
+								<a href="../admin/admin-banner-write.admin">배너 신규등록</a>
 							</p>
 						</div>
 					</li>
@@ -63,21 +63,20 @@
 					</li>
 					<li>
 						<p>
-							<a href="http://localhost:9000/powpow/admin/admin-coupon-list.admin" style="color: white;">쿠폰 관리</a>
+							<a href="../admin/admin-coupon-list.admin" style="color: white;">쿠폰 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="http://localhost:9000/powpow/admin/admin-coupon-list.admin">쿠폰 조회</a>
+								<a href="../admin/admin-coupon-list.admin">쿠폰 조회</a>
 							</p>
 							<p>
-								<a href="http://localhost:9000/powpow/admin/admin-coupon-write.admin">쿠폰 신규등록</a>
+								<a href="../admin/admin-coupon-write.admin">쿠폰 신규등록</a>
 							</p>
 						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
-
         
         <div class="division-line"></div>
 
