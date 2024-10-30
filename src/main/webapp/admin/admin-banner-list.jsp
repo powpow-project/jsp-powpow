@@ -106,5 +106,17 @@
 	</form>
 
 </body>
+
+<script>
+    const startdateInput = document.querySelector("#start-date");
+    let startDate = `${adminBanner.adminBannerStart}`;
+    startDate = startDate.split(" ")[0];
+    startdateInput.value = startDate; 
+
+    const endDateInput = document.querySelector("#end-date");
+    let endDate = `${adminBanner.adminBannerEnd}`;
+    endDate = endDate.split(" ")[0];
+    endDateInput.value = endDate;
+</script>
 	<script src="../assets/js/admin/admin-banner-list.js"></script>
 </html>

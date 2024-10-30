@@ -114,8 +114,8 @@
         </div>
 
         <div class="change-buttons">
-		    <button class="button-submit">등록</button>
-		    <button class="button-edit">취소</button>
+              <button class="button-submit">완료</button>
+              <button class="button-edit" onclick="cancelPost()">취소</button>
         </div>
     </form>
 

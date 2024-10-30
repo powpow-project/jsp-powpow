@@ -60,7 +60,7 @@
 
 		<section class="notice-search">
 			<div class="search-bar">
-				<input type="text" class="search" placeholder="쿠폰명/쿠폰번호를 입력하세요" />
+				<input type="text" class="search" placeholder="쿠폰명을 입력하세요" />
 			</div>
 			<div class="buttons">
 				<button type="button" class="search-btn">검색</button>
@@ -93,7 +93,7 @@
 							<td>
 								<div class="change-buttons">
 									<button type="button" class="edit-btn"
-										onclick="location.href='admin-Coupon-update.admin?id=${adminCoupon.id}'">수정</button>
+										onclick="location.href='admin-coupon-update.admin?id=${adminCoupon.id}'">수정</button>
 									<button type="button" class="delete-btn"
 										data-id="${adminCoupon.id}">삭제</button>
 								</div>
@@ -106,5 +106,16 @@
 	</form>
 
 </body>
+	<script>
+      const startdateInput = document.querySelector("#start-date");
+      let startDate = `${adminBanner.adminBannerStart}`;
+      startDate = startDate.split(" ")[0];
+      startdateInput.value = startDate; 
+      
+      const endDateInput = document.querySelector("#end-date");
+      let endDate = `${adminBanner.adminBannerEnd}`;
+      endDate = endDate.split(" ")[0];
+      endDateInput.value = endDate;
+      </script>
 	<script src="../assets/js/admin/admin-coupon-list.js"></script>
 </html>

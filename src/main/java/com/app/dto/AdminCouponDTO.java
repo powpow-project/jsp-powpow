@@ -5,17 +5,16 @@ import java.util.Objects;
 
 public class AdminCouponDTO {
 	
-    private Long id; 
-    private Long adminId; 
-    private String adminCouponTitle; 
-    private String adminCouponType; 
-    private String adminCouponCode; 
-    private String adminCouponStart; 
+	private Long id;
+    private Long adminId;
+    private String adminCouponTitle;
+    private String adminCouponType;
+    private String adminCouponCode;
+    private String adminCouponStart;
     private String adminCouponEnd;
-    private String adminCouponContent; 
-    private Integer adminCouponQuantity; 
-    private Double adminCouponDiscountRate;
-    private Timestamp createdAt;
+    private String adminCouponContent;
+    private int adminCouponQuantity;
+    private double adminCouponDiscountRate;
     
     public AdminCouponDTO() {;}
 
@@ -83,28 +82,20 @@ public class AdminCouponDTO {
 		this.adminCouponContent = adminCouponContent;
 	}
 
-	public Integer getAdminCouponQuantity() {
+	public int getAdminCouponQuantity() {
 		return adminCouponQuantity;
 	}
 
-	public void setAdminCouponQuantity(Integer adminCouponQuantity) {
+	public void setAdminCouponQuantity(int adminCouponQuantity) {
 		this.adminCouponQuantity = adminCouponQuantity;
 	}
 
-	public Double getAdminCouponDiscountRate() {
+	public double getAdminCouponDiscountRate() {
 		return adminCouponDiscountRate;
 	}
 
-	public void setAdminCouponDiscountRate(Double adminCouponDiscountRate) {
+	public void setAdminCouponDiscountRate(double adminCouponDiscountRate) {
 		this.adminCouponDiscountRate = adminCouponDiscountRate;
-	}
-
-	public Timestamp getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Timestamp createdAt) {
-		this.createdAt = createdAt;
 	}
 
 	@Override
@@ -113,7 +104,7 @@ public class AdminCouponDTO {
 				+ ", adminCouponType=" + adminCouponType + ", adminCouponCode=" + adminCouponCode
 				+ ", adminCouponStart=" + adminCouponStart + ", adminCouponEnd=" + adminCouponEnd
 				+ ", adminCouponContent=" + adminCouponContent + ", adminCouponQuantity=" + adminCouponQuantity
-				+ ", adminCouponDiscountRate=" + adminCouponDiscountRate + ", createdAt=" + createdAt + "]";
+				+ ", adminCouponDiscountRate=" + adminCouponDiscountRate + "]";
 	}
 
 	@Override
@@ -132,5 +123,8 @@ public class AdminCouponDTO {
 		AdminCouponDTO other = (AdminCouponDTO) obj;
 		return Objects.equals(id, other.id);
 	}
-   
+    
+    
+    
+    
 }

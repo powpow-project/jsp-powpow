@@ -20,12 +20,13 @@ public class AdminCouponUpdateController implements Action {
 		Result result = new Result();
 		AdminDAO adminDAO = new AdminDAO();
 
-//		AdminCouponDTO adminCoupon = adminDAO.select(Long.parseLong(req.getParameter("id"))).orElseThrow(() -> {
-//			throw new RuntimeException();
-//		});
-
-//		req.setAttribute("adminCoupon", adminCoupon);
-//		result.setPath("admin-coupon-update.jsp");
+		AdminCouponDTO adminCoupon = adminDAO.selectAdminCoupon(Long.parseLong(req.getParameter("id"))).orElseThrow(() -> {
+			throw new RuntimeException();
+		});
+		
+		
+		req.setAttribute("adminCoupon", adminCoupon);
+		result.setPath("admin-coupon-update.jsp");
 
 		return result;
 	}

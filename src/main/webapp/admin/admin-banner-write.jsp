@@ -59,7 +59,6 @@
         </div>
 
         <div id="container">
-            <!-- 배너명 -->
             <div class="form-row">
                 <label for="banner-name">배너명</label>
                 <input
@@ -71,7 +70,6 @@
                 />
             </div>
 
-            <!-- 배너 타입 -->
             <div class="form-row">
                 <label for="banner-type">배너 타입</label>
                 <select id="banner-type" name="banner-type">
@@ -81,7 +79,6 @@
                 </select>
             </div>
 
-            <!-- 배너 링크 -->
             <div class="form-row">
                 <label for="banner-link">배너 링크</label>
                 <input
@@ -92,7 +89,6 @@
                 />
             </div>
 
-            <!-- 배너 이미지 -->
             <div class="form-row">
                 <label for="banner-image">배너 이미지</label>
                 <div class="file-upload-group">
@@ -106,7 +102,6 @@
                 </div>
             </div>
 
-            <!-- 기간 -->
             <div class="form-row">
                 <label for="unlimited">기간</label>
                 <div class="input-group">
@@ -118,7 +113,6 @@
                 </div>
             </div>
 
-            <!-- 사용 여부 -->
             <div class="form-row">
                 <label>사용 여부</label>
                 <div class="radio-group">
@@ -131,11 +125,21 @@
         </div>
 
         <div class="change-buttons">
-		    <button class="button-submit">등록</button>
-		    <button class="button-edit">취소</button>
+            <button class="button-submit">등록</button>
+            <button class="button-edit">취소</button>
         </div>
     </form>
-
 </body>
-    <script src="../assets/js/admin/admin-banner-write.js"></script>
+	<script>
+      const startdateInput = document.querySelector("#start-date");
+      let startDate = `${adminBanner.adminBannerStart}`;
+      startDate = startDate.split(" ")[0];
+      startdateInput.value = startDate; 
+      
+      const endDateInput = document.querySelector("#end-date");
+      let endDate = `${adminBanner.adminBannerEnd}`;
+      endDate = endDate.split(" ")[0];
+      endDateInput.value = endDate;
+      </script>
+<script src="../assets/js/admin/admin-banner-write.js"></script>
 </html>

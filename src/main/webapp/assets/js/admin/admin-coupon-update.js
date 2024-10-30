@@ -43,16 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
     startDateInput.addEventListener('change', validateDates);
     endDateInput.addEventListener('change', validateDates);
 
-/*    // 폼 제출 시 유효성 검사
     form.addEventListener('submit', function (event) {
-        if (form.checkValidity()) {
-            alert('쿠폰이 성공적으로 등록되었습니다.');
-            form.submit(); // 폼을 수동으로 제출
-        } else {
+        if (!form.checkValidity()) {
             alert('모든 필드를 올바르게 입력해주세요.');
             event.preventDefault(); 
-        }
-    });*/
+        } 
+
+    });
 
     // 메뉴 관련 기능
     const menuIcon = document.querySelector(".menu-wrap img");

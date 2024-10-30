@@ -1,7 +1,6 @@
 package com.app.admin.controller;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +21,8 @@ public class AdminCouponWriteOkController implements Action {
         HttpSession session = req.getSession();
 
         String adminEmail = (String) session.getAttribute("adminEmail");
-        Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
+        Long adminId = adminDAO.selectByAdminEmail(adminEmail) != null ? 
+            adminDAO.selectByAdminEmail(adminEmail).getId() : null;
 
         String couponTitle = req.getParameter("adminCouponTitle");
         String couponType = req.getParameter("adminCouponType");
@@ -33,30 +33,25 @@ public class AdminCouponWriteOkController implements Action {
         String couponQuantityStr = req.getParameter("adminCouponQuantity");
         String couponDiscountRateStr = req.getParameter("adminCouponDiscountRate");
 
-
+        // 필수 입력값 검증
         if (couponTitle == null || couponTitle.trim().isEmpty()) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "쿠폰 제목을 입력해 주세요.");
             return null;
         }
-
-
         if (couponType == null) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "쿠폰 타입을 선택해 주세요.");
             return null;
         }
-
-
         if (couponCode == null || couponCode.trim().isEmpty()) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "쿠폰 코드를 입력해 주세요.");
             return null;
         }
-
-
         if (couponStart == null || couponEnd == null) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "기간을 설정해 주세요.");
             return null;
         }
 
+        // 쿠폰 수량 검증
         try {
             int couponQuantity = Integer.parseInt(couponQuantityStr);
             if (couponQuantity <= 0) {
@@ -69,6 +64,30 @@ public class AdminCouponWriteOkController implements Action {
             return null;
         }
 
+        // 할인율 처리 및 검증
+        try {
+            if ("custom".equals(couponDiscountRateStr)) {
+                String customDiscountStr = req.getParameter("adminCouponDiscountRateCustom");
+                double customDiscount = Double.parseDouble(customDiscountStr);
+                if (customDiscount < 0 || customDiscount > 100) {
+                    resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "커스텀 할인율은 0에서 100 사이여야 합니다.");
+                    return null;
+                }
+                adminCouponDTO.setAdminCouponDiscountRate(customDiscount);
+            } else {
+                double discountRate = Double.parseDouble(couponDiscountRateStr);
+                if (discountRate < 0 || discountRate > 100) {
+                    resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "할인율은 0에서 100 사이여야 합니다.");
+                    return null;
+                }
+                adminCouponDTO.setAdminCouponDiscountRate(discountRate);
+            }
+        } catch (NumberFormatException e) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "할인율은 숫자 형식이어야 합니다.");
+            return null;
+        }
+
+        // DTO에 값 설정
         adminCouponDTO.setAdminId(adminId);
         adminCouponDTO.setAdminCouponTitle(couponTitle);
         adminCouponDTO.setAdminCouponType(couponType);
@@ -77,7 +96,20 @@ public class AdminCouponWriteOkController implements Action {
         adminCouponDTO.setAdminCouponEnd(couponEnd);
         adminCouponDTO.setAdminCouponContent(couponContent);
 
-        adminDAO.insertCoupon(adminCouponDTO);
+        // 중복 체크
+        if (adminDAO.checkCouponCodeExists(couponCode)) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "이미 존재하는 쿠폰 코드입니다.");
+            return null;
+        }
+
+        // 쿠폰 추가
+        try {
+            adminDAO.insertAdminCoupon(adminCouponDTO);
+        } catch (RuntimeException e) {
+            e.printStackTrace(); 
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "쿠폰 추가 중 오류가 발생했습니다.");
+            return null;
+        }
 
         result.setPath("../admin/admin-coupon-list.admin");
         result.setRedirect(true);

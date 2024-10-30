@@ -15,6 +15,7 @@ import com.app.admin.controller.AdminBannerUpdateOkController;
 import com.app.admin.controller.AdminBannerWriteOkController;
 import com.app.admin.controller.AdminCouponListController;
 import com.app.admin.controller.AdminCouponUpdateController;
+import com.app.admin.controller.AdminCouponUpdateOkController;
 import com.app.admin.controller.AdminCouponWriteOkController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
@@ -32,6 +33,7 @@ public class AdminFrontController extends HttpServlet{
 	    String target = req.getRequestURI().replace(req.getContextPath() + "/admin/", "").split("\\.")[0];
 	    Result result = null;
 	    
+	    System.out.println(target);
 	    
 	    // 로그인 목록
 	    
@@ -102,7 +104,7 @@ public class AdminFrontController extends HttpServlet{
 	        result = new AdminCouponUpdateController().execute(req, resp);
 
 	    } else if (target.equals("admin-coupon-update-ok")) { // 쿠폰 수정 완료
-//	        result = new AdminCouponUpdateOkController().execute(req, resp);
+	    	result = new AdminCouponUpdateOkController().execute(req, resp);
 
 	    } else if (target.equals("admin-coupon-delete-ok")) { // 공지사항 삭제
 //	        result = new AdminCouponDeleteOkController().execute(req, resp);
