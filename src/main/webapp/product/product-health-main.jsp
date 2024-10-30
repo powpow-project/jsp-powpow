@@ -25,7 +25,7 @@
 						<div class="icons">
 							<a href="#"><img src="../assets/images/shopping/search.png"alt="검색"></a> 
 							<a href="#"><img src="../assets/images/shopping/icon 2.png" alt="배송"></a> 
-							<a href="#"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
+							<a href="http://localhost:9000/powpow/product/product-cart-list.product"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
 						</div>
 						<div class="sector"></div>
 						<div class="login">
@@ -89,9 +89,9 @@
 						<span>성장기별 추천 아이템이에요!</span>
 					</div>
 					<div class="category-buttons">
-						<button>퍼피</button>
-						<button>어덜트</button>
-						<button>시니어</button>
+						<button data-category="퍼피" class="category-button active">퍼피</button>
+    					<button data-category="어덜트" class="category-button">어덜트</button>
+    					<button data-category="시니어" class="category-button">시니어</button>
 					</div>
 				</div>
 				<a href="#" class="view-all">전체보기</a>
@@ -139,9 +139,9 @@
 							<span>성장기별 추천 아이템이에요!</span>
 						</div>
 						<div class="category-buttons">
-							<button>퍼피</button>
-							<button>어덜트</button>
-							<button>시니어</button>
+							<button data-category="퍼피" class="category-button active">퍼피</button>
+    						<button data-category="어덜트" class="category-button">어덜트</button>
+    						<button data-category="시니어" class="category-button">시니어</button>
 						</div>
 					</div>
 					<a href="#" class="view-all">전체보기</a>
@@ -186,9 +186,9 @@
 									<span>성장기별 추천 아이템이에요!</span>
 								</div>
 								<div class="category-buttons">
-									<button>퍼피</button>
-									<button>어덜트</button>
-									<button>시니어</button>
+									<button data-category="퍼피" class="category-button active">퍼피</button>
+    								<button data-category="어덜트" class="category-button">어덜트</button>
+    								<button data-category="시니어" class="category-button">시니어</button>
 								</div>
 							</div>
 							<a href="#" class="view-all">전체보기</a>
@@ -235,9 +235,9 @@
 											alt="물고기 헬스+"> <span>성장기별 추천 아이템이에요!</span>
 									</div>
 									<div class="category-buttons">
-										<button>퍼피</button>
-										<button>어덜트</button>
-										<button>시니어</button>
+										<button data-category="퍼피" class="category-button active">퍼피</button>
+    									<button data-category="어덜트" class="category-button">어덜트</button>
+    									<button data-category="시니어" class="category-button">시니어</button>
 									</div>
 								</div>
 								<a href="#" class="view-all">전체보기</a>
@@ -343,6 +343,7 @@
 <script src="../assets/js/product/health-main.js">
 </script>
 <script>
+
 document.addEventListener('DOMContentLoaded', () => {
     const categoryElement = document.getElementsByName('productCategoryName')[0];
 

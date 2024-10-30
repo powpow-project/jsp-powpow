@@ -567,6 +567,10 @@ button {
   transition: opacity 0.5s ease, transform 0.3s ease; /* 슬라이드 전환 효과 */
   display: block;
 }
+.category-button.active {
+    background-color: #FFD700; /* 예시 색상 */
+    color: #fff;
+}
 
 .product-image-wrap {
   position: relative;
