@@ -199,6 +199,15 @@
         justify-content: center;
         margin: 0 auto;
     }
+    
+     #profilePic{
+         width : 120px;
+         height : 120px;
+         border : solid 1px #333;
+         background-image : url('../assets/images/myhome/default-bird.svg');
+         background-repeat : no-repeat;
+          background-size: cover;
+      }
 
     .card {
         width: 270px;
