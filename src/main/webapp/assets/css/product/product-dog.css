@@ -255,7 +255,7 @@ body {
 
 .product-wrap #product-all-wrap {
 	display: contents;
-	/* display:none; */
+	display:none;
 }
 
 .product-wrap #feed-wrap {
@@ -279,12 +279,15 @@ body {
 
 /* all 서브랑 타이틀 묶은거 */
 .all-sup-title {
-  display: flex;
-  position: absolute;
-  right: 0px;
-  top: -60px;
+    position: fixed;
+    margin: 0 auto;
+    top: 467px;
+    right: -1381px;
+    width: 100%;
+    z-index: 1000;
+    background-color: none;
+    padding: 10px;
 }
-
 .all-category-item {
   list-style: none;
   /* 기본 점 스타일 제거 */
