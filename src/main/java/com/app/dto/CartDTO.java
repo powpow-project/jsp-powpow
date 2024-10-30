@@ -11,6 +11,7 @@ public class CartDTO {
 	private Long productId;
     private String productName;
     private int productPrice;
+    private String productAge;
     private String productImage;
     private String productDetail;
     private Long memberId;
@@ -21,7 +22,7 @@ public class CartDTO {
     private String memberAdress;
     private boolean memberSms; // SMS 수신 여부
     private boolean memberEmailCheck; // 이메일 확인 여부
-
+    
     public CartDTO() {;}
 
 	public Long getId() {
@@ -54,6 +55,14 @@ public class CartDTO {
 
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
+	}
+
+	public String getProductAge() {
+		return productAge;
+	}
+
+	public void setProductAge(String productAge) {
+		this.productAge = productAge;
 	}
 
 	public String getProductImage() {
@@ -139,10 +148,10 @@ public class CartDTO {
 	@Override
 	public String toString() {
 		return "CartDTO [id=" + id + ", productId=" + productId + ", productName=" + productName + ", productPrice="
-				+ productPrice + ", productImage=" + productImage + ", productDetail=" + productDetail + ", memberId="
-				+ memberId + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname + ", memberEmail="
-				+ memberEmail + ", memberPhone=" + memberPhone + ", memberAdress=" + memberAdress + ", memberSms="
-				+ memberSms + ", memberEmailCheck=" + memberEmailCheck + "]";
+				+ productPrice + ", productAge=" + productAge + ", productImage=" + productImage + ", productDetail="
+				+ productDetail + ", memberId=" + memberId + ", memberImage=" + memberImage + ", memberNickname="
+				+ memberNickname + ", memberEmail=" + memberEmail + ", memberPhone=" + memberPhone + ", memberAdress="
+				+ memberAdress + ", memberSms=" + memberSms + ", memberEmailCheck=" + memberEmailCheck + "]";
 	}
 
 	@Override
@@ -162,5 +171,6 @@ public class CartDTO {
 		return Objects.equals(id, other.id);
 	}
     
-    
 }
+
+    
