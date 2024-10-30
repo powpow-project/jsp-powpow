@@ -67,14 +67,14 @@
             </div>
         </div>
     </div>
-    <form action="pet-write-ok.myhome" method="post" id="frame"
-		enctype="multipart/form-data">
-		<button id="submit-button" type="submit">완료</button>
-    <a href="./pet-write-ok.myhome?petKind=bird"><button id="submit-button" type="submit" onClick="alert('수정이 완료되었습니다.');">완료</button></a>
+    <form action="pet-write-ok.myhome" method="post" id="frame" enctype="multipart/form-data">
+   <button id="submit-button" type="submit" onClick="alert('완료되었습니다');">
+    <a href="./pet-write-ok.myhome?petKind=bird">완료</a>
+</button>
     <div id="mydog">
         <div class="card">
             <div class="profile-pic" id="profilePic">
-                <img name="petImage" id="profileImage" src="../assets/images/myhome/default-bird.svg" alt="Profile Picture">
+                <img name="petImage" id="petImage" src="../assets/images/myhome/default-bird.svg" alt="Profile Picture">
             </div>
             <div class="name">name</div>
            <input type="file" id="imageUpload" name="petImage" accept="image/*">
@@ -103,8 +103,8 @@
             <p><input class="input" name="petVet" type="text" placeholder="병원명"></p>
         </div>
     </div>
-    <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     </form>
+    <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     <footer>
         <div class="footer-container">
             <div class="footer-section">

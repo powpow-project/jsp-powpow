@@ -45,14 +45,70 @@ const mainMenus = document.querySelectorAll(".menu-wrap .menu");
        });
    });
    
-   // When the user selects a file, this function will update the profile picture
-   document.getElementById('imageUpload').addEventListener('change', function (event) {
-       const file = event.target.files[0];
-       if (file) {
-           const reader = new FileReader();
-           reader.onload = function (e) {
-               document.getElementById('profileImage').src = e.target.result;
-           };
-           reader.readAsDataURL(file);
-       }
+   
+   //이미지
+   document.addEventListener('DOMContentLoaded', function() {
+       const imageUpload = document.getElementById('imageUpload');
+       const petImage = document.getElementById('petImage');
+       
+       imageUpload.addEventListener('change', function(event) {
+           const file = event.target.files[0];
+           
+           // 파일 유효성 검사
+           if (file) {
+               // 파일 크기 체크 (5MB 제한)
+               if (file.size > 5 * 1024 * 1024) {
+                   alert('파일 크기는 5MB를 초과할 수 없습니다.');
+                   this.value = '';
+                   return;
+               }
+               
+               // 이미지 파일 형식 체크
+               if (!file.type.startsWith('image/')) {
+                   alert('이미지 파일만 업로드 가능합니다.');
+                   this.value = '';
+                   return;
+               }
+               
+               // 이미지 프리뷰
+               const reader = new FileReader();
+               
+               reader.onload = function(e) {
+                   petImage.src = e.target.result;
+               };
+               
+               reader.onerror = function() {
+                   alert('이미지를 불러오는 중 오류가 발생했습니다.');
+               };
+               
+               reader.readAsDataURL(file);
+           }
+       });
+
+       // 폼 제출 전 유효성 검사
+       document.getElementById('frame').addEventListener('submit', function(event) {
+           const petName = document.getElementById('petName').value;
+           const petBreed = document.getElementsByName('petBreed')[0].value;
+           const petWeight = document.getElementsByName('petWeight')[0].value;
+           
+           if (!petName.trim()) {
+               alert('반려동물의 이름을 입력해주세요.');
+               event.preventDefault();
+               return;
+           }
+           
+           if (!petBreed.trim()) {
+               alert('품종을 입력해주세요.');
+               event.preventDefault();
+               return;
+           }
+           
+           if (!petWeight || petWeight <= 0) {
+               alert('올바른 몸무게를 입력해주세요.');
+               event.preventDefault();
+               return;
+           }
+       });
    });
+   
+   

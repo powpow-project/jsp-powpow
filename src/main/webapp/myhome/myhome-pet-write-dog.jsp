@@ -67,6 +67,7 @@
             </div>
         </div>
     </div>
+        <form action="pet-write-ok.myhome" method="post" id="frame">
      <a href="./pet-write-ok.myhome?petKind=dog"><button id="submit-button" onClick="alert('수정이 완료되었습니다.')">완료</button></a>
     <div id="mydog">
         <div class="card">
@@ -107,6 +108,7 @@
             <input class="input" type="text" placeholder="병원명">
         </div>
     </div>
+    </form>
     <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     <footer>
         <div class="footer-container">

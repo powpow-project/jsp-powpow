@@ -22,31 +22,6 @@ public class MyhomePetWriteOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-//		Result result = new Result();
-//		PetDAO petDAO = new PetDAO();
-//		PetVO petVO = new PetVO();
-//		MemberDAO memberDAO = new MemberDAO();
-//	
-//		
-//		
-//		HttpSession session = req.getSession();
-//	      
-////      String sellerEmail = (String)session.getAttribute("sellerEmail");
-//      String memberEmail = "jingeo@gmail.com";
-//      Long memberId = memberDAO.selectBybuyerEmail(memberEmail).getId();
-//		
-//      req.getParameter("petName");
-//      
-//		System.out.println("실행");
-//		System.out.println(req.getParameter("petKind"));
-//	      
-//	    result.setRedirect(true);
-//	    result.setPath("../myhome/pet-list.myhome");
-//	  
-//		return result;
-//	}
-//
-//}
 		
 		  Result result = new Result();
 	      PetVO petVO = new PetVO();
@@ -54,17 +29,16 @@ public class MyhomePetWriteOkController implements Action {
 	      PetDAO petDAO = new PetDAO();
 	      MemberDAO memberDAO = new MemberDAO();
 	      MyhomeDAO myhomeDAO = new MyhomeDAO();
-	      String directory =req.getServletContext().getRealPath("/assets/images/product");
+	      String directory =req.getServletContext().getRealPath("/assets/images/myhome");
 	      int sizeLimit = 10*500*500; 
 	      
 	      
 	      HttpSession session = req.getSession();
-	      
-//	      String memberEmail = (String)session.getAttribute("sellerEmail");
-	      String memberEmail = "jingeo@gmail.com";
-	      Long memberId = myhomeDAO.selectBuyerByEmail(memberEmail).getId();
 
 	      
+//      String memberEmail = (String)session.getAttribute("memberEmail");
+	      String memberEmail = "jingeo@gmail.com";
+	      MemberVO memberId = myhomeDAO.selectBuyerByEmail(memberEmail).get();
 	      
 	      
 	      // 디렉토리가 존재하지 않으면 생성
@@ -80,7 +54,6 @@ public class MyhomePetWriteOkController implements Action {
 	         // 업로드된 파일의 제목과 이름 가져오기
 	         String petImage = multi.getFilesystemName("petImage");
 	        
-	         petVO.setMemberId(memberId);
 	         petVO.setPetName(multi.getParameter("petName"));
 	         petVO.setPetKind(multi.getParameter("petKind"));
 	         petVO.setPetGender(Boolean.parseBoolean(multi.getParameter("petGender")));
@@ -103,6 +76,11 @@ public class MyhomePetWriteOkController implements Action {
 	      petDAO.insertPet(petVO);
 	      
 	      
+	      req.getParameter("petName");
+	      
+	      System.out.println("실행");
+	      System.out.println(req.getParameter("petKind"));
+	      
 	      result.setRedirect(true);
 	      result.setPath("../myhome/pet-list.myhome");
 	      
@@ -110,3 +88,6 @@ public class MyhomePetWriteOkController implements Action {
 	   }
 
 	}
+
+
+
