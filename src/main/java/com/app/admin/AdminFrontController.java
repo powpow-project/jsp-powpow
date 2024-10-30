@@ -13,6 +13,7 @@ import com.app.admin.controller.AdminBannerListController;
 import com.app.admin.controller.AdminBannerUpdateController;
 import com.app.admin.controller.AdminBannerUpdateOkController;
 import com.app.admin.controller.AdminBannerWriteOkController;
+import com.app.admin.controller.AdminCouponDeleteOkController;
 import com.app.admin.controller.AdminCouponListController;
 import com.app.admin.controller.AdminCouponUpdateController;
 import com.app.admin.controller.AdminCouponUpdateOkController;
@@ -107,7 +108,7 @@ public class AdminFrontController extends HttpServlet{
 	    	result = new AdminCouponUpdateOkController().execute(req, resp);
 
 	    } else if (target.equals("admin-coupon-delete-ok")) { // 공지사항 삭제
-//	        result = new AdminCouponDeleteOkController().execute(req, resp);
+	        result = new AdminCouponDeleteOkController().execute(req, resp);
 	        
 
 	    } else {

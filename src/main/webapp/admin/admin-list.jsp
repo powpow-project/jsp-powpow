@@ -11,47 +11,74 @@
 </head>
 <body>
     <form id="frame">
-        <div class="menu-wrap">
-            <img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
-            <span>공지사항 관리</span>
-            <div id="menu-frame">
-                <div class="menu-header">
-                    <div class="welcome">admin님 환영합니다!</div>
-                    <button class="logout">로그아웃</button>
-                </div>
-                <ul>
-                    <li>
-                        <p>공지사항 관리</p>
-                        <div>
-                            <p>공지사항 조회</p>
-                            <p>공지사항 신규등록</p>
-                        </div>
-                    </li>
-                    <li>
-                        <p>배너 관리</p>
-                        <div>
-                            <p>배너조회</p>
-                            <p>배너 신규등록</p>
-                        </div>
-                    </li>
-                    <li>
-                        <p>회원 관리</p>
-                        <div>
-                            <p>일반회원 정보조회</p>
-                            <p>판매자회원 정보조회</p>
-                        </div>
-                    </li>
-                    <li>
-                        <p>쿠폰 관리</p>
-                        <div>
-                            <p>쿠폰조회</p>
-                            <p>쿠폰 신규등록</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="division-line"></div>
+
+      <div class="menu-wrap">
+			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
+			<span>공지사항 관리</span>
+			<div id="menu-frame">
+				<div class="menu-header">
+					<div class="welcome">admin님 환영합니다!</div>
+					<button class="logout">로그아웃</button>
+				</div>
+				<ul>
+					<li>
+						<p>
+							<a href="http://localhost:9000/powpow/admin/admin-list.admin" style="color: white;">공지사항 관리</a>
+						</p>
+						<div>
+							<p>
+								<a href="http://localhost:9000/powpow/admin/admin-list.admin" >공지사항 조회</a>
+							</p>
+							<p>
+								<a href="http://localhost:9000/powpow/admin/admin-write.admin">공지사항 신규등록</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<p>
+							<a
+								href="http://localhost:9000/powpow/admin/admin-banner-list.admin" style="color: white;">배너 관리</a>
+						</p>
+						<div>
+							<p>
+								<a href="http://localhost:9000/powpow/admin/admin-banner-list.admin">배너 조회</a>
+							</p>
+							<p>
+								<a href="http://localhost:9000/powpow/admin/admin-banner-write.admin">배너 신규등록</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<p>
+							<a href="#" style="color: white;">회원 관리</a>
+						</p>
+						<div>
+							<p>
+								<a href="#">일반회원 정보조회</a>
+							</p>
+							<p>
+								<a href="#">판매자회원 정보조회</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<p>
+							<a href="http://localhost:9000/powpow/admin/admin-coupon-list.admin" style="color: white;">쿠폰 관리</a>
+						</p>
+						<div>
+							<p>
+								<a href="http://localhost:9000/powpow/admin/admin-coupon-list.admin">쿠폰 조회</a>
+							</p>
+							<p>
+								<a href="http://localhost:9000/powpow/admin/admin-coupon-write.admin">쿠폰 신규등록</a>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="division-line"></div>
 
         <div class="title">
             <h1 class="h1">공지사항 조회</h1>
