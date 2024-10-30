@@ -16,8 +16,8 @@ public class PetDAO {
 	}
 	
 //	pet kinds
-	public List<String> selectPetKinds() {
-		return sqlSession.selectList("pet.selectPetKinds");
+	public Optional<String> selectPetKinds() {
+		return Optional.ofNullable("pet.selectPetKinds");
 	}
 	
     // pet info insert
