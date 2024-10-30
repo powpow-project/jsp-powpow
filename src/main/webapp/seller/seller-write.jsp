@@ -59,6 +59,15 @@
 					</select>
 				</div>
 				<div class="list-wrap">
+					<p class="h6">분류</p>
+					<select name="productAge">
+						<option value="퍼피">퍼피</option>
+						<option value="어덜트">시니어</option>
+						<option value="시니어">배변용품</option>
+					</select>
+				</div>
+				
+				<div class="list-wrap">
 					<p class="h6">상품간략설명</p>
 					<textarea type="text" name="productDetail" class="description"
 						placeholder="내용을 설명해주세요."></textarea>
