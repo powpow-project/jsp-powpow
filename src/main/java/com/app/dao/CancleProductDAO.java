@@ -17,6 +17,7 @@ public class CancleProductDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+//	주문취소
 	public void insert(CancleProductVO cancleProductVO) {
 		sqlSession.insert("cancleProduct.insert", cancleProductVO);
 	}

@@ -1,20 +1,13 @@
 package com.app.seller.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.CancleProductDAO;
-import com.app.dao.OrderDAO;
-import com.app.dao.SellerDAO;
-import com.app.dto.CancleProductDTO;
-import com.app.dto.OrderDTO;
 
 public class SellerSearchOkController implements Action {
 

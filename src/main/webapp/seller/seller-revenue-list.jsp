@@ -105,16 +105,15 @@
           </tr>
           <tr>
         	<c:forEach var="orderList" items="${orderListForSeller}">
-            	<td><c:out value="${orderList.orderDate}" /></td>
-            	<td><c:out value="${orderList.orderTotalCount}" /></td>
+            	<td><c:out value="날짜별 수량: ${orderList.orderTotalCount}" /></td>
             	<td  data-ordertotalprice="${orderList.orderTotalPrice}">
-            		<c:out value="${orderList.orderTotalPrice}"/>
+            		<c:out value="날짜별 주문금액:${orderList.orderTotalPrice}"/>
             	</td>
          	</c:forEach>
          	<c:forEach var="cancleList" items="${cancleListForSeller}">
-            	<td><c:out value="${cancleList.cancleTotalCount}" /></td>
+            	<td><c:out value="날짜별 수량:${cancleList.cancleTotalCount}" /></td>
             	<td data-cancletotalprice="${cancleList.cancleTotalPrice}">
-            		<c:out value="${cancleList.cancleTotalPrice}" />
+            		<c:out value="날짜별 취소금액:${cancleList.cancleTotalPrice}" />
             	</td>
             	<td class="calculated-price"></td>
         	</c:forEach>
@@ -136,7 +135,7 @@
 	        const cancelTotalPrice = canceleCells[index].getAttribute('data-cancletotalprice');
 	
 	        const netPrice = orderTotalPrice - cancelTotalPrice;
-	        calculatedCells[index].textContent = netPrice;
+	        calculatedCells[index].value = netPrice;
 	    });
 	});
 </script>
