@@ -8,11 +8,11 @@ public class PetDTO {
 	private String petKind;
 	private String petImage;
 	private String petName;
-	private String petGender;
+	private boolean petGender;
 	private String petBreed;
 	private String petBirth;
 	private String petVet;
-	private int petWeight;
+	private double petWeight;
 	private boolean petNeuter;
 	private String memberEmail;
 	
@@ -58,11 +58,11 @@ public class PetDTO {
 		this.petName = petName;
 	}
 
-	public String getPetGender() {
+	public boolean getPetGender() {
 		return petGender;
 	}
 
-	public void setPetGender(String petGender) {
+	public void setPetGender(boolean petGender) {
 		this.petGender = petGender;
 	}
 
@@ -90,11 +90,11 @@ public class PetDTO {
 		this.petVet = petVet;
 	}
 
-	public int getPetWeight() {
+	public double getPetWeight() {
 		return petWeight;
 	}
 
-	public void setPetWeight(int petWeight) {
+	public void setPetWeight(double petWeight) {
 		this.petWeight = petWeight;
 	}
 
