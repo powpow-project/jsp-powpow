@@ -14,6 +14,7 @@ import com.app.product.controller.ProductCartWriteOkController;
 import com.app.product.controller.ProductDetailController;
 import com.app.product.controller.ProductHealthController;
 import com.app.product.controller.ProductListController;
+import com.app.product.controller.ProductMainCotroller;
 import com.app.product.controller.ProductSearchController;
 import com.app.product.controller.ProductSellerController;
 
@@ -28,21 +29,24 @@ public class ProductFrontController extends HttpServlet{
       
       System.out.println(target);
       
-      if(target.equals("list")) {
+      
+      if(target.equals("product-main")) {
+    	  result = new ProductMainCotroller().execute(req, resp);
+      }else if(target.equals("list")) {
     	  result = new ProductListController().execute(req, resp);
       }else if(target.equals("product-seller")) {
     	  result = new ProductSellerController().execute(req, resp);
       }else if(target.equals("search")) {
     	  result = new ProductSearchController().execute(req, resp);
-      }else if(target.equals("health")) {
+      }else if(target.equals("product-health-main")) {
     	  result = new ProductHealthController().execute(req, resp); 
       }else if(target.equals("detail")) {
     	  result = new ProductDetailController().execute(req, resp);
-      }else if(target.equals("cart-list")) {
-    	  result = new ProductCartListController().execute(req, resp);
-      }else if(target.equals("cart-write-ok")) {
+      }else if(target.equals("product-cart-write-ok")) {
     	  result = new ProductCartWriteOkController().execute(req, resp);
-      }else if(target.equals("cart-delete")) {
+      }else if(target.equals("product-cart-list")) {
+    	  result = new ProductCartListController().execute(req, resp);
+      }else if(target.equals("product-cart-delete")) {
     	  result = new ProductCartDeleteController().execute(req, resp);
       }else {
 		result = new Result();

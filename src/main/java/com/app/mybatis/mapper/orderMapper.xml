@@ -10,8 +10,8 @@
 	</select>
 
 	<insert id="insert" parameterType="OrderVO">
-		INSERT INTO TBL_ORDER(ID, MEMBER_ID, PRODUCT_ID, ORDER_NUMBER, ORDER_DATE, PRODUCT_COUNT)
-		VALUES(ORDER_SEQ.NEXTVAL, #{memberId}, #{productId}, #{orderNumber}, DEFAULT, #{productCount})
+		INSERT INTO TBL_ORDER(ID, MEMBER_ID, PRODUCT_ID, ORDER_NUMBER, PRODUCT_COUNT)
+		VALUES(ORDER_SEQ.NEXTVAL, #{memberId}, #{productId}, #{orderNumber}, #{productCount})
 	</insert>
 	
 	<select id="selectByMember" resultType="OrderDTO">
@@ -51,5 +51,23 @@
 		JOIN TBL_SELLER TS 
 		ON TP.SELLER_ID = TS.ID AND TS.ID = #{sellerId}
 		ORDER BY TBO.ID DESC
-	</select>	
+	</select>
+	
+	<select id="selectByDate" resultType="OrderDTO">
+		SELECT SUM(PRODUCT_COUNT) AS ORDER_TOTAL_COUNT, SUM(PRODUCT_COUNT * PRODUCT_PRICE) AS ORDER_TOTAL_PRICE
+		FROM TBL_ORDER TBO
+		JOIN TBL_MEMBER TM 
+		ON TBO.MEMBER_ID = TM.ID
+		JOIN TBL_PRODUCT TP 
+		ON TBO.PRODUCT_ID = TP.ID
+		JOIN TBL_SELLER TS 
+		ON TP.SELLER_ID = TS.ID
+		WHERE TS.ID = #{sellerId} AND DATE 
+		BETWEEN TO_DATE('2023-11-01', 'YYYY-MM-DD')
+		AND TO_DATE('2023-11-30', 'YYYY-MM-DD')
+		ORDER BY TBO.ID DESC
+	</select>
+	
+	
+	
 </mapper>

@@ -253,6 +253,30 @@ body {
   position: relative;
 }
 
+.product-wrap #product-all-wrap {
+	display: contents;
+	/* display:none; */
+}
+
+.product-wrap #feed-wrap {
+	display: contents;
+	/* display:none; */
+}
+
+.product-wrap #toiletries-wrap {
+	display: contents;
+	display:none;
+}
+
+.product-wrap .product-type-name {
+	display: flex;
+}
+
+.product-wrap .banner img{
+	display: flex;
+	width: 1000px;
+}
+
 /* all 서브랑 타이틀 묶은거 */
 .all-sup-title {
   display: flex;

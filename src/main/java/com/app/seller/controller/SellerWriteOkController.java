@@ -57,6 +57,7 @@ public class SellerWriteOkController implements Action {
          productVO.setSellerId(sellerId);
          productVO.setProductName(multi.getParameter("productName"));
          productVO.setProductPrice(Integer.parseInt(multi.getParameter("productPrice")));
+         productVO.setProductAge(multi.getParameter("productAge"));
          productVO.setProductStock(Integer.parseInt(multi.getParameter("productStock")));
          productVO.setProductType(multi.getParameter("productType"));
          productVO.setProductDetail(multi.getParameter("productDetail"));
