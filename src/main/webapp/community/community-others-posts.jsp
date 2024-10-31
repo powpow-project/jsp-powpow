@@ -83,10 +83,10 @@
           <div class="othersPost-image-wrapper">
             <!-- 이미지까지의 래퍼 -->
             <div class="othersPost-profile-wrapper">
-              <div class="othersPost-profile">
-                <img src="../assets/images/community/smallprofileimage.png" alt="프로필 이미지">
+              <a href="./community-others-community.jsp" class="othersPost-profile">
+                <img src="../assets/images/community/profileimage5.png" alt="프로필 이미지">
                 <p class="member-id">아이디</p>
-              </div>
+              </a>
               <div class="follow-buttons">
                 <button class="follow-button">팔로우</button>
                 <button class="following-button">팔로잉</button>
@@ -184,27 +184,27 @@
       <div class="user-likes-best-image">
         <ul>
           <li>
-            <a href="#"><img src="../assets/images/community/userlike1.png" alt="공감베스트사진 1"></a>
+            <a href="./community-others-posts.jsp"><img src="../assets/images/community/userlike1.png" alt="공감베스트사진 1"></a>
           </li>
 
           <li>
-            <a href="#"><img src="../assets/images/community/userlike2.png" alt="공감베스트사진 2"></a>
+            <a href="./community-others-posts.jsp"><img src="../assets/images/community/userlike2.png" alt="공감베스트사진 2"></a>
           </li>
 
           <li>
-            <a href="#"><img src="../assets/images/community/userlike3.png" alt="공감베스트사진 3"></a>
+            <a href="./community-others-posts.jsp"><img src="../assets/images/community/userlike3.png" alt="공감베스트사진 3"></a>
           </li>
 
           <li>
-            <a href="#"><img src="../assets/images/community/userlike4.png" alt="공감베스트사진 4"></a>
+            <a href="./community-others-posts.jsp"><img src="../assets/images/community/userlike4.png" alt="공감베스트사진 4"></a>
           </li>
 
           <li>
-            <a href="#"><img src="../assets/images/community/userlike5.png" alt="공감베스트사진 5"></a>
+            <a href="./community-others-posts.jsp"><img src="../assets/images/community/userlike5.png" alt="공감베스트사진 5"></a>
           </li>
 
           <li>
-            <a href="#"><img src="../assets/images/community/userlike6.png" alt="공감베스트사진 6"></a>
+            <a href="./community-others-posts.jsp"><img src="../assets/images/community/userlike6.png" alt="공감베스트사진 6"></a>
           </li>
         </ul>
       </div>
