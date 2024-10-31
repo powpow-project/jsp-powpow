@@ -31,12 +31,12 @@
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>CommunityPostFrontController</servlet-name>
+  	<servlet-name>CommunityFrontController</servlet-name>
   	<servlet-class>com.app.community.CommunityPostFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>CommunityPostFrontController</servlet-name>
+  	<servlet-name>CommunityFrontController</servlet-name>
   	<url-pattern>*.community</url-pattern>
   </servlet-mapping>
   
