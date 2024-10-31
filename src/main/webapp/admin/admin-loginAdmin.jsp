@@ -16,8 +16,7 @@
 		<div id="admin">관리자</div>
 
 		<input type="text" name="adminEmail" placeholder="관리자 계정을 입력해주세요." required />
-		<input type="password" name="adminPassword" placeholder="비밀번호를 입력해주세요."
-			required />
+		<input type="password" name="adminPassword" placeholder="비밀번호를 입력해주세요." required />
 
 		<button id="button">로그인</button>
 		<p>Or continue with</p>
