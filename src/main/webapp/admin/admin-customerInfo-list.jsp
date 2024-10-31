@@ -133,7 +133,7 @@
 				</thead>
 
 				<tbody id="user-list">
-					<c:forEach var="member" items="${memberList}" varStatus="status">
+					<c:forEach var="member" items="${memberBuyerList}" varStatus="status">
 						<tr>
 							<td>${status.index + 1}</td>
 							<td>${member.memberPassword}</td>
