@@ -14,70 +14,70 @@
 </head>
 
 <body>
-	<div class="header-container">
-		<div id="header-wrap">
-			<div id="border">
-				<div id="nav">
-					<div class="left">
-						<img src="../assets/images/shopping/powpow-logo.png" alt="로고">
-					</div>
-					<div class="right">
-						<div class="icons">
-							<a href="#"><img src="../assets/images/shopping/search.png"alt="검색"></a> 
-							<a href="#"><img src="../assets/images/shopping/icon 2.png" alt="배송"></a> 
-							<a href="./product-cart-list.product"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
+		<div class="header-container">
+			<div id="header-wrap">
+				<div id="border">
+					<div id="nav">
+						<div class="left">
+							<img src="../assets/images/powpow-logo.png" alt="로고" />
 						</div>
-						<div class="sector"></div>
-						<div class="login">
-							<a href="#">로그인</a>
+						<div class="right">
+							<div class="icons">
+								<a href="#"> <img src="../assets/images/search-icon.jpg" alt="검색" /></a> 
+								<a href="#"> <img src="../assets/images/truck-icon.jpg" alt="배송" /> </a> 
+								<a href="./product-cart-list.product"> <img src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+							</div>
+							<div class="sector"></div>
+							<div class="login">
+								<a href="./member/login.member">로그인</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="menu-container">
-					<ul class="menu-wrap h4">
-						<li class="menu"><a href="#">스토어</a></li>
-						<li class="menu"><a href="#">커뮤니티</a></li>
-						<li class="menu"><a href="#">마이홈</a></li>
-						<li class="menu"><a href="#">이벤트</a></li>
-					</ul>
-					<div id="sector"></div>
-					<div class="sub-menu-wrap">
-						<ul>
-							<li class="sub-menu"><a href="#">강아지</a></li>
-							<li class="sub-menu"><a href="#">고양이</a></li>
-							<li class="sub-menu"><a href="#">새</a></li>
-							<li class="sub-menu"><a href="#">물고기</a></li>
-							<li class="./product-health-main.product"><a href="#">헬스+</a></li>
-						</ul>
-						<ul>
-							<li class="sub-menu"><a href="#">홈</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
-						</ul>
-						<ul>
-							<li class="sub-menu"><a href="#">나의 정보</a></li>
-							<li class="sub-menu"><a href="#">반려동물 정보</a></li>
-							<li class="sub-menu"><a href="#">나의 쇼핑</a></li>
-							<li class="sub-menu"><a href="#">내 게시글</a></li>
-						</ul>
 
-						<ul>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
+					<div class="menu-container">
+						<ul class="menu-wrap h4">
+							<li class="menu"><a href="./product/main.product">스토어</a></li>
+							<li class="menu"><a href="#">커뮤니티</a></li>
+							<li class="menu"><a href="./list.myhome">마이홈</a></li>
+							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
-
+						<div id="sector"></div>
+						<div class="sub-menu-wrap">
+							<ul>
+								<li class="sub-menu"><a href="./product/product-dog.product">강아지</a></li>
+								<li class="sub-menu"><a href="./product/product-cat.product">고양이</a></li>
+								<li class="sub-menu"><a href="./product/product-bird.product">새</a></li>
+								<li class="sub-menu"><a href="./product/product-fish.product">물고기</a></li>
+								<li class="sub-menu"><a href="./product/product-health-main.product">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="./community/list.community">홈</a></li>
+								<li class="sub-menu"><a href="#">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="./myhome/list.myhome">나의 정보</a></li>
+								<li class="sub-menu"><a href="./myhome/pet-list.myhome">반려동물 정보</a></li>
+								<li class="sub-menu"><a href="./myhome/shipping-list.myhome">나의 쇼핑</a></li>
+								<li class="sub-menu"><a href="./community/read.community">내 게시글</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<!-- 배너 섹션 -->
 	<section class="health-banner-container">
-		<div class="health-banner">
-			<img src="../cart/img/healthbanner.png" alt="헬스배너1"> 
-			<img src="../cart/img/healthbanner2.png" alt="헬스배너2">
-		</div>
+    	<div class="health-banner">
+        	<c:forEach var="banner" items="${banners}">
+            	<img src="../assets/images/product/${banner.adminBannerImage}" alt="헬스 배너">
+        	</c:forEach>
+    	</div>
 	</section>
 	<!-- 추천상품 -->
 	<div id="content-frame">
@@ -339,42 +339,33 @@
 <script src="../assets/js/product/health-main.js">
 </script>
 <script>
+//DOMContentLoaded 이벤트를 사용하면 DOM이 준비된 후에만 JavaScript를 실행할 수 있어, 코드가 예기치 않게 동작하는 것을 방지합니다.
 document.addEventListener('DOMContentLoaded', () => {
     const categoryElement = document.getElementsByName('productCategoryName')[0];
     const categoryButtons = document.querySelectorAll('.category-button');
     const products = document.querySelectorAll('.product');
-    const fixedCategories = ['강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피'];
+    filterProducts(['강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피']);
 
 
-    // 'productCategoryName' 드롭다운 변경 이벤트 처리
     if (categoryElement) {
-        categoryElement.addEventListener('change', (e) => {
+        categoryElement.addEventListener('click', (e) => {
             const animalCategory = e.target.value;
-            filterProducts([activeCategories]);
+            filterProducts([animalCategory]);
         });
     } 
 
-    // 카테고리 버튼 클릭 이벤트 처리
     categoryButtons.forEach((button) => {
         button.addEventListener('click', (e) => {
-            // 모든 버튼의 'active' 클래스 제거
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-
-            // 클릭한 버튼에 'active' 클래스 추가
-            e.target.classList.add('active');
-
-            // 클릭한 버튼의 카테고리로 상품 필터링
             const animalCategory = e.target.getAttribute('data-category');
             filterProducts([animalCategory]);
         });
     });
 
-    // 선택된 카테고리에 맞는 상품만 표시하는 필터링 함수
-    function filterProducts(categoriesToShow) {
+    function filterProducts(animalCategory) {
         products.forEach((product) => {
             const productCategory = product.getAttribute('data-category');
-            // 선택된 카테고리와 일치하는 상품만 표시
-            if(categoriesToShow.includes(productCategory)){
+
+            if(animalCategory.includes(productCategory)){
             	product.style.display = 'block';
             }else {
             	product.style.display = 'none';

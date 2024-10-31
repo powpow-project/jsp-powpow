@@ -204,3 +204,73 @@ document.addEventListener('DOMContentLoaded', function() {
 	fishNextBtn.addEventListener('click', handleFishNext);
 	fishPrevBtn.addEventListener('click', handleFishPrev);
 });
+
+
+
+// DOMContentLoaded 이벤트를 사용하여 DOM이 준비된 후에 JavaScript를 실행
+document.addEventListener("DOMContentLoaded", function() {
+    // 고정된 카테고리 버튼
+    const fixedButton = document.querySelector('.category-button.active');
+
+    // 모든 카테고리 버튼 선택
+    const categoryButtons = document.querySelectorAll('.category-button');
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedCategory = button.getAttribute('data-category');
+
+            // '퍼피' 버튼이 클릭된 경우, 호버 상태 유지
+            if (selectedCategory === fixedButton.getAttribute('data-category')) {
+                button.classList.add('hover');
+            } else {
+                button.classList.remove('hover');
+            }
+
+            // 다른 카테고리 버튼 클릭 시, 기존 버튼의 hover 클래스 제거
+            categoryButtons.forEach(btn => {
+                if (btn !== button) {
+                    btn.classList.remove('hover');
+                }
+            });
+
+            // 선택한 카테고리의 상품만 표시하는 로직 추가
+            filterProducts(selectedCategory);
+        });
+    });
+
+	
+    // 전체보기 버튼 클릭 이벤트 추가
+    const allViewButtons = document.querySelectorAll('.view-all'); // 전체보기 버튼 선택
+
+    allViewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = button.getAttribute('data-category');
+            filterProducts(category); // 선택한 카테고리의 상품 필터링
+        });
+    });
+
+    // 상품 필터링 함수
+    function filterProducts(category) {
+        const products = document.querySelectorAll('.product');
+
+        products.forEach(product => {
+            if (product.getAttribute('data-category') === category) {
+                product.classList.remove('hide'); // 숨김 해제
+                product.classList.add('show'); // 보이기
+                product.style.display = 'block'; // 보이기
+            } else {
+                product.classList.add('hide'); // 슬라이드 애니메이션 적용
+                product.classList.remove('show'); // 숨기기
+            }
+        });
+
+        // 숨기기 애니메이션 후 display none 처리
+        setTimeout(() => {
+            products.forEach(product => {
+                if (!product.classList.contains('show')) {
+                    product.style.display = 'none'; // 보이지 않게 하기
+                }
+            });
+        }, 300); // 애니메이션 시간과 동일하게 설정
+    }
+});
