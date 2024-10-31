@@ -27,6 +27,5 @@
 		</p>
 	</form>
 </body>
-<script src="../assets/js/admin/admin-loginAdmin.js">
-</script>
+	<script src="../assets/js/admin/admin-loginAdmin.js"></script>
 </html>

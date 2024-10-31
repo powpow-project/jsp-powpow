@@ -27,34 +27,36 @@
 						<li>
 							<p>상품 관리</p>
 							<div>
-								<p>상품 조회</p>
-								<p>상품 등록</p>
-								<p>상품 수정</p>
+								<a href="../seller/seller-list.seller" style="color: white;"><p>상품
+										조회</p></a> <a href="../seller/seller-write.seller"
+									style="color: white;"><p>상품 등록</p></a>
 							</div>
 						</li>
 						<li>
 							<p>주문 관리</p>
 							<div>
-								<p>주문조회</p>
+								<a href="../seller/seller-order-list.seller"
+									style="color: white;"><p>주문조회</p></a>
 							</div>
 						</li>
 						<li>
 							<p>정산 관리</p>
 							<div>
-								<p>정산내역조회</p>
+								<a href="#" style="color: white;"><p>정산내역조회</p></a>
 							</div>
 						</li>
 						<li>
 							<p>판매자 관리</p>
 							<div>
-								<p>판매자정보 관리</p>
-								<p>사업자정보 관리</p>
+								<a href="#" style="color: white;"><p>판매자정보 관리</p></a> <a
+									href="#" style="color: white;"><p>사업자정보 관리</p></a>
 							</div>
 						</li>
 						<li>
 							<p>매출 관리</p>
 							<div>
-								<p>매출 조회</p>
+								<a href="../seller/seller-revenue-list.jsp"
+									style="color: white;"><p>매출 조회</p></a>
 							</div>
 						</li>
 					</ul>
@@ -166,5 +168,7 @@
 
 		<div class="popup-bg"></div>
 </body>
-<script src="../assets/js/order/order-seller-list.js"></script>
+<script src="../assets/js/order/order-seller-list.js">
+
+</script>
 </html>

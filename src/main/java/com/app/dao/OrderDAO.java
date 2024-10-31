@@ -49,9 +49,14 @@ public class OrderDAO {
 	}
 	
 //	날짜별 주문 총내역
-	public List<OrderDTO> selectByDate(Long sellerId){
-	    return sqlSession.selectList("order.selectByDate", sellerId);
-	}
+    public List<OrderDTO> selectByDate(Long sellerId, String startDate, String endDate) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("sellerId", sellerId);
+        params.put("startDate", startDate);
+        params.put("endDate", endDate);
+        
+        return sqlSession.selectList("order.selectByDate", params);
+    }
 }
 
 	

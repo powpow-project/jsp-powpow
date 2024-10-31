@@ -61,7 +61,6 @@ public class SellerUpdateOkController implements Action {
          productVO.setSellerId(sellerId);
          
          // 파일이 성공적으로 업로드되었는지 확인
-         System.out.println(productImage != null);
          if (productImage != null) {
         	 productVO.setProductImage(productImage);
         	 productVO.setProductSubImage1(fileName1);
@@ -90,7 +89,6 @@ public class SellerUpdateOkController implements Action {
          return result; // 에러 페이지로 리턴할 수 있음
       }
       
-      System.out.println(productVO);
       productDAO.update(productVO);
       
       result.setRedirect(true);

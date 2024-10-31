@@ -7,6 +7,7 @@ public class CancleProductVO {
 	private Long productId;
 	private Long memberId;
 	private String cancleProductDate;
+	private int cancleCount;
 	
 	public CancleProductVO() {;}
 
@@ -42,10 +43,18 @@ public class CancleProductVO {
 		this.cancleProductDate = cancleProductDate;
 	}
 
+	public int getCancleCount() {
+		return cancleCount;
+	}
+
+	public void setCancleCount(int cancleCount) {
+		this.cancleCount = cancleCount;
+	}
+
 	@Override
 	public String toString() {
 		return "CancleProductVO [id=" + id + ", productId=" + productId + ", memberId=" + memberId
-				+ ", cancleProductDate=" + cancleProductDate + "]";
+				+ ", cancleProductDate=" + cancleProductDate + ", cancleCount=" + cancleCount + "]";
 	}
 
 	@Override
@@ -65,5 +74,6 @@ public class CancleProductVO {
 		return Objects.equals(id, other.id);
 	}
 
+	
 	 
 }

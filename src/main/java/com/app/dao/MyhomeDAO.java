@@ -19,9 +19,13 @@ public SqlSession sqlSession;
 	}
 	
 //	회원 조회
-	public List<MemberVO> selectMemberByEmail(String memberEmail) {
-	    return sqlSession.selectOne("member.selectMemberByEmail", memberEmail);
-	}
+//	public MemberVO selectBuyerByEmail(String memberEmail) {
+//	    return sqlSession.selectOne("member.selectBuyerByEmail", memberEmail);
+//	}
+
+public Optional<MemberVO> selectBuyerByEmail(String memberEmail) {
+    return Optional.ofNullable(sqlSession.selectOne("member.selectBuyerByEmail", memberEmail));
+}
 	
 //	프로필 정보 수정
 	public void updateMember(MemberVO memberVO) {

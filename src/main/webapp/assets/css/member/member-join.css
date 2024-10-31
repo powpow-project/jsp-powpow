@@ -17,7 +17,9 @@
 .text {
   font-size: 20px;
   text-align: center;
+  background-color: transparent;
 }
+
 
 .text1 {
   font-size: 14px;

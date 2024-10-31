@@ -20,14 +20,12 @@ public class AdminBannerUpdateOkController implements Action {
         Long id = Long.parseLong(req.getParameter("id"));
         adminBannerDTO.setId(id);
         
-        // 요청 파라미터 가져오기
         String bannerTitle = req.getParameter("banner-name"); 
         String bannerType = req.getParameter("banner-type"); 
         String bannerImage = req.getParameter("banner-image"); 
         String bannerStart = req.getParameter("start-date"); 
         String bannerEnd = req.getParameter("end-date");
 
-        // 유효성 검사
         if (bannerTitle == null || bannerTitle.trim().isEmpty()) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "배너 제목을 입력해 주세요.");
             return null;

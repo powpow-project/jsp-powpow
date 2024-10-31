@@ -13,9 +13,51 @@
 	<form action="seller-write-ok.seller" method="post" id="frame"
 		enctype="multipart/form-data">
 		<div class="menu-wrap">
-			<img src="../assets/images/product/menu.png" alt="메뉴"> <span
+			<img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴"> <span
 				class="h4">상품관리</span>
-
+         <div id="menu-frame">
+            <div class="menu-header">
+               <div class="welcome">seller님 환영합니다!</div>
+               <button class="logout">로그아웃</button>
+            </div>
+            <div class="menu-form">
+               <ul>
+                  <li>
+                     <p>상품 관리</p>
+                     <div>
+                        <a href="../seller/seller-list.seller" style="color: white;"><p>상품 조회</p></a>
+                        <a href="../seller/seller-write.seller" style="color: white;"><p>상품 등록</p></a>
+                        <a href="../seller/seller-update.seller" style="color: white;"><p>상품 수정</p></a>
+                     </div>
+                  </li>
+                  <li>
+                     <p>주문 관리</p>
+                     <div>
+                        <a href="../seller/seller-order-list.seller" style="color: white;"><p>주문조회</p></a>
+                     </div>
+                  </li>
+                  <li>
+                     <p>정산 관리</p>
+                     <div>
+                        <a href="#" style="color: white;"><p>정산내역조회</p></a>
+                     </div>
+                  </li>
+                  <li>
+                     <p>판매자 관리</p>
+                     <div>
+                        <a href="#" style="color: white;"><p>판매자정보 관리</p></a>
+                        <a href="#" style="color: white;"><p>사업자정보 관리</p></a>
+                     </div>
+                  </li>
+                  <li>
+                     <p>매출 관리</p>
+                     <div>
+                        <a href="../seller/seller-revenue-list.seller" style="color: white;"><p>매출 조회</p></a>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
 		</div>
 		<div class="division-line"></div>
 
@@ -248,6 +290,6 @@
        }
    });
    
-
+   
 </script>
 </html>
