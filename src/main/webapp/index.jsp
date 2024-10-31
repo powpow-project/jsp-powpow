@@ -21,7 +21,7 @@
 						<div class="right">
 							<div class="icons">
 								<a href="#"> <img src="assets/images/search-icon.jpg" alt="검색" /></a> 
-								<a href="#"> <img src="assets/images/truck-icon.jpg" alt="배송" /> </a> 
+								<a href="./shipping-list.myhome"> <img src="assets/images/truck-icon.jpg" alt="배송" /> </a> 
 								<a href="./product-cart-list.product"> <img src="assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>
@@ -34,7 +34,7 @@
 					<div class="menu-container">
 						<ul class="menu-wrap h4">
 							<li class="menu"><a href="./product/main.product">스토어</a></li>
-							<li class="menu"><a href="#">커뮤니티</a></li>
+							<li class="menu"><a href="./community/community-main.community">커뮤니티</a></li>
 							<li class="menu"><a href="./list.myhome">마이홈</a></li>
 							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
