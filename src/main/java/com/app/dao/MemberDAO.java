@@ -9,6 +9,7 @@ import java.util.Optional;
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.mybatis.config.MyBatisConfig;
+import com.app.vo.BusinessVO;
 import com.app.vo.MemberVO;
 
 import com.app.vo.SellerVO;
@@ -28,11 +29,12 @@ public class MemberDAO {
 		sqlSession.insert("member.insertBuyer", memberVO);
 	}
 		
-//	구매자 로그인
-	public String select(MemberVO memberVO) {
-		return sqlSession.selectOne("member.select", memberVO);
-	}
 	
+//	구매자 로그인
+	public String selectBuyer(MemberVO memberVO) {
+		return sqlSession.selectOne("member.selectBuyer", memberVO);
+	}
+
 //	구매자 계정 삭제
 	public void deleteBuyer(Long id) {
 		sqlSession.delete("member.deleteBuyer", id);
@@ -55,9 +57,14 @@ public class MemberDAO {
 		sqlSession.insert("member.insertSeller", sellerVO);
 	}
 	
+////	판매자 비즈니스 정보 추가
+//	public void insertBusiness(BusinessVO businessVO) {
+//	    sqlSession.insert("member.insertBusiness", businessVO);
+//	}
+	
 //	판매자 로그인
-	public String select(SellerVO sellerVO) {
-		return sqlSession.selectOne("member.select", sellerVO);
+	public String selectSeller(SellerVO sellerVO) {
+		return sqlSession.selectOne("member.selectSeller", sellerVO);
 	}
 
 	

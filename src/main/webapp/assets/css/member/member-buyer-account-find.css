@@ -59,7 +59,6 @@
     color: white;           /* 텍스트 색상 */
 }
 
-
 /* 아이디 찾기 내용 */
 .inputbutton {
   background-color: #ffffff;
@@ -111,6 +110,18 @@ p {
   line-height: 22px;
   font-weight: bold;
 }
+
+ .active {
+  background-color: #828282; /* 활성화된 버튼 스타일 */
+  color: #ffffff;
+ }
+.auth-number-container {
+  display: none; /* 기본적으로 숨김 */
+  margin-top: 10px; /* 간격 추가 */
+ }
+
+
+
 
 /* 비밀번호 찾기 내용 */
 

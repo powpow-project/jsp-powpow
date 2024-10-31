@@ -5,9 +5,9 @@ document.querySelector('.next-button').addEventListener('click', () => {
   if (selectedUser) {
     // 선택된 값에 따라 페이지 이동
     if (selectedUser.value === 'A') {
-      window.location.href = 'http://localhost:9000/powpow/login/buyer-id-find.jsp'; // POWPOW 회원 페이지
+      window.location.href = 'buyer-account-find.member'; // POWPOW 회원 페이지
     } else if (selectedUser.value === 'B') {
-      window.location.href = 'http://localhost:9000/powpow/login/seller-id-find.jsp'; // POWPOW 판매자 페이지
+      window.location.href = 'seller-account-find.member'; // POWPOW 판매자 페이지
     }
   } else {
 	alert('POWPOW 계정을 선택해주세요.');

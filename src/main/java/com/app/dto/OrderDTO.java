@@ -34,8 +34,8 @@ public class OrderDTO {
 	private String productSubImage2;
 	private String productSubImage3;
 	private int totalPrice;
-	private int oneDayTotalCount;
-	private int oneDayTotalPrice;
+	private int orderTotalCount;
+	private int orderTotalPrice;
 	
 	public OrderDTO() {;}
 
@@ -287,20 +287,20 @@ public class OrderDTO {
 		this.totalPrice = totalPrice;
 	}
 
-	public int getOneDayTotalCount() {
-		return oneDayTotalCount;
+	public int getOrderTotalCount() {
+		return orderTotalCount;
 	}
 
-	public void setOneDayTotalCount(int oneDayTotalCount) {
-		this.oneDayTotalCount = oneDayTotalCount;
+	public void setOrderTotalCount(int orderTotalCount) {
+		this.orderTotalCount = orderTotalCount;
 	}
 
-	public int getOneDayTotalPrice() {
-		return oneDayTotalPrice;
+	public int getOrderTotalPrice() {
+		return orderTotalPrice;
 	}
 
-	public void setOneDayTotalPrice(int oneDayTotalPrice) {
-		this.oneDayTotalPrice = oneDayTotalPrice;
+	public void setOrderTotalPrice(int orderTotalPrice) {
+		this.orderTotalPrice = orderTotalPrice;
 	}
 
 	@Override
@@ -315,8 +315,8 @@ public class OrderDTO {
 				+ productPrice + ", productImage=" + productImage + ", productCode=" + productCode + ", productType="
 				+ productType + ", productCategoryName=" + productCategoryName + ", productDetail=" + productDetail
 				+ ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
-				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", oneDayTotalCount="
-				+ oneDayTotalCount + ", oneDayTotalPrice=" + oneDayTotalPrice + "]";
+				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", orderTotalCount="
+				+ orderTotalCount + ", orderTotalPrice=" + orderTotalPrice + "]";
 	}
 
 	@Override
@@ -335,7 +335,7 @@ public class OrderDTO {
 		OrderDTO other = (OrderDTO) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 	
 	
 }

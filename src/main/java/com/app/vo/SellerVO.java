@@ -63,7 +63,7 @@ public class SellerVO {
 		this.sellerPhone = sellerPhone;
 	}
 
-	public char isSellerSms() {
+	public char getSellerSms() {
 		return sellerSms;
 	}
 
@@ -71,7 +71,7 @@ public class SellerVO {
 		this.sellerSms = sellerSms;
 	}
 
-	public char isSellerEmailCheck() {
+	public char getSellerEmailCheck() {
 		return sellerEmailCheck;
 	}
 
@@ -103,5 +103,6 @@ public class SellerVO {
 		return Objects.equals(id, other.id);
 	}
     
-
+    
+  
 }

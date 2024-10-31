@@ -8,6 +8,7 @@ public class CancleProductDTO {
 	private Long memberId;
 	private Long sellerId;
 	private String cancleProductDate;
+	private int cancleCount;
 	private String memberImage;
 	private String memberNickname;
 	private String memberEmail;
@@ -26,8 +27,8 @@ public class CancleProductDTO {
 	private String productSubImage2;
 	private String productSubImage3;
 	private int totalPrice;
-	private int oneDayTotalCount;
-	private int oneDayTotalPrice;
+	private int cancleTotalCount;
+	private int cancleTotalPrice;
 	private String sellerEmail;
 	private String sellerPassword;
 	private String sellerName;
@@ -75,6 +76,14 @@ public class CancleProductDTO {
 
 	public void setCancleProductDate(String cancleProductDate) {
 		this.cancleProductDate = cancleProductDate;
+	}
+
+	public int getCancleCount() {
+		return cancleCount;
+	}
+
+	public void setCancleCount(int cancleCount) {
+		this.cancleCount = cancleCount;
 	}
 
 	public String getMemberImage() {
@@ -221,20 +230,20 @@ public class CancleProductDTO {
 		this.totalPrice = totalPrice;
 	}
 
-	public int getOneDayTotalCount() {
-		return oneDayTotalCount;
+	public int getCancleTotalCount() {
+		return cancleTotalCount;
 	}
 
-	public void setOneDayTotalCount(int oneDayTotalCount) {
-		this.oneDayTotalCount = oneDayTotalCount;
+	public void setCancleTotalCount(int cancleTotalCount) {
+		this.cancleTotalCount = cancleTotalCount;
 	}
 
-	public int getOneDayTotalPrice() {
-		return oneDayTotalPrice;
+	public int getCancleTotalPrice() {
+		return cancleTotalPrice;
 	}
 
-	public void setOneDayTotalPrice(int oneDayTotalPrice) {
-		this.oneDayTotalPrice = oneDayTotalPrice;
+	public void setCancleTotalPrice(int cancleTotalPrice) {
+		this.cancleTotalPrice = cancleTotalPrice;
 	}
 
 	public String getSellerEmail() {
@@ -288,15 +297,15 @@ public class CancleProductDTO {
 	@Override
 	public String toString() {
 		return "CancleProductDTO [id=" + id + ", productId=" + productId + ", memberId=" + memberId + ", sellerId="
-				+ sellerId + ", cancleProductDate=" + cancleProductDate + ", memberImage=" + memberImage
-				+ ", memberNickname=" + memberNickname + ", memberEmail=" + memberEmail + ", memberPhone=" + memberPhone
-				+ ", memberAddress=" + memberAddress + ", memberSms=" + memberSms + ", memberEmailcheck="
-				+ memberEmailcheck + ", productName=" + productName + ", productPrice=" + productPrice
-				+ ", productImage=" + productImage + ", productCode=" + productCode + ", productType=" + productType
-				+ ", productCategoryName=" + productCategoryName + ", productDetail=" + productDetail
+				+ sellerId + ", cancleProductDate=" + cancleProductDate + ", cancleCount=" + cancleCount
+				+ ", memberImage=" + memberImage + ", memberNickname=" + memberNickname + ", memberEmail=" + memberEmail
+				+ ", memberPhone=" + memberPhone + ", memberAddress=" + memberAddress + ", memberSms=" + memberSms
+				+ ", memberEmailcheck=" + memberEmailcheck + ", productName=" + productName + ", productPrice="
+				+ productPrice + ", productImage=" + productImage + ", productCode=" + productCode + ", productType="
+				+ productType + ", productCategoryName=" + productCategoryName + ", productDetail=" + productDetail
 				+ ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
-				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", oneDayTotalCount="
-				+ oneDayTotalCount + ", oneDayTotalPrice=" + oneDayTotalPrice + ", sellerEmail=" + sellerEmail
+				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", cancleTotalCount="
+				+ cancleTotalCount + ", cancleTotalPrice=" + cancleTotalPrice + ", sellerEmail=" + sellerEmail
 				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
 				+ ", sellerSms=" + sellerSms + ", sellerEmailcheck=" + sellerEmailcheck + "]";
 	}
@@ -318,7 +327,6 @@ public class CancleProductDTO {
 		return Objects.equals(id, other.id);
 	}
 
-	
 	
 	
 	

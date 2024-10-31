@@ -5,20 +5,20 @@ const memberBtn = document.querySelector(".member-btn");
 const sellerBtn = document.querySelector(".seller-btn");
 const mainContents = document.querySelectorAll(".main-content");
 
-// 초기 상태 설정
-let activeBtn = "member"; // 기본적으로 회원 탭 활성화
+// 페이지 진입 시 member에 회색 포커스 유지
+let activeBtn = "member"; 
 
 // 회원 버튼 클릭 이벤트
 memberBtn.addEventListener("click", () => {
-    mainContents.forEach(content => content.style.display = "none"); // 모든 내용 숨김
-    mainContents[0].style.display = "block"; // 회원 내용 표시
+    mainContents.forEach(content => content.style.display = "none"); 
+    mainContents[0].style.display = "block"; 
     updateButtonState("member");
 });
 
 // 판매자 버튼 클릭 이벤트
 sellerBtn.addEventListener("click", () => {
-    mainContents.forEach(content => content.style.display = "none"); // 모든 내용 숨김
-    mainContents[1].style.display = "block"; // 판매자 내용 표시
+    mainContents.forEach(content => content.style.display = "none");
+    mainContents[1].style.display = "block"; 
     updateButtonState("seller");
 });
 
@@ -33,7 +33,7 @@ function updateButtonState(active) {
     }
 }
 
-// 페이지 로드 시 기본 버튼 상태 설정
+// 새로고침해두 member에 회색 포커스 유지
 updateButtonState(activeBtn);
 
   
@@ -59,17 +59,19 @@ updateButtonState(activeBtn);
            main[1].style.display = "block";
        });
 
+	   
+	   
        // 구매자 로그인 유효성 검사
-       const buyerButton = document.querySelector(".main-content.mebmer .login-button");
-       const buyerId = document.querySelector(".main-content.mebmer input[name=id]");
-       const buyerPassword = document.querySelector(".main-content.mebmer input[name=password]");
-       const buyerIdResult = document.querySelector(".main-content.mebmer #id-result");
-       const buyerPasswordResult = document.querySelector(".main-content.mebmer #password-result");
+       const buyerButton = document.querySelector(".main-content.member .login-button");
+       const buyerId = document.querySelector(".main-content.member input[name=buyerEmail]");
+       const buyerPassword = document.querySelector(".main-content.member input[name=buyerPassword]");
+       const buyerIdResult = document.querySelector(".main-content.member #id-result");
+       const buyerPasswordResult = document.querySelector(".main-content.member #password-result");
        
        // 판매자 로그인 유효성 검사
        const sellerButton = document.querySelector(".main-content.seller .login-button");
-       const sellerId = document.querySelector(".main-content.seller input[name=id]");
-       const sellerPassword = document.querySelector(".main-content.seller input[name=password]");
+       const sellerId = document.querySelector(".main-content.seller input[name=sellerEmail]");
+       const sellerPassword = document.querySelector(".main-content.seller input[name=sellerPassword]");
        const sellerIdResult = document.querySelector(".main-content.seller #id-result");
        const sellerPasswordResult = document.querySelector(".main-content.seller #password-result");
 
@@ -112,21 +114,22 @@ updateButtonState(activeBtn);
            if (globalThis.flag.filter((check) => check).length !== globalThis.flag.length) {
                alert("아이디 또는 비밀번호를 확인하세요.");
                return;
+			   // 구매자 로그인 폼 제출
            }
-           // 구매자 로그인 폼 제출
-           document.querySelector(".main-content.mebmer form").submit();
+		   document.querySelector(".main-content.member form").submit();
+
        });
 
        sellerButton.addEventListener("click", () => {
            if (globalThis.flag.filter((check) => check).length !== globalThis.flag.length) {
                alert("아이디 또는 비밀번호를 확인하세요.");
                return;
+			   // 판매자 로그인 폼 제출
            }
-           // 판매자 로그인 폼 제출
-           document.querySelector(".main-content.seller form").submit();
+			   document.querySelector(".main-content.seller form").submit();
+
        });
    });
-   
    
    
    

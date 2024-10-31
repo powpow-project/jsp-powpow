@@ -21,9 +21,9 @@
     
       <p class="text">POWPOW 회원가입이 완료되었습니다.</p>
       <p  class="text1">로그인하시면 더욱 다양한 서비스를 제공받으실 수 있습니다.</p>
-      <a href="http://localhost:9000/powpow/login.jsp">
+      <form action="login.member" method="post">
       	<button class="next-button">로그인</button>
-      </a>
+      </form>
     </div>
   </div>
 </body>
