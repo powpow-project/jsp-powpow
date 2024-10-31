@@ -96,13 +96,6 @@
            <div class="product-wrap">
 	           <div id="product-all-wrap">
 	           	  <c:forEach var="product" items="${product}" varStatus="status">
-	           		<c:choose>
-	              		<c:when test="${status.index == 10}">
-	        				<div class="banner">
-	            				<img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
-	        				</div>
-	    				</c:when>
-	    				<c:otherwise>
 	               			<div class="product"
 	               				data-category="${product.productType}">
 	                 				<div class="product-image-wrap">
@@ -135,19 +128,11 @@
 	                   					</div>
 	                 				</div>
 	               			</div>
-				          </c:otherwise>
-				        </c:choose>
 	   				  </c:forEach>
 	          	 	</div>
+	          	 	
            <div id="feed-wrap">
         		<c:forEach var="product" items="${product}" varStatus="status">
-           		<c:choose>
-              		<c:when test="${status.index == 10}">
-        				<div class="banner">
-            				<img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
-        				</div>
-    				</c:when>
-    				<c:otherwise>
     		 			<c:if test="${product.productType == '사료/간식'}">
                				<div class="product" data-category="${product.productType}">
                  				<div class="product-image-wrap">
@@ -181,20 +166,11 @@
                  </div>
                </div>
             </c:if>
-          </c:otherwise>
-        </c:choose>
      </c:forEach>
      </div>
      
                 <div id="toiletries-wrap">
         		<c:forEach var="product" items="${product}" varStatus="status">
-           		<c:choose>
-              		<c:when test="${status.index == 10}">
-        				<div class="banner">
-            				<img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
-        				</div>
-    				</c:when>
-    				<c:otherwise>
     		 			<c:if test="${product.productType == '배변용품'}">
                				<div class="product" data-category="${product.productType}">
                  				<div class="product-image-wrap">
@@ -228,20 +204,11 @@
                  </div>
                </div>
             </c:if>
-          </c:otherwise>
-        </c:choose>
      </c:forEach>
      </div>
      
                 <div id="toy-wrap">
         		<c:forEach var="product" items="${product}" varStatus="status">
-           		<c:choose>
-              		<c:when test="${status.index == 10}">
-        				<div class="banner">
-            				<img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
-        				</div>
-    				</c:when>
-    				<c:otherwise>
     		 			<c:if test="${product.productType == '장난감'}">
                				<div class="product" data-category="${product.productType}">
                  				<div class="product-image-wrap">
@@ -275,20 +242,11 @@
                  </div>
                </div>
             </c:if>
-          </c:otherwise>
-        </c:choose>
      </c:forEach>
      </div>
      
                 <div id="bb-wrap">
         		<c:forEach var="product" items="${product}" varStatus="status">
-           		<c:choose>
-              		<c:when test="${status.index == 10}">
-        				<div class="banner">
-            				<img src="../assets/images/shopping/shopping-banner.png" alt="배너 이미지">
-        				</div>
-    				</c:when>
-    				<c:otherwise>
     		 			<c:if test="${product.productType == '미용/목욕'}">
                				<div class="product" data-category="${product.productType}">
                  				<div class="product-image-wrap">
@@ -322,8 +280,6 @@
                  </div>
                </div>
             </c:if>
-          </c:otherwise>
-        </c:choose>
      </c:forEach>
      </div>
      
