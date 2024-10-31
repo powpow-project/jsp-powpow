@@ -11,11 +11,13 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
 </head>
 <body> 
+
 <c:if test="${not empty param.login}">
 	<script>
 	alert("아이디 또는 비밀번호를 확인해주세요")
 	</script>
 </c:if>
+
     <div class="login-main">
       <div class="logo-box">
         <a href="../index.jsp">
@@ -30,7 +32,7 @@
         <div class="main">
         
           <div class="main-content member">
-          <form action="login-ok.member" method="post">
+          <form action="buyer-login-ok.member" method="post">
             <div id="idFind" class="input">
             	<div class="input-box">
 	              <input class="inputbutton1" type="text" name="buyerEmail" placeholder="회원 아이디(이메일)를 입력해주세요">
@@ -75,6 +77,8 @@
 		
         
           <div class="main-content seller" style="display: none;">
+          
+          <form action="seller-login-ok.member" method="post">
             <div id="idFind" class="input">
           	  <div class="input-box">
 	              <input class="inputbutton1" type="id" name="sellerEmail" placeholder="판매자 아이디(이메일)를 입력해주세요">
@@ -83,8 +87,10 @@
               <input class="inputbutton" type="password" name="sellerPassword" placeholder="판매자 비밀번호를 입력해주세요">
               <p id="password-result"></p>
     
-            <button type="button" class="login-button">로그인</button>
-          </div>
+             <button type="button" class="login-button">로그인</button>
+         	</div>
+          </form>
+          
           <div class="box4">
             <div class="box3">
               <div class="savebox">
