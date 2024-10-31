@@ -31,38 +31,49 @@ public class SellerRevenueListController implements Action {
 		
 		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
 		
-		List<OrderDTO> orderList = orderDAO.selectByDate(sellerId);
-		List<CancleProductDTO> cancleList = cancleProductDAO.selectByDate(sellerId);
+		String startDate = req.getParameter("startDate");
+		String endDate = req.getParameter("endDate");
+
+		List<OrderDTO> orderList = orderDAO.selectByDate(sellerId, startDate, endDate);
+		List<CancleProductDTO> cancleList = cancleProductDAO.selectByDate(sellerId, startDate, endDate);
 		
 		int totalOrderCount = 0;
 		int totalOrderPrice = 0;
 		int totalCancleCount = 0;
 		int totalCanclePrice = 0;
 		int totalSales = 0;
-		
+		String orderDate = "";
+		String cancleDate = "";
 		
 		for (OrderDTO order : orderList) {
 		    totalOrderCount += order.getOrderTotalCount();
 		    totalOrderPrice += order.getOrderTotalPrice();
+		    orderDate = order.getOrderDate();
 		}
 		for (CancleProductDTO cancle : cancleList) {
 		    totalCancleCount += cancle.getCancleTotalCount();
 		    totalCanclePrice += cancle.getCancleTotalPrice();
+		    cancleDate = cancle.getCancleProductDate();
 		}
 		
 		totalSales = totalOrderPrice - totalCanclePrice;
 		
+		req.setAttribute("sellerId", sellerId);
+        req.setAttribute("startDate", startDate);
+        req.setAttribute("endDate", endDate);
+        
 		req.setAttribute("totalOrderCount", totalOrderCount);
 		req.setAttribute("totalOrderPrice", totalOrderPrice);
 		req.setAttribute("totalCancleCount", totalCancleCount);
 		req.setAttribute("totalCanclePrice", totalCanclePrice);
 		req.setAttribute("totalSales", totalSales);
 		
-		req.setAttribute("orderListForSeller", orderDAO.selectByDate(sellerId));
-		req.setAttribute("cancleListForSeller", cancleProductDAO.selectByDate(sellerId));
+		req.setAttribute("orderDate", orderDate);
+		req.setAttribute("cancleDate", cancleDate);
+		req.setAttribute("orderListForSeller", orderList);
+		req.setAttribute("cancleListForSeller", cancleList);
 		
 		result.setPath("seller-revenue-list.jsp");
-		
 		return result;
 	}
 
