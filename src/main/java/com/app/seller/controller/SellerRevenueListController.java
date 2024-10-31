@@ -36,20 +36,19 @@ public class SellerRevenueListController implements Action {
 
 		List<OrderDTO> orderList = orderDAO.selectByDate(sellerId, startDate, endDate);
 		List<CancleProductDTO> cancleList = cancleProductDAO.selectByDate(sellerId, startDate, endDate);
-		
-		System.out.println(orderList);
-		System.out.println(cancleList);
+		List<CancleProductDTO> list = cancleProductDAO.selectByDay(sellerId, startDate, endDate);
+
 		int totalOrderCount = 0;
 		int totalOrderPrice = 0;
 		int totalCancleCount = 0;
 		int totalCanclePrice = 0;
 		int totalSales = 0;
 		
-		for (OrderDTO order : orderList) {
+		for (CancleProductDTO order : list) {
 		    totalOrderCount += order.getOrderTotalCount();
 		    totalOrderPrice += order.getOrderTotalPrice();
 		}
-		for (CancleProductDTO cancle : cancleList) {
+		for (CancleProductDTO cancle : list) {
 		    totalCancleCount += cancle.getCancleTotalCount();
 		    totalCanclePrice += cancle.getCancleTotalPrice();
 		}
@@ -66,11 +65,7 @@ public class SellerRevenueListController implements Action {
 		req.setAttribute("totalCanclePrice", totalCanclePrice);
 		req.setAttribute("totalSales", totalSales);
 		
-		req.setAttribute("order", orderList);
-		req.setAttribute("cancle", cancleList);
-		
-		System.out.println(orderList);
-		System.out.println(cancleList);
+		req.setAttribute("list", list);
 		
 		result.setPath("seller-revenue-list.jsp");
 		return result;

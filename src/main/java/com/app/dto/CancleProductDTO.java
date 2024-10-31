@@ -7,6 +7,7 @@ public class CancleProductDTO {
 	private Long productId;
 	private Long memberId;
 	private Long sellerId;
+	private Long orderId;
 	private String cancleProductDate;
 	private int cancleCount;
 	private String memberImage;
@@ -35,6 +36,10 @@ public class CancleProductDTO {
 	private String sellerPhone;
 	private char sellerSms;
 	private char sellerEmailcheck;
+	private String orderNumber;
+	private int productCount;
+	private int orderTotalCount;
+	private int orderTotalPrice;
 	
 	public CancleProductDTO() {;}
 
@@ -68,6 +73,14 @@ public class CancleProductDTO {
 
 	public void setSellerId(Long sellerId) {
 		this.sellerId = sellerId;
+	}
+
+	public Long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 	public String getCancleProductDate() {
@@ -294,20 +307,54 @@ public class CancleProductDTO {
 		this.sellerEmailcheck = sellerEmailcheck;
 	}
 
+	public String getOrderNumber() {
+		return orderNumber;
+	}
+
+	public void setOrderNumber(String orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+
+	public int getProductCount() {
+		return productCount;
+	}
+
+	public void setProductCount(int productCount) {
+		this.productCount = productCount;
+	}
+
+	public int getOrderTotalCount() {
+		return orderTotalCount;
+	}
+
+	public void setOrderTotalCount(int orderTotalCount) {
+		this.orderTotalCount = orderTotalCount;
+	}
+
+	public int getOrderTotalPrice() {
+		return orderTotalPrice;
+	}
+
+	public void setOrderTotalPrice(int orderTotalPrice) {
+		this.orderTotalPrice = orderTotalPrice;
+	}
+
 	@Override
 	public String toString() {
 		return "CancleProductDTO [id=" + id + ", productId=" + productId + ", memberId=" + memberId + ", sellerId="
-				+ sellerId + ", cancleProductDate=" + cancleProductDate + ", cancleCount=" + cancleCount
-				+ ", memberImage=" + memberImage + ", memberNickname=" + memberNickname + ", memberEmail=" + memberEmail
-				+ ", memberPhone=" + memberPhone + ", memberAddress=" + memberAddress + ", memberSms=" + memberSms
-				+ ", memberEmailcheck=" + memberEmailcheck + ", productName=" + productName + ", productPrice="
-				+ productPrice + ", productImage=" + productImage + ", productCode=" + productCode + ", productType="
-				+ productType + ", productCategoryName=" + productCategoryName + ", productDetail=" + productDetail
-				+ ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
+				+ sellerId + ", orderId=" + orderId + ", cancleProductDate=" + cancleProductDate + ", cancleCount="
+				+ cancleCount + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname + ", memberEmail="
+				+ memberEmail + ", memberPhone=" + memberPhone + ", memberAddress=" + memberAddress + ", memberSms="
+				+ memberSms + ", memberEmailcheck=" + memberEmailcheck + ", productName=" + productName
+				+ ", productPrice=" + productPrice + ", productImage=" + productImage + ", productCode=" + productCode
+				+ ", productType=" + productType + ", productCategoryName=" + productCategoryName + ", productDetail="
+				+ productDetail + ", productSubImage1=" + productSubImage1 + ", productSubImage2=" + productSubImage2
 				+ ", productSubImage3=" + productSubImage3 + ", totalPrice=" + totalPrice + ", cancleTotalCount="
 				+ cancleTotalCount + ", cancleTotalPrice=" + cancleTotalPrice + ", sellerEmail=" + sellerEmail
 				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
-				+ ", sellerSms=" + sellerSms + ", sellerEmailcheck=" + sellerEmailcheck + "]";
+				+ ", sellerSms=" + sellerSms + ", sellerEmailcheck=" + sellerEmailcheck + ", orderNumber=" + orderNumber
+				+ ", productCount=" + productCount + ", orderTotalCount=" + orderTotalCount + ", orderTotalPrice="
+				+ orderTotalPrice + "]";
 	}
 
 	@Override
@@ -325,8 +372,7 @@ public class CancleProductDTO {
 			return false;
 		CancleProductDTO other = (CancleProductDTO) obj;
 		return Objects.equals(id, other.id);
-	}
-
+	}	
 	
 	
 	

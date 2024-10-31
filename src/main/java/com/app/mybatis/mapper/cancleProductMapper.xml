@@ -41,13 +41,13 @@
 		ORDER BY TCP.ID DESC
 	</select>
 	
-	<select id="selectByDay">
+	<select id="selectByDay" resultType="CancleProductDTO">
 		SELECT 
-		   CANCLE_PRODUCT_DATE AS "취소 날짜",
-		   SUM(PRODUCT_PRICE) AS "날짜별 취소 가격",
-		   SUM(CANCLE_COUNT) AS "취소 수량",
-		   SUM(TOTAL_ORDER_PRICE) AS "총 구매 가격",
-		   SUM(PRODUCT_COUNT) AS "총 구매 개수"
+		   CANCLE_PRODUCT_DATE,
+		   SUM(PRODUCT_PRICE),
+		   SUM(CANCLE_COUNT),
+		   SUM(TOTAL_ORDER_PRICE),
+		   SUM(PRODUCT_COUNT)
 		FROM (
 		   SELECT 
 		      TCP.ID, 
