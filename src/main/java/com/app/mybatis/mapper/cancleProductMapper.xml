@@ -41,4 +41,32 @@
 		ORDER BY TCP.ID DESC
 	</select>
 	
+	<select id="selectByDay">
+		SELECT 
+		   CANCLE_PRODUCT_DATE AS "취소 날짜",
+		   SUM(PRODUCT_PRICE) AS "날짜별 취소 가격",
+		   SUM(CANCLE_COUNT) AS "취소 수량",
+		   SUM(TOTAL_ORDER_PRICE) AS "총 구매 가격",
+		   SUM(PRODUCT_COUNT) AS "총 구매 개수"
+		FROM (
+		   SELECT 
+		      TCP.ID, 
+		      TCP.CANCLE_PRODUCT_DATE, 
+		      TCP.CANCLE_COUNT,
+		      TBP.PRODUCT_PRICE, 
+		      TBO.PRODUCT_COUNT,
+		      TBO.PRODUCT_COUNT * TBP.PRODUCT_PRICE AS TOTAL_ORDER_PRICE
+		   FROM TBL_CANCLE_PRODUCT TCP
+		   JOIN TBL_PRODUCT TBP
+		   ON TCP.PRODUCT_ID = TBP.ID
+		   LEFT JOIN TBL_ORDER TBO
+		   ON TBO.PRODUCT_ID = TBP.ID
+		   WHERE TCP.CANCLE_PRODUCT_DATE 
+		      BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD') 
+		      AND TO_DATE(#{endDate}, 'YYYY-MM-DD')
+		      AND SELLER_ID = #{sellerId}
+		)
+		GROUP BY CANCLE_PRODUCT_DATE
+	</select>
+	
 </mapper>

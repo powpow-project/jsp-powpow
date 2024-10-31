@@ -37,6 +37,8 @@ public class SellerRevenueListController implements Action {
 		List<OrderDTO> orderList = orderDAO.selectByDate(sellerId, startDate, endDate);
 		List<CancleProductDTO> cancleList = cancleProductDAO.selectByDate(sellerId, startDate, endDate);
 		
+		System.out.println(orderList);
+		System.out.println(cancleList);
 		int totalOrderCount = 0;
 		int totalOrderPrice = 0;
 		int totalCancleCount = 0;
@@ -64,8 +66,8 @@ public class SellerRevenueListController implements Action {
 		req.setAttribute("totalCanclePrice", totalCanclePrice);
 		req.setAttribute("totalSales", totalSales);
 		
-		req.setAttribute("orderListForSeller", orderList);
-		req.setAttribute("cancleListForSeller", cancleList);
+		req.setAttribute("order", orderList);
+		req.setAttribute("cancle", cancleList);
 		
 		System.out.println(orderList);
 		System.out.println(cancleList);

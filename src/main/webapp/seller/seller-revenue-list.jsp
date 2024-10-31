@@ -107,26 +107,31 @@
 						<td><c:out value="${totalCanclePrice}" /></td>
 						<td><c:out value="${totalSales}" /></td>
 					</tr>
-					<tr>
-						<c:forEach var="orderListForSeller" items="${orderListForSeller}">
-							<td>
-								<c:out value="${orderDate.substring(0, 10)}" />
-							</td>
-							<td>
-								<c:out value="날짜별 수량: ${orderListForSeller.orderTotalCount}" />
-							</td>
-							<td>
-								<c:out value="날짜별 주문금액:${orderListForSeller.orderTotalPrice}" />
-							</td>
-							<td>
-								<c:out value="날짜별 수량:${orderListForSeller.orderTotalCount}" />
-							</td>
-							<td>
-								<c:out value="날짜별 취소금액:${orderListForSeller.orderTotalPrice}" />
-							</td>
-							<td class="calculated-price"></td>
-						</c:forEach>
-					</tr>
+					    <tr>
+					<c:forEach var="order" items="${order}">
+					        <td>
+					            <c:out value="날짜: ${order.orderDate.substring(0, 10)}" />
+					        </td>
+					        <td>
+					            <c:out value="날짜별 수량: ${order.orderTotalCount}" />
+					        </td>
+					        <td>
+					            <c:out value="날짜별 주문금액: ${order.orderTotalPrice}" />
+					        </td>
+					</c:forEach>
+					        
+					<c:forEach var="cancle" items="${cancle}">
+					        <td>
+					            <c:out value="날짜별 취소수량: ${cancle.cancleTotalPrice}" />
+					        </td>
+					        <td>
+					            <c:out value="날짜별 취소금액: ${cancle.cancleTotalPrice}" />
+					        </td>
+					        <td>
+					            <c:out value="총 금액:" />
+					        </td>
+					</c:forEach>
+					    </tr>
 				</tbody>
 			</table>
 		</section>
