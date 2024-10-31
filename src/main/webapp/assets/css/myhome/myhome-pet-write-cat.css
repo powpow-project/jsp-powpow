@@ -83,7 +83,7 @@
         width: 96px;
         height: 32px;
         padding-top:5px;
-        padding-left:14px;
+        padding-left:15px;
     }
 
     .pre-title {
@@ -152,4 +152,5 @@
         justify-content: center;
         align-items: center;
         margin-left: 400px;
+        margin-bottom:187px;
     }

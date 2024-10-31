@@ -59,8 +59,14 @@
 	
 	 <select id="selectPetKinds" resultType="string">
         SELECT PET_KIND 
-        FROM TBL_PET; 
+        FROM TBL_PET
     </select>
+    
+<!--     <select id="selectAll" resultType="PetVO">
+    	SELECT MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER
+    	FROM TBL_PET
+    	ORDER BY ID ASC
+    </select> -->
 	
 	<insert id="insertPet" parameterType="PetVO">
 		INSERT INTO TBL_PET(ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER)

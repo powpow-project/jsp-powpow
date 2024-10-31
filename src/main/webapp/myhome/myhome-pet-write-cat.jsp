@@ -21,7 +21,7 @@
 				<div id="border">
 					<div id="nav">
 						<div class="left">
-							<img src="assets/images/powpow-logo.png" alt="로고" />
+							<img src="../assets/images/powpow-logo.png" alt="로고" />
 						</div>
 						<div class="right">
 							<div class="icons">

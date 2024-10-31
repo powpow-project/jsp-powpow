@@ -19,58 +19,62 @@
 </head>
 <body>
 	<div class="header-container">
-		<div id="header-wrap">
-			<div id="border">
-				<div id="nav">
-					<div class="left">
-						<img src="../assets/images/myhome/logo.png" alt="로고">
-					</div>
-					<div class="right">
-						<div class="icons">
-							<a href="#"><img
-								src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a> <a
-								href="#"><img
-								src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
-							<a href="#"><img
-								src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
+			<div id="header-wrap">
+				<div id="border">
+					<div id="nav">
+						<div class="left">
+							<img src="../assets/images/powpow-logo.png" alt="로고" />
 						</div>
-						<div class="sector"></div>
-						<div class="login">
-							<a href="#">로그인</a>
+						<div class="right">
+							<div class="icons">
+								<a href="#"> <img src="../assets/images/myhome/search_icon2.jpg" alt="검색" /></a> 
+								<a href="./shipping-list.myhome"> <img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송" /> </a> 
+								<a href="../product-cart-list.product"> <img src="../assets/images/myhome/shopping_cart_icon2.jpg"alt="카트" /></a>
+							</div>
+							<div class="sector"></div>
+							<div class="login">
+								<a href="../member/login.member">로그인</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="menu-container">
-					<ul class="menu-wrap h4">
-						<li class="menu"><a href="#">스토어</a></li>
-						<li class="menu"><a href="#">커뮤니티</a></li>
-						<li class="menu"><a href="#">마이홈</a></li>
-					</ul>
-					<div id="sector"></div>
-					<div class="sub-menu-wrap">
-						<ul>
-							<li class="sub-menu"><a href="#">강아지</a></li>
-							<li class="sub-menu"><a href="#">고양이</a></li>
-							<li class="sub-menu"><a href="#">새</a></li>
-							<li class="sub-menu"><a href="#">물고기</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
+
+					<div class="menu-container">
+						<ul class="menu-wrap h4">
+							<li class="menu"><a href="./product/main.product">스토어</a></li>
+							<li class="menu"><a href="#">커뮤니티</a></li>
+							<li class="menu"><a href="./list.myhome">마이홈</a></li>
+							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
-						<ul>
-							<li class="sub-menu"><a href="#">홈</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
-						</ul>
-						<ul>
-							<li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
-							<li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
-							<li class="sub-menu"><a href="./shipping-list.myhome">나의
-									쇼핑</a></li>
-							<li class="sub-menu"><a href="#">내 게시글</a></li>
-						</ul>
+						<div id="sector"></div>
+						<div class="sub-menu-wrap">
+							<ul>
+								<li class="sub-menu"><a href="../product/product-dog.product">강아지</a></li>
+								<li class="sub-menu"><a href="../product/product-cat.product">고양이</a></li>
+								<li class="sub-menu"><a href="../product/product-bird.product">새</a></li>
+								<li class="sub-menu"><a href="../product/product-fish.product">물고기</a></li>
+								<li class="sub-menu"><a href="../product/health-main.product">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="./community/list.community">홈</a></li>
+								<li class="sub-menu"><a href="#">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
+								<li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
+								<li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
+								<li class="sub-menu"><a href="./community/read.community">내 게시글</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<form action="pet-write-ok.myhome?petKind=bird" method="post" id="frame" enctype="multipart/form-data">
 		<button id="submit-button" type="button">완료</button>
 		<div id="mydog">

@@ -28,7 +28,7 @@ public class MyhomePetWriteOkController implements Action {
 	   PetVO petVO = new PetVO();
 	   HttpSession session = req.getSession();
 	   
-	      session.setAttribute("id", 4L);
+	      session.setAttribute("id", 1L);
 	      Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
 		   
       String directory = req.getServletContext().getRealPath("/assets/images/myhome");

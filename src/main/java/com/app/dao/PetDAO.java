@@ -20,6 +20,11 @@ public class PetDAO {
 		return Optional.ofNullable("myhome.selectPetKinds");
 	}
 	
+//	//GET ALL PETS
+//	public List<PetVO> selectAll(){
+//		return sqlSession.selectList("myhome.selectAll");
+//	}
+	
     // pet info insert
     public void insertPet(PetVO petVO) {
         sqlSession.insert("myhome.insertPet", petVO);
