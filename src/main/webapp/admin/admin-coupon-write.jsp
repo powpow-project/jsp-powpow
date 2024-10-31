@@ -36,15 +36,14 @@
 					</li>
 					<li>
 						<p>
-							<a
-								href="../admin/admin-banner-list.admin" style="color: white;">배너 관리</a>
+							<a href="../admin/admin-customerInfo-list.admin" style="color: white;">회원 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="../admin/admin-banner-list.admin">배너 조회</a>
+								<a href="../admin/admin-customerInfo-list.admin">일반회원 정보조회</a>
 							</p>
 							<p>
-								<a href="../admin/admin-banner-write.admin">배너 신규등록</a>
+								<a href="../admin/admin-sellerInfo-list.admin">판매자회원 정보조회</a>
 							</p>
 						</div>
 					</li>
@@ -53,11 +52,15 @@
 							<a href="#" style="color: white;">회원 관리</a>
 						</p>
 						<div>
+						<p>
+							<a href="../admin/admin-customerInfo-list.admin" style="color: white;">회원 관리</a>
+						</p>
+						<div>
 							<p>
-								<a href="#">일반회원 정보조회</a>
+								<a href="../admin/admin-customerInfo-list.admin">일반회원 정보조회</a>
 							</p>
 							<p>
-								<a href="#">판매자회원 정보조회</a>
+								<a href="../admin/admin-sellerInfo-list.admin">판매자회원 정보조회</a>
 							</p>
 						</div>
 					</li>

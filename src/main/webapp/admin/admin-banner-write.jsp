@@ -10,7 +10,8 @@
     <title>배너 신규등록</title>
 </head>
 <body>
-    <form action="admin-banner-write-ok.admin" method="POST" id="frame">
+    <form action="admin-banner-write-ok.admin" method="POST" id="frame"
+    enctype="multipart/form-data">
         
       <div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
@@ -50,20 +51,21 @@
 					</li>
 					<li>
 						<p>
-							<a href="#" style="color: white;">회원 관리</a>
+							<a href="../admin/admin-customerInfo-list.admin" style="color: white;">회원 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="#">일반회원 정보조회</a>
+								<a href="../admin/admin-customerInfo-list.admin">일반회원 정보조회</a>
 							</p>
 							<p>
-								<a href="#">판매자회원 정보조회</a>
+								<a href="../admin/admin-sellerInfo-list.admin">판매자회원 정보조회</a>
 							</p>
 						</div>
 					</li>
 					<li>
 						<p>
-							<a href="../admin/admin-coupon-list.admin" style="color: white;">쿠폰 관리</a>
+							<a href="../admin/admin-coupon-list.admin" style="color: white;">쿠폰
+								관리</a>
 						</p>
 						<div>
 							<p>
@@ -131,8 +133,6 @@
             <div class="form-row">
                 <label for="unlimited">기간</label>
                 <div class="input-group">
-                    <input type="checkbox" id="unlimited" name="duration" value="unlimited" />
-                    <label for="unlimited">무제한</label>
                     <input type="date" id="start-date" name="start-date" />
                     <span>~</span>
                     <input type="date" id="end-date" name="end-date" />

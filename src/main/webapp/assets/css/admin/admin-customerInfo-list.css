@@ -1,0 +1,437 @@
+/********상단 헤더 공통 부분**********/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
+	q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+	th, td, article, aside, canvas, details, figcaption, figure, footer,
+	header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent
+}
+
+body {
+	line-height: 1
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block
+}
+
+nav ul {
+	list-style: none
+}
+
+blockquote, q {
+	quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: none
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent
+}
+
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none
+}
+
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold
+}
+
+del {
+	text-decoration: line-through
+}
+
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0
+}
+
+input, select {
+	vertical-align: middle
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+
+img {
+	width: 40px;
+	height: 40px;
+}
+
+.menu-icon {
+	cursor: pointer;
+}
+
+#frame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 100px;
+}
+
+#frame>.menu-wrap {
+	display: flex;
+	align-items: center;
+	width: 1440px;
+	margin: 28px 0;
+	gap: 72px;
+	padding-left: 28px;
+	position: relative;
+}
+
+#frame>.menu-wrap>span {
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 4px;
+}
+
+#frame>.division-line {
+	border: solid 0.1px #828282;
+	width: 1440px;
+}
+
+
+.title {
+	margin: 43px 0 80px 0;
+	display: flex;
+	justify-content: space-between;
+	width: 1191px;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: bold;
+}
+
+
+/********메뉴바 부분**********/
+
+.menu-wrap {
+    display: flex;
+    align-items: center;
+    width: 1440px;
+    margin: 28px 0;
+    gap: 72px;
+    padding-left: 28px;
+    position: relative;
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+
+#menu-frame {
+    display: none;
+    flex-direction: column;
+    width: 1440px;
+    align-items: start;
+    margin-top: 0px;
+    animation: lift-detail 0.1s;
+    position: absolute;
+    top: 85px;
+    left: 30px;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    max-width: 220px;
+}
+
+.welcome {
+    font-size: 14px;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.logout {
+    font-size: 10px;
+    color: #ffc303;
+    background-color: white;
+    border: none;
+    margin-left: auto;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 24px;
+    vertical-align: bottom;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+}
+
+ul>li {
+    width: 200px;
+}
+
+ul>li>p {
+    width: 200px;
+    height: 40px;
+    background: #828282;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding-left: 15px;
+    margin: 16px 0;
+}
+
+ul>li>div {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    padding-left: 15px;
+}
+
+ul>li>div>p {
+    margin: 10px 0;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+
+/********상세 내용 부분**********/
+
+.notice-search {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 30px;
+	width: 1028px;
+	margin: 0 auto;
+	border: none;
+}
+
+.search-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.search-bar {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-left: 5%;
+}
+
+.search-bar label {
+	width: 35px;
+	font-weight: bold;
+}
+
+.search-bar input {
+	width: 450px;
+	height: 55px;
+	border-radius: 20px;
+	border: 1px solid #ddd;
+	padding: 10px 10px;
+	margin-left: 3%;
+}
+
+.search-period {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-left: 5%;
+	gap: 35px;
+}
+
+.search-period input[type="date"] {
+	width: 180px;
+	height: 55px;
+	border-radius: 20px;
+	border: 1px solid #ddd;
+	padding: 0 10px;
+	font-family: 'Spoqa Han Sans Neo', sans-serif !important;
+}
+
+.sms-receive,
+.email-receive {
+	display: flex;
+	align-items: center;
+	margin-right: 15%;
+	gap: 15px;
+}
+
+.sms-receive label,
+.email-receive label {
+	margin-right: 8px;
+	font-weight: bold;
+}
+
+.search-btn,
+.reset-btn,
+.write-btn {
+	width: 90px;
+	height: 30px;
+	border: none;
+	border-radius: 20px;
+	gap: 10px;
+	color: white; 
+	cursor: pointer;
+}
+
+.search-btn {
+	background-color: #113F8A; 
+	margin-top: 40px;
+	margin-bottom: 180px;
+}
+
+.reset-btn {
+	background-color: #FFC303; 
+}
+
+.notice-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 1440px;
+	margin: 0 auto;
+}
+
+table tr {
+	display: flex;
+	justify-content: space-between;
+}
+
+table tr > th,
+table tr > td {
+	justify-content: center;
+	padding: 20px 0;
+}
+
+table tr > th {
+	border-bottom: solid 0.1px #828282;
+	padding-bottom: 28px;
+}
+
+table tr > th:nth-child(1),
+table tr > td:nth-child(1) {
+	width: 98px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(2),
+table tr > td:nth-child(2) {
+	width: 244px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(3),
+table tr > td:nth-child(3) {
+	width: 244px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(4),
+table tr > td:nth-child(4) {
+	width: 390px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(5),
+table tr > td:nth-child(5) {
+	width: 244px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(6),
+table tr > td:nth-child(6) {
+	width: 98px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(7),
+table tr > td:nth-child(7) {
+	width: 122px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+.edit-btn,
+.delete-btn {
+	padding: 5px 10px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.edit-btn {
+	background-color: #113F8A; 
+	color: white;
+	margin-bottom: 180px;
+}
+
+.delete-btn {
+	background-color: #FFC303; 
+	color: white;
+	margin-bottom: 180px;
+}
