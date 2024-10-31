@@ -27,7 +27,9 @@ public class ProductFrontController extends HttpServlet{
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       req.setCharacterEncoding("UTF-8");
       resp.setContentType("text/html; charset=utf-8");
-      String target = req.getRequestURI().replace(req.getContextPath() + "/product/", "").split("\\.")[0];
+//      String target = req.getRequestURI().replace(req.getContextPath() + "/powpow/product/", "").split("\\.")[0];
+      String target = req.getRequestURI().replace(req.getContextPath() + "/product/","").split("\\.")[0];
+//    String target = req.getRequestURI().split("\\.")[0];
       Result result = null;
       System.out.println("절취선");
       System.out.println(target);

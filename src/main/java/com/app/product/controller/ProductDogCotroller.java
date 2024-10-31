@@ -30,7 +30,7 @@ public class ProductDogCotroller implements Action {
 		List<ProductVO> product = productDAO.selectAll();
 		req.setAttribute("product", product);
 		
-		result.setPath("/product-dog.ProductCategoryName=" + productCategoryName);
+		result.setPath("../product/product-dog.jsp?productCategoryName=" + productCategoryName);
 		return result;
 	}
 
