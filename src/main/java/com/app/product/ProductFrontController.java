@@ -29,7 +29,8 @@ public class ProductFrontController extends HttpServlet{
       resp.setContentType("text/html; charset=utf-8");
       String target = req.getRequestURI().replace(req.getContextPath() + "/product/", "").split("\\.")[0];
       Result result = null;
-      
+      System.out.println("절취선");
+      System.out.println(target);
       
       
       

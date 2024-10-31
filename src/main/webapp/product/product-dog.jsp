@@ -43,7 +43,7 @@
 						<div id="sector"></div>
 						<div class="sub-menu-wrap">
 							<ul>
-								<li class="sub-menu"><a href="./product/product-dog.product">강아지</a></li>
+								<li class="sub-menu"><a href="./product/product-dog.product?productCategoryName=강아지">강아지</a></li>
 								<li class="sub-menu"><a href="./product/product-cat.product">고양이</a></li>
 								<li class="sub-menu"><a href="./product/product-bird.product">새</a></li>
 								<li class="sub-menu"><a href="./product/product-fish.product">물고기</a></li>
@@ -91,13 +91,13 @@
             </ul>
            </div>
            </div>
-           <p class="entire-count">전체 16개</p>
+           <p class="entire-count">전체 <c:out value="${productCount}"/>개</p>
          
            <div class="product-wrap">
 	           <div id="product-all-wrap">
 	           	  <c:forEach var="product" items="${product}" varStatus="status">
-	               			<div class="product"
-	               				data-category="${product.productType}">
+	           	  <c:if test="${product.productCategoryName == '강아지'}">
+	               			<div class="product" data-category="${product.productType}">
 	                 				<div class="product-image-wrap">
 	                  					<img src="../assets/images/product/${product.productImage}">
 		                  				<div class="hover-box">
@@ -128,12 +128,13 @@
 	                   					</div>
 	                 				</div>
 	               			</div>
+	               			</c:if>
 	   				  </c:forEach>
 	          	 	</div>
 	          	 	
            <div id="feed-wrap">
         		<c:forEach var="product" items="${product}" varStatus="status">
-    		 			<c:if test="${product.productType == '사료/간식'}">
+    		 			<c:if test="${product.productType == '사료/간식' && product.productCategoryName == '강아지'}">
                				<div class="product" data-category="${product.productType}">
                  				<div class="product-image-wrap">
                   					<img src="../assets/images/product/${product.productImage}">
