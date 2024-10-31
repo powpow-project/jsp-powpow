@@ -27,7 +27,7 @@ public class ProductDogCotroller implements Action {
 	    
 //	    System.out.println(req.getParameter("productCategoryName"));
 	        
-		List<ProductVO> product = productDAO.selectAll();
+		List<ProductVO> product = productDAO.selectByCategory(productCategoryName);
 		req.setAttribute("product", product);
 		
 		result.setPath("../product/product-dog.jsp?productCategoryName=" + productCategoryName);

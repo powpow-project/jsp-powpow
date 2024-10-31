@@ -91,12 +91,11 @@
             </ul>
            </div>
            </div>
-           <p class="entire-count">전체 <c:out value="${productCount}"/>개</p>
+           <p class="entire-count">전체 <c:out value="${product.size()}"/>개</p>
          
            <div class="product-wrap">
 	           <div id="product-all-wrap">
 	           	  <c:forEach var="product" items="${product}" varStatus="status">
-	           	  <c:if test="${product.productCategoryName == '강아지'}">
 	               			<div class="product" data-category="${product.productType}">
 	                 				<div class="product-image-wrap">
 	                  					<img src="../assets/images/product/${product.productImage}">
@@ -128,7 +127,6 @@
 	                   					</div>
 	                 				</div>
 	               			</div>
-	               			</c:if>
 	   				  </c:forEach>
 	          	 	</div>
 	          	 	

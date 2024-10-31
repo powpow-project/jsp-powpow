@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
 import com.app.product.controller.ProductBirdCotroller;
+import com.app.product.controller.ProductCartCheckController;
 import com.app.product.controller.ProductCartDeleteController;
 import com.app.product.controller.ProductCartListController;
 import com.app.product.controller.ProductCartWriteOkController;
@@ -44,6 +45,8 @@ public class ProductFrontController extends HttpServlet{
     	  result = new ProductBirdCotroller().execute(req, resp);
       }else if(target.equals("product-Fish")) {
     	  result = new ProductFishCotroller().execute(req, resp);
+      }else if(target.equals("cart-check")) {
+    	  result = new ProductCartCheckController().execute(req, resp);
       }else if(target.equals("list")) {
     	  result = new ProductListController().execute(req, resp);
       }else if(target.equals("product-seller")) {
