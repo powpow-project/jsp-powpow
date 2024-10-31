@@ -56,10 +56,11 @@ public class MemberDAO {
 	public void insertSeller(SellerVO sellerVO) {
 		sqlSession.insert("member.insertSeller", sellerVO);
 	}
-//	판매자 비즈니스 정보 추가
-	public void insertBusiness(BusinessVO businessVO) {
-	    sqlSession.insert("member.insertBusiness", businessVO);
-	}
+	
+////	판매자 비즈니스 정보 추가
+//	public void insertBusiness(BusinessVO businessVO) {
+//	    sqlSession.insert("member.insertBusiness", businessVO);
+//	}
 	
 //	판매자 로그인
 	public String selectSeller(SellerVO sellerVO) {
