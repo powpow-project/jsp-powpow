@@ -12,7 +12,7 @@
 </head>
 <style type="text/css">
 #profilePic {
-	background-image: url('../assets/images/myhome/default-bird.svg');
+	background-image: url('../assets/images/myhome/default-cat.svg');
 }
 </style>
 <body>
@@ -66,20 +66,12 @@
 									쇼핑</a></li>
 							<li class="sub-menu"><a href="#">내 게시글</a></li>
 						</ul>
-
-						<ul>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-						</ul>
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<form action="pet-write-ok.myhome?petKind=bird" method="post" id="frame" enctype="multipart/form-data">
+	<form action="pet-write-ok.myhome?petKind=cat" method="post" id="frame" enctype="multipart/form-data">
 		<button id="submit-button" type="button">완료</button>
 		<div id="mydog">
 			<div class="card">
@@ -108,7 +100,7 @@
 					<input type="radio" name="petGender" value="male">
 						<p>남아</p>
 				</label> 
-				<input class="input" type="text" placeholder="예) 먼치킨">
+				<input class="input" name="petBreed" type="text" placeholder="예) 먼치킨">
 				<p>
 					<input name="petBirth" class="birthday" type="date">
 				</p>
