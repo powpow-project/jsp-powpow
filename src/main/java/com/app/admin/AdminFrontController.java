@@ -18,6 +18,7 @@ import com.app.admin.controller.AdminCouponListController;
 import com.app.admin.controller.AdminCouponUpdateController;
 import com.app.admin.controller.AdminCouponUpdateOkController;
 import com.app.admin.controller.AdminCouponWriteOkController;
+import com.app.admin.controller.AdminCustomerInfoListController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
 import com.app.admin.controller.AdminLoginOkController;
@@ -34,10 +35,9 @@ public class AdminFrontController extends HttpServlet{
 	    String target = req.getRequestURI().replace(req.getContextPath() + "/admin/", "").split("\\.")[0];
 	    Result result = null;
 	    
-	    System.out.println(target);
+//	    System.out.println(target);
 	    
 	    // 로그인 목록
-	    
 	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
 	        result = new Result();
 	        result.setPath("../admin/admin-loginAdmin.jsp");
@@ -45,8 +45,7 @@ public class AdminFrontController extends HttpServlet{
 	    } else if (target.equals("admin-loginAdmin-ok")) { // 로그인 처리 로직
 	        result = new AdminLoginOkController().execute(req, resp);
 	        
-	    // 공지사항 관리 목록
-	        
+	    // 공지사항 관리 목록    
 	    } else if (target.equals("admin-write")) { // 공지사항 등록 페이지 이동 처리
 	    	result = new Result();
 	    	result.setPath("../admin/admin-write.jsp"); // JSP로 포워딩
@@ -67,8 +66,7 @@ public class AdminFrontController extends HttpServlet{
 	        result = new AdminDeleteOkController().execute(req, resp);
 	        
 	    
-	    // 배너관리 목록
-	        
+	    // 배너관리 목록        
 	    } else if (target.equals("admin-banner-list")) { // 배너 목록
 	        result = new AdminBannerListController().execute(req, resp);
 	    	
@@ -90,7 +88,6 @@ public class AdminFrontController extends HttpServlet{
 	        
 	    
 	    // 쿠폰관리 목록
-	        
 	    } else if (target.equals("admin-coupon-list")) { // 쿠폰 목록
 	        result = new AdminCouponListController().execute(req, resp);
 	    	
@@ -109,6 +106,11 @@ public class AdminFrontController extends HttpServlet{
 
 	    } else if (target.equals("admin-coupon-delete-ok")) { // 공지사항 삭제
 	        result = new AdminCouponDeleteOkController().execute(req, resp);
+	        
+	        
+	    // 회원관리 목록
+		} else if (target.equals("admin-customerInfo-list")) { // 쿠폰 목록
+		    result = new AdminCustomerInfoListController().execute(req, resp);
 	        
 
 	    } else {
