@@ -16,21 +16,29 @@ public class MemberBuyerLoginOkController implements Action {
 
     @Override
     public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        Result result = new Result();
-        MemberDAO memberDAO = new MemberDAO();
-        MemberVO memberVO = new MemberVO();
 
-        memberVO.setMemberEmail(req.getParameter("buyerEmail"));
-        memberVO.setMemberPassword(req.getParameter("buyerPassword"));
-        
-		System.out.println(req.getParameter("buyerEmail"));
-		System.out.println(req.getParameter("buyerPassword"));      
-        
-		memberDAO.selectBuyer(memberVO);
+		Result result = new Result();
+		MemberDAO memberDAO = new MemberDAO();
+		MemberVO memberVO = new MemberVO();
+		String buyerEmail = null;
+		
+		HttpSession session = req.getSession();
+		
+		memberVO.setMemberEmail(req.getParameter("buyerEmail"));
+		memberVO.setMemberPassword(req.getParameter("buyerPassword"));
+		
+		
+		buyerEmail = memberDAO.selectBuyer(memberVO);
 		
 		result.setRedirect(true);
-		result.setPath("../../../src/main/webapp/index.jsp");
+		if(buyerEmail == null) {
+			result.setPath("../member/login.member?login=false");
+			return result;
+		}
 		
-        return result;
+		session.setAttribute("buyerEmail", buyerEmail);
+		result.setPath("../index.jsp");
+		
+		return result;
     }
 }
