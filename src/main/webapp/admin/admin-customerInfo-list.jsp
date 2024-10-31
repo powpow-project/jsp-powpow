@@ -64,8 +64,7 @@
 					</li>
 					<li>
 						<p>
-							<a href="../admin/admin-coupon-list.admin" style="color: white;">쿠폰
-								관리</a>
+							<a href="../admin/admin-coupon-list.admin" style="color: white;">쿠폰 관리</a>
 						</p>
 						<div>
 							<p>
@@ -82,7 +81,7 @@
 
 
 		<div class="division-line"></div>
-		
+
 		<div class="title">
 			<h1 class="h1">일반회원 정보조회</h1>
 		</div>
@@ -124,44 +123,46 @@
 					<tr>
 						<th>No</th>
 						<th>아이디</th>
+						<th>비밀번호</th>
+						<th>상세주소</th>
 						<th>휴대폰</th>
 						<th>이메일</th>
 						<th>SMS 수신여부</th>
 						<th>메일 수신여부</th>
 					</tr>
 				</thead>
+
 				<tbody id="user-list">
-					<tr>
-						<td>2</td>
-						<td>dlfksdj13</td>
-						<td>010-2400-0000</td>
-						<td>dkwjT@naver.com</td>
-						<td>수신</td>
-						<td>수신거부</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>dlwlsdk0102</td>
-						<td>010-2400-1111</td>
-						<td>dlwlsdk0102@naver.com</td>
-						<td>수신거부</td>
-						<td>수신</td>
-					</tr>
+					<c:forEach var="member" items="${memberList}" varStatus="status">
+						<tr>
+							<td>${status.index + 1}</td>
+							<td>${member.memberPassword}</td>
+							<td>${member.memberAddress}</td>
+							<td>${member.memberPhone}</td>
+							<td>${member.memberEmail}</td>
+							<td>${member.memberSms}</td>
+							<td>${member.memberEmailCheck}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
+
 			</table>
 		</section>
 	</form>
 
 </body>
-    <script>
-        const startdateInput = document.querySelector("#start-date");
-        let startDate = `${adminCoupon.adminCouponStart}`.split(" ")[0];
-        startdateInput.value = startDate; 
 
-        const endDateInput = document.querySelector("#end-date");
-        let endDate = `${adminCoupon.adminCouponEnd}`.split(" ")[0];
-        endDateInput.value = endDate;
-    </script>
+<script>
+    const startdateInput = document.querySelector("#start-date");
+    let startDate = `${adminBanner.adminBannerStart}`;
+    startDate = startDate.split(" ")[0];
+    startdateInput.value = startDate; 
+
+    const endDateInput = document.querySelector("#end-date");
+    let endDate = `${adminBanner.adminBannerEnd}`;
+    endDate = endDate.split(" ")[0];
+    endDateInput.value = endDate;
+</script>
+
     <script src="../assets/js/admin/admin-customerInfo-list.js"></script>
-    
 </html>
