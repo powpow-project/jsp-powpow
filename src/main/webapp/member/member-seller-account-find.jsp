@@ -10,6 +10,7 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
 </head>
 <body>
+
  <div  class="find-main">
     <div class="logo-box">
       <a href="../index.jsp">
@@ -75,6 +76,7 @@
 
       </div>
   </div>
+
    <script src="../assets/js/member/member-seller-account-find.js"></script>
 </body>
 </html>

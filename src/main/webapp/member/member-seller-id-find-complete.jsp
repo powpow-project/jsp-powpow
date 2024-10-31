@@ -21,9 +21,9 @@
     
       <p class="text">ex)powpow123@naver.com</p>
       <p  class="text1">아이디 찾기가 완료되었습니다!</p>
-       <a href="http://localhost:9000/powpow/login.jsp">
+      <form action="login.member" method="post">
       	<button class="next-button">로그인</button>
-       </a>
+      </form>
     </div>
   </div>
 

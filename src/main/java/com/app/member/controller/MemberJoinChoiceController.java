@@ -14,8 +14,8 @@ public class MemberJoinChoiceController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-		
 		result.setPath("../member/member-join.jsp");
+		
 		return result;
 	}
 
