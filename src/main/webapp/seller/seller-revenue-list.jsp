@@ -13,6 +13,7 @@
 <title>매출관리</title>
 </head>
 <body>
+
 	<div id="frame">
 		<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/product/menu.png"
@@ -85,7 +86,6 @@
 				</div>
 			</section>
 		</form>
-
 		<section class="notice-list">
 			<table>
 				<thead>
@@ -99,26 +99,26 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="list" items="${list}">
+					<c:forEach var="list" items="${lists}">
 					    <tr>
 					        <td>
-					            <c:out value="날짜:${list.cancleProductDate}" />
+					            <c:out value="${list.cancleProductDate.substring(0,10)}" />
 					        </td>
 					        <td>
-					            <c:out value="날짜별 수량: ${list.orderTotalCount}" />
+					            <c:out value="${list.totalOrderedCount}" />
 					        </td>
 					        <td>
-					            <c:out value="날짜별 주문금액: ${list.orderTotalPrice}" />
+					            <c:out value="${list.totalOrderedPrice}" />
 					        </td>
 					        
 					        <td>
-					            <c:out value="날짜별 취소수량: ${list.cancleTotalPrice}" />
+					            <c:out value="${list.totalCancledCount}" />
 					        </td>
 					        <td>
-					            <c:out value="날짜별 취소금액: ${list.cancleTotalPrice}" />
+					            <c:out value="${list.totalCancledPrice}" />
 					        </td>
 					        <td>
-					            <c:out value="총 금액:" />
+					            <c:out value="${list.totalOrderedPrice - list.totalCancledPrice}" />
 					        </td>
 					    </tr>
 					</c:forEach>
@@ -133,6 +133,7 @@
 				</tbody>
 			</table>
 		</section>
+		
 	</div>
 </body>
 <script>
