@@ -59,15 +59,21 @@
 	
 	 <select id="selectPetKinds" resultType="string">
         SELECT PET_KIND 
-        FROM TBL_PET; <!-- 데이터베이스 테이블을 사용 -->
+        FROM TBL_PET
     </select>
+    
+<!--     <select id="selectAll" resultType="PetVO">
+    	SELECT MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER
+    	FROM TBL_PET
+    	ORDER BY ID ASC
+    </select> -->
 	
-	<insert id="insertPet" parameterType="com.app.vo.PetVO">
+	<insert id="insertPet" parameterType="PetVO">
 		INSERT INTO TBL_PET(ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER)
 		VALUES(PET_SEQ.NEXTVAL, #{memberId}, #{petKind}, #{petImage}, #{petName}, #{petGender}, #{petBreed}, #{petBirth}, #{petVet}, #{petWeight}, #{petNeuter})
 	</insert>
 	
-	<update id="updatePet" parameterType="com.app.vo.PetVO">
+	<update id="updatePet" parameterType="PetVO">
 		UPDATE TBL_PET
 		SET PET_NAME = #{petName}, PET_GENDER = #{petGender}, PET_BREED = #{petBreed}, PET_BIRTH = #{petBirth}, PET_WEIGHT = #{petWeight}, PET_NEUTER = #{petNeuter}, PET_VET = #{petVet}
 		WHERE ID = #{id}
