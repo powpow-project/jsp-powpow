@@ -51,20 +51,21 @@
 					</li>
 					<li>
 						<p>
-							<a href="#" style="color: white;">회원 관리</a>
+							<a href="../admin/admin-customerInfo-list.admin" style="color: white;">회원 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="#">일반회원 정보조회</a>
+								<a href="../admin/admin-customerInfo-list.admin">일반회원 정보조회</a>
 							</p>
 							<p>
-								<a href="#">판매자회원 정보조회</a>
+								<a href="../admin/admin-sellerInfo-list.admin">판매자회원 정보조회</a>
 							</p>
 						</div>
 					</li>
 					<li>
 						<p>
-							<a href="../admin/admin-coupon-list.admin" style="color: white;">쿠폰 관리</a>
+							<a href="../admin/admin-coupon-list.admin" style="color: white;">쿠폰
+								관리</a>
 						</p>
 						<div>
 							<p>

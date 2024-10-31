@@ -17,9 +17,12 @@ public class AdminCustomerInfoListController implements Action {
     public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         Result result = new Result();
         MemberDAO memberDAO = new MemberDAO();
+        
 
         List<MemberVO> members = memberDAO.selectAllMembers();
         req.setAttribute("members", members);
+        
+        System.out.println(members);
 
         result.setPath("../admin/admin-customerInfo-list.jsp"); 
         return result; 

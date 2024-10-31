@@ -1,41 +1,39 @@
 /********상단 헤더 공통 부분**********/
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
-q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
-th, td, article, aside, canvas, details, figcaption, figure, footer,
-header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
+	q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
+	th, td, article, aside, canvas, details, figcaption, figure, footer,
+	header, hgroup, menu, nav, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	outline: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-	background: transparent;
+	background: transparent
 }
 
 body {
-	line-height: 1;
-	font-family: "Spoqa Han Sans Neo", sans-serif;
-	padding-bottom: 100px;
+	line-height: 1
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup,
-menu, nav, section {
-	display: block;
+	menu, nav, section {
+	display: block
 }
 
 nav ul {
-	list-style: none;
+	list-style: none
 }
 
 blockquote, q {
-	quotes: none;
+	quotes: none
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
-	content: none;
+	content: none
 }
 
 a {
@@ -43,37 +41,34 @@ a {
 	padding: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-	background: transparent;
+	background: transparent
 }
 
 ins {
 	background-color: #ff9;
 	color: #000;
-	text-decoration: none;
+	text-decoration: none
 }
 
 mark {
 	background-color: #ff9;
 	color: #000;
 	font-style: italic;
-	font-weight: bold;
+	font-weight: bold
 }
 
 del {
-	text-decoration: line-through;
+	text-decoration: line-through
 }
 
 abbr[title], dfn[title] {
 	border-bottom: 1px dotted;
-	cursor: help;
+	cursor: help
 }
 
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
-	width: 100%;
-	text-align: center;
-	table-layout: fixed;
+	border-spacing: 0
 }
 
 hr {
@@ -82,15 +77,19 @@ hr {
 	border: 0;
 	border-top: 1px solid #ccc;
 	margin: 1em 0;
-	padding: 0;
+	padding: 0
 }
 
 input, select {
-	vertical-align: middle;
+	vertical-align: middle
 }
 
 * {
 	box-sizing: border-box;
+}
+
+body {
+	font-family: "Spoqa Han Sans Neo", sans-serif;
 }
 
 img {
@@ -108,28 +107,30 @@ img {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	margin: 0 auto;
+	margin-bottom: 100px;
 }
 
-#frame > .menu-wrap {
+#frame>.menu-wrap {
 	display: flex;
 	align-items: center;
 	width: 1440px;
 	margin: 28px 0;
 	gap: 72px;
 	padding-left: 28px;
+	position: relative;
 }
 
-#frame > .menu-wrap > span {
+#frame>.menu-wrap>span {
 	font-weight: bold;
 	font-size: 20px;
 	margin-top: 4px;
 }
 
-#frame > .division-line {
+#frame>.division-line {
 	border: solid 0.1px #828282;
 	width: 1440px;
 }
+
 
 .title {
 	margin: 43px 0 80px 0;
@@ -143,85 +144,101 @@ h1 {
 	font-weight: bold;
 }
 
+
 /********메뉴바 부분**********/
 
+.menu-wrap {
+    display: flex;
+    align-items: center;
+    width: 1440px;
+    margin: 28px 0;
+    gap: 72px;
+    padding-left: 28px;
+    position: relative;
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+
 #menu-frame {
-	display: none;
-	flex-direction: column;
-	width: 1440px;
-	align-items: start;
-	margin-top: 0px;
-	animation: lift-detail 0.1s;
-	position: absolute;
-	top: 85px;
-	left: 30px;
+    display: none;
+    flex-direction: column;
+    width: 1440px;
+    align-items: start;
+    margin-top: 0px;
+    animation: lift-detail 0.1s;
+    position: absolute;
+    top: 85px;
+    left: 30px;
 }
 
 .menu-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0;
-	margin: 0;
-	max-width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    max-width: 220px;
 }
 
 .welcome {
-	font-size: 14px;
-	text-align: left;
-	vertical-align: bottom;
+    font-size: 14px;
+    text-align: left;
+    vertical-align: bottom;
 }
 
 .logout {
-	font-size: 10px;
-	color: #ffc303;
-	background-color: white;
-	border: none;
-	margin-left: auto;
-	font-weight: bold;
-	cursor: pointer;
-	margin-right: 24px;
-	vertical-align: bottom;
+    font-size: 10px;
+    color: #ffc303;
+    background-color: white;
+    border: none;
+    margin-left: auto;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 24px;
+    vertical-align: bottom;
 }
 
 ul {
-	list-style: none;
-	padding: 0;
-	width: 200px;
-	position: absolute;
-	z-index: 1000;
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
 }
 
-ul > li {
-	width: 200px;
+ul>li {
+    width: 200px;
 }
 
-ul > li > p {
-	width: 200px;
-	height: 40px;
-	background: #828282;
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	cursor: pointer;
-	padding-left: 15px;
-	margin: 16px 0;
+ul>li>p {
+    width: 200px;
+    height: 40px;
+    background: #828282;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding-left: 15px;
+    margin: 16px 0;
 }
 
-ul > li > div {
-	height: 0;
-	overflow: hidden;
-	transition: height 0.3s ease;
-	padding-left: 15px;
+ul>li>div {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    padding-left: 15px;
 }
 
-ul > li > div > p {
-	margin: 10px 0;
-	text-align: left;
-	padding-left: 10px;
-	cursor: pointer;
+ul>li>div>p {
+    margin: 10px 0;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
 }
+
 
 /********상세 내용 부분**********/
 
@@ -353,7 +370,7 @@ table tr > td:nth-child(1) {
 
 table tr > th:nth-child(2),
 table tr > td:nth-child(2) {
-	width: 122px;
+	width: 244px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -361,7 +378,7 @@ table tr > td:nth-child(2) {
 
 table tr > th:nth-child(3),
 table tr > td:nth-child(3) {
-	width: 122px;
+	width: 244px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -385,7 +402,7 @@ table tr > td:nth-child(5) {
 
 table tr > th:nth-child(6),
 table tr > td:nth-child(6) {
-	width: 244px;
+	width: 98px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -393,20 +410,11 @@ table tr > td:nth-child(6) {
 
 table tr > th:nth-child(7),
 table tr > td:nth-child(7) {
-	width: 98px;
-	flex-shrink: 0;
-	display: flex;
-	align-items: center;
-}
-
-table tr > th:nth-child(8),
-table tr > td:nth-child(8) {
 	width: 122px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
 }
-
 
 .edit-btn,
 .delete-btn {

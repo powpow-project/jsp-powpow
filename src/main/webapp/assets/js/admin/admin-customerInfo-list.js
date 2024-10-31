@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     listItems.forEach((li, i) => {
         li.addEventListener("mouseover", () => {
-            subMenus[i].style.height = `${subMenus[i].children.length * 40}px`; 
+            subMenus[i].style.height = `${subMenus[i].children.length * 40}px`;
         });
         li.addEventListener("mouseleave", () => {
             subMenus[i].style.height = 0;
@@ -29,20 +29,54 @@ document.addEventListener("DOMContentLoaded", () => {
         menuFrame.style.display = "none";
         menuFrame.removeEventListener("mouseleave", hideMenu);
     }
-});
 
-const reset = document.getElementById('reset-btn');
+    // 검색 버튼 클릭 시
+    const search = document.getElementById('search-btn');
+    const searchInput = document.getElementById('search-input');
+    const userList = document.getElementById('user-list');
 
-reset.addEventListener('click', function () {
-    searchInput.value = '';
+    search.addEventListener('click', function () {
+        const searchValue = searchInput.value.trim().toLowerCase();
+        const smsFilter = document.querySelector('input[name="sms"]:checked');
+        const emailFilter = document.querySelector('input[name="email"]:checked');
 
-    const radios = document.querySelectorAll('input[type="radio"]');
-    radios.forEach(radio => radio.checked = false); 
-    document.getElementById('start-date').value = ''; 
-    document.getElementById('end-date').value = ''; 
+        // 모든 행을 숨김
+        const rows = userList.getElementsByTagName('tr');
+        for (const row of rows) {
+            const userId = row.cells[1].textContent.toLowerCase();
+            const phone = row.cells[2].textContent.toLowerCase();
+            const email = row.cells[3].textContent.toLowerCase();
+            const smsStatus = row.cells[4].textContent;
+            const emailStatus = row.cells[5].textContent;
 
-    const rows = userList.getElementsByTagName('tr');
-    for (const row of rows) {
-        row.style.display = '';
-    }
+            // 검색어와 필터 적용
+            const matchesSearch = userId.includes(searchValue) || phone.includes(searchValue) || email.includes(searchValue);
+            const matchesSms = smsFilter ? smsStatus === (smsFilter.value === 'yes' ? '수신' : '수신거부') : true;
+            const matchesEmail = emailFilter ? emailStatus === (emailFilter.value === 'yes' ? '수신' : '수신거부') : true;
+
+            // 모든 조건이 맞아야 행 표시
+            if (matchesSearch && matchesSms && matchesEmail) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        }
+    });
+
+    // 초기화 버튼 클릭 시
+    const reset = document.getElementById('reset-btn');
+
+    reset.addEventListener('click', function () {
+        searchInput.value = '';
+
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => radio.checked = false);
+        document.getElementById('start-date').value = '';
+        document.getElementById('end-date').value = '';
+
+        const rows = userList.getElementsByTagName('tr');
+        for (const row of rows) {
+            row.style.display = '';
+        }
+    });
 });

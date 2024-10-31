@@ -22,7 +22,7 @@
 							<div class="icons">
 								<a href="#"><img src="assets/images/search-icon.jpg" alt="검색" /></a> 
 								<a href="./myhome/shipping-list.myhome"> <img src="assets/images/truck-icon.jpg" alt="배송" /> </a> 
-								<a href="./product-cart-list.product"> <img src="assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+								<a href="./cart-check.product"> <img src="assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>
 							<div class="login">
@@ -41,11 +41,11 @@
 						<div id="sector"></div>
 						<div class="sub-menu-wrap">
 							<ul>
-								<li class="sub-menu"><a href="./product/product-dog.product">강아지</a></li>
-								<li class="sub-menu"><a href="./product/product-cat.product">고양이</a></li>
-								<li class="sub-menu"><a href="./product/product-bird.product">새</a></li>
-								<li class="sub-menu"><a href="./product/product-fish.product">물고기</a></li>
-								<li class="sub-menu"><a href="./product/product-health-main.product">헬스+</a></li>
+								<li class="sub-menu"><a href="product-dog.product?productCategoryName=강아지">강아지</a></li>
+		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=고양이">고양이</a></li>
+		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=새">새</a></li>
+		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=물고기">물고기</a></li>
+		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=헬스+">헬스+</a></li>
 							</ul>
 							<ul>
 								<li class="sub-menu"><a href="./community/list.community">홈</a></li>
@@ -87,18 +87,26 @@
 
 				<!-- 아이콘 -->
 				<section class="categories">
-					<button class="category">
-						<img src="assets/images/main/Group 750.png" alt="Dog" />
-					</button>
-					<button class="category">
-						<img src="assets/images/main/Group 749.png" alt="Cat" />
-					</button>
-					<button class="category">
-						<img src="assets/images/main/Group 748.png" alt="Bird" />
-					</button>
-					<button class="category">
-						<img src="assets/images/main/Frame 748.png" alt="Reptile" />
-					</button>
+				    <button class="category">
+				        <a href="product-dog.product?productCategoryName=강아지">
+				            <img src="assets/images/main/Group 750.png" alt="Dog" />
+				        </a>
+				    </button>
+				    <button class="category">
+				        <a href="product-dog.product?productCategoryName=고양이">
+				            <img src="assets/images/main/Group 749.png" alt="Cat" />
+				        </a>
+				    </button>
+				    <button class="category">
+				        <a href="product-dog.product?productCategoryName=새">
+				            <img src="assets/images/main/Group 748.png" alt="Bird" />
+				        </a>
+				    </button>
+				    <button class="category">
+				        <a href="product-dog.product?productCategoryName=물고기">
+				            <img src="assets/images/main/Frame 748.png" alt="Reptile" />
+				        </a>
+				    </button>
 				</section>
 
 				<!-- 커뮤니티 섹션 -->
