@@ -17,27 +17,27 @@ public class PetDAO {
 	
 //	pet kinds
 	public Optional<String> selectPetKinds() {
-		return Optional.ofNullable("pet.selectPetKinds");
+		return Optional.ofNullable("myhome.selectPetKinds");
 	}
 	
     // pet info insert
     public void insertPet(PetVO petVO) {
-        sqlSession.insert("pet.insertPet", petVO);
+        sqlSession.insert("myhome.insertPet", petVO);
     }
     
     // pet update
     public void updatePet(PetVO petVO) {
-        sqlSession.update("pet.updatePet", petVO);
+        sqlSession.update("myhome.updatePet", petVO);
     }
     
     // pet delete
     public void deletePet(Long id) {
-        sqlSession.delete("pet.deletePet", id);
+        sqlSession.delete("myhome.deletePet", id);
     }
     
     
     // pet info select by ID
     public Optional<PetVO> selectPetId(Long id) {
-        return Optional.ofNullable(sqlSession.selectOne("pet.selectPetId", id));
+        return Optional.ofNullable(sqlSession.selectOne("myhome.selectPetId", id));
     }
 }
