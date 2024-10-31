@@ -10,6 +10,7 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico"/>
 </head>
 <body>
+
  <div  class="find-main">
     <div class="logo-box">
       <a href="../index.jsp">
@@ -28,29 +29,36 @@
               <p>이름</p>
               <input class="inputbutton" type="text" name="id" placeholder="이름">
             </div>
-            <div>
-              <p>휴대폰 번호</p>
-              <div class="input-container">
-                <input class="inputbutton" type="number" name="phone" placeholder="휴대폰 번호 입력 ('-'제외 11자리 입력)">
-                <button class="auth-button">인증</button>
-              </div>
-            </div>
+			<div>
+			    <p>휴대폰 번호</p>
+			    <div class="input-container">
+			        <input class="inputbutton" type="number" name="phone" placeholder="휴대폰 번호 입력 ('-'제외 11자리 입력)">
+			        <button class="auth-button" id="request-auth">인증요청</button>
+			    </div>
+			    <div class="auth-number-container" id="authNumberContainer" style="display: none;">
+			        <div class="input-container">
+			            <input class="inputbutton" type="number" name="authNumber" placeholder="인증번호 6자리 입력">
+			            <button class="auth-button confirm-button">확인</button>
+			            <p id="phone-result"></p>
+			        </div>
+			    </div>
+			</div>
           </div>
-          <a href="http://localhost:9000/powpow/buyer-id-find-complete.jsp">
+          <a href="http://localhost:9000/powpow/seller-id-find-complete.jsp">
             <button class="next-button">다음</button>
           </a>
         </div>
 
 
         <div class="main-content password" style="display: none;" class="password">
-        <div class="input">
-          <div>
-            <p>아이디</p>
-            <input class="inputbutton" type="text" name="id" placeholder="아이디(이메일)">
-          </div>
+           <div class="input">
+          	<div>
+             <p>아이디</p>
+             <input class="inputbutton" type="text" name="id" placeholder="아이디(이메일)">
+           </div>
           </div>
 
-          <p class="text2">비밀번호 찾기 방법을 선택해주세요.</p>
+          <p class="text2">비밀번호를 찾을 방법을 선택해 주세요!</p>
 
           <div class="raido-box">
             <label for="user_a">
@@ -68,6 +76,7 @@
 
       </div>
   </div>
+
   <script src="../assets/js/member/member-buyer-account-find.js"></script>
 </body>
 </html>

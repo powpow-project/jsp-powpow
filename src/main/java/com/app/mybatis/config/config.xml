@@ -7,53 +7,53 @@
    </settings>
    
    <typeAliases>
-   	<typeAlias type="com.app.vo.ProductVO" alias="ProductVO"/>
-   	<typeAlias type="com.app.vo.ProductReviewVO" alias="ProductReviewVO"/>
-   	<typeAlias type="com.app.vo.TogetherVO" alias="TogetherVO"/>
-   	<typeAlias type="com.app.vo.LikeVO" alias="LikeVO"/>
-   	<typeAlias type="com.app.vo.OrderVO" alias="OrderVO"/>
-   	<typeAlias type="com.app.vo.OrderDetailVO" alias="OrderDetailVO"/>
-   	<typeAlias type="com.app.vo.DeliveryVO" alias="DeliveryVO"/>
-   	<typeAlias type="com.app.vo.BusinessVO" alias="BusinessVO"/>
-   	<typeAlias type="com.app.vo.SellerVO" alias="SellerVO"/>
-   	<typeAlias type="com.app.vo.AdjustmentVO" alias="AdjustmentVO"/>
-   	<typeAlias type="com.app.vo.AdminVO" alias="AdminVO"/>
-   	<typeAlias type="com.app.vo.AdminCouponVO" alias="AdminCouponVO"/>
-   	<typeAlias type="com.app.vo.AdminBannerVO" alias="AdminBannerVO"/>
-   	<typeAlias type="com.app.vo.AdminNoticeVO" alias="AdminNoticeVO"/>
-   	<typeAlias type="com.app.vo.PetVO" alias="PetVO"/>
-   	<typeAlias type="com.app.vo.MemberVO" alias="MemberVO"/>
-   	<typeAlias type="com.app.vo.CartVO" alias="CartVO"/>
-   	<typeAlias type="com.app.vo.PayVO" alias="PayVO"/>
-   	<typeAlias type="com.app.vo.CommCommentVO" alias="CommCommentVO"/>
-   	<typeAlias type="com.app.vo.CommPostVO" alias="CommPostVO"/>
-   	<typeAlias type="com.app.vo.HpCommunityPostVO" alias="HpCommunityPostVO"/>
-   	<typeAlias type="com.app.vo.CancleProductVO" alias="CancleProductVO"/>
-   	
-   	
-   	<typeAlias type="com.app.dto.AdjustmentDTO" alias="AdjustmentDTO"/>
-   	<typeAlias type="com.app.dto.AdminBannerDTO" alias="AdminBannerDTO"/>
-   	<typeAlias type="com.app.dto.AdminCouponDTO" alias="AdminCouponDTO"/>
-   	<typeAlias type="com.app.dto.AdminDTO" alias="AdminDTO"/>
-   	<typeAlias type="com.app.dto.AdminNoticeDTO" alias="AdminNoticeDTO"/>
-   	<typeAlias type="com.app.dto.BusinessDTO" alias="BusinessDTO"/>
-   	<typeAlias type="com.app.dto.CartDTO" alias="CartDTO"/>
-   	<typeAlias type="com.app.dto.CommCommentDTO" alias="CommCommentDTO"/>
-   	<typeAlias type="com.app.dto.CommPostDTO" alias="CommPostDTO"/>
-   	<typeAlias type="com.app.dto.DeliveryDTO" alias="DeliveryDTO"/>
-   	<typeAlias type="com.app.dto.HpCommunityPostDTO" alias="HpCommunityPostDTO"/>
-   	<typeAlias type="com.app.dto.LikeDTO" alias="LikeDTO"/>
-   	<typeAlias type="com.app.dto.MemberDTO" alias="MemberDTO"/>
-   	<typeAlias type="com.app.dto.OrderDetailDTO" alias="OrderDetailDTO"/>
-   	<typeAlias type="com.app.dto.OrderDTO" alias="OrderDTO"/>
-   	<typeAlias type="com.app.dto.PayDTO" alias="PayDTO"/>
-   	<typeAlias type="com.app.dto.PetDTO" alias="PetDTO"/>
-   	<typeAlias type="com.app.dto.ProductDTO" alias="ProductDTO"/>
-   	<typeAlias type="com.app.dto.ProductReviewDTO" alias="ProductReviewDTO"/>
-   	<typeAlias type="com.app.dto.SellerDTO" alias="SellerDTO"/>
-   	<typeAlias type="com.app.dto.TogetherDTO" alias="TogetherDTO"/>
-   	<typeAlias type="com.app.dto.CancleProductDTO" alias="CancleProductDTO"/>
-   	
+      <typeAlias type="com.app.vo.ProductVO" alias="ProductVO"/>
+      <typeAlias type="com.app.vo.ProductReviewVO" alias="ProductReviewVO"/>
+      <typeAlias type="com.app.vo.TogetherVO" alias="TogetherVO"/>
+      <typeAlias type="com.app.vo.LikeVO" alias="LikeVO"/>
+      <typeAlias type="com.app.vo.OrderVO" alias="OrderVO"/>
+      <typeAlias type="com.app.vo.OrderDetailVO" alias="OrderDetailVO"/>
+      <typeAlias type="com.app.vo.DeliveryVO" alias="DeliveryVO"/>
+      <typeAlias type="com.app.vo.BusinessVO" alias="BusinessVO"/>
+      <typeAlias type="com.app.vo.SellerVO" alias="SellerVO"/>
+      <typeAlias type="com.app.vo.AdjustmentVO" alias="AdjustmentVO"/>
+      <typeAlias type="com.app.vo.AdminVO" alias="AdminVO"/>
+      <typeAlias type="com.app.vo.AdminCouponVO" alias="AdminCouponVO"/>
+      <typeAlias type="com.app.vo.AdminBannerVO" alias="AdminBannerVO"/>
+      <typeAlias type="com.app.vo.AdminNoticeVO" alias="AdminNoticeVO"/>
+      <typeAlias type="com.app.vo.PetVO" alias="PetVO"/>
+      <typeAlias type="com.app.vo.MemberVO" alias="MemberVO"/>
+      <typeAlias type="com.app.vo.CartVO" alias="CartVO"/>
+      <typeAlias type="com.app.vo.PayVO" alias="PayVO"/>
+      <typeAlias type="com.app.vo.CommCommentVO" alias="CommCommentVO"/>
+      <typeAlias type="com.app.vo.CommPostVO" alias="CommPostVO"/>
+      <typeAlias type="com.app.vo.HpCommunityPostVO" alias="HpCommunityPostVO"/>
+      <typeAlias type="com.app.vo.CancleProductVO" alias="CancleProductVO"/>
+      
+      
+      <typeAlias type="com.app.dto.AdjustmentDTO" alias="AdjustmentDTO"/>
+      <typeAlias type="com.app.dto.AdminBannerDTO" alias="AdminBannerDTO"/>
+      <typeAlias type="com.app.dto.AdminCouponDTO" alias="AdminCouponDTO"/>
+      <typeAlias type="com.app.dto.AdminDTO" alias="AdminDTO"/>
+      <typeAlias type="com.app.dto.AdminNoticeDTO" alias="AdminNoticeDTO"/>
+      <typeAlias type="com.app.dto.BusinessDTO" alias="BusinessDTO"/>
+      <typeAlias type="com.app.dto.CartDTO" alias="CartDTO"/>
+      <typeAlias type="com.app.dto.CommCommentDTO" alias="CommCommentDTO"/>
+      <typeAlias type="com.app.dto.CommPostDTO" alias="CommPostDTO"/>
+      <typeAlias type="com.app.dto.DeliveryDTO" alias="DeliveryDTO"/>
+      <typeAlias type="com.app.dto.HpCommunityPostDTO" alias="HpCommunityPostDTO"/>
+      <typeAlias type="com.app.dto.LikeDTO" alias="LikeDTO"/>
+      <typeAlias type="com.app.dto.MemberDTO" alias="MemberDTO"/>
+      <typeAlias type="com.app.dto.OrderDetailDTO" alias="OrderDetailDTO"/>
+      <typeAlias type="com.app.dto.OrderDTO" alias="OrderDTO"/>
+      <typeAlias type="com.app.dto.PayDTO" alias="PayDTO"/>
+      <typeAlias type="com.app.dto.PetDTO" alias="PetDTO"/>
+      <typeAlias type="com.app.dto.ProductDTO" alias="ProductDTO"/>
+      <typeAlias type="com.app.dto.ProductReviewDTO" alias="ProductReviewDTO"/>
+      <typeAlias type="com.app.dto.SellerDTO" alias="SellerDTO"/>
+      <typeAlias type="com.app.dto.TogetherDTO" alias="TogetherDTO"/>
+      <typeAlias type="com.app.dto.CancleProductDTO" alias="CancleProductDTO"/>
+      <typeAlias type="com.app.dto.SellerDTO" alias="SellerDTO"/>
    </typeAliases>
    
    <environments default="oracle">
@@ -67,20 +67,20 @@
           </dataSource>
        </environment>
     </environments>
- 	<mappers>
- 	   <mapper resource="com/app/mybatis/mapper/productMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/likeMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/deliveryMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/cartMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/payMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/adminMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/orderMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/memberMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/sellerMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/myhomeMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/healthplusCommunityMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/communityMapper.xml"/>
- 	   <mapper resource="com/app/mybatis/mapper/cancleProductMapper.xml"/>
- 	</mappers>
+    <mappers>
+       <mapper resource="com/app/mybatis/mapper/productMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/likeMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/deliveryMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/cartMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/payMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/adminMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/orderMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/memberMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/sellerMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/myhomeMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/healthplusCommunityMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/communityMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/cancleProductMapper.xml"/>
+    </mappers>
  </configuration>
  
