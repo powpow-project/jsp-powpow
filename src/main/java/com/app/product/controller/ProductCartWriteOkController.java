@@ -33,13 +33,8 @@ public class ProductCartWriteOkController implements Action {
 //		장바구니에 추가
 		cartDAO.insert(cartVO);
 		
-		// 장바구니에 상품이 있는지 확인 후 적절한 경로 설정
-		 if (cartDAO.isProductInCart(productId, memberEmail)) {
-	            result.setPath("../product/product-health-main.product");
-	        } else {
-	            result.setPath("../product/product-cart-none.jsp");
-	        }
 		
+		result.setPath("../product/product-health-main.product");
 		result.setRedirect(true);
 		
 		return result;

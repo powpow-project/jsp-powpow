@@ -40,4 +40,12 @@
 		)TP 
 		WHERE TP.ID = #{productId}
 	</delete>
+	
+	<select id="cartCount" resultType="int">
+		SELECT COUNT(TC.ID)
+		FROM TBL_CART TC
+		JOIN TBL_MEMBER TM
+		ON TC.MEMBER_ID = TM.ID
+		WHERE TM.MEMBER_EMAIL = #{memberEmail}	
+	</select>
 </mapper>
