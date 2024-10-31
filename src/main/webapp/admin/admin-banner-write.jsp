@@ -10,7 +10,8 @@
     <title>배너 신규등록</title>
 </head>
 <body>
-    <form action="admin-banner-write-ok.admin" method="POST" id="frame">
+    <form action="admin-banner-write-ok.admin" method="POST" id="frame"
+    enctype="multipart/form-data">
         
       <div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
@@ -131,8 +132,6 @@
             <div class="form-row">
                 <label for="unlimited">기간</label>
                 <div class="input-group">
-                    <input type="checkbox" id="unlimited" name="duration" value="unlimited" />
-                    <label for="unlimited">무제한</label>
                     <input type="date" id="start-date" name="start-date" />
                     <span>~</span>
                     <input type="date" id="end-date" name="end-date" />

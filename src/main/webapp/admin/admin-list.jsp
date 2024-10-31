@@ -89,7 +89,7 @@
             </div>
             <div class="buttons">
                 <button type="button" class="search-btn">검색</button>
-                <button type="button" class="reset-btn">초기화</button>
+                <button type="button" class="reset-btn" onclick="location.reload();">초기화</button>
 				<button type="button" class="new-add-btn">신규 등록</button>
             </div>
         </section>

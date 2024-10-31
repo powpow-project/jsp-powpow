@@ -109,7 +109,7 @@ public class AdminFrontController extends HttpServlet{
 	        
 	        
 	    // 회원관리 목록
-		} else if (target.equals("admin-customerInfo-list")) { // 쿠폰 목록
+		} else if (target.equals("admin-customerInfo-list")) { // 일반회원 목록
 		    result = new AdminCustomerInfoListController().execute(req, resp);
 	        
 

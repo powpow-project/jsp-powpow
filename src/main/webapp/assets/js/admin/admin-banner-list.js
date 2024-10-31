@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// 검색 기능
 	search.addEventListener("click", function() {
-		const searchQuery = searchInput.value.toLowerCase();
-		const rows = document.querySelectorAll(".notice-list tbody tr");
+	    const searchQuery = searchInput.value.toLowerCase();
+	    const rows = document.querySelectorAll(".notice-list tbody tr");
 
-		rows.forEach(function(row) {
-			const title = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
-			row.style.display = title.includes(searchQuery) ? "" : "none";
-		});
+	    rows.forEach(function(row) {
+	        const title = row.querySelector("td:nth-child(4)").textContent.toLowerCase(); // 4번 인덱스로 변경
+	        row.style.display = title.includes(searchQuery) ? "" : "none";
+	    });
 	});
 
 	// 새 게시글 등록

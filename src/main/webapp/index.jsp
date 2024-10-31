@@ -20,8 +20,8 @@
 						</div>
 						<div class="right">
 							<div class="icons">
-								<a href="#"> <img src="assets/images/search-icon.jpg" alt="검색" /></a> 
-								<a href="./shipping-list.myhome"> <img src="assets/images/truck-icon.jpg" alt="배송" /> </a> 
+								<a href="#"><img src="assets/images/search-icon.jpg" alt="검색" /></a> 
+								<a href="./myhome/shipping-list.myhome"> <img src="assets/images/truck-icon.jpg" alt="배송" /> </a> 
 								<a href="./product-cart-list.product"> <img src="assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>
@@ -45,7 +45,7 @@
 								<li class="sub-menu"><a href="./product/product-cat.product">고양이</a></li>
 								<li class="sub-menu"><a href="./product/product-bird.product">새</a></li>
 								<li class="sub-menu"><a href="./product/product-fish.product">물고기</a></li>
-								<li class="sub-menu"><a href="./product/health-main.product">헬스+</a></li>
+								<li class="sub-menu"><a href="./product/product-health-main.product">헬스+</a></li>
 							</ul>
 							<ul>
 								<li class="sub-menu"><a href="./community/list.community">홈</a></li>

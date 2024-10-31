@@ -112,7 +112,7 @@
 				</div>
 				<div class="buttons">
 					<button class="search-btn" id="search-btn">검색</button>
-					<button class="reset-btn" id="reset-btn">초기화</button>
+					<button type="button" class="reset-btn" onclick="location.reload();">초기화</button>
 				</div>
 			</div>
 		</div>

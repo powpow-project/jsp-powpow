@@ -15,7 +15,7 @@
 		
       <div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
-			<span>공지사항 관리</span>
+			<span>배너 관리</span>
 			<div id="menu-frame">
 				<div class="menu-header">
 					<div class="welcome">admin님 환영합니다!</div>
@@ -90,11 +90,11 @@
 
 		<section class="notice-search">
 			<div class="search-bar">
-				<input type="text" class="search" placeholder="검색어를 입력해주세요." />
+				<input type="text" class="search" placeholder="배너명을 입력해주세요." />
 			</div>
 			<div class="buttons">
 				<button type="button" class="search-btn">검색</button>
-				<button type="button" class="reset-btn">초기화</button>
+				<button type="button" class="reset-btn" onclick="location.reload();">초기화</button>
 				<button type="button" class="new-add-btn">신규 추가</button>
 			</div>
 		</section>
@@ -107,6 +107,7 @@
 						<th>등록일</th>
 						<th>종료일</th>
 						<th>배너명</th>
+						<th>미리보기</th>
 						<th>배너타입</th>
 						<th>관리</th>
 					</tr>
@@ -115,10 +116,13 @@
 					<c:forEach var="adminBanner" items="${adminBannerList}" varStatus="status">
 						<tr>
 							<td>${status.index + 1}</td>
-							<td>${adminBanner.adminBannerStart}</td> <!-- 등록일 -->
-							<td>${adminBanner.adminBannerEnd}</td>   <!-- 종료일 -->
-							<td>${adminBanner.adminBannerTitle}</td> <!-- 배너명 -->
-							<td>${adminBanner.adminBannerType}</td>  <!-- 배너타입 -->
+							<td>${adminBanner.adminBannerStart}</td> 
+							<td>${adminBanner.adminBannerEnd}</td>   
+							<td>${adminBanner.adminBannerTitle}</td> 
+                            <td>
+                                <img src="../assets/images/admin/${adminBanner.adminBannerImage}" style="width: 200px; height: 100px;"/>
+                            </td> 
+							<td>${adminBanner.adminBannerType}</td>  
 							<td>
 								<div class="change-buttons">
 									<button type="button" class="edit-btn" onclick="location.href='admin-banner-update.admin?id=${adminBanner.id}'">수정</button>
