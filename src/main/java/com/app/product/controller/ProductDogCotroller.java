@@ -13,24 +13,24 @@ import com.app.Result;
 import com.app.dao.ProductDAO;
 import com.app.vo.ProductVO;
 
-public class ProductMainCotroller implements Action {
+public class ProductDogCotroller implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		ProductDAO productDAO = new ProductDAO();
 		ProductVO productVO = new ProductVO();
-		
-		
+
+		String productCategoryName = req.getParameter("productCategoryName");
+		productVO.setProductCategoryName(req.getParameter("productCategoryName")); 
+//	    productVO.setProductType(req.getParameter("productType")); 
+	    
+//	    System.out.println(req.getParameter("productCategoryName"));
+	        
 		List<ProductVO> product = productDAO.selectAll();
-
 		req.setAttribute("product", product);
-
 		
-		
-		
-		
-		result.setPath("../product/product-main.jsp");
+		result.setPath("../product/product-dog.jsp?productCategoryName=" + productCategoryName);
 		return result;
 	}
 
