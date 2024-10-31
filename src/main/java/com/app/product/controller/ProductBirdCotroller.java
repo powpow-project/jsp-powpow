@@ -13,7 +13,7 @@ import com.app.Result;
 import com.app.dao.ProductDAO;
 import com.app.vo.ProductVO;
 
-public class ProductMainCotroller implements Action {
+public class ProductBirdCotroller implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

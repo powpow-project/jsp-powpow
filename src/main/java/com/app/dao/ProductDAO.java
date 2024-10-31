@@ -46,4 +46,16 @@ public class ProductDAO {
 	public void updateStock(OrderVO orderVO) {
 		sqlSession.update("product.updateStock", orderVO);
 	}
+	
+//	상품 총 갯수
+	public void selectCountId() {
+		sqlSession.selectOne("product.selectCountId");
+	}
+
+//	상품 타입의 총 갯수
+	public void selectCountType() {
+		sqlSession.selectOne("product.selectCountType");
+	}
+	
+	
 }

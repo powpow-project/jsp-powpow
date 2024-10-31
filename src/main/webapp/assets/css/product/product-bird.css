@@ -255,7 +255,7 @@ body {
 
 .product-wrap #product-all-wrap {
 	display: contents;
-	/* display:none; */
+	display:none;
 }
 
 .product-wrap #feed-wrap {

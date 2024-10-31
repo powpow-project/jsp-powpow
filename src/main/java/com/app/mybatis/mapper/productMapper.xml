@@ -56,4 +56,13 @@
 		WHERE ID = #{productId}
 	</update>
 	
+	<select id="selectCountId"  resultType="_int">
+		SELECT COUNT(ID) FROM TBL_PRODUCT
+	</select>
+
+	<select id="selectCountType" parameterType="String" resultType="_int">
+		SELECT COUNT(ID) FROM TBL_PRODUCT
+		WHERE PRODUCT_TYPE = #{productType}
+	</select>
+	
 </mapper>
