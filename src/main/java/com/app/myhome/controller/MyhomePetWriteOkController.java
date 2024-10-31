@@ -6,9 +6,14 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
+import com.app.dao.MemberDAO;
+import com.app.dao.MyhomeDAO;
+import com.app.dao.PetDAO;
+import com.app.vo.PetVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -16,14 +21,19 @@ public class MyhomePetWriteOkController implements Action {
 
    @Override
    public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-
-      String directory = req.getServletContext().getRealPath("/assets/images");
+	   Result result = new Result();
+	   MemberDAO memberDAO = new MemberDAO();
+	   MyhomeDAO myhomeDAO = new MyhomeDAO();
+	   PetDAO petDAO = new PetDAO();
+	   PetVO petVO = new PetVO();
+	   HttpSession session = req.getSession();
+	   
+	      session.setAttribute("id", 4L);
+	      Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
+		   
+      String directory = req.getServletContext().getRealPath("/assets/images/myhome");
       System.out.println(directory);
       int sizeLimit = 10*500*500; // 100mb
-      
-//      String memberEmail = "jingeo@gmail.com";
-      
-      
       
       // 디렉토리가 존재하지 않으면 생성
         File dir = new File(directory);
@@ -42,15 +52,30 @@ public class MyhomePetWriteOkController implements Action {
             String petBreed = multi.getParameter("petBreed");
             String petBirth = multi.getParameter("petBirth");
             String petWeight = multi.getParameter("petWeight");
+            String petNeuter = multi.getParameter("petNeuter");
             String petVet = multi.getParameter("petVet");
             String fileName = multi.getFilesystemName("petImage");
             
+            //적기
+            petVO.setMemberId(memberId);
+            petVO.setPetName(petName);
+            petVO.setPetKind(petKind);
+            petVO.setPetGender(Boolean.parseBoolean(petGender));
+            petVO.setPetBreed(petBreed);
+            petVO.setPetBirth(petBirth);
+            petVO.setPetWeight(Double.parseDouble(petWeight));
+            petVO.setPetNeuter(Boolean.parseBoolean(petNeuter));
+            petVO.setPetVet(petVet);
+            petVO.setPetImage(fileName);
+            
             System.out.println("==== 데이터 출력 ====");
+            System.out.println(memberId);
             System.out.println(petName);
             System.out.println(petGender);
             System.out.println(petBreed);
             System.out.println(petBirth);
             System.out.println(petWeight);
+            System.out.println(petNeuter);
             System.out.println(petVet);
             System.out.println(fileName);
 
@@ -67,8 +92,12 @@ public class MyhomePetWriteOkController implements Action {
             e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
         }
         
-        
-      return null;
+      petDAO.insertPet(petVO);
+      
+      result.setRedirect(true);
+      result.setPath("../myhome/pet-list.myhome");
+      
+      return result;
    }
 }
 

@@ -7,20 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이홈 반려새추가</title>
     <link rel="stylesheet" href="../assets/css/myhome/myhome-pet-write-bird.css">
-    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/main/main-index.css">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-   <style type="text/css">
+	<style type="text/css">
       #profilePic{
-         width : 120px;
-         height : 120px;
-         border : solid 1px #333;
          background-image : url('../assets/images/myhome/default-bird.svg');
-         background-repeat : no-repeat;
-          background-size: cover;
       }
       
-   </style>    
+   </style> 
    
 </head>
 <body>
@@ -46,7 +41,6 @@
                         <li class="menu"><a href="#">스토어</a></li>
                         <li class="menu"><a href="#">커뮤니티</a></li>
                         <li class="menu"><a href="#">마이홈</a></li>
-                        <li class="menu"><a href="#">이벤트</a></li>
                     </ul>
                     <div id="sector"></div>
                     <div class="sub-menu-wrap">
@@ -67,14 +61,6 @@
                             <li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
                             <li class="sub-menu"><a href="#">내 게시글</a></li>
                         </ul>
-
-                        <ul>
-                            <li class="sub-menu"><a href="#"></a></li>
-                            <li class="sub-menu"><a href="#"></a></li>
-                            <li class="sub-menu"><a href="#"></a></li>
-                            <li class="sub-menu"><a href="#"></a></li>
-                        </ul>
-
                     </div>
                 </div>
             </div>
@@ -88,7 +74,7 @@
                <div class="name">name</div>
                  <input type="file" id="imageUpload" name="petImage">
                <label for="imageUpload">
-                  <h1 id="edit-button" class="edit-button">이미지 편집</h1>
+                  <h1 id="edit-button" class="edit-button h6">이미지 편집</h1>
                </label>
            </div>
            <div class="title h5">
@@ -109,13 +95,13 @@
                    <p>남아</p>
                </label>
                <input class="input" name="petBreed" type="text" placeholder="예) 앵무새">
-               <p><input name="petBirth" class="birthday" type="month"></p>
+               <p><input name="petBirth" class="birthday" type="date"></p>
                <label class="weight"><input name="petWeight" type="number"></label>
                <p><input class="input" name="petVet" type="text" placeholder="병원명"></p>
            </div>
        </div>
+       <p class="message h7">*아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     </form>
-       아래 내용(몸무게, 중성화)을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수 있습니다. </p>
     <footer>
         <div class="footer-container">
             <div class="footer-section">
