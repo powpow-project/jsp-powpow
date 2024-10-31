@@ -115,8 +115,8 @@ updateButtonState(activeBtn);
                alert("아이디 또는 비밀번호를 확인하세요.");
                return;
 			   // 구매자 로그인 폼 제출
-		   document.querySelector(".main-content.member form").submit();
            }
+		   document.querySelector(".main-content.member form").submit();
 
        });
 
@@ -125,8 +125,8 @@ updateButtonState(activeBtn);
                alert("아이디 또는 비밀번호를 확인하세요.");
                return;
 			   // 판매자 로그인 폼 제출
-			   document.querySelector(".main-content.seller form").submit();
            }
+			   document.querySelector(".main-content.seller form").submit();
 
        });
    });
