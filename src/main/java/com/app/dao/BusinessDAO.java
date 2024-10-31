@@ -14,6 +14,13 @@ public class BusinessDAO {
 	
 //	구매자 회원가입
 	public void insertBusiness(BusinessVO businessVO) {
-		sqlSession.insert("member.insertBusiness", businessVO);
+		sqlSession.insert("business.insertBusiness", businessVO);
 	}
+	
+	public BusinessVO selectBusinessById(String businessNumber) {
+		return sqlSession.selectOne("business.selectBusinessById", businessNumber);
+	}
+	
+	
+	
 }

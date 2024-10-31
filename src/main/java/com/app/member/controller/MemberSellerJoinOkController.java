@@ -25,14 +25,19 @@ public class MemberSellerJoinOkController implements Action {
 		MemberDAO memberDAO = new MemberDAO();
 		SellerVO sellerVO = new SellerVO();
 		BusinessVO businessVO = new BusinessVO();
-
+		BusinessDAO businessDAO = new BusinessDAO();
 
 //		 #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck}
 		businessVO.setBusinessName(req.getParameter("kingname"));
 		businessVO.setBusinessNumber(req.getParameter("number"));
 		businessVO.setBusinessRepresentativeName(req.getParameter("companyname"));
 		
-		sellerVO.setBusinessId(businessVO.getId());
+		businessDAO.insertBusiness(businessVO);
+		System.out.println(businessVO);
+
+		Long businessId = businessDAO.selectBusinessById(req.getParameter("number")).getId();
+		
+		sellerVO.setBusinessId(businessId);
 		sellerVO.setSellerEmail(req.getParameter("sellerEmail"));
 		sellerVO.setSellerPassword(req.getParameter("sellerPassword"));
 		sellerVO.setSellerName(req.getParameter("name"));
@@ -40,12 +45,10 @@ public class MemberSellerJoinOkController implements Action {
 		sellerVO.setSellerSms(req.getParameter("sms").charAt(0));
 		sellerVO.setSellerEmailCheck(req.getParameter("emailcheck").charAt(0));
 		
-		System.out.println(businessVO);
 		System.out.println(sellerVO);
 		
 		
 		memberDAO.insertSeller(sellerVO);
-		memberDAO.insertBusiness(businessVO);
 		
 		result.setRedirect(true);
 		result.setPath("../member/seller-join-complete.member");
