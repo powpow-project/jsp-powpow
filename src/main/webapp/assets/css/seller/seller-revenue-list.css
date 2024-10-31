@@ -238,7 +238,7 @@ table tr {
   justify-content: space-between;
 }
 .tr-border{
-  border-bottom : solid 0.1px #828282;
+  border-top : solid 0.1px #828282;
   height: 70px;
 }
 

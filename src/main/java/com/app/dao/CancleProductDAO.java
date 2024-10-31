@@ -36,5 +36,13 @@ public class CancleProductDAO {
         
         return sqlSession.selectList("cancleProduct.selectByDate", params);
     }
-	
+    
+    public List<CancleProductDTO> selectByDay(Long sellerId, String startDate, String endDate) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("sellerId", sellerId);
+        params.put("startDate", startDate);
+        params.put("endDate", endDate);
+        
+        return sqlSession.selectList("cancleProduct.selectByDay", params);
+    }
 }
