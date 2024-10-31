@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.CartDAO;
+import com.app.dao.MemberDAO;
 import com.app.vo.CartVO;
 
 public class ProductCartWriteOkController implements Action {
@@ -19,6 +20,7 @@ public class ProductCartWriteOkController implements Action {
 		Result result = new Result();
 		CartVO cartVO = new CartVO();
 		CartDAO cartDAO = new CartDAO();
+		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
 		
 //		회원정보 가져오기
@@ -32,6 +34,7 @@ public class ProductCartWriteOkController implements Action {
 		
 //		장바구니에 추가
 		cartDAO.insert(cartVO);
+		
 		
 		result.setPath("../product/product-health-main.product");
 		result.setRedirect(true);
