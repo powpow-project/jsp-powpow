@@ -111,7 +111,7 @@
             <ul class="my-posts">
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/others.png" alt="고양이 사진1">
                   </a>
                  
@@ -119,7 +119,7 @@
               </li>
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/othersimg1.png" alt="고양이 사진2">
                   </a>
                   
@@ -127,21 +127,21 @@
               </li>
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/othersimg3.png" alt="고양이 사진3">
                   </a>
                 </div>
               </li>
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/othersimg4.png" alt="고양이 사진4">
                   </a>
                 </div>
               </li>
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/othersimg5.png" alt="고양이 사진5">
                   </a>
                   
@@ -149,7 +149,7 @@
               </li>
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/othersimg6.png" alt="고양이 사진6">
                   </a>
                  
@@ -157,7 +157,7 @@
               </li>
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/othersimg7.png" alt="고양이 사진7">
                   </a>
                   
@@ -165,7 +165,7 @@
               </li>
               <li class="my-posts-1">
                 <div class="my-post-1">
-                  <a href="#">
+                  <a href="./community-others-posts.jsp">
                     <img src="../assets/images/community/othersimg8.png" alt="고양이 사진8">
                   </a>
                  

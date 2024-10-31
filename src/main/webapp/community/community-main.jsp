@@ -81,7 +81,7 @@
     <!-- 커뮤니티 광고 메인 배너 부분-->
 
     <div class="community-main-banner-wrapper">
-      <a href="#">
+      <a href="./community-others-posts.jsp">
         <div class="community-main-banner">
           <img src="../assets/images/community/community-main-banner.png" alt="커뮤니티 메인 배너 이미지">
         </div>
@@ -110,7 +110,7 @@
         </div>
         <div class="community-main-post-image-wrapper">
           <div class="community-main-post-image">
-                   <a href="#">
+                   <a href="./community-add-post.jsp">
                       <div class="community-main-post-new-image-wrapper">
                       <div class="main-post-new-image-box">
                         <div class="main-post-new-image"><img src="../assets/images/community/plus.png" alt="추가하기 버튼"></div>
@@ -173,7 +173,7 @@
       <div class="others-post-image-wrapper">
         
         
-          <a href="#" class="new-image">
+          <a href="./community-add-post.jsp" class="new-image">
             <button>
             <img src="../assets/images/community/plus.png" alt="플러스">
             <p>내 게시물 추가하기 🐾</p>
@@ -185,7 +185,7 @@
            <div class="swiper mySwiper2 swiper-wrapper2">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <a href="#"><img class="swiper2-img" src="../assets/images/community/dog5.png" alt="내 이미지"> </a>
+                <a href="./community-others-posts.jsp"><img class="swiper2-img" src="../assets/images/community/dog5.png" alt="내 이미지"> </a>
                 <div class="profile-info">
                   <div class="profiles">
                     <img class="profile-image" src="../assets/images/community/profileimage.png" alt="프로필 이미지">
@@ -199,7 +199,7 @@
               
               </div>
               <div class="swiper-slide">
-                <a href="#"><img class="swiper2-img"src="../assets/images/community/cat3.png" alt="내 이미지2"></a>
+                <a href="./community-others-posts.jsp"><img class="swiper2-img"src="../assets/images/community/cat3.png" alt="내 이미지2"></a>
                   <div class="profile-info">
                     <div class="profiles">
                       <img class="profile-image" src="../assets/images/community/profileimage2.png" alt="프로필 이미지">
@@ -213,7 +213,7 @@
                 
               </div>
               <div class="swiper-slide">
-                <a href="#"><img class="swiper2-img"src="../assets/images/community/dog6.png" alt="내 이미지3"></a>
+                <a href="./community-others-posts.jsp"><img class="swiper2-img"src="../assets/images/community/dog6.png" alt="내 이미지3"></a>
                   <div class="profile-info">
                     <div class="profiles">
                       <img class="profile-image" src="../assets/images/community/profileimage3.png" alt="프로필 이미지">
@@ -227,7 +227,7 @@
                 
               </div>
               <div class="swiper-slide">
-                <a href="#"><img class="swiper2-img"src="../assets/images/community/bird2.png" alt="내 이미지4"></a>
+                <a href="./community-others-posts.jsp"><img class="swiper2-img"src="../assets/images/community/bird2.png" alt="내 이미지4"></a>
                   <div class="profile-info">
                     <div class="profiles">
                       <img class="profile-image" src="../assets/images/community/profileimage4.png" alt="프로필 이미지">
@@ -241,7 +241,7 @@
                 
               </div>
               <div class="swiper-slide">
-                <a href="#"><img class="swiper2-img"src="../assets/images/community/fish2.png" alt="내 이미지5"></a>
+                <a href="./community-others-posts.jsp"><img class="swiper2-img"src="../assets/images/community/fish2.png" alt="내 이미지5"></a>
                 <div class="profile-info">
                   <div class="profiles">
                     <img class="profile-image" src="../assets/images/community/profileimage5.png" alt="프로필 이미지">
@@ -254,7 +254,7 @@
                 </div>
               </div>
               <div class="swiper-slide">
-                <a href="#"><img class="swiper2-img"src="../assets/images/community/fish2.png" alt="내 이미지5"></a>
+                <a href="./community-others-posts.jsp"><img class="swiper2-img"src="../assets/images/community/fish2.png" alt="내 이미지5"></a>
                 <div class="profile-info">
                   <div class="profiles">
                     <img class="profile-image" src="../assets/images/community/profileimage6.png" alt="프로필 이미지">
@@ -297,7 +297,7 @@
         <p class="recommend-post-title">강아지와 함께한 놀이 모아봤어요🪀️</p>
         <ul>
           <li>
-            <a href="#" class="recommend-post-image">
+            <a href="./community-others-posts.jsp" class="recommend-post-image">
               <img src="../assets/images/community/Rectangle236.png" alt="추천 강아지 게시물 이미지">
               <div class="profile">
                 <img src="../assets/images/community/profileimage.png" alt="프로필 이미지">
@@ -307,7 +307,7 @@
           </li>
 
           <li>
-            <a href="#" class="recommend-post-image">
+            <a href="./community-others-posts.jsp" class="recommend-post-image">
               <img src="../assets/images/community/communitydog.png" alt="추천 강아지 게시물 이미지">
               <div class="profile">
                 <img src="../assets/images/community/profileimage2.png" alt="프로필2 이미지">
@@ -317,7 +317,7 @@
           </li>
 
           <li>
-            <a href="#" class="recommend-post-image">
+            <a href="./community-others-posts.jsp" class="recommend-post-image">
               <img src="../assets/images/community/communitybird.png" alt="추천 새 게시물 이미지">
               <div class="profile">
                 <img src="../assets/images/community/profileimage3.png" alt="프로필3 이미지">
@@ -327,7 +327,7 @@
           </li>
 
           <li>
-            <a href="#" class="recommend-post-image">
+            <a href="./community-others-posts.jsp" class="recommend-post-image">
               <img src="../assets/images/community/communityfish.png" alt="추천 물고기 게시물 이미지">
               <div class="profile">
                 <img src="../assets/images/community/profileimage4.png" alt="프로필3 이미지">
