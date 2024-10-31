@@ -10,4 +10,7 @@ public class CommunityDAO {
 	public CommunityDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	
+	// 게시글 추가
+	public void insert() {}
 }
