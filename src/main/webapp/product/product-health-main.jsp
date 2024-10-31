@@ -345,16 +345,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryButtons = document.querySelectorAll('.category-button');
     const products = document.querySelectorAll('.product');
 
-    // 기본으로 '퍼피' 카테고리의 상품만 표시
-   const fixedCategories = ['강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피'];
-    let activeCategories = [...fixedCategories]; 
+    // 기본으로 표시할 고정 카테고리
+    const fixedCategories = ['강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피'];
+
+    // 고정 카테고리의 상품을 표시
+    filterProducts(fixedCategories, []);
+
     // 'productCategoryName' 드롭다운 변경 이벤트 처리
     if (categoryElement) {
         categoryElement.addEventListener('change', (e) => {
             const animalCategory = e.target.value;
-            filterProducts([animalCategory]);
+            // 선택된 카테고리 상품 필터링 (고정 카테고리 유지)
+            filterProducts(fixedCategories, [animalCategory]);
         });
-    } 
+    }
 
     // 카테고리 버튼 클릭 이벤트 처리
     categoryButtons.forEach((button) => {
@@ -367,18 +371,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 클릭한 버튼의 카테고리로 상품 필터링
             const animalCategory = e.target.getAttribute('data-category');
-            filterProducts([animalCategory]);
+            // 선택된 카테고리 상품 필터링 (고정 카테고리 유지)
+            filterProducts(fixedCategories, [animalCategory]);
         });
     });
 
-    function filterProducts(animalCategory) {
+    // 선택된 카테고리와 고정 카테고리에 맞는 상품만 표시하는 필터링 함수
+    function filterProducts(fixedCategories, selectedCategories) {
         products.forEach((product) => {
             const productCategory = product.getAttribute('data-category');
-            // 선택된 카테고리와 일치하는 상품만 표시
-            if(animalCategory.includes(productCategory)){
-            	product.style.display = 'block';
-            }else {
-            	product.style.display = 'none';
+            // 고정 카테고리와 선택된 카테고리 상품 표시
+            const isFixedCategory = fixedCategories.includes(productCategory);
+            const isSelectedCategory = selectedCategories.includes(productCategory);
+
+            // 고정 카테고리 상품은 항상 표시하고, 선택된 카테고리의 상품만 바꿔서 표시
+            if (isFixedCategory || isSelectedCategory) {
+                product.style.display = 'block'; // 상품 표시
+            } else {
+                product.style.display = 'none'; // 상품 숨기기
             }
         });
     }
