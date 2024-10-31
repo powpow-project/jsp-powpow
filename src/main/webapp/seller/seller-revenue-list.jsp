@@ -99,18 +99,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="tr-border">
-						<td>합계</td>
-						<td><c:out value="${totalOrderCount}" /></td>
-						<td><c:out value="${totalOrderPrice}" /></td>
-						<td><c:out value="${totalCancleCount}" /></td>
-						<td><c:out value="${totalCanclePrice}" /></td>
-						<td><c:out value="${totalSales}" /></td>
-					</tr>
 					<c:forEach var="list" items="${list}">
 					    <tr>
 					        <td>
-					            <c:out value="날짜: ${list.orderDate.substring(0, 10)}" />
+					            <c:out value="날짜:${list.cancleProductDate}" />
 					        </td>
 					        <td>
 					            <c:out value="날짜별 수량: ${list.orderTotalCount}" />
@@ -130,6 +122,14 @@
 					        </td>
 					    </tr>
 					</c:forEach>
+					<tr class="tr-border">
+						<td>합계</td>
+						<td><c:out value="${totalOrderCount}" /></td>
+						<td><c:out value="${totalOrderPrice}" /></td>
+						<td><c:out value="${totalCancleCount}" /></td>
+						<td><c:out value="${totalCanclePrice}" /></td>
+						<td><c:out value="${totalSales}" /></td>
+					</tr>
 				</tbody>
 			</table>
 		</section>

@@ -38,8 +38,10 @@ public class CancleProductDTO {
 	private char sellerEmailcheck;
 	private String orderNumber;
 	private int productCount;
-	private int orderTotalCount;
-	private int orderTotalPrice;
+	private int totalCancledPrice;
+	private int totalCancledCount;
+	private int totalOrderedPrice;
+	private int totalOrderedCount;
 	
 	public CancleProductDTO() {;}
 
@@ -323,20 +325,36 @@ public class CancleProductDTO {
 		this.productCount = productCount;
 	}
 
-	public int getOrderTotalCount() {
-		return orderTotalCount;
+	public int getTotalCancledPrice() {
+		return totalCancledPrice;
 	}
 
-	public void setOrderTotalCount(int orderTotalCount) {
-		this.orderTotalCount = orderTotalCount;
+	public void setTotalCancledPrice(int totalCancledPrice) {
+		this.totalCancledPrice = totalCancledPrice;
 	}
 
-	public int getOrderTotalPrice() {
-		return orderTotalPrice;
+	public int getTotalCancledCount() {
+		return totalCancledCount;
 	}
 
-	public void setOrderTotalPrice(int orderTotalPrice) {
-		this.orderTotalPrice = orderTotalPrice;
+	public void setTotalCancledCount(int totalCancledCount) {
+		this.totalCancledCount = totalCancledCount;
+	}
+
+	public int getTotalOrderedPrice() {
+		return totalOrderedPrice;
+	}
+
+	public void setTotalOrderedPrice(int totalOrderedPrice) {
+		this.totalOrderedPrice = totalOrderedPrice;
+	}
+
+	public int getTotalOrderedCount() {
+		return totalOrderedCount;
+	}
+
+	public void setTotalOrderedCount(int totalOrderedCount) {
+		this.totalOrderedCount = totalOrderedCount;
 	}
 
 	@Override
@@ -353,8 +371,9 @@ public class CancleProductDTO {
 				+ cancleTotalCount + ", cancleTotalPrice=" + cancleTotalPrice + ", sellerEmail=" + sellerEmail
 				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
 				+ ", sellerSms=" + sellerSms + ", sellerEmailcheck=" + sellerEmailcheck + ", orderNumber=" + orderNumber
-				+ ", productCount=" + productCount + ", orderTotalCount=" + orderTotalCount + ", orderTotalPrice="
-				+ orderTotalPrice + "]";
+				+ ", productCount=" + productCount + ", totalCancledPrice=" + totalCancledPrice + ", totalCancledCount="
+				+ totalCancledCount + ", totalOrderedPrice=" + totalOrderedPrice + ", totalOrderedCount="
+				+ totalOrderedCount + "]";
 	}
 
 	@Override
@@ -372,8 +391,8 @@ public class CancleProductDTO {
 			return false;
 		CancleProductDTO other = (CancleProductDTO) obj;
 		return Objects.equals(id, other.id);
-	}	
-	
+	}
+
 	
 	
 }
