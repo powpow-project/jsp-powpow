@@ -42,18 +42,14 @@ public class SellerRevenueListController implements Action {
 		int totalCancleCount = 0;
 		int totalCanclePrice = 0;
 		int totalSales = 0;
-		String orderDate = "";
-		String cancleDate = "";
 		
 		for (OrderDTO order : orderList) {
 		    totalOrderCount += order.getOrderTotalCount();
 		    totalOrderPrice += order.getOrderTotalPrice();
-		    orderDate = order.getOrderDate();
 		}
 		for (CancleProductDTO cancle : cancleList) {
 		    totalCancleCount += cancle.getCancleTotalCount();
 		    totalCanclePrice += cancle.getCancleTotalPrice();
-		    cancleDate = cancle.getCancleProductDate();
 		}
 		
 		totalSales = totalOrderPrice - totalCanclePrice;
@@ -68,10 +64,11 @@ public class SellerRevenueListController implements Action {
 		req.setAttribute("totalCanclePrice", totalCanclePrice);
 		req.setAttribute("totalSales", totalSales);
 		
-		req.setAttribute("orderDate", orderDate);
-		req.setAttribute("cancleDate", cancleDate);
 		req.setAttribute("orderListForSeller", orderList);
 		req.setAttribute("cancleListForSeller", cancleList);
+		
+		System.out.println(orderList);
+		System.out.println(cancleList);
 		
 		result.setPath("seller-revenue-list.jsp");
 		return result;
