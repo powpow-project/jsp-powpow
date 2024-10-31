@@ -35,6 +35,11 @@ public class CartDAO {
 	public void deleteCart(Long id) {
 		sqlSession.delete("cart.deleteCart", id);
 	}
+	
+//	장바구니 상품개수 
+	public int cartCount(String memberEmail) {
+		return sqlSession.selectOne("cartCount" ,memberEmail);
+	}
 
 }
 

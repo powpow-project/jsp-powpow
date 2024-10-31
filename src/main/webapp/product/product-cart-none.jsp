@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품이없는장바구니</title>
-<link rel="stylesheet" href="../assets/css/shopping/cart-none.css">
+<link rel="stylesheet" href="../assets/css/product/cart-none.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 
@@ -147,7 +147,7 @@
 	</footer>
 </body>
 
-<script src="cart.js"></script>
+<script src="../assets/js/product/cart.js"></script>
 <script>
 	
 </script>
