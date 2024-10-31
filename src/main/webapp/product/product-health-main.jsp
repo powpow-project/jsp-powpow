@@ -373,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 </script>
 
 </html>
