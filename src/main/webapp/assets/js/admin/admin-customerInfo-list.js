@@ -40,26 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const smsFilter = document.querySelector('input[name="sms"]:checked');
         const emailFilter = document.querySelector('input[name="email"]:checked');
 
-        // 모든 행을 숨김
-        const rows = userList.getElementsByTagName('tr');
-        for (const row of rows) {
-            const userId = row.cells[1].textContent.toLowerCase();
-            const phone = row.cells[2].textContent.toLowerCase();
-            const email = row.cells[3].textContent.toLowerCase();
-            const smsStatus = row.cells[4].textContent;
-            const emailStatus = row.cells[5].textContent;
+        // 검색어와 필터 적용
+        const matchesSearch = userId.includes(searchValue) || phone.includes(searchValue) || email.includes(searchValue);
+        const matchesSms = smsFilter ? smsStatus === (smsFilter.value === 'yes' ? '수신' : '수신거부') : true;
+        const matchesEmail = emailFilter ? emailStatus === (emailFilter.value === 'yes' ? '수신' : '수신거부') : true;
 
-            // 검색어와 필터 적용
-            const matchesSearch = userId.includes(searchValue) || phone.includes(searchValue) || email.includes(searchValue);
-            const matchesSms = smsFilter ? smsStatus === (smsFilter.value === 'yes' ? '수신' : '수신거부') : true;
-            const matchesEmail = emailFilter ? emailStatus === (emailFilter.value === 'yes' ? '수신' : '수신거부') : true;
-
-            // 모든 조건이 맞아야 행 표시
-            if (matchesSearch && matchesSms && matchesEmail) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
+        // 모든 조건이 맞아야 행 표시
+        if (matchesSearch && matchesSms && matchesEmail) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
         }
     });
 
