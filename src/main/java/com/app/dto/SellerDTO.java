@@ -13,6 +13,9 @@ public class SellerDTO {
     private String sellerPhone;
     private char sellerSms;
     private char sellerEmailCheck;
+    private String businessName;
+    private String businessRepresentativeName;
+    private String businessNumber;
     
     public SellerDTO() {;}
 
@@ -64,7 +67,7 @@ public class SellerDTO {
 		this.sellerPhone = sellerPhone;
 	}
 
-	public char isSellerSms() {
+	public char getSellerSms() {
 		return sellerSms;
 	}
 
@@ -72,7 +75,7 @@ public class SellerDTO {
 		this.sellerSms = sellerSms;
 	}
 
-	public char isSellerEmailCheck() {
+	public char getSellerEmailCheck() {
 		return sellerEmailCheck;
 	}
 
@@ -80,10 +83,42 @@ public class SellerDTO {
 		this.sellerEmailCheck = sellerEmailCheck;
 	}
 
+	public String getBusinessName() {
+		return businessName;
+	}
+
+	public void setBusinessName(String businessName) {
+		this.businessName = businessName;
+	}
+
+	public String getBusinessRepresentativeName() {
+		return businessRepresentativeName;
+	}
+
+	public void setBusinessRepresentativeName(String businessRepresentativeName) {
+		this.businessRepresentativeName = businessRepresentativeName;
+	}
+
+	public String getBusinessNumber() {
+		return businessNumber;
+	}
+
+	public void setBusinessNumber(String businessNumber) {
+		this.businessNumber = businessNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "SellerDTO [id=" + id + ", businessId=" + businessId + ", sellerEmail=" + sellerEmail
+				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
+				+ ", sellerSms=" + sellerSms + ", sellerEmailCheck=" + sellerEmailCheck + ", businessName="
+				+ businessName + ", businessRepresentativeName=" + businessRepresentativeName + ", businessNumber="
+				+ businessNumber + "]";
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(businessId, id, sellerEmail, sellerEmailCheck, sellerName, sellerPassword, sellerPhone,
-				sellerSms);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -95,26 +130,10 @@ public class SellerDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		SellerDTO other = (SellerDTO) obj;
-		return Objects.equals(businessId, other.businessId) && Objects.equals(id, other.id)
-				&& Objects.equals(sellerEmail, other.sellerEmail) && sellerEmailCheck == other.sellerEmailCheck
-				&& Objects.equals(sellerName, other.sellerName) && Objects.equals(sellerPassword, other.sellerPassword)
-				&& Objects.equals(sellerPhone, other.sellerPhone) && sellerSms == other.sellerSms;
-	}
-
-	@Override
-	public String toString() {
-		return "SellerDTO [id=" + id + ", businessId=" + businessId + ", sellerEmail=" + sellerEmail
-				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
-				+ ", sellerSms=" + sellerSms + ", sellerEmailCheck=" + sellerEmailCheck + "]";
+		return Objects.equals(id, other.id);
 	}
 	
 	
-
-
-    
-	
-    
-    
     
     
     

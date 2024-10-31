@@ -13,9 +13,9 @@ public class MemberBuyerJoinCompleteController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
-		
+		Result result = new Result();	
 		result.setPath("../member/member-buyer-join-complete.jsp");
+		
 		return result;
 	}
 
