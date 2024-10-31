@@ -37,15 +37,12 @@ const mark = document.querySelector(".mark");
 
 	    const submitButton = document.querySelector(".login-button");
 	    const Form = document.querySelector("form");
-
+		const input = true;
+		
 	    submitButton.addEventListener("click", (event) => {
-	        // 기본 폼 제출 방지
-	        event.preventDefault(); 
 
-	        const isValid = true; // 여기서 모든 유효성 검사를 통과했는지 확인
-
-	        if (isValid) {
-	            Form.submit(); // 유효성 검사 통과 시 폼 제출
+	        if (input) {
+	            Form.submit(); 
 	        }
 			return;
 	    });
