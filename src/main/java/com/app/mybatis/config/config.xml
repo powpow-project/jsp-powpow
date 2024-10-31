@@ -81,6 +81,7 @@
        <mapper resource="com/app/mybatis/mapper/healthplusCommunityMapper.xml"/>
        <mapper resource="com/app/mybatis/mapper/communityMapper.xml"/>
        <mapper resource="com/app/mybatis/mapper/cancleProductMapper.xml"/>
+       <mapper resource="com/app/mybatis/mapper/businessMapper.xml"/>
     </mappers>
  </configuration>
  

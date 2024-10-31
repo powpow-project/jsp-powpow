@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="business">
+
+	<insert id="insertBusiness" parameterType="BusinessVO" >
+	    INSERT INTO TBL_BUSINESS(ID, BUSINESS_NAME, BUSINESS_REPRESENTATIVE_NAME, BUSINESS_NUMBER)
+	    VALUES(SELLER_SEQ.NEXTVAL, #{businessName}, #{businessRepresentativeName}, #{businessNumber})
+	</insert>
+	
+	<select id="selectBusinessById" parameterType="String" resultType="BusinessVO">
+		SELECT ID, BUSINESS_NAME, BUSINESS_REPRESENTATIVE_NAME, BUSINESS_NUMBER
+		FROM TBL_BUSINESS
+		WHERE BUSINESS_NUMBER = #{businessNumber}
+	</select>
+</mapper>
