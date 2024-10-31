@@ -46,4 +46,9 @@ public class ProductDAO {
 	public void updateStock(OrderVO orderVO) {
 		sqlSession.update("product.updateStock", orderVO);
 	}
+	
+//	카테고리상품조회
+	public List<ProductVO> selectByCategory(String productCategoryName){
+		return sqlSession.selectList("product.selectByCategory", productCategoryName);
+	}
 }
