@@ -1,16 +1,15 @@
 package com.app.dao;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.app.dto.AdminBannerDTO;
 import com.app.dto.AdminCouponDTO;
 import com.app.dto.AdminNoticeDTO;
 import com.app.mybatis.config.MyBatisConfig;
-import com.app.vo.AdminBannerVO;
 import com.app.vo.AdminVO;
-
-import java.util.List;
-import java.util.Optional;
 
 public class AdminDAO {
     private SqlSession sqlSession;

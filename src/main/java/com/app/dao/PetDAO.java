@@ -1,6 +1,5 @@
 package com.app.dao;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;

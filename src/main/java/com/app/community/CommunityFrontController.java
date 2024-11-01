@@ -15,8 +15,6 @@ import com.app.community.controller.CommunityMainController;
 import com.app.community.controller.CommunityReadController;
 import com.app.community.controller.CommunityUpdateController;
 import com.app.community.controller.CommunityUpdateOkController;
-import com.app.community.controller.CommunityWriteController;
-import com.app.community.controller.CommunityWriteOkController;
 
 public class CommunityFrontController extends HttpServlet{
 	@Override

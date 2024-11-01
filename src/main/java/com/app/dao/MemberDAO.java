@@ -1,19 +1,15 @@
 package com.app.dao;
 
 
-import javax.servlet.http.HttpSession;
-
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.app.dto.AdminNoticeDTO;
 import com.app.mybatis.config.MyBatisConfig;
-import com.app.vo.BusinessVO;
 import com.app.vo.MemberVO;
-
 import com.app.vo.SellerVO;
 
 

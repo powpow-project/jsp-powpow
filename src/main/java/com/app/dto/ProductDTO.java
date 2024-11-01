@@ -2,8 +2,6 @@ package com.app.dto;
 
 import java.util.Objects;
 
-import com.app.vo.ProductVO;
-
 public class ProductDTO {
 	private Long id;
 	private Long productCategoryId;

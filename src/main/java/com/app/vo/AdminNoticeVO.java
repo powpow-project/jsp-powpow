@@ -1,6 +1,5 @@
 package com.app.vo;
 
-import java.sql.Date;
 import java.util.Objects;
 
 public class AdminNoticeVO {

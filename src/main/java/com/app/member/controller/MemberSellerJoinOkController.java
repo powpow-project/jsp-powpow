@@ -6,15 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.Set;
-
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.BusinessDAO;
 import com.app.dao.MemberDAO;
-import com.app.dto.BusinessDTO;
 import com.app.vo.BusinessVO;
-import com.app.vo.MemberVO;
 import com.app.vo.SellerVO;
 
 public class MemberSellerJoinOkController implements Action {

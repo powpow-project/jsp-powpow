@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
 
 public class MyhomePetWriteBirdController implements Action {
 

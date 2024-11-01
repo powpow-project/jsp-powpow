@@ -1,6 +1,5 @@
 package com.app.dto;
 
-import java.sql.Date;
 import java.util.Objects;
 
 public class AdminNoticeDTO {
