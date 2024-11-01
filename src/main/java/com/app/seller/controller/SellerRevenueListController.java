@@ -67,9 +67,13 @@ public class SellerRevenueListController implements Action {
 		
 		req.setAttribute("lists", lists);
 		
+		if(orderList.isEmpty()) {
+			
+		}
 		
 		result.setPath("seller-revenue-list.jsp");
 		return result;
 	}
 
 }
+

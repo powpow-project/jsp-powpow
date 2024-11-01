@@ -136,21 +136,6 @@
 		
 	</div>
 </body>
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-	    const orderCells = document.querySelectorAll('[data-ordertotalprice]');
-	    const cancleCells = document.querySelectorAll('[data-cancletotalprice]');
-	    const calculatedCells = document.querySelectorAll('.calculated-price');
-	
-	    orderCells.forEach((orderCell, index) => {
-	
-	    	const orderTotalPrice = orderCell.getAttribute('data-ordertotalprice');
-	        const cancelTotalPrice = canceleCells[index].getAttribute('data-cancletotalprice');
-	
-	        const netPrice = orderTotalPrice - cancelTotalPrice;
-	        calculatedCells[index].value = netPrice;
-	    });
-	});
-</script>
+
 <script src="../assets/js/seller/seller-revenue-list.js"></script>
 </html>
