@@ -29,39 +29,40 @@ public class OrderBuyerListController implements Action {
 		ProductDAO productDAO = new ProductDAO();
 		ProductVO productVO = new ProductVO();
 		OrderDTO orderDTO = new OrderDTO();
+		OrderVO orderVO = new OrderVO(); 
  		HttpSession session = req.getSession();
 		
 		session.setAttribute("id", 2L);
 		Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
 		
-		Long productId = 21L;
 		
-		Long orderId = 1L;
+		Long productId;
+		Long orderId;
+		try {
+			productId = Long.parseLong(String.valueOf(productVO.getId()));
+			orderId = Long.parseLong(String.valueOf(orderVO.getId()));
+			memberDAO.select(memberId).ifPresent((member) -> {
+				req.setAttribute("member", member);
+			});
+			
+			productDAO.select(productId).ifPresent((product) -> {
+				req.setAttribute("product", product);
+			});
+			
+			orderDAO.select(orderId).ifPresent((order) -> {
+				req.setAttribute("order", order);
+			});
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-	    memberDAO.select(memberId).ifPresent((member) -> {
-	    	req.setAttribute("member", member);
-	    });
-	    
-	    productDAO.select(productId).ifPresent((product) -> {
-	    	req.setAttribute("product", product);
-	    });
-	    
-	    orderDAO.select(orderId).ifPresent((order) -> {
-	    	req.setAttribute("order", order);
-	    });
-	    
-	    
-	    OrderVO orderVO = new OrderVO();
-        orderVO.setMemberId(memberId);
-        orderVO.setProductId(productId);
-//        orderVO.setProductCount(productCount);
-        orderVO.setProductCount(2);
-        orderVO.setOrderNumber(1);
-        orderDTO.setTotalPrice(productVO.getProductPrice() * orderVO.getProductCount());
+		
+        
 	    
 	    
 	    
-	    orderDAO.insert(orderVO);
+	    
 	        
 		result.setPath("order-buyerlist.jsp");
 		return result;
