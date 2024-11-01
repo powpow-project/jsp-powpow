@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// 인증 요청 버튼 클릭 시
 	authButton.addEventListener("click", () => {
-		validatePhone(); // 전화번호 검증
+		validatePhone(); 
 	});
 
 	// 확인 버튼 클릭 시 인증번호 검증
 	confirmButton.addEventListener("click", (event) => {
-		event.preventDefault(); // 기본 행동 방지
+		event.preventDefault(); 
 
 		if (!authNumberInput.value) {
 			phoneResult.innerText = "인증번호를 입력하세요.";
@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			alert("인증이 완료되었습니다!");
 		}
 	});
-	console.log(submitButton);
 
 	// 안내 문구 초기화
 
@@ -76,13 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	submitButton.addEventListener("click", (event) => {
 	       event.preventDefault(); 
 		   
-	       if (phoneValue.length !== 11 && authNumberInput.value.length === 6) {
+	       if (phoneValue.length == 11 && authNumberInput.value.length === 6) {
 	           Form.submit(); 
 	       } 
 		   return;
 	});
 
 });
+	/*console.log(submitButton);*/
 
 
 

@@ -95,8 +95,13 @@
          
            <div class="product-wrap">
 	           <div id="product-all-wrap">
+	           	 
 	           	  <c:forEach var="product" items="${product}" varStatus="status">
-	               			<div class="product" data-category="${product.productType}">
+						
+						
+	               			<div onClick="location.href='product-detail.product?productId=${product.id}'" class="product" data-category="${product.productType}">
+	           	  				
+	           	  				
 	                 				<div class="product-image-wrap">
 	                  					<img src="../assets/images/product/${product.productImage}">
 		                  				<div class="hover-box">
@@ -126,8 +131,15 @@
 	                     					<p id="product-star">★★★★★</p><p id="product-star-count">(25)</p>
 	                   					</div>
 	                 				</div>
+	                 				
+	   				 	 		
 	               			</div>
+						
+						
+						
+						
 	   				  </c:forEach>
+	           	 
 	          	 	</div>
 	          	 	
            <div id="feed-wrap">

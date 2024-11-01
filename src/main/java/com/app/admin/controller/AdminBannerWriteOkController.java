@@ -29,6 +29,8 @@ public class AdminBannerWriteOkController implements Action {
 		String adminEmail = (String) session.getAttribute("adminEmail");
 		Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
 
+		
+		
 		// 디렉토리가 존재하지 않으면 생성
 		File dir = new File(directory);
 		if (!dir.exists()) {
@@ -51,7 +53,7 @@ public class AdminBannerWriteOkController implements Action {
 			adminBannerDTO.setAdminBannerTitle(bannerTitle);
 			adminBannerDTO.setAdminBannerType(bannerType);
 			adminBannerDTO.setAdminBannerStart(bannerStart);
-			adminBannerDTO.setAdminBannerEnd(bannerStart);
+			adminBannerDTO.setAdminBannerEnd(bannerEnd);
 
 			// 파일이 성공적으로 업로드되었는지 확인
 			if (mainImage != null) {
@@ -66,6 +68,7 @@ public class AdminBannerWriteOkController implements Action {
 
 		adminDAO.insertAdminBanner(adminBannerDTO);
 
+		
 		result.setPath("../admin/admin-banner-list.admin");
 		result.setRedirect(true);
 

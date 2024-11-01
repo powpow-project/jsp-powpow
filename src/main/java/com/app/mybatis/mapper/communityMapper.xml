@@ -2,6 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="community">
+
+	<insert id="insert" parameterType="CommCommentVO">
+		INSERT INTO TBL_COMM_COMMENT(ID, COMM_POST_ID, MEMBER_ID, COMM_COMMENT_CONTENT, COMM_COMMENT_CREATE_AT, COMM_COMMENT_MODIFIED_AT)
+		VALUES(COMM_COMMENT_SEQ.NEXTVAL, #{memberId}, #{commCommentContent})
+	</insert>
+	
+	<delete id="delete" parameterType="Long">
+		DELETE FROM TBL_COMM_COMMENT
+		WHERE ID = #{id}
+	</delete>
+	
+	<update id="update" parameterType="CommPostVO">
+		UPDATE TBL_COMM_POST
+		SET COMM_POST_CONTENT = #{commPostContent}, COMM_POST_IMAGE = #{commPostImage}
+		WHERE ID = #{id}
+	</update>
 	
 	
 </mapper>

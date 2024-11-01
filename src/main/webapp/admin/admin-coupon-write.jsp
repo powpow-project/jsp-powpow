@@ -12,9 +12,9 @@
 <body>
     <form action="admin-coupon-write-ok.admin" method="POST" id="frame">
         
-      <div class="menu-wrap">
+	<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
-			<span>공지사항 관리</span>
+			<span>쿠폰 관리</span>
 			<div id="menu-frame">
 				<div class="menu-header">
 					<div class="welcome">admin님 환영합니다!</div>
@@ -36,22 +36,19 @@
 					</li>
 					<li>
 						<p>
-							<a href="../admin/admin-customerInfo-list.admin" style="color: white;">회원 관리</a>
+							<a
+								href="../admin/admin-banner-list.admin" style="color: white;">배너 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="../admin/admin-customerInfo-list.admin">일반회원 정보조회</a>
+								<a href="../admin/admin-banner-list.admin">배너 조회</a>
 							</p>
 							<p>
-								<a href="../admin/admin-sellerInfo-list.admin">판매자회원 정보조회</a>
+								<a href="../admin/admin-banner-write.admin">배너 신규등록</a>
 							</p>
 						</div>
 					</li>
 					<li>
-						<p>
-							<a href="#" style="color: white;">회원 관리</a>
-						</p>
-						<div>
 						<p>
 							<a href="../admin/admin-customerInfo-list.admin" style="color: white;">회원 관리</a>
 						</p>
@@ -80,6 +77,7 @@
 				</ul>
 			</div>
 		</div>
+
 
 
         <div class="division-line"></div>

@@ -32,8 +32,6 @@ public class ProductFrontController extends HttpServlet{
       String target = req.getRequestURI().replace(req.getContextPath() + "/product/","").split("\\.")[0];
 //    String target = req.getRequestURI().split("\\.")[0];
       Result result = null;
-      System.out.println("절취선");
-      System.out.println(target);
       
       
       
@@ -55,7 +53,7 @@ public class ProductFrontController extends HttpServlet{
     	  result = new ProductSearchController().execute(req, resp);
       }else if(target.equals("product-health-main")) {
     	  result = new ProductHealthController().execute(req, resp); 
-      }else if(target.equals("detail")) {
+      }else if(target.equals("product-detail")) {
     	  result = new ProductDetailController().execute(req, resp);
       }else if(target.equals("product-cart-write-ok")) {
     	  result = new ProductCartWriteOkController().execute(req, resp);

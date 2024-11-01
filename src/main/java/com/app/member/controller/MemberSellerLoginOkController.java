@@ -36,7 +36,7 @@ public class MemberSellerLoginOkController implements Action {
 		}
 		
 		session.setAttribute("sellerEmail", sellerEmail);
-		result.setPath("../index.jsp");
+		result.setPath("../seller/seller-list.seller");
 		
 		return result;
     }

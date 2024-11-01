@@ -22,12 +22,12 @@ public class SellerOrderListController implements Action {
 		HttpSession session = req.getSession();
 		
 		
-//      String sellerEmail = (String)session.getAttribute("sellerEmail");
-		String sellerEmail = "abc123";
+		String sellerEmail = (String)session.getAttribute("sellerEmail");
 		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
 		
 		req.setAttribute("orderListForSeller", orderDAO.selectBySeller(sellerId));
-		result.setPath("seller-order-list.jsp");
+		result.setPath("seller-order-list.jsp?sellerId=" + sellerId);
+		
 		return result;
 	}
 

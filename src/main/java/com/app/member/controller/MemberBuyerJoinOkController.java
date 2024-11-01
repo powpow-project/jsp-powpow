@@ -31,12 +31,12 @@ public class MemberBuyerJoinOkController implements Action {
 		memberVO.setMemberSms(req.getParameter("sms").charAt(0));
 		memberVO.setMemberEmailCheck(req.getParameter("emailcheck").charAt(0));
 		
-		System.out.println(req.getParameter("buyerEmail"));
-		System.out.println(req.getParameter("buyerPassword"));
-		System.out.println(req.getParameter("name"));
-		System.out.println(req.getParameter("phone"));
-		System.out.println(req.getParameter("sms").charAt(0));
-		System.out.println(req.getParameter("emailcheck").charAt(0));
+//		System.out.println(req.getParameter("buyerEmail"));
+//		System.out.println(req.getParameter("buyerPassword"));
+//		System.out.println(req.getParameter("name"));
+//		System.out.println(req.getParameter("phone"));
+//		System.out.println(req.getParameter("sms").charAt(0));
+//		System.out.println(req.getParameter("emailcheck").charAt(0));
 		
 		arrAddress = req.getParameterValues("address");
 		for(int i = 0; i < arrAddress.length; i++) {
