@@ -55,6 +55,13 @@
 	
 <!-- 판매자 -->
 
+	<!-- 로그인..? -->
+	<select id="selectSeller" resultType="String">
+		SELECT SELLER_EMAIL 
+		FROM TBL_SELLER
+		WHERE SELLER_EMAIL = #{sellerEmail} AND SELLER_PASSWORD = #{sellerPassword}
+	</select>	
+
 	<!-- 회원가입 _ 이메일, 비밀번호, 이름, 휴대전화 번호, 사업자 인증번호, 대표자명, 업체명, 동의 -->
 	<insert id="insertSeller" parameterType="SellerVO">
 		INSERT INTO TBL_SELLER(ID, bUSINESS_ID, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME, SELLER_PHONE, SELLER_SMS, SELLER_EMAILCHECK)
