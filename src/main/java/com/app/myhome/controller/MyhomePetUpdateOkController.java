@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.MemberDAO;
-import com.app.dao.PetDAO;
 import com.app.vo.PetVO;
 
 public class MyhomePetUpdateOkController implements Action {
@@ -19,7 +18,6 @@ public class MyhomePetUpdateOkController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		PetVO petVO = new PetVO();
-		PetDAO petDAO = new PetDAO();
 		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
 		

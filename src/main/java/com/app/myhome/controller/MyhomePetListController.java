@@ -12,7 +12,6 @@ import com.app.Action;
 import com.app.Result;
 import com.app.dao.MemberDAO;
 import com.app.dao.MyhomeDAO;
-import com.app.dao.PetDAO;
 import com.app.vo.PetVO;
 import com.app.vo.ProductVO;
 
