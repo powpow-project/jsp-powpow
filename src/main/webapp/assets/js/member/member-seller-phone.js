@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 });
-	console.log(submitButton);
+	/*console.log(submitButton);*/
 
 
 

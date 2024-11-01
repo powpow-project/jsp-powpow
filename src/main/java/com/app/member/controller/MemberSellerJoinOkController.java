@@ -33,7 +33,7 @@ public class MemberSellerJoinOkController implements Action {
 		businessVO.setBusinessRepresentativeName(req.getParameter("companyname"));
 		
 		businessDAO.insertBusiness(businessVO);
-		System.out.println(businessVO);
+//		System.out.println(businessVO);
 
 		Long businessId = businessDAO.selectBusinessById(req.getParameter("number")).getId();
 		
@@ -45,7 +45,7 @@ public class MemberSellerJoinOkController implements Action {
 		sellerVO.setSellerSms(req.getParameter("sms").charAt(0));
 		sellerVO.setSellerEmailCheck(req.getParameter("emailcheck").charAt(0));
 		
-		System.out.println(sellerVO);
+//		System.out.println(sellerVO);
 		
 		
 		memberDAO.insertSeller(sellerVO);
