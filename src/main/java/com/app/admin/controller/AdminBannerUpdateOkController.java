@@ -29,7 +29,8 @@ public class AdminBannerUpdateOkController implements Action {
 
 		String adminEmail = (String) session.getAttribute("adminEmail");
 		Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
-
+		System.out.println(adminEmail);
+		System.out.println(adminId);
 		// 디렉토리가 존재하지 않으면 생성
 		File dir = new File(directory);
 		if (!dir.exists()) {
@@ -75,7 +76,8 @@ public class AdminBannerUpdateOkController implements Action {
 		}
 
 		adminDAO.insertAdminBanner(adminBannerDTO);
-
+		
+		
         result.setRedirect(true);
         result.setPath("../admin/admin-banner-list.admin");
         return result;

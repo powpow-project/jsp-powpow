@@ -26,8 +26,7 @@ public class SellerRevenueListController implements Action {
 		CancleProductDAO cancleProductDAO = new CancleProductDAO();
 		HttpSession session = req.getSession();
 		
-//      String sellerEmail = (String)session.getAttribute("sellerEmail");
-		String sellerEmail = "abc123";
+      String sellerEmail = (String)session.getAttribute("sellerEmail");
 		
 		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
 		
