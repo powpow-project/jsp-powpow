@@ -23,23 +23,26 @@ public class MyhomePetListController implements Action {
 		Result result = new Result();
 		MemberDAO memberDAO = new MemberDAO();
 		MyhomeDAO myhomeDAO = new MyhomeDAO();
-		PetDAO petDAO = new PetDAO();
 		PetVO petVO = new PetVO();
 		HttpSession session = req.getSession();
 //		
-//		session.setAttribute("id", 1L);
-//	    Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
-//	    
-//	    List<PetVO> pets = petDAO.selectAll();
-//	      req.setAttribute("pets", pets);
+		String memberEmail = (String)session.getAttribute("buyerEmail");
+		System.out.println(memberEmail);
+//		
+////		session.setAttribute("id", 1L);
+////	    Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
+		Long memberId = 1L;
 		
+		List<PetVO> pets = myhomeDAO.selectPetAll(memberId);
+		req.setAttribute("pets", pets);
+     	System.out.println(pets);
 		
-		if(/*펫이 null이면*/ true){
+		if(pets != null){
 			result.setPath("../myhome/myhome-pet-list.jsp");
 		}else {
 			result.setPath("../myhome/myhome-no-pet.jsp");
 		}
-		
+//		
 		return result;
 	}
 

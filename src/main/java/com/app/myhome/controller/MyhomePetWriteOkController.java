@@ -24,13 +24,19 @@ public class MyhomePetWriteOkController implements Action {
 	   Result result = new Result();
 	   MemberDAO memberDAO = new MemberDAO();
 	   MyhomeDAO myhomeDAO = new MyhomeDAO();
-	   PetDAO petDAO = new PetDAO();
 	   PetVO petVO = new PetVO();
 	   HttpSession session = req.getSession();
 	   
-	      session.setAttribute("id", 1L);
-	      Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
-		   
+//	   String sid = session.getId();
+//	   System.out.println(session);
+//	      session.setAttribute("id", 1L);
+//	      Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
+	   
+		String memberEmail = (String)session.getAttribute("buyerEmail");
+		System.out.println(memberEmail);
+		Long memberId = 1L;
+		
+		
       String directory = req.getServletContext().getRealPath("/assets/images/myhome");
       System.out.println(directory);
       int sizeLimit = 10*500*500; // 100mb
@@ -60,16 +66,16 @@ public class MyhomePetWriteOkController implements Action {
             petVO.setMemberId(memberId);
             petVO.setPetName(petName);
             petVO.setPetKind(petKind);
-            petVO.setPetGender(Boolean.parseBoolean(petGender));
+            petVO.setPetGender(petGender);
             petVO.setPetBreed(petBreed);
             petVO.setPetBirth(petBirth);
-            petVO.setPetWeight(Double.parseDouble(petWeight));
+            petVO.setPetWeight(Integer.parseInt(petWeight));
             petVO.setPetNeuter(Boolean.parseBoolean(petNeuter));
             petVO.setPetVet(petVet);
             petVO.setPetImage(fileName);
             
             System.out.println("==== 데이터 출력 ====");
-            System.out.println(memberId);
+//            System.out.println(memberId);
             System.out.println(petName);
             System.out.println(petGender);
             System.out.println(petBreed);
@@ -92,7 +98,7 @@ public class MyhomePetWriteOkController implements Action {
             e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
         }
         
-      petDAO.insertPet(petVO);
+      myhomeDAO.insertPet(petVO);
       
       result.setRedirect(true);
       result.setPath("../myhome/pet-list.myhome");

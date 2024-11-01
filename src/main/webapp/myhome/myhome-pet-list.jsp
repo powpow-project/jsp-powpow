@@ -80,7 +80,7 @@
         </script>
     </c:when>
     <c:otherwise> --%>
-    <div id="animals">
+ <%--    <div id="animals">
         <div id="mydog">
             <div class="card">
                 <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
@@ -93,19 +93,32 @@
                 <a rel="stylesheet" href="./pet-delete-ok.myhome"><button class="edit-button">삭제</button></a>
             </div>
         </div>
+    </div> --%>
+      <c:forEach items="${pet}" var="pet">
         <div id="mydog">
             <div class="card">
                 <img class="star" src="../assets/images/myhome/star.svg" data-filled-src="../assets/images/myhome/star-select.svg" alt="선택된 동물">
-                <div class="profile-pic" id="profilePic">
-                    <img id="profileImage" src="../assets/images/myhome/${pet.petImage}" alt="Profile Picture">
-                </div>
-                <div class="name" value="${pet.petName}">name</div>
-                <input type="file" id="imageUpload" accept="image/*">
-                <a rel="stylesheet" href="./pet-update.myhome"><button class="edit-button">편집</button></a>
-            	<a rel="stylesheet" href="./pet-delete-ok.myhome"><button class="edit-button">삭제</button></a>
+          <div class="profile-pic" id="profilePic">
+              <img id="profileImage" src="../assets/images/myhome/${pet.petImage}" alt="Profile Picture">
+          </div>
+          <div class="name">
+              <c:out value="${pet.petName}"/>
+          </div>
+          <div class="pet-details">
+              <p><strong>성별:</strong> <c:out value="${pet.petGender}"/></p>
+              <p><strong>품종:</strong> <c:out value="${pet.petBreed}"/></p>
+              <p><strong>생일:</strong> <c:out value="${pet.petBirth}"/></p>
+              <p><strong>몸무게:</strong> <c:out value="${pet.petWeight}"/>kg</p>
+              <p><strong>중성화:</strong> <c:out value="${pet.petNeuter}"/></p>
+              <p><strong>동물병원:</strong> <c:out value="${pet.petVet}"/></p>
+          </div>
+          <div class="button-group">
+              <a href="./pet-update.myhome"><button class="edit-button">편집</button></a>
+              <a href="./pet-delete-ok.myhome"><button class="edit-button">삭제</button></a>
+          </div>
             </div>
         </div>
-    </div>
+    </c:forEach>
       <%-- </c:otherwise>
 </c:choose> --%>
     <footer>

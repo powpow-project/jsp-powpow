@@ -97,10 +97,8 @@
         <div class="input-wrap">
        		<input class="input" id="petName" type="text" name="petName" placeholder="포포"> 
 				<label class="option"> 
-					<input type="radio" name="petGender" value="female">
-						<p>여아</p> 
-					<input type="radio" name="petGender" value="male">
-						<p>남아</p>
+					<input type="radio" name="petGender" value="female"><p>여아</p> 
+					<input type="radio" name="petGender" value="male"><p>남아</p>
 				</label> 
 			<input class="input" name="petBreed" type="text" placeholder="예) 시츄">
 			<p>

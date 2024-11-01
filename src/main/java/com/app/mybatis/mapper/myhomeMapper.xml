@@ -3,70 +3,23 @@
 
 <mapper namespace="myhome">
 
-<!-- member -->
-	<update id="updateMember" parameterType="com.app.vo.MemberVO">
-		UPDATE TBL_MEMBER
-		SET MEMBER_NICKNAME = #{memberNickname},
-        	MEMBER_PHONE = #{memberPhone},
-        	MEMBER_ADDRESS = #{memberAddress},
-        	MEMBER_IMAGE = #{memberImage}
-    	WHERE ID = #{id}
-	</update>
-	
 	<update id="updatePassword" parameterType="com.app.vo.MemberVO">
     	UPDATE TBL_MEMBER
     	SET MEMBER_PASSWORD = #{memberPassword}
     	WHERE ID = #{id}
 	</update>
 	
-	<delete id="deleteMember">
-		DELETE FROM TBL_MEMBER
-		WHERE ID = #{id}
-	</delete>
-	
-    <select id="selectMemberByEmail" resultType="com.app.vo.MemberVO">
-        SELECT ID,
-               ADMIN_ID,
-               MEMBER_IMAGE,
-               MEMBER_NICKNAME,
-               MEMBER_EMAIL,
-               MEMBER_PASSWORD,
-               MEMBER_PHONE,
-               MEMBER_ADDRESS,
-               MEMBER_SMS,
-               MEMBER_EMAILCHECK
-        FROM TBL_MEMBER
-        WHERE MEMBER_EMAIL = #{memberEmail}
-    </select>
-	
-	
-	<!-- coupon -->
-	<select id="selectCoupon" resultType="AdminCouponDTO">
-		SELECT ID, ADMIN_COUPON_TITLE, ADMIN_COUPON_CODE, ADMIN_COUPON_DATE, ADMIN_COUPON_CONTENT
-		FROM TBL_ADMIN_COUPON
-		WHERE ADMIN_COUPON_CODE = #{adminCouponCode}
-	</select>
-
-	<!-- ORDER -->
-	
-	<select id="selectOrder" resultType="OrderDTO">
-		SELECT ID, MEMBER_ID, PRODUCT_ID, ORDER_ID, ORDER_NUMBER, ORDER_DATE
-		FROM TBL_ORDER
-		ORDER BY ID ASC
-	</select>
-	
-	<!-- pet -->
-	
 	 <select id="selectPetKinds" resultType="string">
         SELECT PET_KIND 
         FROM TBL_PET
     </select>
     
-<!--     <select id="selectAll" resultType="PetVO">
-    	SELECT MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER
+	<select id="selectPetAll" parameterType="Long" resultType="PetVO">
+    	SELECT ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME,
+    	PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER
     	FROM TBL_PET
-    	ORDER BY ID ASC
-    </select> -->
+    	WHERE MEMBER_ID = #{memberId}
+    </select> 
 	
 	<insert id="insertPet" parameterType="PetVO">
 		INSERT INTO TBL_PET(ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER)
