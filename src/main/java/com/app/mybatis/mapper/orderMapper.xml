@@ -4,7 +4,7 @@
 
 <mapper namespace="order">
 	<select id="select" parameterType="Long" resultType="orderVO">
-		SELECT ID, MEMBER_ID, PRODUCT_ID, ORDER_NUMBER, ORDER_DATE, PRODUCT_COUNT, TOTAL_PRICE
+		SELECT ID, MEMBER_ID, PRODUCT_ID, ORDER_NUMBER, ORDER_DATE, PRODUCT_COUNT
 		FROM TBL_ORDER
 		WHERE ID = #{id}
 	</select>

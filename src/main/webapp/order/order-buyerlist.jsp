@@ -40,7 +40,7 @@
                 <div id="sector"></div>
                 <div class="sub-menu-wrap">
                   <ul>
-                    <li class="sub-menu"><a href="#">강아지</a></li>
+                    <li class="sub-menu"><a href="product-dog.product?productCategoryName=강아지">강아지</a></li>
                     <li class="sub-menu"><a href="#">고양이</a></li>
                     <li class="sub-menu"><a href="#">새</a></li>
                     <li class="sub-menu"><a href="#">물고기</a></li>
@@ -118,7 +118,7 @@
                   <p class="h5">${product.productName}</p>
                   <p class="h5">${product.productDate}</p>
                   <div class="price-wrap">
-                    <p class="h4">할인된 금액</p> <p class="h5">${product.productPrice}원</p> <p class="h5 pcount">${order.productCount}개</p>
+                    <p class="h4">${product.productPrice}</p> <p class="h5">${product.productPrice}원</p> <p class="h5 pcount">${order.productCount}개</p>
                   </div>
               </div>
             </div>
@@ -130,15 +130,18 @@
         </div>
     </div>
     
-	 <form action="myhome/shipping-list.myhome.jsp" method="post">
-	    <input type="hidden" name="productId" value="${product.productId}">
-	    <input type="hidden" name="memberId" value="${product.productId}">
-	    <input type="hidden" name="productCount" value="${product.productId}">
-	    <input type="hidden" name="orderId" value="${product.productId}">
+	 <form method="post">
+	    <input type="hidden" name="productId" value="${product.id}">
+	    <input type="hidden" name="memberId" value="${member.id}">
+	    <input type="hidden" name="orderNumber" value="${order.orderNumber}">
+	    <input type="hidden" name="orderDate" value="${order.orderDate}">
+	    <input type="hidden" name="productCount" value="${order.productCount}">
+	    <input type="hidden" name="orderId" value="${order.id}">
 	    
-	    <button type="submit">결제하기</button>
+	    <button type="button" onclick="location.href='write-ok.order'" class="payment">결제하기</button>
 	</form>
 </div>
+
 </div>
  <footer>
     <div class="footer-container">
@@ -236,6 +239,7 @@ subMenus.forEach((sub, i) => {
     }, 100); // 100ms 지연 후 서브메뉴를 닫음
   });
 });
+
 
 
   </script>
