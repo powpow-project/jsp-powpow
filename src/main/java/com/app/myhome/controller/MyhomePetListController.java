@@ -26,7 +26,7 @@ public class MyhomePetListController implements Action {
 		HttpSession session = req.getSession();
 //		
 		String memberEmail = (String)session.getAttribute("buyerEmail");
-		System.out.println(memberEmail);
+//		System.out.println(memberEmail);
 //		
 ////		session.setAttribute("id", 1L);
 ////	    Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
@@ -34,7 +34,7 @@ public class MyhomePetListController implements Action {
 		
 		List<PetVO> pets = myhomeDAO.selectPetAll(memberId);
 		req.setAttribute("pets", pets);
-     	System.out.println(pets);
+//     	System.out.println(pets);
 		
 		if(pets != null){
 			result.setPath("../myhome/myhome-pet-list.jsp");

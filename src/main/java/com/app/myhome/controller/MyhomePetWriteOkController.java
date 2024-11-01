@@ -32,12 +32,12 @@ public class MyhomePetWriteOkController implements Action {
 //	      Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
 	   
 		String memberEmail = (String)session.getAttribute("buyerEmail");
-		System.out.println(memberEmail);
+//		System.out.println(memberEmail);
 		Long memberId = 1L;
 		
 		
       String directory = req.getServletContext().getRealPath("/assets/images/myhome");
-      System.out.println(directory);
+//      System.out.println(directory);
       int sizeLimit = 10*500*500; // 100mb
       
       // 디렉토리가 존재하지 않으면 생성
@@ -73,16 +73,16 @@ public class MyhomePetWriteOkController implements Action {
             petVO.setPetVet(petVet);
             petVO.setPetImage(fileName);
             
-            System.out.println("==== 데이터 출력 ====");
+//            System.out.println("==== 데이터 출력 ====");
 //            System.out.println(memberId);
-            System.out.println(petName);
-            System.out.println(petGender);
-            System.out.println(petBreed);
-            System.out.println(petBirth);
-            System.out.println(petWeight);
-            System.out.println(petNeuter);
-            System.out.println(petVet);
-            System.out.println(fileName);
+//            System.out.println(petName);
+//            System.out.println(petGender);
+//            System.out.println(petBreed);
+//            System.out.println(petBirth);
+//            System.out.println(petWeight);
+//            System.out.println(petNeuter);
+//            System.out.println(petVet);
+//            System.out.println(fileName);
 
             // 파일이 성공적으로 업로드되었는지 확인
             if (fileName != null) {
