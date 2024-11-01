@@ -166,7 +166,8 @@
   display: block;
 }
 .category-button.active {
-    border-color: #FFC303; /* 예시 색상 */
+    border-color: #FFC303;
+    color: #828282;
 }
 
 .product-image-wrap {
@@ -273,4 +274,10 @@
 .product-info .delivery-info #product-free {
   font-size: 12px;
 }
+
+.section-header{
+ margin-top: 65px;
+}
+
+
   

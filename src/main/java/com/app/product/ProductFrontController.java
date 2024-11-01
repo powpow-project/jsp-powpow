@@ -32,8 +32,6 @@ public class ProductFrontController extends HttpServlet{
       String target = req.getRequestURI().replace(req.getContextPath() + "/product/","").split("\\.")[0];
 //    String target = req.getRequestURI().split("\\.")[0];
       Result result = null;
-      System.out.println("절취선");
-      System.out.println(target);
       
       
       
