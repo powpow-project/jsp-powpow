@@ -11,73 +11,73 @@
   </welcome-file-list>
   
    <servlet>
-  	<servlet-name>ProductFrontController</servlet-name>
-  	<servlet-class>com.app.product.ProductFrontController</servlet-class>
+     <servlet-name>ProductFrontController</servlet-name>
+     <servlet-class>com.app.product.ProductFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>ProductFrontController</servlet-name>
-  	<url-pattern>*.product</url-pattern>
+     <servlet-name>ProductFrontController</servlet-name>
+     <url-pattern>*.product</url-pattern>
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>MemberFrontController</servlet-name>
-  	<servlet-class>com.app.member.MemberFrontController</servlet-class>
+     <servlet-name>MemberFrontController</servlet-name>
+     <servlet-class>com.app.member.MemberFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>MemberFrontController</servlet-name>
-  	<url-pattern>*.member</url-pattern>
+     <servlet-name>MemberFrontController</servlet-name>
+     <url-pattern>*.member</url-pattern>
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>CommunityFrontController</servlet-name>
-  	<servlet-class>com.app.community.CommunityPostFrontController</servlet-class>
+     <servlet-name>CommunityFrontController</servlet-name>
+     <servlet-class>com.app.community.CommunityFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>CommunityFrontController</servlet-name>
-  	<url-pattern>*.community</url-pattern>
+     <servlet-name>CommunityFrontController</servlet-name>
+     <url-pattern>*.community</url-pattern>
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>AdminFrontController</servlet-name>
-  	<servlet-class>com.app.admin.AdminFrontController</servlet-class>
+     <servlet-name>AdminFrontController</servlet-name>
+     <servlet-class>com.app.admin.AdminFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>AdminFrontController</servlet-name>
-  	<url-pattern>*.admin</url-pattern>
+     <servlet-name>AdminFrontController</servlet-name>
+     <url-pattern>*.admin</url-pattern>
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>SellerFrontController</servlet-name>
-  	<servlet-class>com.app.seller.SellerFrontController</servlet-class>
+     <servlet-name>SellerFrontController</servlet-name>
+     <servlet-class>com.app.seller.SellerFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>SellerFrontController</servlet-name>
-  	<url-pattern>*.seller</url-pattern>
+     <servlet-name>SellerFrontController</servlet-name>
+     <url-pattern>*.seller</url-pattern>
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>MyhomeFrontController</servlet-name>
-  	<servlet-class>com.app.myhome.MyhomeFrontController</servlet-class>
+     <servlet-name>MyhomeFrontController</servlet-name>
+     <servlet-class>com.app.myhome.MyhomeFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>MyhomeFrontController</servlet-name>
-  	<url-pattern>*.myhome</url-pattern>
+     <servlet-name>MyhomeFrontController</servlet-name>
+     <url-pattern>*.myhome</url-pattern>
   </servlet-mapping>
   
   <servlet>
-  	<servlet-name>OrderFrontController</servlet-name>
-  	<servlet-class>com.app.order.OrderFrontController</servlet-class>
+     <servlet-name>OrderFrontController</servlet-name>
+     <servlet-class>com.app.order.OrderFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>OrderFrontController</servlet-name>
-  	<url-pattern>*.order</url-pattern>
+     <servlet-name>OrderFrontController</servlet-name>
+     <url-pattern>*.order</url-pattern>
   </servlet-mapping>
   
   
