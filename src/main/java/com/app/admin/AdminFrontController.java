@@ -22,6 +22,7 @@ import com.app.admin.controller.AdminCustomerInfoListController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
 import com.app.admin.controller.AdminLoginOkController;
+import com.app.admin.controller.AdminSellerInfoListController;
 import com.app.admin.controller.AdminUpdateController;
 import com.app.admin.controller.AdminUpdateOkController;
 import com.app.admin.controller.AdminWriteOkController;
@@ -35,7 +36,7 @@ public class AdminFrontController extends HttpServlet{
 	    String target = req.getRequestURI().replace(req.getContextPath() + "/admin/", "").split("\\.")[0];
 	    Result result = null;
 	    
-//	    System.out.println(target);
+	    
 	    
 	    // 로그인 목록
 	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
@@ -108,17 +109,19 @@ public class AdminFrontController extends HttpServlet{
 	        result = new AdminCouponDeleteOkController().execute(req, resp);
 	        
 	        
-	    // 회원관리 목록
+	    // 일반회원관리 목록
 		} else if (target.equals("admin-customerInfo-list")) { // 일반회원 목록
 		    result = new AdminCustomerInfoListController().execute(req, resp);
-	        
+		    
+		    System.out.println(target);
+		//판매자회원관리 목록
+	    } else if (target.equals("admin-sellerInfo-list")) { // 판매자회원 목록
+			result = new AdminSellerInfoListController().execute(req, resp);
 
 	    } else {
 	        result = new Result();
 	        result.setPath("../not-found.jsp");
 	    }
-
-	    System.out.println(target);
 	    
 	    if (result != null) {
 	        if (result.isRedirect()) {

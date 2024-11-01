@@ -1,65 +1,80 @@
 package com.app.admin.controller;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.AdminDAO;
 import com.app.dto.AdminBannerDTO;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class AdminBannerUpdateOkController implements Action {
 
     @Override
     public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        Result result = new Result();
-        AdminDAO adminDAO = new AdminDAO();
-        AdminBannerDTO adminBannerDTO = new AdminBannerDTO();
 
-        Long id = Long.parseLong(req.getParameter("id"));
-        adminBannerDTO.setId(id);
-        
-        String bannerTitle = req.getParameter("banner-name"); 
-        String bannerType = req.getParameter("banner-type"); 
-        String bannerImage = req.getParameter("banner-image"); 
-        String bannerStart = req.getParameter("start-date"); 
-        String bannerEnd = req.getParameter("end-date");
+    	AdminDAO adminDAO = new AdminDAO();
+		AdminBannerDTO adminBannerDTO = new AdminBannerDTO();
+		Result result = new Result();
+		HttpSession session = req.getSession();
+		String directory = req.getServletContext().getRealPath("/assets/images/admin");
+		int sizeLimit = 10 * 200 * 100; // 100mb
 
-        if (bannerTitle == null || bannerTitle.trim().isEmpty()) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "배너 제목을 입력해 주세요.");
-            return null;
-        }
+		String adminEmail = (String) session.getAttribute("adminEmail");
+		Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
 
-        if (bannerType == null) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "배너 타입을 선택해 주세요.");
-            return null;
-        }
+		// 디렉토리가 존재하지 않으면 생성
+		File dir = new File(directory);
+		if (!dir.exists()) {
+			dir.mkdirs(); // 디렉토리 생성
+		}
+		
+		
 
-        if (bannerImage == null || bannerImage.trim().isEmpty()) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "배너 이미지를 선택해 주세요.");
-            return null;
-        }
+		try {
+			// 파일 업로드 처리
+			MultipartRequest multi = new MultipartRequest(req, directory, sizeLimit, "UTF-8",
+					new DefaultFileRenamePolicy());
+			
+			// 업로드된 파일의 제목과 이름 가져오기
+			Long id = Long.parseLong(multi.getParameter("id"));
+			String mainImage = multi.getFilesystemName("banner-image");
+			String bannerTitle = multi.getParameter("banner-name");
+			String bannerType = multi.getParameter("banner-type");
+			String bannerStart = multi.getParameter("start-date");
+			String bannerEnd = multi.getParameter("end-date");
 
-        if (bannerStart == null || bannerStart.trim().isEmpty()) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "시작 날짜를 입력해 주세요.");
-            return null;
-        }
 
-        if (bannerEnd == null || bannerEnd.trim().isEmpty()) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "종료 날짜를 입력해 주세요.");
-            return null;
-        }
+			adminBannerDTO.setAdminId(adminId);
+			adminBannerDTO.setAdminBannerTitle(bannerTitle);
+			adminBannerDTO.setAdminBannerType(bannerType);
+			adminBannerDTO.setAdminBannerStart(bannerStart);
+			adminBannerDTO.setAdminBannerEnd(bannerEnd);
+			
 
-        adminBannerDTO.setAdminBannerTitle(bannerTitle);
-        adminBannerDTO.setAdminBannerType(bannerType); 
-        adminBannerDTO.setAdminBannerImage(bannerImage);
-        adminBannerDTO.setAdminBannerStart(bannerStart);
-        adminBannerDTO.setAdminBannerEnd(bannerEnd); 
+			// 파일이 성공적으로 업로드되었는지 확인
+			if (mainImage != null) {
+				adminBannerDTO.setAdminBannerImage(mainImage);
 
-        adminDAO.updateAdminBanner(adminBannerDTO);
+			} else {
+				adminDAO.selectAdminBanner(id).map(AdminBannerDTO::getAdminBannerImage).ifPresent((image) -> {
+					adminBannerDTO.setAdminBannerImage(image);
+				});
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
+	        return result;
+		}
+
+		adminDAO.insertAdminBanner(adminBannerDTO);
 
         result.setRedirect(true);
         result.setPath("../admin/admin-banner-list.admin");
