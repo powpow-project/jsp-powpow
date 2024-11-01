@@ -25,11 +25,11 @@ public class ProductCartWriteOkController implements Action {
 		MemberVO memberVO = new MemberVO();
 		HttpSession session = req.getSession();
 		
-//		회원정보 가져오기		
+//		회원정보 가져오기
 		String memberEmail = (String)session.getAttribute("memberEmail");
-		 memberDAO.findBuyerByEmail(memberEmail);
+		cartVO.setMemberId(1L);
 
-		//상품정보 가져오기		
+//		상품정보 가져오기	
 		Long productId = Long.parseLong(req.getParameter("productId"));
 		cartVO.setProductId(productId);
 		
