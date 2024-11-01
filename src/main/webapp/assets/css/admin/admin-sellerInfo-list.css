@@ -370,7 +370,7 @@ table tr > td:nth-child(1) {
 
 table tr > th:nth-child(2),
 table tr > td:nth-child(2) {
-	width: 366px;
+	width: 188px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -378,7 +378,7 @@ table tr > td:nth-child(2) {
 
 table tr > th:nth-child(3),
 table tr > td:nth-child(3) {
-	width: 512px;
+	width: 188px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -386,7 +386,7 @@ table tr > td:nth-child(3) {
 
 table tr > th:nth-child(4),
 table tr > td:nth-child(4) {
-	width: 244px;
+	width: 234px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -394,7 +394,7 @@ table tr > td:nth-child(4) {
 
 table tr > th:nth-child(5),
 table tr > td:nth-child(5) {
-	width: 98px;
+	width: 146px;
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
@@ -402,6 +402,30 @@ table tr > td:nth-child(5) {
 
 table tr > th:nth-child(6),
 table tr > td:nth-child(6) {
+	width: 220px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(7),
+table tr > td:nth-child(7) {
+	width: 146px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(8),
+table tr > td:nth-child(8) {
+	width: 98px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+}
+
+table tr > th:nth-child(9),
+table tr > td:nth-child(9) {
 	width: 122px;
 	flex-shrink: 0;
 	display: flex;

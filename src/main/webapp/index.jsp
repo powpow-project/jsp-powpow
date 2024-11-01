@@ -41,11 +41,11 @@
 						<div id="sector"></div>
 						<div class="sub-menu-wrap">
 							<ul>
-								<li class="sub-menu"><a href="product-dog.product?productCategoryName=강아지">강아지</a></li>
-		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=고양이">고양이</a></li>
-		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=새">새</a></li>
-		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=물고기">물고기</a></li>
-		                        <li class="sub-menu"><a href="product-dog.product?productCategoryName=헬스+">헬스+</a></li>
+								<li class="sub-menu"><a href="product/product-dog.product?productCategoryName=강아지">강아지</a></li>
+		                        <li class="sub-menu"><a href="product/product-dog.product?productCategoryName=고양이">고양이</a></li>
+		                        <li class="sub-menu"><a href="product/product-dog.product?productCategoryName=새">새</a></li>
+		                        <li class="sub-menu"><a href="product/product-dog.product?productCategoryName=물고기">물고기</a></li>
+		                        <li class="sub-menu"><a href="product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
 							</ul>
 							<ul>
 								<li class="sub-menu"><a href="./community/list.community">홈</a></li>
