@@ -47,27 +47,6 @@ public class AdminBannerWriteOkController implements Action {
 			String bannerStart = multi.getParameter("start-date");
 			String bannerEnd = multi.getParameter("end-date");
 
-		
-			if (bannerTitle == null || bannerTitle.trim().isEmpty()) {
-				resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "배너 제목을 입력해 주세요.");
-				return null;
-			}
-
-			if (bannerType == null) {
-				resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "배너 타입을 선택해 주세요.");
-				return null;
-			}
-
-			if (mainImage == null || mainImage.trim().isEmpty()) {
-				resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "배너 이미지를 선택해 주세요.");
-				return null;
-			}
-
-			if (bannerStart == null || bannerEnd == null) {
-				resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "기간을 설정해 주세요.");
-				return null;
-			}
-
 			adminBannerDTO.setAdminId(adminId);
 			adminBannerDTO.setAdminBannerTitle(bannerTitle);
 			adminBannerDTO.setAdminBannerType(bannerType);

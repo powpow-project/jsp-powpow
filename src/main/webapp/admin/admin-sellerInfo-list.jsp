@@ -4,13 +4,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/admin/admin-customerInfo-list.css">
+    <link rel="stylesheet" href="../assets/css/admin/admin-sellerInfo-list.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
     <title>회원 관리(일반회원)</title>
 </head>
 <body>
-	<form action="admin-customerInfo-list.admin" method="POST" id="frame">
+	<form action="admin-sellerInfo-list.admin" method="POST" id="frame">
 
 		<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
@@ -83,7 +83,7 @@
 		<div class="division-line"></div>
 
 		<div class="title">
-			<h1 class="h1">일반회원 정보조회</h1>
+			<h1 class="h1">판매자회원 정보조회</h1>
 		</div>
 
 		<div class="container">
@@ -123,20 +123,24 @@
 					<tr>
 						<th>No</th>
 						<th>아이디(이메일)</th>
-						<th>상세주소</th>
 						<th>휴대폰</th>
+						<th>사업자 등록번호</th>
+						<th>대표자명</th>
+						<th>업체명</th>
 						<th>SMS 수신여부</th>
 						<th>메일 수신여부</th>
 					</tr>
 				</thead>
 
 				<tbody id="user-list">
-					<c:forEach var="member" items="${members}" varStatus="status">
+					<c:forEach var="seller" items="${sellers}" varStatus="status">
 						<tr>
 							<td>${status.index + 1}</td>
-							<td>${member.memberEmail}</td>
-							<td>${member.memberAddress}</td>
-							<td>${member.memberPhone}</td>
+							<td>${seller.sellerEmail}</td>
+							<td>${seller.sellerPhone}</td>
+				            <td>${seller.businessNumber}</td>
+				            <td>${seller.businessRepresentativeName}</td>
+				            <td>${seller.businessName}</td> 
 							<td>수신</td>
 							<td>수신</td>
 						</tr>
@@ -161,5 +165,5 @@
     endDateInput.value = endDate;
 </script>
 
-    <script src="../assets/js/admin/admin-customerInfo-list.js"></script>
+    <script src="../assets/js/admin/admin-sellerInfo-list.js"></script>
 </html>
