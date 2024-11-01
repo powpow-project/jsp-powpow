@@ -13,6 +13,7 @@ import com.app.member.controller.MemberBuyerJoinCompleteController;
 import com.app.member.controller.MemberBuyerJoinController;
 import com.app.member.controller.MemberBuyerJoinOkController;
 import com.app.member.controller.MemberBuyerLoginOkController;
+import com.app.member.controller.MemberBuyerPhoneController;
 import com.app.member.controller.MemberBuyerUpdateController;
 import com.app.member.controller.MemberBuyerUpdateOkController;
 import com.app.member.controller.MemberDeleteOkController;
@@ -25,8 +26,10 @@ import com.app.member.controller.MemberSellerJoinCompleteController;
 import com.app.member.controller.MemberSellerJoinController;
 import com.app.member.controller.MemberSellerJoinOkController;
 import com.app.member.controller.MemberSellerLoginOkController;
+import com.app.member.controller.MemberSellerPhoneController;
 import com.app.member.controller.MemberSellerUpdateController;
 import com.app.member.controller.MemberSellerUpdateOkController;
+import com.app.member.controller.MemberSmsController;
 
 public class MemberFrontController extends HttpServlet{
 	@Override
@@ -51,6 +54,14 @@ public class MemberFrontController extends HttpServlet{
 		}else if(target.equals("find-choice")) {
 			result = new MemberFindChoiceController().execute(req, resp);
 			
+//		회원가입 시 핸드폰 번호 인증(구매자)
+		}else if(target.equals("buyer-phone")) {
+			result = new MemberBuyerPhoneController().execute(req, resp);
+			
+//		회원가입 시 핸드폰 번호 인증(판매자)
+		}else if(target.equals("seller-phone")) {
+			result = new MemberSellerPhoneController().execute(req, resp);
+			
 //		구매자 선택 후 아이디/비밀번호 찾기 페이지
 		}else if(target.equals("buyer-account-find")) {
 			result = new MemberBuyerAccountFindController().execute(req, resp);	
@@ -72,8 +83,8 @@ public class MemberFrontController extends HttpServlet{
 			result = new MemberLogoutController().execute(req, resp);
 			
 //		인증번호 사용 (구매자,판매자 - 회원가입 전, 아이디 찾을 때, 비밀번호 재 설정할 때)
-//		}else if(target.equals("buyer-sms")) {
-//			result = new MemberSmsController().execute(req, resp);
+		}else if(target.equals("sms")) {
+			result = new MemberSmsController().execute(req, resp);
 		
 //		구매자 회원가입 페이지		
 		}else if(target.equals("buyer-join")) {
