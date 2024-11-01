@@ -13,6 +13,7 @@
 <title>매출관리</title>
 </head>
 <body>
+
 	<div id="frame">
 		<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/product/menu.png"
@@ -85,7 +86,6 @@
 				</div>
 			</section>
 		</form>
-
 		<section class="notice-list">
 			<table>
 				<thead>
@@ -99,6 +99,29 @@
 					</tr>
 				</thead>
 				<tbody>
+					<c:forEach var="list" items="${lists}">
+					    <tr>
+					        <td>
+					            <c:out value="${list.cancleProductDate.substring(0,10)}" />
+					        </td>
+					        <td>
+					            <c:out value="${list.totalOrderedCount}" />
+					        </td>
+					        <td>
+					            <c:out value="${list.totalOrderedPrice}" />
+					        </td>
+					        
+					        <td>
+					            <c:out value="${list.totalCancledCount}" />
+					        </td>
+					        <td>
+					            <c:out value="${list.totalCancledPrice}" />
+					        </td>
+					        <td>
+					            <c:out value="${list.totalOrderedPrice - list.totalCancledPrice}" />
+					        </td>
+					    </tr>
+					</c:forEach>
 					<tr class="tr-border">
 						<td>합계</td>
 						<td><c:out value="${totalOrderCount}" /></td>
@@ -107,46 +130,12 @@
 						<td><c:out value="${totalCanclePrice}" /></td>
 						<td><c:out value="${totalSales}" /></td>
 					</tr>
-					<tr>
-						<c:forEach var="orderListForSeller" items="${orderListForSeller}">
-							<td>
-								<c:out value="${orderDate.substring(0, 10)}" />
-							</td>
-							<td>
-								<c:out value="날짜별 수량: ${orderListForSeller.orderTotalCount}" />
-							</td>
-							<td>
-								<c:out value="날짜별 주문금액:${orderListForSeller.orderTotalPrice}" />
-							</td>
-							<td>
-								<c:out value="날짜별 수량:${orderListForSeller.orderTotalCount}" />
-							</td>
-							<td>
-								<c:out value="날짜별 취소금액:${orderListForSeller.orderTotalPrice}" />
-							</td>
-							<td class="calculated-price"></td>
-						</c:forEach>
-					</tr>
 				</tbody>
 			</table>
 		</section>
+		
 	</div>
 </body>
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-	    const orderCells = document.querySelectorAll('[data-ordertotalprice]');
-	    const cancleCells = document.querySelectorAll('[data-cancletotalprice]');
-	    const calculatedCells = document.querySelectorAll('.calculated-price');
-	
-	    orderCells.forEach((orderCell, index) => {
-	
-	    	const orderTotalPrice = orderCell.getAttribute('data-ordertotalprice');
-	        const cancelTotalPrice = canceleCells[index].getAttribute('data-cancletotalprice');
-	
-	        const netPrice = orderTotalPrice - cancelTotalPrice;
-	        calculatedCells[index].value = netPrice;
-	    });
-	});
-</script>
+
 <script src="../assets/js/seller/seller-revenue-list.js"></script>
 </html>

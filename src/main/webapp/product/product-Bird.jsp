@@ -94,7 +94,7 @@
            <p class="entire-count">전체 16개</p>
          
            <div class="product-wrap">
-           <div id="product-all-wrap">
+           <div id="product-all-wrap"></div>
            <div id="feed-wrap">
            <!-- <p class="product-type-name">사료/간식</p> -->
            
@@ -145,6 +145,7 @@
         </c:choose>
      </c:forEach>
      </div>
+     
      	<div id="toiletries-wrap">
             <c:forEach var="product" items="${product}" varStatus="status">
         
@@ -216,7 +217,7 @@
 
               <div>
               </div>
-    		</div>
+    		
             </div>
        </div>
      </div>

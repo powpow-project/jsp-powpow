@@ -50,14 +50,14 @@
 					</li>
 					<li>
 						<p>
-							<a href="#" style="color: white;">회원 관리</a>
+							<a href="../admin/admin-customerInfo-list.admin" style="color: white;">회원 관리</a>
 						</p>
 						<div>
 							<p>
-								<a href="#">일반회원 정보조회</a>
+								<a href="../admin/admin-customerInfo-list.admin">일반회원 정보조회</a>
 							</p>
 							<p>
-								<a href="#">판매자회원 정보조회</a>
+								<a href="../admin/admin-sellerInfo-list.admin">판매자회원 정보조회</a>
 							</p>
 						</div>
 					</li>
@@ -90,7 +90,7 @@
 			</div>
 			<div class="buttons">
 				<button type="button" class="search-btn">검색</button>
-				<button type="button" class="reset-btn">초기화</button>
+				<button type="button" class="reset-btn" onclick="location.reload();">초기화</button>
 				<button type="button" class="new-add-btn">신규 추가</button>
 			</div>
 		</section>

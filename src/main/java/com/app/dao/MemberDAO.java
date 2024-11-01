@@ -3,11 +3,13 @@ package com.app.dao;
 
 import javax.servlet.http.HttpSession;
 
+import java.util.List;
 import java.util.Optional;
 
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.app.dto.AdminNoticeDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.BusinessVO;
 import com.app.vo.MemberVO;
@@ -57,10 +59,7 @@ public class MemberDAO {
 		sqlSession.insert("member.insertSeller", sellerVO);
 	}
 	
-////	판매자 비즈니스 정보 추가
-//	public void insertBusiness(BusinessVO businessVO) {
-//	    sqlSession.insert("member.insertBusiness", businessVO);
-//	}
+
 	
 //	판매자 로그인
 	public String selectSeller(SellerVO sellerVO) {
@@ -81,10 +80,21 @@ public class MemberDAO {
 
 	
 	
+//	구매자 이메일 찾기
+	public Optional<MemberVO> findBuyerByEmail(String email) {
+		return Optional.ofNullable(sqlSession.selectOne("member.findBuyerByEmail", email));
+	}
 
+	
 //	특정 멤버 정보 조회
 	public Optional<MemberVO> select(Long id) {
 		return Optional.ofNullable(sqlSession.selectOne("member.select", id));
+	}
+
+
+	// 진아 >>> 일반회원 전체 조회
+	public List<MemberVO> selectAllMembers() {
+	    return sqlSession.selectList("member.selectAllMembers");
 	}
 	
 }

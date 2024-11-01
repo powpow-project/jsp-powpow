@@ -25,7 +25,7 @@
 						<div class="icons">
 							<a href="#"><img src="../assets/images/shopping/search.png"alt="검색"></a> 
 							<a href="#"><img src="../assets/images/shopping/icon 2.png" alt="배송"></a> 
-							<a href="cart.jsp"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
+							<a href="./cart-check.product"><img src="../assets/images/shopping/cart.png"alt="카트"></a>
 						</div>
 						<div class="sector"></div>
 						<div class="login">
@@ -47,7 +47,7 @@
 							<li class="sub-menu"><a href="#">고양이</a></li>
 							<li class="sub-menu"><a href="#">새</a></li>
 							<li class="sub-menu"><a href="#">물고기</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
+							<li class="sub-menu"><a href="./product-health-main.product">헬스+</a></li>
 						</ul>
 						<ul>
 							<li class="sub-menu"><a href="#">홈</a></li>
@@ -77,9 +77,9 @@
 	<section class="slider-container-banner">
 		<div class="slider-container">
 			<div class="slider">
-				<img src="../assets/images/shopping/product-not-found.png" alt="배너"> <img
-					src="../assets/images/shopping/product-not-found.png" alt="배너"> <img
-					src="../assets/images/shopping/product-not-found.png" alt="배너">
+				<c:forEach var="banner" items="${banners}">
+            		<img src="../assets/images/product/${banner.adminBannerImage}" alt="배너">
+        		</c:forEach>
 			</div>
 			<div class="slider-btn">
 				<button class="prev" onclick="moveSlide(-1)">&#10094;</button>

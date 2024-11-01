@@ -409,21 +409,21 @@ table tr > td {
 }
 
 table tr > th:nth-child(1){
-  width: 122px;
+  width: 98px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > th:nth-child(2){
-  width: 342px;
+  width: 244px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > th:nth-child(3){
-  width: 366px;
+  width: 244px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -437,35 +437,44 @@ table tr > th:nth-child(4){
 }
 
 table tr > th:nth-child(5){
-  width: 220px;
+  width: 244px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > th:nth-child(6){
-  width: 122px;
+  width: 244px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
+table tr > th:nth-child(7){
+  width: 98px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+
 table tr > td:nth-child(1){
-  width: 122px;
+  width: 98px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > td:nth-child(2){
-  width: 342px;
+  width: 244px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > td:nth-child(3){
-  width: 366px;
+  width: 244px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -479,14 +488,21 @@ table tr > td:nth-child(4){
 }
 
 table tr > td:nth-child(5){
-  width: 220px;
+  width: 244px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
 
 table tr > td:nth-child(6){
-  width: 122px;
+  width: 244px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+table tr > td:nth-child(7){
+  width: 98px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
