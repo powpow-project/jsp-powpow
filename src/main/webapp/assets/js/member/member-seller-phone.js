@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const authButton = document.getElementById("request-auth");
+	const authButton = document.getElementById("#request-auth");
 	const authNumberContainer = document.getElementById("authNumberContainer");
 	const confirmButton = document.querySelector(".confirm-button");
 	const authNumberInput = document.querySelector("input[name='authNumber']");
@@ -62,20 +62,27 @@ document.addEventListener("DOMContentLoaded", () => {
 	});*/
 
 	const Form = document.querySelector("form");
-	const input = true;
+
+	authButton.addEventListener("click", (event) => {
+		event.preventDefault(); 
+		
+	    if (phoneValue.length !== 11) {
+	        Form.submit(); 
+	    }
+		return;
+	});	
+	
 
 	submitButton.addEventListener("click", (event) => {
-
-		if (input) {
-			Form.submit();
-		}
-		return;
+	       event.preventDefault(); 
+		   
+	       if (phoneValue.length !== 11 && authNumberInput.value.length === 6) {
+	           Form.submit(); 
+	       } 
+		   return;
 	});
 
 });
 
-
-
-//버튼 누르면 페이지 이동..?
 
 

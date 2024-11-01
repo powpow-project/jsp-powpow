@@ -4,7 +4,7 @@
 <mapper namespace="member">
 <!-- 구매자 -->
 
-	<!-- 로그인..? -->
+	<!-- 로그인 -->
 	<select id="selectBuyer" resultType="String">
 		SELECT MEMBER_EMAIL 
 		FROM TBL_MEMBER
@@ -55,7 +55,7 @@
 	
 <!-- 판매자 -->
 
-	<!-- 로그인..? -->
+	<!-- 로그인 -->
 	<select id="selectSeller" resultType="String">
 		SELECT SELLER_EMAIL 
 		FROM TBL_SELLER
@@ -129,7 +129,7 @@ join 시키기
    	
 	
 
-	<!--특정 상품 검색  -->
+	<!--특정 맴버 검색  -->
 	<select id="select" parameterType="Long" resultType="MemberVO">
 		SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, 
 		MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMS, MEMBER_EMAILCHECK
