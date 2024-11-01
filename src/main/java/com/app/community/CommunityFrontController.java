@@ -27,8 +27,10 @@ public class CommunityFrontController extends HttpServlet{
 		Result result = null;
 		
 		// 커뮤니티 메인 화면으로 이동
-		if (target.equals("community-main")) {
-			result = new CommunityMainController().execute(req, resp);
+		if(target.equals("community-main")) {
+			result = new Result();
+			result.setPath("../community/community-main.jsp");
+//			result = new CommunityMainController().execute(req, resp);
 		// 헬스 커뮤니티 메인 화면으로 이동
 		}else if(target.equals("community-health-main")) {
 			result = new Result();

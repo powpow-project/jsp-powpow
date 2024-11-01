@@ -9,7 +9,7 @@
 
 .logo-box {
   display: flex;
-  align-items: center; /* 수직 정렬 */
+  align-items: center; 
   justify-content: center;
   width: 464px;
   padding-bottom: 40px;
@@ -39,8 +39,8 @@
 
 
 .inputbutton:focus {
-  border: 0.5px solid transparent; /* 기존 테두리는 투명하게 */
-  outline: 2px solid #828282; /* 포커스 시 outline 추가 */
+  border: 0.5px solid transparent; 
+  outline: 2px solid #828282; 
 }
 
 .input {
@@ -50,8 +50,8 @@
 }
 
 .input-container {
-  position: relative; /* 자식 요소의 절대 위치 설정을 위한 상대 위치 */
-  width: 464px; /* 입력 필드 너비 설정 */
+  position: relative; 
+  width: 464px;
 }
 
 .auth-button {
@@ -69,9 +69,8 @@
   font-weight: bold;
 }
 
-/* 전화번호 인증요청 */
+
 .auth-number-container {
-  display: none; /* 기본적으로 숨김 */
   margin-top: 10px; /* 간격 추가 */
  }
 
