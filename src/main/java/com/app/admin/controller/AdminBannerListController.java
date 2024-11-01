@@ -23,7 +23,6 @@ public class AdminBannerListController implements Action {
         List<AdminBannerDTO> adminBannerList = adminDAO.selectAllBanners();
         
         req.setAttribute("adminBannerList", adminBannerList);
-        System.out.println(adminBannerList);
         
         result.setPath("../admin/admin-banner-list.jsp");
         return result;

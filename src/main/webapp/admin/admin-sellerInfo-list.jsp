@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/admin/admin-sellerInfo-list.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="icon" href="../assets/images/favicon.ico">
-    <title>회원 관리(일반회원)</title>
+    <title>회원 관리(판매자회원)</title>
 </head>
 <body>
 	<form action="admin-sellerInfo-list.admin" method="POST" id="frame">
