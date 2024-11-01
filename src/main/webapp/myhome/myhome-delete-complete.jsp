@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>탈퇴 완료</title>
   <link rel="stylesheet" href="../assets/css/myhome/myhome-delete-complete.css">
-  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/main/main-index.css">
   <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 
