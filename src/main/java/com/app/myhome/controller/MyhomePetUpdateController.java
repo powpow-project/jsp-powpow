@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.PetDAO;
+import com.app.dao.MyhomeDAO;
 import com.app.vo.PetVO;
 
 public class MyhomePetUpdateController implements Action {
@@ -16,8 +16,8 @@ public class MyhomePetUpdateController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 	    Result result = new Result();
-	    PetDAO petDAO = new PetDAO();
 	    PetVO petVO = new PetVO();
+	    MyhomeDAO myhomeDAO = new MyhomeDAO();
 	    
 	    // 파라미터 가져오기
         Long id = Long.parseLong(req.getParameter("id"));
@@ -31,9 +31,9 @@ public class MyhomePetUpdateController implements Action {
 	    String petVet = req.getParameter("petVet");
 	    
 	    
-	    petDAO.updatePet(petVO);
+	    myhomeDAO.updatePet(petVO);
 	    
-	    PetVO pet = petDAO.selectPetId(id).orElseThrow(() -> new RuntimeException("Pet not found with ID: " + id));
+	    PetVO pet = myhomeDAO.selectPetId(id).orElseThrow(() -> new RuntimeException("Pet not found with ID: " + id));
 	    result.setPath("../myhome/myhome-pet-list.jsp"); // JSP 경로
 	    
 	    
