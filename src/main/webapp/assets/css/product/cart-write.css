@@ -1,300 +1,4 @@
-/*
-*  html5resetcss
-*/
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
-body{line-height:1; font-family: 'SpoqaHanSansNeo-Regular' !important}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-nav ul{list-style:none}
-blockquote,q{quotes:none}
-blockquote:before,blockquote:after,q:before,q:after{content:none}
-a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
-ins{background-color:#ff9;color:#000;text-decoration:none}
-mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
-del{text-decoration:line-through}
-abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
-table{border-collapse:collapse;border-spacing:0}
-hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
-input,select{vertical-align:middle}
-li{list-style: none}
-a{text-decoration-line:none;color:#131313;}
 
-
-html, body {
-  line-height: 1.3;
-   margin: 0;
-   padding: 0;
-   height: 100%; /* 모든 요소의 높이를 100%로 설정 */
-   box-sizing: border-box;
-}
-
-*{
-  box-sizing: border-box;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
-  letter-spacing: -0.4px;
-  line-height: 1.3;
-  text-decoration: none;
-  color: #131313;
-  font-family: 'SpoqaHanSansNeo-Regular' !important;
-}
-
-button{
-  cursor: pointer;
-  border: none;
-}
-
-/* font */
-.h1{
-  font-size: 40px;
-  line-height: 54px;
-}
-
-.h2{
-  font-size: 28px;
-  line-height: 40px;
-}
-
-.h3{
-  font-size: 24px;
-  line-height: 36px;
-}
-
-.h4{
-  font-size: 20px;
-  line-height: 30px;
-}
-
-.h5{
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.h6{
-  font-size: 14px;
-  line-height: 22px;
-}
-
-.h7{
-  font-size: 12px;
-  line-height: 18px;
-}
-
-.h8{
-  font-size: 11px;
-  line-height: 16px;
-}
-
-.h9{
-  font-size: 10px;
-  line-height: 16px;
-}
-
-/* color */
-.main300{
-  color: #113f8a;
-}
-.main200{
-  color: #4a76be;
-}
-.main100{
-  color: #7baaf8;
-}
-.sub-yellow200{
-  color: #ffc303;
-}
-.sub-yellow100{
-  color: #ffe072;
-}
-.sub-orange{
-  color: #ff8331;
-}
-.sub-red{
-  color: #c83f3f;
-}
-.black{
-  color: #131313;
-}
-.gray100{
-  color: #e9e9e9;
-}
-.gray200{
-  color: #d9d9d9;
-}
-.gray300{
-  color: #cccccc;
-}
-.gray400{
-  color: #aaaaaa;
-}
-.gray500{
-  color: #888888;
-}
-
-@font-face {
-  font-family: 'SpoqaHanSansNeo-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@keyframes fade_up {
-   0% { opacity: 0; transform: translateY(10%); }
-   to { opacity: 1; transform: translateY(0); }
-}
-
-body {
-  font-family: 'SpoqaHanSansNeo-Regular';
-}
-
-/* 헤더 부분 */
-
-.header-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-#header-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1440px;
-  height: 151px;
-  margin: 0 auto;
-}
-
-#header-wrap #border{
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-#header-wrap #nav { 
-  position: relative;
-  display: flex;
-  width: 1440px;
-  margin: 0 auto;
-  /* 헤더 윗공간 조절 */
-  margin-top: 20px;
-  justify-content: space-between;
-  align-items: end;
-  margin-bottom: 15px;
-}
-
-#header-wrap #nav .sector {
-  position: absolute;
-  line-height: 20px;
-  margin-left: 10px;
-  /* border: 1px solid #818181; */
-  background-color: #818181;
-  height: 55px;
-  width: 0.1px;
-  top: 34px;
-  right: 96px;
-}
-
-#header-wrap #nav .left {
-  width: 236px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#header-wrap #nav .left img{ 
-  width: 236px;
-  height: 60px;
-}
-
-#header-wrap #nav .right {
-  display: flex; 
-  gap: 26px;
-  align-items: end;
-  padding-top: 44px;
-}
-
-#header-wrap #nav .right .icons{
-  display: flex;
-  gap: 26px;
-}
-
-#header-wrap #nav .right .icons img{ 
-  display: flex;
-  width: 30px;
-  height: 30px;
- }
-
-#header-wrap #nav .right .login { 
-  display: flex;
-  font-size: 16px;
-  margin-left: 26px;
-}
-
-#header-wrap #nav .right .login a {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  justify-content: center;
-  text-decoration-line:none;
-  color: black;
-  padding-right: 31px;
-}
-
-/* 메뉴부분 */
-
-.menu-container{
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  z-index: 10;
-}
-
-#sector {
-  display: flex;
-  width: 100%;
-  height: 0.1px;
-  background-color:#818181 ;
-  z-index: 50;
-}
-
-.menu-wrap {
-  display: flex;
-  height: 50px;
-  font-weight: bold;
-  border-top: solid #818181 0.1px;
-}
-
-.menu-wrap .menu{
-  display: flex;
-  align-items: center;
-  width: 150px;
-  height: 50px;
-}
-
-.menu-wrap .menu a:hover{
-  color: #FFC303;
-}
-
-.sub-menu-wrap {
-  display: flex;
-}
-
-.sub-menu-wrap ul {
-  overflow: hidden;
-  height: 0;
-}
-
-.sub-menu-wrap .sub-menu {
-  width: 150px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.sub-menu-wrap .sub-menu a:hover {
-  color: #FFC303;
-}
 
   /* 장바구니 */
 main {
@@ -329,12 +33,25 @@ main {
     border: solid;
     color: #828282;
 }
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+}
+
+.item-checkbox {
+    margin: 0; 
+    padding: 0; 
+}
+
 .item-checkbox {
     width: 20px;
     height: 20px;
     appearance: none;
     border: 2px solid #113F8A;
     position: relative;
+    margin-bottom: 55px;
+        margin-right: 10px;
 }
 .item-checkbox:checked {
     background-color: #113F8A;
@@ -377,11 +94,11 @@ main {
     margin-bottom: 15px;
 }
 button {
-  border: none; /* 모든 버튼의 기본 보더 제거 */
-  background: transparent; /* 모든 버튼의 기본 배경 제거 */
+  border: none; 
+  background: transparent; 
 }
 
-.quantity-control {
+.quantity-button {
     margin-left: auto;
     display: flex;
     border-radius: 20px;
@@ -391,9 +108,6 @@ button {
     height: 35px;
     border: solid 1px #333;
     justify-content: space-between;
-    position: relative;
-    right: 606px;
-    top: 46px;
 }
 .quantity-control button{
   width: 30px;
@@ -478,121 +192,3 @@ button {
 .payment-button {
     background-color: #113F8A;
 }
-
-footer {
-  	width: 100%; /* 부모 요소의 너비를 100%로 설정 */
-   	padding: 20px; /* 패딩 추가 */
-    background-color: #f9f9f9; /* 배경색 */
-    font-family: Arial, sans-serif; /* 폰트 스타일 */
-    bottom: 0;
-    width: 100%;
-    
-  }
- .footer{
-     width: 100%;
-   	 background-color: #f9f9f9;
- }
- 
-  .footer-black{
-    color: #000;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    width: 1440px;
-    margin: 0 auto;
-}
-  
-  .footer-section {
-    margin-bottom: 2px; /* 각 섹션 간의 간격 */
-  }
-  
-  .footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
-  
-  .footer-section p {
-    margin: 10px 0; /* 기본 여백 제거 */
-    line-height: 1.2; /* 줄 간격 조정 */
-    margin: 1px 0;
-    white-space: normal; /* 줄바꿈 허용 */
-    font-size: 11px;
-}
-  
-.footer-section ul {
-    list-style: none; /* 리스트 점 제거 */
-    padding: 0; /* 기본 패딩 제거 */
-    margin: 0; /* 기본 마진 제거 */
-    line-height: 1.8; /* 줄 간격 설정 (1.8은 글자 크기의 180% 간격) */
-}
-
-.footer-section ul li {
-    margin-bottom: 10px; /* 리스트 항목 간격 */
-    font-size: 12px;
-}
-
-.footer-section ul li a {
-    text-decoration: none; /* 링크 밑줄 제거 */
-    color: #000000; /* 텍스트 색상 */
-    font-size: 12px;
-}
-
-  .contact-info {
-    display: flex; /* Flexbox로 가로 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
-}
-
-  .highlight {
-    color: #000000; /* 강조 색상 */
-    font-weight: bold; /* 글자 두껍게 */
-    font-size: 12px; /* 글자 크기 */
-}
-.custom-list {
-    list-style-type: none; /* 기본 리스트 스타일 제거 */
-}
-
-.custom-list li::before {
-    content: '•'; /* 리스트 앞에 점 추가 */
-    color: #000; /* 점의 색상 */
-    font-weight: bold; /* 점 굵게 */
-    display: inline-block; /* 점을 인라인으로 표시 */
-    width: 13px; /* 점과 텍스트 사이의 간격 조정 */
-}
-
-.button-container {
-    display: flex; /* 버튼을 가로로 정렬 */
-    gap: 10px; /* 버튼 사이 간격 */
-    align-items: center; /* 버튼을 텍스트와 수직으로 정렬 *
-    margin-top: 10px; /* 버튼 위쪽 마진 */
-}
-  
-  .kakao-button, .email-button {
-    background-color: #FFFFFF;
-    color: #000000;
-    border: solid #E6E6E6;
-    margin: 3px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    padding: 5px 15px; /* 버튼 내부 여백 */
-    font-size: 11px;
-}
-  .footer-section {
-    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
-    background-color: #f9f9f9; /* 배경색 */
-    font-family: Arial, sans-serif; /* 폰트 스타일 */
-}
-
-.footer-section.legal p {
-    margin: 0; /* 기본 여백 제거 */
-    white-space: nowrap; /* 줄바꿈을 방지합니다. */
-    overflow: visible; /* 텍스트가 부모 요소의 경계를 넘어가도 보이게 합니다. */
-}
-  
-  .legal p {
-    font-size: 12px;
-    color: #767676;
-    line-height: 1.5;
-  }

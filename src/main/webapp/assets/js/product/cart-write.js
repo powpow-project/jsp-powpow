@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // 수량 조절기 기능 설정
-    const quantityControls = document.querySelectorAll(".quantity-control");
+    const quantityControls = document.querySelectorAll(".quantity-button");
     quantityControls.forEach((control) => {
         const btnMinus = control.querySelector(".btn-minus");
         const btnPlus = control.querySelector(".btn-plus");

@@ -8,16 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>상품이없는장바구니</title>
 <link rel="stylesheet" href="../assets/css/product/cart-none.css">
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 
 </head>
 
 <body>
-	<div id="frame">
-		</head>
-
-		<body>
 			<div class="header-container">
 				<div id="header-wrap">
 					<div id="border">
@@ -78,14 +74,16 @@
 					</div>
 				</div>
 			</div>
-			<main>
-				<p class="cart h2">장바구니</p>
-				<div class="cart-none">
-					<img src="../assets/images/shopping/none.png" alt="상품이 없습니다">
-				</div>
+			<div>
+				<main>
+					<h2 class="h2">장바구니</h2>
+					<div class="cart-none">
+						<img src="../assets/images/shopping/none.png" alt="상품이 없습니다">
+					</div>
 
-			</main>
-	</div>
+				</main>
+			</div>
+		</div>
 
 	<footer>
 		<div class="footer-container">

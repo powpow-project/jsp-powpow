@@ -317,7 +317,6 @@ main {
 footer {
   	width: 100%; /* 부모 요소의 너비를 100%로 설정 */
   	position: fixed;
-   	padding: 20px; /* 패딩 추가 */
     background-color: #f9f9f9; /* 배경색 */
     font-family: Arial, sans-serif; /* 폰트 스타일 */
     bottom: 0;
