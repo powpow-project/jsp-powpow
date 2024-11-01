@@ -29,7 +29,7 @@ public class MyhomePetUpdateOkController implements Action {
 		petVO.setPetName(req.getParameter("petName"));
 		petVO.setPetBirth(req.getParameter("petBirth"));
 		petVO.setPetBreed(req.getParameter("petBreed"));
-		petVO.setPetGender(Boolean.parseBoolean(req.getParameter("petGender")));
+		petVO.setPetGender(req.getParameter("petGender"));
 		petVO.setPetImage(req.getParameter("petImage"));
 		petVO.setPetKind(req.getParameter("petKind"));
 		petVO.setPetNeuter(Boolean.parseBoolean(req.getParameter("petNeuter")));
