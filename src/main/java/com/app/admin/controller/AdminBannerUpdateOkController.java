@@ -74,7 +74,7 @@ public class AdminBannerUpdateOkController implements Action {
 	        return result;
 		}
 
-		adminDAO.insertAdminBanner(adminBannerDTO);
+		adminDAO.updateAdminBanner(adminBannerDTO);
 		
 		
         result.setRedirect(true);
