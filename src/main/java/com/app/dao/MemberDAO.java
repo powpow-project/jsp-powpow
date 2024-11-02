@@ -81,8 +81,8 @@ public class MemberDAO {
 	
 	
 //	구매자 이메일 찾기
-	public Optional<MemberVO> findBuyerByEmail(String email) {
-		return Optional.ofNullable(sqlSession.selectOne("member.findBuyerByEmail", email));
+	public MemberVO findBuyerByEmail(String email) {
+		return sqlSession.selectOne("member.findBuyerByEmail", email);
 	}
 
 	

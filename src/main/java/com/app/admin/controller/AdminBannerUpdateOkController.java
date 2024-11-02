@@ -24,12 +24,11 @@ public class AdminBannerUpdateOkController implements Action {
 		Result result = new Result();
 		HttpSession session = req.getSession();
 		String directory = req.getServletContext().getRealPath("/assets/images/admin");
-		int sizeLimit = 10 * 200 * 100; // 100mb
+		int sizeLimit = 10*500*500; // 100mb
 
 		String adminEmail = (String) session.getAttribute("adminEmail");
 		Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
-		System.out.println(adminEmail);
-		System.out.println(adminId);
+
 		// 디렉토리가 존재하지 않으면 생성
 		File dir = new File(directory);
 		if (!dir.exists()) {
@@ -50,8 +49,9 @@ public class AdminBannerUpdateOkController implements Action {
 			String bannerType = multi.getParameter("banner-type");
 			String bannerStart = multi.getParameter("start-date");
 			String bannerEnd = multi.getParameter("end-date");
+			
 
-
+			adminBannerDTO.setId(id);
 			adminBannerDTO.setAdminId(adminId);
 			adminBannerDTO.setAdminBannerTitle(bannerTitle);
 			adminBannerDTO.setAdminBannerType(bannerType);
@@ -74,7 +74,9 @@ public class AdminBannerUpdateOkController implements Action {
 	        return result;
 		}
 
-		adminDAO.insertAdminBanner(adminBannerDTO);
+		System.out.println(adminBannerDTO);
+		
+		adminDAO.updateAdminBanner(adminBannerDTO);
 		
 		
         result.setRedirect(true);

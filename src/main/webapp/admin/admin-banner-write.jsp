@@ -124,7 +124,7 @@
                         type="file"
                         id="banner-image"
                         name="banner-image"
-                        accept=".jpg, .png, .gif"
+                        accept="image/*"
                         required
                     />
                 </div>
