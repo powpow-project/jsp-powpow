@@ -59,7 +59,7 @@
 									href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
 							</ul>
 							<ul>
-								<li class="sub-menu"><a href="community/community-main.community">홈</a></li>
+								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
 								<li class="sub-menu"><a href="#">헬스+</a></li>
 							</ul>
 							<ul>
