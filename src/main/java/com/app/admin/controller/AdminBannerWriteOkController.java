@@ -24,7 +24,7 @@ public class AdminBannerWriteOkController implements Action {
 		Result result = new Result();
 		HttpSession session = req.getSession();
 		String directory = req.getServletContext().getRealPath("/assets/images/admin");
-		int sizeLimit = 10 * 200 * 100; // 100mb
+		int sizeLimit = 10*500*500; // 100mb
 
 		String adminEmail = (String) session.getAttribute("adminEmail");
 		Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
