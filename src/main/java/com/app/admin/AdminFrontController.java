@@ -36,7 +36,7 @@ public class AdminFrontController extends HttpServlet{
 	    String target = req.getRequestURI().replace(req.getContextPath() + "/admin/", "").split("\\.")[0];
 	    Result result = null;
 	    
-	    
+	    System.out.println(target);
 	    
 	    // 로그인 목록
 	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
