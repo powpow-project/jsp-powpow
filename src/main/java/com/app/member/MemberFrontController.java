@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
 import com.app.member.controller.MemberBuyerAccountFindController;
+import com.app.member.controller.MemberBuyerIdFindCompleteController;
 import com.app.member.controller.MemberBuyerJoinCompleteController;
 import com.app.member.controller.MemberBuyerJoinController;
 import com.app.member.controller.MemberBuyerJoinOkController;
@@ -22,6 +23,7 @@ import com.app.member.controller.MemberJoinChoiceController;
 import com.app.member.controller.MemberLoginController;
 import com.app.member.controller.MemberLogoutController;
 import com.app.member.controller.MemberSellerAccountFindController;
+import com.app.member.controller.MemberSellerIdFindCompleteController;
 import com.app.member.controller.MemberSellerJoinCompleteController;
 import com.app.member.controller.MemberSellerJoinController;
 import com.app.member.controller.MemberSellerJoinOkController;
@@ -29,7 +31,6 @@ import com.app.member.controller.MemberSellerLoginOkController;
 import com.app.member.controller.MemberSellerPhoneController;
 import com.app.member.controller.MemberSellerUpdateController;
 import com.app.member.controller.MemberSellerUpdateOkController;
-import com.app.member.controller.MemberSmsController;
 
 public class MemberFrontController extends HttpServlet{
 	@Override
@@ -65,11 +66,19 @@ public class MemberFrontController extends HttpServlet{
 //		구매자 선택 후 아이디/비밀번호 찾기 페이지
 		}else if(target.equals("buyer-account-find")) {
 			result = new MemberBuyerAccountFindController().execute(req, resp);	
+
+//		구매자 아이디 찾기 완료 페이지
+		}else if(target.equals("buyer-id-find-complete")) {
+			result = new MemberBuyerIdFindCompleteController().execute(req, resp);	
 			
 //		판매자 선택 후 아이디/비밀번호 찾기 페이지
 		}else if(target.equals("seller-account-find")) {
-			result = new MemberSellerAccountFindController().execute(req, resp);		
-	        
+			result = new MemberSellerAccountFindController().execute(req, resp);	
+			
+//		판매자 아이디 찾기 완료 페이지
+		}else if(target.equals("seller-id-find-complete")) {
+			result = new MemberSellerIdFindCompleteController().execute(req, resp);	    
+			
 //		구매자 로그인 완료 페이지
 		}else if(target.equals("buyer-login-ok")) {
 			result = new MemberBuyerLoginOkController().execute(req, resp);	
@@ -81,10 +90,6 @@ public class MemberFrontController extends HttpServlet{
 //		구매자,판매자 로그아웃 페이지		
 		}else if(target.equals("logout")) {
 			result = new MemberLogoutController().execute(req, resp);
-			
-//		인증번호 사용 (구매자,판매자 - 회원가입 전, 아이디 찾을 때, 비밀번호 재 설정할 때)
-		}else if(target.equals("sms")) {
-			result = new MemberSmsController().execute(req, resp);
 		
 //		구매자 회원가입 페이지		
 		}else if(target.equals("buyer-join")) {

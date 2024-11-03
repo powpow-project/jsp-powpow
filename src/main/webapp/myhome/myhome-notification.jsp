@@ -8,7 +8,7 @@
 <title>마이홈 알림설정</title>
 <link rel="stylesheet"
 	href="../assets/css/myhome/myhome-notification.css">
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
@@ -84,8 +84,7 @@
 	</div>
 	<div id="sub">
 		<div class="main-sub h1">나의 정보</div>
-		<span class="sub-sub"> <a href="./myhome-list.myhome"
-			class="h4">프로필</a>
+		<span class="sub-sub"> <a href="./myhome-list.myhome" class="h4">프로필</a>
 			<p>|</p> <a href="./likes-list.myhome" class="h4">좋아요</a>
 			<p>|</p> <a href="./notification.myhome" class="current-category h4">알림설정</a>
 			<p>|</p> <a href="./password-update.myhome" class="h4">비밀번호 변경</a>

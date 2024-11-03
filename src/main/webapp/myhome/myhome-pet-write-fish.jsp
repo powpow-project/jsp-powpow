@@ -42,8 +42,7 @@
 				<div class="menu-container">
 					<ul class="menu-wrap h4">
 						<li class="menu"><a href="../product/main.product">스토어</a></li>
-						<li class="menu"><a
-							href="../community/community-main.community">커뮤니티</a></li>
+						<li class="menu"><a href="../community/community-main.community">커뮤니티</a></li>
 						<li class="menu"><a href="../list.myhome">마이홈</a></li>
 						<li class="menu"><a href="#">이벤트</a></li>
 					</ul>
@@ -101,8 +100,10 @@
 			</div>
 			<div class="title h5">
 				<span class="pre-title">기본사항*</span> <label for="petName">이름</label>
-				<label for="petBreed">품종</label> <label for="petBirth">생일</label> <label
-					for="petWeight">몸무게(kg)</label> <label for="petVet">동물병원</label>
+				<label for="petBreed">품종</label> <label for="petBirth">생일</label> 
+				<label for="petWeight">몸무게(kg)</label> 
+				<label for="petVet">동물병원</label> 
+				<label for="petGender">성별</label>
 			</div>
 			<div class="input-wrap">
 				<input class="input" id="petName" type="text" name="petName"
@@ -119,68 +120,75 @@
 				<p>
 					<input class="input" name="petVet" type="text" placeholder="병원명">
 				</p>
+				<label class="gender"> 
+					<input type="radio" name="petGender" value="female">
+						<p>여아</p> 
+					<input type="radio" name="petGender" value="male">
+						<p>남아</p>
+				</label>
 			</div>
 		</div>
 		<p class="message h7">*아래 내용을 사실과 다르게 기재한 경우, 약관에 따라 서비스 이용이 거부될 수
 			있습니다.</p>
-		<footer>
-			<div class="footer-container">
-				<div class="footer-section">
-					<h3>고객센터 &gt;</h3>
+	</form>
+	<footer>
+		<div class="footer-container">
+			<div class="footer-section">
+				<h3>고객센터 &gt;</h3>
+				<p>
+					<span class="highlight">0000-0000</span> <span>09:00~18:00</span>
+				</p>
+				<ul class="custom-list">
+					<li>평일: 전체 문의 상담</li>
+					<li>토요일, 공휴일: 포포 배송 주문건 상담</li>
+					<li>일요일: 휴무</li>
+				</ul>
+			</div>
+
+			<div class="footer-section">
+				<ul>
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">채용정보</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보 처리방침</a></li>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#">안전거래센터</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-section">
+				<ul>
+					<li><a href="#">입점신청</a></li>
+					<li><a href="#">제휴/광고 문의</a></li>
+					<li><a href="#">POWPOW 신고센터</a></li>
+					<li><a href="#">파트너 개인정보 처리방침</a></li>
+					<li><a href="#">상품권 소개</a></li>
+					<li><a href="#">고객의 소리</a></li>
+				</ul>
+			</div>
+
+			<div class="footer">
+				<div class="footer-section legal">
+					<p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로 146,
+						3층 4층</p>
 					<p>
-						<span class="highlight">0000-0000</span> <span>09:00~18:00</span>
+						contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span>
 					</p>
-					<ul class="custom-list">
-						<li>평일: 전체 문의 상담</li>
-						<li>토요일, 공휴일: 포포 배송 주문건 상담</li>
-						<li>일요일: 휴무</li>
-					</ul>
+					<p>통신판매업신고번호 제2024-서울강남-0000호</p>
 				</div>
 
-				<div class="footer-section">
-					<ul>
-						<li><a href="#">회사소개</a></li>
-						<li><a href="#">채용정보</a></li>
-						<li><a href="#">이용약관</a></li>
-						<li><a href="#">개인정보 처리방침</a></li>
-						<li><a href="#">공지사항</a></li>
-						<li><a href="#">안전거래센터</a></li>
-					</ul>
+				<div class="footer-section legal2">
+					<p>(주)포포는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을
+						지지 않습니다.</p>
+					<p>단, (주) 포포가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.</p>
 				</div>
 
-				<div class="footer-section">
-					<ul>
-						<li><a href="#">입점신청</a></li>
-						<li><a href="#">제휴/광고 문의</a></li>
-						<li><a href="#">POWPOW 신고센터</a></li>
-						<li><a href="#">파트너 개인정보 처리방침</a></li>
-						<li><a href="#">상품권 소개</a></li>
-						<li><a href="#">고객의 소리</a></li>
-					</ul>
-				</div>
-
-				<div class="footer">
-					<div class="footer-section legal">
-						<p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로
-							146, 3층 4층</p>
-						<p>
-							contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span>
-						</p>
-						<p>통신판매업신고번호 제2024-서울강남-0000호</p>
-					</div>
-
-					<div class="footer-section legal2">
-						<p>(주)포포는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을
-							지지 않습니다.</p>
-						<p>단, (주) 포포가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.</p>
-					</div>
-
-					<div class="footer-section legal3">
-						<p>Copyright 2024. powpow, Co., Ltd. All rights reserved.</p>
-					</div>
+				<div class="footer-section legal3">
+					<p>Copyright 2024. powpow, Co., Ltd. All rights reserved.</p>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 </body>
 <script src="../assets/js/myhome/myhome-pet-write-fish.js">
 	

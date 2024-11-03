@@ -36,12 +36,14 @@ public class MyhomePetListController implements Action {
 		req.setAttribute("pets", pets);
 //     	System.out.println(pets);
 		
-		if(pets != null){
-			result.setPath("../myhome/myhome-pet-list.jsp");
-		}else {
-			result.setPath("../myhome/myhome-no-pet.jsp");
-		}
+//		if(pets != null){
+//			result.setPath("../myhome/myhome-pet-list.jsp");
+//		}else {
+//			result.setPath("../myhome/myhome-no-pet.jsp");
+//		}
 //		
+		result.setPath("../myhome/myhome-pet-list.jsp");
+		
 		return result;
 	}
 

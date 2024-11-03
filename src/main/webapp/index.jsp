@@ -38,7 +38,7 @@
 							<li class="menu"><a href="./product/main.product">스토어</a></li>
 							<li class="menu"><a
 								href="./community/community-main.community">커뮤니티</a></li>
-							<li class="menu"><a href="./list.myhome">마이홈</a></li>
+							<li class="menu"><a href="./myhome/list.myhome">마이홈</a></li>
 							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
 						<div id="sector"></div>
@@ -62,7 +62,7 @@
 							<ul>
 								<li class="sub-menu"><a href="./myhome/list.myhome">나의
 										정보</a></li>
-								<li class="sub-menu"><a href="./myhome/pet-list.myhome">반려동물
+								<li class="sub-menu"><a href="./myhome/no-pet.myhome">반려동물
 										정보</a></li>
 								<li class="sub-menu"><a
 									href="./myhome/shipping-list.myhome">나의 쇼핑</a></li>

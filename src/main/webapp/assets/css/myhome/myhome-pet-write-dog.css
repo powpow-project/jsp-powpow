@@ -1,154 +1,151 @@
 @charset "UTF-8";
 
-    /* contents */
-    #submit-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 67px;
-        width: 89px;
-        height: 42px;
-        background-color: #1c4da0;
-        border-radius: 20px;
-        color: white;
-        margin-left: 910px;
-    }
-	 #submit-button a{
-    	color: #ffffff;
-    }
-    
-    #mydog {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-    }
-    
-         #profilePic{
-         width : 120px;
-         height : 120px;
-         border : solid 1px #333;
-         background-repeat : no-repeat;
-          background-size: cover;
-      }
+/* contents */
+#submit-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 67px;
+	width: 89px;
+	height: 42px;
+	background-color: #1c4da0;
+	border-radius: 20px;
+	color: white;
+	margin-left: 910px;
+}
 
-    .card {
-        width: 270px;
-        height: 430px;
-        background-color: white;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+#submit-button a {
+	color: #ffffff;
+}
 
-    input[type="file"] {
-        display: none;
-    }
+#mydog {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
 
-    .profile-pic {
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
+#profilePic {
+	width: 120px;
+	height: 120px;
+	border: solid 1px #333;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-    .profile-pic img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-    }
+.card {
+	width: 270px;
+	height: 430px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
-    .name {
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
+input[type="file"] {
+	display: none;
+}
 
-    .edit-button {
-        background-color: #1c4da0;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        width: 96px;
-        height: 32px;
-        padding-top:5px;
-        padding-left:15px;
-    }
+.profile-pic {
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
 
-    .pre-title {
-        font-weight: bold;
-    }
+.profile-pic img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
 
-     .title {
-        flex-direction: column;
-        margin-left: 60px;
-        font-weight: bold;
-    }
+.name {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
 
-    .title label {
-    display:block;
-        padding-top: 30px;
-    }
-    
+.edit-button {
+	background-color: #1c4da0;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	width: 96px;
+	height: 32px;
+	padding-top: 5px;
+	padding-left: 15px;
+}
 
-     .input-wrap {
-        margin-top: 30px;
-        margin-left: 58px;
-    }
+.pre-title {
+	font-weight: bold;
+}
 
-    .input-wrap input {
-        border-radius: 20px;
-        height: 30px;
-        padding-left: 26px;
-        margin-top: 20px;
-    }
+.title {
+	flex-direction: column;
+	margin-left: 60px;
+	font-weight: bold;
+}
 
-    .birthday {
-        width: 285px;
-        padding-right: 26px;
-    }
+.title label {
+	display: block;
+	padding-top: 30px;
+}
 
-    .input {
-        display: flex;
-        width: 285px;
-    }
+.input-wrap {
+	margin-top: 30px;
+	margin-left: 58px;
+}
 
-    .weight input {
-        width: 285px;
-        flex-direction: row;
-    }
+.input-wrap input {
+	border-radius: 20px;
+	height: 30px;
+	padding-left: 26px;
+	margin-top: 20px;
+}
 
+.birthday {
+	width: 285px;
+	padding-right: 26px;
+}
 
-    .option {
-        display: flex;
-        margin: 0 auto;
-    }
+.input {
+	display: flex;
+	width: 285px;
+}
 
-    .option p {
-        margin-top: 25px;
-    }
+.weight input {
+	width: 285px;
+	flex-direction: row;
+}
 
-    #mydog button {
-        padding: 10px 15px;
-        background-color: #1c4da0;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-    }
+.option {
+	display: flex;
+	margin: 0 auto;
+}
 
-    .message {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 400px;
-        margin-bottom:187px;
-    }
+.option p {
+	margin-top: 25px;
+}
 
-   
+#mydog button {
+	padding: 10px 15px;
+	background-color: #1c4da0;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.message {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 400px;
+	margin-bottom: 187px;
+}
