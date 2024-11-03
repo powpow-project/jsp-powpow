@@ -42,8 +42,7 @@
 				<div class="menu-container">
 					<ul class="menu-wrap h4">
 						<li class="menu"><a href="../product/main.product">스토어</a></li>
-						<li class="menu"><a
-							href="../community/community-main.community">커뮤니티</a></li>
+						<li class="menu"><a href="../community/community-main.community">커뮤니티</a></li>
 						<li class="menu"><a href="../list.myhome">마이홈</a></li>
 						<li class="menu"><a href="#">이벤트</a></li>
 					</ul>
@@ -121,10 +120,11 @@
 				<p>
 					<input class="input" name="petVet" type="text" placeholder="병원명">
 				</p>
-				<label class="gender"> <input type="radio" name="petGender"
-					value="female">
-					<p>여아</p> <input type="radio" name="petGender" value="male">
-					<p>남아</p>
+				<label class="gender"> 
+					<input type="radio" name="petGender" value="female">
+						<p>여아</p> 
+					<input type="radio" name="petGender" value="male">
+						<p>남아</p>
 				</label>
 			</div>
 		</div>

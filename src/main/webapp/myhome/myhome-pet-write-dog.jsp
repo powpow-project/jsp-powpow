@@ -12,28 +12,8 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style type="text/css">
-#profilePic
- 
-	
-background-image
-:
- 
-url
-(
-'../
-assets
-/
-images
-/
-myhome
-/
-default-dog
-.svg
-'
-)
-;
-
-
+#profilePic{	
+background-image:url('../assets/images/myhome/default-dog.svg');
 }
 </style>
 <body>
