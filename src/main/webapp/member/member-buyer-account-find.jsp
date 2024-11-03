@@ -27,8 +27,8 @@
 <div class="main-content id" class="id">
           <div class="input">
             <div>
-              <p>이름</p>
-              <input class="inputbutton" type="text" name="id" placeholder="이름">
+              <p>닉네임</p>
+              <input class="inputbutton" type="text" name="id" placeholder="별명">
             </div>
 			<div>
 			    <p>휴대폰 번호</p>
@@ -68,7 +68,7 @@
 			    </div>
 			</div>
           </div>
-		     <form id="authentication-form" action="seller-find.member" method="post">
+		     <form id="authentication-form" action="buyer-id-find-complete.member" method="post">
 		      <input type="hidden" name="phone" value="${param.phone}">
 		      <button type="button" class="next-button">다음</button>
 		    </form>
