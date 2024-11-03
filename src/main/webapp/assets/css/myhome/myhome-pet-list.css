@@ -33,7 +33,6 @@ body {
 #animals {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 187px;
 }
 
 #submit-button {
@@ -53,9 +52,9 @@ body {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	margin: 0 auto;
 	margin-right: 50px;
 	margin-top: 60px;
+	margin-bottom: 187px;
 }
 
 .star {
@@ -89,6 +88,9 @@ input[type="file"] {
 	align-items: center;
 	margin-bottom: 25px;
 	border: 1px solid #131313;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
 }
 
 .profile-pic img {
@@ -119,4 +121,9 @@ input[type="file"] {
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
+}
+
+.button-group{
+	display:flex;
+	flex-direction: column;
 }
