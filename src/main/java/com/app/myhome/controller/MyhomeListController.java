@@ -33,7 +33,6 @@ public class MyhomeListController implements Action {
 //		MemberVO member = memberDAO.selectMemberByEmail(memberEmail);
 		
 //		req.setAttribute("member", member);
-		result.setRedirect(true);
 		result.setPath("../myhome/myhome-list.jsp");
 
 		return result;
