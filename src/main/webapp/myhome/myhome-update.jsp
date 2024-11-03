@@ -91,13 +91,14 @@
 		</span>
 	</div>
 	<div id="page-content">
-		<a href="./list.myhome"><button onClick="alert('수정이 완료되었습니다.')"
+		<a href="./list.myhome"><button onClick="alert('완료되었습니다.')"
 				class="complete">완료</button></a>
 		<div id="profile-edit">
 			<div class="profile-box">
 				<img class="default-profile-image"
 					src="../assets/images/myhome/${member.memberImage}" alt="프로필 사진">
-				<span class="id"><c:out value="${member.memberNickname}" />name</span>
+				<span class="id">
+				<c:out value="${member.memberNickname}" /></span>
 				<br>
 				<hr>
 				<br>

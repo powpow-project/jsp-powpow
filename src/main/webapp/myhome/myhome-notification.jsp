@@ -8,7 +8,7 @@
 <title>마이홈 알림설정</title>
 <link rel="stylesheet"
 	href="../assets/css/myhome/myhome-notification.css">
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>

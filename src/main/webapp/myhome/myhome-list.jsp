@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>나의 프로필</title>
 <link rel="stylesheet" href="../assets/css/myhome/myhome-list.css">
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
@@ -235,5 +235,6 @@
 	</footer>
 </body>
 <script src="../assets/js/myhome/myhome-list.js">
+	
 </script>
 </html>

@@ -120,7 +120,7 @@
 				<label class="option"> <input name="petNeuter" type="radio"
 					value="yes">
 					<p>했어요</p> <input type="radio" name="petNeuter" value="no">
-				<p>안했어요</p>
+					<p>안했어요</p>
 				</label>
 				<p>
 					<input class="input" name="petVet" type="text" placeholder="병원명">

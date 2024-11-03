@@ -12,8 +12,28 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style type="text/css">
-#profilePic 
-	background-image: url('../assets/images/myhome/default-dog.svg');
+#profilePic
+ 
+	
+background-image
+:
+ 
+url
+(
+'../
+assets
+/
+images
+/
+myhome
+/
+default-dog
+.svg
+'
+)
+;
+
+
 }
 </style>
 <body>
@@ -107,10 +127,11 @@
 			</div>
 			<div class="input-wrap">
 				<input class="input" id="petName" type="text" name="petName"
-					placeholder="포포"> <label class="option"> <input
-					type="radio" name="petGender" value="female">
-				<p>여아</p> <input type="radio" name="petGender" value="male">
-				<p>남아</p>
+					placeholder="포포"> <label class="option"> 
+				<input type="radio" name="petGender" value="female">
+					<p>여아</p> 
+				<input type="radio" name="petGender" value="male">
+					<p>남아</p>
 				</label> <input class="input" name="petBreed" type="text"
 					placeholder="예) 시츄">
 				<p>
@@ -119,8 +140,8 @@
 				<label class="weight"><input name="petWeight" type="number"></label>
 				<label class="option"> <input name="petNeuter" type="radio"
 					value="yes">
-				<p>했어요</p> <input type="radio" name="petNeuter" value="no">
-				<p>안했어요</p>
+					<p>했어요</p> <input type="radio" name="petNeuter" value="no">
+					<p>안했어요</p>
 				</label>
 				<p>
 					<input class="input" name="petVet" type="text" placeholder="병원명">
@@ -190,5 +211,6 @@
 	</footer>
 </body>
 <script src="../assets/js/myhome/myhome-pet-write-dog.js">
+	
 </script>
 </html>
