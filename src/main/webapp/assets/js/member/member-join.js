@@ -5,7 +5,7 @@ document.querySelector('.next-button').addEventListener('click', () => {
   if (selectedUser) {
     // 선택된 값에 따라 페이지 이동
     if (selectedUser.value === 'A') {
-      window.location.href = 'buyer-join.member'; // POWPOW 회원 페이지
+      window.location.href = 'buyer-phone.member'; // POWPOW 회원 페이지
     } else if (selectedUser.value === 'B') {
       window.location.href = 'seller-phone.member'; // POWPOW 판매자 페이지
     }

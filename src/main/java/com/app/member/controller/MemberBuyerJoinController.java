@@ -15,7 +15,11 @@ public class MemberBuyerJoinController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
+	    Result result = new Result();
+	    String userPhoneNumber = req.getParameter("phone");
+	    
+	    req.setAttribute("userPhoneNumber", userPhoneNumber);
+	    
 		result.setPath("../member/member-buyer-join.jsp");
 		
 		return result;
