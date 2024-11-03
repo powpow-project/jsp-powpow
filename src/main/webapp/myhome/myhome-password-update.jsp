@@ -8,7 +8,7 @@
 <title>마이홈 비밀번호 변경</title>
 <link rel="stylesheet"
 	href="../assets/css/myhome/myhome-password-update.css">
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
@@ -97,20 +97,20 @@
 			<p class="password-edit h6">
 				현재 비밀번호<span class="sub-red">*</span>
 			</p>
-			<input placeholder="사용 중인 비밀번호를 입력해주세요" />
+			<input type="password" placeholder="사용 중인 비밀번호를 입력해주세요" />
 		</div>
 		<div class="new-password">
 			<p class="password-edit h6">
 				새로운 비밀번호<span class="sub-red">*</span>
 			</p>
-			<input placeholder="새로운 비밀번호를 입력해주세요" />
-			<p class="h6 gray500">*영문, 숫자를 포함해 8자 이상으로 만들어주세요.</p>
+			<input type="password" placeholder="새로운 비밀번호를 입력해주세요" />
+			<p class="h6 gray500">*영문, 숫자와 특수문자를 포함해 8자 이상으로 만들어주세요.</p>
 		</div>
 		<div class="check-password">
 			<p class="password-edit h6">
 				새로운 비밀번호 확인<span class="sub-red">*</span>
 			</p>
-			<input placeholder="다시 새로운 비밀번호를 입력해주세요" />
+			<input type="password" placeholder="다시 새로운 비밀번호를 입력해주세요" />
 		</div>
 		<a href="./password-update-ok.myhome"><button class="h6">완료</button></a>
 	</div>

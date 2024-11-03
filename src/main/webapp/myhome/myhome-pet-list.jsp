@@ -122,7 +122,7 @@
 				<div class="name">
 					<c:out value="${pet.petName}" />
 				</div>
-				<div class="pet-details">
+				<%-- <div class="pet-details">
 					<p>
 						<strong>성별:</strong>
 						<c:out value="${pet.petGender}" />
@@ -148,7 +148,7 @@
 						<strong>동물병원:</strong>
 						<c:out value="${pet.petVet}" />
 					</p>
-				</div>
+				</div> --%>
 				<div class="button-group">
 					<a href="./pet-update.myhome"><button class="edit-button">편집</button></a>
 					<a href="./pet-delete-ok.myhome"><button class="edit-button">삭제</button></a>

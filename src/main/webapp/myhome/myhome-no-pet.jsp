@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이홈 추가된 반려동물 없음</title>
 <link rel="stylesheet" href="../assets/css/myhome/myhome-no-pet.css">
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
