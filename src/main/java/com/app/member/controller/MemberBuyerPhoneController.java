@@ -35,7 +35,6 @@ public class MemberBuyerPhoneController implements Action {
 	          req.setAttribute("code", random);
 	          System.out.println(random);
 
-	         // 4 params(to, from, type, text) are mandatory. must be filled
 	         HashMap<String, String> params = new HashMap<String, String>();
 	         params.put("to", phone);
 	         params.put("from", "01040685166");

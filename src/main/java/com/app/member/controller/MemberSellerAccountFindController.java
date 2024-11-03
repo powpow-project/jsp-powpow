@@ -35,13 +35,12 @@ public class MemberSellerAccountFindController implements Action {
 		    req.setAttribute("code", random);
 		    System.out.println(random);
 
-		   // 4 params(to, from, type, text) are mandatory. must be filled
 		   HashMap<String, String> params = new HashMap<String, String>();
 		   params.put("to", phone);
 		   params.put("from", "01040685166");
 		   params.put("type", "SMS");
 		   params.put("text", "[powpow] 인증번호 "+ random +" 를 입력하세요.");
-		   params.put("app_version", "text app 1.2"); // application name and version
+		   params.put("app_version", "text app 1.2"); 
 
 		   try {
 		      JSONObject obj = (JSONObject) coolsms.send(params);
