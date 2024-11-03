@@ -55,8 +55,8 @@
   flex-direction: row;
 }
 .active {
-    background-color: gray; /* 활성화된 버튼의 배경색 */
-    color: white;           /* 텍스트 색상 */
+    background-color: gray; 
+    color: white;        
 }
 
 /* 아이디 찾기 내용 */
@@ -79,8 +79,8 @@ p {
 }
 
 .inputbutton:focus {
-  border: 0.5px solid transparent; /* 기존 테두리는 투명하게 */
-  outline: 2px solid #828282; /* 포커스 시 outline 추가 */
+  border: 0.5px solid transparent; 
+  outline: 2px solid #828282; 
 }
 
 .input {
@@ -92,27 +92,27 @@ p {
 
 
 .input-container {
-  position: relative; /* 자식 요소의 절대 위치 설정을 위한 상대 위치 */
-  width: 464px; /* 입력 필드 너비 설정 */
+  position: relative;
+  width: 464px;
 }
 
 .auth-button {
-  position: absolute; /* 절대 위치 */
-  right: 14px; /* 오른쪽으로 10px 떨어지게 */
-  top: 31px; /* 수직 중앙 정렬 */
-  transform: translateY(-50%); /* 수직 중앙 정렬을 위한 변환 */
+  position: absolute; 
+  right: 14px; 
+  top: 31px; 
+  transform: translateY(-50%);
   background-color: #ffffff;
-  padding: 8px 15px; /* 버튼의 패딩 */
-  color: #C83F3F; /* 글자 색상 */
-  border: none; /* 테두리 없음 */
-  cursor: pointer; /* 커서 포인터 */
+  padding: 8px 15px;
+  color: #C83F3F;
+  border: none; 
+  cursor: pointer; 
   font-size: 14px;
   line-height: 22px;
   font-weight: bold;
 }
 
  .active {
-  background-color: #828282; /* 활성화된 버튼 스타일 */
+  background-color: #828282; 
   color: #ffffff;
  }
 .auth-number-container {
@@ -136,22 +136,22 @@ p {
 
 input[type='radio'] {
   flex-shrink:0;
-  -webkit-appearance: none; /* 웹킷 브라우저에서 기본 스타일 제거*/
-  -moz-appearance: none; /* 모질라 브라우저에서 기본 스타일 제거*/ 
-  appearance: none; /*기본 브라우저에서 기본 스타일 제거*/
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none;
   width: 16px;
   height: 16px;
-  border: 1px solid #D9D9D9; /*체크되지 않았을 때의 테두리 색상*/
+  border: 1px solid #D9D9D9; 
   border-radius: 50%;
-  outline: none; /*focus 시에 나타나는 기본 스타일 제거*/
+  outline: none;
   cursor: pointer;
   margin: 0;
 }
 /* 체크 시 버튼 모양 스타일*/
 input[type='radio']:checked {
-  background-color: #113F8A; /*체크 시 내부 원 색상*/
-  border: 3px solid #fff; /*라인이 아닌, 라인과 원 사이 색상*/
-  box-shadow: 0 0 0 1px #113F8A; /*라인*/
+  background-color: #113F8A; 
+  border: 3px solid #fff; 
+  box-shadow: 0 0 0 1px #113F8A; 
 }
 
 label {

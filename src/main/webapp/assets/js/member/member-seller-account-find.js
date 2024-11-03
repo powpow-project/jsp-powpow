@@ -7,8 +7,8 @@ const main = document.querySelectorAll(".main-content");
 idBtn.classList.add("active");
 
 idBtn.addEventListener("click", () => {
-    main[0].style.display = "block"; // 아이디 관련 내용 표시
-    main[1].style.display = "none";  // 비밀번호 관련 내용 숨기기
+    main[0].style.display = "block";
+    main[1].style.display = "none"; 
 
     // 버튼의 활성 상태 변경
     idBtn.classList.add("active");
@@ -16,8 +16,8 @@ idBtn.addEventListener("click", () => {
 });
 
 passwordBtn.addEventListener("click", () => {
-    main[0].style.display = "none";  // 아이디 관련 내용 숨기기
-    main[1].style.display = "block"; // 비밀번호 관련 내용 표시
+    main[0].style.display = "none";  
+    main[1].style.display = "block";
 
     // 버튼의 활성 상태 변경
     passwordBtn.classList.add("active");
@@ -30,12 +30,12 @@ passwordBtn.addEventListener("click", () => {
 
 
 /*인증요청*/
-    const authButton = document.getElementById("request-auth"); // 인증 요청 버튼
-    const authNumberContainer = document.getElementById("authNumberContainer"); // 인증번호 입력란
-    const confirmButton = document.querySelector(".confirm-button"); // 확인 버튼
-    const authNumberInput = document.querySelector("input[name='authNumber']"); // 인증번호 입력란
-    const phoneResult = document.getElementById("phone-result"); // 안내 문구
-    const phoneInput = document.querySelector("input[name='phone']"); // 휴대전화 입력란
+    const authButton = document.getElementById("request-auth"); 
+    const authNumberContainer = document.getElementById("authNumberContainer"); 
+    const confirmButton = document.querySelector(".confirm-button"); 
+    const authNumberInput = document.querySelector("input[name='authNumber']"); 
+    const phoneResult = document.getElementById("phone-result"); 
+    const phoneInput = document.querySelector("input[name='phone']"); 
 	const submitButton = document.querySelector(".next-button");
 	const form = document.querySelector("form");
 	const authenticationForm = document.querySelector("#authentication-form");
