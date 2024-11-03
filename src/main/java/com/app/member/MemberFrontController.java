@@ -29,7 +29,6 @@ import com.app.member.controller.MemberSellerLoginOkController;
 import com.app.member.controller.MemberSellerPhoneController;
 import com.app.member.controller.MemberSellerUpdateController;
 import com.app.member.controller.MemberSellerUpdateOkController;
-import com.app.member.controller.MemberSmsController;
 
 public class MemberFrontController extends HttpServlet{
 	@Override
@@ -81,10 +80,6 @@ public class MemberFrontController extends HttpServlet{
 //		구매자,판매자 로그아웃 페이지		
 		}else if(target.equals("logout")) {
 			result = new MemberLogoutController().execute(req, resp);
-			
-//		인증번호 사용 (구매자,판매자 - 회원가입 전, 아이디 찾을 때, 비밀번호 재 설정할 때)
-		}else if(target.equals("sms")) {
-			result = new MemberSmsController().execute(req, resp);
 		
 //		구매자 회원가입 페이지		
 		}else if(target.equals("buyer-join")) {

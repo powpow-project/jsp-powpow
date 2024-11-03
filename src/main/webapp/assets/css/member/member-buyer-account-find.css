@@ -116,8 +116,7 @@ p {
   color: #ffffff;
  }
 .auth-number-container {
-  display: none; /* 기본적으로 숨김 */
-  margin-top: 10px; /* 간격 추가 */
+  margin-top: 10px;
  }
 
 
