@@ -91,7 +91,7 @@
                 <div class="form-group">
                     <label for="content" class="label-content">내용</label>
                     <textarea id="content" name="adminNoticeContent" class="content-title"
-                        placeholder="내용을 입력해주세요." maxlength="2000"></textarea>
+                        placeholder="내용을 입력해주세요." maxlength="700"></textarea>
                 </div>
             </div>
             <div class="button-group">

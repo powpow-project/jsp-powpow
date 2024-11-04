@@ -32,13 +32,12 @@
 		WHERE ID = #{id}
 	</update>
 	
-	<select id="selectPetId" resultType="PetDTO">
-		SELECT ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, PET_GENDER, PET_BREED, PET_BIRTH, PET_VET, PET_WEIGHT, PET_NEUTER
-		FROM TBL_PET TBP
-		JOIN TBL_MEMBER TBM
-		ON TBP.MEMBER_ID = TBM.ID
-		AND TBM.ID = #{memberId}
-		ORDER BY TBP.ID
+	<select id="selectPetId" parameterType="PetVO" resultType="PetVO">
+		SELECT ID, MEMBER_ID, PET_KIND, PET_IMAGE, PET_NAME, 
+		PET_GENDER, PET_BREED, PET_BIRTH, PET_VET,
+		PET_WEIGHT, PET_NEUTER   
+		FROM TBL_PET   
+		WHERE MEMBER_ID = ${memberId} AND ID = ${id}
 	</select>
 		
 	<delete  id="deletePet">

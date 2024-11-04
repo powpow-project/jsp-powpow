@@ -44,9 +44,7 @@ public class MemberFrontController extends HttpServlet{
 		
 //		로그인페이지!!
 		if(target.equals("login")) {
-			result = new Result();
-			result.setPath("../member/member-login.jsp");
-	        
+			result = new MemberLoginController().execute(req, resp);
 //		회원가입 버튼 누르면 이동 페이지(구매자,판매자 선택)
 		}else if(target.equals("join-choice")) {
 			result = new MemberJoinChoiceController().execute(req, resp);	

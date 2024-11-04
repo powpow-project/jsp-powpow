@@ -95,7 +95,7 @@
 			<div class="profile-box">
 				<img class="default-profile-image"
 					src="../assets/images/member/${member.memberImage}"> <span
-					class="id"><c:out value="${member.memberNickname}" />name</span> <a
+					class="id"><c:out value="${member.memberNickname}" /></span> <a
 					id="uploadButton" href="./update.myhome"><button>프로필
 						수정하기</button></a> <br>
 				<hr>
@@ -148,28 +148,20 @@
 			<div class="edit-info">
 				<div>
 					<label class="edit-category1">닉네임</label>
-					<c:forEach var="member" items="${member}">
-						<span><c:out value="${member.memberNickname}">name</c:out></span>
-					</c:forEach>
+					<span><c:out value="${member.memberNickname}"></c:out></span>
 				</div>
 				<div>
 					<label class="edit-category2">아이디 (이메일)</label>
-					<c:forEach var="member" items="${member}">
-						<c:out value="${member.memberEmail}">email</c:out>
-					</c:forEach>
+					<c:out value="${member.memberEmail}"></c:out>
 				</div>
 				<div>
 					<label class="edit-category3">휴대폰번호</label>
-					<c:forEach var="member" items="${member}">
-						<c:out value="${member.memberPhone}">010-0000-0000</c:out>
-					</c:forEach>
+					<c:out value="${member.memberPhone}"></c:out>
 				</div>
 				<div class="group-category4">
 					<label class="edit-category4">주소</label>
 					<div class="input-container">
-						<c:forEach var="member" items="${member}">
-							<c:out value="${member.memberAddress}">address</c:out>
-						</c:forEach>
+						<c:out value="${member.memberAddress}"></c:out>
 					</div>
 				</div>
 				<a class="unsubscribe-message" href="./delete-ok.myhome">*즉시탈퇴 >

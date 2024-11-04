@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
-	<div class="header-container">
+	<div class="header-container"> 
 		<div id="header-wrap">
 			<div id="border">
 				<div id="nav">
@@ -90,55 +90,69 @@
 			<p>|</p> <a href="./password-update.myhome" class="h4">비밀번호 변경</a>
 		</span>
 	</div>
+	
+	
 	<div id="page-content">
-		<a href="./list.myhome"><button onClick="alert('완료되었습니다.')"
-				class="complete">완료</button></a>
-		<div id="profile-edit">
-			<div class="profile-box">
-				<img class="default-profile-image"
-					src="../assets/images/myhome/${member.memberImage}" alt="프로필 사진">
-				<span class="id">
-				<c:out value="${member.memberNickname}" /></span>
-				<br>
-				<hr>
-				<br>
-				<div class="imageupload-button">
-					<button id="uploadButton">이미지 편집</button>
-					<input type="file" id="fileInput" style="display: none;"
-						accept="images/*">
+		<button type="button" class="complete">완료</button>
+		<form action="./update-ok.myhome" method="post" enctype="multipart/form-data">
+			<div id="profile-edit">
+				<div class="profile-box">
+					<img class="default-profile-image"
+						src="../assets/images/member/${member.memberImage}" alt="프로필 사진">
+					<span class="id">
+					<c:out value="${member.memberNickname}" /></span>
+					<br>
+					<hr>
+					<br>
+					<div class="imageupload-button">
+						<button type="button" id="uploadButton">이미지 편집</button>
+						<input type="file" id="fileInput" name="profile" style="display: none;" accept="images/*">
+					</div>
 				</div>
-			</div>
-			<div class="edit-info">
-				<div>
-					<label class="edit-category1">닉네임</label> <input
-						class="edit-member" type="text"
-						placeholder="${member.memberNickname}">
-				</div>
-				<div>
-					<label class="edit-category2">아이디 (이메일)</label>
-					<c:out value="${member.memberEmail}"></c:out>
-				</div>
-				<div>
-					<label class="edit-category3">휴대폰번호</label> <input
-						class="edit-member" type="text"
-						placeholder="${member.memberPhone}">
-				</div>
-				<div class="group-category4">
-					<label class="edit-category4">주소</label>
-					<div class="input-container">
-						<input class="inputbutton" type="text" name="address"
-							id="sample6_postcode" placeholder="우편번호">
-						<button class="auth-button" type="button"
-							onclick="sample6_execDaumPostcode()" value="우편번호 찾기">우편번호</button>
-						<input class="inputbutton" type="text" name="address"
-							id="sample6_address" placeholder="기본주소"> <input
-							class="inputbutton" type="text" name="address"
-							id="sample6_detailAddress" placeholder="상세주소">
+				<div class="edit-info">
+					<div>
+						<label class="edit-category1">닉네임</label> 
+						<input 
+							name="nickname"
+							value="${member.memberNickname}"
+							class="edit-member" type="text"
+							placeholder="${member.memberNickname}"
+						/>
+					</div>
+					<div>
+						<label class="edit-category2">아이디 (이메일)</label>
+						<c:out value="${member.memberEmail}"></c:out>
+					</div>
+					<div>
+						<label class="edit-category3">휴대폰번호</label> 
+						<input
+							name="phone"
+							value="${member.memberPhone}"
+							class="edit-member" type="text"
+							placeholder="${member.memberPhone}"
+						/>
+					</div>
+					<div class="group-category4">
+						<label class="edit-category4">주소</label>
+						<div class="input-container">
+							<input class="inputbutton" 
+								type="text" name="address"
+								id="sample6_postcode" placeholder="우편번호"
+							/>
+							<button class="auth-button" type="button"
+								onclick="sample6_execDaumPostcode()" value="우편번호 찾기">우편번호</button>
+							<input class="inputbutton" 
+								type="text" name="address"
+								id="sample6_address" placeholder="기본주소" value="${member.memberAddress}"
+							/> 
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
+	
+	
 	<footer>
 		<div class="footer-container">
 			<div class="footer-section">
@@ -195,8 +209,6 @@
 		</div>
 	</footer>
 </body>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="../assets/js/myhome/myhome-update.js">
-</script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="../assets/js/myhome/myhome-update.js"></script>
 </html>

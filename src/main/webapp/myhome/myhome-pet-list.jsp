@@ -12,6 +12,12 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
+	<c:if test="${empty pets}">
+		<script>
+			alert("펫을 등록해주세요 ^_^");
+			window.location.href = './no-pet.myhome';
+		</script>
+	</c:if>
 	<div class="header-container">
 		<div id="header-wrap">
 			<div id="border">
@@ -85,7 +91,7 @@
 	<div class="sub h1">
 		<p>반려동물 정보</p>
 	</div>
-	<a href="./pet-kind.myhome"><button id="submit-button">+추가등록하기</button></a>
+	<a href="./pet-kind.myhome"><button type="button" id="submit-button">+추가등록하기</button></a>
 	<%--    <c:choose>
     <c:when test="${empty pet}">
         <script>
@@ -108,25 +114,23 @@
         </div>
     </div> --%>
 		<div id="mydog">
-			<div class="card">
-				<img class="star" src="../assets/images/myhome/star.svg"
-					data-filled-src="../assets/images/myhome/star-select.svg"
-					alt="선택된 동물">
-						<div class="profile-pic" id="profilePic">
-							<c:forEach items="${pet}" var="pet">
-								<img id="profileImage" src="../assets/images/myhome/${pet.petImage}" alt="Profile Picture">
-							</c:forEach>
-						</div>
-						<div class="name">name
-							<c:forEach items="${pet}" var="pet">
-								<c:out value="${pet.petName}" />
-							</c:forEach>
-						</div>
-				<div class="button-group">
-					<a href="./pet-update.myhome"><button class="edit-button">편집</button></a>
-					<a href="./pet-delete-ok.myhome"><button class="edit-button">삭제</button></a>
+			<c:forEach items="${pets}" var="pet">
+				<div class="card">
+					<img class="star" src="../assets/images/myhome/star.svg"
+						data-filled-src="../assets/images/myhome/star-select.svg"
+						alt="선택된 동물">
+							<div class="profile-pic" id="profilePic">
+									<img id="profileImage" src="../assets/images/myhome/${pet.petImage}" alt="Profile Picture">
+							</div>
+							<div class="name">
+									<c:out value="${pet.petName}" />
+							</div>
+					<div class="button-group">
+						<a href="./pet-update.myhome?petId=${pet.id}"><button class="edit-button">편집</button></a>
+						<a href="./pet-delete-ok.myhome?petId=${pet.id}"><button class="edit-button">삭제</button></a>
+					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</div>
 	<%-- </c:otherwise>
 </c:choose> --%>

@@ -5,8 +5,7 @@ import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.app.dto.AdminCouponDTO;
-import com.app.dto.OrderDTO;
+import com.app.dto.PetDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.MemberVO;
 import com.app.vo.PetVO;
@@ -45,8 +44,8 @@ public SqlSession sqlSession;
     
     
     // pet info select by ID
-    public Optional<PetVO> selectPetId(Long id) {
-        return Optional.ofNullable(sqlSession.selectOne("myhome.selectPetId", id));
+    public Optional<PetVO> selectPetId(PetVO petVO) {
+        return Optional.ofNullable(sqlSession.selectOne("myhome.selectPetId", petVO));
     }
 
 	
