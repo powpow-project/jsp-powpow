@@ -132,7 +132,7 @@
 			        <div class="box2">
 			            <label><input type="radio" name="adminCouponDiscountRate" value="10" ${adminCoupon.adminCouponDiscountRate == 10 ? 'checked' : ''} /> 10%</label> 
 			            <label><input type="radio" name="adminCouponDiscountRate" value="20" ${adminCoupon.adminCouponDiscountRate == 20 ? 'checked' : ''} /> 20% </label> 
-			            <div>
+ 			            <div>
 			                <label><input type="radio" name="adminCouponDiscountRate" 
 			                value="custom" ${adminCoupon.adminCouponDiscountRate != 10 && adminCoupon.adminCouponDiscountRate != 20 ? 'checked' : ''} />직접입력</label>
 			                <input type="number" class="custom-discount" name="adminCouponDiscountRateCustom" 
