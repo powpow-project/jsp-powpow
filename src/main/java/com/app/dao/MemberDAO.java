@@ -1,19 +1,16 @@
 package com.app.dao;
 
 
-import javax.servlet.http.HttpSession;
-
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.app.dto.AdminNoticeDTO;
+import com.app.dto.MemberDTO;
 import com.app.mybatis.config.MyBatisConfig;
-import com.app.vo.BusinessVO;
 import com.app.vo.MemberVO;
-
 import com.app.vo.SellerVO;
 
 
@@ -31,7 +28,6 @@ public class MemberDAO {
 		sqlSession.insert("member.insertBuyer", memberVO);
 	}
 		
-	
 //	구매자 로그인
 	public String selectBuyer(MemberVO memberVO) {
 		return sqlSession.selectOne("member.selectBuyer", memberVO);
@@ -59,7 +55,6 @@ public class MemberDAO {
 		sqlSession.insert("member.insertSeller", sellerVO);
 	}
 	
-
 	
 //	판매자 로그인
 	public String selectSeller(SellerVO sellerVO) {
@@ -81,7 +76,7 @@ public class MemberDAO {
 	
 	
 //	구매자 이메일 찾기
-	public MemberVO findBuyerByEmail(String email) {
+	public Long findBuyerByEmail(String email) {
 		return sqlSession.selectOne("member.findBuyerByEmail", email);
 	}
 
@@ -90,11 +85,20 @@ public class MemberDAO {
 	public Optional<MemberVO> select(Long id) {
 		return Optional.ofNullable(sqlSession.selectOne("member.select", id));
 	}
+	
+	// 일반회원 전체 조회
+	public List<MemberVO> selectAll() {
+	    return sqlSession.selectList("member.selectAll");
+	}
 
-
-	// 진아 >>> 일반회원 전체 조회
-	public List<MemberVO> selectAllMembers() {
-	    return sqlSession.selectList("member.selectAllMembers");
+	// 검색 전체 조회
+	public List<MemberDTO> selectSearch(MemberDTO memberDTO) {
+	    return sqlSession.selectList("member.selectSearch", memberDTO);
+	}
+	
+	// 수신 동의
+	public void updateNotification(MemberVO memberVO) {
+		sqlSession.selectList("member.updateNotification", memberVO);
 	}
 	
 }

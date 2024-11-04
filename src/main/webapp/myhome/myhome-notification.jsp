@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +98,8 @@
 			<div class="toggle">
 				<ul class="set-alarm">
 					<li>
-						<p>이메일 알림</p> <input type="checkbox" id="toggle-checkbox1">
+						<p>이메일 알림</p> 
+						<input type="checkbox" id="toggle-checkbox1">
 						<label for="toggle-checkbox1" class="toggle-label1"></label>
 					</li>
 					<li>
@@ -107,7 +109,6 @@
 				</ul>
 			</div>
 		</div>
-		<script src="script.js"></script>
 		<span class="agree-marketing">*알림 수신 동의와 함께 개인정보 마케팅 활용에 동의하시게
 			됩니다.</span>
 	</div>
@@ -171,5 +172,30 @@
 	</footer>
 </body>
 <script src="../assets/js/myhome/myhome-notification.js">
+</script>
+<script type="text/javascript">
+
+	const emailToggle = document.querySelector(".toggle-label1");
+	const smsToggle = document.querySelector(".toggle-label2");
+	const emailToggleInput = document.querySelector("#toggle-checkbox1");
+	const smsToggleInput = document.querySelector("#toggle-checkbox2");
+	 
+	const notificationEmail = `${emailCheck}`;
+	const notificationSms = `${smsCheck}`;
+	console.log(notificationEmail)
+	console.log(notificationSms)
+	
+	emailToggleInput.checked = Number(notificationEmail) ? true : false;
+	smsToggleInput.checked = Number(notificationSms) ? true : false;
+	
+	emailToggle.addEventListener("click", () => {
+		window.location.href = './notification-email-ok.myhome';
+	})
+	
+	smsToggle.addEventListener("click", () => {
+		window.location.href = './notification-sms-ok.myhome';
+	})
+	
+
 </script>
 </html>

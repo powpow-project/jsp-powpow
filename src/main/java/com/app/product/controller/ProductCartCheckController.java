@@ -23,7 +23,7 @@ public class ProductCartCheckController implements Action {
 
 		// 회원 이메일 가져오기
 		String memberEmail = (String) session.getAttribute("memberEmail");
-		Long memberId = memberDAO.findBuyerByEmail(memberEmail).getId();
+		Long memberId = memberDAO.findBuyerByEmail(memberEmail);
 		
 		// 회원 이메일이 null인 경우 처리
 		if (memberId == null) {

@@ -11,29 +11,31 @@ import javax.servlet.http.HttpSession;
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.MemberDAO;
-import com.app.dao.MyhomeDAO;
 import com.app.vo.MemberVO;
 
-public class MyhomeUpdateController implements Action {
+public class MyhomeNotificationSmsOkController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-		MemberVO membrVO = new MemberVO();
 		MemberDAO memberDAO = new MemberDAO();
+		MemberVO memberVO = new MemberVO();
 		HttpSession session = req.getSession();
+		Long id = memberDAO.findBuyerByEmail((String)session.getAttribute("buyerEmail"));
+		Optional<MemberVO> findUser = memberDAO.select(id);
 		
-		String memberEmail = (String)session.getAttribute("buyerEmail");
-		
-		Long memberId = memberDAO.findBuyerByEmail(memberEmail);
-		Optional<MemberVO> findMember = memberDAO.select(memberId);
-		findMember.ifPresent((memberVO) -> {
-			System.out.println(memberVO);
-			req.setAttribute("member", memberVO);
+		findUser.ifPresent((user) -> {
+			memberVO.setId(user.getId());
+			memberVO.setMemberEmailCheck(user.isMemberEmailCheck());
+			memberVO.setMemberSms(user.isMemberSms() == '1' ? '0' : '1');
 		});
 
-		result.setPath("../myhome/myhome-update.jsp");
+		System.out.println(memberVO);
+		memberDAO.updateNotification(memberVO);
 		
+		// 결과 페이지 설정
+		result.setRedirect(true);
+		result.setPath("../myhome/notification.myhome");
 		return result;
 	}
 }
