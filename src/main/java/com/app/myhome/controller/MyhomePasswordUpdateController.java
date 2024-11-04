@@ -17,19 +17,7 @@ public class MyhomePasswordUpdateController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 	    Result result = new Result();
-	    MemberDAO memberDAO = new MemberDAO();
-		MemberVO memberVO = new MemberVO();
-		HttpSession session = req.getSession();
-
-		String memberEmail = (String) session.getAttribute("buyerEmail");
-//			System.out.println(memberEmail);
-		Long memberId = 1L;
-	 
-		// DAO를 통해 업데이트 수행 
-		memberDAO.updateBuyer(memberVO);
 	    result.setPath("../myhome/myhome-password-update.jsp"); // JSP 경로
-	    
-	    
 	    return result;
     }
 }

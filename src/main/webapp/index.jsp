@@ -1,12 +1,88 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
 <link rel="stylesheet" href="assets/css/main/main-index.css" />
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="shortcut icon" href="assets/images/favicon.ico" />
+<style>
+#mainbanner {
+	
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	object-fit: cover;
+}
+
+.community-images {
+	position: relative;
+}
+
+.community-images .text-wrap{
+	position: absolute;
+	left : 200px;
+	bottom : 40px;
+}
+
+.community-images .text-wrap p {
+	color: white;
+	font-size: 40px;
+	font-weight: 900;
+}
+
+.community-images .text-wrap span {
+	color: white;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.community-images-bg {
+	position: absolute;
+	right : 0;
+	bottom : 0;
+	width : 790px;
+	height : 200px;
+	background : linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+	border-radius: 20px;
+
+}
+
+</style>
+
 </head>
 <body>
 	<form id="frame">
@@ -27,9 +103,17 @@
 									src="assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>
-							<div class="login">
-								<a href="./member/login.member">로그인</a>
-							</div>
+							<c:if test="${not empty sessionScope.buyerEmail}">
+								<div class="login">
+									<a href="./member/logout.member">로그아웃</a>
+								</div>
+							</c:if>
+							<c:if test="${empty sessionScope.buyerEmail}">
+								<div class="login">
+									<a href="./member/login.member">로그인</a>
+								</div>
+							</c:if>
+							
 						</div>
 					</div>
 
@@ -56,7 +140,8 @@
 									href="product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
 							</ul>
 							<ul>
-								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
+								<li class="sub-menu"><a
+									href="../community/community-main.community">홈</a></li>
 								<li class="sub-menu"><a href="#">헬스+</a></li>
 							</ul>
 							<ul>
@@ -86,9 +171,20 @@
 			<div id="frame2">
 				<header>
 					<div id="mainbanner">
-						<div class="banner">
-							<img src="assets/images/main/Rectangle 235.png"
-								alt="Banner Image" class="banner-img" />
+						<div class="swiper-container mySwiper-main-banner">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="assets/images/main/Rectangle 235.png"
+										alt="Banner Image" class="banner-img" />
+								</div>
+								<div class="swiper-slide">
+									<img src="assets/images/main/Rectangle 235.png"
+										alt="Banner Image" class="banner-img" />
+								</div>
+
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
 						</div>
 						<div class="community-banner">
 							<img src="assets/images/main/community-img.png"
@@ -121,11 +217,18 @@
 							POWPOW<br />커뮤니티 OPEN
 						</h2>
 						<p>쇼핑과 소통 그리고 정보공유를 한번에</p>
-						<button class="community-btn">커뮤니티 이동하기</button>
+						<a href="community/community-main.community">
+							<button type="button" class="community-btn">커뮤니티 이동하기</button>
+						</a>
 					</div>
 					<div class="community-images">
 						<img src="assets/images/main/Rectangle 239.png"
 							alt="Dog Community" />
+						<div class="community-images-bg"></div>
+						<div class="text-wrap">
+							<p>POWPOW 커뮤니티</p>
+							<span>다른 반려동물들도 구경하러 와요.</span>
+						</div>
 					</div>
 				</section>
 
@@ -133,26 +236,50 @@
 				<section class="featured-posts">
 					<div class="featured-header">
 						<h2>이런 게시물은 어때요?</h2>
-						<button class="more-button">+더보기</button>
+						<a href="community/community-main.community" class="more-button">+더보기</a>
 					</div>
 					<div class="post-cards">
-						<div class="post-card">
-							<img src="assets/images/main/1.jpg" alt="Dog Post" />
-						</div>
-						<div class="post-card">
-							<img src="assets/images/main/pubby.jpg" alt="Cat Post" />
-						</div>
-						<div class="post-card">
-							<img src="assets/images/main/6.jpg" alt="Another Cat Post" />
-						</div>
-						<div class="post-card">
-							<img src="assets/images/main/4.jpg" alt="Bird Post" />
-						</div>
-						<div class="post-card">
-							<img src="assets/images/main/5.jpg" alt="Bird Post" />
-						</div>
-						<div class="post-card">
-							<img src="assets/images/main/pubby2.jpg" alt="Another Dog Post" />
+						<div class="swiper-container mySwiper-sub">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/1.jpg" alt="Dog Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/pubby.jpg" alt="Cat Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/6.jpg" alt="Another Cat Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/4.jpg" alt="Bird Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/5.jpg" alt="Bird Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/pubby2.jpg" alt="Another Dog Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/1.jpg" alt="Dog Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/pubby.jpg" alt="Cat Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/6.jpg" alt="Another Cat Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/4.jpg" alt="Bird Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/5.jpg" alt="Bird Post" />
+								</div>
+								<div class="swiper-slide post-card">
+									<img src="assets/images/main/pubby2.jpg" alt="Another Dog Post" />
+								</div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
 						</div>
 					</div>
 				</section>
@@ -176,10 +303,10 @@
 				<div id="frame3">
 					<section class="products">
 						<section class="header">
-							<a href="#"><img src="assets/images/main/Icon_Dog 1.png"
+							<a href="product/product-dog.product?productCategoryName=강아지"><img src="assets/images/main/Icon_Dog 1.png"
 								alt="강아지 아이콘" /></a>
 							<h2>이 제품이 지금 핫해요!</h2>
-							<button class="more-button">+더보기</button>
+							<a href="product/product-dog.product?productCategoryName=강아지" class="more-button">+더보기</a>
 						</section>
 
 						<div class="product-cards">
@@ -543,5 +670,24 @@
 	</footer>
 
 </body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="./assets/js/index/index-main.js"></script>
+<script>
+	let swiper = new Swiper(".mySwiper-main-banner", {
+		navigation : {
+			nextEl : ".swiper-button-next",
+			prevEl : ".swiper-button-prev",
+		},
+	});
+	
+	let swiper2 = new Swiper(".mySwiper-sub", {
+		slidesPerView: 6,
+        spaceBetween: 30,
+        autoHeight: true,
+		navigation : {
+			nextEl : ".swiper-button-next",
+			prevEl : ".swiper-button-prev",
+		},
+	});
+</script>
 </html>
