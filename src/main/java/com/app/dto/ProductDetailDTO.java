@@ -2,8 +2,13 @@ package com.app.dto;
 
 import java.util.Objects;
 
-public class ProductDTO {
+/**
+ * 
+ */
+public class ProductDetailDTO {
+	
 	private Long id;
+	private Long productId;
 	private Long productCategoryId;
 	private Long sellerId;
 	private String productName;
@@ -19,8 +24,17 @@ public class ProductDTO {
 	private String productSubImage1;
 	private String productSubImage2;
 	private String productSubImage3;
-	
-	public ProductDTO() {;}
+	private Long memberid;            
+	private String memberImage;
+	private String memberNickname;
+	private String memberEmail;
+	private String memberPassword;
+	private String memberPhone;
+	private String memberAddress;
+	private char memberSms;      
+    private char memberEmailCheck;
+    
+    public ProductDetailDTO() {;}
 
 	public Long getId() {
 		return id;
@@ -28,6 +42,14 @@ public class ProductDTO {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
 
 	public Long getProductCategoryId() {
@@ -150,14 +172,90 @@ public class ProductDTO {
 		this.productSubImage3 = productSubImage3;
 	}
 
+	public Long getMemberid() {
+		return memberid;
+	}
+
+	public void setMemberid(Long memberid) {
+		this.memberid = memberid;
+	}
+
+	public String getMemberImage() {
+		return memberImage;
+	}
+
+	public void setMemberImage(String memberImage) {
+		this.memberImage = memberImage;
+	}
+
+	public String getMemberNickname() {
+		return memberNickname;
+	}
+
+	public void setMemberNickname(String memberNickname) {
+		this.memberNickname = memberNickname;
+	}
+
+	public String getMemberEmail() {
+		return memberEmail;
+	}
+
+	public void setMemberEmail(String memberEmail) {
+		this.memberEmail = memberEmail;
+	}
+
+	public String getMemberPassword() {
+		return memberPassword;
+	}
+
+	public void setMemberPassword(String memberPassword) {
+		this.memberPassword = memberPassword;
+	}
+
+	public String getMemberPhone() {
+		return memberPhone;
+	}
+
+	public void setMemberPhone(String memberPhone) {
+		this.memberPhone = memberPhone;
+	}
+
+	public String getMemberAddress() {
+		return memberAddress;
+	}
+
+	public void setMemberAddress(String memberAddress) {
+		this.memberAddress = memberAddress;
+	}
+
+	public char getMemberSms() {
+		return memberSms;
+	}
+
+	public void setMemberSms(char memberSms) {
+		this.memberSms = memberSms;
+	}
+
+	public char getMemberEmailCheck() {
+		return memberEmailCheck;
+	}
+
+	public void setMemberEmailCheck(char memberEmailCheck) {
+		this.memberEmailCheck = memberEmailCheck;
+	}
+
 	@Override
 	public String toString() {
-		return "ProductDTO [id=" + id + ", productCategoryId=" + productCategoryId + ", sellerId=" + sellerId
-				+ ", productName=" + productName + ", productPrice=" + productPrice + ", productAge=" + productAge
-				+ ", productImage=" + productImage + ", productCode=" + productCode + ", productDate=" + productDate
-				+ ", productStock=" + productStock + ", productType=" + productType + ", productEditDate="
-				+ productEditDate + ", productDetail=" + productDetail + ", productSubImage1=" + productSubImage1
-				+ ", productSubImage2=" + productSubImage2 + ", productSubImage3=" + productSubImage3 + "]";
+		return "ProductDetailDTO [id=" + id + ", productId=" + productId + ", productCategoryId=" + productCategoryId
+				+ ", sellerId=" + sellerId + ", productName=" + productName + ", productPrice=" + productPrice
+				+ ", productAge=" + productAge + ", productImage=" + productImage + ", productCode=" + productCode
+				+ ", productDate=" + productDate + ", productStock=" + productStock + ", productType=" + productType
+				+ ", productEditDate=" + productEditDate + ", productDetail=" + productDetail + ", productSubImage1="
+				+ productSubImage1 + ", productSubImage2=" + productSubImage2 + ", productSubImage3=" + productSubImage3
+				+ ", memberid=" + memberid + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname
+				+ ", memberEmail=" + memberEmail + ", memberPassword=" + memberPassword + ", memberPhone=" + memberPhone
+				+ ", memberAddress=" + memberAddress + ", memberSms=" + memberSms + ", memberEmailCheck="
+				+ memberEmailCheck + "]";
 	}
 
 	@Override
@@ -173,13 +271,11 @@ public class ProductDTO {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ProductDTO other = (ProductDTO) obj;
+		ProductDetailDTO other = (ProductDetailDTO) obj;
 		return Objects.equals(id, other.id);
 	}
-
-
-
+    
+    
 	
-	
-	
+
 }

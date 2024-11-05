@@ -30,10 +30,8 @@ public class ProductFrontController extends HttpServlet{
       req.setCharacterEncoding("UTF-8");
       resp.setContentType("text/html; charset=utf-8");
       String target = req.getRequestURI().replace(req.getContextPath() + "/product/","").split("\\.")[0];
-      Result result = null;
-      
       System.out.println(target);
-      
+
       if(target.equals("product-dog")) {
     	  result = new ProductDogCotroller().execute(req, resp);
       }else if(target.equals("product-Cat")) {
