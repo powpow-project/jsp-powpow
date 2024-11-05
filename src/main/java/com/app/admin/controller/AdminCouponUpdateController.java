@@ -10,7 +10,6 @@ import com.app.Action;
 import com.app.Result;
 import com.app.dao.AdminDAO;
 import com.app.dto.AdminCouponDTO;
-import com.app.dto.AdminNoticeDTO;
 
 public class AdminCouponUpdateController implements Action {
 
