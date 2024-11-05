@@ -66,7 +66,7 @@
           <p id="text">휴대전화 번호</p>
           <p id="text" class="red">*</p>
         </div>
-            <input class="inputbutton" type="string" name="phone" placeholder="">
+            <input class="inputbutton" type="string" name="phone" placeholder="" value="${param.phone}">
       </div>
       <div class="line"></div>
       <div>

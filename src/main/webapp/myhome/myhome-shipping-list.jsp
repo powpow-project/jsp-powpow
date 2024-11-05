@@ -8,7 +8,7 @@
 <title>마이홈 배송상태</title>
 <link rel="stylesheet"
 	href="../assets/css/myhome/myhome-shipping-list.css">
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
@@ -17,58 +17,66 @@
 			<div id="border">
 				<div id="nav">
 					<div class="left">
-						<img src="../assets/images/myhome/logo.png" alt="로고">
+						<img src="../assets/images/powpow-logo.png" alt="로고" />
 					</div>
 					<div class="right">
 						<div class="icons">
-							<a href="#"><img
-								src="../assets/images/myhome/search_icon2.jpg" alt="검색"></a> <a
-								href="#"><img
-								src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송"></a>
-							<a href="#"><img
-								src="../assets/images/myhome/shopping_cart_icon2.jpg" alt="카트"></a>
+							<a href="#"><img src="../assets/images/search-icon.jpg"
+								alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
+								src="../assets/images/truck-icon.jpg" alt="배송" />
+							</a> <a href="../cart-check.product"> <img
+								src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 						</div>
 						<div class="sector"></div>
 						<div class="login">
-							<a href="#">로그인</a>
+							<a href="../member/login.member">로그인</a>
 						</div>
 					</div>
 				</div>
+
 				<div class="menu-container">
 					<ul class="menu-wrap h4">
-						<li class="menu"><a href="#">스토어</a></li>
-						<li class="menu"><a href="#">커뮤니티</a></li>
-						<li class="menu"><a href="#">마이홈</a></li>
+						<li class="menu"><a href="../product/main.product">스토어</a></li>
+						<li class="menu"><a
+							href="../community/community-main.community">커뮤니티</a></li>
+						<li class="menu"><a href="../list.myhome">마이홈</a></li>
 						<li class="menu"><a href="#">이벤트</a></li>
 					</ul>
 					<div id="sector"></div>
 					<div class="sub-menu-wrap">
 						<ul>
-							<li class="sub-menu"><a href="#">강아지</a></li>
-							<li class="sub-menu"><a href="#">고양이</a></li>
-							<li class="sub-menu"><a href="#">새</a></li>
-							<li class="sub-menu"><a href="#">물고기</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-bird.product?productCategoryName=새">새</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
+						</ul>
+						<ul>
+							<li class="sub-menu"><a
+								href="../community/community-main.community">홈</a></li>
 							<li class="sub-menu"><a href="#">헬스+</a></li>
 						</ul>
 						<ul>
-							<li class="sub-menu"><a href="#">홈</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
+							<li class="sub-menu"><a href="../myhome/list.myhome">나의
+									정보</a></li>
+							<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
+									정보</a></li>
+							<li class="sub-menu"><a
+								href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
+							<li class="sub-menu"><a href="../community/read.community">내
+									게시글</a></li>
 						</ul>
 						<ul>
-							<li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
-							<li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
-							<li class="sub-menu"><a href="./shipping-list.myhome">나의
-									쇼핑</a></li>
-							<li class="sub-menu"><a href="#">내 게시글</a></li>
-						</ul>
-
-						<ul>
 							<li class="sub-menu"><a href="#"></a></li>
 							<li class="sub-menu"><a href="#"></a></li>
 							<li class="sub-menu"><a href="#"></a></li>
 							<li class="sub-menu"><a href="#"></a></li>
 						</ul>
-
 					</div>
 				</div>
 			</div>
@@ -165,7 +173,7 @@
 					<span>0</span>
 				</div>
 			</div>
-<!-- 			<template id="product-template">
+			<!-- 			<template id="product-template">
 				<div class="product-item">
 					<img src="" alt=""> <span></span>
 				</div>
@@ -175,10 +183,8 @@
 					<span>아직 주문한 상품이 없어요</span>
 				</div>
 				<div id="product-list" class="ordered-product">
-				<img src="${product.image}"/>
-				<span>제품명:${product.name}</span>
-				<span>결제가:${product.price}원</span>
-				<span>주문일자:${order.date}</span>
+					<img src="${product.image}" /> <span>제품명:${product.name}</span> <span>결제가:${product.price}원</span>
+					<span>주문일자:${order.date}</span>
 				</div>
 			</div>
 		</div>

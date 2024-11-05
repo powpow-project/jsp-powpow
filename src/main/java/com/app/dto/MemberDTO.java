@@ -10,11 +10,10 @@ public class MemberDTO {
 	private String memberPassword;
 	private String memberPhone;
 	private String memberAddress;
+	private String searchKeyword;
 	private char memberSms;      
     private char memberEmailCheck;
     
-    public MemberDTO() {;}
-
 	public Long getId() {
 		return id;
 	}
@@ -71,7 +70,15 @@ public class MemberDTO {
 		this.memberAddress = memberAddress;
 	}
 
-	public char isMemberSms() {
+	public String getSearchKeyWord() {
+		return searchKeyword;
+	}
+
+	public void setSearchKeyWord(String searchKeyWord) {
+		this.searchKeyword = searchKeyWord;
+	}
+
+	public char getMemberSms() {
 		return memberSms;
 	}
 
@@ -79,7 +86,7 @@ public class MemberDTO {
 		this.memberSms = memberSms;
 	}
 
-	public char isMemberEmailCheck() {
+	public char getMemberEmailCheck() {
 		return memberEmailCheck;
 	}
 

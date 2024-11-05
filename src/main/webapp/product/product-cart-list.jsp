@@ -14,71 +14,75 @@
 
 </head>
 <body>
-	<div class="header-container">
-		<div id="header-wrap">
-			<div id="border">
-				<div id="nav">
-					<div class="left">
-						<img src="../assets/images/powpow-logo.png" alt="로고" />
-					</div>
-					<div class="right">
-						<div class="icons">
-							<a href="#"><img src="../assets/images/search-icon.jpg"
-								alt="검색" /></a> <a href="./myhome/shipping-list.myhome"> <img
-								src="../assets/images/truck-icon.jpg" alt="배송" />
-							</a> <a href="./cart-check.product"> <img
-								src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+			<div class="header-container">
+			<div id="header-wrap">
+				<div id="border">
+					<div id="nav">
+						<div class="left">
+							<img src="../assets/images/powpow-logo.png" alt="로고" />
 						</div>
-						<div class="sector"></div>
-						<div class="login">
-							<a href="./member/login.member">로그인</a>
+						<div class="right">
+							<div class="icons">
+								<a href="#"><img src="../assets/images/search-icon.jpg"
+									alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
+									src="../assets/images/truck-icon.jpg" alt="배송" />
+								</a> <a href="../cart-check.product"> <img
+									src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+							</div>
+							<div class="sector"></div>
+							<div class="login">
+								<a href="../member/login.member">로그인</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="menu-container">
-					<ul class="menu-wrap h4">
-						<li class="menu"><a href="./product/main.product">스토어</a></li>
-						<li class="menu"><a
-							href="./community/community-main.community">커뮤니티</a></li>
-						<li class="menu"><a href="./list.myhome">마이홈</a></li>
-						<li class="menu"><a href="#">이벤트</a></li>
-					</ul>
-					<div id="sector"></div>
-					<div class="sub-menu-wrap">
-						<ul>
-							<li class="sub-menu"><a
-								href="product-dog.product?productCategoryName=강아지">강아지</a></li>
-							<li class="sub-menu"><a
-								href="product-cat.product?productCategoryName=고양이">고양이</a></li>
-							<li class="sub-menu"><a
-								href="product-dog.product?productCategoryName=새">새</a></li>
-							<li class="sub-menu"><a
-								href="product-dog.product?productCategoryName=물고기">물고기</a></li>
-							<li class="sub-menu"><a
-								href="product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
+					<div class="menu-container">
+						<ul class="menu-wrap h4">
+							<li class="menu"><a href="../product/main.product">스토어</a></li>
+							<li class="menu"><a
+								href="../community/community-main.community">커뮤니티</a></li>
+							<li class="menu"><a href="../list.myhome">마이홈</a></li>
+							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
-						<ul>
-							<li class="sub-menu"><a href="./community/list.community">홈</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
-						</ul>
-						<ul>
-							<li class="sub-menu"><a href="./myhome/list.myhome">나의정보</a></li>
-							<li class="sub-menu"><a href="./myhome/pet-list.myhome">반려동물정보</a></li>
-							<li class="sub-menu"><a href="./myhome/shipping-list.myhome">나의쇼핑</a></li>
-							<li class="sub-menu"><a href="./community/read.community">내 게시글</a></li>
-						</ul>
-						<ul>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-						</ul>
+						<div id="sector"></div>
+						<div class="sub-menu-wrap">
+							<ul>
+								<li class="sub-menu"><a
+									href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
+								<li class="sub-menu"><a
+									href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
+								<li class="sub-menu"><a
+									href="../product/product-bird.product?productCategoryName=새">새</a></li>
+								<li class="sub-menu"><a
+									href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
+								<li class="sub-menu"><a
+									href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
+								<li class="sub-menu"><a href="#">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="../myhome/list.myhome">나의
+										정보</a></li>
+								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
+										정보</a></li>
+								<li class="sub-menu"><a
+									href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
+								<li class="sub-menu"><a href="../community/read.community">내
+										게시글</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<main>
 		<h2 class="h2">장바구니</h2>
 		<section class="cart-section">

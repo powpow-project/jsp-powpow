@@ -19,7 +19,6 @@ public class AdminWriteOkController {
 	    String adminEmail = (String)session.getAttribute("adminEmail");
 	    Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
 
-	    System.out.println(adminId);
 	    
 	    String adminNoticeTitle = req.getParameter("adminNoticeTitle");
 	    String adminNoticeContent = req.getParameter("adminNoticeContent");
@@ -29,7 +28,6 @@ public class AdminWriteOkController {
 	    adminNoticeDTO.setAdminNoticeContent(adminNoticeContent);
 	    adminNoticeDTO.setAdminNoticeNumber(1);
 
-	    System.out.println(adminNoticeDTO);
 	    
 	    adminDAO.insertAdminNotice(adminNoticeDTO);
 

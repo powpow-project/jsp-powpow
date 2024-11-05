@@ -116,7 +116,7 @@
             <div class="form-row">
                 <label for="banner-image">배너 이미지</label>
                 <div class="file-upload-group">
-                    <input type="file" id="banner-image" name="banner-image" />
+                    <input type="file" id="banner-image" name="banner-image" accept="image/*"/>
                 </div>
             </div>
 

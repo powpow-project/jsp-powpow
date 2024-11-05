@@ -14,6 +14,8 @@ import com.app.myhome.controller.MyhomeLikesListController;
 import com.app.myhome.controller.MyhomeListController;
 import com.app.myhome.controller.MyhomeNoPetController;
 import com.app.myhome.controller.MyhomeNotificationController;
+import com.app.myhome.controller.MyhomeNotificationEmailOkController;
+import com.app.myhome.controller.MyhomeNotificationSmsOkController;
 import com.app.myhome.controller.MyhomePasswordUpdateController;
 import com.app.myhome.controller.MyhomePasswordUpdateOkController;
 import com.app.myhome.controller.MyhomePetDeleteOkController;
@@ -81,7 +83,10 @@ public class MyhomeFrontController extends HttpServlet {
 			result = new MyhomePasswordUpdateOkController().execute(req, resp);
 		}else if(target.equals("notification")) {
 			result = new MyhomeNotificationController().execute(req, resp);
-			
+		}else if(target.equals("notification-email-ok")) {
+			result = new MyhomeNotificationEmailOkController().execute(req, resp);
+		}else if(target.equals("notification-sms-ok")) {
+			result = new MyhomeNotificationSmsOkController().execute(req, resp);
 		}else {
 			result = new Result();
 			result.setPath("../not-found.jsp");

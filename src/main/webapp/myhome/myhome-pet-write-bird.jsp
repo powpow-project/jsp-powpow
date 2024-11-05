@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>마이홈 반려새추가</title>
-<link rel="stylesheet" href="../assets/css/myhome/myhome-pet-write-bird.css">
+<link rel="stylesheet"
+	href="../assets/css/myhome/myhome-pet-write-bird.css">
 <link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
@@ -19,91 +20,101 @@
 </head>
 <body>
 	<div class="header-container">
-			<div id="header-wrap">
-				<div id="border">
-					<div id="nav">
-						<div class="left">
-							<img src="../assets/images/powpow-logo.png" alt="로고" />
+		<div id="header-wrap">
+			<div id="border">
+				<div id="nav">
+					<div class="left">
+						<img src="../assets/images/powpow-logo.png" alt="로고" />
+					</div>
+					<div class="right">
+						<div class="icons">
+							<a href="#"><img src="../assets/images/search-icon.jpg"
+								alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
+								src="../assets/images/truck-icon.jpg" alt="배송" />
+							</a> <a href="../cart-check.product"> <img
+								src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 						</div>
-						<div class="right">
-							<div class="icons">
-								<a href="#"> <img src="../assets/images/myhome/search_icon2.jpg" alt="검색" /></a> 
-								<a href="./shipping-list.myhome"> <img src="../assets/images/myhome/truck_transport_icon2.jpg" alt="배송" /> </a> 
-								<a href="../product-cart-list.product"> <img src="../assets/images/myhome/shopping_cart_icon2.jpg"alt="카트" /></a>
-							</div>
-							<div class="sector"></div>
-							<div class="login">
-								<a href="../member/login.member">로그인</a>
-							</div>
+						<div class="sector"></div>
+						<div class="login">
+							<a href="../member/login.member">로그인</a>
 						</div>
 					</div>
+				</div>
 
-					<div class="menu-container">
-						<ul class="menu-wrap h4">
-							<li class="menu"><a href="./product/main.product">스토어</a></li>
-							<li class="menu"><a href="#">커뮤니티</a></li>
-							<li class="menu"><a href="./list.myhome">마이홈</a></li>
-							<li class="menu"><a href="#">이벤트</a></li>
+				<div class="menu-container">
+					<ul class="menu-wrap h4">
+						<li class="menu"><a href="../product/main.product">스토어</a></li>
+						<li class="menu"><a
+							href="../community/community-main.community">커뮤니티</a></li>
+						<li class="menu"><a href="../list.myhome">마이홈</a></li>
+						<li class="menu"><a href="#">이벤트</a></li>
+					</ul>
+					<div id="sector"></div>
+					<div class="sub-menu-wrap">
+						<ul>
+							<li class="sub-menu"><a
+								href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-bird.product?productCategoryName=새">새</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
+							<li class="sub-menu"><a
+								href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
 						</ul>
-						<div id="sector"></div>
-						<div class="sub-menu-wrap">
-							<ul>
-								<li class="sub-menu"><a href="../product/product-dog.product">강아지</a></li>
-								<li class="sub-menu"><a href="../product/product-cat.product">고양이</a></li>
-								<li class="sub-menu"><a href="../product/product-bird.product">새</a></li>
-								<li class="sub-menu"><a href="../product/product-fish.product">물고기</a></li>
-								<li class="sub-menu"><a href="../product/health-main.product">헬스+</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="./community/list.community">홈</a></li>
-								<li class="sub-menu"><a href="#">헬스+</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="./list.myhome">나의 정보</a></li>
-								<li class="sub-menu"><a href="./pet-list.myhome">반려동물 정보</a></li>
-								<li class="sub-menu"><a href="./shipping-list.myhome">나의 쇼핑</a></li>
-								<li class="sub-menu"><a href="./community/read.community">내 게시글</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-							</ul>
-						</div>
+						<ul>
+							<li class="sub-menu"><a
+								href="../community/community-main.community">홈</a></li>
+							<li class="sub-menu"><a href="#">헬스+</a></li>
+						</ul>
+						<ul>
+							<li class="sub-menu"><a href="../myhome/list.myhome">나의
+									정보</a></li>
+							<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
+									정보</a></li>
+							<li class="sub-menu"><a
+								href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
+							<li class="sub-menu"><a href="../community/read.community">내
+									게시글</a></li>
+						</ul>
+						<ul>
+							<li class="sub-menu"><a href="#"></a></li>
+							<li class="sub-menu"><a href="#"></a></li>
+							<li class="sub-menu"><a href="#"></a></li>
+							<li class="sub-menu"><a href="#"></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	<form action="pet-write-ok.myhome?petKind=bird" method="post" id="frame" enctype="multipart/form-data">
+	</div>
+	<form action="pet-write-ok.myhome?petKind=bird" method="post"
+		id="frame" enctype="multipart/form-data">
 		<button id="submit-button" type="button">완료</button>
 		<div id="mydog">
 			<div class="card">
 				<div class="profile-pic" id="profilePic"></div>
 				<div class="name">이름</div>
-				<input type="file" id="imageUpload" name="petImage"> 
-				<label for="imageUpload">
+				<input type="file" id="imageUpload" name="petImage"> <label
+					for="imageUpload">
 					<h1 id="edit-button" class="edit-button h6">이미지 편집</h1>
 				</label>
 			</div>
 			<div class="title h5">
-				<span class="pre-title">기본사항*</span> 
-				<label for="petName">이름</label>
-				<label for="petGender">성별</label> 
-				<label for="petBreed">품종</label> 
-				<label for="petBirth">생일</label> 
-				<label for="petWeight">몸무게(kg)</label> 
-				<label for="petVet">동물병원</label>
+				<span class="pre-title">기본사항*</span> <label for="petName">이름</label>
+				<label for="petGender">성별</label> <label for="petBreed">품종</label> <label
+					for="petBirth">생일</label> <label for="petWeight">몸무게(kg)</label> <label
+					for="petVet">동물병원</label>
 			</div>
 			<div class="input-wrap">
-				<input class="input" id="petName" type="text" name="petName" placeholder="도도"> 
-				<label class="option"> 
-					<input type="radio" name="petGender" value="female">
-						<p>여아</p> 
-					<input type="radio" name="petGender" value="male">
-						<p>남아</p>
-				</label> 
-				<input class="input" name="petBreed" type="text" placeholder="예) 앵무새">
+				<input class="input" id="petName" type="text" name="petName"
+					placeholder="도도"> <label class="option"> <input
+					type="radio" name="petGender" value="female">
+					<p>여아</p> <input type="radio" name="petGender" value="male">
+					<p>남아</p>
+				</label> <input class="input" name="petBreed" type="text"
+					placeholder="예) 앵무새">
 				<p>
 					<input name="petBirth" class="birthday" type="date">
 				</p>

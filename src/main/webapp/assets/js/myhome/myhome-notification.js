@@ -45,9 +45,14 @@ const mainMenus = document.querySelectorAll(".menu-wrap .menu");
      }, 100); // 100ms 지연 후 서브메뉴를 닫음
    });
  });
- const checkbox = document.getElementById('toggle-checkbox');
-       const status = document.getElementById('status');
+ 
+const checkbox = document.getElementById('toggle-checkbox');
+const status = document.getElementById('status');
 
-   checkbox.addEventListener('change', () => {
-       status.textContent = checkbox.checked ? '현재 상태: 동의함' : '현재 상태: 동의하지 않음';
-   });
+/*checkbox.addEventListener('change', () => {
+   status.textContent = checkbox.checked ? '현재 상태: 동의함' : '현재 상태: 동의하지 않음';
+});
+   */
+
+   
+   
