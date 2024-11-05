@@ -122,13 +122,12 @@
                         <span>총 결제금액</span>
                         <span>예상 기부액</span>
                     </div>
-
                     <div class="pay-summary">
-                        <span>8,100원</span>
+                        <span class="total-product-price">8,100원</span>
                         <span>+</span>
-                        <span>무료</span>
+                        <span class="total-delivery-price">무료</span>
                         <span>=</span>
-                        <span>8,100원</span>
+                        <span class="total-price">8,100원</span>
                         <span class="coin">520원</span>
                     </div>
                     
@@ -218,6 +217,28 @@ deleteButton.addEventListener("click", () => {
         console.log("선택된 상품이 없습니다."); // 선택된 상품이 없을 경우 출력
     }
 });
+
+let totalProductPrice = 0;
+let totalDeliveryPrice = 0 || "배송비 무료";
+let totalDonation = 0;
+let discount = 50;
+
+const cartList = JSON.parse(`${cartItemsJSON}`);
+const totalProductPriceSpan = document.querySelector(".total-product-price");
+const totalDeliverySpan = document.querySelector(".total-delivery-price");
+const totalPriceSpan = document.querySelector(".total-price");
+cartList.forEach((cartList) => {
+	totalProductPrice += cartList.productPrice;
+});
+
+globalThis.totalPrice = totalProductPrice + (totalDeliveryPrice instanceof String ? totalDeliveryPrice : 0);
+if(discount !== 0){
+	globalThis.totalPrice -= totalProductPrice * discount / 100;
+}
+
+totalProductPriceSpan.innerText = totalProductPrice;
+totalDeliverySpan.innerText = totalDeliveryPrice;
+totalPriceSpan.innerText = totalPrice;
 </script>
 
 </html>

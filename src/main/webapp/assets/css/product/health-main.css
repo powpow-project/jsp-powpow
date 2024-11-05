@@ -25,9 +25,10 @@
 }
 
 .health-banner{
-  position: relative;
-  left: 2%;
+	width: 1440px;
+    overflow: hidden;
 }
+
 
 .health-banners{
   position: relative;
@@ -36,6 +37,7 @@
 
 .health-banner img{
   display: flex;
+  width : 100%;
   justify-content: center;
   align-items: center;
 }
@@ -277,6 +279,11 @@
 
 .section-header{
  margin-top: 65px;
+}
+
+
+.cats-swiper-warpper{
+	width : fit-content;
 }
 
 

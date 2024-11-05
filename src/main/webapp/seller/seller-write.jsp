@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../assets/css/product/product-write.css">
-<link rel="stylesheet" href="assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 <title>상품관리</title>
 </head>
@@ -69,15 +69,15 @@
 			<div class="info-wrap">
 				<div class="list-wrap">
 					<p class="h6">상품명</p>
-					<input type="text" name="productName" />
+					<input class="require-value" type="text" name="productName" />
 				</div>
 				<div class="list-wrap">
 					<p class="h6">상품가격</p>
-					<input type="text" name="productPrice" placeholder="원(원)" />
+					<input class="require-value" type="text" name="productPrice" placeholder="원(원)" />
 				</div>
 				<div class="list-wrap">
 					<p class="h6">상품재고</p>
-					<input type="text" name="productStock" placeholder="개" />
+					<input class="require-value" type="text" name="productStock" placeholder="개" />
 				</div>
 				<div class="list-wrap">
 					<p class="h6">대분류</p>
@@ -109,9 +109,9 @@
 				
 				<div class="list-wrap">
 					<p class="h6">상품간략설명</p>
-					<textarea type="text" name="productDetail" class="description" placeholder="내용을 설명해주세요."></textarea>
+					<textarea class="description require-value" type="text" name="productDetail" placeholder="내용을 설명해주세요."></textarea>
 				</div>
-			</div>
+			</div>	
 			<div class="line">
 				<hr />
 			</div>
@@ -133,11 +133,11 @@
 				</div>
 				<div class="list-wrap">
 					<p class="h6">배송비 금액</p>
-					<input type="text" placeholder="원(원)" />
+					<input class="require-value" type="text" placeholder="원(원)" />
 				</div>
 				<div class="list-wrap">
 					<p class="h6">무료배송 금액</p>
-					<input type="text" placeholder="원 이상 구매시 무료" />
+					<input class="require-value" type="text" placeholder="원 이상 구매시 무료" />
 				</div>
 				<div class="list-wrap">
 					<p class="h6">배송사 선택</p>
@@ -227,13 +227,15 @@
 				</div>
 			</div>
 			<div class="button-wrap">
-				<button class="register-btn h6">상품 등록</button>
+				<button type="button" class="register-btn h6">상품 등록</button>
 				<button type="button" class="cancel-btn h6" onclick="location.href='seller-list.seller';">취소</button>
 			</div>
 		</div>
 	</form>
 </body>
 <script>
+
+
    document.getElementById('main').addEventListener('change', function (event) {
        const file = event.target.files[0];
        if (file) {
@@ -275,6 +277,21 @@
        }
    });
    
+
+   
+	const submitButton = document.querySelector(".register-btn");
+	const inputs = document.querySelectorAll(".require-value");
+	const form = document.querySelector("form");
+	submitButton.addEventListener("click", () => {
+		for(let input of inputs){
+			if(!input.value){
+				alert(input.name + "값은 필수 입니다.")
+				input.focus();
+				return
+			}
+		}
+		form.submit();
+	})
    
 </script>
 </html>

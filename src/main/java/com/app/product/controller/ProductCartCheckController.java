@@ -22,26 +22,21 @@ public class ProductCartCheckController implements Action {
 		MemberDAO memberDAO = new MemberDAO();
 
 		// 회원 이메일 가져오기
-		String memberEmail = (String) session.getAttribute("memberEmail");
+		String memberEmail = (String)session.getAttribute("buyerEmail");
 		Long memberId = memberDAO.findBuyerByEmail(memberEmail);
 		
 		// 회원 이메일이 null인 경우 처리
-		if (memberId == null) {
-			result.setPath("../product/product-cart-none.jsp"); // 회원 이메일이 없을 경우 장바구니가 비어있다고 간주
-
-			result.setRedirect(true);
-			return result;
-		}
-
-		// 장바구니에 상품이 있는지 확인
-		if (cartDAO.cartCount(memberEmail) > 0) {
-			result.setPath("../product/product-cart-list.product"); // 장바구니에 상품이 있을 경우
-		} else {
-			result.setPath("../product/product-cart-none.jsp"); // 장바구니가 비어 있을 경우
-		}
-
+		/*
+		 * if (memberId == null) { result.setPath("../product/product-cart-none.jsp");
+		 * // 회원 이메일이 없을 경우 장바구니가 비어있다고 간주 result.setRedirect(true); return result; }
+		 * 
+		 * // 장바구니에 상품이 있는지 확인 if (cartDAO.cartCount(memberEmail) > 0) {
+		 * else { result.setPath("../product/product-cart-none.jsp"); // 장바구니가 비어 있을 경우
+		 * }
+		 */
+		System.out.println("컨트롤러");
+		result.setPath("../product/product-cart-list.product");
 		result.setRedirect(true);
-
 		return result;
 	}
 
