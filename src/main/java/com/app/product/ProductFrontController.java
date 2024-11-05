@@ -18,6 +18,7 @@ import com.app.product.controller.ProductDetailController;
 import com.app.product.controller.ProductDogCotroller;
 import com.app.product.controller.ProductFishCotroller;
 import com.app.product.controller.ProductHealthController;
+import com.app.product.controller.ProductLikeOkController;
 import com.app.product.controller.ProductListController;
 import com.app.product.controller.ProductSearchController;
 import com.app.product.controller.ProductSellerController;
@@ -29,13 +30,8 @@ public class ProductFrontController extends HttpServlet{
       req.setCharacterEncoding("UTF-8");
       resp.setContentType("text/html; charset=utf-8");
       String target = req.getRequestURI().replace(req.getContextPath() + "/product/","").split("\\.")[0];
-
-      Result result = null;
-      
       System.out.println(target);
-      
-      
-      
+
       if(target.equals("product-dog")) {
     	  result = new ProductDogCotroller().execute(req, resp);
       }else if(target.equals("product-Cat")) {
@@ -62,6 +58,8 @@ public class ProductFrontController extends HttpServlet{
     	  result = new ProductCartListController().execute(req, resp);
       }else if(target.equals("product-cart-delete")) {
     	  result = new ProductCartDeleteController().execute(req, resp);
+      }else if(target.equals("product-like-ok")) {
+    	  result = new ProductLikeOkController().execute(req, resp);
       }else {
 		result = new Result();
 		result.setPath("../not-found.jsp");

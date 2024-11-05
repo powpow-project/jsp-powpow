@@ -27,7 +27,9 @@ public class AdminCustomerInfoListOkController implements Action {
         
         List<MemberDTO> members = memberDAO.selectSearch(memberDTO);
         req.setAttribute("members", members);
-
+        System.out.println("포워드 전 데이터");
+        System.out.println(members);
+        System.out.println("포워드 전 데이터");
         result.setPath("../admin/admin-customerInfo-list.jsp"); 
         return result; 
     }

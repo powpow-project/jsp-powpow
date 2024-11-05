@@ -12,6 +12,7 @@ import com.app.Action;
 import com.app.Result;
 import com.app.dao.AdminDAO;
 import com.app.dto.AdminBannerDTO;
+import com.app.vo.AdminVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -28,9 +29,7 @@ public class AdminBannerWriteOkController implements Action {
       int sizeLimit = 10*500*500; // 100mb
 
       String adminEmail = (String) session.getAttribute("adminEmail");
-      Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
-
-      
+      Long adminId = adminDAO.selectByAdminEmail(adminEmail).map(AdminVO::getId).get();
       
       // 디렉토리가 존재하지 않으면 생성
       File dir = new File(directory);

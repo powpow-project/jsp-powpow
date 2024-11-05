@@ -9,6 +9,7 @@ import com.app.dto.AdminBannerDTO;
 import com.app.dto.AdminCouponDTO;
 import com.app.dto.AdminNoticeDTO;
 import com.app.mybatis.config.MyBatisConfig;
+import com.app.vo.AdminCouponVO;
 import com.app.vo.AdminVO;
 
 public class AdminDAO {
@@ -23,9 +24,9 @@ public class AdminDAO {
         return sqlSession.selectOne("admin.loginAdmin", adminVO);
     }
 
-    // 어드민 이메일로 조회
-    public AdminVO selectByAdminEmail(String adminEmail) {
-        return sqlSession.selectOne("admin.selectByAdminEmail", adminEmail);
+    // 어드민 이메일로 조회 VO
+    public Optional<AdminVO> selectByAdminEmail(String adminEmail) {
+        return Optional.ofNullable(sqlSession.selectOne("admin.selectByAdminEmail", adminEmail));
     }
 
     // 공지사항 추가
@@ -84,8 +85,8 @@ public class AdminDAO {
     }
     
     // 쿠폰 추가
-    public void insertAdminCoupon(AdminCouponDTO adminCouponDTO) {
-        sqlSession.insert("admin.insertAdminCoupon", adminCouponDTO);
+    public void insertAdminCoupon(AdminCouponVO adminCouponVO) {
+        sqlSession.insert("admin.insertAdminCoupon", adminCouponVO);
     }
 
     // 쿠폰 상세 조회

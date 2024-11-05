@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import com.app.Result;
 import com.app.dao.AdminDAO;
 import com.app.dto.AdminNoticeDTO;
+import com.app.vo.AdminVO;
 
 public class AdminWriteOkController {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -17,8 +18,7 @@ public class AdminWriteOkController {
 
 
 	    String adminEmail = (String)session.getAttribute("adminEmail");
-	    Long adminId = adminDAO.selectByAdminEmail(adminEmail).getId();
-
+	    Long adminId = adminDAO.selectByAdminEmail(adminEmail).map(AdminVO::getId).get();
 	    
 	    String adminNoticeTitle = req.getParameter("adminNoticeTitle");
 	    String adminNoticeContent = req.getParameter("adminNoticeContent");
