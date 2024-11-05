@@ -16,9 +16,7 @@
 
 	<div id="frame">
 		<div class="menu-wrap">
-			<img class="menu-icon" src="../assets/images/product/menu.png"
-				alt="메뉴"> <span>매출관리</span>
-
+			<img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴"> <span>매출관리</span>
 			<div id="menu-frame">
 				<div class="menu-header">
 					<div class="welcome">seller님 환영합니다!</div>
@@ -29,16 +27,14 @@
 						<li>
 							<p>상품 관리</p>
 							<div>
-								<a href="../seller/seller-list.seller" style="color: white;"><p>상품
-										조회</p></a> <a href="../seller/seller-write.seller"
-									style="color: white;"><p>상품 등록</p></a>
+								<a href="../seller/seller-list.seller" style="color: white;"><p>상품조회</p></a> 
+								<a href="../seller/seller-write.seller" style="color: white;"><p>상품 등록</p></a>
 							</div>
 						</li>
 						<li>
 							<p>주문 관리</p>
 							<div>
-								<a href="../seller/seller-order-list.seller"
-									style="color: white;"><p>주문조회</p></a>
+								<a href="../seller/seller-order-list.seller" style="color: white;"><p>주문조회</p></a>
 							</div>
 						</li>
 						<li>
@@ -50,15 +46,14 @@
 						<li>
 							<p>판매자 관리</p>
 							<div>
-								<a href="#" style="color: white;"><p>판매자정보 관리</p></a> <a
-									href="#" style="color: white;"><p>사업자정보 관리</p></a>
+								<a href="#" style="color: white;"><p>판매자정보 관리</p></a> 
+								<a href="#" style="color: white;"><p>사업자정보 관리</p></a>
 							</div>
 						</li>
 						<li>
 							<p>매출 관리</p>
 							<div>
-								<a href="../seller/seller-revenue-list.jsp"
-									style="color: white;"><p>매출 조회</p></a>
+								<a href="../seller/seller-revenue-list.jsp" style="color: white;"><p>매출 조회</p></a>
 							</div>
 						</li>
 					</ul>
@@ -67,7 +62,6 @@
 
 		</div>
 		<div class="division-line"></div>
-
 		<div class="title">
 			<h1 class="h1">매출조회</h1>
 		</div>
@@ -77,8 +71,7 @@
 				<div class="input-group">
 					<input type="date" id="start-date" name="startDate" value="${startDate}" />
 					<span>~</span>
-					<input type="date" 
-					id="end-date" name="endDate" value="${endDate}" />
+					<input type="date" id="end-date" name="endDate" value="${endDate}" />
 				</div>
 				<div class="buttons">
 					<button class="search-btn">검색</button>
