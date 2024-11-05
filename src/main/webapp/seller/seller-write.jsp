@@ -10,11 +10,9 @@
 <title>상품관리</title>
 </head>
 <body>
-	<form action="seller-write-ok.seller" method="post" id="frame"
-		enctype="multipart/form-data">
+	<form action="seller-write-ok.seller" method="post" id="frame" enctype="multipart/form-data">
 		<div class="menu-wrap">
-			<img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴"> <span
-				class="h4">상품관리</span>
+			<img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴"> <span class="h4">상품관리</span>
          <div id="menu-frame">
             <div class="menu-header">
                <div class="welcome">seller님 환영합니다!</div>
@@ -101,7 +99,7 @@
 					</select>
 				</div>
 				<div class="list-wrap">
-					<p class="h6">분류</p>
+					<p class="h6">연령대별</p>
 					<select name="productAge">
 						<option value="퍼피">퍼피</option>
 						<option value="어덜트">어덜트</option>
@@ -111,8 +109,7 @@
 				
 				<div class="list-wrap">
 					<p class="h6">상품간략설명</p>
-					<textarea type="text" name="productDetail" class="description"
-						placeholder="내용을 설명해주세요."></textarea>
+					<textarea type="text" name="productDetail" class="description" placeholder="내용을 설명해주세요."></textarea>
 				</div>
 			</div>
 			<div class="line">
@@ -124,16 +121,13 @@
 					<p class="h6">배송비 종류</p>
 					<div class="radio-wrap">
 						<div class="radio">
-							<input type="radio" name="shipping-pay" value="무료" /><span
-								class="h6">무료</span>
+							<input type="radio" name="shipping-pay" value="무료" /><span class="h6">무료</span>
 						</div>
 						<div class="radio">
-							<input type="radio" name="shipping-pay" value="유료" /><span
-								class="h6">유료</span>
+							<input type="radio" name="shipping-pay" value="유료" /><span class="h6">유료</span>
 						</div>
 						<div class="radio">
-							<input type="radio" name="shipping-pay" value="조건부 무료" checked /><span
-								class="h6">조건부 무료</span>
+							<input type="radio" name="shipping-pay" value="조건부 무료" checked /><span class="h6">조건부 무료</span>
 						</div>
 					</div>
 				</div>
@@ -149,8 +143,7 @@
 					<p class="h6">배송사 선택</p>
 					<div class="radio-wrap">
 						<div class="radio">
-							<input type="radio" name="shipping-company" checked /><span
-								class="h6">일반택배배송</span>
+							<input type="radio" name="shipping-company" checked /><span class="h6">일반택배배송</span>
 						</div>
 						<div class="radio">
 							<input type="radio" name="shipping-company" /><span class="h6">자체배송</span>
@@ -161,8 +154,7 @@
 					<p class="h6">착불 여부 선택</p>
 					<div class="radio-wrap">
 						<div class="radio">
-							<input type="radio" name="shipping-paylater" checked /><span
-								class="h6">선결제</span>
+							<input type="radio" name="shipping-paylater" checked /><span class="h6">선결제</span>
 						</div>
 						<div class="radio">
 							<input type="radio" name="shipping-paylater" /><span class="h6">착불</span>
@@ -197,11 +189,10 @@
 						<p class="h6">메인 이미지</p>
 						<label for="main">
 							<div class="main-image">
-								<img id="main-preview"
-									src="../assets/images/product/default-image.svg" alt="#" />
+								<img id="main-preview" src="../assets/images/product/default-image.svg" alt="#" />
 							</div>
-						</label> <input type="file" id="main" style="display: none"
-							name="productImage" accept="image/*" />
+						</label> 
+						<input type="file" id="main" style="display: none" name="productImage" accept="image/*" />
 						<h6 class="h7">*등록 이미지 5M 이하/ jpg, png, git</h6>
 					</div>
 					<div class="sub-wrap">
@@ -209,42 +200,36 @@
 							<p class="h6">서브이미지1</p>
 							<label for="sub1">
 								<div class="sub-image">
-									<img id="sub1-preview"
-										src="../assets/images/product/default-image.svg" alt="#" />
+									<img id="sub1-preview" src="../assets/images/product/default-image.svg" alt="#" />
 								</div>
-							</label> <input type="file" id="sub1" style="display: none"
-								name="productSubImage1" accept="image/*" />
+							</label> 
+							<input type="file" id="sub1" style="display: none" name="productSubImage1" accept="image/*" />
 						</div>
 						<div class="sub">
 							<p class="h6">서브이미지2</p>
 							<label for="sub2">
 								<div class="sub-image">
-									<img id="sub2-preview"
-										src="../assets/images/product/default-image.svg" alt="#" />
+									<img id="sub2-preview" src="../assets/images/product/default-image.svg" alt="#" />
 								</div>
-							</label> <input type="file" id="sub2" style="display: none"
-								name="productSubImage2" accept="image/*" />
+							</label> 
+							<input type="file" id="sub2" style="display: none"name="productSubImage2" accept="image/*" />
 						</div>
 						<div class="sub">
 							<p class="h6">서브이미지3</p>
 							<label for="sub3">
 								<div class="sub-image">
-									<img id="sub3-preview"
-										src="../assets/images/product/default-image.svg" alt="#" />
+									<img id="sub3-preview" src="../assets/images/product/default-image.svg" alt="#" />
 								</div>
-							</label> <input type="file" id="sub3" style="display: none"
-								name="productSubImage3" accept="image/*"
-								onclick="document.getElementById('sub3').click();" />
+							</label> 
+							<input type="file" id="sub3" style="display: none" name="productSubImage3" accept="image/*" onclick="document.getElementById('sub3').click();" />
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="button-wrap">
 				<button class="register-btn h6">상품 등록</button>
-				<button type="button" class="cancel-btn h6"
-					onclick="location.href='seller-list.seller';">취소</button>
+				<button type="button" class="cancel-btn h6" onclick="location.href='seller-list.seller';">취소</button>
 			</div>
-		</div>
 		</div>
 	</form>
 </body>
