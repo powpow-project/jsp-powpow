@@ -1,6 +1,5 @@
 package com.app.vo;
 
-import java.security.Timestamp;
 import java.util.Objects;
 
 public class AdminCouponVO {

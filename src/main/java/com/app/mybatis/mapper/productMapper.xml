@@ -64,4 +64,9 @@
 		WHERE PRODUCT_CATEGORY_NAME = #{productCategoryName}
 	</select>
 	
+	<select id="">
+		
+	
+	</select>
+	
 </mapper>

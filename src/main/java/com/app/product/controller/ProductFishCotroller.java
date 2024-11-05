@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
@@ -20,17 +19,17 @@ public class ProductFishCotroller implements Action {
 		Result result = new Result();
 		ProductDAO productDAO = new ProductDAO();
 		ProductVO productVO = new ProductVO();
-		
-		
-		List<ProductVO> product = productDAO.selectAll();
 
+		String productCategoryName = req.getParameter("productCategoryName");
+		productVO.setProductCategoryName(req.getParameter("productCategoryName")); 
+//	    productVO.setProductType(req.getParameter("productType")); 
+	    
+//	    System.out.println(req.getParameter("productCategoryName"));
+	        
+		List<ProductVO> product = productDAO.selectByCategory(productCategoryName);
 		req.setAttribute("product", product);
-
 		
-		
-		
-		
-		result.setPath("../product/product-main.jsp");
+		result.setPath("../product/product-dog.jsp?productCategoryName=" + productCategoryName);
 		return result;
 	}
 
