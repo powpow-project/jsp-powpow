@@ -14,9 +14,7 @@
 <body>
 	<div id="frame">
 		<div class="menu-wrap">
-			<img class="menu-icon" src="../assets/images/product/menu.png"
-				alt="메뉴"> <span class="h4">상품관리</span>
-
+			<img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴"> <span class="h4">상품관리</span>
 			         <div id="menu-frame">
             <div class="menu-header">
                <div class="welcome">seller님 환영합니다!</div>
