@@ -99,7 +99,7 @@
 								<a href="#"><img src="assets/images/search-icon.jpg"
 									alt="검색" /></a> <a href="./myhome/shipping-list.myhome"> <img
 									src="assets/images/truck-icon.jpg" alt="배송" />
-								</a> <a href="./cart-check.product"> <img
+								</a> <a href="./product/cart-check.product"> <img
 									src="assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>

@@ -94,7 +94,7 @@
     </select>
 
     <!-- 쿠폰 신규등록 -->
-    <insert id="insertAdminCoupon" parameterType="AdminCouponDTO">
+    <insert id="insertAdminCoupon" parameterType="AdminCouponVO">
         INSERT INTO TBL_ADMIN_COUPON (
             ID, ADMIN_ID, ADMIN_COUPON_TITLE, ADMIN_COUPON_TYPE, ADMIN_COUPON_CODE,
             ADMIN_COUPON_START, ADMIN_COUPON_END, ADMIN_COUPON_CONTENT,
@@ -102,11 +102,11 @@
         ) VALUES (
             ADMIN_COUPON_SEQ.NEXTVAL, #{adminId}, #{adminCouponTitle}, #{adminCouponType},
             #{adminCouponCode},
-            #{adminCouponStart, jdbcType=DATE},
-            #{adminCouponEnd, jdbcType=DATE},
+            #{adminCouponStart},
+            #{adminCouponEnd},
             #{adminCouponContent},
             #{adminCouponQuantity}, 
-            #{adminCouponDiscountRate, jdbcType=DOUBLE},
+            #{adminCouponDiscountRate},
             CURRENT_TIMESTAMP
         )
     </insert>

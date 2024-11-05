@@ -136,11 +136,11 @@
 			MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, 
 			MEMBER_SMS, MEMBER_EMAILCHECK
 		FROM TBL_MEMBER
-		WHERE MEMBER_NICKNAME LIKE '%'||#{searchKeyword}%||'%' 
-		AND MEMBER_PHONE LIKE '%'||#{searchKeyword}%||'%' 
-		AND MEMBER_ADDRESS LIKE '%'||#{searchKeyword}%||'%' 
+		WHERE MEMBER_EMAIL LIKE '%'||#{searchKeyword}||'%' 
+		OR MEMBER_ADDRESS LIKE '%'||#{searchKeyword}||'%'
+		OR MEMBER_PHONE LIKE '%'||#{searchKeyword}||'%'
+		AND MEMBER_SMS = #{memberSms}
 		AND MEMBER_EMAILCHECK = #{memberEmailCheck}
-		AND MEMBER_SMS = #{memberSmsCheck};
 	</select>
 	
 </mapper>

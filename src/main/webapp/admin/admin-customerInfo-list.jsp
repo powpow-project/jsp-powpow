@@ -95,8 +95,8 @@
 					</div>
 					<div class="sms-receive">
 						<label>SMS 수신여부</label> 
-						<input type="radio" id="sms-yes" name="sms" value="yes" checked 2/> 수신 
-						<input type="radio" id="sms-no" name="sms" value="no" /> 수신거부
+						<input type="radio" id="sms-yes" name="sms" value="1" checked 2/> 수신 
+						<input type="radio" id="sms-no" name="sms" value="0" /> 수신거부
 					</div>
 				</div>
 				<div class="search-row">
@@ -106,8 +106,8 @@
 					</div>
 					<div class="email-receive">
 						<label>메일 수신여부</label>
-						<input type="radio" id="email-yes" name="email" value="yes" checked /> 수신 
-						<input type="radio" id="email-no" name="email" value="no" /> 수신거부
+						<input type="radio" id="email-yes" name="email" value="1" checked /> 수신 
+						<input type="radio" id="email-no" name="email" value="0" /> 수신거부
 					</div>
 				</div>
 				<div class="buttons">

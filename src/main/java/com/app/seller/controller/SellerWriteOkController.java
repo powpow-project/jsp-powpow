@@ -51,9 +51,9 @@ public class SellerWriteOkController implements Action {
          // 업로드된 파일의 제목과 이름 가져오기
          String title = multi.getParameter("title");
          String mainImage = multi.getFilesystemName("productImage");
-         String fileName2 = multi.getFilesystemName("productSubImage1");
-         String fileName3 = multi.getFilesystemName("productSubImage2");
-         String fileName4 = multi.getFilesystemName("productSubImage3");
+         String subImage1 = multi.getFilesystemName("productSubImage1");
+         String subImage2 = multi.getFilesystemName("productSubImage2");
+         String subImage3 = multi.getFilesystemName("productSubImage3");
          productVO.setSellerId(sellerId);
          productVO.setProductName(multi.getParameter("productName"));
          productVO.setProductPrice(Integer.parseInt(multi.getParameter("productPrice")));
@@ -67,13 +67,28 @@ public class SellerWriteOkController implements Action {
          // 파일이 성공적으로 업로드되었는지 확인
          if (mainImage != null) {
             productVO.setProductImage(mainImage);
-            productVO.setProductSubImage1(fileName2);
-            productVO.setProductSubImage2(fileName3);
-            productVO.setProductSubImage3(fileName4);
-            
          } else {
-            
+        	productVO.setProductImage("default-image.svg");
          }
+         
+         if(subImage1 != null) {
+        	 productVO.setProductSubImage1(subImage1);
+         }else {
+        	 productVO.setProductSubImage1("default-image.svg");
+         }
+         
+         if(subImage2 != null) {
+        	 productVO.setProductSubImage2(subImage2);
+         }else {
+        	 productVO.setProductSubImage2("default-image.svg");
+         }
+         
+         if(subImage3 != null) {
+        	 productVO.setProductSubImage3(subImage3);
+         }else {
+        	 productVO.setProductSubImage3("default-image.svg");
+         }
+         
       } catch (Exception e) {
          e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
       }
