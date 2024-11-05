@@ -1,8 +1,6 @@
 package com.app.dto;
 
-import java.lang.invoke.MethodHandles.Lookup;
 import java.util.Objects;
-import java.util.Optional;
 
 public class SellerDTO {
     private Long id;
