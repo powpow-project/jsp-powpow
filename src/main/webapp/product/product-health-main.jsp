@@ -15,81 +15,67 @@
 
 <body>
 	<div class="header-container">
-		<div id="header-wrap">
-			<div id="border">
-				<div id="nav">
-					<div class="left">
-						<img src="../assets/images/powpow-logo.png" alt="로고" />
-					</div>
-					<div class="right">
-						<div class="icons">
-							<a href="#"><img src="../assets/images/search-icon.jpg"
-								alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
-								src="../assets/images/truck-icon.jpg" alt="배송" />
-							</a> <a href="../cart-check.product"> <img
-								src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+			<div id="header-wrap">
+				<div id="border">
+					<div id="nav">
+						<div class="left">
+							<img src="../assets/images/powpow-logo.png" alt="로고" />
 						</div>
-						<div class="sector"></div>
-						<div class="login">
-							<a href="../member/login.member">로그인</a>
+						<div class="right">
+							<div class="icons">
+								<a href="#"><img src="../assets/images/search-icon.jpg" alt="검색" /></a> 
+								<a href="../myhome/shipping-list.myhome"><img src="../assets/images/truck-icon.jpg" alt="배송" /></a> 
+								<a href="../cart-check.product"><img src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+							</div>
+							<div class="sector"></div>
+							<div class="login">
+								<a href="../member/login.member">로그인</a>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="menu-container">
-					<ul class="menu-wrap h4">
-						<li class="menu"><a href="../product/main.product">스토어</a></li>
-						<li class="menu"><a
-							href="../community/community-main.community">커뮤니티</a></li>
-						<li class="menu"><a href="../list.myhome">마이홈</a></li>
-						<li class="menu"><a href="#">이벤트</a></li>
-					</ul>
-					<div id="sector"></div>
-					<div class="sub-menu-wrap">
-						<ul>
-							<li class="sub-menu"><a
-								href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
-							<li class="sub-menu"><a
-								href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
-							<li class="sub-menu"><a
-								href="../product/product-bird.product?productCategoryName=새">새</a></li>
-							<li class="sub-menu"><a
-								href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
-							<li class="sub-menu"><a
-								href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
+					<div class="menu-container">
+						<ul class="menu-wrap h4">
+							<li class="menu"><a href="../product/main.product">스토어</a></li>
+							<li class="menu"><a href="../community/community-main.community">커뮤니티</a></li>
+							<li class="menu"><a href="../list.myhome">마이홈</a></li>
+							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
-						<ul>
-							<li class="sub-menu"><a
-								href="../community/community-main.community">홈</a></li>
-							<li class="sub-menu"><a href="#">헬스+</a></li>
-						</ul>
-						<ul>
-							<li class="sub-menu"><a href="../myhome/list.myhome">나의
-									정보</a></li>
-							<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
-									정보</a></li>
-							<li class="sub-menu"><a
-								href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
-							<li class="sub-menu"><a href="../community/read.community">내
-									게시글</a></li>
-						</ul>
-						<ul>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-							<li class="sub-menu"><a href="#"></a></li>
-						</ul>
+						<div id="sector"></div>
+						<div class="sub-menu-wrap">
+							<ul>
+								<li class="sub-menu"><a href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
+								<li class="sub-menu"><a href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
+								<li class="sub-menu"><a href="../product/product-bird.product?productCategoryName=새">새</a></li>
+								<li class="sub-menu"><a href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
+								<li class="sub-menu"><a href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
+								<li class="sub-menu"><a href="#">헬스+</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="../myhome/list.myhome">나의정보</a></li>
+								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물정보</a></li>
+								<li class="sub-menu"><a href="../myhome/shipping-list.myhome">나의쇼핑</a></li>
+								<li class="sub-menu"><a href="../community/read.community">내게시글</a></li>
+							</ul>
+							<ul>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+								<li class="sub-menu"><a href="#"></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<!-- 배너 섹션 -->
 	<section class="health-banner-container">
 		<div class="health-banner">
 			<c:forEach var="banner" items="${banners}">
-				<img src="../assets/images/product/${banner.adminBannerImage}"
-					alt="헬스 배너">
+				<img src="../assets/images/product/${banner.adminBannerImage}"alt="헬스 배너">
 			</c:forEach>
 		</div>
 	</section>
@@ -114,16 +100,13 @@
 				<button class="slider-btn prev">&#10094;</button>
 				<div class="slider">
 					<c:forEach var="product" items="${products}">
-						<c:if
-							test="${product.productCategoryName == '강아지' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						<c:if test="${product.productCategoryName == '강아지' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
 							<div class="product" data-category="강아지 ${product.productAge}">
 								<div class="product-image-wrap">
-									<img src="../assets/images/product/${product.productImage}"
-										alt="${product.productName}">
+									<img src="../assets/images/product/${product.productImage}" alt="${product.productName}">
 									<div class="hover-box">
 										<div class="hover-box-new">
-											<a class="hover-new" href="#"> <img
-												src="../assets/images/shopping/share.png">
+											<a class="hover-new" href="#"> <img src="../assets/images/shopping/share.png">
 											</a>
 										</div>
 										<div class="hover-box-cart">
@@ -167,27 +150,21 @@
 				<button class="slider-btn prev">&#10094;</button>
 				<div class="slider">
 					<c:forEach var="product" items="${products}">
-						<c:if
-							test="${product.productCategoryName == '고양이' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						<c:if test="${product.productCategoryName == '고양이' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
 							<div class="product" data-category="고양이 ${product.productAge}">
 								<div class="product-image-wrap">
-									<img src="../assets/images/product/${product.productImage}"
-										alt="${product.productName}">
+									<img src="../assets/images/product/${product.productImage}"alt="${product.productName}">
 									<div class="hover-box">
 										<div class="hover-box-new">
-											<a class="hover-new" href="#"> <img
-												src="../assets/images/shopping/share.png"></a>
+											<a class="hover-new" href="#"> <img src="../assets/images/shopping/share.png"></a>
 										</div>
 										<div class="hover-box-cart">
-											<a class="hover-cart"
-												href="product-cart-write-ok.product?productId=${product.id}">
-												<img src="../assets/images/shopping/carthovar.png"
-												alt="장바구니 추가">
+											<a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}">
+												<img src="../assets/images/shopping/carthovar.png" alt="장바구니 추가">
 											</a>
 										</div>
 										<div class="hover-box-heart">
-											<a class="hover-heart" href="#"> <img
-												src="../assets/images/shopping/like.png"></a>
+											<a class="hover-heart" href="#"><img src="../assets/images/shopping/like.png"></a>
 										</div>
 									</div>
 								</div>
@@ -217,27 +194,21 @@
 				<button class="slider-btn prev">&#10094;</button>
 				<div class="slider">
 					<c:forEach var="product" items="${products}">
-						<c:if
-							test="${product.productCategoryName == '새' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						<c:if test="${product.productCategoryName == '새' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
 							<div class="product" data-category="새 ${product.productAge}">
 								<div class="product-image-wrap">
-									<img src="../assets/images/product/${product.productImage}"
-										alt="${product.productName}">
+									<img src="../assets/images/product/${product.productImage}"alt="${product.productName}">
 									<div class="hover-box">
 										<div class="hover-box-new">
-											<a class="hover-new" href="#"> <img
-												src="../assets/images/shopping/share.png"></a>
+											<a class="hover-new" href="#"> <img src="../assets/images/shopping/share.png"></a>
 										</div>
 										<div class="hover-box-cart">
-											<a class="hover-cart"
-												href="product-cart-write-ok.product?productId=${product.id}">
-												<img src="../assets/images/shopping/carthovar.png"
-												alt="장바구니 추가">
+											<a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}">
+												<img src="../assets/images/shopping/carthovar.png"alt="장바구니 추가">
 											</a>
 										</div>
 										<div class="hover-box-heart">
-											<a class="hover-heart" href="#"> <img
-												src="../assets/images/shopping/like.png"></a>
+											<a class="hover-heart" href="#"> <img src="../assets/images/shopping/like.png"></a>
 										</div>
 									</div>
 								</div>
@@ -268,24 +239,19 @@
 				<button class="slider-btn prev">&#10094;</button>
 				<div class="slider">
 					<c:forEach var="product" items="${products}">
-						<c:if
-							test="${product.productCategoryName == '물고기' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+						<c:if test="${product.productCategoryName == '물고기' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
 							<div class="product" data-category="물고기 ${product.productAge}">
 								<div class="product-image-wrap">
-									<img src="../assets/images/product/${product.productImage}"
-										alt="${product.productName}">
+									<img src="../assets/images/product/${product.productImage}"alt="${product.productName}">
 									<div class="hover-box">
 										<div class="hover-box-new">
-											<a class="hover-new" href="#"> <img
-												src="../assets/images/shopping/share.png"></a>
+											<a class="hover-new" href="#"> <img src="../assets/images/shopping/share.png"></a>
 										</div>
 										<div class="hover-box-cart">
-											<a class="hover-cart" href="#"> <img
-												src="../assets/images/shopping/carthovar.png"></a>
+											<a class="hover-cart" href="#"> <img src="../assets/images/shopping/carthovar.png"></a>
 										</div>
 										<div class="hover-box-heart">
-											<a class="hover-heart" href="#"> <img
-												src="../assets/images/shopping/like.png"></a>
+											<a class="hover-heart" href="#"> <img src="../assets/images/shopping/like.png"></a>
 										</div>
 									</div>
 								</div>
@@ -300,8 +266,7 @@
 	<section class="health-banners-container">
 		<div class="health-banners">
 			<c:forEach var="banner" items="${banners}">
-				<img src="../assets/images/product/${banner.adminBannerImage}"
-					alt="헬스 배너">
+				<img src="../assets/images/product/${banner.adminBannerImage}"alt="헬스 배너">
 			</c:forEach>
 		</div>
 	</section>
@@ -370,40 +335,51 @@
 </script>
 <script>
 //DOMContentLoaded 이벤트를 사용하면 DOM이 준비된 후에만 JavaScript를 실행할 수 있어, 코드가 예기치 않게 동작하는 것을 방지합니다.
+// DOMContentLoaded 이벤트가 발생하면 실행되는 함수. HTML 문서의 모든 요소가 로드되었을 때 실행됨.
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // productCategoryName이라는 name 속성을 가진 첫 번째 요소를 가져옴 (카테고리 선택 요소).
     const categoryElement = document.getElementsByName('productCategoryName')[0];
+    
+    // .category-button 클래스를 가진 모든 요소를 가져옴 (카테고리 버튼들).
     const categoryButtons = document.querySelectorAll('.category-button');
+    
+    // .product 클래스를 가진 모든 요소를 가져옴 (상품 리스트).
     const products = document.querySelectorAll('.product');
+    
+    // 페이지 로드 시 초기 필터로 '강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피' 카테고리의 상품만 보이도록 설정.
     filterProducts(['강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피']);
 
-
+    // 카테고리 선택 요소가 존재할 경우 클릭 이벤트 추가.
     if (categoryElement) {
         categoryElement.addEventListener('click', (e) => {
-            const animalCategory = e.target.value;
-            filterProducts([animalCategory]);
+            const animalCategory = e.target.value; // 클릭된 요소의 value 값으로 카테고리 가져오기.
+            filterProducts([animalCategory]);      // 해당 카테고리로 상품 필터링.
         });
-    } 
+    }
 
+    // 각 카테고리 버튼에 클릭 이벤트 추가.
     categoryButtons.forEach((button) => {
         button.addEventListener('click', (e) => {
-            const animalCategory = e.target.getAttribute('data-category');
-            filterProducts([animalCategory]);
+            const animalCategory = e.target.getAttribute('data-category'); // data-category 속성에서 카테고리 가져오기.
+            filterProducts([animalCategory]);                               // 해당 카테고리로 상품 필터링.
         });
     });
 
+    // filterProducts 함수는 주어진 animalCategory 배열에 맞는 상품만 보이도록 설정하는 함수.
     function filterProducts(animalCategory) {
         products.forEach((product) => {
-            const productCategory = product.getAttribute('data-category');
+            const productCategory = product.getAttribute('data-category'); // 각 상품의 data-category 속성에서 카테고리 가져오기.
 
+            // animalCategory 배열에 상품 카테고리가 포함되면 상품을 보이게 하고, 포함되지 않으면 숨김.
             if(animalCategory.includes(productCategory)){
-            	product.style.display = 'block';
-            }else {
-            	product.style.display = 'none';
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
             }
         });
     }
 });
-
 </script>
 
 </html>

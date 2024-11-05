@@ -14,8 +14,7 @@
 <body>
 	<div id="frame">
 		<div class="menu-wrap">
-			<img class="menu-icon" src="../assets/images/product/menu.png"
-				alt="메뉴"> <span>주문관리</span>
+			<img class="menu-icon" src="../assets/images/product/menu.png" alt="메뉴"> <span>주문관리</span>
 
 			<div id="menu-frame">
 				<div class="menu-header">
@@ -102,9 +101,7 @@
 					</tr>
 				</thead>
 				<tbody>
-
-					<c:forEach var="orderList" items="${orderListForSeller}"
-						varStatus="status">
+					<c:forEach var="orderList" items="${orderListForSeller}" varStatus="status">
 						<tr>
 							<td>${status.index + 1}</td>
 							<td><c:out value="${orderList.productName}" /></td>
@@ -165,7 +162,6 @@
 				</div>
 			</div>
 		</c:forEach>
-
 		<div class="popup-bg"></div>
 </body>
 <script src="../assets/js/order/order-seller-list.js">
