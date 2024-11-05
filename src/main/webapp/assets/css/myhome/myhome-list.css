@@ -92,20 +92,7 @@
 	text-align: center;
 }
 
-/*     #uploadButton{
-      width: 120px;
-      height: 32px;
-      border-radius: 20px;
-      align-self: center;
-      margin-top: 20px;
-      color: white;
-      border-style: none;
-      font-size: 14px;
-      line-height: 22px;
-      font-weight: bold;
-      cursor: pointer;
-      background-color: #113f8a;
-    } */
+
 #uploadButton button {
 	width: 120px;
 	height: 32px;
@@ -253,7 +240,7 @@ to {
 }
 
 .edit-info div {
-	width: 250px;
+	width: 350px;
 }
 
 .edit-category1 {
