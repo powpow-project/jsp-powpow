@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>마이홈 프로필</title>
-<link rel="stylesheet" href="../assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="stylesheet" href="../assets/css/myhome/myhome-update.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
