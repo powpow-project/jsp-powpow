@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet" href="../assets/css/product/health-main.css">
 <link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
@@ -14,6 +15,11 @@
 </head>
 
 <body>
+	<c:if test="${param.cart}">
+		<script>
+			alert("장바구니에 추가 되었습니다. 이 자식아!😎")
+		</script>
+	</c:if>
 	<div class="header-container">
 			<div id="header-wrap">
 				<div id="border">
@@ -25,7 +31,7 @@
 							<div class="icons">
 								<a href="#"><img src="../assets/images/search-icon.jpg" alt="검색" /></a> 
 								<a href="../myhome/shipping-list.myhome"><img src="../assets/images/truck-icon.jpg" alt="배송" /></a> 
-								<a href="../cart-check.product"><img src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+								<a href="../product/cart-check.product"><img src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>
 							<div class="login">
@@ -75,7 +81,7 @@
 	<section class="health-banner-container">
 		<div class="health-banner">
 			<c:forEach var="banner" items="${banners}">
-				<img src="../assets/images/product/${banner.adminBannerImage}"alt="헬스 배너">
+				<img src="../assets/images/admin/${banner.adminBannerImage}"alt="헬스 배너">
 			</c:forEach>
 		</div>
 	</section>
@@ -137,8 +143,8 @@
 						<img src="../assets/images/shopping/caticon.png" alt="고양이 헬스+">
 						<span>성장기별 추천 아이템이에요!</span>
 					</div>
-					<div class="category-buttons">
-						<button data-category="고양이 퍼피" class="category-button active">퍼피</button>
+					<div class="category-buttons cat-category-buttons">
+						<button data-category="고양이 퍼피" class="category-button">퍼피</button>
 						<button data-category="고양이 어덜트" class="category-button">어덜트</button>
 						<button data-category="고양이 시니어" class="category-button">시니어</button>
 					</div>
@@ -146,12 +152,14 @@
 				<a href="#" class="view-all">전체보기</a>
 			</div>
 
-			<div class="slider-container-cat">
-				<button class="slider-btn prev">&#10094;</button>
-				<div class="slider">
-					<c:forEach var="product" items="${products}">
+			<div class="slider-container-cat swiper-container cat-swiper">
+			    <div class="swiper-button-next"></div>
+      			<div class="swiper-button-prev"></div>
+				<div class="slider swiper-wrapper cats-swiper-warpper">
+	
+				<c:forEach var="product" items="${products}">
 						<c:if test="${product.productCategoryName == '고양이' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
-							<div class="product" data-category="고양이 ${product.productAge}">
+							<div class="product swiper-slide cat-items" data-category="고양이 ${product.productAge}">
 								<div class="product-image-wrap">
 									<img src="../assets/images/product/${product.productImage}"alt="${product.productName}">
 									<div class="hover-box">
@@ -164,13 +172,14 @@
 											</a>
 										</div>
 										<div class="hover-box-heart">
-											<a class="hover-heart" href="#"><img src="../assets/images/shopping/like.png"></a>
+											<a class="hover-heart" href="product-like-ok.product?productId=${product.id}"><img src="../assets/images/shopping/like.png"></a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</c:if>
-					</c:forEach>
+					</c:forEach> 
+		
 				</div>
 			</div>
 		</div>
@@ -270,7 +279,6 @@
 			</c:forEach>
 		</div>
 	</section>
-	</div>
 
 	<footer>
 		<div class="footer-container">
@@ -331,55 +339,15 @@
 	</footer>
 
 </body>
-<script src="../assets/js/product/health-main.js">
-</script>
-<script>
-//DOMContentLoaded 이벤트를 사용하면 DOM이 준비된 후에만 JavaScript를 실행할 수 있어, 코드가 예기치 않게 동작하는 것을 방지합니다.
-// DOMContentLoaded 이벤트가 발생하면 실행되는 함수. HTML 문서의 모든 요소가 로드되었을 때 실행됨.
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // productCategoryName이라는 name 속성을 가진 첫 번째 요소를 가져옴 (카테고리 선택 요소).
-    const categoryElement = document.getElementsByName('productCategoryName')[0];
-    
-    // .category-button 클래스를 가진 모든 요소를 가져옴 (카테고리 버튼들).
-    const categoryButtons = document.querySelectorAll('.category-button');
-    
-    // .product 클래스를 가진 모든 요소를 가져옴 (상품 리스트).
-    const products = document.querySelectorAll('.product');
-    
-    // 페이지 로드 시 초기 필터로 '강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피' 카테고리의 상품만 보이도록 설정.
-    filterProducts(['강아지 퍼피', '고양이 퍼피', '새 퍼피', '물고기 퍼피']);
-
-    // 카테고리 선택 요소가 존재할 경우 클릭 이벤트 추가.
-    if (categoryElement) {
-        categoryElement.addEventListener('click', (e) => {
-            const animalCategory = e.target.value; // 클릭된 요소의 value 값으로 카테고리 가져오기.
-            filterProducts([animalCategory]);      // 해당 카테고리로 상품 필터링.
-        });
-    }
-
-    // 각 카테고리 버튼에 클릭 이벤트 추가.
-    categoryButtons.forEach((button) => {
-        button.addEventListener('click', (e) => {
-            const animalCategory = e.target.getAttribute('data-category'); // data-category 속성에서 카테고리 가져오기.
-            filterProducts([animalCategory]);                               // 해당 카테고리로 상품 필터링.
-        });
-    });
-
-    // filterProducts 함수는 주어진 animalCategory 배열에 맞는 상품만 보이도록 설정하는 함수.
-    function filterProducts(animalCategory) {
-        products.forEach((product) => {
-            const productCategory = product.getAttribute('data-category'); // 각 상품의 data-category 속성에서 카테고리 가져오기.
-
-            // animalCategory 배열에 상품 카테고리가 포함되면 상품을 보이게 하고, 포함되지 않으면 숨김.
-            if(animalCategory.includes(productCategory)){
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
-    }
-});
-</script>
-
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="../assets/js/header.js"></script>
+<script src="../assets/js/product/health-main.js"></script>
 </html>
+
+
+
+
+
+
+
+
