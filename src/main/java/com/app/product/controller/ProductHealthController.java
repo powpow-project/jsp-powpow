@@ -6,11 +6,16 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.json.JSONArray;
-import org.json.JSONObject;
+
+import javax.servlet.http.HttpSession;
+
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.AdminDAO;
+import com.app.dao.MemberDAO;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import com.app.dao.ProductDAO;
 import com.app.dto.AdminBannerDTO;
 import com.app.dao.CartDAO;
@@ -25,15 +30,18 @@ public class ProductHealthController implements Action {
 		ProductDAO productDAO = new ProductDAO();
 		CartDAO cartDAO = new CartDAO();
 		AdminDAO adminDAO = new AdminDAO();
+		MemberDAO memberDAO = new MemberDAO();
 		
-		List<CartDTO> cartItems = cartDAO.selectAll();
+//		HttpSession session = req.getSession();
+//		Long memberId = memberDAO.findBuyerByEmail((String)session.getAttribute("buyerEmail"));
+//		List<CartDTO> cartItems = cartDAO.selectAll(memberId);
 		
 		List<ProductVO> products = productDAO.selectAll();
 		List<AdminBannerDTO> banners = adminDAO.selectAllBanners();
 
 		req.setAttribute("products", products);
 		req.setAttribute("banners", banners);
-		req.setAttribute("cartSize", cartItems.size());
+//		req.setAttribute("cartSize", cartItems.size());
 
 		result.setPath("../product/product-health-main.jsp");
 		
