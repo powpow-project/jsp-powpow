@@ -26,6 +26,7 @@ public class MyhomeShippingListController implements Action {
 		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
 		
+//		session.getId();
 		String memberEmail = (String)session.getAttribute("buyerEmail");
 		Long memberId = memberDAO.findBuyerByEmail(memberEmail);
 		
