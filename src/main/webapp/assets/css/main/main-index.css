@@ -260,7 +260,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	width: 1440px;
-	height: 151px;
+	height: 156px;
 	margin: 0 auto;
 }
 
@@ -274,23 +274,16 @@ body {
 	position: relative;
 	display: flex;
 	width: 1440px;
-	margin: 37px auto;
-	/* 헤더 윗공간 조절 */
-	margin-top: 20px;
+	height : 94px;
 	justify-content: space-between;
-	align-items: end;
+	align-items: center;
 }
 
 #header-wrap #nav .sector {
-	position: absolute;
-	line-height: 20px;
-	margin-left: 10px;
 	border: 1px solid #818181;
 	background-color: #818181;
 	height: 21px;
 	width: 0.1px;
-	top: 52px;
-	right: 96px;
 }
 
 #header-wrap #nav .left {
@@ -310,7 +303,6 @@ body {
 	display: flex;
 	gap: 26px;
 	align-items: end;
-	padding-top: 44px;
 }
 
 #header-wrap #nav .right .icons {
@@ -327,7 +319,6 @@ body {
 #header-wrap #nav .right .login {
 	display: flex;
 	font-size: 16px;
-	margin-left: 26px;
 }
 
 #header-wrap #nav .right .login a {
@@ -359,16 +350,15 @@ body {
 
 .menu-wrap {
 	display: flex;
-	height: 60px;
+	height: 61px;
 	font-weight: bold;
-	border-top: solid #818181 0.1px;
+	border-top: solid #818181 1px;
 }
 
 .menu-wrap .menu {
 	display: flex;
 	align-items: center;
 	width: 150px;
-	height: 50px;
 }
 
 .menu-wrap .menu a:hover {
@@ -379,6 +369,16 @@ body {
 	display: flex;
 }
 
+.sub-menu-wrap-bg{
+	width : 100dvw;
+	height : 238px;
+	background-color : #f9f9f9;
+	position : absolute;
+	left : 0;
+	z-index : 10;
+	display : none;
+}
+
 .sub-menu-wrap ul {
 	overflow: hidden;
 	height: 0;
@@ -386,10 +386,12 @@ body {
 
 .sub-menu-wrap .sub-menu {
 	width: 150px;
-	height: 50px;
 	display: flex;
 	align-items: center;
 	text-align: center;
+	padding : 12px 0;
+	position: relative;
+    z-index: 11;
 }
 
 .sub-menu-wrap .sub-menu a:hover {
@@ -837,71 +839,6 @@ footer {
 	margin-left: auto;
 }
 
-/*****************제품 섹션*******************/
-.products {
-	margin-top: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 33px;
-}
-
-.header {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	height: 50px;
-}
-
-.header img {
-	width: 40px;
-	height: auto;
-}
-
-.products h2 {
-	font-size: 28px;
-	font-weight: bold;
-	position: static;
-}
-
-.product-cards {
-	display: flex;
-	justify-content: space-between;
-}
-
-.product-card {
-	width: 220px;
-	height: 220px;
-	text-align: center;
-}
-
-.product-card img {
-	width: 100%;
-	border-radius: 10px;
-}
-
-.product-card p {
-	text-align: left;
-	margin-top: 5px;
-}
-
-.product-name {
-	font-size: 14px;
-}
-
-.product-price {
-	font-size: 16px;
-	font-weight: bold;
-}
-
-.shipping-info {
-	font-size: 12px;
-	color: gray;
-}
-
-.shipping-highlight {
-	color: navy;
-	font-weight: normal;
-}
 
 /*****************헬스+ 섹션*******************/
 .community2 {

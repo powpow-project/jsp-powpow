@@ -23,30 +23,29 @@ public class OrderWriteOkController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		
+		HttpSession session = req.getSession();
 		OrderDAO orderDAO = new OrderDAO();
 		MemberDAO memberDAO = new MemberDAO();
-		MemberVO memberVO = new MemberVO();
-		ProductDAO productDAO = new ProductDAO();
-		ProductVO productVO = new ProductVO();
-		OrderDTO orderDTO = new OrderDTO();
 		OrderVO orderVO = new OrderVO(); 
- 		HttpSession session = req.getSession();
 		
-		Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
+		Long productId = Long.parseLong(req.getParameter("productId"));
+		Long memberId = Long.parseLong(req.getParameter("memberId"));
+		int productCount = Integer.parseInt(req.getParameter("productCount"));
 		
+		String productCode = "";
+		for(int i = 0; i < 12; i ++) {
+			productCode += (char)(Math.floor(Math.random() * 25) + 65);
+		}
+		System.out.println(productCode);
 		
-		Long productId = Long.parseLong(String.valueOf(productVO.getId()));
-		Long orderId = Long.parseLong(String.valueOf(orderVO.getId()));
-		int productCount = orderVO.getProductCount();		
- 		
-	    
-        orderVO.setMemberId(memberId);
         orderVO.setProductId(productId);
+        orderVO.setMemberId(memberId);
         orderVO.setProductCount(productCount);
-        
+        orderVO.setOrderNumber(productCode);
         
         orderDAO.insert(orderVO);
 		
+        result.setRedirect(true);
 		result.setPath("../index.jsp");
 		return result;
 	}

@@ -57,6 +57,11 @@ public class OrderDAO {
         
         return sqlSession.selectList("order.selectByDate", params);
     }
+    
+//    마이홈 주문 조회
+    public List<OrderDTO> selectMyOrder(Long memberId) {
+    	return sqlSession.selectList("order.selectMyOrder", memberId);
+    }
 }
 
 	

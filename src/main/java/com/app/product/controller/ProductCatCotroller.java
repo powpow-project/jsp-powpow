@@ -2,6 +2,7 @@ package com.app.product.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collector;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,14 +23,12 @@ public class ProductCatCotroller implements Action {
 
 		String productCategoryName = req.getParameter("productCategoryName");
 		productVO.setProductCategoryName(req.getParameter("productCategoryName")); 
-//	    productVO.setProductType(req.getParameter("productType")); 
-	    
-//	    System.out.println(req.getParameter("productCategoryName"));
 	        
-		List<ProductVO> product = productDAO.selectByCategory(productCategoryName);
-		req.setAttribute("product", product);
-		
-		result.setPath("../product/product-dog.jsp?productCategoryName=" + productCategoryName);
+		List<ProductVO> products = productDAO.selectByCategory(productCategoryName);
+		List<ProductVO> noHealthProducts = products.stream().filter(product -> !product.getProductType().equals("헬스+")).map(product -> product).toList();
+		System.out.println(noHealthProducts);
+		req.setAttribute("products", noHealthProducts);
+		result.setPath("../product/product-cat.jsp?productCategoryName=" + productCategoryName);
 		return result;
 	}
 

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.app.dto.ProductReviewDTO;
 import com.app.mybatis.config.MyBatisConfig;
 import com.app.vo.OrderVO;
 import com.app.vo.ProductVO;
@@ -51,4 +52,25 @@ public class ProductDAO {
 	public List<ProductVO> selectByCategory(String productCategoryName){
 		return sqlSession.selectList("product.selectByCategory", productCategoryName);
 	}
+	
+//	상품검색(seller)
+	public List<ProductVO> sellerSearch(String searchKeyword){
+		return sqlSession.selectList("product.sellerSearch", searchKeyword);
+	}
+	
+//	상품 리뷰 검색
+	public List<ProductReviewDTO> selectReview(Long productId){
+		return sqlSession.selectList("product.selectReview", productId);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+

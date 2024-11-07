@@ -13,82 +13,17 @@
 </head>
 <body>
   <div class="body-container">
-				<div class="header-container">
-			<div id="header-wrap">
-				<div id="border">
-					<div id="nav">
-						<div class="left">
-							<img src="../assets/images/powpow-logo.png" alt="로고" />
-						</div>
-						<div class="right">
-							<div class="icons">
-								<a href="#"><img src="../assets/images/search-icon.jpg"
-									alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
-									src="../assets/images/truck-icon.jpg" alt="배송" />
-								</a> <a href="../cart-check.product"> <img
-									src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
-							</div>
-							<div class="sector"></div>
-							<div class="login">
-								<a href="../member/login.member">로그인</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu-container">
-						<ul class="menu-wrap h4">
-							<li class="menu"><a href="../product/main.product">스토어</a></li>
-							<li class="menu"><a
-								href="../community/community-main.community">커뮤니티</a></li>
-							<li class="menu"><a href="../list.myhome">마이홈</a></li>
-							<li class="menu"><a href="#">이벤트</a></li>
-						</ul>
-						<div id="sector"></div>
-						<div class="sub-menu-wrap">
-							<ul>
-								<li class="sub-menu"><a
-									href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-bird.product?productCategoryName=새">새</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
-								<li class="sub-menu"><a href="#">헬스+</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="../myhome/list.myhome">나의
-										정보</a></li>
-								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
-										정보</a></li>
-								<li class="sub-menu"><a
-									href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
-								<li class="sub-menu"><a href="../community/read.community">내
-										게시글</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+  
+	<!-- 헤더 -->
+	<jsp:include page="../header.jsp"></jsp:include>
+	<form action="../order/order-buyerlist.order">
     <div class="body-wrap">
       <div class="product-info-left">
-        <img id= main-img src="./images/not-found.png">
+        <img id= main-img src="/powpow/assets/images/product/${product.productImage}">
         <div class="sub-img-wrap">
-          <img src="./images/not-found.png">
-          <img src="./images/not-found.png">
-          <img src="./images/not-found.png">
+          <img src="/powpow/assets/images/product/${product.productSubImage1}">
+          <img src="/powpow/assets/images/product/${product.productSubImage2}">
+          <img src="/powpow/assets/images/product/${product.productSubImage3}">
         </div>
           <div class="info-seller">
             <p class="h6">상품코드 : 51563545 | 원산지 : 상품설명 참조</p>
@@ -101,7 +36,7 @@
           <img src="./images/heart2.png">
           <img src="./images/share.png">
         </div>
-        <p class="product-name h2">오쥬 바이 로우즈 독 치킨가슴살&호박 파우치 강아지 간식,69g (유통기한 2025-02-25까지)</p>
+        <p class="product-name h2">오쥬 바이 로우즈 독 치킨가슴살&amp;호박 파우치 강아지 간식,69g (유통기한 2025-02-25까지)</p>
         <p class="coupon h3">쿠폰 적용가</p>
         <div class="product-price-wrap">
           <p class="percent h2">10%</p> <p class="real-price h2">4,050원</p> <p class="price h4 gray500">4500원</p>
@@ -127,23 +62,25 @@
             </div>
         </div>
           <div class="product-box">
-            <p class="h4">오쥬 바이 로우즈 독 치킨가슴살&호박 파우치 강아지 간식,69g (유통기한 2025-02-25까지)</p>
+            <p class="h4">오쥬 바이 로우즈 독 치킨가슴살&amp;호박 파우치 강아지 간식,69g (유통기한 2025-02-25까지)</p>
             <div class="box-bottom">
               <div class="quantity-control">
-                <span><button class="btn-minus">-</button></span>
-                <input id="result1" value="1" class="quantity-input">
-                <span><button class="btn-plus">+</button></span>
+                <span><button type="button" class="btn-minus">-</button></span>
+                <input type="hidden" value="${product.id}" name="productId" />
+                <input id="result1" value="1" name="quantity" class="quantity-input">
+                <span><button type="button" class="btn-plus">+</button></span>
               </div>
                       <p class="h6 gray500">남은 수량:32개</p> <p class="h4">4,050원</p>
             </div>
           </div>
           <div class="button-container h5">
-            <button class="check-button">장바구니</button>
+            <button type="button" class="check-button">장바구니</button>
             <button class="payment-button">바로구매</button>
           </div>
       </div>
     </div>
-    
+     
+    </form>
      <p class="together h4">함께보면 좋은 상품</p>
      <div class="button-wrap">
       <p>1/2</p><button>&lt;</button><button> &gt;</button>
@@ -454,60 +391,15 @@
       <div class="banner-bottom">
         <img src="./images/ad-banner.png">
     </div>
-    <footer>
-      <div class="footer-container">
-          <div class="footer-section">
-              <h3>고객센터 &gt;</h3>
-              <p><span class="highlight">0000-0000</span> <span>09:00~18:00</span></p>
-              <ul class="custom-list">
-                  <li>평일: 전체 문의 상담</li>
-                  <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
-                  <li>일요일: 휴무</li>
-              </ul>
-              <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
-              <button class="email-button">이메일 문의</button>
-          </div>
-          <div class="footer-section">
-              <ul>
-                  <li><a href="#">회사소개</a></li>
-                  <li><a href="#">채용정보</a></li>
-                  <li><a href="#">이용약관</a></li>
-                  <li><a href="#">개인정보 처리방침</a></li>
-                  <li><a href="#">공지사항</a></li>
-                  <li><a href="#">안전거래센터</a></li>
-              </ul>
-          </div>
-          <div class="footer-section">
-              <ul>
-                  <li><a href="#">입점신청</a></li>
-                  <li><a href="#">제휴/광고 문의</a></li>
-                  <li><a href="#">POWPOW 신고센터</a></li>
-                  <li><a href="#">파트너 개인정보 처리방침</a></li>
-                  <li><a href="#">상품권 소개</a></li>
-                  <li><a href="#">고객의 소리</a></li>
-              </ul>
-          </div>
-          <div class="footer">
-              <div class="footer-section legal">
-                  <p>(주)포포 | 공동 제작 류재은 이진아 김태혁 문세연 신민철 이소연 최도윤 | 서울 강남구 테헤란로 146, 3층 4층</p>
-                  <p>contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span></p>
-                  <p>통신판매업신고번호 제2024-서울강남-0000호</p>
-              </div>
-              <div class="footer-section legal2">
-                  <p>(주)포포는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.</p>
-                  <p>단, (주) 포포가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.</p>
-              </div>
-              <div class="footer-section legal3">
-                  <p>Copyright 2024. powpow, Co., Ltd. All rights reserved.</p>
-              </div>
-          </div>
-      </div>
-    </footer>
+    
+   	<!-- 푸터 -->
+	<jsp:include page="../footer.jsp"></jsp:include>
+    
   </div>
   
 </body>
   <script>
-     const mainMenus = document.querySelectorAll(".menu-wrap .menu");
+    const mainMenus = document.querySelectorAll(".menu-wrap .menu");
     const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
     const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
 
@@ -521,7 +413,9 @@
     const deliveryWrap = document.querySelector(".container3 .btn3");
     const changeWrap = document.querySelector(".container3 .btn4");
     const infoWrap = document.querySelector(".container3 .btn1");
-
+	const submitButton =document.querySelector(".payment-button"); 
+	const submitForm =document.querySelector("form"); 
+    
     let count = 0;
     mainMenus.forEach((menu) => {
   menu.addEventListener("mouseover", () => {
@@ -617,6 +511,7 @@ function showChange(){
   changeWrap.style.display = "flex";
   infoWrap.style.display = "none";
 }
+
 
   </script>
 </html>
