@@ -6,7 +6,7 @@ public class OrderVO {
 	private Long id;
 	private Long memberId;
 	private Long productId;
-	private int orderNumber;
+	private String orderNumber;
 	private String orderDate;
 	private int productCount;
 	
@@ -36,12 +36,12 @@ public class OrderVO {
 		this.productId = productId;
 	}
 
-	public int getOrderNumber() {
+	public String getOrderNumber() {
 		return orderNumber;
 	}
 
-	public void setOrderNumber(int odrderNumber) {
-		this.orderNumber = odrderNumber;
+	public void setOrderNumber(String orderNumber) {
+		this.orderNumber = orderNumber;
 	}
 
 	public String getOrderDate() {
@@ -82,6 +82,7 @@ public class OrderVO {
 		OrderVO other = (OrderVO) obj;
 		return Objects.equals(id, other.id);
 	}
+
 	
 	
 }
