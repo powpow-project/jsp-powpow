@@ -5,11 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이홈 프로필</title>
-<link rel="stylesheet" href="../assets/css/index.css">
+<title>마이홈 프로필 수정</title>
+<link rel="stylesheet" href="../assets/css/main/main-index.css">
 <link rel="stylesheet" href="../assets/css/myhome/myhome-update.css">
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
+<style type="text/css">
+#profilePic {
+	background-image: url('../assets/images/member/none_profile.png');
+}
+</style>
 <body>
 	<div class="header-container"> 
 		<div id="header-wrap">
@@ -90,15 +95,16 @@
 			<p>|</p> <a href="./password-update.myhome" class="h4">비밀번호 변경</a>
 		</span>
 	</div>
-	
-	
 	<div id="page-content">
 		<button type="button" class="complete">완료</button>
-		<form action="./update-ok.myhome" method="post" enctype="multipart/form-data">
+		<form action="./update-ok.myhome" method="post" enctype="multipart/form-data" id="frame">
 			<div id="profile-edit">
 				<div class="profile-box">
-					<img class="default-profile-image"
-						src="../assets/images/member/${member.memberImage}" alt="프로필 사진">
+				<div class="profile-pic default-profile-image" id="profilePic">
+					<img id="profileImage" src="../assets/images/member/${member.memberImage}" alt="Profile Picture">
+				</div>
+					<%-- <img class="default-profile-image"
+						src="../assets/images/member/${member.memberImage}" alt="프로필 사진"> --%>
 					<span class="id">
 					<c:out value="${member.memberNickname}" /></span>
 					<br>
@@ -121,7 +127,7 @@
 					</div>
 					<div>
 						<label class="edit-category2">아이디 (이메일)</label>
-						<c:out value="${member.memberEmail}"></c:out>
+						<span class="email"><c:out value="${member.memberEmail}"></c:out></span>
 					</div>
 					<div>
 						<label class="edit-category3">휴대폰번호</label> 
@@ -135,16 +141,12 @@
 					<div class="group-category4">
 						<label class="edit-category4">주소</label>
 						<div class="input-container">
-							<input class="inputbutton" 
-								type="text" name="address"
-								id="sample6_postcode" placeholder="우편번호"
-							/>
-							<button class="auth-button" type="button"
-								onclick="sample6_execDaumPostcode()" value="우편번호 찾기">우편번호</button>
-							<input class="inputbutton" 
-								type="text" name="address"
-								id="sample6_address" placeholder="기본주소" value="${member.memberAddress}"
-							/> 
+							<input class="inputbutton" type="text" name="address" id="sample6_postcode" placeholder="우편번호"/>
+							<p id="adress-result"></p>
+							<input class="inputbutton" type="text" name="address" id="sample6_address" placeholder="기본주소" value="${member.memberAddress}"/>
+							<input class="inputbutton" type="text" name="address" id="sample6_detailAddress" placeholder="상세주소"> 
+							<p id="detail-adress-result"></p>
+							<button class="auth-button" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">우편번호</button>
 						</div>
 					</div>
 				</div>

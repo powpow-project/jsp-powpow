@@ -96,8 +96,8 @@
 			<div class="card">
 				<div class="profile-pic" id="profilePic"></div>
 				<div class="name">이름</div>
-				<input type="file" id="imageUpload" name="petImage"> <label
-					for="imageUpload">
+				<input type="file" id="imageUpload" name="petImage"> 
+				<label for="imageUpload">
 					<h1 id="edit-button" class="edit-button h6">이미지 편집</h1>
 				</label>
 			</div>
