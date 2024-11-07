@@ -22,6 +22,7 @@ import com.app.product.controller.ProductLikeOkController;
 import com.app.product.controller.ProductListController;
 import com.app.product.controller.ProductSearchController;
 import com.app.product.controller.ProductSellerController;
+import com.app.product.controller.ProductSellerSearchController;
 
 public class ProductFrontController extends HttpServlet{
 
@@ -35,11 +36,11 @@ public class ProductFrontController extends HttpServlet{
       
       if(target.equals("product-dog")) {
     	  result = new ProductDogCotroller().execute(req, resp);
-      }else if(target.equals("product-Cat")) {
+      }else if(target.equals("product-cat")) {
     	  result = new ProductCatCotroller().execute(req, resp);
-      }else if(target.equals("product-Bird")) {
+      }else if(target.equals("product-bird")) {
     	  result = new ProductBirdCotroller().execute(req, resp);
-      }else if(target.equals("product-Fish")) {
+      }else if(target.equals("product-fish")) {
     	  result = new ProductFishCotroller().execute(req, resp);
       }else if(target.equals("cart-check")) {
     	  result = new ProductCartCheckController().execute(req, resp);
@@ -61,6 +62,8 @@ public class ProductFrontController extends HttpServlet{
     	  result = new ProductCartDeleteController().execute(req, resp);
       }else if(target.equals("product-like-ok")) {
     	  result = new ProductLikeOkController().execute(req, resp);
+      }else if(target.equals("product-seller-search")) {
+    	  result = new ProductSellerSearchController().execute(req, resp);
       }else {
 		result = new Result();
 		result.setPath("../not-found.jsp");

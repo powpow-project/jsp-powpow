@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*****************제품 섹션*******************/
+.products {
+	margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+}
+
+.header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 50px;
+}
+
+.header img {
+	width: 40px;
+	height: auto;
+}
+
+.products h2 {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.product-cards {
+	display: flex;
+	justify-content: space-between;
+}
+
+.product-card {
+	width: 220px;
+	height: 220px;
+	text-align: center;
+}
+
+.product-card img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.product-card p {
+	text-align: left;
+	margin-top: 5px;
+}
+
+.product-name {
+	font-size: 14px;
+}
+
+.product-price {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.shipping-info {
+	font-size: 12px;
+	color: gray;
+}
+
+.shipping-highlight {
+	color: navy;
+	font-weight: normal;
+}
