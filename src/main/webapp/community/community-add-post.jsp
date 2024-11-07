@@ -13,191 +13,161 @@
 <body>
   <div class="addPost-wrapper">
 
-  <div class="othersPost-wrapper">
-			<div class="header-container">
-			<div id="header-wrap">
-				<div id="border">
-					<div id="nav">
-						<div class="left">
-							<img src="../assets/images/powpow-logo.png" alt="로고" />
-						</div>
-						<div class="right">
-							<div class="icons">
-								<a href="#"><img src="../assets/images/search-icon.jpg"
-									alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
-									src="../assets/images/truck-icon.jpg" alt="배송" />
-								</a> <a href="../cart-check.product"> <img
-									src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
-							</div>
-							<div class="sector"></div>
-							<div class="login">
-								<a href="../member/login.member">로그인</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="menu-container">
-						<ul class="menu-wrap h4">
-							<li class="menu"><a href="../product/main.product">스토어</a></li>
-							<li class="menu"><a
-								href="../community/community-main.community">커뮤니티</a></li>
-							<li class="menu"><a href="../list.myhome">마이홈</a></li>
-							<li class="menu"><a href="#">이벤트</a></li>
-						</ul>
-						<div id="sector"></div>
-						<div class="sub-menu-wrap">
-							<ul>
-								<li class="sub-menu"><a
-									href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-bird.product?productCategoryName=새">새</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
-								<li class="sub-menu"><a href="#">헬스+</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="../myhome/list.myhome">나의
-										정보</a></li>
-								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
-										정보</a></li>
-								<li class="sub-menu"><a
-									href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
-								<li class="sub-menu"><a href="../community/read.community">내
-										게시글</a></li>
-							</ul>
-							<ul>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-								<li class="sub-menu"><a href="#"></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-    <div class="addPost">
-
-      <div class="addpic-wrapper">
-        <div class="button-first"><button>업로드</button></div>
-        <div class="section"></div>
-        <div class="addpic">
-          <div class="addpic-smallthumbnail">
-            <img src="../assets/images/community/communitycat2.png" alt="썸네일 고양이">
+    <div class="header-container">
+      <div id="header-wrap">
+        <div id="border">
+          <div id="nav">
+            <div class="left">
+              <img src="/powpowcommunity/images/main-logo.png" alt="로고">
+            </div>
+            <div class="right">
+              <div class="icons">
+                <a href="#"><img src="/powpowcommunity/images/search_icon 2.jpg" alt="검색"></a>
+                <a href="#"><img src="/powpowcommunity/images/truck_transport_icon 2.jpg" alt="배송"></a>
+                <a href="#"><img src="/powpowcommunity/images/shopping_cart_icon 2.jpg" alt="카트"></a>
+              </div>
+              <div class="sector"></div>
+              <div class="login"><a href="#">로그인</a></div>
+            </div>
           </div>
-          <div class="addpic-plus-button">
-            <img id="plus-img" src="../assets/images/community/plus.png" alt="추가버튼">
-            <input type="file" name="file1" id="file1"></input>
-          </div>
-        </div>
-        <div class="addpic-pc-wrapper">
-          <div class="addpic-pc-relative">
-            <div class="addpic-pc">
-              <img src="../assets/images/community/postedCat.png" alt="고양이 사진 업로드됨">
-            
-            
-                <div class="button-tag-popup">
-                      <button class="choose-tag-button">
-                        <a href="#">
-                         + 상품 태그 추가
-                        </a>
-                      </button>
+          <div class="menu-container">
+            <ul class="menu-wrap h4">
+              <li class="menu"><a href="#">스토어</a></li>
+              <li class="menu"><a href="#">커뮤니티</a></li>
+              <li class="menu"><a href="#">마이홈</a></li>
+              <li class="menu"><a href="#">이벤트</a></li>
+            </ul>
+            <div id="sector"></div>
+            <div class="sub-menu-wrap">
+              <ul>
+                <li class="sub-menu"><a href="#">강아지</a></li>
+                <li class="sub-menu"><a href="#">고양이</a></li>
+                <li class="sub-menu"><a href="#">새</a></li>
+                <li class="sub-menu"><a href="#">물고기</a></li>
+                <li class="sub-menu"><a href="#">헬스+</a></li>
+              </ul>
+              <ul>
+                <li class="sub-menu"><a href="#">홈</a></li>
+                <li class="sub-menu"><a href="#">헬스+</a></li>
+              </ul>
+              <ul>
+                <li class="sub-menu"><a href="#">나의 정보</a></li>
+                <li class="sub-menu"><a href="#">반려동물 정보</a></li>
+                <li class="sub-menu"><a href="#">나의 쇼핑</a></li>
+                <li class="sub-menu"><a href="#">내 게시글</a></li>
+              </ul>
 
-  
-                      <div class="tag-popup disable">
-                       <p class="h5">태그할 상품을 누르세요 </p>
-                      </div>
-       
-                    
-                  <div id="inner-html">
-                    <div class="tag-popup-plus">
-                      <img src="/powpowcommunity/images/ph_plus-yellow.png" alt="플러스 버튼">
-                    </div>
-                    <div class="tag-popup-select">
-                      <form>
-                        <div class="tag-search-box">
-                          <input type="text" id="search" value="상품명 검색"></input>
-                          <button class="no">취소</button>
-                        </div>
-                      </form>
-                      <div class="plus-product">
-                        + 상품 직접 등록
-                      </div>
-                      <div class="product1-wrapper">
-                        <div class="product1">
-                          <div class="image-area">
-                          </div>
-                          <div class="explain">
-                            <p class="explain-title">보호리</p>
-                            <p class="explain-info">덴탈 뉴트리 냠냠</p>
-                          </div>
-                          <div class="product-button-wrapper">
-                            <button>선택</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="product2-wrapper">
-                        <div class="product2">
-                          <div class="image-area">
-                          </div>
-                          <div class="explain">
-                            <p class="explain-title">디어랩스</p>
-                            <p class="explain-info">울애기 쌩쌩(눈물/관절/피부/면역/장케어)</p>
-                          </div>
-                          <div class="product-button-wrapper">
-                            <button>선택</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <ul>
+                <li class="sub-menu"><a href="#"></a></li>
+                <li class="sub-menu"><a href="#"></a></li>
+                <li class="sub-menu"><a href="#"></a></li>
+                <li class="sub-menu"><a href="#"></a></li>
+              </ul>
+
             </div>
           </div>
         </div>
-        
-        <div class="explain-wrapper">
-          <form class="explain-box" action="" method="get">
-            <textarea id='explain' onfocus="this.placeholder = ''"placeholder="오늘 당신의 반려동물은 무엇을 했나요?&#13;&#10;당신이 바라보는 모습을 수백만 포포인들과 나눠보세요!" wrap="hard"></textarea>
-
-
-          </form>
-        </div>
-        
-        
       </div>
-      
-      <div class="powpow-info">
-        <img src="/powpowcommunity/images/Group 241.png" alt="포포 정보">
-      </div>
-
     </div>
-  </div>
-   
+
+    <form action=".community" method="post" class="upload-wrapper">
+      <div class="post-wrapper">
+        <!-- 디자인 용 -->
+        <div class="image-wrapper">
+          <div id="dummy-content-wrap">
+            <div class="main-image-dummy">
+              <label for="file-upload">
+                <div class="main-img-dummy">
+                  <p class="h5">화면을 눌러 이미지를 추가하세요<br>(최대 5장까지 가능합니다)</p>
+                </div>
+              </label>
+            </div>
+            <div class="sub-images-wrap-dummy">
+              <div class="sub-img-dummy"></div>
+              <div class="sub-img-dummy"></div>
+              <div class="sub-img-dummy"></div>
+              <div class="sub-img-dummy"></div>
+            </div>
+            <input id="file-upload" type="file" multiple>
+          </div>
+          <!-- 실제 이미지가 보여지는 곳 -->
+          <div id="main-content-wrap">
+            <div class="main-image">
+              <div class="main-img image"></div>
+              <div class="close-button">
+                <img src="/powpowcommunity/images/exit_icon30.png" alt="이미지 추가 취소">
+              </div>
+              <button type="button" class="tag-button">태그 추가 버튼</button>
+              <div class="tag-popup">
+                <p>태그 할 위치에 클릭해주세요!</p>
+                <div class="tag-product">
+                  <form action="" method="get">
+                    <input type="text" class="search" placeholder="상품명 검색">
+                  </form>
+                  <p>취소</p>
+                  <p>+상품 직접 등록</p>
+                  <div class="taged-product">
+                    <div class="image"></div>
+                    <div class="title">
+                      <p>보호리</p>
+                      <p>덴탈 뉴트리 냠냠</p>
+                    </div>
+                    <button type="button" class="choose">선택</button>
+                  </div>
+                </div>
+           
+                <button type="button" onclick="cancel()">위치 다시 선택</button>
+              </div>
+            </div>
+            <div class="sub-images-wrap">
+              <div class="sub-img image"></div>
+              <div class="sub-img image"></div>
+              <div class="sub-img image"></div>
+              <div class="sub-img image"></div>
+            </div>
+            <input id="file-upload" type="file" multiple>
+          </div>
+        </div>
+
+        <!-- 글 작성하는 칸 -->
+
+        <div class="writer-box">
+          <textarea name="write" id="write"
+            placeholder="오늘 당신의 반려동물은 무엇을 했나요?&#10;당신이 바라보는 모습을 수백만 포포인들과 나눠보세요!"></textarea>
+
+        </div>
 
 
-    
+
+      </div>
+
+      <input class="upload" type="submit" value="업로드">
+    </form>
+
+
+
 </body>
+
+
+
+
+
+
+
+
+
+
 <script>
-  //헤더 코드
+
 
   const mainMenus = document.querySelectorAll(".menu-wrap .menu");
   const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
   const subMenuAll = document.querySelector(".sub-menu-wrap");
   const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
-  
+
   let count = 0;
   let hoverTimeout; // 타임아웃을 저장할 변수
-  
+
   mainMenus.forEach((menu) => {
     menu.addEventListener("mouseover", () => {
       clearTimeout(hoverTimeout); // 기존에 설정된 타임아웃이 있으면 제거
@@ -206,7 +176,7 @@
         ul.style.backgroundColor = "white";
       });
     });
-  
+
     menu.addEventListener("mouseleave", () => {
       hoverTimeout = setTimeout(() => {
         subMenuUl.forEach((ul) => {
@@ -216,7 +186,7 @@
       }, 100); // 100ms 지연 후 메뉴를 닫음
     });
   });
-  
+
   subMenus.forEach((sub, i) => {
     sub.addEventListener("mouseover", () => {
       clearTimeout(hoverTimeout); // 서브메뉴에서도 마우스 오버 시 타임아웃 제거
@@ -224,7 +194,7 @@
         ul.style.height = "250px";
       });
     });
-  
+
     sub.addEventListener("mouseleave", () => {
       hoverTimeout = setTimeout(() => {
         subMenuUl.forEach((ul) => {
@@ -234,41 +204,113 @@
     });
   });
 
-  // 태그 버튼 클릭하면 태그를 추가하세요가 나타남, 끄면 꺼짐.
-  const tagButton = document.querySelector(".choose-tag-button");
+  //이미지 추가하기 
+
+  //구현 목표 
+
+  //피씨에서 이미지 추가한 걸 리스트에 담기. 
+  //조건문 추가해서 5개 이상이면 알림창으로 이미지는 5개까지만 추가해주세요! 팝업 띄우기
+
+  const files = document.querySelector("input");
+  const images = document.querySelectorAll(".image");
+  const dummyContent = document.querySelector("#dummy-content-wrap");
+  const mainContent = document.querySelector("#main-content-wrap");
+  const mainImage = document.querySelector(".main-image");
   const tagPopup = document.querySelector(".tag-popup");
+  const tagbutton = document.querySelector(".tag-button");
 
-    tagButton.addEventListener("click", () => {
-      if(tagPopup.className.includes("disable")){
-        tagPopup.className = "tag-popup enable";
-      }else{
-        tagPopup.className = "tag-popup disable";
+  console.log(mainImage)
+  files.addEventListener("change", (e) => {
+    const uploadFiles = Array.from(e.target.files);
+
+    for (let i = 0; i < uploadFiles.length; i++) {
+      let reader = new FileReader();
+      reader.readAsDataURL(e.target.files[i])
+      reader.onload = (e) => {
+        console.log(e)
+        if (uploadFiles.length <= 5) {
+          images[i].style.backgroundImage = `url(${e.target.result})`;
+          dummyContent.style.display = "none";
+          mainContent.style.display = "block";
+
+        } else {
+          return;
+          alert('이미지는 5개까지만 첨부 가능합니다.');
+          
+        }
       }
-    })
+    }
 
-  //화면 영역 클릭하면 + 버튼이 나타남.
-  const imageArea = document.querySelector(".addpic-pc");
 
-  tagButton.addEventListener("click", () => {
+  })
 
-    imageArea.addEventListener("click", (e) => {
-    console.log(e)
-    console.log("x좌표", e.layerX)
-    console.log("y좌표", e.layerY)
-    const innerHtml = document.getElementById('inner-html');
-      innerHtml.style.display = "flex";
-      innerHtml.style.position = "absolute";
-      innerHtml.style.left = `${e.layerX}px`;
-      innerHtml.style.top = `${e.layerY}px`;
-      imageArea.appendChild(innerHtml);
-    })
+  //이미지 팝업 끄고, 다시 이미지 추가하기 {
+  const closeBtn = document.querySelector(".close-button");
+
+  closeBtn.addEventListener("click", () => {
+    mainContent.style.display = "none";
+    dummyContent.style.display = "block";
   })
 
 
-  
-  
-  
-  
+  // 이미지를 클릭하면 태그 박스를 삽입
+
+  tagbutton.addEventListener("click", (e) => {
+    e.target.style.display = "none";
+    tagPopup.style.display = "block";
+  })
+
+  globalThis.count = 0;
+  mainImage.addEventListener("click", (e) => {
+    const firstLayerX = e.layerX;
+    const firstLayerY = e.layerY;
+    count++
+    console.log(count)
+
+
+    if (count == 2) {
+      tagPopup.style.left = `${e.layerX}px`;
+      tagPopup.style.top = `${e.layerY}px`;
+    } else {
+      return;
+    }
+
+  })
+
+  const cancel = () => { count = 0; return; }
+
+
+
+
+
+
+
+
+
+
+
+  //업로드 확인
+  const form = document.querySelector("#posts");
+  const post = document.querySelector("#posts input");
+  const uploadButton = document.querySelector("upload-post-button");
+
+  console.log(post)
+
+  uploadButton.addEventListener("click", () => {
+    if (!post.value) {
+      return alert("작성된 내용이 없습니다!");
+    } else {
+      form.submit();
+    }
+  })
+
+
+
+
+  // repeat, cover
+
+
+
 
 
 
