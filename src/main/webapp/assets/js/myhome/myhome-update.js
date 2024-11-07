@@ -56,7 +56,7 @@ const mainMenus = document.querySelectorAll(".menu-wrap .menu");
      if (file) {
          const reader = new FileReader();
          reader.onload = function (e) {
-             document.querySelector('.default-profile-image').src = e.target.result; // Update the profile image
+             document.querySelector('.default-profile-image').src = e.target.result;
          }
          reader.readAsDataURL(file);
      }
@@ -83,6 +83,36 @@ const submitButton = document.querySelector(".complete");
 const form = document.querySelector("form");
 submitButton.addEventListener("click", () => {
 	form.submit()
+})
+
+
+ 
+/*  */
+
+const complete = document.querySelector(".complete");
+const formtag = document.querySelector("#frame");
+const inputs = document.querySelectorAll("input");
+const thumbnailInput = document.querySelector("#imageUpload");
+const thumbnail = document.querySelector("#profilePic");
+
+
+complete.addEventListener("click", () => {
+   for(let input of inputs){
+      if(!input.value){
+         if(input.name === "petImage") continue;
+         alert(`${input.name}를 입력하세요`)
+      }
+   }
+   formtag.submit();
+})
+
+thumbnailInput.addEventListener("change", (e) => {
+   console.log(e)
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0])
+    reader.onload = (e) => {
+      thumbnail.style.backgroundImage = `url(${e.target.result})`;
+    } 
 })
 
  

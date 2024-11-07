@@ -227,6 +227,5 @@
 	</footer>
 </body>
 <script src="../assets/js/myhome/myhome-list.js">
-	
 </script>
 </html>
