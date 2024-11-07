@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 <title>메인페이지</title>
 <link rel="stylesheet" href="assets/css/main/main-index.css" />
+<link rel="stylesheet" href="assets/css/main/index-product.css" />
+
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="shortcut icon" href="assets/images/favicon.ico" />
@@ -113,7 +115,6 @@
 									<a href="./member/login.member">로그인</a>
 								</div>
 							</c:if>
-							
 						</div>
 					</div>
 
@@ -671,7 +672,6 @@
 
 </body>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="./assets/js/index/index-main.js"></script>
 <script>
 	let swiper = new Swiper(".mySwiper-main-banner", {
 		navigation : {

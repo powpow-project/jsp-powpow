@@ -56,18 +56,8 @@
 /* 상품 섹션 */
 
 .products {
-  padding: 20px;
-  width: 1440px;
-  margin: 0 auto;
-  position: relative;
-  right: 100px;
-}
-
-.best-products,
-.all-products {
-  margin-bottom: 40px;
-  margin: 0 360px;
-
+  width: 936px;
+  margin : 0 auto;
 }
 
 .best-products h2 {
@@ -79,45 +69,39 @@
 
 .all-products h2 {
   font-size: 28px;
-  width: 136px;
-  height: 34px;
-  margin-bottom: 40px;
 }
 
 .product-grid {
-  display: grid; /* 그리드 레이아웃 사용 */
-  grid-template-columns: repeat(3, 1fr); /* 3개의 열 */
-  gap: 20px; /* 아이템 간의 간격 */
+  display: flex;
+  flex-wrap : wrap;
+  gap: 48px;
+  width : 936px;
 }
 
 .product-grid-container{
+	width : 936px;
 	display: flex;
-	gap: 20px
+	gap: 24px;
+	margin: 0 0 98px 0;
 }
 
 
 .product img {
-  position: relative;
-  bottom: 16px;
-  right: 13px;
   width: 216px;
-  height: 216px;
   border-radius: 20px;
   background-color: #f4f4f4;
-  margin-bottom: -81px;
+}
+
+.product2 {
+	width : 280px;
 }
 
 .product2 img {
-  position: relative;
-  bottom: 16px;
-  right: 16px;
   width: 280px;
   height: 280px;
-  margin: 0px 8px;
   border-radius: 20px;
   background-color: #f4f4f4;
-  margin-bottom: -10px;
-  margin-top: 56px;
+  margin-bottom: 10px;
 }
 
 .all-products .all-product {
@@ -126,7 +110,7 @@
 }
 
 .all-products {
-  margin-top: 111px;
+	margin : 0 auto;
 }
 
 .product-name {
@@ -147,21 +131,20 @@
 
 /* 검색창 스타일 */
 .search-box {
-  display: flex;
-  align-items: center;
-  position: relative;
-  bottom: 42px;
-  left: 236px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  padding: 5px;
+  padding: 12px;
   width: 464px;
   height: 50px;
+  margin: 19px auto 114px auto;
+  position :relative;
 }
 
 .search-box img {
-  position: relative;
-  left: 195px;
+	position :absolute;
+	right : 12px;
+	top : 50%;
+	transform : translate(0, -50%);
 }
 
 .search-box input {
@@ -169,7 +152,8 @@
   outline: none;
   padding-left: 10px;
   font-size: 14px;
-  width: 200px;
+  width: calc(100% - 42px);
+  height: 100%;
   /* 검색창 입력 필드 너비 */
 }
 
@@ -188,10 +172,6 @@
 
 /* 전체 드롭다운 영역 */
 .category-dropdown {
-  position: relative;
-  width: 200px;
-  bottom: 31px;
-  left: 750px;
 }
 
 /* all 서브랑 타이틀 묶은거 */
@@ -199,63 +179,47 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 400px;
   /* 검색창과 카테고리를 포함한 전체 너비 */
-  position: relative;
-  left: 745px;
-  top: 50px;
+  width : 936px;
+  margin: 0 0 37px 0;
 }
 
 /* 카테고리 리스트 스타일 */
 .category-item {
   list-style: none;
-  /* 기본 점 스타일 제거 */
-  position: relative;
-  margin-bottom: 10px;
-  /* 카테고리와 다른 요소 사이 여백 */
-  top: 18px;
 }
 
 .all-category-item {
-  list-style: none;
   /* 기본 점 스타일 제거 */
-  position: relative;
   margin-bottom: 10px;
-  /* 카테고리와 다른 요소 사이 여백 */
-  top: 50px;
+}
+
+.best-products-wrap{
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 37px 0;
 }
 
 /* 카테고리 제목 스타일 */
 .category-title {
   font-size: 16px;
-  display: flex;
-  justify-content: flex-start;
-  padding: 15px;
   cursor: pointer;
 }
 
 .all-category-title {
   font-size: 16px;
-  margin: 10px;
   cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .toggle-icon {
   width: 16px;
-  /* 이미지의 너비 */
   height: auto;
-  /* 자동으로 비율 맞추기 */
-  margin-left: 54px;
 }
 
 .all-toggle-icon {
   width: 16px;
   /* 이미지의 너비 */
-  height: auto;
-  /* 자동으로 비율 맞추기 */
-  margin-left: 54px;
+  margin-left: auto;
 }
 
 /* 서브 카테고리 목록 스타일 */

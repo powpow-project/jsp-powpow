@@ -23,46 +23,28 @@ public class OrderBuyerListController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		OrderDAO orderDAO = new OrderDAO();
+		OrderVO orderVO = new OrderVO(); 
 		MemberDAO memberDAO = new MemberDAO();
 		MemberVO memberVO = new MemberVO();
 		ProductDAO productDAO = new ProductDAO();
 		ProductVO productVO = new ProductVO();
-		OrderDTO orderDTO = new OrderDTO();
-		OrderVO orderVO = new OrderVO(); 
+		
  		HttpSession session = req.getSession();
+ 		Long memberId = memberDAO.findBuyerByEmail((String)session.getAttribute("buyerEmail"));
+ 		int quantity = Integer.parseInt(req.getParameter("quantity"));
+ 		Long productId = Long.parseLong(req.getParameter("productId"));
+ 		
+// 		상품
+ 		productDAO.select(productId).ifPresent(product -> {
+ 			req.setAttribute("product", product);
+ 			req.setAttribute("quantity", quantity);
+ 		});
+ 		
+// 		유저
+ 		memberDAO.select(memberId).ifPresent(member -> {
+ 			req.setAttribute("member", member);
+ 		});
 		
-		session.setAttribute("id", 2L);
-		Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
-		
-		
-		Long productId;
-		Long orderId;
-		try {
-			productId = Long.parseLong(String.valueOf(productVO.getId()));
-			orderId = Long.parseLong(String.valueOf(orderVO.getId()));
-			memberDAO.select(memberId).ifPresent((member) -> {
-				req.setAttribute("member", member);
-			});
-			
-			productDAO.select(productId).ifPresent((product) -> {
-				req.setAttribute("product", product);
-			});
-			
-			orderDAO.select(orderId).ifPresent((order) -> {
-				req.setAttribute("order", order);
-			});
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-        
-	    
-	    
-	    
-	    
-	        
 		result.setPath("order-buyerlist.jsp");
 		return result;
 	}

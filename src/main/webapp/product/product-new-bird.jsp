@@ -81,12 +81,11 @@
 					</div>
 				</div>
 			</div>
-		</div>
-     <div class="body-container">
+		</div>     <div class="body-container">
        <div class="body-wrap">
          <div class="sub-logo">
            <img src="../assets/images/shopping/Icon-Dog.jpg" alt="개">
-           <p>고양이</p>
+           <p>새</p>
              </div>
              <div class="sub-logo-title-wrap">
           <div class="sub-logo-title">

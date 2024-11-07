@@ -92,19 +92,24 @@
 
 	<!-- 상품 섹션 -->
 	<section class="products">
+		<!-- 검색 -->
+		<div class="search-box">
+				<form action="./product-seller-search.product" method="post">
+					<input type="text" name="searchKeyword" placeholder="상품명을 검색해 주세요.">
+					<button type="submit">
+						<img src="../assets/images/shopping/search.png" alt="search Icon"> 
+						<i class="fa fa-search"></i>
+						<!-- 검색 아이콘 -->
+					</button>
+				</form>
+		</div>
+			
+			
 		<!-- 베스트 상품 섹션 -->
 		<div class="best-products">
-			<h2>베스트 상품</h2>
-			<div class="search-box">
-				<input type="text" placeholder="검색란">
-				<button type="submit">
-					<img src="../assets/images/shopping/search.png" alt="search Icon"> 
-					<i class="fa fa-search"></i>
-					<!-- 검색 아이콘 -->
-				</button>
-			</div>
-			<div class="category-dropdown">
-				<ul>
+			<div class="best-products-wrap">
+				<h2>베스트 상품</h2>
+				<ul class="category-dropdown">
 					<li class="category-item">
 						<p class="category-title">
 							카테고리 <img class="toggle-icon" src="../assets/images/shopping/arrow.png" alt="Toggle Icon" />
@@ -140,22 +145,20 @@
 		<!-- 전체 상품 섹션 -->
 		<div class="all-products">
 			<div class="all-sup-title">
-				<div class="all-category-dropdown">
-					<ul>
-						<li class="all-category-item">
-							<p class="all-category-title"> 인기상품순 <img class="all-toggle-icon" src="../assets/images/shopping/arrow.png" alt="Toggle Icon" />
-							</p>
-							<div class="all-sub-category" style="display: none;">
-								<p>판매 인기순</p>
-								<p>상품평 많은순</p>
-								<p>낮은 가격순</p>
-								<p>신규 등록순</p>
-							</div>
-						</li>
-					</ul>
-				</div>
+				<h2 class="h2">전체 상품</h2>
+				<ul class="all-category-dropdown">
+					<li class="all-category-item">
+						<p class="all-category-title"> 인기상품순 <img class="all-toggle-icon" src="../assets/images/shopping/arrow.png" alt="Toggle Icon" />
+						</p>
+						<div class="all-sub-category" style="display: none;">
+							<p>판매 인기순</p>
+							<p>상품평 많은순</p>
+							<p>낮은 가격순</p>
+							<p>신규 등록순</p>
+						</div>
+					</li>
+				</ul>
 			</div>
-			<h2 class="h2">전체 상품</h2>
 			<div class="product-grid">
             <!-- 상품 리스트를 반복적으로 출력 -->
             <c:forEach var="product" items="${products}">
@@ -241,6 +244,7 @@
 </body>
 <script src="../assets/js/product/brand-main.js"></script>
 <script>
+	const products = `${searchProducts}`;
 	let currentPage = 1;
 	const endPage = 10;
 	
