@@ -45,3 +45,26 @@ const mainMenus = document.querySelectorAll(".menu-wrap .menu");
      }, 100); // 100ms 지연 후 서브메뉴를 닫음
    });
  });
+ 
+ 
+ /* 비밀번호 변경 */
+ 
+const form = document.querySelector("#password-update-form");
+const inputs = document.querySelectorAll("#password-update-form input");
+const submitButton = document.querySelector(".submit-button");
+
+submitButton.addEventListener("click", () => {
+	for(let input of inputs){
+		if(!input.value){
+			alert("비밀번호를 입력하세요")
+			return;
+		}
+	}
+	form.submit();
+})
+
+
+
+
+
+ 

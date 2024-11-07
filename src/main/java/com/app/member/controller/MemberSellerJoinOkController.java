@@ -6,15 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.Set;
-
 import com.app.Action;
 import com.app.Result;
 import com.app.dao.BusinessDAO;
 import com.app.dao.MemberDAO;
-import com.app.dto.BusinessDTO;
 import com.app.vo.BusinessVO;
-import com.app.vo.MemberVO;
 import com.app.vo.SellerVO;
 
 public class MemberSellerJoinOkController implements Action {
@@ -27,13 +23,12 @@ public class MemberSellerJoinOkController implements Action {
 		BusinessVO businessVO = new BusinessVO();
 		BusinessDAO businessDAO = new BusinessDAO();
 
-//		 #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck}
 		businessVO.setBusinessName(req.getParameter("kingname"));
 		businessVO.setBusinessNumber(req.getParameter("number"));
 		businessVO.setBusinessRepresentativeName(req.getParameter("companyname"));
 		
 		businessDAO.insertBusiness(businessVO);
-//		System.out.println(businessVO);
+
 
 		Long businessId = businessDAO.selectBusinessById(req.getParameter("number")).getId();
 		
@@ -44,8 +39,6 @@ public class MemberSellerJoinOkController implements Action {
 		sellerVO.setSellerPhone(req.getParameter("phone"));
 		sellerVO.setSellerSms(req.getParameter("sms").charAt(0));
 		sellerVO.setSellerEmailCheck(req.getParameter("emailcheck").charAt(0));
-		
-//		System.out.println(sellerVO);
 		
 		
 		memberDAO.insertSeller(sellerVO);

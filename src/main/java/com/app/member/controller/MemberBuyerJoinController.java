@@ -8,14 +8,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
-import com.app.vo.MemberVO;
 
 public class MemberBuyerJoinController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		Result result = new Result();
+	    Result result = new Result();
+	    String userPhoneNumber = req.getParameter("phone");
+	    
+	    req.setAttribute("userPhoneNumber", userPhoneNumber);
+	    
 		result.setPath("../member/member-buyer-join.jsp");
 		
 		return result;

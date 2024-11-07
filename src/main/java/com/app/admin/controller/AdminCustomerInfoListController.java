@@ -18,7 +18,7 @@ public class AdminCustomerInfoListController implements Action {
         Result result = new Result();
         MemberDAO memberDAO = new MemberDAO();
 
-        List<MemberVO> members = memberDAO.selectAllMembers();
+        List<MemberVO> members = memberDAO.selectAll();
         req.setAttribute("members", members);
 
         result.setPath("../admin/admin-customerInfo-list.jsp"); 

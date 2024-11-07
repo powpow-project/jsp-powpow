@@ -14,8 +14,15 @@ public class MemberLoginController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-		result.setPath("../member/member-login.jsp");
-
+		
+		String buyerEmail = (String)req.getSession().getAttribute("buyerEmail");
+		System.out.println(buyerEmail);
+		if(buyerEmail == null) {
+			result.setPath("../member/member-login.jsp");
+		}else {
+			result.setRedirect(true);
+			result.setPath("../index.jsp");
+		}
         return result;
     }
 }

@@ -1,14 +1,18 @@
 package com.app.myhome.controller;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
+import com.app.dao.MemberDAO;
 import com.app.dao.MyhomeDAO;
+import com.app.dto.PetDTO;
 import com.app.vo.PetVO;
 
 public class MyhomePetUpdateController implements Action {
@@ -18,25 +22,24 @@ public class MyhomePetUpdateController implements Action {
 	    Result result = new Result();
 	    PetVO petVO = new PetVO();
 	    MyhomeDAO myhomeDAO = new MyhomeDAO();
+	    MemberDAO memberDAO = new MemberDAO();
+	    HttpSession session = req.getSession();
+	    String memberEmail = (String)session.getAttribute("buyerEmail");
+	    Long memberId = memberDAO.findBuyerByEmail(memberEmail);
+	    Long petId = Long.parseLong(req.getParameter("petId"));
 	    
-	    // 파라미터 가져오기
-        Long id = Long.parseLong(req.getParameter("id"));
-        String petName = req.getParameter("petName");
-        String petBirth = req.getParameter("petBirth");
-        String petBreed = req.getParameter("petBreed");
-	    String petKind = req.getParameter("petKind");
-	    String petImage = req.getParameter("petImage");
-	    String petGender = req.getParameter("petGender");
-	    String petWeight = req.getParameter("petWeight");
-	    String petVet = req.getParameter("petVet");
+	    petVO.setId(petId);
+	    petVO.setMemberId(memberId);
+	    	
+	    System.out.println(petVO);
 	    
+	    Optional<PetVO> pet = myhomeDAO.selectPetId(petVO);
+	    req.setAttribute("pet",  pet.orElseThrow(() -> {
+	    	throw new RuntimeException();
+	    }));
 	    
-	    myhomeDAO.updatePet(petVO);
-	    
-	    PetVO pet = myhomeDAO.selectPetId(id).orElseThrow(() -> new RuntimeException("Pet not found with ID: " + id));
-	    result.setPath("../myhome/myhome-pet-list.jsp"); // JSP 경로
-	    
-	    
+//	    업데이트 페이지
+	    result.setPath("../myhome/myhome-pet-update.jsp"); // JSP 경로
 	    return result;
     }
 }

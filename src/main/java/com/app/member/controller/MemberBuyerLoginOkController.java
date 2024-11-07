@@ -27,7 +27,6 @@ public class MemberBuyerLoginOkController implements Action {
 		memberVO.setMemberEmail(req.getParameter("buyerEmail"));
 		memberVO.setMemberPassword(req.getParameter("buyerPassword"));
 		
-		
 		buyerEmail = memberDAO.selectBuyer(memberVO);
 		
 		result.setRedirect(true);

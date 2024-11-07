@@ -12,6 +12,12 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
+	<c:if test="${empty pets}">
+		<script>
+			alert("펫을 등록해주세요 ^_^");
+			window.location.href = './no-pet.myhome';
+		</script>
+	</c:if>
 	<div class="header-container">
 		<div id="header-wrap">
 			<div id="border">
@@ -85,8 +91,7 @@
 	<div class="sub h1">
 		<p>반려동물 정보</p>
 	</div>
-	<a href="./pet-kind.myhome"><button id="submit-button">+추가
-			등록하기</button></a>
+	<a href="./pet-kind.myhome"><button type="button" id="submit-button">+추가등록하기</button></a>
 	<%--    <c:choose>
     <c:when test="${empty pet}">
         <script>
@@ -108,54 +113,25 @@
             </div>
         </div>
     </div> --%>
-	<c:forEach items="${pet}" var="pet">
 		<div id="mydog">
-			<div class="card">
-				<img class="star" src="../assets/images/myhome/star.svg"
-					data-filled-src="../assets/images/myhome/star-select.svg"
-					alt="선택된 동물">
-				<div class="profile-pic" id="profilePic">
-					<img id="profileImage"
-						src="../assets/images/myhome/${pet.petImage}"
-						alt="Profile Picture">
+			<c:forEach items="${pets}" var="pet">
+				<div class="card">
+					<img class="star" src="../assets/images/myhome/star.svg"
+						data-filled-src="../assets/images/myhome/star-select.svg"
+						alt="선택된 동물">
+							<div class="profile-pic" id="profilePic">
+									<img id="profileImage" src="../assets/images/myhome/${pet.petImage}" alt="Profile Picture">
+							</div>
+							<div class="name">
+									<c:out value="${pet.petName}" />
+							</div>
+					<div class="button-group">
+						<a href="./pet-update.myhome?petId=${pet.id}"><button class="edit-button">편집</button></a>
+						<a href="./pet-delete-ok.myhome?petId=${pet.id}"><button class="edit-button">삭제</button></a>
+					</div>
 				</div>
-				<div class="name">
-					<c:out value="${pet.petName}" />
-				</div>
-				<div class="pet-details">
-					<p>
-						<strong>성별:</strong>
-						<c:out value="${pet.petGender}" />
-					</p>
-					<p>
-						<strong>품종:</strong>
-						<c:out value="${pet.petBreed}" />
-					</p>
-					<p>
-						<strong>생일:</strong>
-						<c:out value="${pet.petBirth}" />
-					</p>
-					<p>
-						<strong>몸무게:</strong>
-						<c:out value="${pet.petWeight}" />
-						kg
-					</p>
-					<p>
-						<strong>중성화:</strong>
-						<c:out value="${pet.petNeuter}" />
-					</p>
-					<p>
-						<strong>동물병원:</strong>
-						<c:out value="${pet.petVet}" />
-					</p>
-				</div>
-				<div class="button-group">
-					<a href="./pet-update.myhome"><button class="edit-button">편집</button></a>
-					<a href="./pet-delete-ok.myhome"><button class="edit-button">삭제</button></a>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
-	</c:forEach>
 	<%-- </c:otherwise>
 </c:choose> --%>
 	<footer>

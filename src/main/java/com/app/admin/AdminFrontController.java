@@ -19,9 +19,11 @@ import com.app.admin.controller.AdminCouponUpdateController;
 import com.app.admin.controller.AdminCouponUpdateOkController;
 import com.app.admin.controller.AdminCouponWriteOkController;
 import com.app.admin.controller.AdminCustomerInfoListController;
+import com.app.admin.controller.AdminCustomerInfoListOkController;
 import com.app.admin.controller.AdminDeleteOkController;
 import com.app.admin.controller.AdminListController;
 import com.app.admin.controller.AdminLoginOkController;
+import com.app.admin.controller.AdminLogoutOkController;
 import com.app.admin.controller.AdminSellerInfoListController;
 import com.app.admin.controller.AdminUpdateController;
 import com.app.admin.controller.AdminUpdateOkController;
@@ -45,6 +47,9 @@ public class AdminFrontController extends HttpServlet{
 
 	    } else if (target.equals("admin-loginAdmin-ok")) { // 로그인 처리 로직
 	        result = new AdminLoginOkController().execute(req, resp);
+	        
+	    } else if (target.equals("logout")) { // 로그인 처리 로직
+	    	result = new AdminLogoutOkController().execute(req, resp);
 	        
 	    // 공지사항 관리 목록    
 	    } else if (target.equals("admin-write")) { // 공지사항 등록 페이지 이동 처리
@@ -108,12 +113,13 @@ public class AdminFrontController extends HttpServlet{
 	    } else if (target.equals("admin-coupon-delete-ok")) { // 공지사항 삭제
 	        result = new AdminCouponDeleteOkController().execute(req, resp);
 	        
-	        
 	    // 일반회원관리 목록
 		} else if (target.equals("admin-customerInfo-list")) { // 일반회원 목록
 		    result = new AdminCustomerInfoListController().execute(req, resp);
 		    
-		    System.out.println(target);
+		} else if (target.equals("admin-customerInfo-search-list")) { 
+			result = new AdminCustomerInfoListOkController().execute(req, resp);
+		    
 		//판매자회원관리 목록
 	    } else if (target.equals("admin-sellerInfo-list")) { // 판매자회원 목록
 			result = new AdminSellerInfoListController().execute(req, resp);

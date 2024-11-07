@@ -23,11 +23,9 @@
 						</div>
 						<div class="right">
 							<div class="icons">
-								<a href="#"><img src="../assets/images/search-icon.jpg"
-									alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
-									src="../assets/images/truck-icon.jpg" alt="배송" />
-								</a> <a href="../cart-check.product"> <img
-									src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+								<a href="#"><img src="../assets/images/search-icon.jpg" alt="검색" /></a> 
+								<a href="../myhome/shipping-list.myhome"><img src="../assets/images/truck-icon.jpg" alt="배송" /></a> 
+								<a href="../cart-check.product"><img src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>
 							<div class="login">
@@ -39,38 +37,28 @@
 					<div class="menu-container">
 						<ul class="menu-wrap h4">
 							<li class="menu"><a href="../product/main.product">스토어</a></li>
-							<li class="menu"><a
-								href="../community/community-main.community">커뮤니티</a></li>
+							<li class="menu"><a href="../community/community-main.community">커뮤니티</a></li>
 							<li class="menu"><a href="../list.myhome">마이홈</a></li>
 							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
 						<div id="sector"></div>
 						<div class="sub-menu-wrap">
 							<ul>
-								<li class="sub-menu"><a
-									href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-bird.product?productCategoryName=새">새</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
+								<li class="sub-menu"><a href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
+								<li class="sub-menu"><a href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
+								<li class="sub-menu"><a href="../product/product-bird.product?productCategoryName=새">새</a></li>
+								<li class="sub-menu"><a href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
+								<li class="sub-menu"><a href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
 							</ul>
 							<ul>
 								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
 								<li class="sub-menu"><a href="#">헬스+</a></li>
 							</ul>
 							<ul>
-								<li class="sub-menu"><a href="../myhome/list.myhome">나의
-										정보</a></li>
-								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
-										정보</a></li>
-								<li class="sub-menu"><a
-									href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
-								<li class="sub-menu"><a href="../community/read.community">내
-										게시글</a></li>
+								<li class="sub-menu"><a href="../myhome/list.myhome">나의정보</a></li>
+								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물정보</a></li>
+								<li class="sub-menu"><a href="../myhome/shipping-list.myhome">나의쇼핑</a></li>
+								<li class="sub-menu"><a href="../community/read.community">내게시글</a></li>
 							</ul>
 							<ul>
 								<li class="sub-menu"><a href="#"></a></li>
@@ -88,6 +76,9 @@
 	<section class="slider-container-banner">
 		<div class="slider-container">
 			<div class="slider">
+					<img src="../assets/images/product/banner2.png" alt="test banner">
+					<img src="../assets/images/product/banner2.png" alt="test banner">
+					<img src="../assets/images/product/banner2.png" alt="test banner">
 				<c:forEach var="banner" items="${banners}">
             		<img src="../assets/images/product/${banner.adminBannerImage}" alt="배너">
         		</c:forEach>
@@ -116,8 +107,7 @@
 				<ul>
 					<li class="category-item">
 						<p class="category-title">
-							카테고리 <img class="toggle-icon" src="../assets/images/shopping/arrow.png"
-								alt="Toggle Icon" />
+							카테고리 <img class="toggle-icon" src="../assets/images/shopping/arrow.png" alt="Toggle Icon" />
 						</p>
 						<div class="sub-category" style="display: none;">
 							<p>전체 상품보기</p>
@@ -143,7 +133,6 @@
 				</div>
 				<div class="product">
 					<img src="../assets/images/shopping/product-not-found.png" alt="상품 이미지">
-
 				</div>
 			</div>
 		</div>
@@ -154,9 +143,7 @@
 				<div class="all-category-dropdown">
 					<ul>
 						<li class="all-category-item">
-							<p class="all-category-title">
-								인기상품순 <img class="all-toggle-icon" src="../assets/images/shopping/arrow.png"
-									alt="Toggle Icon" />
+							<p class="all-category-title"> 인기상품순 <img class="all-toggle-icon" src="../assets/images/shopping/arrow.png" alt="Toggle Icon" />
 							</p>
 							<div class="all-sub-category" style="display: none;">
 								<p>판매 인기순</p>

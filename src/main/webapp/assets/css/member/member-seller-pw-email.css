@@ -89,8 +89,8 @@
 
 
 .inputbutton:focus {
-  border: 0.5px solid transparent; /* 기존 테두리는 투명하게 */
-  outline: 2px solid #828282; /* 포커스 시 outline 추가 */
+  border: 0.5px solid transparent; 
+  outline: 2px solid #828282; 
 }
 
 .input {
@@ -100,8 +100,8 @@
 }
 
 .input-container {
-  position: relative; /* 자식 요소의 절대 위치 설정을 위한 상대 위치 */
-  width: 464px; /* 입력 필드 너비 설정 */
+  position: relative; 
+  width: 464px;
 }
 
 /* 비밀번호 가리기 */
@@ -114,10 +114,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  position: absolute; /* 절대 위치 */
-  right: 29px; /* 오른쪽으로 10px 떨어지게 */
-  top: 31px; /* 수직 중앙 정렬 */
-  transform: translateY(-50%); /* 수직 중앙 정렬을 위한 변환 */
+  position: absolute; 
+  right: 29px; 
+  top: 31px; 
+  transform: translateY(-50%); 
 }
 
 /* 회원가입 완료 버튼 */

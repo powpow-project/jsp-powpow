@@ -10,7 +10,7 @@
     <title>회원 관리(일반회원)</title>
 </head>
 <body>
-	<form action="admin-customerInfo-list.admin" method="POST" id="frame">
+	<form action="admin-customerInfo-search-list.admin" method="POST" id="frame">
 
 		<div class="menu-wrap">
 			<img class="menu-icon" src="../assets/images/admin/menu.png" alt="메뉴">
@@ -90,29 +90,29 @@
 			<div class="notice-search">
 				<div class="search-row">
 					<div class="search-bar">
-						<label for="search">검색</label> <input type="text" class="search"
-							placeholder="검색어를 입력해주세요" id="search-input" />
+						<label for="search">검색</label> 
+						<input name="searchKeyword" type="text" class="search" placeholder="검색어를 입력해주세요" id="search-input" />
 					</div>
 					<div class="sms-receive">
-						<label>SMS 수신여부</label> <input type="radio" id="sms-yes"
-							name="sms" value="yes" /> 수신 <input type="radio" id="sms-no"
-							name="sms" value="no" /> 수신거부
+						<label>SMS 수신여부</label> 
+						<input type="radio" id="sms-yes" name="sms" value="1" checked 2/> 수신 
+						<input type="radio" id="sms-no" name="sms" value="0" /> 수신거부
 					</div>
 				</div>
 				<div class="search-row">
 					<div class="search-period">
-						<label for="start-date">기간</label> <input type="date"
-							id="start-date" /> ~ <input type="date" id="end-date" />
+						<label for="start-date">기간</label>
+						<input type="date" id="start-date" /> ~ <input type="date" id="end-date" />
 					</div>
 					<div class="email-receive">
-						<label>메일 수신여부</label> <input type="radio" id="email-yes"
-							name="email" value="yes" /> 수신 <input type="radio" id="email-no"
-							name="email" value="no" /> 수신거부
+						<label>메일 수신여부</label>
+						<input type="radio" id="email-yes" name="email" value="1" checked /> 수신 
+						<input type="radio" id="email-no" name="email" value="0" /> 수신거부
 					</div>
 				</div>
 				<div class="buttons">
-					<button class="search-btn" id="search-btn">검색</button>
-					<button type="button" class="reset-btn" onclick="location.reload();">초기화</button>
+					<button type="submit" class="search-btn" id="search-btn">검색</button>
+					<button type="button" class="reset-btn" id="reset-btn" onclick="location.reload();">초기화</button>
 				</div>
 			</div>
 		</div>

@@ -25,16 +25,19 @@ public class MyhomeWriteController implements Action {
 		MyhomeDAO myhomeDAO = new MyhomeDAO();
 		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
-		String directory =req.getServletContext().getRealPath("/assets/images/product");
+		String directory =req.getServletContext().getRealPath("/assets/images/member");
 		int sizeLimit = 20*500*500; // 100mb
 		
+		   
+			String memberEmail = (String)session.getAttribute("buyerEmail");
+//			System.out.println(memberEmail);
+			Long memberId = 1L;
 		
-//		String memberEmail = (String)session.getAttribute("memberEmail");
-		String memberNickname = "오징어";
-//		Long memberId = memberDAO.selectByMemberEmail(memberEmail).getId();
+//		String memberNickname = "오징어";
+//		Long memberId = memberDAO.selectByMemberEmail(buyerEmail).getId();
 
 		
-		System.out.println(memberNickname);
+//		System.out.println(memberNickname);
 		
 		
 		

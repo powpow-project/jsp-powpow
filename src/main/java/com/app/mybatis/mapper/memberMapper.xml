@@ -41,9 +41,17 @@
 	<!-- 정보 수정 _ 비밀번호, 닉네임, 휴대전화번호, 주소 -->	
     <update id="updateBuyer" parameterType="MemberVO">
         UPDATE TBL_MEMBER
-        SET MEMBER_PASSWORD = #{memberPassword}, MEMBER_NICKNAME = #{memberNickname}, MEMBER_PHONE = #{memberPhone}, MEMBER_ADDRESS = #{memberAddress}
+        SET MEMBER_PASSWORD = #{memberPassword}, MEMBER_NICKNAME = #{memberNickname}, 
+        MEMBER_PHONE = #{memberPhone}, MEMBER_ADDRESS = #{memberAddress}, MEMBER_IMAGE = #{memberImage}
         WHERE ID = #{id}
-    </update>	
+    </update>
+    
+    <!-- 수신동의 정보 수정 -->	
+	<update id="updateNotification" parameterType="MemberVO">
+	   	UPDATE TBL_MEMBER
+        SET MEMBER_EMAILCHECK = #{memberEmailCheck}, MEMBER_SMS = #{memberSms}
+        WHERE ID = #{id}
+	</update>
 
    <!-- 회원탈퇴 -->	
    <delete id="deleteBuyer" parameterType="Long">
@@ -77,28 +85,6 @@
 		WHERE SELLER_EMAIL = #{sellerEmail}
 	</select>
 	
-	
-	
-<!-- 	11
-join 시키기	
-	<select id="selectBusiness" resultType="SellerDTO">
-		SELECT 
-		    TBS.ID AS SELLER_ID, 
-		    TBS.SELLER_EMAIL, 
-		    TBS.SELLER_NAME, 
-		    TBS.SELLER_PHONE, 
-		    TBB.ID AS BUSINESS_ID,
-		    TBB.BUSINESS_NAME, 
-		    TBB.BUSINESS_REPRESENTAIVE_NAME, 
-		    TBB.BUSINESS_NUMBER
-		FROM TBL_SELLER TBS
-		JOIN TBL_BUSINESS TBB
-		ON TBS.BUSINESS_ID = TBB.ID
-		AND TBB.ID = #{businessId}
-		ORDER BY TBS.ID DESC
-	</select>	 -->
-	
-	
    <!-- 이메일로 db 아이디 찾기 -->
 	<select id="findSellerByEmail" parameterType="String" resultType="Long">
 		SELECT ID
@@ -126,7 +112,6 @@ join 시키기
 		FROM TBL_SELLER
 		WHERE SELLER_BUSINESS_NUMBER = #{sellerBusinessNumber}
 	</select>		
-   	
 	
 
 	<!--특정 맴버 검색  -->
@@ -137,13 +122,25 @@ join 시키기
 		WHERE ID = #{id}
 	</select>
 	
-	<!-- 진아 >>> 일반회원 전체 조회 -->
-	<select id="selectAllMembers" resultType="MemberVO">
-	    SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, 
-	           MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, 
-	           MEMBER_SMS, MEMBER_EMAILCHECK
-	    FROM TBL_MEMBER
+	
+	<select id="selectAll" resultType="MemberVO">
+		SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, 
+			MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, 
+			MEMBER_SMS, MEMBER_EMAILCHECK
+		FROM TBL_MEMBER
 	</select>
-
+	
+	<!-- 진아 >>> 일반회원 전체 조회 -->
+	<select id="selectSearch" parameterType="memberDTO" resultType="MemberVO">
+		SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, 
+			MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, 
+			MEMBER_SMS, MEMBER_EMAILCHECK
+		FROM TBL_MEMBER
+		WHERE MEMBER_EMAIL LIKE '%'||#{searchKeyword}||'%' 
+		OR MEMBER_ADDRESS LIKE '%'||#{searchKeyword}||'%'
+		OR MEMBER_PHONE LIKE '%'||#{searchKeyword}||'%'
+		AND MEMBER_SMS = #{memberSms}
+		AND MEMBER_EMAILCHECK = #{memberEmailCheck}
+	</select>
 	
 </mapper>

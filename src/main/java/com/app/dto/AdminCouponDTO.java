@@ -1,6 +1,5 @@
 package com.app.dto;
 
-import java.security.Timestamp;
 import java.util.Objects;
 
 public class AdminCouponDTO {

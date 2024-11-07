@@ -77,3 +77,12 @@ const mainMenus = document.querySelectorAll(".menu-wrap .menu");
          }
      }).open();
  }
+ 
+/* 전송 버튼 */
+const submitButton = document.querySelector(".complete");
+const form = document.querySelector("form");
+submitButton.addEventListener("click", () => {
+	form.submit()
+})
+
+ 

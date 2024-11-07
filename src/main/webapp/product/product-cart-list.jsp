@@ -23,11 +23,9 @@
 						</div>
 						<div class="right">
 							<div class="icons">
-								<a href="#"><img src="../assets/images/search-icon.jpg"
-									alt="검색" /></a> <a href="../myhome/shipping-list.myhome"> <img
-									src="../assets/images/truck-icon.jpg" alt="배송" />
-								</a> <a href="../cart-check.product"> <img
-									src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
+								<a href="#"><img src="../assets/images/search-icon.jpg" alt="검색" /></a> 
+								<a href="../myhome/shipping-list.myhome"><img src="../assets/images/truck-icon.jpg" alt="배송" /></a> 
+								<a href="../cart-check.product"><img src="../assets/images/shopping-cart-icon.jpg" alt="카트" /></a>
 							</div>
 							<div class="sector"></div>
 							<div class="login">
@@ -39,38 +37,28 @@
 					<div class="menu-container">
 						<ul class="menu-wrap h4">
 							<li class="menu"><a href="../product/main.product">스토어</a></li>
-							<li class="menu"><a
-								href="../community/community-main.community">커뮤니티</a></li>
+							<li class="menu"><a href="../community/community-main.community">커뮤니티</a></li>
 							<li class="menu"><a href="../list.myhome">마이홈</a></li>
 							<li class="menu"><a href="#">이벤트</a></li>
 						</ul>
 						<div id="sector"></div>
 						<div class="sub-menu-wrap">
 							<ul>
-								<li class="sub-menu"><a
-									href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-bird.product?productCategoryName=새">새</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
-								<li class="sub-menu"><a
-									href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
+								<li class="sub-menu"><a href="../product/product-dog.product?productCategoryName=강아지">강아지</a></li>
+								<li class="sub-menu"><a href="../product/product-cat.product?productCategoryName=고양이">고양이</a></li>
+								<li class="sub-menu"><a href="../product/product-bird.product?productCategoryName=새">새</a></li>
+								<li class="sub-menu"><a href="../product/product-fish.product?productCategoryName=물고기">물고기</a></li>
+								<li class="sub-menu"><a href="../product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
 							</ul>
 							<ul>
 								<li class="sub-menu"><a href="../community/community-main.community">홈</a></li>
 								<li class="sub-menu"><a href="#">헬스+</a></li>
 							</ul>
 							<ul>
-								<li class="sub-menu"><a href="../myhome/list.myhome">나의
-										정보</a></li>
-								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물
-										정보</a></li>
-								<li class="sub-menu"><a
-									href="../myhome/shipping-list.myhome">나의 쇼핑</a></li>
-								<li class="sub-menu"><a href="../community/read.community">내
-										게시글</a></li>
+								<li class="sub-menu"><a href="../myhome/list.myhome">나의정보</a></li>
+								<li class="sub-menu"><a href="../myhome/pet-list.myhome">반려동물정보</a></li>
+								<li class="sub-menu"><a href="../myhome/shipping-list.myhome">나의쇼핑</a></li>
+								<li class="sub-menu"><a href="../community/read.community">내게시글</a></li>
 							</ul>
 							<ul>
 								<li class="sub-menu"><a href="#"></a></li>
@@ -94,12 +82,10 @@
 
 				<c:forEach var="cartItem" items="${cartItems}">
 					<div class="cart-item">
-						<label> <input type="checkbox"
-							id="cartItem_${cartItem.productId}" name="selectedIds"
-							value="${cartItem.productId}" class="item-checkbox">
-						</label> <a href="#"><img
-							src="../assets/images/product/${cartItem.productImage}"
-							alt="${cartItem.productName}" class="product-img"></a>
+						<label> 
+							<input type="checkbox" id="cartItem_${cartItem.productId}" name="selectedIds" value="${cartItem.productId}" class="item-checkbox">
+						</label> 
+							<a href="#"><img src="../assets/images/product/${cartItem.productImage}" alt="${cartItem.productName}" class="product-img"></a>
 						<div class="productTotal">
 							<div class="product-info">
 								<h3>${cartItem.productName}</h3>
@@ -129,13 +115,22 @@
 				</select>
 			</div>
 
-			<!-- 요약 정보 -->
+			<!-- 장바구니 상품 가격 -->
 			<div class="summary">
-				<span>총 상품 금액: </span> <span>${totalPrice}원</span><br> <span>총
-					배송비: </span> <span>무료</span><br> <span>총 결제 금액: </span> <span>${totalPrice}원</span><br>
-				<span>예상 기부액: </span> <span>${donationAmount}원</span><br>
-			</div>
-
+                        <span>총 상품금액</span>
+                        <span>총 배송비</span>
+                        <span>총 결제금액</span>
+                        <span>예상 기부액</span>
+                    </div>
+                    <div class="pay-summary">
+                        <span class="total-product-price">8,100원</span>
+                        <span>+</span>
+                        <span class="total-delivery-price">무료</span>
+                        <span>=</span>
+                        <span class="total-price">8,100원</span>
+                        <span class="coin">520원</span>
+                    </div>
+                    
 			<!-- 주문 버튼 -->
 			<div class="button-container">
 				<button class="check-button">선택 상품 주문</button>
@@ -222,6 +217,28 @@ deleteButton.addEventListener("click", () => {
         console.log("선택된 상품이 없습니다."); // 선택된 상품이 없을 경우 출력
     }
 });
+
+let totalProductPrice = 0;
+let totalDeliveryPrice = 0 || "배송비 무료";
+let totalDonation = 0;
+let discount = 50;
+
+const cartList = JSON.parse(`${cartItemsJSON}`);
+const totalProductPriceSpan = document.querySelector(".total-product-price");
+const totalDeliverySpan = document.querySelector(".total-delivery-price");
+const totalPriceSpan = document.querySelector(".total-price");
+cartList.forEach((cartList) => {
+	totalProductPrice += cartList.productPrice;
+});
+
+globalThis.totalPrice = totalProductPrice + (totalDeliveryPrice instanceof String ? totalDeliveryPrice : 0);
+if(discount !== 0){
+	globalThis.totalPrice -= totalProductPrice * discount / 100;
+}
+
+totalProductPriceSpan.innerText = totalProductPrice;
+totalDeliverySpan.innerText = totalDeliveryPrice;
+totalPriceSpan.innerText = totalPrice;
 </script>
 
 </html>

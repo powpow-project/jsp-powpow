@@ -73,17 +73,6 @@ public class MyhomePetWriteOkController implements Action {
             petVO.setPetVet(petVet);
             petVO.setPetImage(fileName);
             
-//            System.out.println("==== 데이터 출력 ====");
-//            System.out.println(memberId);
-//            System.out.println(petName);
-//            System.out.println(petGender);
-//            System.out.println(petBreed);
-//            System.out.println(petBirth);
-//            System.out.println(petWeight);
-//            System.out.println(petNeuter);
-//            System.out.println(petVet);
-//            System.out.println(fileName);
-
             // 파일이 성공적으로 업로드되었는지 확인
             if (fileName != null) {
                 System.out.println("파일 제목: " + petName);

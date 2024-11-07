@@ -38,7 +38,7 @@ public class ProductCartWriteOkController implements Action {
 		cartDAO.insert(cartVO);
 		
 		
-		result.setPath("../product/product-health-main.product");
+		result.setPath("../product/product-health-main.product?cart=true");
 		result.setRedirect(true);
 		
 		return result;

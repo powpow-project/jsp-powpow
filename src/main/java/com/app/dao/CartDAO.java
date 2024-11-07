@@ -22,8 +22,8 @@ public class CartDAO {
 	}
 
 // 장바구니 전체 조회 
-	public List<CartDTO> selectAll() {
-		return sqlSession.selectList("cart.selectAll");
+	public List<CartDTO> selectAll(Long memberId) {
+		return sqlSession.selectList("cart.selectAll", memberId);
 	}
 
 // 장바구니 조회
