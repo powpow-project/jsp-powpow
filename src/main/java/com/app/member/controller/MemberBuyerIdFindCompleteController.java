@@ -17,11 +17,12 @@ public class MemberBuyerIdFindCompleteController implements Action {
 		Result result = new Result();	
 		MemberDAO memberDAO = new MemberDAO();
 		
-	    String buyerName = req.getParameter("member_name");
-	    String buyerPhone = req.getParameter("member_phone");
+	    String buyerName = req.getParameter("name");
+	    String buyerPhone = req.getParameter("phone");
 	     
 	
-//	    String buyerFindEmail = memberDAO.findBuyerByEmail(null);
+	    String buyerFindEmail = memberDAO.buyerFindEmail(buyerPhone);
+	    
 		result.setPath("../member/member-buyer-id-find-complete.jsp");
 		
 		return result;
