@@ -79,6 +79,11 @@ public class MemberDAO {
 	public Long findBuyerByEmail(String email) {
 		return sqlSession.selectOne("member.findBuyerByEmail", email);
 	}
+	
+//	아이디 찾기 페이지에서 구매자 이메일 찾기
+	public String buyerFindEmail(String email) {
+		return sqlSession.selectOne("member.buyerFindEmail", email);
+	}
 
 	
 //	특정 멤버 정보 조회
