@@ -22,12 +22,15 @@ public class MyhomePetListController implements Action {
 		Result result = new Result();
 		MemberDAO memberDAO = new MemberDAO();
 		MyhomeDAO myhomeDAO = new MyhomeDAO();
+		PetVO petVO = new PetVO();
 		HttpSession session = req.getSession();
 		Long memberid = memberDAO.findBuyerByEmail((String)session.getAttribute("buyerEmail"));
 		
 		List<PetVO> pets = myhomeDAO.selectPetAll(memberid);
 		System.out.println(pets);
 		req.setAttribute("pets", pets);
+		
+		
 		
 		result.setPath("../myhome/myhome-pet-list.jsp");
 		return result;
