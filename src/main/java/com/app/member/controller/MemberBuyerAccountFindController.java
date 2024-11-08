@@ -20,7 +20,9 @@ public class MemberBuyerAccountFindController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-
+		
+		
+		
 		Boolean authenticationRequest = Boolean.parseBoolean(req.getParameter("sms"));
 		if(authenticationRequest) {
 		   String api_key = "NCS9N9SYNY3LYZLH";

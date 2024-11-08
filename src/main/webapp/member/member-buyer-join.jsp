@@ -63,9 +63,19 @@
           <p id="text" class="red">*</p>
         </div>
         <div class="input-container">
-          <input class="inputbutton" type="name" id="name" name="name" placeholder="별명">
+          <input class="inputbutton" type="name" id="name" name="nickName" placeholder="별명">
           <button class="auth-button" id="name-check">확인</button>
           <p class="result" id="name-result"></p>
+        </div>
+      </div>
+      
+      <div>
+        <div class="text-box">
+          <p id="text">이름</p>
+          <p id="text" class="red">*</p>
+        </div>
+        <div class="input-container">
+          <input class="inputbutton" type="name" id="name" name="name" placeholder="이름">
         </div>
       </div>
 
@@ -104,7 +114,7 @@
       </div>
 
       <div class="agree-box">
-            <input type="hidden" name="sms" value="1" />
+            <input type="hidden" name="smscheck" value="1" />
             <input type="hidden" name="emailcheck" value="1" />
         <div class="agreeAll">
           <label>

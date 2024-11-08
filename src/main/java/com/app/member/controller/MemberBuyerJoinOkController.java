@@ -25,9 +25,10 @@ public class MemberBuyerJoinOkController implements Action {
 		memberVO.setMemberImage(defaultImagePath);
 		memberVO.setMemberEmail(req.getParameter("buyerEmail"));
 		memberVO.setMemberPassword(req.getParameter("buyerPassword"));
-		memberVO.setMemberNickname(req.getParameter("name"));
+		memberVO.setMemberNickname(req.getParameter("nickName"));
+		memberVO.setMemberName(req.getParameter("name"));
 		memberVO.setMemberPhone(req.getParameter("phone"));
-		memberVO.setMemberSms(req.getParameter("sms").charAt(0));
+		memberVO.setMemberSmsCheck(req.getParameter("smscheck").charAt(0));
 		memberVO.setMemberEmailCheck(req.getParameter("emailcheck").charAt(0));
 		
 

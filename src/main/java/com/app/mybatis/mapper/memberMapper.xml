@@ -13,8 +13,8 @@
 
 	<!-- 회원가입 _ 이메일, 비밀번호, 닉네임, 휴대전화번호, 주소, 동의 -->
 	<insert id="insertBuyer" parameterType="MemberVO">
-		INSERT INTO TBL_MEMBER(ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMS, MEMBER_EMAILCHECK)
-		VALUES(MEMBER_SEQ.NEXTVAL, #{memberImage}, #{memberNickname}, #{memberEmail}, #{memberPassword}, #{memberPhone}, #{memberAddress}, #{memberSms}, #{memberEmailCheck})
+		INSERT INTO TBL_MEMBER(ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMSCHECK, MEMBER_EMAILCHECK)
+		VALUES(MEMBER_SEQ.NEXTVAL, #{memberImage}, #{memberNickname}, #{memberEmail}, #{memberName}, #{memberPassword}, #{memberPhone}, #{memberAddress}, #{memberSmsCheck}, #{memberEmailCheck})
 	</insert>
 	
    <!-- 회원가입시 이메일 중복 -->
@@ -49,7 +49,7 @@
     <!-- 수신동의 정보 수정 -->	
 	<update id="updateNotification" parameterType="MemberVO">
 	   	UPDATE TBL_MEMBER
-        SET MEMBER_EMAILCHECK = #{memberEmailCheck}, MEMBER_SMS = #{memberSms}
+        SET MEMBER_EMAILCHECK = #{memberEmailCheck}, MEMBER_SMSCHECK = #{memberSmsCheck}
         WHERE ID = #{id}
 	</update>
 
@@ -117,7 +117,7 @@
 	<!--특정 맴버 검색  -->
 	<select id="select" parameterType="Long" resultType="MemberVO">
 		SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, 
-		MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMS, MEMBER_EMAILCHECK
+		MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_SMSCHECK, MEMBER_EMAILCHECK
 		FROM TBL_MEMBER
 		WHERE ID = #{id}
 	</select>
@@ -126,7 +126,7 @@
 	<select id="selectAll" resultType="MemberVO">
 		SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, 
 			MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, 
-			MEMBER_SMS, MEMBER_EMAILCHECK
+			MEMBER_SMSCHECK, MEMBER_EMAILCHECK
 		FROM TBL_MEMBER
 	</select>
 	
