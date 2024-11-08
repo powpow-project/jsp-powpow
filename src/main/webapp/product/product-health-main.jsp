@@ -38,46 +38,44 @@
 						<img src="../assets/images/shopping/dogicon.png" alt="강아지 헬스+">
 						<span>성장기별 추천 아이템이에요!</span>
 					</div>
-					<div class="category-buttons">
-						<button data-category="강아지 퍼피" class="category-button active">퍼피</button>
+					<div class="category-buttons dog-category-buttons">
+						<button data-category="강아지 퍼피" class="category-button">퍼피</button>
 						<button data-category="강아지 어덜트" class="category-button">어덜트</button>
 						<button data-category="강아지 시니어" class="category-button">시니어</button>
 					</div>
 				</div>
 				<a href="#" class="view-all">전체보기</a>
 			</div>
-			<div class="slider-container-dog">
-				<button class="slider-btn prev">&#10094;</button>
-				<div class="slider">
-					<c:forEach var="product" items="${products}">
-						<c:if test="${product.productCategoryName == '강아지' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
-							<div class="product" data-category="강아지 ${product.productAge}">
+
+			<div class="slider-container-cat swiper-container cat-swiper">
+			    <div class="swiper-button-next"></div>
+      			<div class="swiper-button-prev"></div>
+				<div class="slider swiper-wrapper cats-swiper-warpper">
+	
+				<c:forEach var="product" items="${products}">
+						<c:if test="${product.productCategoryName == '고양이' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+							<div class="product swiper-slide cat-items" data-category="고양이 ${product.productAge}">
 								<div class="product-image-wrap">
-									<img src="../assets/images/product/${product.productImage}" alt="${product.productName}">
+									<img src="../assets/images/product/${product.productImage}"alt="${product.productName}">
 									<div class="hover-box">
 										<div class="hover-box-new">
-											<a class="hover-new" href="#"> <img src="../assets/images/shopping/share.png">
-											</a>
+											<a class="hover-new" href="#"> <img src="../assets/images/shopping/share.png"></a>
 										</div>
 										<div class="hover-box-cart">
-											<a class="hover-cart"
-												href="product-cart-write-ok.product?productId=${product.id}">
-												<img src="../assets/images/shopping/carthovar.png"
-												alt="장바구니 추가">
+											<a class="hover-cart" href="product-cart-write-ok.product?productId=${product.id}">
+												<img src="../assets/images/shopping/carthovar.png" alt="장바구니 추가">
 											</a>
 										</div>
 										<div class="hover-box-heart">
-											<a class="hover-heart" href="#"> <img
-												src="../assets/images/shopping/like.png">
-											</a>
+											<a class="hover-heart" href="product-like-ok.product?productId=${product.id}"><img src="../assets/images/shopping/like.png"></a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</c:if>
-					</c:forEach>
+					</c:forEach> 
+		
 				</div>
-				<button class="slider-btn next">&#10095;</button>
 			</div>
 		</div>
 		<div class="recommendation-section-cat">
