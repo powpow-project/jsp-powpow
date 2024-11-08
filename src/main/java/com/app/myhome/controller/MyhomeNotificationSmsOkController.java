@@ -26,8 +26,8 @@ public class MyhomeNotificationSmsOkController implements Action {
 		
 		findUser.ifPresent((user) -> {
 			memberVO.setId(user.getId());
-			memberVO.setMemberEmailCheck(user.isMemberEmailCheck());
-			memberVO.setMemberSms(user.isMemberSms() == '1' ? '0' : '1');
+			memberVO.setMemberEmailCheck(user.getMemberEmailCheck());
+			memberVO.setMemberSmsCheck(user.getMemberSmsCheck() == '1' ? '0' : '1');
 		});
 
 		System.out.println(memberVO);

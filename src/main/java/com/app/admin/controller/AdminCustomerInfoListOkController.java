@@ -21,8 +21,8 @@ public class AdminCustomerInfoListOkController implements Action {
         MemberDAO memberDAO = new MemberDAO();
         MemberDTO memberDTO = new MemberDTO();
         
-        memberDTO.setSearchKeyWord(req.getParameter("searchKeyword"));
-        memberDTO.setMemberSms(req.getParameter("sms").charAt(0));
+        memberDTO.setSearchKeyword(req.getParameter("searchKeyword"));
+        memberDTO.setMemberSmsCheck(req.getParameter("sms").charAt(0));
         memberDTO.setMemberEmailCheck(req.getParameter("email").charAt(0));
         
         List<MemberDTO> members = memberDAO.selectSearch(memberDTO);

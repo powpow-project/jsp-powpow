@@ -27,8 +27,8 @@
 <div class="main-content id" class="id">
           <div class="input">
             <div>
-              <p>닉네임</p>
-              <input class="inputbutton" type="text" name="id" placeholder="별명">
+              <p>이름</p>
+              <input class="inputbutton" type="text" name="name" placeholder="이름">
             </div>
 			<div>
 			    <p>휴대폰 번호</p>
