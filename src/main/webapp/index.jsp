@@ -14,9 +14,6 @@
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="shortcut icon" href="assets/images/favicon.ico" />
 <style>
-#mainbanner {
-	
-}
 
 .swiper-container {
 	width: 100%;
