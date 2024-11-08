@@ -12,10 +12,7 @@ import com.app.Result;
 import com.app.dao.MemberDAO;
 import com.app.dao.OrderDAO;
 import com.app.dao.ProductDAO;
-import com.app.dto.OrderDTO;
-import com.app.vo.MemberVO;
 import com.app.vo.OrderVO;
-import com.app.vo.ProductVO;
 
 public class OrderWriteOkController implements Action {
 
@@ -24,9 +21,11 @@ public class OrderWriteOkController implements Action {
 		Result result = new Result();
 		
 		HttpSession session = req.getSession();
+		ProductDAO productDAO = new ProductDAO();
 		OrderDAO orderDAO = new OrderDAO();
-		MemberDAO memberDAO = new MemberDAO();
 		OrderVO orderVO = new OrderVO(); 
+		MemberDAO memberDAO = new MemberDAO();
+		
 		
 		Long productId = Long.parseLong(req.getParameter("productId"));
 		Long memberId = Long.parseLong(req.getParameter("memberId"));
@@ -43,8 +42,14 @@ public class OrderWriteOkController implements Action {
         orderVO.setProductCount(productCount);
         orderVO.setOrderNumber(productCode);
         
+//       상품 주문
         orderDAO.insert(orderVO);
 		
+//      상품 재고 카운트만큼
+        orderVO.setProductCount((productCount * -1));
+		orderVO.setProductId(productId);
+		productDAO.updateStock(orderVO);
+        
         result.setRedirect(true);
 		result.setPath("../index.jsp");
 		return result;
