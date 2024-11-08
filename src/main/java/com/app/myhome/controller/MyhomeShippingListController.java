@@ -38,6 +38,7 @@ public class MyhomeShippingListController implements Action {
 //		주문리스트
 		List<OrderDTO> orderProducts = orderDAO.selectMyOrder(memberId);
 		req.setAttribute("orderProducts", orderProducts);
+		System.out.println(orderProducts);
 		
 		result.setPath("../myhome/myhome-shipping-list.jsp");
 

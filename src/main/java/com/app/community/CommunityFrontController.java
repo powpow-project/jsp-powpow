@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.Result;
+import com.app.community.controller.CommunityAddPostController;
 import com.app.community.controller.CommunityAddPostOkController;
 import com.app.community.controller.CommunityDeleteOkController;
 import com.app.community.controller.CommunityListController;
@@ -41,8 +42,7 @@ public class CommunityFrontController extends HttpServlet{
 			result.setPath("../community/community-my-post");
 		// 게시물 작성하기
 		}else if(target.equals("community-add-post")) {
-			result = new Result();
-			result.setPath("../community/community-add-post");
+			result = new CommunityAddPostController().execute(req, resp);
 		// 게시물 작성 완료
 		}else if(target.equals("community-add-post-ok")) {
 			result = new CommunityAddPostOkController().execute(req, resp);
