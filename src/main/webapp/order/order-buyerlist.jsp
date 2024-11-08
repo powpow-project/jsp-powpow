@@ -13,6 +13,8 @@
 <title>결제페이지</title>
 </head>
 <body>
+
+ 	
 	<div class=body-wrap>
 		<div class="header-container">
 			<div id="header-wrap">
@@ -139,7 +141,7 @@
 							<div class="price-wrap">
 								<p class="h4">${product.productPrice}</p>
 								<p class="h5">${product.productPrice}원</p>
-								<p class="h5 pcount">${order.productCount}개</p>
+								<p class="h5 pcount"><c:out value="${quantity}"></c:out>개</p>
 							</div>
 						</div>
 					</div>
@@ -151,17 +153,11 @@
 				</div>
 			</div>
 
-			<form method="post">
+			<form action="write-ok.order" method="post">
 				<input type="hidden" name="productId" value="${product.id}">
-				<input type="hidden" name="memberId" value="${member.id}"> <input
-					type="hidden" name="orderNumber" value="${order.orderNumber}">
-				<input type="hidden" name="orderDate" value="${order.orderDate}">
-				<input type="hidden" name="productCount"
-					value="${order.productCount}"> <input type="hidden"
-					name="orderId" value="${order.id}">
-
-				<button type="button" onclick="location.href='write-ok.order'"
-					class="payment">결제하기</button>
+				<input type="hidden" name="memberId" value="${member.id}"> 
+				<input type="hidden" name="productCount" value="${quantity}">
+				<button type="submit" class="payment">결제하기</button>
 			</form>
 		</div>
 
