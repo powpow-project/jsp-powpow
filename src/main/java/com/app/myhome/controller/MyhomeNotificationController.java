@@ -23,10 +23,10 @@ public class MyhomeNotificationController implements Action {
 		String memberEmail = (String)session.getAttribute("buyerEmail");
 		Long memberId = memberDAO.findBuyerByEmail(memberEmail);
 
-		memberDAO.select(memberId).map(MemberVO::isMemberEmailCheck).ifPresent((emailCheck) -> {
+		memberDAO.select(memberId).map(MemberVO::getMemberEmailCheck).ifPresent((emailCheck) -> {
 			req.setAttribute("emailCheck", emailCheck);
 		});
-		memberDAO.select(memberId).map(MemberVO::isMemberSms).ifPresent((smsCheck) -> {
+		memberDAO.select(memberId).map(MemberVO::getMemberSmsCheck).ifPresent((smsCheck) -> {
 			req.setAttribute("smsCheck", smsCheck);
 		});
 		
