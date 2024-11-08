@@ -49,13 +49,10 @@
 				</div>
 				<div class="edit-info">
 					<div>
-						<label class="edit-category0">이름</label> 
-						<input 
-							name="name"
-							value="${member.memberName}"
-							class="edit-member" type="text"
-							placeholder="${member.memberName}"
-						/>
+					<div>
+						<label class="edit-category0">이름</label>
+						<span class="name"><c:out value="${member.memberName}"></c:out></span>
+					</div>
 					</div>
 					<div>
 						<label class="edit-category1">닉네임</label> 
