@@ -117,8 +117,10 @@
 					<div class="control-container">
 						<input type="checkbox" id="b" class="screen-reader">
 						<div class="label-box">
-							<span class="check-icon" aria-hidden="true"></span> <label
-								for="b">다음에도 사용할게요</label>
+							<label for="b">
+							<span class="check-icon" aria-hidden="true"></span> 
+							<span>다음에도 사용할게요</span>
+							</label>
 						</div>
 					</div>
 				</div>
