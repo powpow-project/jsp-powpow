@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.app.Result;
 import com.app.seller.controller.SellerDeleteOkController;
 import com.app.seller.controller.SellerListController;
+import com.app.seller.controller.SellerLogoutController;
 import com.app.seller.controller.SellerOrderListController;
 import com.app.seller.controller.SellerRevenueListController;
 import com.app.seller.controller.SellerSearchOkController;
@@ -25,7 +26,7 @@ public class SellerFrontController extends HttpServlet{
       String target = req.getRequestURI().replace(req.getContextPath() +"/seller/", "").split("\\.")[0];
       Result result = null;
 
-      System.out.println(target);
+//      System.out.println(target);
       
       if(target.equals("seller-write")) {
            result = new Result();
@@ -53,6 +54,9 @@ public class SellerFrontController extends HttpServlet{
     	  
       }else if(target.equals("seller-revenue-list")) {
     	  result = new SellerRevenueListController().execute(req, resp);
+    	  
+      }else if(target.equals("seller-logout")) {
+    	  result = new SellerLogoutController().execute(req, resp);
       }else {
          result = new Result();
          result.setPath("../not-found.jsp");
