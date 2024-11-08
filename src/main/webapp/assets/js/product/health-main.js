@@ -15,6 +15,22 @@ let dogSwiper = new Swiper(".dog-swiper", {
         prevEl: ".swiper-button-prev",
     },
 });
+let bridSwiper = new Swiper(".brid-swiper", {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+let fishSwiper = new Swiper(".fish-swiper", {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 
 function initializeCategoryFilter(swiperInstance, itemsSelector, wrapperSelector, categoryButtonSelector) {
     const items = document.querySelectorAll(itemsSelector);
@@ -39,7 +55,6 @@ function initializeCategoryFilter(swiperInstance, itemsSelector, wrapperSelector
                 wrapper.append(div);
             });
 
-            // Swiper 업데이트
             swiperInstance.slides = filteredItems;
             swiperInstance.update();
         });
@@ -47,6 +62,7 @@ function initializeCategoryFilter(swiperInstance, itemsSelector, wrapperSelector
 }
 
 
-// 공통 필터링 함수 호출
 initializeCategoryFilter(catSwiper, ".cat-items", ".cats-swiper-warpper", ".cat-category-buttons > button");
 initializeCategoryFilter(dogSwiper, ".dog-items", ".dogs-swiper-warpper", ".dog-category-buttons > button");
+initializeCategoryFilter(dogSwiper, ".brid-items", ".brids-swiper-warpper", ".brid-category-buttons > button");
+initializeCategoryFilter(dogSwiper, ".fish-items", ".fishs-swiper-warpper", ".fish-category-buttons > button");
