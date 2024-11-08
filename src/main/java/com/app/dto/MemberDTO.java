@@ -7,13 +7,16 @@ public class MemberDTO {
 	private String memberImage;
 	private String memberNickname;
 	private String memberEmail;
+	private String memberName;
 	private String memberPassword;
 	private String memberPhone;
 	private String memberAddress;
 	private String searchKeyword;
-	private char memberSms;      
+	private char memberSmsCheck;      
     private char memberEmailCheck;
     
+    public MemberDTO() {;}
+
 	public Long getId() {
 		return id;
 	}
@@ -46,6 +49,14 @@ public class MemberDTO {
 		this.memberEmail = memberEmail;
 	}
 
+	public String getMemberName() {
+		return memberName;
+	}
+
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+
 	public String getMemberPassword() {
 		return memberPassword;
 	}
@@ -70,20 +81,20 @@ public class MemberDTO {
 		this.memberAddress = memberAddress;
 	}
 
-	public String getSearchKeyWord() {
+	public String getSearchKeyword() {
 		return searchKeyword;
 	}
 
-	public void setSearchKeyWord(String searchKeyWord) {
-		this.searchKeyword = searchKeyWord;
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
 	}
 
-	public char getMemberSms() {
-		return memberSms;
+	public char getMemberSmsCheck() {
+		return memberSmsCheck;
 	}
 
-	public void setMemberSms(char memberSms) {
-		this.memberSms = memberSms;
+	public void setMemberSmsCheck(char memberSmsCheck) {
+		this.memberSmsCheck = memberSmsCheck;
 	}
 
 	public char getMemberEmailCheck() {
@@ -97,9 +108,9 @@ public class MemberDTO {
 	@Override
 	public String toString() {
 		return "MemberDTO [id=" + id + ", memberImage=" + memberImage + ", memberNickname=" + memberNickname
-				+ ", memberEmail=" + memberEmail + ", memberPassword=" + memberPassword + ", memberPhone=" + memberPhone
-				+ ", memberAddress=" + memberAddress + ", memberSms=" + memberSms + ", memberEmailCheck="
-				+ memberEmailCheck + "]";
+				+ ", memberEmail=" + memberEmail + ", memberName=" + memberName + ", memberPassword=" + memberPassword
+				+ ", memberPhone=" + memberPhone + ", memberAddress=" + memberAddress + ", searchKeyword="
+				+ searchKeyword + ", memberSmsCheck=" + memberSmsCheck + ", memberEmailCheck=" + memberEmailCheck + "]";
 	}
 
 	@Override
@@ -118,8 +129,5 @@ public class MemberDTO {
 		MemberDTO other = (MemberDTO) obj;
 		return Objects.equals(id, other.id);
 	}
-    
-    
-	
 
 }

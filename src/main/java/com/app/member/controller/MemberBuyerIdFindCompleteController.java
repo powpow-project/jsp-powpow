@@ -14,6 +14,7 @@ public class MemberBuyerIdFindCompleteController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();	
+		
 		result.setPath("../member/member-buyer-id-find-complete.jsp");
 		
 		return result;
