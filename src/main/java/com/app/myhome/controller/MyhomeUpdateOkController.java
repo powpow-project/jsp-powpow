@@ -43,6 +43,7 @@ public class MyhomeUpdateOkController implements Action {
 
 	            // 업로드된 파일의 제목과 이름 가져오기
 	            String fullAddress = null;
+	            String name = multi.getParameter("name");
 	            String nickname = multi.getParameter("nickname");
 	            String phone = multi.getParameter("phone");
 	            String[] addressAll = multi.getParameterValues("address");
@@ -57,6 +58,7 @@ public class MyhomeUpdateOkController implements Action {
 	            	memberVO.setMemberPassword(findMemberVO.getMemberPassword());
 	            });
 	            memberVO.setId(memberId);
+	            memberVO.setMemberName(name);
 	            memberVO.setMemberNickname(nickname);
 	            memberVO.setMemberAddress(fullAddress);
 	            memberVO.setMemberPhone(phone);
