@@ -31,7 +31,7 @@ public class MyhomePetUpdateController implements Action {
 	    petVO.setId(petId);
 	    petVO.setMemberId(memberId);
 	    	
-	    System.out.println(petVO);
+//	    System.out.println(petVO);
 	    
 	    Optional<PetVO> pet = myhomeDAO.selectPetId(petVO);
 	    req.setAttribute("pet",  pet.orElseThrow(() -> {
@@ -39,7 +39,7 @@ public class MyhomePetUpdateController implements Action {
 	    }));
 	    
 //	    업데이트 페이지
-	    result.setPath("../myhome/myhome-pet-update.jsp"); // JSP 경로
+	    result.setPath("../myhome/myhome-pet-update.jsp"); 
 	    return result;
     }
 }
