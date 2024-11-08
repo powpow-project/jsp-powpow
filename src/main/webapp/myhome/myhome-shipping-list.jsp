@@ -120,11 +120,15 @@
 				</c:if>
 				<c:if test="${not empty orderProducts}">
 					<c:forEach var="order" items="${orderProducts}">
-						<form action="order-cancel.order" method="post">
-							<h1><c:out value="${order.productName}"></c:out></h1>
-							<c:out value="${order.productImage}"></c:out>
+						<form action="/powpow/order/delete-ok.order" method="post">
+							<h1>주문 상품 : <c:out value="${order.productName}"></c:out></h1>
+							<div>
+								<img src="/powpow/assets/images/product/${order.productImage}" />
+							</div>
+							<h1>주문 수량 : <c:out value="${order.productCount}"></c:out></h1>
 							<input type="hidden" name="productId" value="${order.productId}">
 							<input type="hidden" name="buyerId" value="${order.memberId}">
+							<input type="hidden" name="productCount" value="${order.productCount}">
 							<input type="hidden" name="orderId" value="${order.id}">
 							<button>주문 취소</button>
 						</form>

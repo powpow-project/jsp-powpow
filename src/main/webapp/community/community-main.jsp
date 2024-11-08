@@ -94,7 +94,7 @@
     <!-- 커뮤니티 광고 메인 배너 부분-->
 
     <div class="community-main-banner-wrapper">
-      <a href="./community-others-posts.jsp">
+      <a href="./community-others-posts.community">
         <div class="community-main-banner">
           <img src="../assets/images/community/community-main-banner.png" alt="커뮤니티 메인 배너 이미지">
         </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="community-main-post-image-wrapper">
           <div class="community-main-post-image">
-                   <a href="./community-add-post.jsp">
+                   <a href="./community-add-post.community">
                       <div class="community-main-post-new-image-wrapper">
                       <div class="main-post-new-image-box">
                         <div class="main-post-new-image"><img src="../assets/images/community/plus.png" alt="추가하기 버튼"></div>

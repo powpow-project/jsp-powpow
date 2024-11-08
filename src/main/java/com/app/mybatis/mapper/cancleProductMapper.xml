@@ -3,8 +3,8 @@
 
 <mapper namespace="cancleProduct">
 	<insert id="insert" parameterType="CancleProductVO">
-		INSERT INTO TBL_CANCLE_PRODUCT(ID, MEMBER_ID, PRODUCT_ID, CANCLE_COUNT)
-		VALUES(CANCLE_PRODUCT_SEQ.NEXTVAL, #{memberId}, #{productId}, #{cancleCount})
+		INSERT INTO TBL_CANCLE_PRODUCT(ID, MEMBER_ID, PRODUCT_ID, CANCLE_COUNT, CANCLE_PRODUCT_DATE)
+		VALUES(CANCLE_PRODUCT_SEQ.NEXTVAL, #{memberId}, #{productId}, #{cancleCount}, CURRENT_TIMESTAMP)
 	</insert>
 	
 	<select id="selectBySeller" parameterType="map" resultType="CancleProductDTO">

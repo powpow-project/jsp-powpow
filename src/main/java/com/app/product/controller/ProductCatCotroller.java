@@ -28,7 +28,7 @@ public class ProductCatCotroller implements Action {
 		List<ProductVO> noHealthProducts = products.stream().filter(product -> !product.getProductType().equals("헬스+")).map(product -> product).toList();
 		System.out.println(noHealthProducts);
 		req.setAttribute("products", noHealthProducts);
-		result.setPath("../product/product-cat.jsp?productCategoryName=" + productCategoryName);
+		result.setPath("../product/product-new-cat.jsp?productCategoryName=" + productCategoryName);
 		return result;
 	}
 
