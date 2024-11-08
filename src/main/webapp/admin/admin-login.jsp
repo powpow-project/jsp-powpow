@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../assets/css/admin/admin-loginAdmin.css">
+<link rel="stylesheet" href="../assets/css/admin/admin-login.css">
 <link rel="stylesheet" href="../assets/css/index.css">
 <link rel="icon" href="../assets/images/favicon.ico">
 <title>관리자어드민 로그인</title>
 
 </head>
 <body>
-	<form action="admin-loginAdmin-ok.admin" method="post" id="container">
+	<form action="admin-login-ok.admin" method="post" id="container">
 		<img class="image" src="../assets/images/admin/powpow-logo.png" alt="powpow로고" />
 		<div id="admin">관리자</div>
 
@@ -26,5 +26,5 @@
 		</p>
 	</form>
 </body>
-	<script src="../assets/js/admin/admin-loginAdmin.js"></script>
+	<script src="../assets/js/admin/admin-login.js"></script>
 </html>

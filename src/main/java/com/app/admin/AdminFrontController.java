@@ -41,14 +41,14 @@ public class AdminFrontController extends HttpServlet{
 	    System.out.println(target);
 	    
 	    // 로그인 목록
-	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
+	    if (target.equals("admin-login")) { // 로그인 페이지 로직
 	        result = new Result();
-	        result.setPath("../admin/admin-loginAdmin.jsp");
+	        result.setPath("../admin/admin-login.jsp");
 
-	    } else if (target.equals("admin-loginAdmin-ok")) { // 로그인 처리 로직
+	    } else if (target.equals("admin-login-ok")) { // 로그인 처리 로직
 	        result = new AdminLoginOkController().execute(req, resp);
 	        
-	    } else if (target.equals("logout")) { // 로그인 처리 로직
+	    } else if (target.equals("logout")) { // 로그아웃 처리 로직
 	    	result = new AdminLogoutOkController().execute(req, resp);
 	        
 	    // 공지사항 관리 목록    
