@@ -47,14 +47,14 @@
 				<a href="#" class="view-all">전체보기</a>
 			</div>
 
-			<div class="slider-container-cat swiper-container cat-swiper">
+			<div class="slider-container-dog swiper-container dog-swiper">
 			    <div class="swiper-button-next"></div>
       			<div class="swiper-button-prev"></div>
-				<div class="slider swiper-wrapper cats-swiper-warpper">
+				<div class="slider swiper-wrapper dogs-swiper-warpper">
 	
 				<c:forEach var="product" items="${products}">
-						<c:if test="${product.productCategoryName == '고양이' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
-							<div class="product swiper-slide cat-items" data-category="고양이 ${product.productAge}">
+						<c:if test="${product.productCategoryName == '강아지' && (product.productAge == '퍼피' || product.productAge == '어덜트' || product.productAge == '시니어')}">
+							<div class="product swiper-slide dog-items" data-category="강아지 ${product.productAge}">
 								<div class="product-image-wrap">
 									<img src="../assets/images/product/${product.productImage}"alt="${product.productName}">
 									<div class="hover-box">
