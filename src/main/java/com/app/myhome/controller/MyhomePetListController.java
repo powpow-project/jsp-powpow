@@ -13,7 +13,6 @@ import com.app.Result;
 import com.app.dao.MemberDAO;
 import com.app.dao.MyhomeDAO;
 import com.app.vo.PetVO;
-import com.app.vo.ProductVO;
 
 public class MyhomePetListController implements Action {
 
@@ -22,12 +21,19 @@ public class MyhomePetListController implements Action {
 		Result result = new Result();
 		MemberDAO memberDAO = new MemberDAO();
 		MyhomeDAO myhomeDAO = new MyhomeDAO();
+		PetVO petVO = new PetVO();
 		HttpSession session = req.getSession();
-		Long memberid = memberDAO.findBuyerByEmail((String)session.getAttribute("buyerEmail"));
 		
-		List<PetVO> pets = myhomeDAO.selectPetAll(memberid);
+		String memberEmail = (String)session.getAttribute("buyerEmail");
+		Long memberId = memberDAO.findBuyerByEmail(memberEmail);
+		System.out.println(memberEmail);
+		System.out.println(memberId);
+		
+		List<PetVO> pets = myhomeDAO.selectPetAll(memberId);
+//		req.setAttribute("pets", pets);
 		System.out.println(pets);
-		req.setAttribute("pets", pets);
+		
+		
 		
 		result.setPath("../myhome/myhome-pet-list.jsp");
 		return result;

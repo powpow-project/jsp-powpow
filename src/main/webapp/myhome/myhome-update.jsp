@@ -49,6 +49,15 @@
 				</div>
 				<div class="edit-info">
 					<div>
+						<label class="edit-category0">이름</label> 
+						<input 
+							name="name"
+							value="${member.memberName}"
+							class="edit-member" type="text"
+							placeholder="${member.memberName}"
+						/>
+					</div>
+					<div>
 						<label class="edit-category1">닉네임</label> 
 						<input 
 							name="nickname"
