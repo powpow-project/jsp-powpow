@@ -149,7 +149,7 @@
 							alt="Dog Community" />
 						<div class="community-images-bg"></div>
 						<div class="text-wrap">
-							<p>POWPOW 커뮤니티</p>
+							<p>헬스+ 이미지</p>
 							<span>다른 반려동물들도 구경하러 와요.</span>
 						</div>
 					</div>
