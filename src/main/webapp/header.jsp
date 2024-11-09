@@ -51,8 +51,6 @@
 							<ul>
 								<li class="sub-menu"><a href="/powpow/product/product-dog.product?productCategoryName=강아지">강아지</a></li>
 								<li class="sub-menu"><a href="/powpow/product/product-cat.product?productCategoryName=고양이">고양이</a></li>
-								<li class="sub-menu"><a href="/powpow/product/product-bird.product?productCategoryName=새">새</a></li>
-								<li class="sub-menu"><a href="/powpow/product/product-fish.product?productCategoryName=물고기">물고기</a></li>
 								<li class="sub-menu"><a href="/powpow/product/product-health-main.product?productCategoryName=헬스+">헬스+</a></li>
 							</ul>
 							<ul>
