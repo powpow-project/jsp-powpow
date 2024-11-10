@@ -18,7 +18,7 @@ public class AdminLogoutOkController implements Action{
 		session.invalidate();
 		
 		result.setRedirect(true);
-		 result.setPath("../admin/admin-loginAdmin.jsp");
+		result.setPath("../admin/admin-login.jsp");
 		return result;
 	}
 }
