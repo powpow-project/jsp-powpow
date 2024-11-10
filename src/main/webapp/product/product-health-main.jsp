@@ -22,11 +22,11 @@
 	<jsp:include page="../header.jsp"></jsp:include>
 	   
 	<!-- 배너 섹션 -->
-	<section class="health-banner-container">
-		<div class="health-banner">
 			<c:forEach var="banner" items="${banners}">
 				<img src="../assets/images/admin/${banner.adminBannerImage}"alt="헬스 배너">
 			</c:forEach>
+	<section class="health-banner-container">
+		<div class="health-banner">
 		</div>
 	</section>
 	<!-- 추천상품 -->
