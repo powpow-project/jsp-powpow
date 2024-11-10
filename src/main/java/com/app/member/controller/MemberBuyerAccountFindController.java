@@ -9,18 +9,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.app.Action;
 import com.app.Result;
-import com.app.dao.MemberDAO;
+
 
 public class MemberBuyerAccountFindController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-
-	
-
-		result.setPath("../member/member-buyer-account-find.jsp");
-		return result;
+		
+		String findEmail = (String)req.getSession().getAttribute("phone");
+		System.out.println(findEmail);
+		
+		if(findEmail == null) {
+			result.setPath("../member/member-buyer-account-find.jsp");
+		}else {
+			result.setRedirect(true);
+			result.setPath("../member/member-buyer-account-find.jsp");
 		}
-
+        return result;
+    }
 }
