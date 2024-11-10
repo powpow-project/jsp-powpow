@@ -18,7 +18,7 @@
 			<div id="menu-frame">
 				<div class="menu-header">
 					<div class="welcome">admin님 환영합니다!</div>
-					<button class="logout">로그아웃</button>
+				    <button class="logout" onclick="location.href='admin-logout.admin'">로그아웃</button>
 				</div>
 				<ul>
 					<li>
@@ -132,7 +132,7 @@
 			        <div class="box2">
 			            <label><input type="radio" name="adminCouponDiscountRate" value="10" ${adminCoupon.adminCouponDiscountRate == 10 ? 'checked' : ''} /> 10%</label> 
 			            <label><input type="radio" name="adminCouponDiscountRate" value="20" ${adminCoupon.adminCouponDiscountRate == 20 ? 'checked' : ''} /> 20% </label> 
-			            <div>
+ 			            <div>
 			                <label><input type="radio" name="adminCouponDiscountRate" 
 			                value="custom" ${adminCoupon.adminCouponDiscountRate != 10 && adminCoupon.adminCouponDiscountRate != 20 ? 'checked' : ''} />직접입력</label>
 			                <input type="number" class="custom-discount" name="adminCouponDiscountRateCustom" 
