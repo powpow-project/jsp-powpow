@@ -22,20 +22,12 @@ public class MyhomeLikesListController implements Action {
 		MemberVO membrVO = new MemberVO();
 		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
-		   
-//		   String sid = session.getId();
-//		   System.out.println(session);
-//		      session.setAttribute("id", 1L);
-//		      Long memberId = Long.parseLong(String.valueOf(session.getAttribute("id")));
+
 		   
 			String memberEmail = (String)session.getAttribute("buyerEmail");
 //			System.out.println(memberEmail);
-			Long memberId = 1L;
+			Long memberId = memberDAO.findBuyerByEmail(memberEmail);
 		
-//		String memberEmail = session.getAttribute("memberEmail");
-//		String memberEmail = "jingeo@gmail.com";
-		
-//		MemberVO member = memberDAO.selectMemberByEmail(memberEmail);
 		
 //		req.setAttribute("member", member);
 		result.setRedirect(true);
