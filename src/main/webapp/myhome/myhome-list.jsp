@@ -13,7 +13,7 @@
 <body>
 		<!-- 헤더 -->
 	<jsp:include page="../header.jsp"></jsp:include>
-	
+	 
 	<div id="sub">
 		<div class="main-sub h1">나의 정보</div>
 		<span class="sub-sub"> <a href="./update.myhome"

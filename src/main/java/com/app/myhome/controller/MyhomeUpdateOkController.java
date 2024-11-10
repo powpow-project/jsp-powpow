@@ -45,7 +45,7 @@ public class MyhomeUpdateOkController implements Action {
 	            String fullAddress = null;
 	            String name = multi.getParameter("name");
 	            String nickname = multi.getParameter("nickname");
-//	            String phone = multi.getParameter("phone");
+	            String phone = multi.getParameter("phone");
 	            String[] addressAll = multi.getParameterValues("address");
 	            String profile = multi.getFilesystemName("profile");
 	            for(String address : addressAll) {
@@ -61,7 +61,7 @@ public class MyhomeUpdateOkController implements Action {
 	            memberVO.setMemberName(name);
 	            memberVO.setMemberNickname(nickname);
 	            memberVO.setMemberAddress(fullAddress);
-//	            memberVO.setMemberPhone(phone);
+	            memberVO.setMemberPhone(phone);
 	            memberVO.setMemberImage(profile);
 	            System.out.println(memberVO);
 	            

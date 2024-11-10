@@ -11,9 +11,9 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <style type="text/css">
-#profilePic {
+/* #profilePic {
 	background-image: url('../assets/images/member/none_profile.png');
-}
+} */
 </style>
 <body>
 		<!-- 헤더 -->
@@ -33,7 +33,7 @@
 			<div id="profile-edit">
 				<div class="profile-box">
 				<div class="profile-pic default-profile-image" id="profilePic">
-					<img id="profileImage" src="../assets/images/member/${member.memberImage}">
+					<img id="profileImage" name="profile" src="../assets/images/member/${member.memberImage}">
 				</div>
 					<%-- <img class="default-profile-image"
 						src="../assets/images/member/${member.memberImage}" alt="프로필 사진"> --%>
@@ -50,8 +50,8 @@
 				<div class="edit-info">
 					<div>
 					<div>
-						<label class="edit-category0">이름</label>
-						<span class="name"><c:out value="${member.memberName}"></c:out></span>
+						<label class="edit-category0">이름</label> 
+						<input name="name" value="${member.memberName}" class="edit-member" type="text"/>
 					</div>
 					</div>
 					<div>
@@ -60,7 +60,6 @@
 							name="nickname"
 							value="${member.memberNickname}"
 							class="edit-member" type="text"
-							placeholder="${member.memberNickname}"
 						/>
 					</div>
 					<div>
@@ -73,7 +72,6 @@
 							name="phone"
 							value="${member.memberPhone}"
 							class="edit-member" type="text"
-							placeholder="${member.memberPhone}"
 						/>
 					</div>
 					<div class="group-category4">

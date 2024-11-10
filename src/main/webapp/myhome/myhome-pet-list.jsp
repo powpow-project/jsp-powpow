@@ -12,12 +12,12 @@
 <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 <body>
-	<%-- <c:if test="${empty pets}">
+	<c:if test="${empty pets}">
 		<script>
 			alert("펫을 등록해주세요 ^_^");
 			window.location.href = './no-pet.myhome';
 		</script>
-	</c:if> --%>
+	</c:if> 
 		<!-- 헤더 -->
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div class="sub h1">
