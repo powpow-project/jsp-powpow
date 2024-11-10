@@ -20,7 +20,7 @@ public class MemberLogoutController implements Action {
 		session.invalidate();
 		
 		result.setRedirect(true);
-		result.setPath("../index.jsp");
+		result.setPath("../final-main-test.jsp");
 		return result;
 	}
 

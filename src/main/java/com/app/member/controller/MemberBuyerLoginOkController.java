@@ -36,7 +36,7 @@ public class MemberBuyerLoginOkController implements Action {
 		}
 		
 		session.setAttribute("buyerEmail", buyerEmail);
-		result.setPath("../index.jsp");
+		result.setPath("../final-main-test.jsp");
 		
 		return result;
     }
