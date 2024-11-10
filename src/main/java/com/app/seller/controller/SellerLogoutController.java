@@ -1,4 +1,4 @@
-package com.app.member.controller;
+package com.app.seller.controller;
 
 import java.io.IOException;
 
@@ -10,21 +10,17 @@ import javax.servlet.http.HttpSession;
 import com.app.Action;
 import com.app.Result;
 
-public class MemberSnsController implements Action {
+public class SellerLogoutController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		
 		HttpSession session = req.getSession();
+		session.invalidate();
 		
-		String codeNumber = "";
-		for(int i = 0; i < 6; i++) {
-			codeNumber += (int)(Math.floor(Math.random() * 10));
-		}
-		
-		session.setAttribute("code", session);
-//		sns 날리는 코드
+		result.setRedirect(true);
+		result.setPath("../member/login.member");
 		
 		
 		return result;
