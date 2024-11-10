@@ -10,27 +10,27 @@
 </head>
 <body>
 
-	<jsp:include page="header.jsp"></jsp:include>
+   <jsp:include page="header.jsp"></jsp:include>
   
     <div class="slider">
-	    <div class="slides">
-	    	<div class="slide">
-	    		<img class="main-banner" src="assets/images/test/final-banner1.png" alt="메인배너">
-	  		</div>
-	    	<div class="slide">
-	    		<img class="main-banner" src="assets/images/test/final-banner2.png" alt="메인배너">
-	  		</div>
-	    	<div class="slide">
-	    		<img class="main-banner" src="assets/images/test/final-banner3.png" alt="메인배너">
-	  		</div>
-	    </div>
+       <div class="slides">
+          <div class="slide">
+             <img class="main-banner" src="assets/images/test/final-banner1.png" alt="메인배너">
+           </div>
+          <div class="slide">
+             <img class="main-banner" src="assets/images/test/final-banner2.png" alt="메인배너">
+           </div>
+          <div class="slide">
+             <img class="main-banner" src="assets/images/test/final-banner3.png" alt="메인배너">
+           </div>
+       </div>
     
-	    <div class="navigation">
-	      <span class="dot" onclick="currentSlide(1)"></span>
-	      <span class="dot" onclick="currentSlide(2)"></span>
-	      <span class="dot" onclick="currentSlide(3)"></span>
-	    </div>
-	</div>
+       <div class="navigation">
+         <span class="dot" onclick="currentSlide(1)"></span>
+         <span class="dot" onclick="currentSlide(2)"></span>
+         <span class="dot" onclick="currentSlide(3)"></span>
+       </div>
+   </div>
   
 
   <div id="main-frame">
@@ -42,25 +42,25 @@
     
     <div id="main-content">
       <!-- 사진버튼 -->
-		<div class="button-icons" >
-			<button class="icon-wrap" onclick="location.href='/powpow/product/product-dog.product?productCategoryName=강아지'">
-				<img class="icon" src="assets/images/test/111.jpg" alt="강아지버튼1">
-				<div class="more-show1">DOG ALL →</div>
-			</button>
-			<button class="icon-wrap" onclick="location.href='/powpow/product/product-cat.product?productCategoryName=고양이'">
-				<img class="icon" src="assets/images/test/222.jpg" alt="고양이버튼2">
-				<div class="more-show2">CAT ALL →</div>
-			</button>
-			<button class="icon-wrap" onclick="location.href='/powpow/product/product-dog.product?productCategoryName=강아지'">
-				<img class="icon" src="assets/images/test/333.jpg" alt="강아지버튼3">
-				<div class="more-show3">DOG ALL →</div>
-			</button>
-			<button class="icon-wrap" onclick="location.href='/powpow/product/product-cat.product?productCategoryName=고양이'">
-				<img class="icon" src="assets/images/test/444.jpg" alt="강아지버튼4">
-				<div class="more-show4">CAT ALL →</div>
-			</button>
-		</div>
-			<!-- 핫한 상품 이미지 -->
+      <div class="button-icons" >
+         <button class="icon-wrap" onclick="location.href='/powpow/product/product-dog.product?productCategoryName=강아지'">
+            <img class="icon" src="assets/images/test/111.jpg" alt="강아지버튼1">
+            <div class="more-show1">DOG ALL →</div>
+         </button>
+         <button class="icon-wrap" onclick="location.href='/powpow/product/product-cat.product?productCategoryName=고양이'">
+            <img class="icon" src="assets/images/test/222.jpg" alt="고양이버튼2">
+            <div class="more-show2">CAT ALL →</div>
+         </button>
+         <button class="icon-wrap" onclick="location.href='/powpow/product/product-dog.product?productCategoryName=강아지'">
+            <img class="icon" src="assets/images/test/333.jpg" alt="강아지버튼3">
+            <div class="more-show3">DOG ALL →</div>
+         </button>
+         <button class="icon-wrap" onclick="location.href='/powpow/product/product-cat.product?productCategoryName=고양이'">
+            <img class="icon" src="assets/images/test/444.jpg" alt="강아지버튼4">
+            <div class="more-show4">CAT ALL →</div>
+         </button>
+      </div>
+         <!-- 핫한 상품 이미지 -->
       <div class="hot-product">
         <div><h2>반려동물을 위한 똑똑한 소비습관</h2></div>
         <div class="hot-images">
@@ -238,8 +238,8 @@
       <!-- 커뮤니티 -->
       <div class="recommend-section">
         <div class="community-plusmore">
-	        <h2>이런 게시물은 어때요?</h2>
-	        <span class="comunity-more"><a href="/powpow/community/community-main.community">+ 더보기</a></span>
+           <h2>이런 게시물은 어때요?</h2>
+           <span class="comunity-more"><a href="/powpow/community/community-main.community">+ 더보기</a></span>
         </div>
         <div class="recommend-container">
           
@@ -354,29 +354,29 @@
       </div>
          
       <div class="donation-wrap">
-				<div class="donation">
-					<div class="donation-letter">
-						<span class="h4">포포 이용자들이 이만큼 기부했어요!</span><br />
-						<span class="money">30,993,000 원</span><br /> 
-						<span class="h6"> 포포에서 산 제품의 금액 중 5%는 기부, 후원금으로 산정됩니다</span>
-					</div>
-				</div>
-				<div class="announce">
-					<p class="h4">공지사항</p>
-					<div class="annouce-letter">
-						<ul>
-							<li>마이 홈페이지 업데이트 2024.09.21</li>
-							<li>Shipping delay controversy law suit</li>
-							<li>Welcome new POW kit</li>
-							<li>Get ready for winter season with us!</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+            <div class="donation">
+               <div class="donation-letter">
+                  <span class="h4">포포 이용자들이 이만큼 기부했어요!</span><br />
+                  <span class="money">30,993,000 원</span><br /> 
+                  <span class="h6"> 포포에서 산 제품의 금액 중 5%는 기부, 후원금으로 산정됩니다</span>
+               </div>
+            </div>
+            <div class="announce">
+               <p class="h4">공지사항</p>
+               <div class="annouce-letter">
+                  <ul>
+                     <li>마이 홈페이지 업데이트 2024.09.21</li>
+                     <li>Shipping delay controversy law suit</li>
+                     <li>Welcome new POW kit</li>
+                     <li>Get ready for winter season with us!</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
 
 
-	   </div>
-	</div>
+      </div>
+   </div>
 </div>
  <footer>
   <div class="footer-container">
@@ -438,97 +438,58 @@
 
 
 </body>
-<script type="text/javascript">
-const mainMenus = document.querySelectorAll(".menu-wrap .menu");
-const subMenuUl = document.querySelectorAll(".sub-menu-wrap ul");
-const subMenuAll = document.querySelector(".sub-menu-wrap");
-const subMenus = document.querySelectorAll(".sub-menu-wrap .sub-menu");
-const subMenuBg = document.querySelector(".sub-menu-wrap-bg");
 
-let count = 0;
-let hoverTimeout; // 타임아웃을 저장할 변수
+<script>
+ let slideIndex = 0;
+ showSlides(slideIndex);
+ autoSlides();
 
-mainMenus.forEach((menu) => {
-	menu.addEventListener("mouseover", () => {
-		clearTimeout(hoverTimeout); // 기존에 설정된 타임아웃이 있으면 제거
-		subMenuUl.forEach((ul) => {
-			ul.style.height = "300px";
-			subMenuBg.style.display = "block";
-		});
-	});
+ function showSlides(n) {
+   const slides = document.querySelectorAll(".slide");
+   const dots = document.querySelectorAll(".dot");
 
-	menu.addEventListener("mouseleave", () => {
-		hoverTimeout = setTimeout(() => {
-			subMenuUl.forEach((ul) => {
-				ul.style.height = "0";
-				subMenuBg.style.display = "none";
-			});
-		}, 100); // 100ms 지연 후 메뉴를 닫음
-	});
-});
+   console.log(slides);  // 여기서 확인
+   console.log(dots);    // 여기서 확인
 
-subMenus.forEach((sub, i) => {
-	sub.addEventListener("mouseover", () => {
-		clearTimeout(hoverTimeout); // 서브메뉴에서도 마우스 오버 시 타임아웃 제거
-		subMenuUl.forEach((ul) => {
-			ul.style.height = "300px";
-			subMenuBg.style.display = "block";
-		});
-	});
+   if (slides.length === 0 || dots.length === 0) {
+     console.log("슬라이드나 도트 요소를 찾을 수 없습니다.");
+     return;  // 요소가 없으면 함수 종료
+   }
 
-	sub.addEventListener("mouseleave", () => {
-		hoverTimeout = setTimeout(() => {
-			subMenuUl.forEach((ul) => {
-				ul.style.height = "0";
-				subMenuBg.style.display = "none";
-			});
-		}, 100); // 100ms 지연 후 서브메뉴를 닫음
-	});
-});
+   if (n >= slides.length) {
+     slideIndex = 0;
+   }
+   if (n < 0) {
+     slideIndex = slides.length - 1;
+   }
 
-let slideIndex = 0;
-showSlides(slideIndex);
+   // 모든 슬라이드를 숨김
+   slides.forEach((slide) => {
+     slide.style.display = "none";
+   });
 
-// 다음 슬라이드로 이동
-function showSlides(n) {
-  const slides = document.querySelectorAll(".slide");
-  const dots = document.querySelectorAll(".dot");
+   // 모든 도트를 비활성화
+   dots.forEach((dot) => {
+     dot.classList.remove("active");
+   });
 
-  // 슬라이드 수를 벗어나지 않도록 인덱스 설정
-  if (n >= slides.length) {
-    slideIndex = 0;
-  }
-  if (n < 0) {
-    slideIndex = slides.length - 1;
-  }
+   // 현재 슬라이드와 도트 표시
+   slides[slideIndex].style.display = "block";
+   dots[slideIndex].classList.add("active");
+ }
 
-  // 모든 슬라이드를 숨김
-  slides.forEach((slide) => {
-    slide.style.display = "none";
-  });
+ // 자동 슬라이드 기능
+ function autoSlides() {
+   showSlides(slideIndex += 1);
+   setTimeout(autoSlides, 3000); // 3초 간격
+ }
 
-  // 모든 도트를 비활성화
-  dots.forEach((dot) => {
-    dot.classList.remove("active");
-  });
+ // 도트 클릭으로 슬라이드 이동
+ function currentSlide(n) {
+   slideIndex = n - 1;
+   showSlides(slideIndex);
+ }
 
-  // 현재 슬라이드와 도트 표시
-  slides[slideIndex].style.display = "block";
-  dots[slideIndex].classList.add("active");
-}
-
-// 자동 슬라이드 기능
-function autoSlides() {
-  showSlides(slideIndex += 1);
-  setTimeout(autoSlides, 3000); // 3초 간격
-}
-autoSlides();
-
-// 도트 클릭으로 슬라이드 이동
-function currentSlide(n) {
-  slideIndex = n - 1;
-  showSlides(slideIndex);
-}
 
 </script>
 

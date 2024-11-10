@@ -41,15 +41,12 @@ public class AdminFrontController extends HttpServlet{
 	    System.out.println(target);
 	    
 	    // 로그인 목록
-	    if (target.equals("admin-loginAdmin")) { // 로그인 페이지 로직
+	    if (target.equals("admin-login")) { // 로그인 페이지 로직
 	        result = new Result();
-	        result.setPath("../admin/admin-loginAdmin.jsp");
+	        result.setPath("../admin/admin-login.jsp");
 
-	    } else if (target.equals("admin-loginAdmin-ok")) { // 로그인 처리 로직
+	    } else if (target.equals("admin-login-ok")) { // 로그인 처리 로직
 	        result = new AdminLoginOkController().execute(req, resp);
-	        
-	    } else if (target.equals("logout")) { // 로그인 처리 로직
-	    	result = new AdminLogoutOkController().execute(req, resp);
 	        
 	    // 공지사항 관리 목록    
 	    } else if (target.equals("admin-write")) { // 공지사항 등록 페이지 이동 처리
@@ -110,20 +107,24 @@ public class AdminFrontController extends HttpServlet{
 	    } else if (target.equals("admin-coupon-update-ok")) { // 쿠폰 수정 완료
 	    	result = new AdminCouponUpdateOkController().execute(req, resp);
 
-	    } else if (target.equals("admin-coupon-delete-ok")) { // 공지사항 삭제
+	    } else if (target.equals("admin-coupon-delete-ok")) { // 쿠폰 삭제
 	        result = new AdminCouponDeleteOkController().execute(req, resp);
 	        
-	    // 일반회원관리 목록
+	        
+	    // 회원관리 목록
 		} else if (target.equals("admin-customerInfo-list")) { // 일반회원 목록
 		    result = new AdminCustomerInfoListController().execute(req, resp);
 		    
 		} else if (target.equals("admin-customerInfo-search-list")) { 
 			result = new AdminCustomerInfoListOkController().execute(req, resp);
 		    
-		//판매자회원관리 목록
 	    } else if (target.equals("admin-sellerInfo-list")) { // 판매자회원 목록
 			result = new AdminSellerInfoListController().execute(req, resp);
 
+		// 로그아웃 처리 로직
+	    } else if (target.equals("admin-logout")) { 
+	    	result = new AdminLogoutOkController().execute(req, resp);
+	    	
 	    } else {
 	        result = new Result();
 	        result.setPath("../not-found.jsp");

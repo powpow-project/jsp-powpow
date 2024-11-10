@@ -67,7 +67,6 @@ public class AdminBannerWriteOkController implements Action {
       }
 
       adminDAO.insertAdminBanner(adminBannerDTO);
-
       
       result.setPath("../admin/admin-banner-list.admin");
       result.setRedirect(true);
