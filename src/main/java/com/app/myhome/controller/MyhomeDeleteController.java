@@ -17,17 +17,16 @@ public class MyhomeDeleteController implements Action {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
 		MemberDAO memberDAO = new MemberDAO();
-		HttpSession session = req.getSession();
+//		HttpSession session = req.getSession();
 		   
-			String memberEmail = (String)session.getAttribute("buyerEmail");
-//			System.out.println(memberEmail);
-			Long memberId = 1L;
+//		String memberEmail = (String)session.getAttribute("buyerEmail");
+//		Long memberid = memberDAO.findBuyerByEmail((String)session.getAttribute("buyerEmail"));
+//		System.out.println(memberEmail);
 		
-		memberDAO.deleteBuyer(Long.parseLong(req.getParameter("id")));
+//		memberDAO.deleteBuyer(Long.parseLong(req.getParameter("id")));
 		
-		
-		result.setRedirect(true);
-		result.setPath("../myhome/delete.member");
+
+		result.setPath("../myhome/myhome-delete-complete.jsp");
 		return result;
 	}
 

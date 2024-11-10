@@ -235,12 +235,19 @@ to {
 .edit-info {
 	display: flex;
 	flex-direction: column;
-	gap: 70px;
+	gap: 50px;
 	margin-top: 26px;
 }
 
 .edit-info div {
 	width: 350px;
+}
+
+.edit-category0 {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: bold;
+	padding-right: 87px;
 }
 
 .edit-category1 {
@@ -269,7 +276,7 @@ to {
 	line-height: 24px;
 	font-weight: bold;
 	padding-right: 54px;
-	width: 180px;
+	width: 175px;
 }
 
 .group-category4 {

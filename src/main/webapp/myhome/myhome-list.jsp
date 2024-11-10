@@ -13,7 +13,7 @@
 <body>
 		<!-- 헤더 -->
 	<jsp:include page="../header.jsp"></jsp:include>
-	
+	 
 	<div id="sub">
 		<div class="main-sub h1">나의 정보</div>
 		<span class="sub-sub"> <a href="./update.myhome"
@@ -34,11 +34,9 @@
 				<hr>
 				<br>
 				<!-- <a class="couponicon" href="#"><img  src="../assets/images/myhome/coupon.svg" alt="쿠폰"></a> -->
-				<img class="popup-button" id="openButton"
+				<img class="popup-button" id="openCouponButton"
 					src="../assets/images/myhome/coupon.svg" alt="coupon">
-				<!-- The Modal -->
 				<div class="modal" id="myCoupon">
-					<!-- Modal content -->
 					<div class="modal-content">
 						<button class="close-button" id="closeCouponButton">&times;</button>
 						<button class="switchto1">쿠폰함(4)</button>
@@ -79,6 +77,10 @@
 				<a class="mycoupon" href="#">쿠폰</a> <span class="count-coupon">5</span>
 			</div>
 			<div class="edit-info">
+				<div>
+					<label class="edit-category0">이름</label>
+					<span><c:out value="${member.memberName}"></c:out></span>
+				</div>
 				<div>
 					<label class="edit-category1">닉네임</label>
 					<span><c:out value="${member.memberNickname}"></c:out></span>
