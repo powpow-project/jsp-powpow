@@ -24,7 +24,7 @@ public class MyhomeDeleteOkController implements Action {
 				result.setPath("../myhome/myhome-delete-ok.jsp");
 			}
 //		
-//		result.setPath("../myhome/myhome-delete-complete.jsp");
+		result.setPath("../myhome/myhome-delete-complete.jsp");
 		return result;
 	}
 

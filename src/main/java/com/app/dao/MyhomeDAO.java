@@ -17,33 +17,33 @@ public SqlSession sqlSession;
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-//	pet kinds
+//	동물 종류
 	public Optional<String> selectPetKinds() {
 		return Optional.ofNullable("myhome.selectPetKinds");
 	}
 	
-//	GET ALL PETS
+//	추가한 모든 동물
 	public List<PetVO> selectPetAll(Long memberId) {
 		return sqlSession.selectList("myhome.selectPetAll", memberId);
 	}
 	
-    // pet info insert
+    // 동물 정보 추가
     public void insertPet(PetVO petVO) {
         sqlSession.insert("myhome.insertPet", petVO);
     }
     
-    // pet update
+    // 동물 정보 업데이트
     public void updatePet(PetVO petVO) {
         sqlSession.update("myhome.updatePet", petVO);
     }
     
-    // pet delete
+    // 동물 삭제
     public void deletePet(Long id) {
         sqlSession.delete("myhome.deletePet", id);
     }
     
     
-    // pet info select by ID
+    // 동물 ID 로 찾기
     public Optional<PetVO> selectPetId(PetVO petVO) {
         return Optional.ofNullable(sqlSession.selectOne("myhome.selectPetId", petVO));
     }
@@ -53,37 +53,5 @@ public SqlSession sqlSession;
     public void updatePassword(MemberVO memberVO) {
     	sqlSession.update("myhome.updatePassword", memberVO);
     }
-    
-    
-//	회원 조회
-//	public MemberVO selectBuyerByEmail(String memberEmail) {
-//	    return sqlSession.selectOne("member.selectBuyerByEmail", memberEmail);
-//	}
-
-//public Optional<MemberVO> selectBuyerByEmail(String memberEmail) {
-//    return Optional.ofNullable(sqlSession.selectOne("member.selectBuyerByEmail", memberEmail));
-//}
-	
-//	프로필 정보 수정
-//	public void updateMember(MemberVO memberVO) {
-//		sqlSession.update("myhome.updateMember", memberVO);
-//	}
-	
-	
-//	주문 제품 배송 상태
-//	public List<OrderDTO> selectOrder(Long id) {
-//		return sqlSession.selectList("order.selectOrder", id);
-//	}
-	
-//	회원 탈퇴
-//	public void deleteMember(Long memberid) {
-//		sqlSession.delete("member.deleteMember", memberid);
-//	}
-	
-//	쿠폰 조회
-//	public Optional<AdminCouponDTO> selectCoupon(String adminCouponCode){
-//		return Optional.ofNullable(sqlSession.selectOne("adminCoupon.selectCoupon", adminCouponCode));
-//	}
 }
-	
 	

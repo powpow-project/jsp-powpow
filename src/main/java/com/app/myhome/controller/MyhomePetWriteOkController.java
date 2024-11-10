@@ -33,8 +33,7 @@ public class MyhomePetWriteOkController implements Action {
 	   
 		String memberEmail = (String)session.getAttribute("buyerEmail");
 //		System.out.println(memberEmail);
-		Long memberId = 1L;
-		
+		Long memberId = memberDAO.findBuyerByEmail(memberEmail);;
 		
       String directory = req.getServletContext().getRealPath("/assets/images/myhome");
 //      System.out.println(directory);

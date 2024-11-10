@@ -11,6 +11,7 @@ import com.app.Action;
 import com.app.Result;
 import com.app.dao.MemberDAO;
 import com.app.dao.MyhomeDAO;
+import com.app.dao.PetDAO;
 import com.app.vo.MemberVO;
 import com.app.vo.PetVO;
 
@@ -27,13 +28,14 @@ public class MyhomePetDeleteOkController implements Action {
 
 		String memberEmail = (String) session.getAttribute("buyerEmail");
 //			System.out.println(memberEmail);
-		Long memberId = 1L;
+		Long memberId = memberDAO.findBuyerByEmail(memberEmail);
+		
 	 
 		//업데이트 
-//		myhomeDAO.deletePet(petVO);
+		myhomeDAO.deletePet(Long.parseLong(req.getParameter("id")));
 
-		
-		result.setPath("../myhome/myhome-pet-list.jsp");
+		result.setRedirect(true);
+		result.setPath("../myhome/pet-list.myhome");
 		return null;
 	}
 

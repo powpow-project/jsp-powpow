@@ -30,9 +30,10 @@ public class MyhomePetListController implements Action {
 		System.out.println(memberId);
 		
 		List<PetVO> pets = myhomeDAO.selectPetAll(memberId);
-//		req.setAttribute("pets", pets);
+		req.setAttribute("pets", pets);
 		System.out.println(pets);
 		
+//		System.out.println(petVO.getPetName());
 		
 		
 		result.setPath("../myhome/myhome-pet-list.jsp");
