@@ -18,7 +18,7 @@
 			<div id="menu-frame">
 				<div class="menu-header">
 					<div class="welcome">admin님 환영합니다!</div>
-					<button class="logout">로그아웃</button>
+				    <button class="logout" onclick="location.href='admin-logout.admin'">로그아웃</button>
 				</div>
 				<ul>
 					<li>
@@ -111,15 +111,19 @@
 					
 						<tr>
 							<td>${status.index + 1}</td>
-							<td><c:out value="${adminNotice.adminNoticeTitle}" /></td>
-							<td><c:out value="${adminNotice.adminNoticeContent}" /></td>
+							<td><div class="two-line"><c:out value="${adminNotice.adminNoticeTitle}" /></div></td>
+							<td>
+							    <div class="two-line">
+							        <textarea maxlength="2000">${adminNotice.adminNoticeContent}</textarea>
+							    </div>
+							</td>
 							<td><c:out value="${adminNotice.adminNoticeDate}" /></td>
 							<td>운영자</td>
 							<td>
-								<div class="change-buttons">
-									<button type="button" class="edit-btn" onclick="location.href='admin-update.admin?id=${adminNotice.id}'">수정</button>
-									<button type="button" class="delete-btn" data-id="${adminNotice.id}">삭제</button>
-								</div>
+							    <div class="change-buttons">
+							        <button type="button" class="edit-btn" onclick="location.href='admin-update.admin?id=${adminNotice.id}'">수정</button>
+							        <button type="button" class="delete-btn" data-id="${adminNotice.id}">삭제</button>
+							    </div>
 							</td>
 						</tr>
 					</c:forEach>

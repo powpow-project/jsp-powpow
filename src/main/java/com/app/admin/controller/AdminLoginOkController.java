@@ -31,7 +31,7 @@ public class AdminLoginOkController implements Action {
 
 		result.setRedirect(true);
 		if(adminEmail == null) {
-			result.setPath("../admin/admin-loginAdmin.admin?login=false");
+			result.setPath("../admin/admin-login.admin?login=false");
 			return result;
 		}
 		

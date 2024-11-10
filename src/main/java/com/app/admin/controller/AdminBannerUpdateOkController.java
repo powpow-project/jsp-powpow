@@ -75,8 +75,6 @@ public class AdminBannerUpdateOkController implements Action {
 			e.printStackTrace(); // 예외 발생 시 스택 트레이스 출력
 	        return result;
 		}
-
-		System.out.println(adminBannerDTO);
 		
 		adminDAO.updateAdminBanner(adminBannerDTO);
 		

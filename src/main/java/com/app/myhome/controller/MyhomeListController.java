@@ -24,6 +24,8 @@ public class MyhomeListController implements Action {
 		
 		String memberEmail = (String)session.getAttribute("buyerEmail");
 		
+		System.out.println(membrVO.getMemberName());
+		
 		if(memberEmail == null) {
 			result.setRedirect(true);
 			result.setPath("../member/login.member");

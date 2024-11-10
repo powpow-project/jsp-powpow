@@ -2,6 +2,10 @@ package com.app.seller.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,31 +24,31 @@ public class SellerWriteOkController implements Action {
 
    @Override
    public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-      Result result = new Result();
-      ProductVO productVO = new ProductVO();
-      ProductDAO productDAO = new ProductDAO();
-      SellerDAO sellerDAO = new SellerDAO();
-      String directory =req.getServletContext().getRealPath("/assets/images/product");
-      int sizeLimit = 10*500*500; // 100mb
-      String productCode = String.valueOf((int)(Math.random() * 900000) + 100000);
+		Result result = new Result();
+		ProductVO productVO = new ProductVO();
+		ProductDAO productDAO = new ProductDAO();
+		SellerDAO sellerDAO = new SellerDAO();
+		String directory =req.getServletContext().getRealPath("/assets/images/product");
+		int sizeLimit = 10*500*500; // 100mb
       
-      
-      HttpSession session = req.getSession();
-      
-      String sellerEmail = (String)session.getAttribute("sellerEmail");
-      
-      Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
+		DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+		String dateTime = LocalDateTime.now().format(fomatter);
+		
+		HttpSession session = req.getSession();
+		String sellerEmail = (String)session.getAttribute("sellerEmail");
+		Long sellerId = sellerDAO.selectBySellerEmail(sellerEmail).getId();
 
+		String productCode = dateTime.substring(dateTime.length() - 10) + sellerId;
       
       
       
-      // 디렉토리가 존재하지 않으면 생성
-      File dir = new File(directory);
-      if (!dir.exists()) {
-         dir.mkdirs(); // 디렉토리 생성
-      }
+		// 디렉토리가 존재하지 않으면 생성
+		File dir = new File(directory);
+		if (!dir.exists()) {
+			dir.mkdirs(); // 디렉토리 생성
+		}
       
-      try {
+		try {
          // 파일 업로드 처리
          MultipartRequest multi = new MultipartRequest(req, directory, sizeLimit, "UTF-8", new DefaultFileRenamePolicy());
          

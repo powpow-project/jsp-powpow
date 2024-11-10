@@ -149,7 +149,7 @@
 							alt="Dog Community" />
 						<div class="community-images-bg"></div>
 						<div class="text-wrap">
-							<p>POWPOW 커뮤니티</p>
+							<p>헬스+ 이미지</p>
 							<span>다른 반려동물들도 구경하러 와요.</span>
 						</div>
 					</div>
@@ -237,9 +237,6 @@
 								<img src="assets/images/main/toy1.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -247,9 +244,6 @@
 								<img src="assets/images/main/toy2.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -257,9 +251,6 @@
 								<img src="assets/images/main/toy3.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -267,9 +258,6 @@
 								<img src="assets/images/main/toy6.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -277,9 +265,6 @@
 								<img src="assets/images/main/toy4.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -287,9 +272,6 @@
 								<img src="assets/images/main/toy5.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 						</div>
@@ -308,9 +290,6 @@
 								<img src="assets/images/main/toy1.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -318,9 +297,6 @@
 								<img src="assets/images/main/toy2.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -328,9 +304,6 @@
 								<img src="assets/images/main/toy3.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -338,9 +311,6 @@
 								<img src="assets/images/main/toy4.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -348,9 +318,6 @@
 								<img src="assets/images/main/toy5.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -358,9 +325,6 @@
 								<img src="assets/images/main/toy6.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 						</div>
@@ -380,9 +344,6 @@
 								<img src="assets/images/main/toy1.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -390,9 +351,6 @@
 								<img src="assets/images/main/toy2.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -400,9 +358,6 @@
 								<img src="assets/images/main/toy3.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -410,9 +365,6 @@
 								<img src="assets/images/main/toy4.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -420,9 +372,6 @@
 								<img src="assets/images/main/toy5.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -430,9 +379,6 @@
 								<img src="assets/images/main/toy6.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 						</div>
@@ -452,9 +398,6 @@
 								<img src="assets/images/main/toy1.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -462,9 +405,6 @@
 								<img src="assets/images/main/toy2.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -472,9 +412,6 @@
 								<img src="assets/images/main/toy3.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -482,9 +419,6 @@
 								<img src="assets/images/main/toy4.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -492,9 +426,6 @@
 								<img src="assets/images/main/toy5.jpg" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 
@@ -502,9 +433,6 @@
 								<img src="assets/images/main/toy6.webp" alt="Product 1" />
 								<p class="product-name">아카나 독 라이트 앤 피트 레시피, 6kg</p>
 								<p class="product-price">55,760원</p>
-								<p class="shipping-info">
-									<span class="shipping-highlight">오늘출발</span> 오늘 3시 전 주문시(무료배송)
-								</p>
 								<p class="rating">⭐⭐⭐⭐⭐</p>
 							</div>
 						</div>

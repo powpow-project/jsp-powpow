@@ -19,7 +19,7 @@
 			<div id="menu-frame">
 				<div class="menu-header">
 					<div class="welcome">admin님 환영합니다!</div>
-					<button class="logout">로그아웃</button>
+				    <button class="logout" onclick="location.href='admin-logout.admin'">로그아웃</button>
 				</div>
 				<ul>
 					<li>

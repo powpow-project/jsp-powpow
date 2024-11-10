@@ -43,16 +43,40 @@ document.addEventListener("DOMContentLoaded", function () {
     startDateInput.addEventListener('change', validateDates);
     endDateInput.addEventListener('change', validateDates);
 
-/*    // 폼 제출 시 유효성 검사
+    // 폼 제출 시 유효성 검사
     form.addEventListener('submit', function (event) {
+        let discountRateSelected = false;
+        let customDiscountValue = null;
+
+        // 할인율 확인
+        for (const radio of discountRateRadios) {
+            if (radio.checked) {
+                discountRateSelected = true;
+                if (radio.value === "custom") {
+                    customDiscountValue = parseFloat(customDiscountInput.value);
+                    // 커스텀 값 유효성 검사
+                    if (isNaN(customDiscountValue) || customDiscountValue < 0 || customDiscountValue > 100) {
+                        alert("쿠폰 할인율은 0부터 100 사이의 숫자여야 합니다.");
+                        event.preventDefault(); 
+                        return;
+                    }
+                }
+                break;
+            }
+        }
+
+        if (!discountRateSelected) {
+            alert("할인율을 선택해 주세요.");
+            event.preventDefault(); 
+        }
+
         if (form.checkValidity()) {
             alert('쿠폰이 성공적으로 등록되었습니다.');
-            form.submit(); // 폼을 수동으로 제출
         } else {
             alert('모든 필드를 올바르게 입력해주세요.');
             event.preventDefault(); 
         }
-    });*/
+    });
 
     // 메뉴 관련 기능
     const menuIcon = document.querySelector(".menu-wrap img");
