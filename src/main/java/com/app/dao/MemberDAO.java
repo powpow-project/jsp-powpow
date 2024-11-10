@@ -16,7 +16,7 @@ import com.app.vo.SellerVO;
 
 
 public class MemberDAO {
-	public SqlSession sqlSession;
+	public static SqlSession sqlSession;
 	
 	public MemberDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
@@ -92,7 +92,7 @@ public class MemberDAO {
 	}
 	
 	// 일반회원 전체 조회
-	public List<MemberVO> selectAll() {
+	public static List<MemberVO> selectAll() {
 	    return sqlSession.selectList("member.selectAll");
 	}
 

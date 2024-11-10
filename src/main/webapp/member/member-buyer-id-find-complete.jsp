@@ -21,8 +21,10 @@
     <div class="box">
       <img  id="check" src="../assets/images/member/complete-check.svg" alt="체크">
     
-      <p class="text">${member.memberEmail}</p>
-      <p  class="text1">${member.memberName}님 아이디 찾기가 완료되었습니다!</p>
+     <c:forEach var="member" items="${members}">
+      <p class="text"><c:out value="${member.memberEmail}" escapeXml="true" /></p>
+      <p class="text1"><c:out value="${member.memberName}님 아이디 찾기가 완료되었습니다!" escapeXml="true" /></p>
+     </c:forEach>
       <form action="login.member" method="post">
       	<button class="next-button">로그인</button>
       </form>
