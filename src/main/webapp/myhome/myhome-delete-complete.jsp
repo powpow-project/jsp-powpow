@@ -16,8 +16,8 @@
 
 	<div class="completion-main">
 		<div class="logo-box">
-			<a href="../login/index.jsp"> <img id="logo"
-				src="../assets/images/myhome/logo.png" alt="로고" />
+			<a href="../login/index.jsp"> 
+			<img id="logo" src="../assets/images/myhome/logo.png" alt="로고" />
 			</a>
 		</div>
 

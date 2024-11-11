@@ -14,9 +14,6 @@ public class MyhomePetKindController implements Action {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
-//		PetDAO petDAO = new PetDAO();
-//		PetDTO petDTO = new PetDTO();
-//		PetVO petVO = new PetVO();
 		
 		result.setPath("../myhome/myhome-pet-kind.jsp");
 		return result;

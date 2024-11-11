@@ -9,19 +9,22 @@ import javax.servlet.http.HttpSession;
 
 import com.app.Action;
 import com.app.Result;
+import com.app.dao.MemberDAO;
 
 public class MyhomeNoPetController implements Action {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		Result result = new Result();
+		MemberDAO memberDAO = new MemberDAO();
 		HttpSession session = req.getSession();
 		
 		String memberEmail = (String)session.getAttribute("buyerEmail");
-//		System.out.println(memberEmail);
-		Long memberId = 1L;
+	    Long memberId = memberDAO.findBuyerByEmail(memberEmail);
+	    
+//	    System.out.println(memberId);
 		
-		
+	    result.setRedirect(true);
 		result.setPath("../myhome/myhome-no-pet.jsp");
 
 		return result;

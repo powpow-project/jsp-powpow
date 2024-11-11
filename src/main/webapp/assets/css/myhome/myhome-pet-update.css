@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+/* contents */
+
+#edit-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50px;
+	width: 89px;
+	height: 42px;
+	background-color: #1c4da0;
+	border-radius: 20px;
+	color: white;
+	margin-left: 1430px;
+}
+
+
+
+.sub{
+	display:flex;
+	justify-content:left;
+	align-items:center;
+	width: 1440px;
+	margin: 40px auto;
+}
+
+.sub p{
+	font-weight:bold;
+}
+
+#edit-button a {
+	color: #ffffff;
+}
+
+#mydog {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-bottom: 150px;
+}
+
+#profilePic {
+	width: 120px;
+	height: 120px;
+	border: solid 1px #333;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.card {
+	width: 270px;
+	height: 430px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.profile-pic {
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.profile-pic img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.name {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.image-edit-button {
+	background-color: #1c4da0;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	width: 96px;
+	height: 32px;
+	padding-top: 5px;
+	padding-left: 15px;
+}
+
+.pre-title {
+	font-weight: bold;
+}
+
+.title {
+	flex-direction: column;
+	margin-left: 60px;
+	font-weight: bold;
+}
+
+.title label {
+	display: block;
+	padding-top: 30px;
+}
+
+.input-wrap {
+	margin-top: 15px;
+	margin-left: 58px;
+}
+
+.input-wrap input {
+	border-radius: 20px;
+	height: 30px;
+	padding-left: 26px;
+	margin-top: 20px;
+}
+
+.birthday {
+	width: 285px;
+	padding-right: 26px;
+}
+
+.input {
+	display: flex;
+	width: 285px;
+}
+
+.weight input {
+	width: 285px;
+	flex-direction: row;
+}
+
+.option {
+	display: flex;
+	margin: 0 auto;
+}
+
+.option p {
+	margin-top: 25px;
+}
+
+#mydog button {
+	padding: 10px 15px;
+	background-color: #1c4da0;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
