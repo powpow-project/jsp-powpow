@@ -37,7 +37,7 @@ public class MemberSellerJoinOkController implements Action {
 		sellerVO.setSellerPassword(req.getParameter("sellerPassword"));
 		sellerVO.setSellerName(req.getParameter("name"));
 		sellerVO.setSellerPhone(req.getParameter("phone"));
-		sellerVO.setSellerSms(req.getParameter("sms").charAt(0));
+		sellerVO.setSellerSmsCheck(req.getParameter("smscheck").charAt(0));
 		sellerVO.setSellerEmailCheck(req.getParameter("emailcheck").charAt(0));
 		
 		

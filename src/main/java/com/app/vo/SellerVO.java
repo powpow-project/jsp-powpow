@@ -10,7 +10,7 @@ public class SellerVO {
     private String sellerPassword;
     private String sellerName;
     private String sellerPhone;
-    private char sellerSms;
+    private char sellerSmsCheck;
     private char sellerEmailCheck;
     
     public SellerVO() {;}
@@ -63,12 +63,12 @@ public class SellerVO {
 		this.sellerPhone = sellerPhone;
 	}
 
-	public char getSellerSms() {
-		return sellerSms;
+	public char getSellerSmsCheck() {
+		return sellerSmsCheck;
 	}
 
-	public void setSellerSms(char sellerSms) {
-		this.sellerSms = sellerSms;
+	public void setSellerSmsCheck(char sellerSmsCheck) {
+		this.sellerSmsCheck = sellerSmsCheck;
 	}
 
 	public char getSellerEmailCheck() {
@@ -83,7 +83,7 @@ public class SellerVO {
 	public String toString() {
 		return "SellerVO [id=" + id + ", businessId=" + businessId + ", sellerEmail=" + sellerEmail
 				+ ", sellerPassword=" + sellerPassword + ", sellerName=" + sellerName + ", sellerPhone=" + sellerPhone
-				+ ", sellerSms=" + sellerSms + ", sellerEmailCheck=" + sellerEmailCheck + "]";
+				+ ", sellerSmsCheck=" + sellerSmsCheck + ", sellerEmailCheck=" + sellerEmailCheck + "]";
 	}
 
 	@Override
