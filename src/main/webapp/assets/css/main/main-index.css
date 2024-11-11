@@ -349,8 +349,8 @@ body {
 }
 
 #header-wrap #nav .right .icons img {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 #header-wrap #nav .sector {
@@ -406,7 +406,6 @@ body {
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
   height: 0;
   opacity: 0;
   overflow: hidden;
