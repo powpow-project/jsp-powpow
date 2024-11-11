@@ -79,8 +79,8 @@
 
 	<!-- 회원가입 _ 이메일, 비밀번호, 이름, 휴대전화 번호, 사업자 인증번호, 대표자명, 업체명, 동의 -->
 	<insert id="insertSeller" parameterType="SellerVO">
-		INSERT INTO TBL_SELLER(ID, bUSINESS_ID, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME, SELLER_PHONE, SELLER_SMS, SELLER_EMAILCHECK)
-		VALUES(SELLER_SEQ.NEXTVAL, #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSms}, #{sellerEmailCheck})
+		INSERT INTO TBL_SELLER(ID, bUSINESS_ID, SELLER_EMAIL, SELLER_PASSWORD, SELLER_NAME, SELLER_PHONE, SELLER_SMSCHECK, SELLER_EMAILCHECK)
+		VALUES(SELLER_SEQ.NEXTVAL, #{businessId}, #{sellerEmail}, #{sellerPassword}, #{sellerName}, #{sellerPhone}, #{sellerSmsCheck}, #{sellerEmailCheck})
 	</insert>
 	
 
@@ -141,7 +141,7 @@
 	<select id="selectSearch" parameterType="memberDTO" resultType="MemberVO">
 		SELECT ID, MEMBER_IMAGE, MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_NAME, 
 			MEMBER_PASSWORD, MEMBER_PHONE, MEMBER_ADDRESS, 
-			MEMBER_SMS, MEMBER_EMAILCHECK
+			MEMBER_SMSCHECK, MEMBER_EMAILCHECK
 		FROM TBL_MEMBER
 		WHERE MEMBER_EMAIL LIKE '%'||#{searchKeyword}||'%' 
 		OR MEMBER_NAME LIKE '%'||#{searchKeyword}||'%'  

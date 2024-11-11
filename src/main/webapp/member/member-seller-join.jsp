@@ -105,7 +105,7 @@
       </div>
 
       <div class="agree-box">
-             <input type="hidden" name="sms" value="1" />
+             <input type="hidden" name="smscheck" value="1" />
             <input type="hidden" name="emailcheck" value="1" />
 
         <div class="agreeAll">
