@@ -42,34 +42,28 @@
       <p>당신의 마음이 머무는 반려공간</p>
     </div>
     
+    <div class="petsonal-text">
+    	<h2>완벽한 집사가 되기 위해 참여해보세요</h2>
+  	</div>
+  	<div class="petsonal">
+ 		<img src="assets/images/test/mbti-banner.png" alt="펫스널">
+ 		<div class="personal-text">
+   			<p style="font-size: 50px;">나 누구개? 너 누구냥?</p>
+   			<p style="font-size: 30px;">우리 강아지/고양이는 무슨 생각을 하고 있을까?</p>
+ 		</div>
+	</div>
     <div id="main-content">
       <!-- 사진버튼 -->
-      <div class="button-icons" >
-         <button class="icon-wrap" onclick="location.href='/powpow/product/product-dog.product?productCategoryName=강아지'">
-            <img class="icon" src="assets/images/test/111.jpg" alt="강아지버튼1">
-            <div class="more-show1">DOG ALL →</div>
-         </button>
-         <button class="icon-wrap" onclick="location.href='/powpow/product/product-cat.product?productCategoryName=고양이'">
-            <img class="icon" src="assets/images/test/222.jpg" alt="고양이버튼2">
-            <div class="more-show2">CAT ALL →</div>
-         </button>
-         <button class="icon-wrap" onclick="location.href='/powpow/product/product-dog.product?productCategoryName=강아지'">
-            <img class="icon" src="assets/images/test/333.jpg" alt="강아지버튼3">
-            <div class="more-show3">DOG ALL →</div>
-         </button>
-         <button class="icon-wrap" onclick="location.href='/powpow/product/product-cat.product?productCategoryName=고양이'">
-            <img class="icon" src="assets/images/test/444.jpg" alt="강아지버튼4">
-            <div class="more-show4">CAT ALL →</div>
-         </button>
-      </div>
+  		
          <!-- 핫한 상품 이미지 -->
       <div class="hot-product">
-        <div><h2>반려동물을 위한 똑똑한 소비습관</h2></div>
+        <div><h2>POWPOW의 추천상품!</h2></div>
         <div class="hot-images">
           <div class="image-and-cart">
             <div class="hot-image">
               <img src="assets/images/test/hot-product.png" alt="핫">
-              <div class="coupon">+15% 쿠폰</div>
+              <div class="coupon">강아지 인기</div>
+              <img class="heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">	
             </div>
             <div class="cart">
               <img src="assets/images/test/cart.png" alt="장바구니">
@@ -80,7 +74,8 @@
           <div class="image-and-cart">
             <div class="hot-image">
               <img src="assets/images/test/hot-product2.png" alt="핫">
-              <div class="coupon">일일특가</div>
+              <div class="coupon">고양이 특가</div>
+              <img class="heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
             </div>
             <div class="cart">
               <img src="assets/images/test/cart.png" alt="장바구니">
@@ -96,8 +91,9 @@
           <div class="products">
             <div class="product-card">
               <img class="card-image" src="assets/images/test/10.png" alt="상품이미지"> 
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
-                <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
+                <p class="product-name">피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
               </div>
               <div class="card-cart">
@@ -107,6 +103,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/9.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -118,6 +115,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/8.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -129,6 +127,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/7.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -140,6 +139,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/6.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -157,6 +157,7 @@
           <div class="products">
             <div class="product-card">
               <img class="card-image" src="assets/images/test/5.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -168,6 +169,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/4.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -179,6 +181,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/3.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -190,6 +193,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/2.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -201,6 +205,7 @@
             </div>
             <div class="product-card">
               <img class="card-image" src="assets/images/test/1.png" alt="상품이미지">
+              <img class="card-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               <div class="card-text-wrap">
                 <p>피시포독 그레인프리 참치+스피니치 + 캐롯 85g</p>
                 <b>9,900원</b>
@@ -230,8 +235,8 @@
         <div class="health-banner-image">
           <img src="assets/images/test/health-banner4.png" alt="헬스배너">
           <div class="health-banner-text">
-            <p class="white-text">plastic free plate</p>
-            <p class="black-text">outdoor activity</p>
+            <p class="white-text">사람들의 이야기를 둘러보아요</p>
+            <p class="black-text">커뮤니티로 이동 ></p>
           </div>
         </div>
     
@@ -249,6 +254,7 @@
           <div class="large-post">
             <div class="post-image">
               <img src="assets/images/test/big-community.png" alt="커뮤니티">
+              <img class="post-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">	
             </div>
           </div>
 
@@ -265,6 +271,7 @@
                     />
                     <span class="user-id">user_id_1</span>
                   </div>
+                  <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
                 </div>
                 <div class="post">
                   <img class="post-image" src="assets/images/test/post3.png" alt="포스트">
@@ -276,6 +283,7 @@
                     />
                     <span class="user-id">user_id_2</span>
                   </div>
+                  <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
                 </div>
                 <div class="post">
                   <img class="post-image" src="assets/images/test/post4.png" alt="포스트">
@@ -287,6 +295,7 @@
                     />
                     <span class="user-id">user_id_3</span>
                   </div>
+                  <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
                 </div>
               
                 <div class="post">
@@ -299,6 +308,7 @@
                     />
                     <span class="user-id">user_id_4</span>
                   </div>
+                  <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
                 </div>
               </div>
             
@@ -315,6 +325,7 @@
                   />
                   <span class="user-id">user_id_5</span>
                 </div>
+                <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               </div>
               <div class="post">
                 <img class="post-image" src="assets/images/test/post7.png" alt="포스트">
@@ -326,6 +337,7 @@
                   />
                   <span class="user-id">user_id_6</span>
                 </div>
+                <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               </div>
               <div class="post">
                 <img class="post-image" src="assets/images/test/post8.png" alt="포스트">
@@ -337,6 +349,7 @@
                   />
                   <span class="user-id">user_id_7</span>
                 </div>
+                <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               </div>
             
               <div class="post">
@@ -349,94 +362,18 @@
                   />
                   <span class="user-id">user_id_8</span>
                 </div>
+                <img class="posts-heart-icon" src="assets/images/test/white-heart-icon.png" alt="하트">
               </div>
             </div>
             </div>
           </div>
       </div>
          
-      <div class="donation-wrap">
-            <div class="donation">
-               <div class="donation-letter">
-                  <span class="h4">포포 이용자들이 이만큼 기부했어요!</span><br />
-                  <span class="money">30,993,000 원</span><br /> 
-                  <span class="h6"> 포포에서 산 제품의 금액 중 5%는 기부, 후원금으로 산정됩니다</span>
-               </div>
-            </div>
-            <div class="announce">
-               <p class="h4">공지사항</p>
-               <div class="annouce-letter">
-                  <ul>
-                     <li>마이 홈페이지 업데이트 2024.09.21</li>
-                     <li>Shipping delay controversy law suit</li>
-                     <li>Welcome new POW kit</li>
-                     <li>Get ready for winter season with us!</li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-
-
       </div>
    </div>
 </div>
- <footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      <h3>고객센터 &gt;</h3>
-      <p>
-        <span class="highlight">0000-0000</span> <span>09:00~18:00</span>
-      </p>
-      <ul class="custom-list">
-        <li>평일: 전체 문의 상담</li>
-        <li>토요일, 공휴일: 포포 배송 주문건 상담</li>
-        <li>일요일: 휴무</li>
-      </ul>
-      <button class="kakao-button">카톡 상담 (평일 09:00~18:00)</button>
 
-    </div>
-
-    <div class="footer-section">
-      <ul>
-        <li><a href="#">회사소개</a></li>
-        <li><a href="#">채용정보</a></li>
-        <li><a href="#">이용약관</a></li>
-        <li><a href="#">공지사항</a></li>
-        <li><a href="#">개인정보 처리방침</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <ul>
-        <li><a href="#">배너신청</a></li>
-        <li><a href="#">쿠폰신청</a></li>
-        <li><a href="#">고객의 소리</a></li>
-        <li><a href="#">이메일 문의</a></li>
-        <li><a href="#">제휴/광고 문의</a></li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      <div class="footer-section legal">
-        <p>(주)포포 | 공동 제작 류 재 준 | 서울 강남구 테헤란로 146, 3층 4층</p>
-        <p>
-          contact@powpow.com | 사업자등록번호: <span class="highlight">사업자정보확인</span>
-        </p>
-        <p>통신판매업신고번호 제2024-서울강남-0000호</p>
-      </div>
-
-      <div class="footer-section legal2">
-        <p>(주)포포는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을
-          지지 않습니다.</p>
-        <p>단, (주) 포포가 판매자로 등록 판매한 상품은 판매자로서 책임을 부담합니다.</p>
-      </div>
-
-      <div class="footer-section legal3">
-        <p>Copyright 2024. powpow, Co., Ltd. All rights reserved.</p>
-      </div>
-    </div>
-  </div>
-</footer>
+<jsp:include page="footer.jsp"></jsp:include>
 
 
 </body>

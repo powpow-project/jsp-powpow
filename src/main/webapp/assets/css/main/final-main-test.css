@@ -915,69 +915,38 @@ footer {
   justify-content: center;
 }
 
-#main-content .button-icons{
-  display: flex;
-  gap:10px;
+.petsonal-text{
+   display: flex;
+   justify-content: start;
+   width: 1440px;
+   align-items: center;
+   position: relative;
+}
+.petsonal-text h2{
+    position: absolute;
+    top: 80px;
+    left: 0px;
 }
 
-#main-content .button-icons .icon-wrap{
-   position : relative;
+.petsonal{
+    max-width: 100%;
+    height: 230px;
+    position: relative;
+    margin-top: 120px;
 }
-#main-content .button-icons .icon-wrap .more-show1{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 118px;
-    height: 30px;
-    color: #131313;
-    background-color: #FFE072;
-    top: 262px;
-    left: 147px;
-    z-index:10;
-    font-size: 15px;
+
+.petsonal img{
+	width: 100%;
+	height: 100%;
 }
-#main-content .button-icons .icon-wrap .more-show2{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 118px;
-    height: 30px;
-    color: #131313;
-    background-color: #FFE072;
-    top: 160px;
-    left: 202px;
-    z-index: 10;
-    font-size: 15px;
+.personal-text{
+	position: absolute;
+	left: 232px;
+	top: 54px;
 }
-#main-content .button-icons .icon-wrap .more-show3{
-   position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 118px;
-    height: 30px;
-    color: #131313;
-    background-color: #FFE072;
-    top: 207px;
-    left: 49px;
-    z-index: 10;
-    font-size: 15px;
-}
-#main-content .button-icons .icon-wrap .more-show4{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 118px;
-     height: 30px;
-    color: #131313;
-    background-color: #FFE072;
-    top: 38px;
-    left: 22px;
-    z-index: 10;
-    font-size: 15px;
+.personal-text p{
+	color: white;
+	font-weight: bold;
 }
 
 #main-content .button-icons .icon{
@@ -990,7 +959,7 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 1440px;
-  margin-top: 150px;
+  margin-top: 200px;
 }
 
 .hot-images .image-and-cart{
@@ -1009,6 +978,14 @@ footer {
   background-color: #767676;
   border-radius: 10px;
   position: relative;
+}
+
+.hot-product .image-and-cart .hot-image .heart-icon{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 16px;
+	top: 16px;
 }
 
 .hot-product .image-and-cart .hot-image img{
@@ -1067,24 +1044,34 @@ footer {
 }
 
 .products-wrap .products .product-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 272px;
-  height: 366px;
-  border-radius: 10px;
-  border: solid 1px #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 272px;
+    height: 366px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    position: relative;
 }
 
 .products .product-card .card-image{
-  margin-top: 17px;
-  width: 230px;
-  height: 230px;
+    margin-top: 17px;
+    border-radius: 10px;
+    width: 230px;
+    height: 230px;
+}
+.products .product-card .card-heart-icon{
+	width: 22px;
+	height: 22px;
+	position:absolute;
+	z-index: 10;
+	right: 29px;
+	top: 25px;
 }
 .products .product-card .card-text-wrap{
-  margin: 10px 0 5px 0;
+  margin: 10px 0 8px 0;
 }
-.products .product-card .card-text-wrap p, b{
+.products .product-card .card-text-wrap p{
   width: 230px;
   text-align: left;
   display: -webkit-box;
@@ -1092,17 +1079,28 @@ footer {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 18px;
+}
+.products .product-card .card-text-wrap b{
+  width: 230px;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 26px;
 }
 .products .product-card .card-cart{
-  width: 230px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-radius: 5px;
-  border: solid 1px #e0e0e0;
-
+     width: 230px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    border: solid 1px #e0e0e0;
+    background-color: white;
 }
 .products .product-card .card-cart img{
   width: 20px;
@@ -1144,6 +1142,7 @@ footer {
   width: 720px;
   height: 400px;
   position: relative;
+  cursor: pointer;  
 }
  .health-banner .health-banner-image img{
   width: 100%;
@@ -1172,11 +1171,12 @@ footer {
 .recommend-section {
   margin-top: 150px;
  }
+ 
  .community-plusmore{
    display: flex;
-    justify-content: space-between;
-    width: 1440px;
-    align-items: center;
+   justify-content: space-between;
+   width: 1440px;
+   align-items: center;
  }
 
  .recommend-section h2 {
@@ -1195,6 +1195,15 @@ footer {
   height: 680px;
   background-color: #f0f0f0;
   position: relative;
+  margin-bottom: 280px;
+ }
+ 
+ .large-post .post-heart-icon{
+ 	width: 40px;
+ 	height: 40px;
+ 	position: absolute;
+ 	top: 20px;
+ 	right: 20px;
  }
  .large-post img{
   border-radius : 10px;
@@ -1216,13 +1225,21 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 13px;
+  position: relative;
  }
  .small-post .post .post-image{
   width: 197px;
   height: 263px;
   border-radius : 10px;
  }
-
+ 
+.small-post .post .posts-heart-icon{
+ 	width: 22px;
+ 	height: 22px;
+ 	position: absolute;
+ 	top: 15px;
+ 	right: 15px;
+ }
  .profile-info{
   display: flex;
   align-items: center;
@@ -1236,50 +1253,6 @@ footer {
   width: 30px;
   height: 30px;
  }
-
- .donation-wrap{
-  display: flex;
-  justify-content: space-between;
-  margin: 150px 0;
-}
-
-.donation{
-  display: flex;
-  align-items: center;
-  width: 708px;
-  height: 271px;
-  border: solid 1px black;
-  border-radius: 10px;
-}
-
-.announce{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 708px;
-  height: 271px;
-  gap: 20px;
-  border: solid 1px black;
-  border-radius: 10px;
-}
-.donation-letter{
-  margin-left: 100px;
-}
-.donation-letter .money{
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.annouce-letter{
-  line-height: 20px;
-}
-.announce p{
-  margin-left: 100px;
-}
-
-.annouce-letter  ul{
-  margin-left: 100px;
-}
 
 
 /*****슬라이드 효과****/
